@@ -29,6 +29,8 @@ jobs:
 
       # 4. Run the Python script to fetch Google Sheet and update CSV
       - name: Run update script
+        env:
+          GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
         run: python update_csv.py
 
       # 5. Commit and push updated CSV
