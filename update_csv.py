@@ -17,7 +17,7 @@ creds = Credentials.from_service_account_file('temp_sa.json', scopes=[
 gc = gspread.authorize(creds)
 
 # Replace with your Google Sheet ID
-SHEET_ID = 'YOUR_SHEET_ID_HERE'
+SHEET_ID = '1Hw0rLtPxbftxwbn0XkzYPqAh7r6bfbRGVkeF-3DlSTE'
 
 sheet = gc.open_by_key(SHEET_ID).sheet1  # first sheet
 data = sheet.get_all_values()
