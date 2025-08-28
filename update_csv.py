@@ -23,6 +23,6 @@ sheet = gc.open_by_key(SHEET_ID).sheet1  # first sheet
 data = sheet.get_all_values()
 
 # Save to CSV in the repo
-with open('main/Head2Head.csv', 'w', newline='') as f:
+with open('Head2Head.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerows(data)
