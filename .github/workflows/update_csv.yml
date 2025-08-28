@@ -1,36 +1,41 @@
 name: Update CSV from Google Sheet
 
+# Trigger manually or on a schedule
 on:
+  workflow_dispatch:
   schedule:
-    # Runs every hour
-    - cron: '0 * * * *'
-  workflow_dispatch:  # allows manual run
+    - cron: '0 * * * *'  # runs every hour; adjust as needed
 
 jobs:
   update_csv:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # 1. Checkout the repo with credentials so pushes work
+      - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
+      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      # 3. Install dependencies
       - name: Install dependencies
-        run: pip install gspread google-auth
+        run: pip install gspread oauth2client
 
+      # 4. Run the Python script to fetch Google Sheet and update CSV
       - name: Run update script
-        env:
-          GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
         run: python update_csv.py
 
+      # 5. Commit and push updated CSV
       - name: Commit updated CSV
         run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add Head2Head.csv
-            git commit -m "Update Head2Head.csv from Google Sheet" || echo "No changes to commit"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main    
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Head2Head.csv
+          git commit -m "Update Head2Head.csv from Google Sheet" || echo "No changes to commit"
+          git push
