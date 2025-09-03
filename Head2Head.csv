@@ -308,7 +308,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 09/20/15,Brooklyn Bolts,Northern Arizona Wranglers,99.1,91.5,Season
 09/20/15,Miami Inferno,Tucson Sugar Skulls,111.9,149.4,Season
 09/20/15,Cleveland Gladiators,Cedar Rapids Titans,148.5,107.8,Season
-09/20/15,Milwaukee Mustangs,Chicago Slaughter,112.6,112.3,Season
+09/20/15,Milwaukee Mustangs,Chicago Slaughter,113,112,Season
 09/27/15,Los Angeles Wildcats,Boston Brawlers,106.5,141,Season
 09/27/15,Philadelphia Soul,Vegas Knight Hawks,127,142.6,Season
 09/27/15,Tucson Sugar Skulls,Brooklyn Bolts,186.1,127.6,Season
@@ -1161,3 +1161,4 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/29/24,Miami Inferno,Brooklyn Bolts,220.2,232.35,Consolation
 12/29/24,Northern Arizona Wranglers,Philadelphia Soul,144.25,164.25,Consolation
 12/29/24,Cedar Rapids Titans,BYE,1,0,Consolation
+
