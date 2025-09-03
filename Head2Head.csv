@@ -625,7 +625,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 11/04/18,Vegas Knight Hawks,Cedar Rapids Titans,130,108.6,Season
 11/04/18,Northern Arizona Wranglers,Chicago Slaughter,106.7,186.2,Season
 11/04/18,Miami Inferno,Philadelphia Soul,159.3,112.3,Season
-11/04/18,Cleveland Gladiators,Milwaukee Mustangs,167,167.5,Season
+11/04/18,Cleveland Gladiators,Milwaukee Mustangs,167,168,Season
 11/04/18,Tucson Sugar Skulls,Los Angeles Wildcats,208.8,192.5,Season
 11/11/18,Cedar Rapids Titans,Cleveland Gladiators,181.2,151.2,Season
 11/11/18,Philadelphia Soul,Milwaukee Mustangs,109.4,201.4,Season
@@ -1161,6 +1161,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/29/24,Miami Inferno,Brooklyn Bolts,220.2,232.35,Consolation
 12/29/24,Northern Arizona Wranglers,Philadelphia Soul,144.25,164.25,Consolation
 12/29/24,Cedar Rapids Titans,BYE,1,0,Consolation
+
 
 
 
