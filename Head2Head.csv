@@ -671,7 +671,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 09/15/19,Cedar Rapids Titans,Vegas Knight Hawks,111.6,143.6,Season
 09/15/19,Milwaukee Mustangs,Tucson Sugar Skulls,97.6,117.9,Season
 09/15/19,Northern Arizona Wranglers,Cleveland Gladiators,132.2,98.5,Season
-09/15/19,Miami Inferno,Philadelphia Soul,114.9,114,Season
+09/15/19,Miami Inferno,Philadelphia Soul,115,114,Season
 09/15/19,Los Angeles Wildcats,Brooklyn Bolts,79.1,119.6,Season
 09/15/19,Chicago Slaughter,Boston Brawlers,113.8,126.1,Season
 09/22/19,Cedar Rapids Titans,Milwaukee Mustangs,143.2,122.1,Season
@@ -740,18 +740,18 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/01/19,Cleveland Gladiators,Miami Inferno,112.3,101.6,Season
 12/01/19,Northern Arizona Wranglers,Los Angeles Wildcats,93.8,108.3,Season
 12/01/19,Tucson Sugar Skulls,Philadelphia Soul,114.5,92.8,Season
-12/08/19,Los Angeles Wildcats,Northern Arizona Wranglers,116.4,106.3,Playoffs
-12/08/19,Brooklyn Bolts,Vegas Knight Hawks,159.7,91.4,Playoffs
+12/08/19,Los Angeles Wildcats,Brooklyn Bolts,92,160,Playoffs
+12/08/19,Boston Brawlers,Vegas Knight Hawks,116,106,Playoffs
 12/08/19,Milwaukee Mustangs,Tucson Sugar Skulls,91.5,118.7,Consolation
-12/08/19,Cleveland Gladiators,Boston Brawlers,129.7,86,Consolation
+12/08/19,Cleveland Gladiators,Northern Arizona Wranglers,129.7,86,Consolation
 12/08/19,Cedar Rapids Titans,Philadelphia Soul,115.3,157.7,Consolation
-12/08/19,Miami Inferno,Los Angeles Wildcats,115.7,115.6,Playoffs
+12/15/19,Miami Inferno,Boston Brawlers,116,115,Playoffs
 12/15/19,Chicago Slaughter,Brooklyn Bolts,107.7,128.9,Playoffs
-12/15/19,Vegas Knight Hawks,Northern Arizona Wranglers,78.1,152.2,Consolation
+12/15/19,Vegas Knight Hawks,Los Angeles Wildcats,78.1,152.2,Consolation
 12/15/19,Cleveland Gladiators,Philadelphia Soul,193.7,143.6,Consolation
 12/15/19,Milwaukee Mustangs,Cedar Rapids Titans,131.1,86.9,Consolation
 12/15/19,Boston Brawlers,Tucson Sugar Skulls,143.7,108.6,Consolation
-12/15/19,Brooklyn Bolts,Miami Inferno,111.9,129.1,Playoffs
+12/22/19,Brooklyn Bolts,Miami Inferno,111.9,129.1,Playoffs
 12/22/19,Chicago Slaughter,Los Angeles Wildcats,107.3,115.4,Consolation
 12/22/19,Vegas Knight Hawks,Northern Arizona Wranglers,112.9,96.7,Consolation
 12/22/19,Cleveland Gladiators,Boston Brawlers,150.1,122.7,Consolation
@@ -790,9 +790,9 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 10/17/21,Milwaukee Mustangs,Miami Inferno,138.95,114.45,Season
 10/17/21,Northern Arizona Wranglers,Boston Brawlers,167.75,139.65,Season
 10/17/21,Brooklyn Bolts,Chicago Slaughter,168.1,137.55,Season
-10/17/21,Cedar Rapids Titans,Los Angeles Wildcats,132.1,132.75,Season
+10/17/21,Cedar Rapids Titans,Los Angeles Wildcats,132.1,133.75,Season
 10/17/21,Tucson Sugar Skulls,Vegas Knight Hawks,151.35,130.45,Season
-10/17/21,Cleveland Gladiators,Philadelphia Soul,147.15,146.35,Season
+10/17/21,Cleveland Gladiators,Philadelphia Soul,147.15,149.35,Season
 10/24/21,Vegas Knight Hawks,Los Angeles Wildcats,153.4,134.85,Season
 10/24/21,Chicago Slaughter,Milwaukee Mustangs,123.95,161.5,Season
 10/24/21,Brooklyn Bolts,Northern Arizona Wranglers,120,110.2,Season
@@ -893,7 +893,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 10/16/22,Brooklyn Bolts,Chicago Slaughter,155.55,109.15,Season
 10/16/22,Cedar Rapids Titans,Los Angeles Wildcats,95.4,125.75,Season
 10/16/22,Tucson Sugar Skulls,Vegas Knight Hawks,124.2,128.45,Season
-10/16/22,Cleveland Gladiators,Philadelphia Soul,88.55,88.5,Season
+10/16/22,Cleveland Gladiators,Philadelphia Soul,89.55,88.5,Season
 10/23/22,Vegas Knight Hawks,Los Angeles Wildcats,102.8,113.35,Season
 10/23/22,Chicago Slaughter,Milwaukee Mustangs,115.35,114.9,Season
 10/23/22,Brooklyn Bolts,Northern Arizona Wranglers,142.05,147.15,Season
@@ -920,7 +920,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 11/13/22,Miami Inferno,Brooklyn Bolts,137.9,121.75,Season
 11/20/22,Chicago Slaughter,Tucson Sugar Skulls,111.2,108.35,Season
 11/20/22,Los Angeles Wildcats,Cleveland Gladiators,123.15,122.25,Season
-11/20/22,Vegas Knight Hawks,Brooklyn Bolts,137.8,137.55,Season
+11/20/22,Vegas Knight Hawks,Brooklyn Bolts,138.8,137.55,Season
 11/20/22,Milwaukee Mustangs,Cedar Rapids Titans,188.25,85.6,Season
 11/20/22,Philadelphia Soul,Miami Inferno,77.35,79.35,Season
 11/20/22,Northern Arizona Wranglers,Boston Brawlers,127.35,117.65,Season
@@ -969,7 +969,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 09/17/23,Tucson Sugar Skulls,Milwaukee Mustangs,174.15,180.3,Season
 09/17/23,Cedar Rapids Titans,Vegas Knight Hawks,174.85,201.1,Season
 09/17/23,Cleveland Gladiators,Brooklyn Bolts,144.95,180.2,Season
-09/17/23,Philadelphia Soul,Northern Arizona Wranglers,187.65,187.75,Season
+09/17/23,Philadelphia Soul,Northern Arizona Wranglers,187.65,188.75,Season
 09/17/23,Chicago Slaughter,Miami Inferno,170.15,132.05,Season
 09/24/23,Philadelphia Soul,Cedar Rapids Titans,159.55,182.35,Season
 09/24/23,Vegas Knight Hawks,Northern Arizona Wranglers,122.85,151.75,Season
@@ -1161,6 +1161,7 @@ Date,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/29/24,Miami Inferno,Brooklyn Bolts,220.2,232.35,Consolation
 12/29/24,Northern Arizona Wranglers,Philadelphia Soul,144.25,164.25,Consolation
 12/29/24,Cedar Rapids Titans,BYE,1,0,Consolation
+
 
 
 
