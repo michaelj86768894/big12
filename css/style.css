@@ -94,7 +94,7 @@ marquee img {
   margin: 0 25px;
 }
 
-/* ==================================== NAVIGATION BAR ==================================== */
+/* ================== NAVIGATION BAR ================== */
 nav {
     background-color: #001433;
     font-family: Arial, sans-serif;
@@ -103,10 +103,11 @@ nav {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 20px; /* space between logo and nav items */
+    gap: 20px;
     padding: 10px 20px;
+    flex-wrap: wrap; /* allows hamburger and nav-links to stack on mobile */
 }
-	
+
 .logo {
     color: #F0AE00;
     text-decoration: none;
@@ -137,4 +138,79 @@ nav {
 
 .nav-links li a:hover {
     color: #FFFFFF;
+}
+
+/* Dropdown menu (desktop) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #001433;
+    min-width: 150px;
+    z-index: 1000;
+    border: 1px solid #F0AE00;
+    border-radius: 4px;
+}
+
+.dropdown-content li a {
+    padding: 8px 12px;
+    color: #F0AE00;
+}
+
+.dropdown-content li a:hover {
+    background-color: #F0AE00;
+    color: #001433;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #F0AE00;
+}
+
+/* ================== RESPONSIVE ================== */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #001433;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links li a {
+        padding: 10px;
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+    }
+
+    /* Dropdown menu inside mobile */
+    .dropdown-content {
+        position: relative;
+        top: 0;
+        border: none;
+        border-radius: 0;
+        background-color: #001433;
+    }
+    .dropdown:hover .dropdown-content {
+        display: none; /* disable hover effect on mobile */
+    }
+}
+
+#menu-toggle {
+    display: none;
 }
