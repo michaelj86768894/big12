@@ -45,18 +45,6 @@ a:hover {
   padding: 10px;
   overflow-x: auto; /* allow horizontal scroll */
 }
-	
-.content-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.content-box li::before {
-  content: "*";
-  color: #001433; /* Navy bullets */
-  margin-right: 8px;
-}
-
 																			/*STANDINGS TABLE*/
 .standings-table {
   width: 100%;          /* table fills the container */
