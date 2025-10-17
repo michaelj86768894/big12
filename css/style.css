@@ -37,15 +37,32 @@ a:hover {
 	border-bottom: 1px solid #F0AE00; /* Gold lines */
 	margin-left: 10px;
 }
-	
-.content-box {
-  background: #D9E2EC; /*Grey-blue Background*/
-  border: 1px solid #001433; /*Navy line*/
-  border-radius: 8px;
-  padding: 10px;
-  overflow-x: auto; /* allow horizontal scroll */
+																			/* NAV BAR */
+/* Navigation Bar */
+nav {
+    background-color: #001433; /* navy background */
+    padding: 10px 20px;
 }
-																			/*STANDINGS TABLE*/
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* space between links */
+}
+
+nav ul li a {
+    color: #F0AE00; /* gold text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #FFFFFF; /* white on hover */
+}
+																		/* STANDINGS TABLE */
 .standings-table {
   width: 100%;          /* table fills the container */
   max-width: 100%;      /* prevents it from overflowing */
