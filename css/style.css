@@ -108,11 +108,10 @@ nav {
     flex-wrap: wrap; /* allows hamburger and nav-links to stack on mobile */
 }
 
-.logo {
-    color: #F0AE00;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
+.logo img {
+  height: 40px; /* or whatever height works best */
+  width: auto;
+  vertical-align: middle;
 }
 
 .nav-links {
