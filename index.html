@@ -1,130 +1,9 @@
 <!doctype html>
 <html>
 <head>
-
-<style>
-/* === Global Typography === */
-h1, h2, h3, h4, h5, h6 {
-	color: #001433; /* navy headings */
-	font-family: Arial, sans-serif;
-}
-
-p {
-	color: #001433; /* navy text for paragraphs */
-	font-family: Arial, sans-serif;
-}
-
-/* === Horizontal Rule === */
-hr {
-	border: none;
-	border-top: 1px solid #F0AE00; /* gold line */
-}
-
-/* === Links === */
-a {
-	color: #007FC8; /* bright blue by default */
-	text-decoration: none; /* remove underline */
-	transition: color 0.2s ease;
-}
-
-a:hover {
-	color: #001433; /* navy blue on hover */
-}
-
-/* === HR with Text (Optional Style) === */
-.hr-lines {
-	display: flex;
-	align-items: center;
-	color: #001433; /* Navy text for labeled HR */
-	font-weight: bold;
-}
-
-.hr-lines::after {
-	content: '';
-	flex: 1;
-	border-bottom: 1px solid #F0AE00; /* gold line */
-	margin-left: 10px;
-}
-	
-.content-box {
-  background: #D9E2EC; /*Grey-Blue Background*/
-  border: 1px solid #001433; /*Navy Line*/
-  border-radius: 8px;
-  padding: 10px;
-  overflow-x: auto; /* allow horizontal scroll */
-}
-	
-.content-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.content-box li::before {
-  content: "•";
-  color: #001433; /* Gold */
-  margin-right: 8px;
-}
-
-																			/*STANDINGS TABLE*/
-.standings-table {
-  width: 100%;          /* table fills the container */
-  max-width: 100%;      /* prevents it from overflowing */
-  margin: 10px 0;
-  border-collapse: collapse;
-  table-layout: auto;
-}
-
-.standings-table th, 
-.standings-table td {
-  border: 1px solid #007FC8; /* body border color, can adjust header separately if needed */
-  padding: 5px;
-  text-align: center;
-  overflow: hidden;        /* prevents text overflow */
-  white-space: nowrap;     /* keeps text on a single line */
-}
-
-.standings-table th {
-  background-color: #001433; 
-  color: #FFFFFF;
-  border: 1px solid #F0AE00; /* separate header border color */
-}
-
-.standings-table td {
-  color: #001433; /*font color navy*/
-  background-color: #FFFFFF
-}
-
-/* 🔥 Highlight style for top 7 teams */
-.standings-table tr.highlight td {
-  background-color: #F0AE00 !important;
-  color: #001433 !important;
-  font-weight: bold;
-}
-
-																				/* Banner */
-
-.banner {
-  height: 100px;         /* fixed height */
-  overflow: hidden;      /* cut off anything outside */
-  display: flex;
-  align-items: center;   /* vertically center images */
-}
-  
-  marquee {
-  width: 100%;
-}
-
-marquee img {
-  max-height: 100px;      /* fits nicely inside the 100px banner */
-  height: auto;          /* maintains aspect ratio */
-  width: auto;           /* prevents stretching */
-  object-fit: contain;   /* ensures full image is visible */
-  margin: 0 25px;
-}
-</style>
-
-<meta charset="UTF-8">
-<title>Big 12 Home</title>
+	<meta charset="UTF-8">
+	<title>Big 12 Home</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -145,7 +24,7 @@ marquee img {
 
 <ul>
 	
-<li><a href="pages/week_7_preview.html">Week 7 Preview</a><hr></li>
+<li><a href="pages/week_7_preview.html">Week 7 Preview!</a><hr></li>
 	
 <li><a href="https://bigxii.weebly.com/Week-6-Review.html#weekly-awards">Top Performers - Week 6</a><hr></li>
 <li><a href="https://bigxii.weebly.com/Week-6-Review.html#power-rankings">Week 6 Power Rankings</a><hr></li>
