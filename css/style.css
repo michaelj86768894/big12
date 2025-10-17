@@ -118,3 +118,48 @@ marquee img {
   object-fit: contain;   /* ensures full image is visible */
   margin: 0 25px;
 }
+
+/* ================== NAVIGATION BAR ================== */
+nav {
+    background-color: #001433;
+    font-family: Arial, sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* space between logo and nav items */
+    padding: 10px 20px;
+}
+	
+.logo {
+    color: #F0AE00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    color: #F0AE00;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #FFFFFF;
+}
