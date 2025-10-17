@@ -52,8 +52,8 @@ a:hover {
 }
 
 .content-box li::before {
-  content: "'95";
-  color: #001433; /* Gold bullets */
+  content: "*";
+  color: #001433; /* Navy bullets */
   margin-right: 8px;
 }
 
