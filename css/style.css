@@ -148,7 +148,7 @@ ul.nav-links ul {
 }
 
 .nav-links li a:hover {
-    color: #FFFFFF;
+    color: #007FC8;
 }
 
 /* DROPDOWN MENU (DESKTOP) */
@@ -157,7 +157,7 @@ ul.nav-links ul {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #001433;
+    background-color: #007FC8;
     min-width: 150px;
     z-index: 1000;
     border: 1px solid #F0AE00;
