@@ -76,27 +76,31 @@ a:hover {
 
 /* ==================================== BANNER ==================================== */
 .banner {
-  height: 100px;          /* fixed banner height */
+  height: 100px;
   display: flex;
-  align-items: center;    /* vertical centering */
+  align-items: center;
   justify-content: center;
-  padding: 5px 0;         /* small padding to prevent cut-off */
+  background-image: url("https://png.pngtree.com/background/20250104/original/pngtree-gold-confetti-and-stars-falling-on-golden-background-picture-image_15712313.jpg");
+  background-size: cover;         /* fills the banner without stretching */
+  background-position: center;    /* keeps image centered */
+  background-repeat: no-repeat;   /* prevents tiling */
   overflow: hidden;
+  padding: 5px 0;                 /* prevents clipping on top/bottom */
 }
 
 marquee {
   width: 100%;
   display: flex;
-  align-items: center;    /* centers images vertically inside the marquee */
+  align-items: center;
 }
 
 marquee img {
-  max-height: 90px;       /* slightly smaller than banner height to prevent clipping */
+  max-height: 90px;
   height: auto;
   width: auto;
   object-fit: contain;
   margin: 0 25px;
-  vertical-align: middle; /* ensures true vertical alignment */
+  vertical-align: middle;
 }
 
 /* ================== NAVIGATION BAR ================== */
