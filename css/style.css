@@ -100,24 +100,28 @@ nav {
     font-family: Arial, sans-serif;
 }
 
+/* NAV CONTAINER */
 .nav-container {
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* ensures links sit right after the logo */
     gap: 20px;
     padding: 10px 20px;
-    flex-wrap: wrap; /* allows hamburger and nav-links to stack on mobile */
+    flex-wrap: wrap; /* allows stacking on small screens */
 }
 
+/* LOGO */
 .logo img {
-  height: 40px; /* or whatever height works best */
-  width: auto;
-  vertical-align: middle;
+    height: 40px; /* adjust as needed */
+    width: auto;
+    vertical-align: middle;
 }
 
+/* NAV LINKS */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     margin: 0;
     padding: 0;
 }
@@ -139,7 +143,7 @@ nav {
     color: #FFFFFF;
 }
 
-/* Dropdown menu (desktop) */
+/* DROPDOWN MENU (DESKTOP) */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -166,7 +170,7 @@ nav {
     display: block;
 }
 
-/* Hamburger menu (mobile) */
+/* HAMBURGER MENU (MOBILE) */
 .hamburger {
     display: none;
     font-size: 28px;
@@ -174,25 +178,40 @@ nav {
     color: #F0AE00;
 }
 
+/* Hides checkbox input used for toggle */
+#menu-toggle {
+    display: none;
+}
+
 /* ================== RESPONSIVE ================== */
 @media screen and (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between; /* keeps logo and hamburger apart */
+    }
+
     .nav-links {
         flex-direction: column;
         display: none;
         width: 100%;
         background-color: #001433;
+        margin-top: 10px;
     }
+
     .nav-links li {
         width: 100%;
+        text-align: center;
     }
+
     .nav-links li a {
         padding: 10px;
         display: block;
     }
+
     .hamburger {
         display: block;
     }
-    /* Show menu when checkbox is checked */
+
+    /* When checkbox is checked, show menu */
     #menu-toggle:checked + .hamburger + .nav-links {
         display: flex;
     }
@@ -205,11 +224,8 @@ nav {
         border-radius: 0;
         background-color: #001433;
     }
+
     .dropdown:hover .dropdown-content {
         display: none; /* disable hover effect on mobile */
     }
-}
-
-#menu-toggle {
-    display: none;
 }
