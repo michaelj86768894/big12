@@ -76,22 +76,28 @@ a:hover {
 
 /* ==================================== BANNER ==================================== */
 .banner {
-  height: 100px;         /* fixed height */
-  overflow: hidden;      /* cut off anything outside */
+  height: 100px;          /* fixed banner height */
   display: flex;
-  align-items: center;   /* vertically center images */
+  align-items: center;    /* vertical centering */
+  justify-content: center;
+  background-color: #001433; /* optional, in case you want a background behind logos */
+  padding: 5px 0;         /* small padding to prevent cut-off */
+  overflow: hidden;
 }
-  
-  marquee {
+
+marquee {
   width: 100%;
+  display: flex;
+  align-items: center;    /* centers images vertically inside the marquee */
 }
 
 marquee img {
-  max-height: 100px;      /* fits nicely inside the 100px banner */
-  height: auto;          /* maintains aspect ratio */
-  width: auto;           /* prevents stretching */
-  object-fit: contain;   /* ensures full image is visible */
+  max-height: 90px;       /* slightly smaller than banner height to prevent clipping */
+  height: auto;
+  width: auto;
+  object-fit: contain;
   margin: 0 25px;
+  vertical-align: middle; /* ensures true vertical alignment */
 }
 
 /* ================== NAVIGATION BAR ================== */
