@@ -117,6 +117,14 @@ nav {
     vertical-align: middle;
 }
 
+/* Remove list bullets and default padding globally for nav */
+ul.nav-links,
+ul.nav-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* NAV LINKS */
 .nav-links {
     list-style: none;
