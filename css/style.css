@@ -96,8 +96,9 @@ marquee img {
 
 /* ================== NAVIGATION BAR ================== */
 nav {
-    background-color: #001433;
-    font-family: Arial, sans-serif;
+  background-color: #001433;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px; /* adds space below nav */
 }
 
 /* NAV CONTAINER */
