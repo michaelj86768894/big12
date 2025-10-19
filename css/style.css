@@ -247,3 +247,30 @@ ul.nav-links ul {
         display: none; /* disable hover effect on mobile */
     }
 }
+
+/* ================== TEAM LOGO BAR ================== */
+.team-logo-bar {
+  background-color: #ffffff;
+  padding: 8px 0;
+  border-bottom: 2px solid #001433; /* small accent line above the navy bar */
+}
+
+.team-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.team-logo-container img {
+  height: 40px;
+  width: auto;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.team-logo-container img:hover {
+  transform: scale(1.1);
+}
