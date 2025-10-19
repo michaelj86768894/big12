@@ -274,3 +274,39 @@ ul.nav-links ul {
 .team-logo-container img:hover {
   transform: scale(1.1);
 }
+
+/* ================== NEWS CARD ================== */
+.news-card {
+  display: flex;              /* side-by-side layout */
+  align-items: center;        /* vertically center headline/date next to image */
+  width: 100%;
+  max-width: auto;           /* optional max width */
+  margin-bottom: 20px;
+  text-decoration: none;      /* removes underline from link */
+  color: inherit;
+}
+
+.news-card img {
+  width: 250px;
+  height: 125px;
+  object-fit: fill;          /* keeps image aspect ratio, crops minimally */
+  flex-shrink: 0;             /* prevents image from shrinking */
+  border-radius: 5px;         /* optional */
+  margin-right: 15px;
+}
+
+.news-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-content .headline {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.news-content .date {
+  font-size: 0.85em;
+  color: #666;
+}
