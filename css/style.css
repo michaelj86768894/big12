@@ -74,6 +74,24 @@ a:hover {
   font-weight: bold;
 }
 
+a.evenyear {
+  color: black;
+  text-decoration: underline;
+}
+
+a.evenyear:hover {
+  color: #F0AE00;
+}
+
+a.oddyear {
+  color: white;
+  text-decoration: underline;
+}
+
+a.oddyear:hover {
+  color: #F0AE00;
+}
+
 /* ==================================== BANNER ==================================== */
 .banner {
   height: 100px;
