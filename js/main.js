@@ -99,57 +99,60 @@ async function loadStandings() {
 
 loadStandings();
 
-// ================== COLLAPSIBLE SECTIONS ==================
+// ================== COLLAPSIBLE SECTIONS & TEAM FILTER ==================
 document.addEventListener("DOMContentLoaded", function () {
   const coll = document.getElementsByClassName("collapsible");
+  const dropdown = document.getElementById("searchDropdown");
 
-  // Collapsible functionality
-  for (let i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
+  // --- Collapsible functionality ---
+  Array.from(coll).forEach((button) => {
+    button.addEventListener("click", function () {
       this.classList.toggle("active");
       const content = this.nextElementSibling;
+
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
       }
     });
-  }
+  });
 
-  // Team dropdown functionality (only runs if dropdown exists)
-  const dropdown = document.getElementById("searchDropdown");
-  const allRows = document.querySelectorAll(".content tr");
-
+  // --- Team dropdown functionality ---
   if (dropdown) {
     dropdown.addEventListener("change", function () {
       const selected = this.value.toLowerCase();
+      const allSections = Array.from(coll);
 
-      allRows.forEach((row) => {
-        const rowText = row.textContent.toLowerCase();
-        row.style.display =
-          selected === "" || rowText.includes(selected) ? "" : "none";
-      });
-
-      // Hide/show collapsible sections based on matches
-      for (let i = 0; i < coll.length; i++) {
-        const header = coll[i];
+      allSections.forEach((header) => {
         const content = header.nextElementSibling;
-        const rowsInSection = content.querySelectorAll("tr");
+        const rows = Array.from(content.querySelectorAll("tr"));
 
-        const hasMatch = Array.from(rowsInSection).some(
-          (row) => row.style.display !== "none"
-        );
+        let hasMatch = false;
 
-        if (hasMatch || selected === "") {
+        rows.forEach((row) => {
+          const rowText = row.textContent.toLowerCase();
+          if (selected === "" || rowText.includes(selected)) {
+            row.style.display = "";
+            hasMatch = true;
+          } else {
+            row.style.display = "none";
+          }
+        });
+
+        // Show or hide section header based on matches
+        if (hasMatch) {
           header.style.display = "";
-          content.style.display = "";
+          content.style.display = "block";           // Ensure it's visible
           header.classList.add("active");
           content.style.maxHeight = content.scrollHeight + "px";
         } else {
           header.style.display = "none";
           content.style.display = "none";
+          header.classList.remove("active");
+          content.style.maxHeight = null;
         }
-      }
+      });
     });
   }
 });
