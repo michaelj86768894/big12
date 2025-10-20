@@ -313,12 +313,11 @@ ul.nav-links ul {
 
 /* ==================================== COLLAPSIBLE SECTIONS ==================================== */
 .collapsible {
-  background-color: #333;
-  color: white;
+  background-color: #fff;      /* white background */
   cursor: pointer;
-  padding: 12px;
+  padding: 12px 20px;
   width: 100%;
-  border: none;
+  border: 1px solid #ccc;
   text-align: left;
   outline: none;
   font-size: 16px;
@@ -328,31 +327,40 @@ ul.nav-links ul {
 }
 
 .collapsible:hover {
-  background-color: #555;
+  background-color: #f9f9f9;   /* slightly grey on hover */
+}
+
+.collapsible.active {
+  background-color: #f1f1f1;   /* slightly darker grey when open */
 }
 
 .collapsible hr {
-  margin: 6px 0 0 0;
+  margin: 5px 0 0 0;
   border: 0;
-  border-top: 1px solid #666;
+  border-top: 1px solid #ccc;
 }
 
+/* ---- Collapsible content ---- */
 .content {
-  padding: 0 15px;
-  display: none;
+  max-height: 0;              /* hidden by default */
   overflow: hidden;
-  background-color: #1f1f1f;
+  transition: max-height 0.25s ease-out;
+  background-color: #fff;      /* white background */
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   border-radius: 0 0 6px 6px;
+  padding: 0 20px;
   margin-bottom: 12px;
 }
 
 /* --- Dropdown Filter Styles --- */
 #searchDropdown {
-  background-color: #1f1f1f;
-  color: #eee;
-  border: 1px solid #444;
+  background-color: #fff;        /* white background */
+  color: inherit;                /* inherit text color from page */
+  border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 8px;
+  padding: 8px 12px;
   font-size: 15px;
   width: 100%;
   max-width: 300px;
@@ -361,32 +369,7 @@ ul.nav-links ul {
 
 #searchDropdown:hover,
 #searchDropdown:focus {
-  border-color: #777;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  border-color: #999;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   outline: none;
-}
-
-/* Ensure tables inside collapsibles take full width and look clean */
-.stats-container table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-
-.stats-container table td {
-  padding: 6px 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Optional: hover highlight on rows */
-.stats-container table tr:hover {
-  background-color: #f5f5f5;
-}
-
-/* Add spacing after the <hr> inside buttons */
-button.collapsible hr {
-  margin: 5px 0 0 0;
-  border: 0;
-  border-top: 1px solid #ccc;
 }
