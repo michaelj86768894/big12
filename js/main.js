@@ -98,3 +98,57 @@ async function loadStandings() {
 }
 
 loadStandings();
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+// Collapsible functionality
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+
+// Team dropdown functionality
+const dropdown = document.getElementById('searchDropdown');
+const allRows = document.querySelectorAll('.content tr');
+
+dropdown.addEventListener('change', function() {
+  const selected = this.value.toLowerCase();
+
+  allRows.forEach(row => {
+    const rowText = row.textContent.toLowerCase();
+    if (selected === '' || rowText.includes(selected)) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+
+  // Hide sections with no matches, show sections with matches
+  for (let i = 0; i < coll.length; i++) {
+    const header = coll[i];
+    const content = header.nextElementSibling;
+    const rowsInSection = content.querySelectorAll('tr');
+
+    // Check if any row in this section is visible
+    const hasMatch = Array.from(rowsInSection).some(row => row.style.display !== 'none');
+
+    if (hasMatch || selected === '') {
+      header.style.display = '';
+      content.style.display = '';
+      header.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      header.style.display = 'none';
+      content.style.display = 'none';
+    }
+  }
+});
