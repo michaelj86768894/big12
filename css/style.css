@@ -67,29 +67,11 @@ a:hover {
   background-color: #FFFFFF
 }
 
-/* uc0u55357 u56613  Highlight style for top 7 teams */
+/* Highlight style for top 7 teams */
 .standings-table tr.highlight td {
   background-color: #F0AE00 !important;
   color: #001433 !important;
   font-weight: bold;
-}
-
-a.evenyear {
-  color: black;
-  text-decoration: underline;
-}
-
-a.evenyear:hover {
-  color: #F0AE00;
-}
-
-a.oddyear {
-  color: white;
-  text-decoration: underline;
-}
-
-a.oddyear:hover {
-  color: #F0AE00;
 }
 
 /* ==================================== BANNER ==================================== */
