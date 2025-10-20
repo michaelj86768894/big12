@@ -312,47 +312,56 @@ ul.nav-links ul {
 }
 
 /* ==================================== COLLAPSIBLE SECTIONS ==================================== */
-
 .collapsible {
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  border: none;
-  padding-top: 1%;
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 24px;
-}
-
-.collapsible.active,
-.collapsible:hover {
-  background-color: #001433; /* PRIMARY */
+  background-color: #333;
   color: white;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.collapsible:before {
-  content: '\02c6'; /* Up caret */
-  color: #000000;
-  font-weight: bold;
-  margin-left: 5px;
+.collapsible:hover {
+  background-color: #555;
 }
 
-.collapsible.active:before {
-  content: "\02c7"; /* Down caret */
+.collapsible hr {
+  margin: 6px 0 0 0;
+  border: 0;
+  border-top: 1px solid #666;
 }
 
 .content {
-  max-height: 0;
+  padding: 0 15px;
+  display: none;
   overflow: hidden;
-  background-color: #ffffff;
-  transition: max-height 0.2s ease-out;
-  color: black;
+  background-color: #1f1f1f;
+  border-radius: 0 0 6px 6px;
+  margin-bottom: 12px;
 }
 
-.content a {
-  color: #007FC8; /* THIRD */
+/* --- Dropdown Filter Styles --- */
+#searchDropdown {
+  background-color: #1f1f1f;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 15px;
+  width: 100%;
+  max-width: 300px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content a:hover {
-  color: #F0AE00; /* SECONDARY */
+#searchDropdown:hover,
+#searchDropdown:focus {
+  border-color: #777;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  outline: none;
 }
