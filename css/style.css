@@ -310,3 +310,49 @@ ul.nav-links ul {
   font-size: 0.85em;
   color: #666;
 }
+
+/* ==================================== COLLAPSIBLE SECTIONS ==================================== */
+
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding-top: 1%;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 24px;
+}
+
+.collapsible.active,
+.collapsible:hover {
+  background-color: #001433; /* PRIMARY */
+  color: white;
+}
+
+.collapsible:before {
+  content: '\02c6'; /* Up caret */
+  color: #000000;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.collapsible.active:before {
+  content: "\02c7"; /* Down caret */
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: max-height 0.2s ease-out;
+  color: black;
+}
+
+.content a {
+  color: #007FC8; /* THIRD */
+}
+
+.content a:hover {
+  color: #F0AE00; /* SECONDARY */
+}
