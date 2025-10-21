@@ -1,0 +1,1058 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+
+/* ====== Global Styles ====== */
+body { 
+  font-family: Arial, Helvetica, sans-serif; 
+  color:#222; 
+  padding:20px; 
+  background:#ffffff; 
+}
+
+.wrap { max-width:1100px; margin:0 auto; }
+h1 { text-align:center; color:#002244; margin-bottom:10px; } /* PRIMARY */
+
+/* ====== Controls + Cards ====== */
+.controls { 
+  text-align:center; 
+  margin:15px 0; 
+  display:flex; 
+  flex-wrap:wrap; 
+  justify-content:center; 
+  gap:10px; 
+}
+
+select, input[type="text"] { 
+  padding:8px 10px; 
+  font-size:14px; 
+}
+
+.summary { 
+  display:flex; 
+  justify-content: center; 
+  gap:20px; 
+  margin:15px 0; 
+  flex-wrap:wrap; 
+}
+
+.card { 
+  background:#fff; 
+  padding:12px 16px; 
+  border-radius:8px; 
+  box-shadow:0 2px 6px rgba(0,0,0,0.06); 
+  min-width:180px; 
+  text-align:center; 
+}
+
+.card h3 { 
+  margin:0 0 6px; 
+  font-size:14px; 
+  color:#444; 
+}
+
+.card p { 
+  margin:0; 
+  font-weight:700; 
+  font-size:18px; 
+  color:#002244; /* PRIMARY */
+}
+
+/* ====== Your Original Table Styles ====== */
+table, th, td {
+  table-layout: auto;
+  border: 1px solid #002244; /* PRIMARY */
+  border-collapse: collapse;
+  padding: 5px;
+  color: black; /* Default text color */
+}
+
+th {
+  background-color: #002244; /* PRIMARY */
+  color: #ffffff;
+}
+
+/*tr:nth-child(odd) { background-color: #ffffff; }
+tr:nth-child(even) { background-color: #ffffff; }*/
+
+tr:hover td, tr:hover th {
+  background-color: #C60C30; /* SECONDARY */
+  color: #FFFFFF;
+  border: 1px solid #002244; 
+}
+
+.table-container {
+  display: inline-block;
+  margin: 3px;
+  vertical-align: top;
+}
+
+/* ====== Collapsible Styles ====== */
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding-top: 1%;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 24px;
+}
+
+.active, .collapsible:hover {
+  background-color: #002244; /* PRIMARY */
+  color: #ffffff;
+}
+
+.collapsible:before {
+  content: '\02c6';
+  color: #000000;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.active:before {
+  content: "\02c7";
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: max-height 0.2s ease-out;
+  color: black;
+}
+
+.content a { color: #C60C30; } /* SECONDARY */
+.content a:hover { color: #C60C30; } /* SECONDARY */
+
+/* ====== Head-to-Head Scoped Table Styles ====== */
+.h2h table {
+  width:100%; 
+  border-collapse:collapse; 
+  margin-top:10px; 
+  background:#fff; 
+  border-radius:8px; 
+  overflow:hidden; 
+  box-shadow:0 2px 8px rgba(0,0,0,0.06); 
+}
+
+.h2h th { 
+  background:#002244; /* PRIMARY */ 
+  color:#fff; 
+  padding:10px; 
+  text-align:left; 
+  font-weight:600; 
+}
+
+.h2h td { 
+  padding:10px; 
+  border-bottom:1px solid #eee; 
+}
+
+/*.h2h tr:nth-child(even) td { 
+  background:#ffffff; 
+}*/
+
+.h2h td.winner { 
+  font-weight:700; 
+  background:#FCC201 !important;
+/*	color: #00674F !important;*/
+}
+
+.no-data, .loading { 
+  text-align:center; 
+  margin-top:14px; 
+  color:#666; 
+}
+
+/* ====== Mobile ====== */
+@media (max-width:640px) {
+  th, td { font-size:13px; padding:8px; }
+  .card { min-width:140px; }
+  .controls { flex-direction: column; gap:8px; }
+}
+
+	
+	.box {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.first {
+  background: #002244;
+}
+
+.second {
+  background: #C60C30;
+}
+	
+.third {
+  background: #B0B7BC;
+}
+	</style>
+
+<meta charset="UTF-8">
+<title>Boston Brawlers</title>
+</head>
+
+<body>
+	
+	
+
+<p>The Boston Brawlers, a formidable presence in the professional fantasy football arena, proudly represent the Big 12's East division. Situated in the strategic hub of Brookfield, Wisconsin, the Brawlers have been an integral part of the Big 12 since its inception in 2012. As stalwarts in the East division, the Brawlers have etched their name in the annals of fantasy football, showcasing skill, strategy, and a commitment to excellence.</p>
+	
+<table>
+  <tbody>
+	  <tr>
+      <td colspan="2"><center><strong>Boston Brawlers</strong><br><img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=rwskma0m&raw=1" width="299" height="200" alt=""/></center></td>
+    </tr>
+    <tr>
+      <td><strong>Established</strong></td>
+      <td>2012</td>
+    </tr>
+    <tr>
+      <td><strong>Headquarters</strong></td>
+      <td>Brookfield, WI</td>
+    </tr>
+	  	  	<tr>
+		<td><strong>Team Colors</strong></td>
+		<td><div class="box first"></div>
+		<div class="box second"></div>
+		<div class="box third"></div>			
+		</td></tr>
+    <tr>
+      <th colspan="2"><strong><center>Division Affiliations</center></strong></th>
+    </tr>
+    <tr>
+      <td><strong>East</strong></td>
+      <td>2012-Present*</td>
+    </tr>
+
+	  <tr>
+      <th colspan="2"><strong><center>Personnel</center></strong></th>
+    </tr>  
+    <tr>
+      <td><strong>General Manager</strong></td>
+      <td>Chris Cholka</td>
+    </tr>
+	  <tr>
+      <th colspan="2"><strong><center>Team History</center></strong></th>
+    </tr> 
+    	  <tr>
+      <td colspan="2">Boston Brawlers (2012-2017, 2019-Present)<br>
+			 *Suspended operations (2018)</td>
+	  </tr>
+  	  <tr>
+      <th colspan="2"><strong><center>Championships</center></strong></th>
+    </tr> 
+    <tr>
+      <td><strong>Big 12 (0)</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Conference (0)</strong></td>
+      <td> </td>
+    </tr>
+	    <tr>
+      <td><strong>Division (1)</strong></td>
+      <td>2024</td>
+    </tr>
+		    <tr>
+      <td><strong>Playoffs (5)</strong></td>
+      <td>2015, 2016, 2017, 2019,<br>2024</td>
+    </tr>
+		    <tr>
+      <td><strong>Winning Seasons (4)</strong></td>
+      <td>2016, 2017, 2019, 2024</td>
+    </tr>
+	  	  <tr>
+      <td colspan="2"><center><img src="https://www.dropbox.com/scl/fi/89x0uahlz9hul0nmvfcaz/Boston-Helmet.png?rlkey=lua7hw842hkhzbdnhihdcu2ki&st=6de63kf1&raw=1" width="187" height="150" alt=""/></center></td>
+    </tr>
+
+	</tbody>
+</table>
+
+
+<p> </p>
+
+	
+	
+	<button class="collapsible"> Franchise History<hr></button>
+<div class="content">
+	
+<p>The Boston Brawlers are one of the original franchises in the Big 12, debuting in 2012 under GM Antoine Lee-Thomas. The early years were marked by significant struggles, with the team finishing 4–10 in its inaugural season and posting a league-worst 0–14 record in 2013. A change in leadership came in 2014, when John Udvare took over as GM, sparking a gradual turnaround.</p>
+
+	<p>Under Udvare’s guidance, Boston became a competitive force, reaching the playoffs in three consecutive seasons (2015–2017). Despite strong regular seasons—highlighted by back-to-back 8–5 campaigns in 2016 and 2017—the Brawlers failed to notch a postseason victory, exiting in the first round each time.</p>
+	
+	<p>In 2018, the franchise suspended operations after Commissioner Michael Bautch was unable to find a replacement GM in time for the season. The team returned in 2019, starting with Travis Gebel at GM before a midseason controversy led to Chris Cholka taking the helm. Under Cholka, Boston stabilized, clinching a playoff berth in 2019 before posting consistent 6–8 seasons from 2021 to 2023.</p>
+	
+	<p>The Brawlers’ best modern-era performance came in 2024, when they finished 9–5, captured a division title, and set a franchise points record in the playoffs despite falling to the eventual champion Tucson Sugar Skulls in a high-scoring first-round matchup (225–260). As the league transitions to dynasty play in 2026, Boston enters with a renewed sense of identity and a reputation as one of the league’s most resilient franchises.</p>
+	
+	</div>
+
+		<button class="collapsible"> List of Boston Seasons<hr></button>
+<div class="content">
+	
+<p>Embark on a chronological expedition through the seasons of the Boston Brawlers, an enigmatic force in the realm of professional fantasy football. This exhaustive list meticulously details the season-by-season records of the Brawlers franchise, spanning from their inaugural year in 2012 to the present day. Delve into the peaks of playoff triumphs, the transitions in leadership under various General Managers, and the recognition garnered through league awards. Unearth the captivating story of a team that has confronted adversity and embraced triumphs in the dynamic landscape of the Big 12.</p>
+
+	<table>
+	<tbody>
+		<tr>
+		<td bgcolor="#FFCBA4">Big 12 Champions</td>
+		<td bgcolor="#A2E4B8">Conference Champions</td>
+		<td bgcolor="#9BD3DD">Division Champions</td>
+		</tr>
+		</tbody>
+	</table>
+	<br>
+
+	
+	<table>
+  <tbody align="center">
+    <tr>
+      <th>Year</th>
+      <th>Div</th>
+      <th>W</th>
+      <th>L</th>
+      <th>Postseason</th>
+      <th>Awards</th>
+      <th>GM</th>
+    </tr>
+
+	  <tr>
+    <td>2012</td>
+    <td>East</td>
+    <td>4</td>
+    <td>10</td>
+	<td align="left"> </td>
+    <td> </td>
+    <td rowspan="2">Lee-Thomas</td>
+  </tr>
+
+	    <tr>
+    <td>2013</td>
+    <td>East</td>
+    <td>0</td>
+    <td>14</td>
+	<td align="left"> </td>
+    <td> </td>
+    </tr>
+	  
+	    <tr>
+    <td>2014</td>
+    <td>East</td>
+    <td>4</td>
+    <td>9</td>
+	<td align="left"> </td>
+    <td> </td>
+			<td rowspan="4">Udvare</td>
+    </tr>
+	  
+	    <tr>
+    <td>2015</td>
+    <td>East</td>
+    <td>6</td>
+    <td>7</td>
+	<td align="left">Round 1 vs Vegas 77-108 L</td>
+    <td> </td>
+    </tr>
+	  
+	    <tr>
+    <td>2016</td>
+    <td>East</td>
+    <td>8</td>
+    <td>5</td>
+	<td align="left">Round 1 vs Cedar Rapids 84-127 L</td>
+    <td> </td>
+    </tr>
+	  
+	    <tr>
+    <td>2017</td>
+    <td>East</td>
+    <td>8</td>
+    <td>5</td>
+	<td align="left">Round 1 vs Philadelphia 124-139 L</td>
+    <td> </td>
+    </tr>
+	  
+	  	    <tr>
+  <td colspan="7"><center>
+  Suspended Operations
+  </center></td>
+  </tr>
+	  
+	  
+	    <tr>
+    <td>2019</td>
+    <td>East</td>
+    <td>7</td>
+    <td>6</td>
+	<td align="left">Round 1 vs Vegas 116-106 W<br>
+			Round 2 vs Miami 115-116 L</td>
+    <td> </td>
+			<td>Cholka</td>
+    </tr>
+	  
+	    <tr>
+  <td colspan="7"><center>
+  Season Canceled
+  </center></td>
+  </tr>
+	  
+	  	    <tr>
+    <td>2021</td>
+    <td>East</td>
+    <td>6</td>
+    <td>8</td>
+	<td align="left"> </td>
+    <td> </td>
+    <td rowspan="4">Cholka</td>
+	  </tr>
+	  
+	  
+	  
+	  	  	    <tr>
+    <td>2022</td>
+    <td>East</td>
+    <td>6</td>
+    <td>8</td>
+	<td align="left"> </td>
+    <td> </td>
+	  </tr>
+	  
+	  
+	  
+	  	  	  	    <tr>
+    <td>2023</td>
+    <td>East</td>
+    <td>6</td>
+    <td>8</td>
+	<td align="left"> </td>
+    <td> </td>
+	  </tr>
+	  
+	  
+	  	  	  	    <tr>
+    <td>2024</td>
+    <td bgcolor="#9BD3DD">East</td>
+    <td>9</td>
+    <td>5</td>
+	<td align="left">Round 1 vs Tucson 225-260 L</td>
+    <td> </td>
+	  </tr>
+	  
+	  
+	  
+	  
+	  <tr>
+	  <td colspan="2">Season Record</td>
+	  <td>64</td>
+	  <td>85</td>
+	  </tr>
+	  
+	  	  <tr>
+	  <td colspan="2">Playoff Record</td>
+	  <td>0</td>
+	  <td>4</td>
+	  </tr>
+	  
+	  	  <tr>
+	  <td colspan="2">Total Record</td>
+	  <td>64</td>
+	  <td>89</td>
+	  </tr>
+	  
+  </tbody>
+</table>
+	
+	<p> </p>
+	</div>
+	
+	
+	
+<button class="collapsible"> Head to Head Records<hr></button>
+<div class="content">
+  <div class="wrap h2h">
+
+
+<div class="controls">
+  <label for="team1">Team 1:</label>
+  <select id="team1">
+    <option value="">— Select team —</option>
+  </select>
+
+  <label for="team2">Team 2:</label>
+  <select id="team2">
+    <option value="">— Select team —</option>
+    <option value="ALL_TEAMS">All Teams</option>
+  </select>
+
+  <label for="yearFilter">Year:</label>
+  <select id="yearFilter">
+    <option value="ALL_YEARS">— All Years —</option>
+  </select>
+
+  <label for="gameTypeFilter">Game Type:</label>
+  <select id="gameTypeFilter">
+    <option value="ALL_TYPES">— All Types —</option>
+  </select>
+
+  <input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
+</div>
+
+  <div class="summary" id="summaryArea" style="display:none;">
+    <div class="card" id="cardTeam1">
+      <h3 id="cardTeam1Name">Team 1</h3>
+      <p id="cardTeam1Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam1PF">0</span></div>
+    </div>
+
+    <div class="card" id="cardTie">
+      <h3 style="color:#666">Head-to-Head</h3>
+      <p id="head2headSummary">0 games</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Most recent: <span id="mostRecent">N/A</span></div>
+    </div>
+
+    <div class="card" id="cardTeam2">
+      <h3 id="cardTeam2Name">Team 2</h3>
+      <p id="cardTeam2Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
+    </div>
+  </div>
+
+  <div class="loading" id="loadingMsg">Loading match data...</div>
+
+  <div id="matchTableWrap" style="display:none;">
+<table id="matchTable">
+  <thead>
+    <tr>
+      <th style="width:120px">Date</th>
+      <th>Team 1</th>
+      <th>Team 2</th>
+      <th style="width:120px">Score</th>
+      <th>Game Type</th> <!-- ✅ new column -->
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+    <div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+	  <br>
+      </div>
+    </div>
+  </div>
+
+	
+
+	
+	
+		<button class="collapsible"> Players/General Managers of Note<hr></button>
+<div class="content">
+<!--<h3>Current Roster</h3>
+	
+
+<div class="table-container">
+<table>
+<tr>
+<th colspan="2">Quarterbacks</th>
+</tr>
+<tr>
+<td>#4</td><td>Derek Carr</td>
+</tr>
+<tr>
+<td>#7</td><td>Geno Smith</td>
+</tr>
+<tr>
+<td>#10</td><td>Jordan Love</td>
+</tr>
+</table>
+</div>
+
+<div class="table-container">
+<table>
+<tr>
+<th colspan="2">Running Backs</th>
+</tr>
+<tr>
+<td>#4</td><td>Gus Edwards</td>
+</tr>
+<tr>
+<td>#26</td><td>Devin Singletary</td>
+</tr>
+<tr>
+<td>#28</td><td>Joe Mixon</td>
+</tr>
+<tr>
+<td>#29</td><td>Kareem Hunt</td>
+</tr>
+<tr>
+<td>#30</td><td>Austin Ekeler</td>
+</tr>
+<tr>
+<td>#41</td><td>Alvin Kamara</td>
+</tr>
+</table>
+</div>
+
+<div class="table-container">
+<table>
+<tr>
+<th colspan="2">Wide Receivers</th>
+</tr>
+<tr>
+<td>#0</td><td>Gabe Davis</td>
+</tr>
+<tr>
+<td>#1</td><td>Stefon Diggs</td>
+</tr>
+<tr>
+<td>#5</td><td>Garrett Wilson</td>
+</tr>
+<tr>
+<td>#11</td><td>Jayden Reed</td>
+</tr>
+<tr>
+<td>#15</td><td>Ladd McConkey</td>
+</tr>
+<tr>
+<td>#17</td><td>Puka Nacua</td>
+</tr>
+<tr>
+<td>#17</td><td>Xavier Legette</td>
+</tr>
+</table>
+</div>
+	
+	
+	<br>
+	
+<div class="table-container">
+<table>
+<tr>
+<th colspan="2">Tight Ends</th>
+</tr>
+<tr>
+<td>#85</td><td>George Kittle</td>
+</tr>
+<tr>
+<td>#85</td><td>Tucker Kraft</td>
+</tr>
+<tr>
+<td>#86</td><td>Dalton Shultz</td>
+</tr>
+</table>
+</div>
+
+	
+<div class="table-container">
+<table>
+<tr>
+<th colspan="2">Defense</th>
+</tr>
+<tr>
+<td>#3</td><td>Budda Baker (S)</td>
+</tr>
+<tr>
+<td>#7</td><td>Kyzir White (LB)</td>
+</tr>
+<tr>
+<td>#7</td><td>Quay Walker (LB)</td>
+</tr>
+<tr>
+<td>#23</td><td>Foyesade Oluokun (LB)</td>
+</tr>
+<tr>
+<td>#32</td><td>Reed Blankenship (32)</td>
+</tr>
+<tr>
+<td>#43</td><td>Terrel Bernard (LB)</td>
+</tr>
+<tr>
+<td>#55</td><td>Cody Barton (LB)</td>
+</tr>
+</table>
+</div>
+
+	
+<div class="table-container">
+<table>
+<tr>
+<th colspan="2">Kickers</th>
+</tr>
+<tr>
+<td>#8</td><td>Cairo Santos</td>
+</tr>
+</table>
+</div>
+	!-->
+	
+	<h3>List of General Managers</h3>
+		
+	<p>Throughout its fantasy football journey, the Boston Brawlers has been steered by noteworthy General Managers, each leaving a unique imprint on the franchise's narrative. From Antoine Lee-Thomas navigating the early challenges to John Udvare ushering in a period of relative success, and the subsequent transitions under Travis Gebel and Chris Cholka, these leaders have played pivotal roles in shaping the team's destiny. Their tenures, marked by both trials and triumphs, contribute to the rich tapestry of the Boston Brawlers' history in the competitive realm of the Big 12.</p>
+	
+	
+	<table>
+  <tbody align="center">
+    <tr>
+      <th>General Manager</th>
+      <th>Year</th>
+      <th>W</th>
+      <th>L</th>
+		      <th>W%</th>
+	  <th>GMoY</th>
+      <th>Big 12 Champs</th>
+      <th>Conf. Champs</th>
+      <th>Div. Champs</th>
+      <th>Playoffs</th>
+		<th>Winning Seasons</th>
+    </tr>
+	  
+	 <tr>
+      <td>Chris Cholka</td>
+      <td>2019-Present</td>
+      <td>34</td>
+      <td>36</td>
+		       <td>0.486</td>
+      <td>0</td>		
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+		 <td>2</td>
+    </tr>
+	  <tr>
+      <td>John Udvare</td>
+      <td>2014-2017</td>
+      <td>26</td>
+      <td>29</td>
+		       <td>0.473</td>		  
+      <td>0</td>		
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+		 <td>2</td>
+    </tr>
+	  	  <tr>
+      <td>Antoine Lee-Thomas</td>
+      <td>2012-2013</td>
+      <td>4</td>
+      <td>24</td>
+		       <td>0.143</td>
+			  <td>0</td>		
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+		 <td>0</td>
+    </tr>
+	  
+   </tbody>
+</table>
+	<br>
+			<p><img src="https://www.dropbox.com/scl/fi/zs9wk8r243g5yh50xqfap/Boston-Jersey-AL.png?rlkey=lk4ufkzlmepcmt8m0lq7jqc3i&st=f6pem500&raw=1" width="154" height="150" alt=""/>
+				
+				<img src="https://www.dropbox.com/scl/fi/jk9h16ckph02efhnu7wq0/Boston-Jersey-JU.png?rlkey=iz12tad0dh4cls8jsgbw3n23z&st=buku9ul4&raw=1" width="154" height="150" alt=""/>
+				
+				<img src="https://www.dropbox.com/scl/fi/kqmrmc4r4poxtmiggb9go/Boston-Jersey-CC.png?rlkey=ey7idk7u5zm7ia49twhf9pyju&st=39ocbl1n&raw=1" width="154" height="150" alt=""/></p>
+	
+	</div>
+	
+		<button class="collapsible"> Awards & Honors<hr></button>
+
+	<div class="content">
+
+		
+
+	
+	<h3>Big 12 MVPs</h3>
+		<table>
+  <tbody align="center">
+    <tr>
+    <th>Year</th>
+	<th>Player</th>
+	<th>Position</th>
+	<th>Points Scored</th>
+    </tr>
+
+	  <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+	  
+	  
+   </tbody>
+</table>
+
+	
+						<h3>GM of the Year Award Winners</h3>
+		<table>
+  <tbody align="center">
+    <tr>
+    <th>Year</th>
+	<th>General Manager</th>
+	<th>Record</th>
+    </tr>
+
+	  <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+
+   </tbody>
+</table>
+
+		
+		
+		
+<!--		<h3>Big 12 Championships</h3> !-->
+
+	
+	</div>
+	
+
+	
+	
+	
+	
+	
+<script>
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+let allMatches = [];
+let teams = [];
+
+function parseCsvToObjects(csvText) {
+  const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
+  const headers = lines.shift().split(",").map(h => h.trim());
+  return lines.map(line => {
+    const cols = line.split(",").map(c => c.trim());
+    const obj = {};
+    headers.forEach((h,i)=> obj[h]=cols[i]??"");
+    return obj;
+  });
+}
+
+function parseDate_mmddyy(s) {
+  if (!s) return null;
+  const parts = s.split("/").map(p=>parseInt(p,10));
+  if (parts.length!==3 || parts.some(isNaN)) return null;
+  let [m,d,y]=parts;
+  if (y<100) y+=2000;
+  return new Date(y,m-1,d);
+}
+
+function formatDateShort(dateObj) {
+  if (!dateObj) return "N/A";
+  const m=String(dateObj.getMonth()+1).padStart(2,"0");
+  const d=String(dateObj.getDate()).padStart(2,"0");
+  const yy=String(dateObj.getFullYear()).slice(-2);
+  return `${m}/${d}/${yy}`;
+}
+
+async function loadCsvAndInit() {
+  try {
+    const res = await fetch(csvUrl);
+    if(!res.ok) throw new Error("Network error "+res.status);
+    const text = await res.text();
+    const rows = parseCsvToObjects(text);
+
+    allMatches = rows.map(r=>{
+      const d=parseDate_mmddyy(r["Date"]);
+      return {
+        rawDate: r["Date"]||"",
+        date: d,
+        team1: (r["Team 1"]||"").trim(),
+        team2: (r["Team 2"]||"").trim(),
+        score1: parseInt(r["Team 1 Score"]||"0",10),
+        score2: parseInt(r["Team 2 Score"]||"0",10),
+        gameType: (r["Game Type"]||"").trim() // ✅ new field
+      };
+    }).filter(m=>m.team1 && m.team2);
+
+    const teamSet=new Set();
+    allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
+    teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
+
+    populateDropdowns();
+    populateYearDropdown();
+    populateGameTypeDropdown(); // ✅ populate Game Type
+    document.getElementById("loadingMsg").style.display="none";
+  } catch(err) {
+    document.getElementById("loadingMsg").textContent="Error loading match data.";
+    console.error(err);
+  }
+}
+
+function populateDropdowns() {
+  const t1=document.getElementById("team1");
+  const t2=document.getElementById("team2");
+
+  teams.forEach(team=>{
+    const o1=document.createElement("option"); o1.value=team; o1.textContent=team; t1.appendChild(o1);
+    const o2=document.createElement("option"); o2.value=team; o2.textContent=team; t2.appendChild(o2);
+  });
+
+  t1.value="Boston Brawlers"; // default
+  t1.addEventListener("change", updateDisplay);
+  t2.addEventListener("change", updateDisplay);
+  document.getElementById("matchFilter").addEventListener("input", updateDisplay);
+  document.getElementById("yearFilter").addEventListener("change", updateDisplay);
+  document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay); // ✅ new
+
+  updateDisplay();
+}
+
+function populateYearDropdown(){
+  const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
+  const yearDropdown=document.getElementById("yearFilter");
+  Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
+    const opt=document.createElement("option");
+    opt.value=y;
+    opt.textContent=y;
+    yearDropdown.appendChild(opt);
+  });
+}
+
+function populateGameTypeDropdown() {
+  const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
+  const typeDropdown = document.getElementById("gameTypeFilter");
+
+  Array.from(typeSet).sort().forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    typeDropdown.appendChild(opt);
+  });
+
+  typeDropdown.value = "ALL_TYPES";
+}
+
+function getWinnerClass(m){
+  if(m.score1>m.score2) return "winner";
+  if(m.score2>m.score1) return "winner";
+  return "";
+}
+
+function updateDisplay(){
+  const teamA = document.getElementById("team1").value;
+  const teamB = document.getElementById("team2").value;
+  const yearVal = document.getElementById("yearFilter").value;
+  const gameTypeVal = document.getElementById("gameTypeFilter").value; // ✅
+  const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
+
+  let filtered = allMatches.filter(m=>
+    (m.team1===teamA && (teamB==="ALL_TEAMS" || m.team2===teamB)) ||
+    (m.team2===teamA && (teamB==="ALL_TEAMS" || m.team1===teamB))
+  );
+
+  if(yearVal!=="ALL_YEARS"){
+    filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
+  }
+
+  if(gameTypeVal !== "ALL_TYPES") { // ✅ filter Game Type
+    filtered = filtered.filter(m => m.gameType === gameTypeVal);
+  }
+
+  if(searchVal!==""){
+    filtered = filtered.filter(m=>(
+      m.team1.toLowerCase().includes(searchVal) ||
+      m.team2.toLowerCase().includes(searchVal)
+    ));
+  }
+
+  filtered.sort((a,b)=>b.date - a.date);
+
+  // --- SUMMARY CALCULATION ---
+  if (filtered.length > 0) {
+    let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
+    filtered.forEach(m => {
+      pfA += (m.team1 === teamA ? m.score1 : m.score2);
+      pfB += (m.team1 === teamB ? m.score1 : m.score2);
+
+      if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
+      else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
+
+      if (teamB !== "ALL_TEAMS") {
+        if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
+        else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
+      }
+    });
+
+    document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
+    document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
+    document.getElementById("cardTeam1PF").textContent = pfA;
+
+    if (teamB === "ALL_TEAMS") {
+      document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
+      document.getElementById("cardTeam2Record").textContent = `N/A`;
+      document.getElementById("cardTeam2PF").textContent = `N/A`;
+    } else {
+      document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
+      document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
+      document.getElementById("cardTeam2PF").textContent = pfB;
+    }
+
+    document.getElementById("summaryArea").style.display = "flex";
+  } else {
+    document.getElementById("summaryArea").style.display = "none";
+  }
+
+  const tbody = document.querySelector("#matchTable tbody");
+  tbody.innerHTML="";
+  filtered.forEach(m=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${formatDateShort(m.date)}</td>
+      <td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
+      <td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
+      <td>${m.score1} - ${m.score2}</td>
+      <td>${m.gameType || ""}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("matchTableWrap").style.display="block";
+  document.getElementById("noMatches").style.display=filtered.length===0?"block":"none";
+  document.getElementById("summaryArea").style.display=filtered.length>0?"flex":"none";
+
+  refreshCollapsibleHeight();
+}
+
+loadCsvAndInit();
+
+// --- Collapsible logic ---
+var coll = document.getElementsByClassName("collapsible");
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+
+// --- helper to fix cutoff issue ---
+function refreshCollapsibleHeight() {
+  document.querySelectorAll(".collapsible.active + .content").forEach(content => {
+    content.style.maxHeight = content.scrollHeight + "px";
+  });
+}
+</script>
+	
+	
+	
+	
+	
+	
+	</body>
+</html>
