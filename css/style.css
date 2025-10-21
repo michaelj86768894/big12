@@ -313,16 +313,15 @@ ul.nav-links ul {
 
 /* ==================================== COLLAPSIBLE SECTIONS ==================================== */
 .collapsible {
-  background-color: #fff;      /* white background */
   cursor: pointer;
   padding: 12px 20px;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* ===================Try Deleting This on GitHub*/
   text-align: left;
   outline: none;
   font-size: 16px;
   border-radius: 6px;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -330,22 +329,13 @@ ul.nav-links ul {
   background-color: #f9f9f9;   /* slightly grey on hover */
 }
 
-.collapsible.active {
-  background-color: #f1f1f1;   /* slightly darker grey when open */
-}
-
-.collapsible hr {
-  margin: 5px 0 0 0;
-  border: 0;
-  border-top: 1px solid #ccc;
-}
 
 /* ---- Collapsible content ---- */
 .content {
-  max-height: 0;              /* hidden by default */
+  max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s ease-out;
-  background-color: #fff;      /* white background */
+  background-color: #fff;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -354,10 +344,30 @@ ul.nav-links ul {
   margin-bottom: 12px;
 }
 
+/* --- Match collapsible tables to site tables --- */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #007FC8;
+}
+
+.content th,
+.content td {
+  border: 1px solid #007FC8;
+  padding: 5px;
+  color: #001433;
+}
+
+.content th {
+  background-color: #001433;
+  color: #FFFFFF;
+  border: 1px solid #F0AE00;
+}
+
 /* --- Dropdown Filter Styles --- */
 #searchDropdown {
-  background-color: #fff;        /* white background */
-  color: inherit;                /* inherit text color from page */
+  background-color: #fff;        /* white background ===================Try Deleting This on GitHub*/
+  color: inherit;                /* inherit text color from page ===================Try Deleting This on GitHub*/
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 8px 12px;
