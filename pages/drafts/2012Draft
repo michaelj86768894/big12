@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+
+/* existing table styles */
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  margin-bottom: 20px; /* spacing between tables */
+}
+
+th, td {
+  border: 1px solid #001433; /* PRIMARY */
+  padding: 5px;
+  color: black;
+}
+
+tr:nth-child(odd) {background-color: #ffffff;color: #000000}
+tr:nth-child(even) {background-color: #D0D1D3;color: #000000}
+tr:hover {background-color: #F0AE00;color: #FFFFFF} /*SECONDARY*/
+th {background-color: #001433;color: #FFFFFF} /*PRIMARY*/
+
+/* NEW: flex container for side-by-side layout */
+.table-container {
+  display: flex;
+  flex-wrap: wrap;     /* allow wrap on smaller screens */
+  gap: 20px;           /* space between tables */
+}
+
+.table-container table {
+  flex: 1 1 300px;     /* grow, shrink, min width */
+}
+
+.box {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.team_fourth {
+background: #ffffff;
+}
+
+.team_second {
+background: #F0AE00;
+}
+
+.team_third {
+background: #007FC8;
+}
+	
+.team_first {
+background: #001433;
+}
+
+</style>
+
+<meta charset="UTF-8">
+<title>2012 Big 12 Draft</title>
+</head>
+
+<body>
+
+	<p>The 2012 Big 12 Draft marked the inaugural gathering of Big 12 General Managers for the selection of eligible football players. Conducted online on Sunday, September 2, 2012, at 9:00 am CST, the draft showcased the strategic choices made by each team. Los Angeles secured the coveted first overall pick and utilized it to select Arian Foster from Houston, setting the stage for the league's first-ever draft class.</p>
+	
+<div class="table-container">
+<table>
+<tr><th colspan="5">Round 1</th></tr>
+    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Los Angeles</td>
+      <td>Arian Foster</td>
+      <td>RB</td>
+      <td>HOU</td>		
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Green Bay</td>
+      <td>Ray Rice</td>
+      <td>RB</td>
+      <td>BAL</td>		
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Chicago</td>
+      <td>LeSean McCoy</td>
+      <td>RB</td>
+      <td>PHL</td>		
+    </tr>
+     <tr>
+      <td>4</td>
+      <td>Vegas</td>
+      <td>Tony Romo</td>
+      <td>QB</td>
+      <td>DAL</td>		
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Milwaukee</td>
+      <td>Aaron Rodgers</td>
+      <td>QB</td>
+      <td>GB</td>		
+    </tr>
+     <tr>
+      <td>6</td>
+      <td>Philadelphia</td>
+      <td>Matt Forte</td>
+      <td>RB</td>
+      <td>CHI</td>		
+    </tr>
+      <tr>
+      <td>7</td>
+      <td>Cleveland</td>
+      <td>Tom Brady</td>
+      <td>QB</td>
+      <td>NE</td>		
+    </tr>
+      <tr>
+      <td>8</td>
+      <td>Boston</td>
+      <td>Chris Johnson</td>
+      <td>RB</td>
+      <td>TEN</td>		
+    </tr>
+       <tr>
+      <td>9</td>
+      <td>Cedar Rapids</td>
+      <td>Packers D/ST</td>
+      <td>D/ST</td>
+      <td>GB</td>		
+    </tr>
+      <tr>
+      <td>10</td>
+      <td>Northern Arizona </td>
+      <td>Drew Brees</td>
+      <td>QB</td>
+      <td>NO</td>		
+    </tr>
+      <tr>
+      <td>11</td>
+      <td>Brooklyn</td>
+      <td>Matthew Stafford</td>
+      <td>QB</td>
+      <td>DET</td>		
+    </tr>
+      <tr>
+      <td>12</td>
+      <td>Miami</td>
+      <td>Miles Austin</td>
+      <td>QB</td>
+      <td>DAL</td>		
+    </tr>
+</table>
+	
+	
+	
+<table>
+<tr><th colspan="5">Round 2</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr>
+	<td>1</td>
+	<td>Miami</td>
+	<td>Dez Bryant</td>
+	<td>WR</td>
+	<td>DAL</td>
+</tr>
+<tr><td>2</td><td>Brooklyn</td><td>49ers D/ST</td><td>D/ST</td><td>SF</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Peyton Hillis</td><td>RB</td><td>KC</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Tony Gonzalez</td><td>TE</td><td>ATL</td></tr>
+<tr><td>5</td><td>Boston</td><td>Eli Manning</td><td>QB</td><td>NYG</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Maurice Jones-Drew</td><td>RB</td><td>JAC</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Cam Newton</td><td>QB</td><td>CAR</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>Calvin Johnson</td><td>WR</td><td>DET</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Greg Jennings</td><td>WR</td><td>GB</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Larry Fitzgerald</td><td>WR</td><td>ARI</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Andre Johnson</td><td>WR</td><td>HOU</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Peyton Manning</td><td>QB</td><td>DEN</td></tr>
+</table>
+	
+	
+	<table>
+<tr><th colspan="5">Round 3</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Marshawn Lynch</td><td>RB</td><td>SEA</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Roddy White</td><td>WR</td><td>ATL</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Rob Gronkowski</td><td>TE</td><td>NE</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Jordy Ne</td><td>WR</td><td>GB</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>DeMarco Murray</td><td>RB</td><td>DAL</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Jamaal Charles</td><td>RB</td><td>KC</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Michael Vick</td><td>QB</td><td>PHL</td></tr>
+<tr><td>8</td><td>Boston</td><td>Antonio Brown</td><td>WR</td><td>PIT</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Stephen Gostkowski</td><td>K</td><td>NE</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Jimmy Graham</td><td>TE</td><td>NO</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Wes Welker</td><td>WR</td><td>NE</td></tr>
+<tr><td>12</td><td>Miami</td><td>Steve Smith</td><td>WR</td><td>CAR</td></tr>
+</table>
+	
+	
+		<table>
+<tr><th colspan="5">Round 4</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Philip Rivers</td><td>QB</td><td>SD</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Adrian Peterson*</td><td>RB</td><td>MIN</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Frank Gore</td><td>RB</td><td>SF</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Matt Ryan</td><td>QB</td><td>ATL</td></tr>
+<tr><td>5</td><td>Boston</td><td>Giants D/ST</td><td>D/ST</td><td>NYG</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Darren McFadden</td><td>RB</td><td>OAK</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Matt Schaub</td><td>QB</td><td>HOU</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>A.J. Green</td><td>WR</td><td>CIN</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Ben Roethlisberger</td><td>QB</td><td>PIT</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Mike Wallace</td><td>WR</td><td>PIT</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Hakeem Nicks</td><td>WR</td><td>NYG</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Victor Cruz</td><td>WR</td><td>NYG</td></tr>
+			<tr><td colspan="5">*MVP</td></tr>
+</table>
+	
+	
+		<table>
+<tr><th colspan="5">Round 5</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Steven Jackson</td><td>RB</td><td>STL</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Ryan Mathews</td><td>RB</td><td>SD</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Julio Jones</td><td>WR</td><td>ATL</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Fred Jackson</td><td>RB</td><td>BUF</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Stevan Ridley</td><td>RB</td><td>NE</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Michael Turner</td><td>RB</td><td>ATL</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Brandon Marshall</td><td>WR</td><td>CHI</td></tr>
+<tr><td>8</td><td>Boston</td><td>Mason Crosby</td><td>K</td><td>GB</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Broncos D/ST</td><td>D/ST</td><td>DEN</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Demaryius Thomas</td><td>WR</td><td>DEN</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Jermichael Finley</td><td>TE</td><td>GB</td></tr>
+<tr><td>12</td><td>Miami</td><td>Trent Richardson</td><td>RB</td><td>CLE</td></tr>
+</table>
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 6</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Antonio Gates</td><td>TE</td><td>SD</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Marques Colston</td><td>WR</td><td>NO</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Ahmad Bradshaw</td><td>RB</td><td>NYG</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Jay Cutler</td><td>QB</td><td>CHI</td></tr>
+<tr><td>5</td><td>Boston</td><td>Vernon Davis</td><td>TE</td><td>SF</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Darren Sproles</td><td>RB</td><td>NO</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Brandon Pettigrew</td><td>TE</td><td>DET</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>Jonathan Stewart</td><td>RB</td><td>CAR</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Willis McGahee</td><td>RB</td><td>DEN</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Reggie Bush</td><td>RB</td><td>MIA</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Brandon Lloyd</td><td>WR</td><td>NE</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Vincent Jackson</td><td>WR</td><td>TB</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 7</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Jason Witten</td><td>TE</td><td>DAL</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>BenJarvus Green-Ellis</td><td>RB</td><td>CIN</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Percy Harvin</td><td>WR</td><td>MIN</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Bills D/ST</td><td>D/ST</td><td>BUF</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Greg Olsen</td><td>TE</td><td>CAR</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Malcom Floyd</td><td>WR</td><td>SD</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Dwayne Bowe</td><td>WR</td><td>KC</td></tr>
+<tr><td>8</td><td>Boston</td><td>Ravens D/ST</td><td>D/ST</td><td>BAL</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Jeremy Maclin</td><td>WR</td><td>PHL</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Steve Johnson</td><td>WR</td><td>BUF</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>David Akers</td><td>K</td><td>SF</td></tr>
+<tr><td>12</td><td>Miami</td><td>Sebastian Janikowski</td><td>K</td><td>OAK</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 8</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Texans D/ST</td><td>D/ST</td><td>HOU</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Kevin Smith</td><td>RB</td><td>DET</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Steelers D/ST</td><td>D/ST</td><td>PIT</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Eric Decker</td><td>WR</td><td>DEN</td></tr>
+<tr><td>5</td><td>Boston</td><td>Cedric Benson</td><td>RB</td><td>GB</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Shonn Greene</td><td>RB</td><td>NYJ</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>DeSean Jackson</td><td>WR</td><td>PHL</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>Bears D/ST</td><td>D/ST</td><td>CHI</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Roy Helu</td><td>RB</td><td>WSH</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Ben Tate</td><td>RB</td><td>HOU</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Doug Martin</td><td>RB</td><td>TB</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Eagles D/ST</td><td>D/ST</td><td>PHL</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 9</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>DeAngelo Williams</td><td>RB</td><td>CAR</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Aaron Hernandez</td><td>TE</td><td>NE</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Beanie Wells</td><td>RB</td><td>ARI</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Jahvid Best</td><td>RB</td><td>DET</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Robert Meachem</td><td>WR</td><td>SD</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Brent Celek</td><td>TE</td><td>PHL</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Pierre Garcon</td><td>WR</td><td>WSH</td></tr>
+<tr><td>8</td><td>Boston</td><td>James Jones</td><td>WR</td><td>GB</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Isaac Redman</td><td>RB</td><td>PIT</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Randall Cobb</td><td>WR</td><td>GB</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Robert Griffin III</td><td>QB</td><td>WSH</td></tr>
+<tr><td>12</td><td>Miami</td><td>Michael Bush</td><td>RB</td><td>CHI</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 10</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Torrey Smith</td><td>WR</td><td>BAL</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Michael Crabtree</td><td>WR</td><td>SF</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Alex Smith</td><td>QB</td><td>SF</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Mark Ingram</td><td>RB</td><td>NO</td></tr>
+<tr><td>5</td><td>Boston</td><td>Joe Flacco</td><td>QB</td><td>BAL</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Kenny Britt</td><td>WR</td><td>TEN</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Cowboys D/ST</td><td>D/ST</td><td>DAL</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>C.J. Spiller</td><td>RB</td><td>BUF</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Denarius Moore</td><td>WR</td><td>OAK</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Josh Freeman</td><td>QB</td><td>TB</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Santonio Holmes</td><td>WR</td><td>NYJ</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Lance Moore</td><td>WR</td><td>NO</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 11</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Matt Flynn</td><td>QB</td><td>SEA</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Andy Dalton</td><td>QB</td><td>CIN</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Toby Gerhart</td><td>RB</td><td>MIN</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Anquan Boldin</td><td>WR</td><td>BAL</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Reggie Wayne</td><td>WR</td><td>IND</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Lions D/ST</td><td>D/ST</td><td>DET</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Nate Washington</td><td>WR</td><td>TEN</td></tr>
+<tr><td>8</td><td>Boston</td><td>Titus Young</td><td>WR</td><td>DET</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Donald Brown</td><td>RB</td><td>IND</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Owen Daniels</td><td>TE</td><td>HOU</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Randy Moss</td><td>WR</td><td>SF</td></tr>
+<tr><td>12</td><td>Miami</td><td>David Wilson</td><td>RB</td><td>NYG</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 12</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Shane Vereen</td><td>RB</td><td>NE</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Pierre Thomas</td><td>RB</td><td>NO</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Garrett Hartley</td><td>K</td><td>NO</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Felix Jones</td><td>RB</td><td>DAL</td></tr>
+<tr><td>5</td><td>Boston</td><td>Matt Bryant</td><td>K</td><td>ATL</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Fred Davis</td><td>TE</td><td>WSH</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Daniel Thomas</td><td>RB</td><td>MIA</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>Jared Cook</td><td>TE</td><td>TEN</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Sidney Rice</td><td>WR</td><td>SEA</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Ryan Williams</td><td>RB</td><td>ARI</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Darrius Heyward-Bey</td><td>WR</td><td>OAK</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Dan Bailey</td><td>K</td><td>DAL</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 13</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Justin Blackmon</td><td>WR</td><td>JAC</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Mario Manningham</td><td>WR</td><td>SF</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Leonard Hankerson</td><td>WR</td><td>WSH</td></tr>
+<tr><td>4</td><td>Vegas</td><td>James Starks</td><td>RB</td><td>GB</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Ryan Fitzpatrick</td><td>QB</td><td>BUF</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Rueben Randle</td><td>WR</td><td>NYG</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Jacob Tamme</td><td>TE</td><td>DEN</td></tr>
+<tr><td>8</td><td>Boston</td><td>Mike Tolbert</td><td>RB</td><td>CAR</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Rams D/ST</td><td>D/ST</td><td>STL</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Nate Burleson</td><td>WR</td><td>DET</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Bernard Scott</td><td>RB</td><td>CIN</td></tr>
+<tr><td>12</td><td>Miami</td><td>LeGarrette Blount</td><td>RB</td><td>TB</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 14</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Laurent Robinson</td><td>WR</td><td>JAC</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Carson Palmer</td><td>QB</td><td>OAK</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Rashad Jennings</td><td>RB</td><td>JAC</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Mike Williams</td><td>WR</td><td>TB</td></tr>
+<tr><td>5</td><td>Boston</td><td>Brandon Jacobs</td><td>RB</td><td>SF</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Seahawks D/ST</td><td>D/ST</td><td>SEA</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Jon Baldwin</td><td>WR</td><td>KC</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>Jets D/ST</td><td>D/ST</td><td>NYJ</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Falcons D/ST</td><td>D/ST</td><td>ATL</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Sam Bradford</td><td>QB</td><td>STL</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Andrew Luck</td><td>QB</td><td>IND</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Dustin Keller</td><td>TE</td><td>NYJ</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 15</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Patriots D/ST</td><td>D/ST</td><td>NE</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Matt Cassel</td><td>QB</td><td>KC</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Alex Henery</td><td>K</td><td>PHL</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Mike Goodson</td><td>RB</td><td>OAK</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Rob Bironas</td><td>K</td><td>TEN</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Matt Prater</td><td>K</td><td>DEN</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Robbie Gould</td><td>K</td><td>CHI</td></tr>
+<tr><td>8</td><td>Boston</td><td>Ed Dickson</td><td>TE</td><td>BAL</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Martellus Bennett</td><td>TE</td><td>NYG</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Raiders D/ST</td><td>D/ST</td><td>OAK</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Russell Wilson</td><td>QB</td><td>SEA</td></tr>
+<tr><td>12</td><td>Miami</td><td>Greg Little</td><td>WR</td><td>CLE</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 16</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Miami</td><td>Jonathan Dwyer</td><td>RB</td><td>PIT</td></tr>
+<tr><td>2</td><td>Brooklyn</td><td>Kellen Winslow</td><td>TE</td><td>FA</td></tr>
+<tr><td>3</td><td>Northern Arizona</td><td>Lawrence Tynes</td><td>K</td><td>NYG</td></tr>
+<tr><td>4</td><td>Cedar Rapids</td><td>Brian Quick</td><td>WR</td><td>STL</td></tr>
+<tr><td>5</td><td>Boston</td><td>Kendall Wright</td><td>WR</td><td>TEN</td></tr>
+<tr><td>6</td><td>Cleveland</td><td>Mike Nugent</td><td>K</td><td>CIN</td></tr>
+<tr><td>7</td><td>Philadelphia</td><td>Neil Rackers</td><td>K</td><td>FA</td></tr>
+<tr><td>8</td><td>Milwaukee</td><td>Davone Bess</td><td>WR</td><td>MIA</td></tr>
+<tr><td>9</td><td>Vegas</td><td>Jermaine Gresham</td><td>TE</td><td>CIN</td></tr>
+<tr><td>10</td><td>Chicago</td><td>Rashard Mendenhall</td><td>RB</td><td>PIT</td></tr>
+<tr><td>11</td><td>Green Bay</td><td>Jason Hanson</td><td>K</td><td>DET</td></tr>
+<tr><td>12</td><td>Los Angeles</td><td>Brandon LaFell</td><td>WR</td><td>CAR</td></tr>
+</table>
+	
+	
+	
+	
+		<table>
+<tr><th colspan="5">Round 17</th></tr>
+	    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+<tr><td>1</td><td>Los Angeles</td><td>Evan Royster</td><td>RB</td><td>WSH</td></tr>
+<tr><td>2</td><td>Green Bay</td><td>Chiefs D/ST</td><td>D/ST</td><td>KC</td></tr>
+<tr><td>3</td><td>Chicago</td><td>Cardinals D/ST</td><td>D/ST</td><td>ARI</td></tr>
+<tr><td>4</td><td>Vegas</td><td>Nate Kaeding</td><td>K</td><td>MIA</td></tr>
+<tr><td>5</td><td>Milwaukee</td><td>Ronnie Brown</td><td>RB</td><td>SD</td></tr>
+<tr><td>6</td><td>Philadelphia</td><td>Tim Hightower</td><td>RB</td><td>FA</td></tr>
+<tr><td>7</td><td>Cleveland</td><td>Bengals D/ST</td><td>D/ST</td><td>CIN</td></tr>
+<tr><td>8</td><td>Boston</td><td>Delone Carter</td><td>RB</td><td>IND</td></tr>
+<tr><td>9</td><td>Cedar Rapids</td><td>Michael Floyd</td><td>WR</td><td>ARI</td></tr>
+<tr><td>10</td><td>Northern Arizona</td><td>Donald Driver</td><td>WR</td><td>GB</td></tr>
+<tr><td>11</td><td>Brooklyn</td><td>Plaxico Burress</td><td>WR</td><td>PIT</td></tr>
+<tr><td>12</td><td>Miami</td><td>Ryan Grant</td><td>RB</td><td>GB</td></tr>
+</table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+
+
+	
+	
+	
+	
+	
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+	
+	
+	
+	
+	
+	
+	</body>
+</html>
