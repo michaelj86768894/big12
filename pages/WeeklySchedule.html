@@ -70,5 +70,144 @@
   </div>
 </nav>	
 
+	<p>The Big 12’s regular season schedule spans from early September through mid-December, encompassing 14 weeks of intense gridiron battles. Each team faces its division rivals twice during the season, with those matchups strategically scattered across the schedule. The remaining teams in the league are encountered once, creating a diverse slate of games that adds intrigue and unpredictability to the race for playoff spots.</p>
+	
+<p>As the regular season concludes, the spotlight shifts to the seven-team single-elimination playoffs. The victors of each division, along with the four teams boasting the best overall records, earn their place in the postseason spectacle. Teams are seeded based on their overall performance, with division champions holding higher ranks than the remaining playoff contenders.</p>
+	
+<p>The top-seeded team earns a coveted bye week, granting them a strategic advantage. The remaining six teams, seeded 2–7, engage in the first round of the playoffs. The intensity rises in Round 2, with the winners of the 2/7 and 3/6 matchups facing off, while the winner of the 4/5 showdown confronts the formidable first seed.</p>
+	
+<p>The victorious teams from Round 2 earn the right to compete in the grand finale—the Big 12 Championship. Traditionally held during the last weekend in December, this climactic event crowns the season's ultimate champion, immortalizing their journey through a season of triumphs and challenges. The road to the championship is paved with dedication, strategy, and the relentless pursuit of fantasy glory.</p>
+
+	<h3>Divisions</h3>
+
+	<table>
+	<thead>
+<tr>
+<th>West</th>
+</tr>
+<tr>
+<td>Los Angeles Wildcats</td>
+</tr>
+<tr>
+<td>Northern Arizona Wranglers</td>
+</tr>
+<tr>
+<td>Tuscon Sugar Skulls</td>
+</tr>
+<tr>
+<td>Vegas Knight Hawks</td>
+</tr>
+		</thead>
+</table>
+
+	<table>
+	<tbody>
+<tr>
+<th>Central</th>
+</tr>
+<tr>
+<td>Cedar Rapids Titans</td>
+</tr>
+<tr>
+<td>Chicago Slaughter</td>
+</tr>
+<tr>
+<td>Cleveland Gladiators</td>
+</tr>
+<tr>
+<td>Milwaukee Mustangs</td>
+</tr>
+		</tbody>
+</table>
+
+	
+
+<table>
+	<tbody>
+<tr>
+<th>East</th>
+</tr>
+<tr>
+<td>Boston Brawlers</td>
+</tr>
+<tr>
+<td>Brooklyn Bolts</td>
+</tr>
+<tr>
+<td>Miami Inferno</td>
+</tr>
+<tr>
+<td>Philadelphia Soul</td>
+</tr>
+		</tbody>
+</table>
+
+		<div class="wrap h2h">
+
+
+<div class="controls">
+  <label for="team1">Team 1:</label>
+  <select id="team1">
+    <option value="">— Select team —</option>
+  </select>
+
+  <label for="team2">Team 2:</label>
+  <select id="team2">
+    <option value="">— Select team —</option>
+  </select>
+
+  <label for="yearFilter">Year:</label>
+  <select id="yearFilter">
+    <option value="ALL_YEARS">— All Years —</option>
+  </select>
+
+  <label for="gameTypeFilter">Game Type:</label>
+  <select id="gameTypeFilter">
+    <option value="ALL_TYPES">— All Types —</option>
+  </select>
+
+  <input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
+</div>
+
+  <div class="summary" id="summaryArea" style="display:none;">
+    <div class="card" id="cardTeam1">
+      <h3 id="cardTeam1Name">Team 1</h3>
+      <p id="cardTeam1Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam1PF">0</span></div>
+    </div>
+
+    <div class="card" id="cardTie">
+      <h3 style="color:#666">Head-to-Head</h3>
+      <p id="head2headSummary">0 games</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Most recent: <span id="mostRecent">N/A</span></div>
+    </div>
+
+    <div class="card" id="cardTeam2">
+      <h3 id="cardTeam2Name">Team 2</h3>
+      <p id="cardTeam2Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
+    </div>
+  </div>
+
+  <div class="loading" id="loadingMsg">Loading match data...</div>
+
+  <div id="matchTableWrap" style="display:none;">
+<table id="matchTable">
+  <thead>
+    <tr>
+      <th style="width:120px">Date</th>
+      <th>Team 1</th>
+      <th>Team 2</th>
+      <th style="width:120px">Score</th>
+      <th>Game Type</th> <!-- ✅ new column -->
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+    <div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+	  <br>
+      </div>
+    </div>
+	
 </body>
 </html>
