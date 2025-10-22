@@ -420,3 +420,26 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error loading nav:", error));
 });
+
+// =========================== NEWS SLIDE SHOW=======================
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("news-slide");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+
+// Optional: auto-slide every 5 seconds
+setInterval(function() {
+  plusSlides(1);
+}, 5000);
