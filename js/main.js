@@ -399,9 +399,9 @@ function refreshCollapsibleHeight() {
 }
 
 // ================== NAV BAR ==================
-// Load the navigation bar dynamically on every page
+// Load the navigation bar dynamically from /pages/nav.html
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/big12/nav.html")
+  fetch("/big12/pages/nav.html")
     .then(response => {
       if (!response.ok) {
         throw new Error(`Failed to load nav: ${response.status}`);
@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return response.text();
     })
     .then(data => {
-      // Create a container for the nav if it doesn't already exist
+      // Find or create a placeholder for the nav
       let navContainer = document.getElementById("nav-placeholder");
       if (!navContainer) {
         navContainer = document.createElement("div");
