@@ -495,3 +495,23 @@ ul.nav-links ul {
     height: 220px;
   }
 }
+
+/* ====================================== Color Boxes ========================== */
+.box {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.boston {
+  background: #002244;
+}
+
+.boston2 {
+  background: #C60C30;
+}
+	
+.boston3 {
+  background: #B0B7BC;
+}
