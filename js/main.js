@@ -442,4 +442,4 @@ function showSlides(n) {
 // Optional: auto-slide every 5 seconds
 setInterval(function() {
   plusSlides(1);
-}, 5000);
+}, 8000);
