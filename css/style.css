@@ -425,7 +425,7 @@ ul.nav-links ul {
 .news-slide img {
   width: 100%;
   height: 450px;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
 }
 
@@ -444,7 +444,7 @@ ul.nav-links ul {
   position: absolute;
   top: 50%;
   padding: 16px;
-  color: #F0AE00; /* Cousins gold color for visibility */
+  color: #F0AE00;
   font-weight: bold;
   font-size: 30px;
   transition: color 0.3s;
