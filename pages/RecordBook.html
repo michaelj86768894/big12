@@ -1,117 +1,58 @@
-	<!doctype html>
+<!doctype html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Record Book - Big 12</title>
-	<link rel="stylesheet" href="../css/style.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Record Book - Big 12</title>
+		<link rel="stylesheet" href="/big12/css/style.css">
+	</head>
 
-<body>
+	<body>
 
-			<!-- TEAM LOGO BAR -->
-<div class="team-logo-bar">
-  <div class="team-logo-container">
-    <a href="teams/Boston.html"><img src="../images/Boston.png" alt="Boston" /></a>
-    <a href="teams/Brooklyn.html"><img src="../images/Brooklyn.png" alt="Brooklyn" /></a>
-    <a href="teams/CedarRapids.html"><img src="../images/CedarRapids.png" alt="Cedar Rapids" /></a>
-    <a href="teams/Chicago.html"><img src="../images/Chicago.png" alt="Chicago" /></a>
-    <a href="teams/Cleveland.html"><img src="../images/Cleveland.png" alt="Cleveland" /></a>
-    <a href="teams/LosAngeles.html"><img src="../images/LosAngeles.png" alt="Los Angeles" /></a>
-    <a href="teams/Miami.html"><img src="../images/Miami.png" alt="Miami" /></a>
-    <a href="teams/Milwaukee.html"><img src="../images/Milwaukee.png" alt="Milwaukee" /></a>
-    <a href="teams/NorthernArizona.html"><img src="../images/NorthernArizona.png" alt="Northern Arizona" /></a>
-    <a href="teams/Philadelphia.html"><img src="../images/Philadelphia.png" alt="Philadelphia" /></a>
-    <a href="teams/Tucson.html"><img src="../images/Tucson.png" alt="Tucson" /></a>
-    <a href="teams/Vegas.html"><img src="../images/Vegas.png" alt="Vegas" /></a>
-  </div>
-</div>
+		<div id="nav-placeholder"></div>
 
-<nav>
-  <div class="nav-container">
-    <a href="../index.html" class="logo"><img src="../images/big-12-logo.png" alt="Big 12 Logo" /></a>
+		<div class="stats-container">
 
-    <!-- Hidden checkbox for hamburger toggle -->
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
+  		<!-- Team Filter -->
+  		<label for="searchDropdown">Filter By Team:</label>
+  		<select id="searchDropdown">
+    		<option value="">-- Show All --</option>
+    		<option value="Boston Brawlers">Boston Brawlers</option>
+    		<option value="Brooklyn Bolts">Brooklyn Bolts</option>
+    		<option value="Cedar Rapids Titans">Cedar Rapids Titans</option>
+    		<option value="Chicago Slaughter">Chicago Slaughter</option>
+    		<option value="Cleveland Gladiators">Cleveland Gladiators</option>
+    		<option value="Los Angeles Wildcats">Los Angeles Wildcats</option>
+    		<option value="Miami Inferno">Miami Inferno</option>
+    		<option value="Milwaukee Mustangs">Milwaukee Mustangs</option>
+    		<option value="Northern Arizona Wrangler">Northern Arizona Wranglers</option>
+    		<option value="Philadelphia Soul">Philadelphia Soul</option>
+    		<option value="Tucson Sugar Skulls">Tucson Sugar Skulls</option>
+    		<option value="Vegas Knight Hawks">Vegas Knight Hawks</option>
+  		</select>
 
-    <ul class="nav-links">
-	  <li class="dropdown">
-        <a href="#">About</a>
-        <ul class="dropdown-content">
-          <li><a href="WhoWeAre.html">Who We Are</a></li>
-          <li><a href="Bylaws.html">Bylaws</a></li>
-        </ul>
-      </li>
-		
-	  <li><a href="News.html">News</a></li>
-		
-      <li class="dropdown">
-        <a href="#">History</a>
-        <ul class="dropdown-content">
-          <li><a href="HistoryoftheBig12.html">History of the Big 12</a></li>
-		  <li><a href="Big12Seasons.html">Big 12 Seasons</a></li>
-          <li><a href="Big12Champions.html">Big 12 Champions</a></li>
-		  <li><a href="IndividualAwards.html">Individual Award Winners</a></li>
-          <li><a href="RecordBook.html">Record Book</a></li>
-        </ul>
-      </li>
-
-	  <li class="dropdown">
-		  <a href="#">Schedule &amp; Standings</a>
-		  <ul class="dropdown-content">
-			  <li><a href="Standings.html">Standings</a></li>
-			  <li><a href="WeeklySchedule.html">Weekly Schedule</a></li>
-		  </ul>
-	  </li>
-
-      <li><a href="Teams.html">Teams</a></li>
-	  <li><a href="Draft.html">Draft</a></li>
-	</ul>
-  </div>
-</nav>	
-
-<div class="stats-container">
-
-  <!-- Team Filter -->
-  <label for="searchDropdown">Filter By Team:</label>
-  <select id="searchDropdown">
-    <option value="">-- Show All --</option>
-    <option value="Boston Brawlers">Boston Brawlers</option>
-    <option value="Brooklyn Bolts">Brooklyn Bolts</option>
-    <option value="Cedar Rapids Titans">Cedar Rapids Titans</option>
-    <option value="Chicago Slaughter">Chicago Slaughter</option>
-    <option value="Cleveland Gladiators">Cleveland Gladiators</option>
-    <option value="Los Angeles Wildcats">Los Angeles Wildcats</option>
-    <option value="Miami Inferno">Miami Inferno</option>
-    <option value="Milwaukee Mustangs">Milwaukee Mustangs</option>
-    <option value="Northern Arizona Wrangler">Northern Arizona Wranglers</option>
-    <option value="Philadelphia Soul">Philadelphia Soul</option>
-    <option value="Tucson Sugar Skulls">Tucson Sugar Skulls</option>
-    <option value="Vegas Knight Hawks">Vegas Knight Hawks</option>
-  </select>
-
-  <!-- Collapsible Sections -->
-<button class="collapsible"> Most Wins (Career)<hr></button>
-<div class="content">
-<table>
-<tbody>
-<tr>
-	<td>1</td>
-	<td>Los Angeles Wildcats</td>
-	<td>108</td>
-</tr>
-<tr>
-	<td>2</td>
-	<td>Milwaukee Mustangs</td>
-	<td>104</td>
-</tr>
-<tr>
-	<td>3</td>
-	<td>Tucson Sugar Skulls</td>
-	<td>98</td>
-</tr>
-<tr>
-	<td>4</td>
+  		<!-- Collapsible Sections -->
+		<button class="collapsible"> Most Wins (Career)<hr></button>
+		<div class="content">
+			
+		<table class="standings-table">
+			<tbody>
+			<tr>
+				<td>1</td>
+				<td>Los Angeles Wildcats</td>
+				<td>108</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Milwaukee Mustangs</td>
+				<td>104</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Tucson Sugar Skulls</td>
+				<td>98</td>
+			</tr>
+			<tr>
+				<td>4</td>
 	<td>Miami Inferno</td>
 	<td>96</td>
 </tr>
@@ -901,7 +842,7 @@
 </table>
 </div>
 
-<script src="../js/main.js"></script>
-	
-</body>
+		<script src="/big12/js/main.js"></script>
+
+		</body>
 </html>
