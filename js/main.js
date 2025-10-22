@@ -1,3 +1,4 @@
+// ================== STANDINGS ==================
 const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/standings.csv";
 
 async function loadStandings() {
@@ -156,3 +157,243 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ================== SCHEDULE ==================
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+let allMatches = [];
+let teams = [];
+
+function parseCsvToObjects(csvText) {
+  const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
+  const headers = lines.shift().split(",").map(h => h.trim());
+  return lines.map(line => {
+    const cols = line.split(",").map(c => c.trim());
+    const obj = {};
+    headers.forEach((h,i)=> obj[h]=cols[i]??"");
+    return obj;
+  });
+}
+
+function parseDate_mmddyy(s) {
+  if (!s) return null;
+  const parts = s.split("/").map(p=>parseInt(p,10));
+  if (parts.length!==3 || parts.some(isNaN)) return null;
+  let [m,d,y]=parts;
+  if (y<100) y+=2000;
+  return new Date(y,m-1,d);
+}
+
+function formatDateShort(dateObj) {
+  if (!dateObj) return "N/A";
+  const m=String(dateObj.getMonth()+1).padStart(2,"0");
+  const d=String(dateObj.getDate()).padStart(2,"0");
+  const yy=String(dateObj.getFullYear()).slice(-2);
+  return `${m}/${d}/${yy}`;
+}
+
+async function loadCsvAndInit() {
+  try {
+    const res = await fetch(csvUrl);
+    if(!res.ok) throw new Error("Network error "+res.status);
+    const text = await res.text();
+    const rows = parseCsvToObjects(text);
+
+    allMatches = rows.map(r=>{
+      const d=parseDate_mmddyy(r["Date"]);
+      return {
+        rawDate: r["Date"]||"",
+        date: d,
+        team1: (r["Team 1"]||"").trim(),
+        team2: (r["Team 2"]||"").trim(),
+        score1: parseInt(r["Team 1 Score"]||"0",10),
+        score2: parseInt(r["Team 2 Score"]||"0",10),
+        gameType: (r["Game Type"]||"").trim()
+      };
+    }).filter(m=>m.team1 && m.team2);
+
+    const teamSet=new Set();
+    allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
+    teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
+
+    populateDropdowns();
+    document.getElementById("loadingMsg").style.display="none";
+  } catch(err) {
+    document.getElementById("loadingMsg").textContent="Error loading match data.";
+    console.error(err);
+  }
+}
+
+function populateDropdowns() {
+  const t1=document.getElementById("team1");
+  const t2=document.getElementById("team2");
+
+  const allOpt1=document.createElement("option");
+  allOpt1.value="ALL_TEAMS";
+  allOpt1.textContent="All Teams";
+  t1.appendChild(allOpt1);
+
+  const allOpt2=document.createElement("option");
+  allOpt2.value="ALL_TEAMS";
+  allOpt2.textContent="All Teams";
+  t2.appendChild(allOpt2);
+
+  teams.forEach(team=>{
+    const o1=document.createElement("option"); o1.value=team; o1.textContent=team; t1.appendChild(o1);
+    const o2=document.createElement("option"); o2.value=team; o2.textContent=team; t2.appendChild(o2);
+  });
+
+  t1.addEventListener("change", updateDisplay);
+  t2.addEventListener("change", updateDisplay);
+  document.getElementById("matchFilter").addEventListener("input", updateDisplay);
+  document.getElementById("yearFilter").addEventListener("change", updateDisplay);
+  document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay);
+
+  t1.value = "ALL_TEAMS";
+  t2.value = "ALL_TEAMS";
+
+  updateDisplay();
+}
+
+function populateYearDropdown(){
+  const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
+  const yearDropdown=document.getElementById("yearFilter");
+  Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
+    const opt=document.createElement("option");
+    opt.value=y;
+    opt.textContent=y;
+    yearDropdown.appendChild(opt);
+  });
+}
+
+function populateGameTypeDropdown() {
+  const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
+  const typeDropdown = document.getElementById("gameTypeFilter");
+
+  Array.from(typeSet).sort().forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    typeDropdown.appendChild(opt);
+  });
+
+  typeDropdown.value = "ALL_TYPES";
+}
+
+function getWinnerClass(m){
+  if(m.score1>m.score2) return "winner";
+  if(m.score2>m.score1) return "winner";
+  return "";
+}
+
+function updateDisplay(){
+  const teamA = document.getElementById("team1").value;
+  const teamB = document.getElementById("team2").value;
+  const yearVal = "2025";
+  const gameTypeVal = "Season";
+  const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
+
+  let filtered = allMatches.filter(m => {
+    const matchTeam1 = (teamA==="ALL_TEAMS" || m.team1===teamA || m.team2===teamA);
+    const matchTeam2 = (teamB==="ALL_TEAMS" || m.team1===teamB || m.team2===teamB);
+    return matchTeam1 && matchTeam2;
+  });
+
+  if(yearVal!=="ALL_YEARS"){
+    filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
+  }
+
+  if(gameTypeVal !== "ALL_TYPES") {
+    filtered = filtered.filter(m => m.gameType === gameTypeVal);
+  }
+
+  if(searchVal!==""){
+    filtered = filtered.filter(m=>(
+      m.team1.toLowerCase().includes(searchVal) ||
+      m.team2.toLowerCase().includes(searchVal)
+    ));
+  }
+
+  filtered.sort((a,b)=>b.date - a.date);
+
+  // --- SUMMARY CALCULATION ---
+  if (filtered.length > 0) {
+    if(teamA==="ALL_TEAMS" && teamB==="ALL_TEAMS"){
+      // Overall schedule summary
+      document.getElementById("head2headSummary").textContent = `${filtered.length} total games`;
+      document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
+      document.getElementById("cardTeam1").style.display = "none";
+      document.getElementById("cardTeam2").style.display = "none";
+    } else {
+      let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
+      filtered.forEach(m => {
+        pfA += (m.team1 === teamA ? m.score1 : m.score2);
+        pfB += (m.team1 === teamB ? m.score1 : m.score2);
+
+        if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
+        else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
+
+        if (teamB !== "ALL_TEAMS") {
+          if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
+          else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
+        }
+      });
+
+      document.getElementById("cardTeam1").style.display = "block";
+      document.getElementById("cardTeam2").style.display = (teamB==="ALL_TEAMS" ? "none" : "block");
+
+      document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
+      document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
+      document.getElementById("cardTeam1PF").textContent = pfA;
+
+      if(teamB==="ALL_TEAMS"){
+        document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
+        document.getElementById("cardTeam2Record").textContent = `N/A`;
+        document.getElementById("cardTeam2PF").textContent = `N/A`;
+      } else {
+        document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
+        document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
+        document.getElementById("cardTeam2PF").textContent = pfB;
+      }
+    }
+
+    document.getElementById("summaryArea").style.display = "flex";
+  } else {
+    document.getElementById("summaryArea").style.display = "none";
+  }
+
+  // --- TABLE ROWS BY DATE COLOR ---
+  const tbody = document.querySelector("#matchTable tbody");
+  tbody.innerHTML="";
+  let lastDate = null;
+  let toggle = false;
+
+  filtered.forEach(m=>{
+    const dateKey = formatDateShort(m.date);
+    if(dateKey !== lastDate){
+      toggle = !toggle;
+      lastDate = dateKey;
+    }
+    const tr = document.createElement("tr");
+    tr.style.backgroundColor = toggle ? "#f9f9f9" : "#ffffff";
+    tr.innerHTML = `
+      <td>${dateKey}</td>
+      <td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
+      <td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
+      <td>${m.score1} - ${m.score2}</td>
+      <td>${m.gameType || ""}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("matchTableWrap").style.display="block";
+  document.getElementById("noMatches").style.display = filtered.length===0 ? "block" : "none";
+
+  refreshCollapsibleHeight();
+}
+
+loadCsvAndInit();
+
+function refreshCollapsibleHeight() {
+  document.querySelectorAll(".collapsible.active + .content").forEach(content => {
+    content.style.maxHeight = content.scrollHeight + "px";
+  });
+}
