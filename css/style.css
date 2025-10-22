@@ -483,3 +483,15 @@ ul.nav-links ul {
 .view-more-news:hover {
   color: #001433;
 }
+
+@media (max-width: 768px) {
+  .news-slide img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-slide img {
+    height: 220px;
+  }
+}
