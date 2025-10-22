@@ -397,3 +397,26 @@ function refreshCollapsibleHeight() {
     content.style.maxHeight = content.scrollHeight + "px";
   });
 }
+
+// ================== NAV BAR ==================
+// Load the navigation bar dynamically on every page
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/big12/nav.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to load nav: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(data => {
+      // Create a container for the nav if it doesn't already exist
+      let navContainer = document.getElementById("nav-placeholder");
+      if (!navContainer) {
+        navContainer = document.createElement("div");
+        navContainer.id = "nav-placeholder";
+        document.body.insertAdjacentElement("afterbegin", navContainer);
+      }
+      navContainer.innerHTML = data;
+    })
+    .catch(error => console.error("Error loading nav:", error));
+});
