@@ -383,3 +383,20 @@ ul.nav-links ul {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   outline: none;
 }
+
+/* ==================================== BUTTONS ==================================== */
+.btn-link:link,
+.btn-link:visited {
+  background-color: #001433;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px; /* spacing between buttons */
+}
+
+.btn-link:hover,
+.btn-link:active {
+  background-color: #F0AE00;
+}
