@@ -402,27 +402,30 @@ ul.nav-links ul {
 }
 
 /* ==================================== NEWS SLIDE SHOW ==================================== */
-/* Slideshow Container - full width */
 .news-slideshow-container {
   position: relative;
-  max-width: 100%;       /* ensures it fills the page */
-  margin: 0 auto;        /* center if needed */
-  overflow: hidden;      /* hide anything outside container */
-  box-shadow: none;      /* remove any shadow */
-  border: none;          /* remove any border */
+  width: 100vw;           /* full viewport width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;     /* make it go edge to edge */
+  margin-right: -50vw;
+  overflow: hidden;
+  box-shadow: none;
+  border: none;
+  background: none;
 }
 
 /* Slides */
 .news-slide {
   display: none;
-  width: 100%;           /* full container width */
-  box-sizing: border-box; /* ensures padding doesn't shrink slide */
+  width: 100%;
 }
 
-/* Slide images */
+/* Slide Images */
 .news-slide img {
-  width: 100%;           /* full width */
-  height: auto;          /* keep aspect ratio */
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
   display: block;
 }
 
@@ -431,32 +434,47 @@ ul.nav-links ul {
   text-align: center;
   padding: 10px 0;
   font-size: 1.2em;
-  color: #001433; /* example text color, match your site */
-  background: transparent; /* no background */
+  color: #001433; /* navy */
+  background: transparent;
 }
 
-/* Navigation arrows */
+/* Navigation Arrows */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
   padding: 16px;
-  margin-top: -22px;
-  color: #001433;
+  color: #F0AE00; /* Cousins gold color for visibility */
   font-weight: bold;
-  font-size: 24px;
-  transition: 0.3s;
+  font-size: 30px;
+  transition: color 0.3s;
   user-select: none;
-  background: none;       /* remove background */
-  border: none;           /* remove border */
+  background: rgba(0, 20, 51, 0.4); /* faint navy overlay for visibility */
+  border-radius: 50%;
 }
 
-/* View More button */
+.prev:hover, .next:hover {
+  color: #fff;
+  background: rgba(0, 20, 51, 0.7);
+}
+
+/* Positioning */
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Center the “View More News” link below slideshow */
+.news-view-more-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .view-more-news {
   display: inline-block;
-  margin-top: 10px;
-  text-align: center;
   font-weight: bold;
   color: #007FC8;
   text-decoration: none;
