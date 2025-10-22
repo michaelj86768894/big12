@@ -1,9 +1,9 @@
 // ================== STANDINGS ==================
-const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/standings.csv";
+const standingsCsvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/standings.csv";
 
 async function loadStandings() {
   try {
-    const response = await fetch(csvUrl);
+    const response = await fetch(standingsCsvUrl);
     const csvText = await response.text();
     const rows = csvText.trim().split("\n").map(r => r.split(","));
     rows.shift(); // remove header
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ================== SCHEDULE ==================
-const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+const scheduleCsvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
 let allMatches = [];
 let teams = [];
 
@@ -193,7 +193,7 @@ function formatDateShort(dateObj) {
 
 async function loadCsvAndInit() {
   try {
-    const res = await fetch(csvUrl);
+    const res = await fetch(scheduleCsvUrl);
     if(!res.ok) throw new Error("Network error "+res.status);
     const text = await res.text();
     const rows = parseCsvToObjects(text);
