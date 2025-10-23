@@ -564,7 +564,7 @@ div.box.Vegas { background: #002244; }
 div.box.Vegas2 { background: #C60C30; }
 div.box.Vegas3 { background: #B0B7BC; }
 
-/* ========== H2H Schedule Layout ========== */
+/* ========================================================= H2H Schedule Layout ========== */
 
 .wrap.h2h {
   margin: 0 auto;
@@ -643,4 +643,189 @@ div.box.Vegas3 { background: #B0B7BC; }
   color: #666;
   font-style: italic;
   margin-top: 12px;
+}
+
+/* ========================================================= Weekly Preview Style ========== */
+
+.schedule-container {
+  background: #D9E2EC; /*Grey-Blue Background*/
+  border: 1px solid #001433; /*Navy Line*/
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: auto;
+  margin: auto;
+  overflow: hidden; /* keep container neat */
+}
+
+.scroll-wrapper {
+  overflow-x: auto;       /* horizontal scroll */
+  display: block;         /* block container */
+}
+
+.schedule-header {
+  width: auto;      /* match width of table */
+  background: #001433;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.schedule-table {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(200px, 1fr)); /* default 3 columns */
+  gap: 10px;
+  padding: 10px;
+  width: 100%; /* let it fill container */
+}
+
+/* 13" screen (~1000px wide) - switch to 2 columns */
+@media (max-width: 1000px) {
+  .schedule-table {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+/* Mobile phones (~500px and below) - switch to 1 column */
+@media (max-width: 500px) {
+  .schedule-table {
+    grid-template-columns: 1fr;
+  }
+}
+
+.schedule-box {
+  background: #FFFFFF;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.team-header {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.team-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* makes icons circular if they're square */
+  object-fit: cover;
+}
+
+.team-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.schedule-type {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.schedule-description {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.points {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: auto) {
+.schedule-table {
+  grid-template-columns: 1fr;
+}
+}
+
+/* table wrapper: full-width inside the grid (span both columns) */
+.table-wrapper {
+  width: auto;
+  grid-column: 1 / -1;        /* SPAN both columns of the parent grid */
+  border: 1px solid #ddd;     /* outside border */
+  border-radius: 10px;
+  overflow: hidden;           /* clip table so corners stay rounded */
+  background: #FFFFFF;
+  /* display:block is fine (default for div), keeps wrapper full width */
+}
+
+/* table styling */
+.table-wrapper table {
+  width: auto;
+  border-collapse: collapse; /* ensures cells behave as single table */
+  margin: 0;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+  border: none; /* no cell borders (we'll add horizontal only) */
+  color: black;
+}
+	
+/* override for specific span inside td */
+.table-wrapper td .streak-green {
+  color: green;
+  font-weight: bold; /* optional */
+}
+	
+.streak-green {
+  color: green;
+  font-weight: bold; /* optional if you want it to stand out more */
+}
+
+/* header row */
+.table-wrapper th {
+  background: #001433;       /* navy header background color */
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #FFFFFF
+}
+
+/* horizontal dividers only: put a top-border on every row AFTER the first row (so header/data/rows all separated) */
+  .table-wrapper tr + tr td {
+    border: 1px solid #ddd;
+  }
+
+/* small responsive tweak: on very small screens, put the grid into 1 column */
+@media (max-width: 768px) {
+.schedule-table {
+  grid-template-columns: 1fr;
+}
+/* table wrapper still spans 1 / -1 but now that's the single column */
+}
+	
+/* ===== MATCHUP HIGHLIGHT BANNERS ===== */
+.matchup-banner {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  text-align: center;       /* centers text horizontally */
+  justify-content: center;  /* centers emoji/text if using flex */
+}
+
+/* Best matchup (green theme) */
+.best-matchup {
+  background: linear-gradient(90deg, #003300, #006600);
+  color: #00FF88;
+  border: 1px solid #00FF88;
+}
+
+/* Tough to watch (red theme) */
+.worst-matchup {
+  background: linear-gradient(90deg, #330000, #660000);
+  color: #FF6666;
+  border: 1px solid #FF6666;
 }
