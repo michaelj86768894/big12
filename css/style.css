@@ -498,152 +498,68 @@ ul.nav-links ul {
 
 /* ====================================== Color Boxes ========================== */
 .box {
-display: inline-block;
-width: 20px;
-height: 20px;
-border: 1px solid rgba(0, 0, 0, .2);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
 }
 
-.Boston {
-  background: #002244;
-}
+/* ========================== Boston ========================== */
+div.box.Boston { background: #002244; }
+div.box.Boston2 { background: #C60C30; }
+div.box.Boston3 { background: #B0B7BC; }
 
-.Boston2 {
-  background: #C60C30;
-}
-	
-.Boston3 {
-  background: #B0B7BC;
-}
+/* ========================== Brooklyn ========================== */
+div.box.Brooklyn { background: #002244; }
+div.box.Brooklyn2 { background: #C60C30; }
+div.box.Brooklyn3 { background: #B0B7BC; }
 
-.Brooklyn {
-  background: #002244;
-}
+/* ========================== Cedar Rapids ========================== */
+div.box.CedarRapids { background: #002244; }
+div.box.CedarRapids2 { background: #C60C30; }
+div.box.CedarRapids3 { background: #B0B7BC; }
 
-.Brooklyn2 {
-  background: #C60C30;
-}
-	
-.Brooklyn3 {
-  background: #B0B7BC;
-}
+/* ========================== Chicago ========================== */
+div.box.Chicago { background: #002244; }
+div.box.Chicago2 { background: #C60C30; }
+div.box.Chicago3 { background: #B0B7BC; }
 
-.CedarRapids {
-  background: #002244;
-}
+/* ========================== Cleveland ========================== */
+div.box.Cleveland { background: #002244; }
+div.box.Cleveland2 { background: #C60C30; }
+div.box.Cleveland3 { background: #B0B7BC; }
 
-.CedarRapids2 {
-  background: #C60C30;
-}
-	
-.CedarRapids3 {
-  background: #B0B7BC;
-}
+/* ========================== Los Angeles ========================== */
+div.box.LosAngeles { background: #002244; }
+div.box.LosAngeles2 { background: #C60C30; }
+div.box.LosAngeles3 { background: #B0B7BC; }
 
-.Chicago {
-  background: #002244;
-}
+/* ========================== Miami ========================== */
+div.box.Miami { background: #002244; }
+div.box.Miami2 { background: #C60C30; }
+div.box.Miami3 { background: #B0B7BC; }
 
-.Chicago2 {
-  background: #C60C30;
-}
-	
-.Chicago3 {
-  background: #B0B7BC;
-}
+/* ========================== Milwaukee ========================== */
+div.box.Milwaukee { background: #002244; }
+div.box.Milwaukee2 { background: #C60C30; }
+div.box.Milwaukee3 { background: #B0B7BC; }
 
-.Cleveland {
-  background: #002244;
-}
+/* ========================== Northern Arizona ========================== */
+div.box.NorthernArizona { background: #002244; }
+div.box.NorthernArizona2 { background: #C60C30; }
+div.box.NorthernArizona3 { background: #B0B7BC; }
 
-.Cleveland2 {
-  background: #C60C30;
-}
-	
-.Cleveland3 {
-  background: #B0B7BC;
-}
+/* ========================== Philadelphia ========================== */
+div.box.Philadelphia { background: #002244; }
+div.box.Philadelphia2 { background: #C60C30; }
+div.box.Philadelphia3 { background: #B0B7BC; }
 
-.LosAngeles {
-  background: #002244;
-}
+/* ========================== Tucson ========================== */
+div.box.Tucson { background: #002244; }
+div.box.Tucson2 { background: #C60C30; }
+div.box.Tucson3 { background: #B0B7BC; }
 
-.LosAngeles2 {
-  background: #C60C30;
-}
-	
-.LosAngeles3 {
-  background: #B0B7BC;
-}
-
-.Miami {
-  background: #002244;
-}
-
-.Miami2 {
-  background: #C60C30;
-}
-	
-.Miami3 {
-  background: #B0B7BC;
-}
-
-.Milwaukee {
-  background: #002244;
-}
-
-.Milwaukee2 {
-  background: #C60C30;
-}
-	
-.Milwaukee3 {
-  background: #B0B7BC;
-}
-
-.NorthernArizona {
-  background: #002244;
-}
-
-.NorthernArizona2 {
-  background: #C60C30;
-}
-	
-.NorthernArizona3 {
-  background: #B0B7BC;
-}
-
-.Philadelphia {
-  background: #002244;
-}
-
-.Philadelphia2 {
-  background: #C60C30;
-}
-	
-.Philadelphia3 {
-  background: #B0B7BC;
-}
-
-.Tucson {
-  background: #002244;
-}
-
-.Tucson2 {
-  background: #C60C30;
-}
-	
-.Tucson3 {
-  background: #B0B7BC;
-}
-
-.Vegas {
-  background: #002244;
-}
-
-.Vegas2 {
-  background: #C60C30;
-}
-	
-.Vegas3 {
-  background: #B0B7BC;
-}
+/* ========================== Vegas ========================== */
+div.box.Vegas { background: #002244; }
+div.box.Vegas2 { background: #C60C30; }
+div.box.Vegas3 { background: #B0B7BC; }
