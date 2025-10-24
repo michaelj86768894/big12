@@ -402,20 +402,23 @@ ul.nav-links ul {
 }
 
 /* ==================================== NEWS SLIDE SHOW ==================================== */
-.news-slideshow-wrapper {
-  display: flex;
-  width: 100vw;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 .news-slideshow-container {
-  flex: 1;                  /* takes remaining width between the side bars */
-  overflow: hidden;
   position: relative;
-  background: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
   box-shadow: none;
   border: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Wrapper for image so we can leave space for side bars */
+.news-slide-wrapper {
+  width: 100%;
+  margin: 0 60px; /* same width as side bars */
+  overflow: hidden;
 }
 
 /* Slides */
@@ -428,7 +431,7 @@ ul.nav-links ul {
 .news-slide img {
   width: 100%;
   height: 450px;
-  object-fit: fill;          /* or cover if you want cropping */
+  object-fit: cover;
   display: block;
 }
 
@@ -437,23 +440,26 @@ ul.nav-links ul {
   text-align: center;
   padding: 10px 0;
   font-size: 1.2em;
-  color: #001433; /* navy */
+  color: #001433;
   background: transparent;
 }
 
 /* Navigation Bars */
 .prev, .next {
-  width: 60px;               /* side bar width */
-  height: 100%;
+  position: absolute; /* relative to slideshow container */
+  top: 0;
+  width: 60px;               /* bar width */
+  height: 100%;              /* full height of container */
   display: flex;
-  align-items: center;       /* vertical centering */
-  justify-content: center;   /* horizontal centering */
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
   color: #F0AE00;
   background: rgba(0, 20, 51, 0.4);
   cursor: pointer;
   user-select: none;
   transition: background 0.3s, color 0.3s;
+  z-index: 10; /* above slides */
 }
 
 .prev:hover, .next:hover {
@@ -462,20 +468,14 @@ ul.nav-links ul {
 }
 
 .prev {
-  order: 0;                  /* left bar */
+  left: 0;
 }
 
 .next {
-  order: 2;                  /* right bar */
+  right: 0;
 }
 
-/* Layout: side bars + slideshow in the middle */
-.news-slideshow-wrapper > .prev,
-.news-slideshow-wrapper > .next {
-  flex-shrink: 0;
-}
-
-/* Center the “View More News” link below slideshow */
+/* View More Link */
 .news-view-more-container {
   text-align: center;
   margin-top: 10px;
@@ -492,7 +492,6 @@ ul.nav-links ul {
   color: #001433;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .news-slide img {
     height: 300px;
