@@ -402,17 +402,20 @@ ul.nav-links ul {
 }
 
 /* ==================================== NEWS SLIDE SHOW ==================================== */
+.news-slideshow-wrapper {
+  display: flex;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .news-slideshow-container {
-  position: relative;
-  width: 100vw;           /* full viewport width */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;     /* make it go edge to edge */
-  margin-right: -50vw;
+  flex: 1;                  /* takes remaining width between the side bars */
   overflow: hidden;
+  position: relative;
+  background: none;
   box-shadow: none;
   border: none;
-  background: none;
 }
 
 /* Slides */
@@ -425,7 +428,7 @@ ul.nav-links ul {
 .news-slide img {
   width: 100%;
   height: 450px;
-  object-fit: fill;
+  object-fit: fill;          /* or cover if you want cropping */
   display: block;
 }
 
@@ -440,16 +443,14 @@ ul.nav-links ul {
 
 /* Navigation Bars */
 .prev, .next {
-  position: absolute;
-  top: 0;
-  width: 60px;               /* bar width */
-  height: 100%;              /* full height of slideshow */
+  width: 60px;               /* side bar width */
+  height: 100%;
   display: flex;
-  align-items: center;       /* vertically center arrow */
-  justify-content: center;   /* horizontally center arrow */
+  align-items: center;       /* vertical centering */
+  justify-content: center;   /* horizontal centering */
   font-size: 30px;
   color: #F0AE00;
-  background: rgba(0, 20, 51, 0.4); /* semi-transparent side bar */
+  background: rgba(0, 20, 51, 0.4);
   cursor: pointer;
   user-select: none;
   transition: background 0.3s, color 0.3s;
@@ -461,11 +462,17 @@ ul.nav-links ul {
 }
 
 .prev {
-  left: 0;
+  order: 0;                  /* left bar */
 }
 
 .next {
-  right: 0;
+  order: 2;                  /* right bar */
+}
+
+/* Layout: side bars + slideshow in the middle */
+.news-slideshow-wrapper > .prev,
+.news-slideshow-wrapper > .next {
+  flex-shrink: 0;
 }
 
 /* Center the “View More News” link below slideshow */
@@ -485,6 +492,7 @@ ul.nav-links ul {
   color: #001433;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .news-slide img {
     height: 300px;
