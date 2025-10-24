@@ -438,33 +438,34 @@ ul.nav-links ul {
   background: transparent;
 }
 
-/* Navigation Arrows */
+/* Navigation Bars */
 .prev, .next {
-  cursor: pointer;
   position: absolute;
-  top: 50%;
-  padding: 16px;
-  color: #F0AE00;
-  font-weight: bold;
+  top: 0;
+  width: 60px;               /* bar width */
+  height: 100%;              /* full height of slideshow */
+  display: flex;
+  align-items: center;       /* vertically center arrow */
+  justify-content: center;   /* horizontally center arrow */
   font-size: 30px;
-  transition: color 0.3s;
+  color: #F0AE00;
+  background: rgba(0, 20, 51, 0.4); /* semi-transparent side bar */
+  cursor: pointer;
   user-select: none;
-  background: rgba(0, 20, 51, 0.4); /* faint navy overlay for visibility */
-  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
 }
 
 .prev:hover, .next:hover {
-  color: #fff;
   background: rgba(0, 20, 51, 0.7);
+  color: #fff;
 }
 
-/* Positioning */
 .prev {
-  left: 10px;
+  left: 0;
 }
 
 .next {
-  right: 10px;
+  right: 0;
 }
 
 /* Center the “View More News” link below slideshow */
