@@ -402,7 +402,6 @@ ul.nav-links ul {
 }
 
 /* ==================================== NEWS SLIDE SHOW ==================================== */
-/* ==================================== NEWS SLIDE SHOW ==================================== */
 .news-slideshow-container {
   position: relative;
   width: 100%;
@@ -410,6 +409,11 @@ ul.nav-links ul {
   margin: 0 auto;
   overflow: hidden;
   background: #fff;
+}
+
+.news-slide-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
 /* Slides */
