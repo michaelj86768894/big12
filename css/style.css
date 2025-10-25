@@ -426,7 +426,7 @@ ul.nav-links ul {
 .news-slide img {
   width: 100%;
   height: 450px;
-  object-fit: contain; /* ✅ show entire image without cropping */
+  object-fit: fill; /* ✅ show entire image without cropping */
   background-color: #001433; /* fills letterbox space if needed */
   display: block;
 }
