@@ -402,68 +402,71 @@ ul.nav-links ul {
 }
 
 /* ==================================== NEWS SLIDE SHOW ==================================== */
+/* ==================================== NEWS SLIDE SHOW ==================================== */
 .news-slideshow-container {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* or whatever your layout width is */
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #fff;
 }
 
-/* Slides wrapper (keeps arrows from covering images) */
-.news-slide-wrapper {
-  flex: 1;
-  overflow: hidden;
-}
-
-/* Individual slides */
+/* Slides */
 .news-slide {
   display: none;
   width: 100%;
 }
 
+/* Slide Images */
 .news-slide img {
   width: 100%;
   height: 450px;
-  object-fit: cover;
+  object-fit: contain; /* ✅ show entire image without cropping */
+  background-color: #001433; /* fills letterbox space if needed */
   display: block;
-  border-radius: 0;
 }
 
-/* Caption below image */
+/* Caption */
 .news-caption {
   text-align: center;
-  padding: 10px 0;
+  padding: 12px 10px;
   font-size: 1.2em;
   color: #001433;
+  background: #fff;
 }
 
 /* Navigation Bars */
 .prev,
 .next {
-  position: relative; /* ✅ relative now so it’s part of the flex row */
-  width: 60px;
+  position: absolute;
+  top: 0;
+  width: 70px;
   height: 100%;
-  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px;
   color: #F0AE00;
   background: rgba(0, 20, 51, 0.4);
   cursor: pointer;
   user-select: none;
   transition: background 0.3s, color 0.3s;
+  z-index: 5; /* ✅ ensures they’re above background but below nav */
 }
 
 .prev:hover,
 .next:hover {
   background: rgba(0, 20, 51, 0.7);
   color: #fff;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
 }
 
 /* “View More News” link below slideshow */
@@ -483,13 +486,14 @@ ul.nav-links ul {
   color: #001433;
 }
 
-/* Responsive sizing */
+/* Responsive */
 @media (max-width: 768px) {
   .news-slide img {
     height: 300px;
   }
   .prev, .next {
-    width: 45px;
+    width: 50px;
+    font-size: 30px;
   }
 }
 
@@ -498,7 +502,8 @@ ul.nav-links ul {
     height: 220px;
   }
   .prev, .next {
-    width: 35px;
+    width: 40px;
+    font-size: 26px;
   }
 }
 
