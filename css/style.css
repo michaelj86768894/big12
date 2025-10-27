@@ -48,7 +48,7 @@ a:hover {
 .two-column .left {
   flex: 0 0 auto;       /* fixed width based on content */
   width: 320px;         /* adjust to match your table/image width */
-  background: lightblue;
+  background: yellow;
 }
 
 .two-column .left table {
@@ -58,7 +58,7 @@ a:hover {
 
 .two-column .right {
   flex: 1 1 auto;       /* right column fills remaining space */
-  background: lightgreen;
+  background: red;
 }
 
 /* Responsive: stack columns on smaller screens */
