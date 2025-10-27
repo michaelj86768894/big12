@@ -23,6 +23,11 @@ a:hover {
 	color: #001433; /* Navy blue on link hover */
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* HR after Text (Optional Style) */
 .hr-lines {
 	display: flex;
@@ -44,9 +49,9 @@ a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: start;
-    width: 100%;        /* full width */
-    margin: 0;          /* remove auto centering */
-    padding: 0 20px;    /* optional: small padding on sides */
+    width: 100%;
+    margin: 0;      /* make sure it’s not centered */
+    padding-left: 20px; /* optional, keeps it from touching the absolute edge */
 }
 
 /* Table styling */
