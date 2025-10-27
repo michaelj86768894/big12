@@ -40,12 +40,13 @@ a:hover {
 
 /* Grid container */
 .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 20px; /* Space between table and text */
-  align-items: start; /* Top-align both columns */
-  max-width: 800px; /* Optional: limit overall width */
-  margin: 0 auto; /* Center container horizontally */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+    width: 100%;        /* full width */
+    margin: 0;          /* remove auto centering */
+    padding: 0 20px;    /* optional: small padding on sides */
 }
 
 /* Table styling */
