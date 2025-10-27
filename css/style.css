@@ -46,8 +46,8 @@ a:hover {
 }
 
 .two-column .left {
-  flex: 0 0 auto;       /* fixed width based on content */
-  width: 320px;         /* adjust to match your table/image width */
+  flex: 0 0 320px;
+  min-width: 250px; /* optional: prevents shrinking too small */
   background: yellow;
 }
 
@@ -95,7 +95,7 @@ a:hover {
 
 .standings-table td {
   color: #001433; /*font color navy*/
-  background-color: #FFFFFF
+  background-color: #FFFFFF;
 }
 
 /* Highlight style for top 7 teams */
@@ -870,26 +870,4 @@ div.box.Vegas3 { background: #FFFFFF; }
   background: linear-gradient(90deg, #330000, #660000);
   color: #FF6666;
   border: 1px solid #FF6666;
-}
-
-/* ==========================================================Team Page Intro ========================================= */
-.team-intro {
-  display: flex;
-  flex-wrap: wrap;       /* allows content to wrap when space runs out */
-  gap: 20px;
-}
-
-.standings-table {
-  flex: 0 0 300px;       /* fixed width table on the left */
-}
-
-.team-summary {
-  flex: 1 1 600px;       /* takes remaining space initially */
-}
-
-/* Make collapsible sections full width once table ends */
-.team-summary .collapsible,
-.team-summary .content {
-  width: 100%;
-  box-sizing: border-box;
 }
