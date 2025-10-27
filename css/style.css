@@ -46,12 +46,21 @@ a:hover {
 }
 
 .two-column .left {
-  flex: 0 0 300px;  /* fixed width for left column (table, image, etc.) */
+  flex: 0 1 auto;  /* width determined by content */
+  min-width: 300px; /* optional minimum */
+}
+
+.two-column .left table {
+  max-width: 100%;
+  height: auto;
 }
 
 .two-column .right {
   flex: 1 1 auto;   /* right column fills remaining space */
 }
+
+.two-column .left { background: lightblue; }
+.two-column .right { background: lightgreen; }
 
 /* Responsive: stack columns on smaller screens */
 @media (max-width: 768px) {
