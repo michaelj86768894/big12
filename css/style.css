@@ -840,3 +840,25 @@ div.box.Vegas3 { background: #FFFFFF; }
   color: #FF6666;
   border: 1px solid #FF6666;
 }
+
+/* ==========================================================Team Page Intro ========================================= */
+.team-intro {
+  display: flex;
+  gap: 20px;            /* space between table and paragraph */
+  align-items: flex-start;
+  margin-bottom: 20px;  /* spacing below intro section */
+}
+
+.team-intro .standings-table {
+  flex: 0 0 300px;      /* table width */
+}
+
+.team-intro .team-summary {
+  flex: 1;              /* paragraph takes remaining space */
+}
+
+/* Ensures following content expands full width */
+.collapsible,
+.content {
+  clear: both;
+}
