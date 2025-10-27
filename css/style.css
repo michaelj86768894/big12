@@ -407,11 +407,36 @@ ul.nav-links ul {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
   background: #fff;
+  display: flex; /* ✅ places bars and image area side by side */
+  align-items: stretch;
+  overflow: hidden;
 }
 
+/* Navigation Bars */
+.prev,
+.next {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #F0AE00;
+  background: rgba(0, 20, 51, 0.2);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 20, 51, 0.7);
+  color: #fff;
+}
+
+/* Wrapper for slides (center area between bars) */
 .news-slide-wrapper {
+  flex: 1; /* ✅ fills remaining space between bars */
   position: relative;
   overflow: hidden;
 }
@@ -426,8 +451,8 @@ ul.nav-links ul {
 .news-slide img {
   width: 100%;
   height: 450px;
-  object-fit: fill; /* ✅ show entire image without cropping */
-  background-color: #001433; /* fills letterbox space if needed */
+  object-fit: fill; /* ✅ prevents cropping */
+  background-color: #001433;
   display: block;
 }
 
@@ -438,39 +463,6 @@ ul.nav-links ul {
   font-size: 1.2em;
   color: #001433;
   background: #fff;
-}
-
-/* Navigation Bars */
-.prev,
-.next {
-  position: absolute;
-  top: 0;
-  width: 70px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  color: #F0AE00;
-  background: rgba(0, 20, 51, 0.4);
-  cursor: pointer;
-  user-select: none;
-  transition: background 0.3s, color 0.3s;
-  z-index: 5; /* ✅ ensures they’re above background but below nav */
-}
-
-.prev:hover,
-.next:hover {
-  background: rgba(0, 20, 51, 0.7);
-  color: #fff;
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
 }
 
 /* “View More News” link below slideshow */
