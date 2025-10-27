@@ -42,25 +42,24 @@ a:hover {
 .two-column {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* allows columns to wrap on small screens */
+  flex-wrap: wrap;
 }
 
 .two-column .left {
-  flex: 0 1 auto;   /* allows the column to grow/shrink based on content */
+  flex: 0 0 auto;       /* fixed width based on content */
+  width: 320px;         /* adjust to match your table/image width */
+  background: lightblue;
 }
 
 .two-column .left table {
-    width: 100%;
-    max-width: 100%;    /* don’t let table exceed column width */
-    table-layout: fixed; /* optional, keeps table from expanding */
+  width: 100%;          /* table fills only the left column */
+  table-layout: auto;   /* normal table behavior */
 }
 
 .two-column .right {
-  flex: 1 1 auto;   /* fills remaining space */
+  flex: 1 1 auto;       /* right column fills remaining space */
+  background: lightgreen;
 }
-
-.two-column .left { background: lightblue; }
-.two-column .right { background: lightgreen; }
 
 /* Responsive: stack columns on smaller screens */
 @media (max-width: 768px) {
