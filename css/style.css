@@ -38,35 +38,10 @@ a:hover {
 	margin-left: 10px;
 }
 
-/* Generic two-column layout */
-.two-column {
-  display: flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
   gap: 20px;
-  flex-wrap: wrap;
-}
-
-.two-column .left {
-  flex: 0 0 320px;
-  min-width: 250px; /* optional: prevents shrinking too small */
-  background: yellow;
-}
-
-.two-column .left table {
-  width: 100%;          /* table fills only the left column */
-  table-layout: auto;   /* normal table behavior */
-}
-
-.two-column .right {
-  flex: 1 1 auto;       /* right column fills remaining space */
-  background: red;
-}
-
-/* Responsive: stack columns on smaller screens */
-@media (max-width: 768px) {
-  .two-column .left,
-  .two-column .right {
-    flex: 1 1 100%;
-  }
 }
 
 /* ==================================== STANDINGS TABLE ==================================== */
