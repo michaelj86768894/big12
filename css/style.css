@@ -38,12 +38,12 @@ a:hover {
 	margin-left: 10px;
 }
 
-/* Reset default body spacing
+/* Reset default body spacing */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif; /* optional, keeps text consistent */
-} */
+}
 
 /* Grid container for table + text */
 .grid-container {
