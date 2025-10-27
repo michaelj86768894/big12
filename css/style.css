@@ -46,21 +46,21 @@ a:hover {
 }
 
 .two-column .left {
-  flex: 0 1 auto;  /* width determined by content */
-  min-width: 300px; /* optional minimum */
+  flex: 0 1 auto;   /* allows the column to grow/shrink based on content */
+  max-width: 400px; /* optional, so it doesn’t get enormous */
 }
 
 .two-column .left table {
-  max-width: 100%;
-  height: auto;
+  width: 100%;      /* table fills its column */
+  table-layout: auto; /* normal table behavior */
 }
 
 .two-column .right {
-  flex: 1 1 auto;   /* right column fills remaining space */
+  flex: 1 1 auto;   /* fills remaining space */
 }
 
-.two-column .left { background: lightblue; }
-.two-column .right { background: lightgreen; }
+.two-column .left { background: lightgreen; }
+.two-column .right { background: lightblue; }
 
 /* Responsive: stack columns on smaller screens */
 @media (max-width: 768px) {
