@@ -23,11 +23,6 @@ a:hover {
 	color: #001433; /* Navy blue on link hover */
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 /* HR after Text (Optional Style) */
 .hr-lines {
 	display: flex;
@@ -43,33 +38,62 @@ body {
 	margin-left: 10px;
 }
 
-/* Grid container */
+/* Reset default body spacing */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* optional, keeps text consistent */
+}
+
+/* Grid container for table + text */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: start;
-    width: 100%;
-    margin: 0;      /* make sure it’s not centered */
-    padding-left: 20px; /* optional, keeps it from touching the absolute edge */
+    grid-template-columns: 1fr 1fr; /* 2 equal columns: left = table, right = text */
+    gap: 20px;                       /* spacing between table and text */
+    align-items: start;               /* align top edges */
+    width: 100%;                      /* full width of page */
+    margin: 0;                        /* no extra centering */
+    padding-left: 0;                  /* flush to left */
+}
+
+/* Left side (table) */
+.grid-left {
+    width: 100%;                     /* take full column width */
+}
+
+/* Right side (text) */
+.grid-right {
+    width: 100%;                     /* take full column width */
 }
 
 /* Table styling */
-.side-table {
-  width: 100%; /* Fill its column, but not the full page */
-  border-collapse: collapse;
+.standings-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;                 /* prevent table from overflowing */
 }
 
-.side-table th,
-.side-table td {
-  border: 1px solid #333;
-  padding: 8px;
-  text-align: left;
+.standings-table td,
+.standings-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-/* Optional text wrapper styling */
-.text-wrapper p {
-  margin: 0;
+/* Optional: alternating row colors */
+.standings-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.standings-table th {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Optional: table images centered */
+.standings-table img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* ==================================== STANDINGS TABLE ==================================== */
