@@ -38,10 +38,32 @@ a:hover {
 	margin-left: 10px;
 }
 
+/* Grid container */
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns */
-  gap: 20px;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between table and text */
+  align-items: start; /* Top-align both columns */
+  max-width: 800px; /* Optional: limit overall width */
+  margin: 0 auto; /* Center container horizontally */
+}
+
+/* Table styling */
+.side-table {
+  width: 100%; /* Fill its column, but not the full page */
+  border-collapse: collapse;
+}
+
+.side-table th,
+.side-table td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Optional text wrapper styling */
+.text-wrapper p {
+  margin: 0;
 }
 
 /* ==================================== STANDINGS TABLE ==================================== */
