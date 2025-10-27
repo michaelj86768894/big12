@@ -1,206 +1,428 @@
-h1, h2, h3, h4, h5, h6 {
-	color: #001433; /* Navy headings */
-	font-family: Arial, sans-serif;
-}
+/* ================================== */
+/*          GLOBAL STYLES             */
+/* ================================== */
 
-p {
-	color: #001433; /* Navy paragraph text */
-	font-family: Arial, sans-serif;
-}
-
-hr {
-	border: none;
-	border-top: 1px solid #F0AE00; /* Gold lines */
+body, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #001433; /* Navy text default */
 }
 
 a {
-	color: #007FC8; /* Bright blue links */
-	text-decoration: none; /* Remove underline */
-	transition: color 0.2s ease;
+    color: #007FC8;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-	color: #001433; /* Navy blue on link hover */
+    color: #001433;
 }
 
-/* HR after Text (Optional Style) */
+/* ---------------------------------- */
+/*           HORIZONTAL RULES          */
+/* ---------------------------------- */
+hr {
+    border: none;
+    border-top: 1px solid #F0AE00;
+    margin: 20px 0;
+}
+
 .hr-lines {
-	display: flex;
-	align-items: center;
-	color: #001433; /* Navy text for HR */
-	font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #001433;
+    font-weight: bold;
 }
 
 .hr-lines::after {
-	content: '';
-	flex: 1;
-	border-bottom: 1px solid #F0AE00; /* Gold lines */
-	margin-left: 10px;
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #F0AE00;
+    margin-left: 10px;
 }
 
-/* Reset default body spacing */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; /* optional, keeps text consistent */
-}
+/* ================================== */
+/*          FLEX LAYOUTS              */
+/* ================================== */
 
-/* Two-column layout for team pages */
+/* Two-column layout for team sections */
 .team-layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1100px;      /* matches rest of your site’s content width */
-  margin: 0 auto;         /* centers the layout */
-  padding: 0 20px;        /* same left/right padding as other pages */
-  box-sizing: border-box; /* ensures padding doesn’t affect total width */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* Left column (text) */
 .team-left {
-  flex: 1 1 60%;          /* text takes up ~60% of the space */
-  min-width: 300px;
+    flex: 1 1 60%;
+    min-width: 300px;
 }
 
-/* Right column (table) */
 .team-right {
-  flex: 1 1 35%;          /* table takes ~35% of the space */
-  min-width: 250px;
+    flex: 1 1 35%;
+    min-width: 250px;
 }
 
-/* Table formatting */
-.standings-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0;
+/* H2H wrapper */
+.wrap.h2h {
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
 }
 
-.standings-table td,
-.standings-table th {
-  border: 1px solid #ddd;
-  padding: 8px;
+/* Summary cards */
+.wrap.h2h .summary {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
 }
 
-/* Responsive stacking for mobile */
-@media (max-width: 900px) {
-  .team-layout {
-    flex-direction: column;
-  }
-  .team-right {
-    order: 2; /* table after text if you want */
-    margin-top: 20px;
-  }
+.wrap.h2h .summary .card {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 200px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* ==================================== STANDINGS TABLE ==================================== */
-.standings-table {
-  width: 100%;          /* table fills the container */
-  max-width: 100%;      /* prevents it from overflowing */
-  margin: 10px 0;
-  border-collapse: collapse;
-  table-layout: auto;
+/* Controls inside H2H */
+.wrap.h2h .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
 }
 
-.standings-table th, 
-.standings-table td {
-  border: 1px solid #007FC8; /* body border color, can adjust header separately if needed */
-  padding: 5px;
-  text-align: center;
-  overflow: hidden;        /* prevents text overflow */
-  white-space: nowrap;     /* keeps text on a single line */
+.wrap.h2h .controls label {
+    font-weight: 600;
+    margin-right: 4px;
 }
 
-.standings-table th {
-  background-color: #001433; 
-  color: #FFFFFF;
-  border: 1px solid #F0AE00; /* separate header border color */
+/* ================================== */
+/*             TABLE STYLES            */
+/* ================================== */
+.table, #matchTable, .content table, .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    table-layout: auto;
 }
 
-.standings-table td {
-  color: #001433; /*font color navy*/
-  background-color: #FFFFFF;
+.table th, .table td,
+#matchTable th, #matchTable td,
+.content th, .content td,
+.table-wrapper th, .table-wrapper td {
+    border: 1px solid #007FC8;
+    padding: 8px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-/* Highlight style for top 7 teams */
-.standings-table tr.highlight td {
-  background-color: #F0AE00 !important;
-  color: #001433 !important;
-  font-weight: bold;
+/* Table headers */
+.table th, #matchTable th, .content th, .table-wrapper th {
+    background-color: #001433;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #F0AE00;
 }
 
-/* ==================================== BANNER ==================================== */
+/* Table body cells */
+.table td, #matchTable td, .content td, .table-wrapper td {
+    background-color: #fff;
+    color: #001433;
+}
+
+/* Zebra stripes */
+.table tr:nth-child(even),
+#matchTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover highlight */
+.table tr:hover,
+#matchTable tr:hover {
+    background-color: #e6f2fa;
+}
+
+/* Winner highlight */
+#winner, .winner, .standings-table tr.highlight td {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: 700;
+}
+
+/* Collapsible tables inherit table styles */
+.content table td, .content table th {
+    border: 1px solid #007FC8;
+    padding: 5px;
+}
+
+.content th {
+    background-color: #001433;
+    color: #fff;
+    border: 1px solid #F0AE00;
+}
+
+/* Table wrapper inside matchup grid */
+.table-wrapper {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 10px;
+}
+
+.table-wrapper th {
+    background: #001433;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.table-wrapper td {
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    color: black;
+}
+
+.table-wrapper tr + tr td {
+    border: 1px solid #ddd;
+}
+
+.streak-green {
+    color: green;
+    font-weight: bold;
+}
+
+/* No data */
+.no-data {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 12px;
+}
+
+/* ================================== */
+/*           BANNERS & LOGOS          */
+/* ================================== */
+
+/* Site banner */
 .banner {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url("https://png.pngtree.com/background/20250104/original/pngtree-gold-confetti-and-stars-falling-on-golden-background-picture-image_15712313.jpg");
-  background-size: cover;         /* fills the banner without stretching */
-  background-position: center;    /* keeps image centered */
-  background-repeat: no-repeat;   /* prevents tiling */
-  overflow: hidden;
-  padding: 5px 0;                 /* prevents clipping on top/bottom */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://png.pngtree.com/background/20250104/original/pngtree-gold-confetti-and-stars-falling-on-golden-background-picture-image_15712313.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 5px 0;
 }
 
+/* Marquee */
 marquee {
-  width: 100%;
-  display: flex;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 marquee img {
-  max-height: 90px;
-  height: auto;
-  width: auto;
-  object-fit: contain;
-  margin: 0 25px;
-  vertical-align: middle;
-}
-
-/* ================== NAVIGATION BAR ================== */
-nav {
-  background-color: #001433;
-  font-family: Arial, sans-serif;
-  margin-bottom: 20px; /* adds space below nav */
-}
-
-/* NAV CONTAINER */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* ensures links sit right after the logo */
-    gap: 20px;
-    padding: 10px 20px;
-    flex-wrap: wrap; /* allows stacking on small screens */
-}
-
-/* LOGO */
-.logo img {
-    height: 40px; /* adjust as needed */
+    max-height: 90px;
     width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 25px;
     vertical-align: middle;
 }
 
-/* Remove list bullets and default padding globally for nav */
-ul.nav-links,
-ul.nav-links ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Team logo bar */
+.team-logo-bar {
+    background: #fff;
+    padding: 8px 0;
+    border-bottom: 2px solid #001433;
 }
 
-/* NAV LINKS */
+.team-logo-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.team-logo-container img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.team-logo-container img:hover {
+    transform: scale(1.1);
+}
+
+/* ================================== */
+/*         NEWS / SLIDESHOW           */
+/* ================================== */
+
+.news-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-card img {
+    width: 250px;
+    height: 125px;
+    object-fit: fill;
+    flex-shrink: 0;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content .headline {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.news-content .date {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* Slideshow */
+.news-slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.news-slide-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-slide {
+    display: none;
+    width: 100%;
+}
+
+.news-slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: fill;
+    display: block;
+    background-color: #001433;
+}
+
+.news-caption {
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 1.1em;
+    color: #001433;
+    background: #f3f3f3;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-view-more-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.view-more-news {
+    display: inline-block;
+    font-weight: bold;
+    color: #007FC8;
+    text-decoration: none;
+}
+
+.view-more-news:hover {
+    color: #001433;
+}
+
+/* Slideshow arrows */
+.prev, .next {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #F0AE00;
+    background: rgba(0,20,51,0.5);
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0,20,51,1);
+    color: #fff;
+}
+
+/* ================================== */
+/*            NAVIGATION BAR           */
+/* ================================== */
+
+nav {
+    background-color: #001433;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
 .nav-links {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    position: relative;
+    flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -208,7 +430,6 @@ ul.nav-links ul {
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
-    display: block;
     transition: color 0.2s;
 }
 
@@ -216,7 +437,7 @@ ul.nav-links ul {
     color: #007FC8;
 }
 
-/* DROPDOWN MENU (DESKTOP) */
+/* Dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -234,62 +455,239 @@ ul.nav-links ul {
     color: #F0AE00;
 }
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .dropdown-content li a:hover {
     background-color: #F0AE00;
     color: #001433;
 }
 
-.dropdown:hover .dropdown-content {
+/* ================================== */
+/*             BUTTONS                */
+/* ================================== */
+
+.btn-link {
+    display: inline-block;
+    background-color: #001433;
+    color: #fff;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn-link:hover, .btn-link:active {
+    background-color: #F0AE00;
+    color: #001433;
+    cursor: pointer;
+}
+
+/* ================================== */
+/*       COLLAPSIBLE SECTIONS         */
+/* ================================== */
+
+.collapsible {
+    cursor: pointer;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.collapsible:hover {
+    background-color: #f9f9f9;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 6px 6px;
+    padding: 0 20px;
+    margin-bottom: 12px;
+}
+
+/* ================================== */
+/*        DROPDOWN FILTERS            */
+/* ================================== */
+
+#searchDropdown {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchDropdown:hover,
+#searchDropdown:focus {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* ================================== */
+/*            MATCHUPS / PREVIEW      */
+/* ================================== */
+
+.schedule-container {
+    background: #D9E2EC;
+    border: 1px solid #001433;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: auto;
+    overflow: hidden;
+}
+
+.scroll-wrapper {
+    overflow-x: auto;
     display: block;
 }
 
-/* HAMBURGER MENU (MOBILE) */
-.hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #F0AE00;
+.schedule-header {
+    background: #001433;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-/* Hides checkbox input used for toggle */
-#menu-toggle {
-    display: none;
+.schedule-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
 }
 
-/* ================== RESPONSIVE ================== */
-@media screen and (max-width: 768px) {
-    .nav-container {
-        justify-content: space-between; /* keeps logo and hamburger apart */
+.schedule-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.team-header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.schedule-type {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.schedule-description {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.points {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.matchup-banner {
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.best-matchup {
+    background: linear-gradient(90deg, #003300, #006600);
+    color: #00FF88;
+    border: 1px solid #00FF88;
+}
+
+.worst-matchup {
+    background: linear-gradient(90deg, #330000, #660000);
+    color: #FF6666;
+    border: 1px solid #FF6666;
+}
+
+/* ================================== */
+/*            RESPONSIVE              */
+/* ================================== */
+
+@media (max-width: 900px) {
+    .team-layout {
+        flex-direction: column;
+    }
+    .team-right {
+        order: 2;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .table, #matchTable, .content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .table th, .table td,
+    #matchTable th, #matchTable td,
+    .content th, .content td {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .wrap.h2h .summary {
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav-links {
         flex-direction: column;
-        display: none;
         width: 100%;
+        display: none;
         background-color: #001433;
         margin-top: 10px;
     }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links li a {
-        padding: 10px;
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    /* When checkbox is checked, show menu */
-    #menu-toggle:checked + .hamburger + .nav-links {
+    nav.active .nav-links {
         display: flex;
     }
-
-    /* Dropdown menu inside mobile */
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+    }
+    .nav-links li a {
+        padding: 10px;
+    }
     .dropdown-content {
         position: relative;
         top: 0;
@@ -297,272 +695,53 @@ ul.nav-links ul {
         border-radius: 0;
         background-color: #001433;
     }
-
     .dropdown:hover .dropdown-content {
-        display: none; /* disable hover effect on mobile */
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #F0AE00;
+    }
+
+    .news-slide img { height: 300px; }
+    .prev, .next { width: 50px; font-size: 30px; }
+}
+
+@media (max-width: 600px) {
+    .team-logo-container {
+        justify-content: center;
+        gap: 15px;
+    }
+    .team-logo-container img {
+        height: 35px;
     }
 }
 
-/* ================== TEAM LOGO BAR ================== */
-.team-logo-bar {
-  background-color: #ffffff;
-  padding: 8px 0;
-  border-bottom: 2px solid #001433; /* small accent line above the navy bar */
-}
-
-.team-logo-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.team-logo-container img {
-  height: 40px;
-  width: auto;
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
-
-.team-logo-container img:hover {
-  transform: scale(1.1);
-}
-
-/* ================== NEWS CARD ================== */
-.news-card {
-  display: flex;              /* side-by-side layout */
-  align-items: center;        /* vertically center headline/date next to image */
-  width: 100%;
-  max-width: auto;           /* optional max width */
-  margin-bottom: 20px;
-  text-decoration: none;      /* removes underline from link */
-  color: inherit;
-}
-
-.news-card img {
-  width: 250px;
-  height: 125px;
-  object-fit: fill;          /* keeps image aspect ratio, crops minimally */
-  flex-shrink: 0;             /* prevents image from shrinking */
-  border-radius: 5px;         /* optional */
-  margin-right: 15px;
-}
-
-.news-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.news-content .headline {
-  font-weight: bold;
-  font-size: 1em;
-  margin-bottom: 5px;
-}
-
-.news-content .date {
-  font-size: 0.85em;
-  color: #666;
-}
-
-/* ==================================== COLLAPSIBLE SECTIONS ==================================== */
-.collapsible {
-  cursor: pointer;
-  padding: 12px 20px;
-  width: 100%;
-  border: 1px solid #ccc; /* ===================Try Deleting This on GitHub*/
-  text-align: left;
-  outline: none;
-  font-size: 16px;
-  border-radius: 6px;
-  margin-top: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.collapsible:hover {
-  background-color: #f9f9f9;   /* slightly grey on hover */
-}
-
-
-/* ---- Collapsible content ---- */
-.content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease-out;
-  background-color: #fff;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0 0 6px 6px;
-  padding: 0 20px;
-  margin-bottom: 12px;
-}
-
-/* --- Match collapsible tables to site tables --- */
-.content table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #007FC8;
-}
-
-.content th,
-.content td {
-  border: 1px solid #007FC8;
-  padding: 5px;
-  color: #001433;
-}
-
-.content th {
-  background-color: #001433;
-  color: #FFFFFF;
-  border: 1px solid #F0AE00;
-}
-
-/* --- Dropdown Filter Styles --- */
-#searchDropdown {
-  background-color: #fff;        /* white background ===================Try Deleting This on GitHub*/
-  color: inherit;                /* inherit text color from page ===================Try Deleting This on GitHub*/
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 15px;
-  width: 100%;
-  max-width: 300px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#searchDropdown:hover,
-#searchDropdown:focus {
-  border-color: #999;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-
-/* ==================================== BUTTONS ==================================== */
-.btn-link:link,
-.btn-link:visited {
-  background-color: #001433;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 5px; /* spacing between buttons */
-}
-
-.btn-link:hover,
-.btn-link:active {
-  background-color: #F0AE00;
-}
-
-/* ==================================== NEWS SLIDE SHOW ==================================== */
-.news-slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #fff;
-  display: flex; /* ✅ places bars and image area side by side */
-  align-items: stretch;
-  overflow: hidden;
-}
-
-/* Navigation Bars */
-.prev,
-.next {
-  width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  color: #F0AE00;
-  background: rgba(0, 20, 51, 0.5);
-  cursor: pointer;
-  user-select: none;
-  transition: background 0.3s, color 0.3s;
-}
-
-.prev:hover,
-.next:hover {
-  background: rgba(0, 20, 51, 1.0);
-  color: #fff;
-}
-
-/* Wrapper for slides (center area between bars) */
-.news-slide-wrapper {
-  flex: 1; /* ✅ fills remaining space between bars */
-  position: relative;
-  overflow: hidden;
-}
-
-/* Slides */
-.news-slide {
-  display: none;
-  width: 100%;
-}
-
-/* Slide Images */
-.news-slide img {
-  width: 100%;
-  height: 450px;
-  object-fit: fill; /* ✅ prevents cropping */
-  background-color: #001433;
-  display: block;
-}
-
-/* Caption */
-.news-caption {
-  text-align: center;
-  padding: 6px 10px;         /* 🔹 less vertical space */
-  font-size: 1.1em;          /* 🔹 slightly smaller text (optional) */
-  color: #001433;
-  background: #f3f3f3;
-  min-height: 70px;          /* 🔹 consistent height across slides */
-  display: flex;
-  align-items: center;       /* 🔹 centers text vertically */
-  justify-content: center;   /* 🔹 centers text horizontally */
-}
-
-/* “View More News” link below slideshow */
-.news-view-more-container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.view-more-news {
-  display: inline-block;
-  font-weight: bold;
-  color: #007FC8;
-  text-decoration: none;
-}
-
-.view-more-news:hover {
-  color: #001433;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .news-slide img {
-    height: 300px;
-  }
-  .prev, .next {
-    width: 50px;
-    font-size: 30px;
-  }
-}
-
 @media (max-width: 480px) {
-  .news-slide img {
-    height: 220px;
-  }
-  .prev, .next {
-    width: 40px;
-    font-size: 26px;
-  }
+    .news-slide img { height: 220px; }
+    .prev, .next { width: 40px; font-size: 26px; }
+    .news-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .news-card img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+    }
 }
 
-/* ====================================== Color Boxes ========================== */
+
+
+
+
+
+
+
+/* ------------------------------================================= Color Boxes ------------------------------===================== */
 .box {
   display: inline-block;
   width: 20px;
@@ -629,269 +808,3 @@ div.box.Tucson3 { background: #BD202E; }
 div.box.Vegas { background: #000000; }
 div.box.Vegas2 { background: #A5ACAF; }
 div.box.Vegas3 { background: #FFFFFF; }
-
-/* ========================================================= H2H Schedule Layout ========== */
-
-.wrap.h2h {
-  margin: 0 auto;
-  max-width: 1000px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-/* Filters */
-.wrap.h2h .controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 16px;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-.wrap.h2h .controls label {
-  font-weight: 600;
-  margin-right: 4px;
-}
-
-/* Summary cards */
-.wrap.h2h .summary {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin: 20px 0;
-}
-.wrap.h2h .summary .card {
-  background: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px 16px;
-  width: 200px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-/* Table */
-#matchTableWrap {
-  margin-top: 20px;
-  overflow-x: auto;
-}
-#matchTable {
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 14px;
-}
-#matchTable th,
-#matchTable td {
-  border: 1px solid #ddd;
-  padding: 8px 10px;
-}
-#matchTable th {
-  background-color: #002244;
-  color: white;
-  font-weight: 600;
-}
-#matchTable tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Winner highlight */
-#winner,
-.winner {
-  font-weight: 700;
-  background-color: #d4edda;
-  color: #155724;
-}
-
-/* No data message */
-.no-data {
-  text-align: center;
-  color: #666;
-  font-style: italic;
-  margin-top: 12px;
-}
-
-/* ========================================================= Weekly Preview Style ========== */
-
-.schedule-container {
-  background: #D9E2EC; /*Grey-Blue Background*/
-  border: 1px solid #001433; /*Navy Line*/
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: auto;
-  margin: auto;
-  overflow: hidden; /* keep container neat */
-}
-
-.scroll-wrapper {
-  overflow-x: auto;       /* horizontal scroll */
-  display: block;         /* block container */
-}
-
-.schedule-header {
-  width: auto;      /* match width of table */
-  background: #001433;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 10px;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.schedule-table {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(200px, 1fr)); /* default 3 columns */
-  gap: 10px;
-  padding: 10px;
-  width: 100%; /* let it fill container */
-}
-
-/* 13" screen (~1000px wide) - switch to 2 columns */
-@media (max-width: 1000px) {
-  .schedule-table {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-  }
-}
-
-/* Mobile phones (~500px and below) - switch to 1 column */
-@media (max-width: 500px) {
-  .schedule-table {
-    grid-template-columns: 1fr;
-  }
-}
-
-.schedule-box {
-  background: #FFFFFF;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  transition: transform 0.2s ease;
-}
-
-.team-header {
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  gap: 8px;
-  margin-bottom: 5px;
-}
-
-.team-header img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%; /* makes icons circular if they're square */
-  object-fit: cover;
-}
-
-.team-name {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.schedule-type {
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
-
-.schedule-description {
-  font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 4px;
-}
-
-.points {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-/* Responsive */
-@media (max-width: auto) {
-.schedule-table {
-  grid-template-columns: 1fr;
-}
-}
-
-/* table wrapper: full-width inside the grid (span both columns) */
-.table-wrapper {
-  width: auto;
-  grid-column: 1 / -1;        /* SPAN both columns of the parent grid */
-  border: 1px solid #ddd;     /* outside border */
-  border-radius: 10px;
-  overflow: hidden;           /* clip table so corners stay rounded */
-  background: #FFFFFF;
-  /* display:block is fine (default for div), keeps wrapper full width */
-}
-
-/* table styling */
-.table-wrapper table {
-  width: auto;
-  border-collapse: collapse; /* ensures cells behave as single table */
-  margin: 0;
-}
-
-.table-wrapper th,
-.table-wrapper td {
-  padding: 10px 12px;
-  text-align: left;
-  vertical-align: middle;
-  border: none; /* no cell borders (we'll add horizontal only) */
-  color: black;
-}
-	
-/* override for specific span inside td */
-.table-wrapper td .streak-green {
-  color: green;
-  font-weight: bold; /* optional */
-}
-	
-.streak-green {
-  color: green;
-  font-weight: bold; /* optional if you want it to stand out more */
-}
-
-/* header row */
-.table-wrapper th {
-  background: #001433;       /* navy header background color */
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #FFFFFF
-}
-
-/* horizontal dividers only: put a top-border on every row AFTER the first row (so header/data/rows all separated) */
-  .table-wrapper tr + tr td {
-    border: 1px solid #ddd;
-  }
-
-/* small responsive tweak: on very small screens, put the grid into 1 column */
-@media (max-width: 768px) {
-.schedule-table {
-  grid-template-columns: 1fr;
-}
-/* table wrapper still spans 1 / -1 but now that's the single column */
-}
-	
-/* ===== MATCHUP HIGHLIGHT BANNERS ===== */
-.matchup-banner {
-  border-radius: 8px;
-  padding: 10px 12px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  text-align: center;       /* centers text horizontally */
-  justify-content: center;  /* centers emoji/text if using flex */
-}
-
-/* Best matchup (green theme) */
-.best-matchup {
-  background: linear-gradient(90deg, #003300, #006600);
-  color: #00FF88;
-  border: 1px solid #00FF88;
-}
-
-/* Tough to watch (red theme) */
-.worst-matchup {
-  background: linear-gradient(90deg, #330000, #660000);
-  color: #FF6666;
-  border: 1px solid #FF6666;
-}
