@@ -47,20 +47,20 @@ a:hover {
 
 .two-column .left {
   flex: 0 1 auto;   /* allows the column to grow/shrink based on content */
-  max-width: 400px; /* optional, so it doesn’t get enormous */
 }
 
 .two-column .left table {
-  width: 100%;      /* table fills its column */
-  table-layout: auto; /* normal table behavior */
+    width: 100%;
+    max-width: 100%;    /* don’t let table exceed column width */
+    table-layout: fixed; /* optional, keeps table from expanding */
 }
 
 .two-column .right {
   flex: 1 1 auto;   /* fills remaining space */
 }
 
-.two-column .left { background: lightgreen; }
-.two-column .right { background: lightblue; }
+.two-column .left { background: lightblue; }
+.two-column .right { background: lightgreen; }
 
 /* Responsive: stack columns on smaller screens */
 @media (max-width: 768px) {
