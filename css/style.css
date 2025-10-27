@@ -459,10 +459,14 @@ ul.nav-links ul {
 /* Caption */
 .news-caption {
   text-align: center;
-  padding: 10px 10px;
-  font-size: 1.2em;
+  padding: 6px 10px;         /* 🔹 less vertical space */
+  font-size: 1.1em;          /* 🔹 slightly smaller text (optional) */
   color: #001433;
-  background: #D9E2EC;
+  background: #f3f3f3;
+  min-height: 70px;          /* 🔹 consistent height across slides */
+  display: flex;
+  align-items: center;       /* 🔹 centers text vertically */
+  justify-content: center;   /* 🔹 centers text horizontally */
 }
 
 /* “View More News” link below slideshow */
