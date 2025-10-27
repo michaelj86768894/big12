@@ -844,21 +844,21 @@ div.box.Vegas3 { background: #FFFFFF; }
 /* ==========================================================Team Page Intro ========================================= */
 .team-intro {
   display: flex;
-  gap: 20px;            /* space between table and paragraph */
-  align-items: flex-start;
-  margin-bottom: 20px;  /* spacing below intro section */
+  flex-wrap: wrap;       /* allows content to wrap when space runs out */
+  gap: 20px;
 }
 
-.team-intro .standings-table {
-  flex: 0 0 300px;      /* table width */
+.standings-table {
+  flex: 0 0 300px;       /* fixed width table on the left */
 }
 
-.team-intro .team-summary {
-  flex: 1;              /* paragraph takes remaining space */
+.team-summary {
+  flex: 1 1 600px;       /* takes remaining space initially */
 }
 
-/* Ensures following content expands full width */
-.collapsible,
-.content {
-  clear: both;
+/* Make collapsible sections full width once table ends */
+.team-summary .collapsible,
+.team-summary .content {
+  width: 100%;
+  box-sizing: border-box;
 }
