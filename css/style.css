@@ -168,6 +168,41 @@ hr {
 }
 .team-logo-container img:hover { transform: scale(1.1); }
 
+/* Smooth scrolling banner animation */
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: scroll-left 25s linear infinite;
+}
+
+.scroll-content img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.scroll-content img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* ================================== */
 /*          NEWS / SLIDESHOW           */
 /* ================================== */
@@ -197,9 +232,27 @@ hr {
 /*            NAVIGATION BAR           */
 /* ================================== */
 
-nav { background-color: var(--color-navy); padding: var(--space-md) var(--space-xl); font-family: var(--font-body); }
-.nav-links li a { color: var(--color-gold); font-weight: bold; padding: var(--space-xs) var(--space-sm); transition: color 0.2s; }
-.nav-links li a:hover { color: var(--color-blue); }
+/* Hide the mobile toggle checkbox */
+.nav-toggle {
+  display: none;
+}
+
+nav {
+  background-color: var(--color-navy);
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-body);
+}
+
+.nav-links li a {
+  color: var(--color-gold);
+  font-weight: bold;
+  padding: var(--space-xs) var(--space-sm);
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: var(--color-blue);
+}
 
 /* ================================== */
 /*          BUTTONS / COLLAPSIBLE      */
