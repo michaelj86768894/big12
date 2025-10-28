@@ -311,21 +311,39 @@ nav .logo img {
   display: block;
 }
 
-.nav-links {
+/* Hide dropdowns by default */
+.nav-links li .dropdown-content {
+  display: none;
+  position: absolute; /* So it floats over content */
+  background-color: var(--color-navy);
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  padding: var(--space-sm) 0;
   list-style: none;
-  display: flex;
-  gap: var(--space-md);
 }
 
-.nav-links li a {
+/* Dropdown links styling */
+.nav-links li .dropdown-content li a {
+  display: block;
+  padding: var(--space-xs) var(--space-md);
   color: var(--color-gold);
-  font-weight: bold;
-  padding: var(--space-xs) var(--space-sm);
-  transition: color 0.2s;
+  text-decoration: none;
 }
 
-.nav-links li a:hover {
+.nav-links li .dropdown-content li a:hover {
   color: var(--color-blue);
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* Show dropdown on hover (desktop) */
+.nav-links li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Position relative for parent dropdown */
+.nav-links li.dropdown {
+  position: relative;
 }
 
 /* ================================== */
