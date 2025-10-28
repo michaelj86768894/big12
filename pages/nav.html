@@ -1,3 +1,4 @@
+<!-- ================== TEAM LOGO BAR ================== -->
 <div class="team-logo-bar">
   <div class="team-logo-container">
     <a href="/big12/pages/teams/boston.html"><img src="/big12/images/Boston.png" alt="Boston" /></a>
@@ -15,14 +16,19 @@
   </div>
 </div>
 
-<nav>
+<!-- ================== MAIN NAV ================== -->
+<nav class="main-nav">
   <div class="nav-container">
-    <a href="/big12/index.html" class="logo"><img src="/big12/images/big-12-logo.png" alt="Big 12 Logo" /></a>
+    <!-- Logo -->
+    <a href="/big12/index.html" class="logo">
+      <img src="/big12/images/big-12-logo.png" alt="Big 12 Logo" />
+    </a>
 
-    <!-- Hidden checkbox for hamburger toggle -->
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <!-- Hamburger Toggle -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
+    <label for="menu-toggle" class="hamburger" aria-hidden="true">&#9776;</label>
 
+    <!-- Nav Links -->
     <ul class="nav-links">
       <li class="dropdown">
         <a href="#">About</a>
