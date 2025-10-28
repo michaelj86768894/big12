@@ -515,3 +515,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init slideshow (guarded)
   Slideshow.init();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("change", () => {
+    if (menuToggle.checked) {
+      navLinks.style.display = "flex";
+    } else {
+      navLinks.style.display = "none";
+    }
+  });
+
+  // Mobile dropdown toggle
+  document.querySelectorAll(".nav-links li.dropdown > a").forEach(parentLink => {
+    parentLink.addEventListener("click", e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const dropdownContent = parentLink.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", e => {
+    if (!e.target.closest(".nav-links li.dropdown")) {
+      document.querySelectorAll(".nav-links li .dropdown-content").forEach(dc => {
+        dc.style.display = "none";
+      });
+    }
+  });
+});
