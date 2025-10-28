@@ -462,37 +462,33 @@ const NavLoader = (() => {
   return { load };
 })();
 
-// ---------------------------
-// News slideshow (guarded)
-// ---------------------------
-const Slideshow = (() => {
-  let slideIndex = 1;
-  let slides = [];
+// ===========================
+// News slideshow carousel
+// ===========================
+document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.querySelector(".news-slide-wrapper");
+  const slides = Array.from(document.querySelectorAll(".news-slide"));
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let index = 0;
 
-  function init() {
-    slides = $$(".news-slide");
-    if (!slides.length) return;
-    showSlides(slideIndex);
-    // continue auto-advance
-    setInterval(() => plusSlides(1), 8000);
-    // attach prev/next if exist
-    $(".prev")?.addEventListener("click", () => plusSlides(-1));
-    $(".next")?.addEventListener("click", () => plusSlides(1));
+  if (!wrapper || slides.length === 0) return;
+
+  function showSlide(i) {
+    index = (i + slides.length) % slides.length; // wrap around
+    const offset = -index * 100; // percent
+    wrapper.style.transform = `translateX(${offset}%)`;
   }
 
-  function plusSlides(n) { showSlides(slideIndex += n); }
+  prevBtn?.addEventListener("click", () => showSlide(index - 1));
+  nextBtn?.addEventListener("click", () => showSlide(index + 1));
 
-  function showSlides(n) {
-    if (!slides.length) return;
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
-    slides.forEach(s => s.style.display = "none");
-    slides[slideIndex - 1].style.display = "block";
-  }
+  // Auto-slide every 8 seconds
+  setInterval(() => showSlide(index + 1), 8000);
 
-  return { init };
-})();
-
+  // Initial display
+  showSlide(0);
+});
 // ---------------------------
 // Utilities used across modules
 // ---------------------------
