@@ -164,41 +164,37 @@ body {
 
 /* ================== MOBILE RESPONSIVE ================== */
 @media screen and (max-width: 768px) {
-	
-.hamburger {
-  display: block !important;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  background: rgba(255,0,0,0.5); /* temporary */
-  padding: 5px 10px;
-  font-size: 28px;
-  cursor: pointer;
-  z-index: 9999;
-}
 
+  /* Hamburger button */
+  .hamburger {
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: #F0AE00; /* temporary for testing */
+    padding: 5px 10px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  /* Mobile nav hidden by default */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #001433;
     position: absolute;
-    top: 100%;
+    top: 60px; /* below logo */
     left: 0;
     border-top: 1px solid #003d7a;
+    z-index: 9999;
   }
 
-  /* Hamburger toggle works */
-.menu-toggle:checked + .hamburger + .nav-links {
-  display: flex !important;
-  flex-direction: column;
-  background-color: #001433;
-  position: absolute;
-  top: 60px; /* or whatever height below logo */
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-}
+  /* Show nav when checkbox is checked */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex !important;
+  }
 
   .nav-links li {
     width: 100%;
@@ -208,7 +204,7 @@ body {
     padding: 12px 20px;
   }
 
-  /* Mobile dropdown behavior */
+  /* Mobile dropdowns */
   .dropdown-content {
     position: static;
     display: none;
@@ -223,6 +219,11 @@ body {
   .dropdown > a::after {
     content: " ▼";
     font-size: 12px;
+  }
+
+  /* Toggle dropdown on click via JS */
+  .dropdown-content.dropdown-active {
+    display: block !important;
   }
 }
 		
@@ -531,40 +532,49 @@ body {
 	
 	
 	<script>
-  // ---------------------------------------------------------------------Navigation Bar Script
-  // Mobile dropdown toggle
+	
 document.addEventListener("DOMContentLoaded", function() {
-  const dropdowns = document.querySelectorAll(".nav-links .dropdown > a");
 
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener("click", function(e) {
+  // ========================================================================================== MOBILE NAVIGATION ==================
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+  // Toggle mobile nav menu
+  hamburger.addEventListener("click", function(e) {
+    e.stopPropagation(); // Prevent click from bubbling
+    navLinks.classList.toggle("nav-active");
+  });
+
+  // Toggle dropdowns on mobile
+  dropdownLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
       if (window.innerWidth <= 768) {
-        e.preventDefault(); // prevent link navigation
+        e.preventDefault(); // Prevent link navigation
         const submenu = this.nextElementSibling;
-        submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+        submenu.classList.toggle("dropdown-active");
       }
     });
   });
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu if clicking outside
   document.addEventListener("click", function(e) {
-    const menu = document.querySelector(".nav-links");
-    const isClickInside = menu.contains(e.target) || e.target.classList.contains("hamburger");
-    if (!isClickInside && window.innerWidth <= 768) {
-      menu.querySelectorAll(".dropdown-content").forEach(sub => sub.style.display = "none");
-      document.getElementById("menu-toggle").checked = false;
+    if (window.innerWidth <= 768) {
+      const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+      if (!isClickInsideNav) {
+        navLinks.classList.remove("nav-active");
+        document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+      }
     }
   });
-});
-		
-		
-    // --------------------------------------------------------------------  News Slideshow Script
+
+  // ========================================================================================== NEWS SLIDESHOW ==================
   let slideIndex = 0;
   const slides = document.querySelectorAll(".news-slide");
 
   function showSlides(n) {
-    if (n >= slides.length) { slideIndex = 0; }
-    if (n < 0) { slideIndex = slides.length - 1; }
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
 
     slides.forEach(slide => slide.style.display = "none");
     slides[slideIndex].style.display = "block";
@@ -575,16 +585,24 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlides(slideIndex);
   }
 
-  // Auto-slide every 5 seconds
   function autoSlides() {
     slideIndex++;
     showSlides(slideIndex);
     setTimeout(autoSlides, 5000);
   }
 
-  // Initialize
+  // Initialize slideshow
   showSlides(slideIndex);
   autoSlides();
-</script>
+
+  // Attach next/prev buttons if they exist
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  if (prevBtn) prevBtn.addEventListener("click", () => plusSlides(-1));
+  if (nextBtn) nextBtn.addEventListener("click", () => plusSlides(1));
+
+});
+	
+	</script>
 </body>
 </html>
