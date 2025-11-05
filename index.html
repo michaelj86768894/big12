@@ -186,8 +186,8 @@ body {
   }
 
   /* ✅ This is the actual hamburger toggle */
-  .menu-toggle:checked + .hamburger + .nav-links {
-    display: flex !important;
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
   }
 
   /* Mobile dropdown behavior */
