@@ -102,6 +102,8 @@ body {
 /* Hamburger (hidden on desktop) */
 .menu-toggle {
   display: none;
+  position: absolute;
+  opacity: 0;
 }
 
 .hamburger {
@@ -164,17 +166,25 @@ body {
 
   .hamburger {
     display: block;
+    cursor: pointer;
+    z-index: 1001; /* ensure clickable */
   }
 
   .nav-links {
     display: none; /* Hidden until toggled */
     flex-direction: column;
     width: 100%;
-    background-color: #001433; /* DARK BLUE */
+    background-color: #001433;
     position: absolute;
     top: 100%;
     left: 0;
     border-top: 1px solid #003d7a;
+    z-index: 1000;
+  }
+
+  /* ✅ FIXED: Toggle menu when checkbox is checked */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
   }
 
   .nav-links li {
@@ -185,20 +195,11 @@ body {
     padding: 12px 20px;
   }
 
-  /* ✅ This is the actual hamburger toggle */
-  .menu-toggle:checked ~ .nav-links {
-    display: flex;
-  }
-
-  /* Mobile dropdown behavior */
   .dropdown-content {
     position: static;
     box-shadow: none;
     background-color: #007FC8;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: none; /* disable hover dropdown on mobile */
+    display: none;
   }
 
   .dropdown .dropdown-content li a {
