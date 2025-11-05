@@ -439,66 +439,6 @@ const Schedule = (() => {
 })();
 
 // ---------------------------
-// Nav injection module
-// ---------------------------
-const NavLoader = (() => {
-  async function load() {
-    const placeholder = $("#nav-placeholder") || (function create() {
-      const el = document.createElement("div");
-      el.id = "nav-placeholder";
-      document.body.insertAdjacentElement("afterbegin", el);
-      return el;
-    })();
-
-    try {
-      const html = await fetchText("/big12/pages/nav.html");
-      placeholder.innerHTML = html;
-    } catch (err) {
-      console.error("Error loading nav:", err);
-      // leave placeholder empty silently
-    }
-  }
-
-  return { load };
-})();
-
-// ===========================
-// News slideshow carousel
-// ===========================
-document.addEventListener("DOMContentLoaded", () => {
-  const wrapper = document.querySelector(".news-slide-wrapper");
-  const slides = Array.from(document.querySelectorAll(".news-slide"));
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
-  let index = 0;
-
-  if (!wrapper || slides.length === 0) return;
-
-  function showSlide(i) {
-    index = (i + slides.length) % slides.length; // wrap around
-    const offset = -index * 100; // percent
-    wrapper.style.transform = `translateX(${offset}%)`;
-  }
-
-  prevBtn?.addEventListener("click", () => showSlide(index - 1));
-  nextBtn?.addEventListener("click", () => showSlide(index + 1));
-
-  // Auto-slide every 8 seconds
-  setInterval(() => showSlide(index + 1), 8000);
-
-  // Initial display
-  showSlide(0);
-});
-// ---------------------------
-// Utilities used across modules
-// ---------------------------
-function refreshCollapsibleHeight() {
-  $$(".collapsible.active + .content").forEach(content => {
-    content.style.maxHeight = content.scrollHeight + "px";
-  });
-}
-
-// ---------------------------
 // Initialize everything on DOM ready
 // ---------------------------
 document.addEventListener("DOMContentLoaded", () => {
