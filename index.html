@@ -164,12 +164,18 @@ body {
 
 /* ================== MOBILE RESPONSIVE ================== */
 @media screen and (max-width: 768px) {
-
-  .hamburger {
-    display: block;
-    margin-left: auto;
-	background: rgba(255,0,0,0.3; /*temp debug */)
-  }
+	
+.hamburger {
+  display: block !important;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: rgba(255,0,0,0.5); /* temporary */
+  padding: 5px 10px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+}
 
   .nav-links {
     display: none;
