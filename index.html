@@ -189,9 +189,16 @@ body {
   }
 
   /* Hamburger toggle works */
-  .menu-toggle:checked + .hamburger + .nav-links {
-    display: flex;
-  }
+.menu-toggle:checked + .hamburger + .nav-links {
+  display: flex !important;
+  flex-direction: column;
+  background-color: #001433;
+  position: absolute;
+  top: 60px; /* or whatever height below logo */
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
 
   .nav-links li {
     width: 100%;
