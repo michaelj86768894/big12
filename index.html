@@ -568,45 +568,39 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-// ========================================================================================== NEWS SLIDESHOW ==================
-let newsSlideIndex = 0;
-const newsSlides = document.querySelectorAll(".news-slide");
+  // ========================================================================================== NEWS SLIDESHOW ==================
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".news-slide");
 
-// Stack all slides and fade out
-newsSlides.forEach(slide => {
-  slide.style.opacity = "0";
-  slide.style.position = "absolute";
-  slide.style.top = "0";
-  slide.style.left = "0";
-  slide.style.width = "100%";
-  slide.style.transition = "opacity 0.6s ease";
-});
+  function showSlides(n) {
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
 
-// Show the first slide
-newsSlides[newsSlideIndex].style.opacity = "1";
+    slides.forEach(slide => slide.style.display = "none");
+    slides[slideIndex].style.display = "block";
+  }
 
-function showNewsSlide(n) {
-  newsSlideIndex = (n + newsSlides.length) % newsSlides.length;
-  newsSlides.forEach(slide => slide.style.opacity = "0");
-  newsSlides[newsSlideIndex].style.opacity = "1";
-}
+  function plusSlides(n) {
+    slideIndex += n;
+    showSlides(slideIndex);
+  }
 
-// Auto rotate
-setInterval(() => showNewsSlide(newsSlideIndex + 1), 5000);
+  function autoSlides() {
+    slideIndex++;
+    showSlides(slideIndex);
+    setTimeout(autoSlides, 5000);
+  }
 
-// ========== SWIPE SUPPORT ==========
-let touchStartX = 0;
-let touchEndX = 0;
+  // Initialize slideshow
+  showSlides(slideIndex);
+  autoSlides();
 
-document.querySelector(".news-slide-wrapper").addEventListener("touchstart", (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-});
+  // Attach next/prev buttons if they exist
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  if (prevBtn) prevBtn.addEventListener("click", () => plusSlides(-1));
+  if (nextBtn) nextBtn.addEventListener("click", () => plusSlides(1));
 
-document.querySelector(".news-slide-wrapper").addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-
-  if (touchEndX < touchStartX - 50) showNewsSlide(newsSlideIndex + 1); // swipe left
-  if (touchEndX > touchStartX + 50) showNewsSlide(newsSlideIndex - 1); // swipe right
 });
 	
 	</script>
