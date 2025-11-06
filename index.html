@@ -371,10 +371,23 @@ body {
   .news-caption h3 {
     font-size: 14px;
   }
-  .prev, .next {
-    font-size: 20px;
-    padding: 8px;
-  }
+
+	/* Make sure the dots are visible and clickable on mobile */
+.news-dots {
+  position: absolute;   /* keep them positioned over slides */
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 20;          /* above slides */
+  pointer-events: auto;
+}
+
+/* Make dots slightly larger for mobile taps */
+.news-dots .dot {
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+}
 }
 		
 	</style>
