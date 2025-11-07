@@ -248,7 +248,8 @@ body {
   background: #fff;
   padding: 10px;
   position: relative;
-  overflow: visible; /* Keep box visible; table handles scrolling */
+/*  overflow: visible; /* Keep box visible; table handles scrolling */
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -277,6 +278,7 @@ body {
   width: 32px;
   height: 32px;
   object-fit: cover;
+  border-radius: 50%
 }
 
 .team-name {
@@ -305,13 +307,12 @@ body {
   width: 100%;
 }
 
-/* Table head + body */
 .table-wrapper thead,
 .table-wrapper tbody {
-  width: 100%;
+  display: table-header-group; /* default behavior */
+  width: auto;
 }
 
-/* Cells */
 .table-wrapper th,
 .table-wrapper td {
   border: 1px solid #ddd;
