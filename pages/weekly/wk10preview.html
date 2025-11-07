@@ -243,13 +243,13 @@ body {
 
 /* ========================================================================================== MATCHUP BOX ============================= */
 .schedule-box {
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   background: #fff;
-  padding: 16px;
+  padding: 10px;
   position: relative;
-  display: flex;
-  flex-direction: column;
+/*  display: flex;
+  flex-direction: column; REMOVE IF NO ISSUES */
 }
 
 /* Highlighted matchup of the week */
@@ -259,17 +259,17 @@ body {
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-align: center;
 }
-
+	
 /* ========================================================================================== TEAM HEADER ============================= */
 .team-header {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .team-header img {
@@ -281,6 +281,7 @@ body {
 .team-name {
   font-weight: bold;
   font-size: 16px;
+  white-space: normal;
 }
 
 /* STREAK COLOR */
@@ -292,6 +293,7 @@ body {
 /* TABLE */
 .table-wrapper {
   overflow-x: auto;     /* Enables scroll on mobile */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   margin-top: 12px;
 }
 
@@ -326,6 +328,13 @@ td[bgcolor="#F0AE00"] {
   text-align: center;
   margin-bottom: 20px;
 }
+		
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .team-header {
+    flex-direction: row;  /* logos and names stay in a row but wrap if needed */
+    justify-content: flex-start;
+  }
 	
 	</style>
 
