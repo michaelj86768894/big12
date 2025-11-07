@@ -227,6 +227,16 @@ body {
   }
 }
 		
+/* ========================================================================================== WEEKLY PREVIEW GRID ================== */
+.weekly-preview-container {
+  max-width: 1200px;       /* controls the width so content isn't too wide */
+  margin: 40px auto;       /* centers the container with 40px top/bottom margin */
+  padding: 0 15px;         /* adds some space on the sides for mobile */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;               /* space between matchup boxes */
+}
+		
 /* ========================================================================================== MATCHUP GRID ============================= */
 .schedule-table {
   display: grid;
@@ -356,6 +366,7 @@ td[bgcolor="#F0AE00"] {
 }
 	
 	</style>
+	</head>
 
 	<body>
 
@@ -424,6 +435,8 @@ td[bgcolor="#F0AE00"] {
     </ul>
   </div>
 </nav>		
+		
+		<div class="weekly-preview-container">
 
 		<h3>Week 10 Preview</h3>
 			
