@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Big 12 Week 10 Preview</title>
+	<title>Big 12 Week 8 Preview</title>
 	<style>
 
 /* ========================================================================================== GLOBAL STYLES ================== */
@@ -227,6 +227,16 @@ body {
   }
 }
 		
+/* ========================================================================================== WEEKLY PREVIEW GRID ================== */
+.weekly-preview-container {
+  max-width: 1200px;       /* controls the width so content isn't too wide */
+  margin: 40px auto;       /* centers the container with 40px top/bottom margin */
+  padding: 0 15px;         /* adds some space on the sides for mobile */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;               /* space between matchup boxes */
+}
+		
 /* ========================================================================================== MATCHUP GRID ============================= */
 .schedule-table {
   display: grid;
@@ -356,7 +366,7 @@ td[bgcolor="#F0AE00"] {
 }
 	
 	</style>
-
+	</head>
 	<body>
 
 <!-- ========================================================================================== LOGO BAR ================== -->
@@ -425,7 +435,9 @@ td[bgcolor="#F0AE00"] {
   </div>
 </nav>		
 		
-		<h3>Week 8 Preview</h3>
+		<div class="weekly-preview-container">
+			
+			<h3>Week 8 Preview</h3>
 			
 		<p>Week 8 is here and it's officially time for everyone to complain about bye weeks -- a thing that definitely could not have been predicted when assembling your team. The good news is that week 8 has more teams on bye weeks than any other week this season. Those teams are:</p>
 
