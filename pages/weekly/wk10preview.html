@@ -248,6 +248,7 @@ body {
   background: #fff;
   padding: 10px;
   position: relative;
+  overflow: visible;
 /*  display: flex;
   flex-direction: column; REMOVE IF NO ISSUES */
 }
@@ -292,8 +293,10 @@ body {
 
 /* TABLE */
 .table-wrapper {
-  overflow-x: auto;     /* Enables scroll on mobile */
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-top: 12px;
 }
 
@@ -303,6 +306,15 @@ body {
   width: 100%;
 }
 
+.table-wrapper thead,
+.table-wrapper tbody {
+  display: table-row-group;
+  width: auto;
+  overflow: visible;
+  white-space: normal;
+}
+
+/* Cell styles */
 .table-wrapper th,
 .table-wrapper td {
   border: 1px solid #ddd;
@@ -314,6 +326,7 @@ body {
 .table-wrapper th {
   background: #f3f3f3;
   font-weight: bold;
+}weight: bold;
 }
 
 /* Highlight cell wins */
