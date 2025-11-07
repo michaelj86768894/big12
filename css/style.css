@@ -97,64 +97,6 @@ hr {
 
 #winner, .winner, .standings-table tr.highlight td { background-color: #d4edda; color: #155724; font-weight: 700; }
 
-/* ================================== */
-/*            NAVIGATION BAR           */
-/* ================================== */
-
-/* Hide the mobile toggle checkbox */
-.nav-toggle {
-  display: none;
-}
-
-nav {
-  background-color: var(--color-navy);
-  padding: var(--space-md) var(--space-xl);
-  font-family: var(--font-body);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav .logo img {
-  max-height: 60px; /* Adjust this value as needed */
-  width: auto;
-  display: block;
-}
-
-/* Hide dropdowns by default */
-.nav-links li .dropdown-content {
-  display: none;
-  position: absolute; /* So it floats over content */
-  background-color: var(--color-navy);
-  min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 1000;
-  padding: var(--space-sm) 0;
-  list-style: none;
-}
-
-/* Dropdown links styling */
-.nav-links li .dropdown-content li a {
-  display: block;
-  padding: var(--space-xs) var(--space-md);
-  color: var(--color-gold);
-  text-decoration: none;
-}
-
-.nav-links li .dropdown-content li a:hover {
-  color: var(--color-blue);
-  background-color: rgba(255,255,255,0.05);
-}
-
-/* Show dropdown on hover (desktop) */
-.nav-links li.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Position relative for parent dropdown */
-.nav-links li.dropdown {
-  position: relative;
-}
 
 /* ================================== */
 /*          BUTTONS / COLLAPSIBLE      */

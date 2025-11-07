@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Big 12 Fantasy League</title>
+	<title>Big 12.com | Official Site of the Big 12 Fantasy League</title>
 	<style>
 
 /* ========================================================================================== GLOBAL STYLES ================== */
@@ -16,7 +16,7 @@ body {
 /* ========================================================================================== TEAM LOGO BAR ================== */
 .team-logo-bar {
   background-color: #f8f8f8;
-  border-bottom: 2px solid #ccc;
+  border-bottom: none;
   overflow-x: auto;
   white-space: nowrap;
   padding: 10px 0;
@@ -297,7 +297,7 @@ body {
 .news-slide-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* keeps slides proportional */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 		
@@ -310,18 +310,18 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;        /* NEW → match wrapper height */
-  display: flex;       /* NEW → ensures image fills properly */
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .news-slide img {
   width: 100%;
-  height: 100%;        /* NEW → matches wrapper height */
-  object-fit: cover;   /* NEW → prevents stretching, fills cleanly */
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-bottom: none; /* optional, can remove border if you like */
+  border-bottom: none;
 }
 
 .news-caption {
@@ -344,11 +344,6 @@ body {
   animation-duration: 1s;
 }
 
-@keyframes fade {
-  from {opacity: 0.4;}
-  to {opacity: 1;}
-}
-
 .news-dots {
   text-align: center;
   position: absolute;
@@ -362,14 +357,14 @@ body {
   width: 12px;
   height: 12px;
   margin: 0 5px;
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .news-dots .dot.active {
-  background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 		
 /* MOBILE RESPONSIVE */
@@ -378,20 +373,19 @@ body {
     font-size: 14px;
   }
 
-  /* Make slideshow dots visible and tappable on mobile */
   .news-dots {
-    position: absolute;      /* position over slides */
-    bottom: 10px;            /* 10px from bottom */
-    width: 100%;             /* full width */
-    text-align: center;      /* center dots */
-    z-index: 20;             /* above slides */
-    pointer-events: auto;    /* allow taps/clicks */
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    pointer-events: auto;
   }
 
   .news-dots .dot {
-    width: 14px;             /* larger for fingers */
+    width: 14px;
     height: 14px;
-    margin: 0 6px;           /* spacing between dots */
+    margin: 0 6px;
   }
 }
 		
