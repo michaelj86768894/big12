@@ -248,9 +248,9 @@ body {
   background: #fff;
   padding: 10px;
   position: relative;
-  overflow: visible;
-/*  display: flex;
-  flex-direction: column; REMOVE IF NO ISSUES */
+  overflow: visible; /* Keep box visible; table handles scrolling */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Highlighted matchup of the week */
@@ -276,7 +276,7 @@ body {
 .team-header img {
   width: 32px;
   height: 32px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .team-name {
@@ -294,27 +294,24 @@ body {
 /* TABLE */
 .table-wrapper {
   width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;              /* horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   margin-top: 12px;
 }
 
 .table-wrapper table {
   border-collapse: collapse;
-  min-width: 600px;     /* Prevents squishing on small screens */
+  min-width: 600px;              /* ensures table doesn’t squish */
   width: 100%;
 }
 
+/* Table head + body */
 .table-wrapper thead,
 .table-wrapper tbody {
-  display: table-row-group;
-  width: auto;
-  overflow: visible;
-  white-space: normal;
+  width: 100%;
 }
 
-/* Cell styles */
+/* Cells */
 .table-wrapper th,
 .table-wrapper td {
   border: 1px solid #ddd;
@@ -326,7 +323,6 @@ body {
 .table-wrapper th {
   background: #f3f3f3;
   font-weight: bold;
-}weight: bold;
 }
 
 /* Highlight cell wins */
@@ -344,10 +340,19 @@ td[bgcolor="#F0AE00"] {
 		
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
+  .schedule-table {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
   .team-header {
-    flex-direction: row;  /* logos and names stay in a row but wrap if needed */
+    flex-wrap: wrap;  /* logos + names wrap nicely */
     justify-content: flex-start;
   }
+
+  .table-wrapper table {
+    min-width: 500px; /* smaller on mobile but still scrollable */
+  }
+}
 	
 	</style>
 
