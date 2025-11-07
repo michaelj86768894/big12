@@ -348,7 +348,7 @@ body {
   position: absolute;
   bottom: 10px;
   width: 100%;
-  z-index: 50;
+  z-index: 10;
 }
 
 .news-dots .dot {
@@ -356,14 +356,14 @@ body {
   width: 12px;
   height: 12px;
   margin: 0 5px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 0, 0, 0.5);
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .news-dots .dot.active {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 0, 0, 1);
 }
 		
 /* MOBILE RESPONSIVE */
@@ -375,7 +375,7 @@ body {
   /* Make slideshow dots visible and tappable on mobile */
   .news-dots {
     position: absolute;      /* position over slides */
-    bottom: 60px;            /* 10px from bottom */
+    bottom: 10px;            /* 10px from bottom */
     width: 100%;             /* full width */
     text-align: center;      /* center dots */
     z-index: 20;             /* above slides */
