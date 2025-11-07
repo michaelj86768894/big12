@@ -227,7 +227,7 @@ body {
   }
 }
 		
-		/* ========================================================================================== MATCHUP GRID ============================= */
+/* ========================================================================================== MATCHUP GRID ============================= */
 .schedule-table {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 wide on desktop */
@@ -243,11 +243,13 @@ body {
 
 /* ========================================================================================== MATCHUP BOX ============================= */
 .schedule-box {
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   background: #fff;
-  padding: 16px;
+  padding: 10px;
   position: relative;
+/*  overflow: visible; /* Keep box visible; table handles scrolling */
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -259,28 +261,30 @@ body {
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-align: center;
 }
-
+	
 /* ========================================================================================== TEAM HEADER ============================= */
 .team-header {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .team-header img {
   width: 32px;
   height: 32px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%
 }
 
 .team-name {
   font-weight: bold;
   font-size: 16px;
+  white-space: normal;
 }
 
 /* STREAK COLOR */
@@ -291,14 +295,22 @@ body {
 
 /* TABLE */
 .table-wrapper {
-  overflow-x: auto;     /* Enables scroll on mobile */
+  width: 100%;
+  overflow-x: auto;              /* horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   margin-top: 12px;
 }
 
 .table-wrapper table {
   border-collapse: collapse;
-  min-width: 600px;     /* Prevents squishing on small screens */
+  min-width: 600px;              /* ensures table doesn’t squish */
   width: 100%;
+}
+
+.table-wrapper thead,
+.table-wrapper tbody {
+  display: table-header-group; /* default behavior */
+  width: auto;
 }
 
 .table-wrapper th,
@@ -325,6 +337,22 @@ td[bgcolor="#F0AE00"] {
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
+}
+		
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .schedule-table {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  .team-header {
+    flex-wrap: wrap;  /* logos + names wrap nicely */
+    justify-content: flex-start;
+  }
+
+  .table-wrapper table {
+    min-width: 500px; /* smaller on mobile but still scrollable */
+  }
 }
 	
 	</style>
