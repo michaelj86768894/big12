@@ -372,22 +372,21 @@ body {
     font-size: 14px;
   }
 
-	/* Make sure the dots are visible and clickable on mobile */
-.news-dots {
-  position: absolute;   /* keep them positioned over slides */
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  z-index: 20;          /* above slides */
-  pointer-events: auto;
-}
+  /* Make slideshow dots visible and tappable on mobile */
+  .news-dots {
+    position: absolute;      /* position over slides */
+    bottom: 10px;            /* 10px from bottom */
+    width: 100%;             /* full width */
+    text-align: center;      /* center dots */
+    z-index: 20;             /* above slides */
+    pointer-events: auto;    /* allow taps/clicks */
+  }
 
-/* Make dots slightly larger for mobile taps */
-.news-dots .dot {
-  width: 14px;
-  height: 14px;
-  margin: 0 6px;
-}
+  .news-dots .dot {
+    width: 14px;             /* larger for fingers */
+    height: 14px;
+    margin: 0 6px;           /* spacing between dots */
+  }
 }
 		
 	</style>
