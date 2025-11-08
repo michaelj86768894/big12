@@ -234,7 +234,6 @@ body {
   padding: 0 15px;         /* adds some space on the sides for mobile */
   display: flex;
   flex-direction: column;
-  gap: 20px;               /* space between matchup boxes */
 }
 		
 /* ========================================================================================== MATCHUP GRID ============================= */
@@ -871,7 +870,44 @@ td[bgcolor="#F0AE00"] {
 		</div>
 			
 		</div>
-		<script src="/big12/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+// ========================================================================================== MOBILE NAVIGATION ==================
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+  // Toggle mobile nav menu
+  hamburger.addEventListener("click", function(e) {
+    e.stopPropagation(); // Prevent click from bubbling
+    navLinks.classList.toggle("nav-active");
+  });
+
+  // Toggle dropdowns on mobile
+  dropdownLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault(); // Prevent link navigation
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle("dropdown-active");
+      }
+    });
+  });
+
+  // Close mobile menu if clicking outside
+  document.addEventListener("click", function(e) {
+    if (window.innerWidth <= 768) {
+      const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+      if (!isClickInsideNav) {
+        navLinks.classList.remove("nav-active");
+        document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+      }
+    }
+  });
+
+});
+</script>	
 
 		</body>
 </html>
