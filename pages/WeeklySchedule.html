@@ -486,7 +486,7 @@ select, input[type="text"] {
 		
 		
 
-	  <div class="summary" id="summaryArea" style="display:none;">
+<!--	  <div class="summary" id="summaryArea" style="display:none;">
 		<div class="card" id="cardTeam1">
 		  <h3 id="cardTeam1Name">Team 1</h3>
 		  <p id="cardTeam1Record">0 - 0</p>
@@ -504,7 +504,7 @@ select, input[type="text"] {
 		  <p id="cardTeam2Record">0 - 0</p>
 		  <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
 		</div>
-	  </div>
+	  </div>-->
 
 	  <div class="loading" id="loadingMsg">Loading match data...</div>
 
@@ -512,7 +512,7 @@ select, input[type="text"] {
 	<table class="divisions-table" id="matchTable">
 	  <thead>
 		<tr>
-		  <th style="width:120px">Date</th>
+		  <th style="width:120px">Week</th>
 		  <th>Team 1</th>
 		  <th>Team 2</th>
 		  <th style="width:120px">Score</th>
@@ -573,20 +573,20 @@ document.addEventListener("DOMContentLoaded", async function() {
 
   const matchTableWrap = document.getElementById("matchTableWrap");
   const matchTableBody = document.querySelector("#matchTable tbody");
-  const summaryArea = document.getElementById("summaryArea");
+  //const summaryArea = document.getElementById("summaryArea");
   const loadingMsg = document.getElementById("loadingMsg");
   const noMatchesMsg = document.getElementById("noMatches");
 
-  const cardTeam1Name = document.getElementById("cardTeam1Name");
-  const cardTeam1Record = document.getElementById("cardTeam1Record");
-  const cardTeam1PF = document.getElementById("cardTeam1PF");
+  //const cardTeam1Name = document.getElementById("cardTeam1Name");
+  //const cardTeam1Record = document.getElementById("cardTeam1Record");
+  //const cardTeam1PF = document.getElementById("cardTeam1PF");
 
-  const cardTeam2Name = document.getElementById("cardTeam2Name");
-  const cardTeam2Record = document.getElementById("cardTeam2Record");
-  const cardTeam2PF = document.getElementById("cardTeam2PF");
+  //const cardTeam2Name = document.getElementById("cardTeam2Name");
+  //const cardTeam2Record = document.getElementById("cardTeam2Record");
+  //const cardTeam2PF = document.getElementById("cardTeam2PF");
 
-  const head2headSummary = document.getElementById("head2headSummary");
-  const mostRecentEl = document.getElementById("mostRecent");
+  //const head2headSummary = document.getElementById("head2headSummary");
+  //const mostRecentEl = document.getElementById("mostRecent");
 
   let allMatches = [];
   let teams = [];
@@ -679,19 +679,20 @@ document.addEventListener("DOMContentLoaded", async function() {
       const text = await res.text();
       const rows = parseCsvToObjects(text);
 
-      allMatches = rows.map(r=>{
-        const d = parseDate_mmddyy(r["Date"]);
-        return {
-          rawDate: r["Date"]||"",
-          date: d,
-          team1: (r["Team 1"]||"").trim(),
-          team2: (r["Team 2"]||"").trim(),
-          score1: parseInt(r["Team 1 Score"]||"0",10),
-          score2: parseInt(r["Team 2 Score"]||"0",10),
-          gameType: (r["Game Type"]||"").trim()
-        };
-      }).filter(m=>m.team1 && m.team2 && m.date);
-
+allMatches = rows.map(r=>{
+  const d = parseDate_mmddyy(r["Date"]);
+  return {
+    rawDate: r["Date"]||"",
+    date: d,
+    week: (r["Week"]||"").trim(),                // <-- ADDED
+    team1: (r["Team 1"]||"").trim(),
+    team2: (r["Team 2"]||"").trim(),
+    score1: parseFloat(r["Team 1 Score"]||"0") || 0,
+    score2: parseFloat(r["Team 2 Score"]||"0") || 0,
+    gameType: (r["Game Type"]||"").trim()
+  };
+}).filter(m=>m.team1 && m.team2 && m.date);
+	  
       const teamSet = new Set();
       allMatches.forEach(m=>{teamSet.add(m.team1); teamSet.add(m.team2);});
       teams = Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
@@ -724,9 +725,9 @@ document.addEventListener("DOMContentLoaded", async function() {
       return matchTeam1 && matchTeam2;
     });
 
-    if(yearVal !== "ALL_YEARS"){
-      filtered = filtered.filter(m=>m.date && m.date.getFullYear().toString() === yearVal);
-    }
+if(yearVal !== "ALL_YEARS"){
+  filtered = filtered.filter(m => m.date && m.date.getFullYear().toString() === yearVal);
+}
 
     if(gameTypeVal !== "ALL_TYPES"){
       filtered = filtered.filter(m => m.gameType === gameTypeVal);
@@ -739,7 +740,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     filtered.sort((a,b)=>b.date - a.date);
 
     // --- SUMMARY CARDS ---
-    if(filtered.length > 0){
+    /*if(filtered.length > 0){
       let winsA=0, winsB=0, pfA=0, pfB=0;
       filtered.forEach(m=>{
         if(teamA!=="ALL_TEAMS"){
@@ -766,25 +767,35 @@ document.addEventListener("DOMContentLoaded", async function() {
       summaryArea.style.display = "flex";
     } else {
       summaryArea.style.display = "none";
-    }
+    }*/
 
     // --- TABLE RENDER ---
-    matchTableBody.innerHTML="";
-    let toggle=false, lastDate=null;
-    filtered.forEach(m=>{
-      const dateKey=formatDateShort(m.date);
-      if(dateKey!==lastDate){ toggle = !toggle; lastDate=dateKey; }
-      const tr=document.createElement("tr");
-      tr.style.backgroundColor = toggle?"#f9f9f9":"#ffffff";
-      tr.innerHTML=`
-        <td>${dateKey}</td>
-        <td class="${m.score1>m.score2?'winner':''}">${esc(m.team1)}</td>
-        <td class="${m.score2>m.score1?'winner':''}">${esc(m.team2)}</td>
-        <td>${m.score1} - ${m.score2}</td>
-        <td>${esc(m.gameType)}</td>`;
-      matchTableBody.appendChild(tr);
-    });
+matchTableBody.innerHTML = "";
+let toggle = false;
+let lastKey = null;
 
+filtered.forEach(m => {
+  // Use the week column from the CSV (fall back to formatted date if missing)
+  const weekKey = esc(m.week) || (m.date ? formatDateShort(m.date) : "N/A");
+
+  // flip toggle when week/date changes — keeps alternating row bg grouped by week
+  if (weekKey !== lastKey) {
+    toggle = !toggle;
+    lastKey = weekKey;
+  }
+
+  const tr = document.createElement("tr");
+  tr.style.backgroundColor = toggle ? "#f9f9f9" : "#ffffff";
+  tr.innerHTML = `
+    <td>${weekKey}</td>
+    <td class="${m.score1 > m.score2 ? 'winner' : ''}">${esc(m.team1)}</td>
+    <td class="${m.score2 > m.score1 ? 'winner' : ''}">${esc(m.team2)}</td>
+    <td>${m.score1} - ${m.score2}</td>
+    <td>${esc(m.gameType)}</td>
+  `;
+  matchTableBody.appendChild(tr);
+});
+	
     matchTableWrap.style.display="block";
     noMatchesMsg.style.display = filtered.length===0 ? "block":"none";
   }
