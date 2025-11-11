@@ -341,7 +341,17 @@ select, input[type="text"] {
   color:#666; 
 }
 
-</style>
+#matchTableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+#matchTable {
+  min-width: 600px; /* or however wide your table is */
+}
+	
+	</style>
 </head>
 
 	<body>
@@ -509,6 +519,7 @@ select, input[type="text"] {
 	  <div class="loading" id="loadingMsg">Loading match data...</div>
 
 	  <div id="matchTableWrap" style="display:none;">
+		    <div class="table-wrap"> <!-- <-- add this wrapper -->
 	<table class="divisions-table" id="matchTable">
 	  <thead>
 		<tr>
@@ -522,6 +533,7 @@ select, input[type="text"] {
 	  <tbody></tbody>
 	</table>
 		<div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+				  </div> <!-- /.table-wrap -->
 		  <br>
 		  </div>
 		</div>
