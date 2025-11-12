@@ -259,6 +259,22 @@ body {
   font-weight: bold;
 }
 
+/* ========================================================================================== TEAM CELL LAYOUT (Logo + Team Name) ================== */
+.team-cell {
+  display: flex;
+  justify-content: center;             /* center logo+name as a group */
+  align-items: center;
+  gap: 8px;                             /* spacing between logo and text */
+}
+
+/* Team Logo size */
+.team-logo {
+  width: 24px;                          /* common clean size */
+  height: 24px;
+  object-fit: contain;                  /* prevents distortion */
+  border-radius: 4px;                   /* remove if using round logos */
+}
+
 /* ========================================================================================== Color Boxes  ================== */
 .box {
   display: inline-block;
@@ -326,21 +342,6 @@ div.box.Tucson3 { background: #BD202E; }
 div.box.Vegas { background: #000000; }
 div.box.Vegas2 { background: #A5ACAF; }
 div.box.Vegas3 { background: #FFFFFF; }
-	
-/* ========================================================================================== Team cell layout ================== */
-.teams-table .team-cell {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between logo and text */
-}
-		
-/* Logo size */
-.team-logo {
-  width: 24px;     /* adjust size as needed (20–32px works best) */
-  height: 24px;
-  object-fit: contain; /* ensures no distortion */
-  border-radius: 4px; /* optional: remove if logos are circular */
-}
 	
 	</style>
 </head>
@@ -437,108 +438,109 @@ div.box.Vegas3 { background: #FFFFFF; }
 		
 			<tbody>
 			<tr>
-				<td class="team-cell">
+				<td>
+				<div class="team-cell">
 				<img src="../images/Boston.png" alt="Boston Logo" class="team-logo">
-				<a href="/big12/pages/teams/boston.html">Boston Brawlers</a></td>
+				<a href="/big12/pages/teams/boston.html">Boston Brawlers</a></div></td>
 				<td>Chris Cholka</td>
 				<td><div class="box Boston"></div> <div class="box Boston2"></div> <div class="box Boston3"></div></td>
 				<td>Brookfield, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Brooklyn.png" alt="Brooklyn Logo" class="team-logo">
-				<a href="/big12/pages/teams/brooklyn.html">Brooklyn Bolts</a></td>
+				<a href="/big12/pages/teams/brooklyn.html">Brooklyn Bolts</a></div></td>
 				<td>Cory Colvin</td>
 				<td><div class="box Brooklyn"></div> <div class="box Brooklyn2"></div> <div class="box Brooklyn3"></div></td>
 				<td>Oak Creek, WI</td>
 			</tr>
 				
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/CedarRapids.png" alt="Cedar Rapids Logo" class="team-logo">
-				<a href="/big12/pages/teams/cedarrapids.html">Cedar Rapids Titans</a></td>
+				<a href="/big12/pages/teams/cedarrapids.html">Cedar Rapids Titans</a></div></td>
 				<td>Mitch Smith</td>
 				<td><div class="box CedarRapids"></div> <div class="box CedarRapids2"></div> <div class="box CedarRapids3"></div></td>
 				<td>Waukesha, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Chicago.png" alt="Chicago Logo" class="team-logo">
-				<a href="/big12/pages/teams/chicago.html">Chicago Slaughter</a></td>
+				<a href="/big12/pages/teams/chicago.html">Chicago Slaughter</a></div></td>
 				<td>Darrien Clay</td>
 				<td><div class="box Chicago"></div> <div class="box Chicago2"></div> <div class="box Chicago3"></div></td>
 				<td>Milwaukee, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Cleveland.png" alt="Cleveland Logo" class="team-logo">
-				<a href="/big12/pages/teams/cleveland.html">Cleveland Gladiators</a></td>
+				<a href="/big12/pages/teams/cleveland.html">Cleveland Gladiators</a></div></td>
 				<td>Josh Thurmer</td>
 				<td><div class="box Cleveland"></div> <div class="box Cleveland2"></div> <div class="box Cleveland3"></div></td>
 				<td>Mequon, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/LosAngeles.png" alt="Los Angeles Logo" class="team-logo">
-				<a href="/big12/pages/teams/losangeles.html">Los Angeles Wildcats</a></td>
+				<a href="/big12/pages/teams/losangeles.html">Los Angeles Wildcats</a></div></td>
 				<td>Liz Bautch</td>
 				<td><div class="box LosAngeles"></div> <div class="box LosAngeles2"></div> <div class="box LosAngeles3"></div></td>
 				<td>Brookfield, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Miami.png" alt="Miami Logo" class="team-logo">
-				<a href="/big12/pages/teams/miami.html">Miami Inferno</a></td>
+				<a href="/big12/pages/teams/miami.html">Miami Inferno</a></div></td>
 				<td>Richard Head</td>
 				<td><div class="box Miami"></div> <div class="box Miami2"></div> <div class="box Miami3"></div></td>
 				<td>Sussex, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Milwaukee.png" alt="Milwaukee Logo" class="team-logo">
-				<a href="/big12/pages/teams/milwaukee.html">Milwaukee Mustangs</a></td>
+				<a href="/big12/pages/teams/milwaukee.html">Milwaukee Mustangs</a></div></td>
 				<td>Michael Bautch</td>
 				<td><div class="box Milwaukee"></div> <div class="box Milwaukee2"></div> <div class="box Milwaukee3"></div></td>
 				<td>Brookfield, WI</td>
 			</tr>	
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/NorthernArizona.png" alt="Northern Arizona Logo" class="team-logo">
-				<a href="/big12/pages/teams/northernarizona.html">Northern Arizona Wranglers</a></td>
+				<a href="/big12/pages/teams/northernarizona.html">Northern Arizona Wranglers</a></div></td>
 				<td>Jason Richmond</td>
 				<td><div class="box NorthernArizona"></div> <div class="box NorthernArizona2"></div> <div class="box NorthernArizona3"></div></td>
 				<td>West Bend, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Philadelphia.png" alt="Philadelphia Logo" class="team-logo">
-				<a href="/big12/pages/teams/philadelphia.html">Philadelphia Soul</a></td>
+				<a href="/big12/pages/teams/philadelphia.html">Philadelphia Soul</a></div></td>
 				<td>Brian Simmons</td>
 				<td><div class="box Philadelphia"></div> <div class="box Philadelphia2"></div> <div class="box Philadelphia3"></div></td>
 				<td>Milwaukee, WI</td>	
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Tucson.png" alt="Tucson Logo" class="team-logo">
-				<a href="/big12/pages/teams/tucson">Tuscon Sugar Skulls</a></td>
+				<a href="/big12/pages/teams/tucson">Tuscon Sugar Skulls</a></div></td>
 				<td>Mason Bautch</td>
 				<td><div class="box Tucson"></div> <div class="box Tucson2"></div> <div class="box Tucson3"></div></td>
 				<td>Brookfield, WI</td>
 			</tr>
 					
 			<tr>
-				<td class="team-cell">
+				<td><div class="team-cell">
 				<img src="../images/Vegas.png" alt="Vegas Logo" class="team-logo">
-				<a href="/big12/pages/teams/vegas.html">Vegas Knight Hawks</a></td>
+				<a href="/big12/pages/teams/vegas.html">Vegas Knight Hawks</a></div></td>
 				<td>David Nguyen</td>
 				<td><div class="box Vegas"></div> <div class="box Vegas2"></div> <div class="box Vegas3"></div></td>
 				<td>Greenfield, WI</td>
