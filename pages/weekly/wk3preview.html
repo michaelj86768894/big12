@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+	
+	    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      padding: 30px;
+    }
+	
+.team_fourth {
+background: #ffffff;
+}
+
+.team_second {
+background: #F0AE00;
+}
+
+.team_third {
+background: #007FC8;
+}
+	
+.team_first {
+background: #001433;
+}
+	
+	
+	
+ .awards-container {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .awards-header {
+      background: #001433; /* Change this color if you want */
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .awards-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .award-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    .team-header {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .team-header img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%; /* makes icons circular if they're square */
+      object-fit: cover;
+    }
+
+    .team-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .award-type {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .award-description {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .points {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    /* Color coding */
+    .good-award {
+      color: green;
+    }
+
+    .bad-award {
+      color: red;
+    }
+
+    .neutral-award {
+      color: gray;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .awards-table {
+        grid-template-columns: 1fr;
+      }
+	
+	}
+
+	
+	
+ /* table wrapper: full-width inside the grid (span both columns) */
+  .table-wrapper {
+    width: 100%;
+    grid-column: 1 / -1;        /* SPAN both columns of the parent grid */
+    border: 1px solid #000;     /* outside border */
+    border-radius: 10px;
+    overflow: hidden;           /* clip table so corners stay rounded */
+    background: white;
+    /* display:block is fine (default for div), keeps wrapper full width */
+  }
+
+  /* table styling */
+  .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse; /* ensures cells behave as single table */
+    margin: 0;
+  }
+
+  .table-wrapper th,
+  .table-wrapper td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: middle;
+    border: none;              /* no cell borders (we'll add horizontal only) */
+	  color: black;
+  }
+	
+	/* override for specific span inside td */
+.table-wrapper td .streak-green {
+  color: green;
+  font-weight: bold; /* optional */
+}
+	
+	    .streak-green {
+  color: green;
+  font-weight: bold; /* optional if you want it to stand out more */
+}
+
+  /* header row */
+  .table-wrapper th {
+    background: #f0f0f0;       /* header background color */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* horizontal dividers only:
+     put a top-border on every row AFTER the first row (so header/data/rows all separated) */
+  .table-wrapper tr + tr td {
+    border-top: 1px solid #ddd;
+  }
+
+  /* small responsive tweak: on very small screens, put the grid into 1 column */
+  @media (max-width: 768px) {
+    .awards-table {
+      grid-template-columns: 1fr;
+    }
+    /* table wrapper still spans 1 / -1 but now that's the single column */
+  }
+	
+	
+</style>
+
+<meta charset="UTF-8">
+<title>Big 12</title>
+</head>
+
+<body>
+	
+<h1>Week 3 Preview</h1>
+	
+	<h2>Can Mike McDaniel take his own advice tonight?</h2>
+	
+	<p>So far this season I have been preaching caution. It’s still early and it’s critical to not overreact to a small sample size, especially as it relates to rookies. They’re still learning where the bathrooms are, for Pete’s sake! But that preaching has come to an end. For me to dole out advice that resembles “don’t panic” would make me a hypocrite. I am panicking.</p>
+
+<p>However, I have found comfort in the words of two head football coaches. Over the weekend, Clemson head coach Dabo Swinney gave me some guidance about how to deal mentally with an underperforming group. When one of your leagumates text you about how you are 0-2 or you got blown out by 90 points just copy and paste this back.</p>
+
+<blockquote><i>Yeah, we a little down right now. Take your shots. But I got a long memory, in case y'all don't know. We'll be aight. We'll bounce back. This is a progrum built to last. Always has been. Always will be. And I would just say if you don't believe in us because we lost two games, then you didn't believe in us anyway, so it don't matter! You wasn't all in anyway! If you're all in, you burn the ships, man! There ain't no exit strategy. Like, you're freakin' all in - Dabo Swinney</i></blockquote>
+	
+	<p>And then there's Mike McDaniel. His Dolphins play the Bills tonight in what virtually nobody is expecting to be a good game. But Mike has an ace in the hole. He has found the secret. If you're reading this, I recommend instilling this advice in your fantasy squad this week.</p>
+	
+	<blockquote><i>To win games you have to win the game, not lose the game. - Mike McDaniel</i></blockquote>
+	
+	<p>I see a lot of people making fun of Mike for this quote, but he is correct. I have always found this to be the case.</p>
+	
+
+	<p>Alright, let’s dive into this week’s matchups!</p>
+
+<p>Philadelphia is looking to break a five-game losing streak against Boston, but with Boston standing as the league’s lone undefeated team and one of the top-scoring squads this season, it won’t be easy. Cedar Rapids also faces a tough challenge, trying to snap a five-game skid versus Cleveland after Cleveland’s record-setting performance last week.</p>
+
+<p>Milwaukee aims to keep their momentum going against Chicago, riding a three-game winning streak — though Chicago has struggled this season, with a 3-19 power ranking record that puts them near the bottom of the league. Miami (1-1) vs. Brooklyn earns the “Might Be Tough to Watch” award this week, as both teams sit in the bottom half of the league in scoring and Brooklyn is still winless.</p>
+
+<p>The marquee matchup of the week features Los Angeles (1-1) against Northern Arizona (1-1). Both teams are in the top half for scoring, and they’re just two of four squads to have scored 200+ points in a single game this season. LA is also chasing their 100th regular-season win in franchise history. Finally, Tucson is looking to notch their 100th win (including playoffs) as they square off against Vegas.</p>
+	
+	<p>If you’re a true ball fan, vote below on who you think will come out on top.</p>
+	
+	
+	
+<div class="awards-container">
+    <div class="awards-header">Week 3 Matchups</div>
+    <div class="awards-table">
+		
+																		<!--MATCHUP NUMBER 1-->
+		
+		
+
+      <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/bweoj2a4kfaohvtjgys63/Los-Angeles.png?rlkey=35ayqtx454kp44jbudcl98q0s&st=k47chslj&raw=1" alt="Team A Icon">
+			<div class="team-name">Los Angeles (1-1) vs.</div>
+			          <img src="https://www.dropbox.com/scl/fi/c5iw9fpa7t4nrvlvkkgxf/N-Arizona.png?rlkey=coweke2gywtyeqv03z09jdsw5&st=4wvk4wrh&raw=1" alt="Team D Icon">
+          <div class="team-name">Northern Arizona (1-1)</div>
+        </div>
+		  <div class="award-type">Current Streak: <span class="streak-green">Los Angeles W1</span></div>
+		  <div class="award-type">Hypothetical Win Scenarios:</div>
+		  <div class="award-description">If these teams played every week of the season, who would have won?<br><br>
+		  		  
+		  <div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Week 1</th> 
+    <th>Week 2</th>
+	  <th>Total Wins</th>
+  </tr>
+  <tr>
+    <td><div class="team-header">Los Angeles</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">213.10</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">203.85</div></td>
+    <td><div class="team-header">2</div></td>  
+  </tr>
+
+  <tr>
+    <td><div class="team-header">Northern Arizona</div></td>
+    <td><div class="team-header">203.85</div></td>
+    <td><div class="team-header">157.90</div></td>
+    <td><div class="team-header">0</div></td>  
+  </tr>	
+		
+</table>
+</div> 	
+		  <br>
+		  LA would have won 2 out of 2 matchups.
+			
+		  </div>
+        <div class="award-type">LA leads in the series 11-6 all-time</div>
+      </div>
+
+		
+																			<!--MATCHUP NUMBER 2-->
+
+   <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/xh09tsi8pxtej5p0iwlol/Vegas.png?rlkey=zj8n9kd3aj229zg60kg9jvz9t&st=nryr5550&raw=1" alt="Team A Icon">
+			<div class="team-name">Vegas Knight Hawks (1-1) vs.</div>
+			          <img src="https://www.dropbox.com/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=fgxkvuel&raw=1" alt="Team D Icon">
+          <div class="team-name">Tucson (1-1)</div>
+        </div>
+		  <div class="award-type">Current Streak: <span class="streak-green">Vegas W1</span></div>
+		  <div class="award-type">Hypothetical Win Scenarios:</div>
+		  <div class="award-description">If these teams played every week of the season, who would have won?<br><br>
+		  		  
+		  <div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Week 1</th> 
+    <th>Week 2</th>
+	  <th>Total Wins</th>
+  </tr>
+  <tr>
+    <td><div class="team-header">Vegas</div></td>
+    <td><div class="team-header">159.80</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">235.15</div></td>
+    <td><div class="team-header">1</div></td>  
+  </tr>
+
+  <tr>
+    <td><div class="team-header">Tucson</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">192.25</div></td>
+    <td><div class="team-header">172.20</div></td>
+    <td><div class="team-header">1</div></td>  
+  </tr>	
+		
+</table>
+</div> 	
+		  <br>
+		  Both teams would have won an equal number of matchups (1 each).
+			
+		  </div>
+        <div class="award-type">Tucson leads in the series 6-5 all-time</div>
+      </div>
+		
+
+		
+															<!--MATCHUP NUMBER 3-->
+		
+   <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="Team A Icon">
+			<div class="team-name">Boston (2-0) vs.</div>
+			          <img src="https://www.dropbox.com/scl/fi/mlz8vma22rf5hx09uni8q/Philadelphia.png?rlkey=qd0pelmrbl2nsew8rxa8ysqzm&st=zltsn2tb&raw=1" alt="Team D Icon">
+          <div class="team-name">Philadelphia (1-1)</div>
+        </div>
+		  <div class="award-type">Current Streak: <span class="streak-green">Boston W5</span></div>
+		  <div class="award-type">Hypothetical Win Scenarios:</div>
+		  <div class="award-description">If these teams played every week of the season, who would have won?<br><br>
+		  		  
+		  <div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Week 1</th> 
+    <th>Week 2</th>
+	  <th>Total Wins</th>
+  </tr>
+  <tr>
+    <td><div class="team-header">Boston</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">194.30</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">162.95</div></td>
+    <td><div class="team-header">2</div></td>  
+  </tr>
+
+  <tr>
+    <td><div class="team-header">Philadelphia</div></td>
+    <td><div class="team-header">173.10</div></td>
+    <td><div class="team-header">153.10</div></td>
+    <td><div class="team-header">0</div></td>  
+  </tr>	
+		
+</table>
+</div> 	
+		  <br>
+		  Boston would have won 2 out of 2 matchups.
+			
+		  </div>
+        <div class="award-type">Boston leads in the series 9-7 all-time</div>
+      </div>
+		
+		
+		
+															<!--MATCHUP NUMBER 4-->
+		
+		
+ <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/1s0rugs1yscisislopl6w/Cleveland.png?rlkey=pprnzvdyv2jurhtp7dlc9qnzc&st=2qucmcu9&raw=1" alt="Team A Icon">
+			<div class="team-name">Cleveland (1-1) vs.</div>
+			          <img src="https://www.dropbox.com/scl/fi/n1lmat9jtdpe1r45c08zu/Cedar-Rapids.png?rlkey=do8otuuc0dim1sku4a1c3b2g0&st=2kxolld0&raw=1" alt="Team D Icon">
+          <div class="team-name">Cedar Rapids (1-1)</div>
+        </div>
+		  <div class="award-type">Current Streak: <span class="streak-green">Cleveland W5</span></div>
+		  <div class="award-type">Hypothetical Win Scenarios:</div>
+		  <div class="award-description">If these teams played every week of the season, who would have won?<br><br>
+		  		  
+		  <div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Week 1</th> 
+    <th>Week 2</th>
+	  <th>Total Wins</th>
+  </tr>
+  <tr>
+    <td><div class="team-header">Cleveland</div></td>
+    <td><div class="team-header">132.20</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">238.60</div></td>
+    <td><div class="team-header">1</div></td>  
+  </tr>
+
+  <tr>
+    <td><div class="team-header">Cedar Rapids</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">162.50</div></td>
+    <td><div class="team-header">155.95</div></td>
+    <td><div class="team-header">1</div></td>  
+  </tr>	
+		
+</table>
+</div> 	
+		  <br>
+		  Both teams would have won an equal number of matchups (1 each).
+			
+		  </div>
+        <div class="award-type">Cleveland leads in the series 13-6 all-time</div>
+      </div>
+		
+		
+																			<!--MATCHUP NUMBER 5-->
+		
+
+ <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/24sd3zipiy5585glfnokj/Milwaukee.png?rlkey=0w1nzdsqklifrz5kms2y2j6rw&st=qluw4v4m&raw=1" alt="Team A Icon">
+			<div class="team-name">Milwaukee (1-1) vs.</div>
+			          <img src="https://www.dropbox.com/scl/fi/9d1f2fbjieykcfd45qxsr/Chicago.png?rlkey=5c2uz0kw824tirrv5zqpmk9h7&st=rjzoqadf&raw=1" alt="Team D Icon">
+          <div class="team-name">Chicago (1-1)</div>
+        </div>
+		  <div class="award-type">Current Streak: <span class="streak-green">Milwaukee W3</span></div>
+		  <div class="award-type">Hypothetical Win Scenarios:</div>
+		  <div class="award-description">If these teams played every week of the season, who would have won?<br><br>
+		  		  
+		  <div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Week 1</th> 
+    <th>Week 2</th>
+	  <th>Total Wins</th>
+  </tr>
+  <tr>
+    <td><div class="team-header">Milwaukee</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">176.45</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">161.60</div></td>
+    <td><div class="team-header">2</div></td>  
+  </tr>
+
+  <tr>
+    <td><div class="team-header">Chicago</div></td>
+    <td ><div class="team-header">150.15</div></td>
+    <td><div class="team-header">142.10</div></td>
+    <td><div class="team-header">0</div></td>  
+  </tr>	
+		
+</table>
+</div> 	
+		  <br>
+		 Milwaukee would have won 2 out of 2 matchups.
+			
+		  </div>
+        <div class="award-type">Milwaukee leads in the series 14-7 all-time</div>
+      </div>
+
+		
+		
+																				<!--MATCHUP NUMBER 6-->
+
+ <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="Team A Icon">
+			<div class="team-name">Miami (1-1) vs.</div>
+			          <img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="Team D Icon">
+          <div class="team-name">Brooklyn (0-2)</div>
+        </div>
+		  <div class="award-type">Current Streak: <span class="streak-green">Brooklyn W1</span></div>
+		  <div class="award-type">Hypothetical Win Scenarios:</div>
+		  <div class="award-description">If these teams played every week of the season, who would have won?<br><br>
+		  		  
+		  <div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Week 1</th> 
+    <th>Week 2</th>
+	  <th>Total Wins</th>
+  </tr>
+  <tr>
+    <td><div class="team-header">Miami</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">157.40</div></td>
+    <td bgcolor="#F0AE00"><div class="team-header">171.10</div></td>
+    <td><div class="team-header">2</div></td>  
+  </tr>
+
+  <tr>
+    <td><div class="team-header">Brooklyn</div></td>
+    <td ><div class="team-header">118.90</div></td>
+    <td><div class="team-header">126.90</div></td>
+    <td><div class="team-header">0</div></td>  
+  </tr>	
+		
+</table>
+</div> 	
+		  <br>
+		 Miami would have won 2 out of 2 matchups.
+			
+		  </div>
+        <div class="award-type">Brooklyn leads in the series 10-9 all-time</div>
+      </div>
+		      </div>
+	      </div>
+	
+	
+	<p>Week 3 is loaded with streaks on the line, milestone wins within reach, and a couple of games that could get ugly fast. From Philly and Cedar Rapids trying to shake off history, to LA and Northern Arizona battling for early-season bragging rights, every matchup has something riding on it. Cast your votes, lock in your picks, and get ready — this week could start shaping the contenders from the pretenders.</p>
+
+	
+	
+</body>
+</html>
