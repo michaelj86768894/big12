@@ -242,7 +242,6 @@ display: flex;
 flex-direction: column;
 gap: 0; /* no gap since bottom border separates */
 margin: 20px 0;
-font-family: Arial, sans-serif;
 }
 
 .potw-header {
@@ -259,6 +258,7 @@ align-items: center;
 justify-content: space-between;
 padding: 10px 0;
 border-bottom: 1px solid #ddd; /* only bottom border */
+flex-wrap: nowrap;
 }
 
 /* Left side: player image + name/position */
@@ -266,6 +266,7 @@ border-bottom: 1px solid #ddd; /* only bottom border */
 display: flex;
 align-items: center;
 gap: 10px;
+min-width: 0;
 }
 
 .potw-player img {
@@ -280,11 +281,11 @@ flex-shrink: 0;
 .potw-player-info {
 display: flex;
 flex-direction: column;
+white-space: nowrap;
 }
 
 .potw-player-info .name {
 font-weight: bold;
-font-size: 16px;
 }
 
 .potw-player-info .position-team {
@@ -293,26 +294,50 @@ color: #888;
 }
 
 /* Right side: team logo */
+.potw-team-logo {
+margin-left: 10px; /* brings it closer */
+flex-shrink: 0;
+}
+
 .potw-team-logo img {
-width: 50px;
-height: 50px;
-object-fit: cover;
+width: 100px;
+height: 60px;
+object-fit: fill;
 border-radius: 6px;
 }
 
 /* Mobile responsive */
 @media (max-width: 600px) {
 .potw-card {
-flex-direction: column;
-align-items: flex-start;
-gap: 10px;
+flex-wrap: nowrap; /* force same line */
+justify-content: flex-start;
+gap: 8px;
+}
+
+.potw-team-logo {
+margin-left: auto; /* pushes logo to right edge */
+}
+
+.potw-player-info .name {
+font-size: 14px;
+}
+
+.potw-player-info .position-team {
+font-size: 12px;
+}
+
+.potw-player img {
+width: 50px;
+height: 50px;
 }
 
 .potw-team-logo img {
-align-self: flex-end;
+width: 40px;
+height: 40px;
 }
 }
 
+/* ========================================================================================== Highlight Video Container ================== */
 .highlight-video-container {
 position: relative;
 width: 100%;
