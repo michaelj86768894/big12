@@ -329,13 +329,16 @@ padding:10px;
 border-bottom:1px solid #eee; 
 }
 
-.h2h td.winner {
-  font-weight: 700;
-  background: linear-gradient(90deg, #FFD700, #FFC107);
-  color: #000;
-  border-bottom: 1px solid #ddd !important;
+/* stronger, general winner highlight (covers .h2h tables + your match table) */
+.h2h td.winner,
+.divisions-table td.winner,
+#matchTable td.winner,
+.table-wrap td.winner {
+  font-weight: 700 !important;
+  background: #F0AE00 !important;
+  color: #000 !important;
   position: relative;
-  z-index: 2; /* ensures it sits above the row background */
+  z-index: 2;
 }
 
 /*.h2h td.winner { 
@@ -805,7 +808,7 @@ lastKey = weekKey;
 }
 
 const tr = document.createElement("tr");
-tr.style.backgroundColor = toggle ? "#f9f9f9" : "#ffffff";
+tr.style.backgroundColor = toggle ? "#f3f3f3" : "#ffffff";
 tr.innerHTML = `
 <td>${weekKey}</td>
 <td class="${m.score1 > m.score2 ? 'winner' : ''}">${esc(m.team1)}</td>
