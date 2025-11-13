@@ -491,7 +491,6 @@ document.addEventListener("DOMContentLoaded", async function() {
       }
     });
 
-    // Convert to array & sort
     const sorted = Object.entries(standings)
       .map(([team, stats]) => ({ team, ...stats }))
       .sort((a,b) => b.wins - a.wins || b.pf - a.pf);
@@ -581,17 +580,14 @@ document.addEventListener("DOMContentLoaded", async function() {
       tr.innerHTML = headers.map(h => `<td>${row[h]}</td>`).join("");
       tbody.appendChild(tr);
     });
-
     table.appendChild(tbody);
-    oddsContainer.innerHTML = "";
-    // Replace this line:
-// oddsContainer.appendChild(table);
 
-// With this:
-const scrollWrapper = document.createElement("div");
-scrollWrapper.className = "playoff-odds-scroll"; // <-- wrapper for horizontal scrolling
-scrollWrapper.appendChild(table);
-oddsContainer.appendChild(scrollWrapper);
+    // ===== WRAP TABLE IN SCROLL CONTAINER =====
+    const scrollWrapper = document.createElement("div");
+    scrollWrapper.className = "playoff-odds-scroll"; // <-- wrapper for horizontal scrolling
+    scrollWrapper.appendChild(table);
+    oddsContainer.innerHTML = "";
+    oddsContainer.appendChild(scrollWrapper);
 
   } catch (err) {
     console.error(err);
