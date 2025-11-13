@@ -570,6 +570,47 @@ height: 24px;
 }
 }
 
+/* ========================================================================================== LUCKY DUCK TABLE ================== */
+.lucky-duck-table {
+width: 100%;
+border-collapse: collapse;
+font-size: 15px;
+background: #fff;
+border: 1px solid #ddd;
+table-layout: fixed;
+}
+
+.lucky-duck-table th,
+.lucky-duck-table td {
+border: 1px solid #ddd;
+padding: 12px 10px;
+text-align: center;
+vertical-align: middle;
+word-wrap: break-word;
+}
+
+.lucky-duck-table th {
+background: #f3f3f3;
+font-weight: bold;
+letter-spacing: 0.5px;
+}
+
+/* Title above table */
+.lucky-duck-header {
+font-size: 22px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Conditional coloring for columns */
+.lucky-duck-table td.lucky { color: green; }
+.lucky-duck-table td.unlucky { color: red; }
+.lucky-duck-table td.plusminus-positive { color: green; }
+.lucky-duck-table td.plusminus-negative { color: red; }
+.lucky-duck-table td.label-lucky { color: green; }
+.lucky-duck-table td.label-unlucky { color: red; }
+	
 </style>
 </head>
 
@@ -911,6 +952,15 @@ Your browser does not support the video tag.
 	
 <p>Finally, to wrap up the week — the Survivor Simulator. Just like every week before it, another one bites the dust. We are down to our final two teams! The Tucson Sugar Skulls and a rather unlikely finalist, the Cedar Rapids Titans. Check back next week to see who takes home the crown and the money for surviving the season (just kidding, there is no money, with ya broke ass).</p>
 
+<!-- ========================================================================================== Lucky Duck =============================== -->
+<div class="lucky-duck-header">Lucky Duck Rankings</div>
+<p>Lucky: Won matchup scoring in bottom half of league.
+Unlucky: Lost matchup scoring in top half.
++/-: Net lucky/unlucky weeks</p>
+<div id="lucky-duck-container">
+<div class="loading">Loading lucky duck data...</div>
+</div>
+	
 <!-- ========================================================================================== SURVIVOR =============================== -->
 <div class="survivor-container">
 <div class="survivor-header">Week 10 Survivor Simulator</div>
@@ -1125,6 +1175,7 @@ Your browser does not support the video tag.
 
 
 </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", async function() {
 
@@ -1192,7 +1243,6 @@ standings[team1].losses++;
 }
 });
 
-// Convert to array & sort
 const sorted = Object.entries(standings)
 .map(([team, stats]) => ({ team, ...stats }))
 .sort((a,b) => b.wins - a.wins || b.pf - a.pf);
@@ -1242,6 +1292,66 @@ if (loading) loading.style.display = "none";
 } catch(err) {
 console.error(err);
 if (loading) loading.textContent = "Error loading standings.";
+}
+
+// ========================================================================================== LUCKY DUCK ==================
+const LUCKY_DUCK_CSV = "https://raw.githubusercontent.com/michaelj86768894/big12/main/luckyduck.csv";
+const luckyContainer = document.getElementById("lucky-duck-container");
+
+
+if (!luckyContainer) return;
+
+try {
+const res = await fetch(LUCKY_DUCK_CSV);
+const csv = await res.text();
+
+const rows = csv.trim().split(/\r?\n/);
+const headers = rows.shift().split(",");
+
+const data = rows.map(r => {
+const values = r.split(",");
+const obj = {};
+headers.forEach((h, i) => obj[h.trim()] = values[i]?.trim());
+obj["+/-"] = parseFloat(obj["+/-"]) || 0;
+obj.Lucky = parseInt(obj.Lucky) || 0;
+obj.Unlucky = parseInt(obj.Unlucky) || 0;
+return obj;
+});
+
+// Sort descending by +/- column
+data.sort((a, b) => b["+/-"] - a["+/-"]);
+
+const table = document.createElement("table");
+table.className = "lucky-duck-table";
+
+const thead = document.createElement("thead");
+thead.innerHTML = `<tr>${headers.map(h => `<th>${h}</th>`).join("")}</tr>`;
+table.appendChild(thead);
+
+const tbody = document.createElement("tbody");
+data.forEach(row => {
+const tr = document.createElement("tr");
+tr.innerHTML = headers.map(h => {
+let cell = row[h] ?? "";
+let className = "";
+
+if (h === "Lucky") className = "lucky";
+if (h === "Unlucky") className = "unlucky";
+if (h === "+/-") className = row[h] > 0 ? "plusminus-positive" : row[h] < 0 ? "plusminus-negative" : "";
+if (h === "Label") className = row[h]?.toLowerCase() === "lucky" ? "label-lucky" : row[h]?.toLowerCase() === "unlucky" ? "label-unlucky" : "";
+
+return `<td class="${className}">${cell}</td>`;
+}).join("");
+tbody.appendChild(tr);
+});
+
+table.appendChild(tbody);
+luckyContainer.innerHTML = "";
+luckyContainer.appendChild(table);
+
+} catch (err) {
+console.error(err);
+luckyContainer.textContent = "Error loading lucky duck data.";
 }
 
 });
