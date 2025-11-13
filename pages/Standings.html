@@ -304,7 +304,25 @@ margin-bottom: 20px;
 .playoff-odds-table th:nth-child(n+2):nth-child(-n+8) {
 background-color: #F0AE00; /* light golden color (cornsilk) */
 }
-	
+
+.playoff-odds-scroll {
+width: 100%;
+overflow-x: auto; /* allow horizontal scroll */
+-webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.playoff-odds-scroll::-webkit-scrollbar {
+height: 8px;
+}
+
+.playoff-odds-scroll::-webkit-scrollbar-thumb {
+background: #ccc;
+border-radius: 4px;
+}
+
+.playoff-odds-scroll::-webkit-scrollbar-track {
+background: #f5f5f5;
+}
 </style>
 </head>
 
@@ -566,7 +584,14 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     table.appendChild(tbody);
     oddsContainer.innerHTML = "";
-    oddsContainer.appendChild(table);
+    // Replace this line:
+// oddsContainer.appendChild(table);
+
+// With this:
+const scrollWrapper = document.createElement("div");
+scrollWrapper.className = "playoff-odds-scroll"; // <-- wrapper for horizontal scrolling
+scrollWrapper.appendChild(table);
+oddsContainer.appendChild(scrollWrapper);
 
   } catch (err) {
     console.error(err);
