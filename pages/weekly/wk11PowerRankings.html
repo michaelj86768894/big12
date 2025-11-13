@@ -275,9 +275,19 @@ border-bottom: 1px solid #ddd;
 /* Table cells */
 .rankings-table td {
 padding: 10px;
-text-align: center;
 font-size: 15px;
 border-bottom: 1px solid #ddd;
+}
+
+/* Left-align the team column */
+.rankings-table td:nth-child(2) {
+text-align: left;
+}
+
+/* Center the rank and record columns */
+.rankings-table td:first-child,
+.rankings-table td:last-child {
+text-align: center;
 }
 
 /* Team logo + name */
@@ -285,7 +295,7 @@ border-bottom: 1px solid #ddd;
 display: flex;
 align-items: center;
 gap: 10px;
-justify-content: left;
+justify-content: flex-start;
 }
 
 .team-header img {
@@ -299,10 +309,12 @@ object-fit: fill;
 .rankings-table table {
 font-size: 14px;
 }
+
 .team-header img {
 width: 28px;
 height: 28px;
 }
+
 .rankings-table th,
 .rankings-table td {
 padding: 8px;
@@ -400,91 +412,90 @@ padding: 8px;
 <table>
 <tr>
 <th>Rank</th>
-<th colspan="2">Team</th> 
-<th>Rank</th>
+<th>Team</th> 
+<th>Rank Score</th>
 </tr>
 <tr>
 <td>1 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="../../images/LosAngeles.png" alt="LA WILDCATS">Los Angeles Wildcats (7-2)</div></td>
-<td><div class="team-header">Week 10 Result: Lost to the Slaughter 190-180</div></td>
-<td>45-20-1</td>
+<td><div class="team-header"><img src="../../images/LosAngeles.png" alt="LA">Los Angeles Wildcats (7-2)<br>Week 10 Result: Lost to the Slaughter 173.15-188.90</div></td>
+<td>6,558.60</td>
 </tr>
 
 
 <tr>
 <td>2 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/mlz8vma22rf5hx09uni8q/Philadelphia.png?rlkey=qd0pelmrbl2nsew8rxa8ysqzm&st=zltsn2tb&raw=1" alt="PHI SOUL">Philadelphia Soul</div></td>
-<td>43-23</td>
+<td><div class="team-header"><img src="../../images/Tucson.png" alt="TUCSON">Tucson Sugar Skulls (9-1)<br>Week 10 Result: Beat the Bolts 205.55-182.30</div></td>
+<td>6,441.75</td>
 </tr>
 
 
 <tr>
 <td>3 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="BOS BRAWLERS">Boston Brawlers</div></td>
-<td>42-24</td>
+<td><div class="team-header"><img src="../../images/Boston.png" alt="BOSTON">Boston Brawlers (5-5)<br>Week 10 Result: Lost to the Soul 194.90-199.50</div></td>
+<td>6,045.60</td>
 </tr>
 
 
 <tr>
 <td>4 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/c5iw9fpa7t4nrvlvkkgxf/N-Arizona.png?rlkey=coweke2gywtyeqv03z09jdsw5&st=4wvk4wrh&raw=1" alt="NAR WRANGLERS">Northern Arizona Wranglers</div></td>
-<td>29-26</td>
+<td><div class="team-header"><img src="../../images/CedarRapids.png" alt="CEDAR RAPIDS">Cedar Rapids Titans (6-4)<br>Week 10 Result: Beat the Inferno 186.75-157.90</div></td>
+<td>5,805.28</td>
 </tr>
 
 
 <tr>
 <td>5 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">2)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/1s0rugs1yscisislopl6w/Cleveland.png?rlkey=pprnzvdyv2jurhtp7dlc9qnzc&st=2qucmcu9&raw=1" alt="CLE GLADIATORS">Cleveland Guardians</div></td>
-<td>36-30</td>
+<td><div class="team-header"><img src="../../images/Philadelphia.png" alt="PHILLY">Philadelphia Soul (6-4)<br>Week 10 Result: Beat the Brawlers 199.50-194.90</div></td>
+<td>5,635.33</td>
 </tr>
 
 
 <tr>
 <td>6 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">3)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/9d1f2fbjieykcfd45qxsr/Chicago.png?rlkey=5c2uz0kw824tirrv5zqpmk9h7&st=rjzoqadf&raw=1" alt="CHI SLAUGHTER">Chicago Slaughter</div></td>
-<td>32-34</td>
+<td><div class="team-header"><img src="../../images/Milwaukee.png" alt="MKE">Milwaukee Mustangs (6-4)<br>Week 10 Result: Beat the Wranglers 172.10-123.20</div></td>
+<td>5,361.75</td>
 </tr>
 
 
 <tr>
 <td>7 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=fgxkvuel&raw=1" alt="TUC SUGAR SKULLS">Tucson Sugar Skulls</div></td>
-<td>31-34-1</td>
+<td><div class="team-header"><img src="../../images/NorthernArizona.png" alt="NAZ">Northern Arizona Wranglers (4-6)<br>Week 10 Result: Lost to the Mustangs 123.20-172.10</div></td>
+<td>5,181.72</td>
 </tr>
 
 
 <tr>
 <td>8 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">3)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS">Brooklyn Bolts</div></td>
-<td>30-36</td>
+<td><div class="team-header"><img src="../../images/Cleveland.png" alt="CLEVELAND">Cleveland Gladiators (4-6)<br>Week 10 Result: Beat the Knight Hawks 173.85-134.95</div></td>
+<td>4,863.92</td>
 </tr>
 
 
 <tr>
 <td>9 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/n1lmat9jtdpe1r45c08zu/Cedar-Rapids.png?rlkey=do8otuuc0dim1sku4a1c3b2g0&st=4456qylv&raw=1" alt="CR TITANS">Cedar Rapids Titans</div></td>
-<td>28-38</td>
+<td><div class="team-header"><img src="../../images/Chicago.png" alt="CHICAGO">Chicago (4-6)<br>Week 10 Result: Beat the Wildcats 188.90-173.15</div></td>
+<td>4,712.40</td>
 </tr>
 
 
 <tr>
 <td>10 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">3)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/24sd3zipiy5585glfnokj/Milwaukee.png?rlkey=0w1nzdsqklifrz5kms2y2j6rw&st=qluw4v4m&raw=1" alt="MKE MUSTANGS">Milwaukee Mustangs</div></td>
-<td>27-39</td>
+<td><div class="team-header"><img src="../../images/Brooklyn.png" alt="BROOKLYN">Brooklyn Bolts (3-7)<br>Week 10 Result: Lost to the Sugar Skulls 182.30-205.55</div></td>
+<td>4,437.59</td>
 </tr>
 
 
 <tr>
 <td>11 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="MIA INFERNO">Miami Inferno</div></td>
-<td>23-43</td>
+<td><div class="team-header"><img src="../../images/Vegas.png" alt="VEGAS">Vegas Knight Hawks (3-7)<br>Week 10 Result: Lost to the Knight Hawks 134.95-173.85</div></td>
+<td>4,339.27</td>
 </tr>
 
 
 <tr>
 <td>12</td>
-<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xh09tsi8pxtej5p0iwlol/Vegas.png?rlkey=zj8n9kd3aj229zg60kg9jvz9t&st=zuf7587p&raw=1" alt="Team A Icon">Vegas Knight Hawks</div></td>
-<td>18-48</td>
+<td><div class="team-header"><img src="../../images/Miami.png" alt="MIAMI">Cleveland Gladiators (4-6)<br>Week 10 Result: Beat the Knight Hawks 173.85-134.95</div></td>
+<td>3,938.64</td>
 </tr>
 
 
