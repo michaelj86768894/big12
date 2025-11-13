@@ -305,24 +305,34 @@ margin-bottom: 20px;
 background-color: #F0AE00; /* light golden color (cornsilk) */
 }
 
+/* Scroll wrapper */
 .playoff-odds-scroll {
 width: 100%;
-overflow-x: auto; /* allow horizontal scroll */
--webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+overflow-x: auto;
+-webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
-.playoff-odds-scroll::-webkit-scrollbar {
-height: 8px;
+/* Optional: shadow hint for scroll */
+.playoff-odds-scroll::after {
+content: '';
+display: block;
+height: 2px;
+background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0));
+margin-top: -2px;
 }
 
-.playoff-odds-scroll::-webkit-scrollbar-thumb {
-background: #ccc;
-border-radius: 4px;
+/* Table inside scroll container */
+.playoff-odds-table {
+width: max-content;   /* allow table to expand naturally beyond container */
+min-width: 100%;      /* ensure it’s at least full container width */
+border-collapse: collapse;
+margin: 20px 0;
+font-size: 15px;
+background: #fff;
+border: 1px solid #ddd;
+table-layout: auto;   /* auto so columns fit content */
 }
 
-.playoff-odds-scroll::-webkit-scrollbar-track {
-background: #f5f5f5;
-}
 </style>
 </head>
 
