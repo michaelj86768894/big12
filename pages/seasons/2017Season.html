@@ -1,0 +1,837 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+	
+/* ====== Global Styles ====== */
+body { 
+  font-family: Arial, Helvetica, sans-serif; 
+  color:#222; 
+  padding:20px; 
+  background:#ffffff; 
+}
+
+.wrap { max-width:1100px; margin:0 auto; }
+h1 { text-align:center; color:#001433; margin-bottom:10px; } /* PRIMARY */
+
+/* ====== Controls + Cards ====== */
+.controls { 
+  text-align:center; 
+  margin:15px 0; 
+  display:flex; 
+  flex-wrap:wrap; 
+  justify-content:center; 
+  gap:10px; 
+}
+
+select, input[type="text"] { 
+  padding:8px 10px; 
+  font-size:14px; 
+}
+
+.summary { 
+  display:flex; 
+  justify-content: center; 
+  gap:20px; 
+  margin:15px 0; 
+  flex-wrap:wrap; 
+}
+
+.card { 
+  background:#fff; 
+  padding:12px 16px; 
+  border-radius:8px; 
+  box-shadow:0 2px 6px rgba(0,0,0,0.06); 
+  min-width:180px; 
+  text-align:center; 
+}
+
+.card h3 { 
+  margin:0 0 6px; 
+  font-size:14px; 
+  color:#444; 
+}
+
+.card p { 
+  margin:0; 
+  font-weight:700; 
+  font-size:18px; 
+  color:#001433; /* PRIMARY */
+}
+
+/* ====== Your Original Table Styles ====== */
+table, th, td {
+  table-layout: auto;
+  border: 1px solid #001433; /* PRIMARY */
+  border-collapse: collapse;
+  padding: 5px;
+  color: black; /* Default text color */
+}
+
+th {
+  background-color: #001433; /* PRIMARY */
+  color: #ffffff;
+}
+
+tr:nth-child(odd) { background-color: #ffffff; }
+tr:nth-child(even) { background-color: #E8E8E8; }
+
+tr:hover td, tr:hover th {
+  background-color: #F0AE00; /* SECONDARY */
+  color: #FFFFFF;
+  border: 1px solid #002244; 
+}
+
+.table-container {
+  display: inline-block;
+  margin: 3px;
+  vertical-align: top;
+}
+
+/* ====== Collapsible Styles ====== */
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding-top: 1%;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 24px;
+}
+
+.active, .collapsible:hover {
+  background-color: #001433; /* PRIMARY */
+  color: #ffffff;
+}
+
+.collapsible:before {
+  content: '\02c6';
+  color: #000000;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.active:before {
+  content: "\02c7";
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: max-height 0.2s ease-out;
+  color: black;
+}
+
+.content a { color: #F0AE00; } /* SECONDARY */
+.content a:hover { color: #F0AE00; } /* SECONDARY */
+
+/* ====== Head-to-Head Scoped Table Styles ====== */
+.h2h table {
+  width:100%; 
+  border-collapse:collapse; 
+  margin-top:10px; 
+  background:#fff; 
+  border-radius:8px; 
+  overflow:hidden; 
+  box-shadow:0 2px 8px rgba(0,0,0,0.06); 
+}
+
+.h2h th { 
+  background:#001433; /* PRIMARY */ 
+  color:#fff; 
+  padding:10px; 
+  text-align:left; 
+  font-weight:600; 
+}
+
+.h2h td { 
+  padding:10px; 
+  border-bottom:1px solid #eee; 
+}
+
+/*.h2h tr:nth-child(even) td { 
+  background:#ffffff; 
+}*/
+
+.h2h td.winner { 
+  font-weight:700; 
+  background:#FCC201 !important;
+/*	color: #00674F !important;*/
+}
+
+.no-data, .loading { 
+  text-align:center; 
+  margin-top:14px; 
+  color:#666; 
+}
+
+/* ====== Mobile ====== */
+@media (max-width:640px) {
+  th, td { font-size:13px; padding:8px; }
+  .card { min-width:140px; }
+  .controls { flex-direction: column; gap:8px; }
+}
+
+	
+	
+	.box {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.team_fourth {
+background: #ffffff;
+}
+
+.team_second {
+background: #F0AE00;
+}
+
+.team_third {
+background: #007FC8;
+}
+	
+.team_first {
+background: #001433;
+}
+	
+</style>
+
+<meta charset="UTF-8">
+<title>2017 Big 12 Season</title>
+</head>
+
+<body>
+	
+	
+
+<p>The 2017 season marked the sixth chapter in the storied history of the Big 12. Kicking off on Thursday, September 7, 2017, the defending league champion Miami Inferno set the stage for the season by hosting the Boston Brawlers. In a compelling opening matchup, Miami secured a commanding 22-point victory, initiating their campaign with a resounding 1-0 record. The season reached its pinnacle on Monday, December 25, 2017, as the league championship unfolded between Miami and the Philadelphia Soul. In a spectacular display of prowess, Miami clinched their second consecutive championship with a decisive 149-95 victory, etching their name into the annals of Big 12 history.</p>
+	
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2"><center><img src="https://www.dropbox.com/scl/fi/lnq1lhu4dlfd01vksxni4/1-Big-12-Logo.png?rlkey=2jlol6c7y0qx3hxc26ojqgom2&st=16hq5j7p&raw=1" width="253" height="150" alt=""/></center></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong><center>Regular Season</center></strong></td>
+    </tr>
+	  <tr>
+      <td><strong>Duration</strong></td>
+      <td>Sept. 7 2017<br>Dec. 4 2017</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong><center>Playoffs</center></strong></td>
+    </tr>
+	  <tr>
+      <td><strong>Start Date</strong></td>
+      <td>Dec. 7 2017</td>
+    </tr>
+	  <tr>
+      <td><strong>Conf. Champions</strong></td>
+      <td>Miami (2)<br>Philadelphia (1)</td>
+    </tr>
+	   <tr>
+      <td colspan="2"><strong><center>Big 12 Championship VI</center></strong></td>
+    </tr>
+	  <tr>
+      <td><strong>Date</strong></td>
+      <td>Dec. 25 2017</td>
+    </tr>
+     <tr>
+      <td><strong>Champions</strong></td>
+      <td>Miami Inferno (2)</td>
+    </tr>
+  </tbody>
+</table>
+	<p> </p>
+	
+	
+						<button class="collapsible"> Personnel Movement<hr></button>
+<div class="content">
+	
+	<p>The 2017 season witnessed significant changes in the Big 12's front offices. Ashley Coppersmith, having concluded her tenure with the Vegas Knight Hawks, retired from her role as General Manager. In her place, Matt Winkels assumed the leadership, steering the Knight Hawks into the new season.</p>
+	
+	<p>Meanwhile, Los Angeles Wildcats experienced a change in leadership as Liz Bautch retired, paving the way for Pete Jerving to take the reins as the new General Manager.</p>
+	
+	<p>In Green Bay, a transition occurred with the appointment of Dan Uribe as the new General Manager, succeeding Paris Reed and bringing a fresh perspective to the Blizzard's management. These changes added an intriguing dimension to the league's landscape as teams prepared for the challenges of the 2017 season.</p>
+	
+	</div>	
+	
+	
+	
+	
+	<button class="collapsible"> Draft<hr></button>
+<div class="content">
+	
+
+<p>The 2017 draft marked the 6th annual gathering of Big 12 General Managers to select eligible football players. Hosted in Wauwatosa, WI, at Kam's Corner Tap on Sunday, August 20, 2017, at 6:00 pm CST, the draft saw the Northern Arizona Wranglers holding the first overall pick. With this selection, they opted for Antonio Brown from the Pittsburgh Steelers, making it the second time this talented receiver was chosen as the first pick in the draft.</p>
+	
+	
+	<h3>Complete First Round Selections</h3>
+	
+	<table>
+  <tbody>
+    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Northern Arizona</td>
+      <td>Antonio Brown</td>
+      <td>WR</td>
+      <td>PIT</td>		
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Vegas</td>
+      <td>LeVeon Bell</td>
+      <td>RB</td>
+      <td>PIT</td>		
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Chicago</td>
+      <td>Mike Evans</td>
+      <td>WR</td>
+      <td>TB</td>		
+    </tr>
+     <tr>
+      <td>4</td>
+      <td>Cedar Rapids</td>
+      <td>Odell Beckham Jr.</td>
+      <td>WR</td>
+      <td>NYG</td>		
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Brooklyn</td>
+      <td>Julio Jones</td>
+      <td>WR</td>
+      <td>ATL</td>		
+    </tr>
+     <tr>
+      <td>6</td>
+      <td>Cleveland</td>
+      <td>Michael Thomas</td>
+      <td>WR</td>
+      <td>NO</td>		
+    </tr>
+      <tr>
+      <td>7</td>
+      <td>Green Bay</td>
+      <td>AJ Green</td>
+      <td>WR</td>
+      <td>CIN</td>		
+    </tr>
+      <tr>
+      <td>8</td>
+      <td>Milwaukee</td>
+      <td>Jordy Nelson</td>
+      <td>WR</td>
+      <td>GB</td>		
+    </tr>
+       <tr>
+      <td>9</td>
+      <td>Philadelphia</td>
+      <td>LeSean McCoy</td>
+      <td>RB</td>
+      <td>BUF</td>		
+    </tr>
+      <tr>
+      <td>10</td>
+      <td>Miami</td>
+      <td>Ezekiel Elliott</td>
+      <td>RB</td>
+      <td>DAL</td>		
+    </tr>
+      <tr>
+      <td>11</td>
+      <td>Boston</td>
+      <td>TY Hilton</td>
+      <td>WR</td>
+      <td>IND</td>		
+    </tr>
+      <tr>
+      <td>12</td>
+      <td>Los Angeles</td>
+      <td>DeMarco Murray</td>
+      <td>RB</td>
+      <td>TEN</td>		
+    </tr>
+  </tbody>
+</table>
+	
+	<p> </p>
+	</div>
+
+	
+	
+
+		<button class="collapsible"> Regular Season<hr></button>
+<div class="content">
+<p>The 2017 regular season unfolded with a total of 156 games played across a 13-week schedule, commencing on the Thursday night following Labor Day. Each Big 12 team engaged in one game per week.</p>
+	
+<p>The defending champions, the Miami Inferno, kicked off the season with an impressive 4-0 record. However, a suspension to their top running back, Ezekiel Elliott, led to a stumble in the latter part of the season. Despite losing three of their final four games, they concluded the regular season at 8-5. Meanwhile, the Cleveland Gladiators boasted a league-best 10-3 record, securing their second consecutive division championship. The Philadelphia Soul emerged victorious in the East division, claiming their first crown. Notably, four teams—Vegas, Los Angeles, Milwaukee, and Cedar Rapids—finished with the worst record of the season, each at 4-9.</p>
+	
+<h3>Standings</h3>
+	
+<div class="table-container">
+<table>
+    <tr>
+      <th>East</th>
+      <th>W</th>
+      <th>L</th>
+    </tr>
+	  <tr>
+      <td>(3) Philadelphia</td>
+      <td>9</td>
+      <td>4</td>		
+    </tr>
+	  <tr>
+      <td>(4) Miami</td>
+      <td>8</td>
+      <td>5</td>		
+    </tr>
+    <tr>
+      <td>(5) Boston</td>
+      <td>8</td>
+      <td>5</td>		
+    </tr>
+	  <tr>
+      <td>(6) Brooklyn</td>
+      <td>6</td>
+      <td>7</td>		
+    </tr>
+</table>
+	</div>	
+
+	<div class="table-container">
+<table>
+<tr>
+      <th>Central</th>
+      <th>W</th>
+      <th>L</th>
+    </tr>
+<tr>
+      <td>(1) Cleveland</td>
+      <td>10</td>
+      <td>3</td>		
+    </tr>
+    <tr>
+      <td>Chicago</td>
+      <td>6</td>
+      <td>7</td>		
+    </tr>
+	  <tr>
+      <td>Cedar Rapids</td>
+      <td>4</td>
+      <td>9</td>		
+    </tr>
+    <tr>
+      <td>Milwaukee</td>
+      <td>4</td>
+      <td>9</td>		
+    </tr>
+</table>
+	</div>
+	
+	<div class="table-container">
+<table>
+    <tr>
+      <th>West</th>
+      <th>W</th>
+      <th>L</th>
+    </tr>
+	  <tr>
+      <td>(2) Green Bay</td>
+      <td>9</td>
+      <td>4</td>		
+    </tr>
+    <tr>
+      <td>Northern Arizona</td>
+      <td>6</td>
+      <td>7</td>		
+    </tr>
+	  <tr>
+      <td>Vegas</td>
+      <td>4</td>
+      <td>9</td>		
+    </tr>
+    <tr>
+      <td>Los Angeles</td>
+      <td>4</td>
+      <td>9</td>		
+    </tr>
+</table>
+	</div>
+	
+	
+	<p> </p>
+	</div>
+	
+	
+	
+	
+	
+	<button class="collapsible"> Game Schedule<hr></button>
+<div class="content">
+  <div class="wrap h2h">
+
+
+<div class="controls">
+  <label for="team1">Team 1:</label>
+  <select id="team1">
+    <option value="">— Select team —</option>
+  </select>
+
+  <label for="team2">Team 2:</label>
+  <select id="team2">
+    <option value="">— Select team —</option>
+    <option value="ALL_TEAMS">All Teams</option>
+  </select>
+
+  <label for="yearFilter">Year:</label>
+  <select id="yearFilter">
+    <option value="ALL_YEARS">— All Years —</option>
+  </select>
+
+  <label for="gameTypeFilter">Game Type:</label>
+  <select id="gameTypeFilter">
+    <option value="ALL_TYPES">— All Types —</option>
+  </select>
+
+  <input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
+</div>
+
+  <div class="summary" id="summaryArea" style="display:none;">
+    <div class="card" id="cardTeam1">
+      <h3 id="cardTeam1Name">Team 1</h3>
+      <p id="cardTeam1Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam1PF">0</span></div>
+    </div>
+
+    <div class="card" id="cardTie">
+      <h3 style="color:#666">Head-to-Head</h3>
+      <p id="head2headSummary">0 games</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Most recent: <span id="mostRecent">N/A</span></div>
+    </div>
+
+    <div class="card" id="cardTeam2">
+      <h3 id="cardTeam2Name">Team 2</h3>
+      <p id="cardTeam2Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
+    </div>
+  </div>
+
+  <div class="loading" id="loadingMsg">Loading match data...</div>
+
+  <div id="matchTableWrap" style="display:none;">
+<table id="matchTable">
+  <thead>
+    <tr>
+      <th style="width:120px">Date</th>
+      <th>Team 1</th>
+      <th>Team 2</th>
+      <th style="width:120px">Score</th>
+      <th>Game Type</th> <!-- ✅ new column -->
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+    <div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+	  <br>
+      </div>
+    </div>
+  </div>
+	
+	
+	
+	<button class="collapsible"> Postseason<hr></button>
+<div class="content">
+	
+	
+<p>The playoffs for the 2017 season commenced on December 7, 2017. The postseason tournament concluded with the championship game on December 25, 2017, where the Miami Inferno secured back-to-back championships by defeating Philadelphia 148-94.</p>
+
+
+<h3>Round 1</h3>
+	
+<p>Round 1 of the playoffs unfolded from December 7-11, 2017. Making a return to the playoffs after a two-year hiatus, division champion Philadelphia Soul hosted Boston. Both teams carried a 0-2 postseason record into the matchup. Fresh off a week 13 victory against the Brawlers, the Soul secured another win, eliminating Boston from the playoffs with a 139-124 triumph.</p>
+	
+<p>In another round one matchup, the Miami Inferno played host to division foe Brooklyn Bolts. Having won both matchups in the regular season against the Bolts, Miami continued their dominance with a 141-122 victory, advancing to the next round.</p>
+	
+<h3>Round 2</h3>
+	
+<p>Round 2 unfolded on December 13, 2017. The Green Bay Blizzard hosted the #4 seed and defending champion, Miami Inferno. The game was effectively decided by halftime as Miami dominated, securing a commanding 90-point victory and earning their second consecutive trip to the championship game. Notably, this marked the first time a team had reached consecutive title games since Milwaukee achieved a 3-peat from 2013-2015.</p>
+	
+<p>In the second game of the weekend, after earning a bye, the Cleveland Gladiators aimed to secure a spot in the championship round. However, the Philadelphia Soul pulled off a significant upset with a 137-104 victory, earning their first-ever trip to the championship game and preventing a repeat appearance for the Gladiators.</p>
+	
+<h3>Big 12 Championship</h3>
+	
+<center><img src="https://www.dropbox.com/scl/fi/odet65tfmfvbfueabjyzc/2017-Championship.png?rlkey=bhau4omjt4n0dqy8xwx0d2nqq&st=6sn4n9p8&raw=1" width="221" height="200" alt=""/></center>
+
+<p>Hosted in Minneapolis, Minnesota, the 2017 championship showdown between the first-time participant Philadelphia Soul and the defending champion Miami Inferno concluded on December 25, 2017. The Inferno emerged victorious with a resounding 148-94 win, securing the franchise's second consecutive championship. Miami achieved a historic feat, becoming the league's first team to not only repeat as champions but be the first to have won multiple championships.</p>
+
+<p>Entering the matchup as the #4 seed, the Inferno were favored by 10 points, having recently defeated the #2 seed Green Bay by a staggering 90 points. This marked their second consecutive trip to the championship game, and despite a loss to the Soul earlier in the season, they proved unstoppable on the grand stage, clinching their second championship in as many seasons.</p>
+	
+<p>The Philadelphia Soul, the #3 seed, orchestrated an impressive upset against the defending runner-up to secure a berth in the championship round. Prior to this season, they had a playoff record of 0-2 and hadn't enjoyed a winning season in two years. Their playoff success this year was commendable, even though they ultimately fell short of the championship glory.</p>
+	
+	</div>	
+	
+	
+				<button class="collapsible"> Awards<hr></button>
+<div class="content">
+	
+	<p>In 2017, Cleveland and Green Bay each secured their third division title, reflecting the continued success and competitive prowess of these teams within the Big 12. Philadelphia enjoyed their first ever division crown.</p>
+	
+	<p>The 2017 league MVP honor was bestowed upon 15th overall pick Todd Gurley, who amassed an impressive 383 points. Gurley played a pivotal role in leading the Miami Inferno to their second consecutive league championship triumph.</p>
+	
+	<p>The GM of the Year award for the 2017 season was claimed by Bruce Coppersmith of the Cleveland Gladiators, who guided the team to a commendable 10-3 record. Despite multiple successful seasons, this marked his first time receiving the prestigious award.</p>
+	
+	<p>Miami continued their dominance by winning their second conference and league championship titles, further solidifying their place among the league's elite. Additionally, the Philadelphia Soul celebrated their first conference championship, marking a significant milestone in their franchise history.</p>
+	
+	
+	</div>	
+	
+	
+	
+	
+<script>
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+let allMatches = [];
+let teams = [];
+
+function parseCsvToObjects(csvText) {
+  const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
+  const headers = lines.shift().split(",").map(h => h.trim());
+  return lines.map(line => {
+    const cols = line.split(",").map(c => c.trim());
+    const obj = {};
+    headers.forEach((h,i)=> obj[h]=cols[i]??"");
+    return obj;
+  });
+}
+
+function parseDate_mmddyy(s) {
+  if (!s) return null;
+  const parts = s.split("/").map(p=>parseInt(p,10));
+  if (parts.length!==3 || parts.some(isNaN)) return null;
+  let [m,d,y]=parts;
+  if (y<100) y+=2000;
+  return new Date(y,m-1,d);
+}
+
+function formatDateShort(dateObj) {
+  if (!dateObj) return "N/A";
+  const m=String(dateObj.getMonth()+1).padStart(2,"0");
+  const d=String(dateObj.getDate()).padStart(2,"0");
+  const yy=String(dateObj.getFullYear()).slice(-2);
+  return `${m}/${d}/${yy}`;
+}
+
+async function loadCsvAndInit() {
+  try {
+    const res = await fetch(csvUrl);
+    if(!res.ok) throw new Error("Network error "+res.status);
+    const text = await res.text();
+    const rows = parseCsvToObjects(text);
+
+    allMatches = rows.map(r=>{
+      const d=parseDate_mmddyy(r["Date"]);
+      return {
+        rawDate: r["Date"]||"",
+        date: d,
+        team1: (r["Team 1"]||"").trim(),
+        team2: (r["Team 2"]||"").trim(),
+        score1: parseInt(r["Team 1 Score"]||"0",10),
+        score2: parseInt(r["Team 2 Score"]||"0",10),
+        gameType: (r["Game Type"]||"").trim() // ✅ new field
+      };
+    }).filter(m=>m.team1 && m.team2);
+
+    const teamSet=new Set();
+    allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
+    teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
+
+    populateDropdowns();
+    document.getElementById("loadingMsg").style.display="none";
+  } catch(err) {
+    document.getElementById("loadingMsg").textContent="Error loading match data.";
+    console.error(err);
+  }
+}
+
+function populateDropdowns() {
+  const t1=document.getElementById("team1");
+  const t2=document.getElementById("team2");
+
+  teams.forEach(team=>{
+    const o1=document.createElement("option"); o1.value=team; o1.textContent=team; t1.appendChild(o1);
+    const o2=document.createElement("option"); o2.value=team; o2.textContent=team; t2.appendChild(o2);
+  });
+
+  t1.addEventListener("change", updateDisplay);
+  t2.addEventListener("change", updateDisplay);
+  document.getElementById("matchFilter").addEventListener("input", updateDisplay);
+  document.getElementById("yearFilter").addEventListener("change", updateDisplay);
+  document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay); // ✅ new
+
+  t2.value = "ALL_TEAMS";  // Set default for Team 2
+
+  updateDisplay();
+}
+
+function populateYearDropdown(){
+  const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
+  const yearDropdown=document.getElementById("yearFilter");
+  Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
+    const opt=document.createElement("option");
+    opt.value=y;
+    opt.textContent=y;
+    yearDropdown.appendChild(opt);
+  });
+}
+
+function populateGameTypeDropdown() {
+  const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
+  const typeDropdown = document.getElementById("gameTypeFilter");
+
+  Array.from(typeSet).sort().forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    typeDropdown.appendChild(opt);
+  });
+
+  typeDropdown.value = "ALL_TYPES";
+}
+
+function getWinnerClass(m){
+  if(m.score1>m.score2) return "winner";
+  if(m.score2>m.score1) return "winner";
+  return "";
+}
+
+function updateDisplay(){
+  const teamA = document.getElementById("team1").value;
+  const teamB = document.getElementById("team2").value;
+  const yearVal = "2017";
+  const gameTypeVal = "Season"; // ✅
+  const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
+
+  let filtered = allMatches.filter(m=>
+    (m.team1===teamA && (teamB==="ALL_TEAMS" || m.team2===teamB)) ||
+    (m.team2===teamA && (teamB==="ALL_TEAMS" || m.team1===teamB))
+  );
+
+  if(yearVal!=="ALL_YEARS"){
+    filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
+  }
+
+  if(gameTypeVal !== "ALL_TYPES") { // ✅ filter Game Type
+    filtered = filtered.filter(m => m.gameType === gameTypeVal);
+  }
+
+  if(searchVal!==""){
+    filtered = filtered.filter(m=>(
+      m.team1.toLowerCase().includes(searchVal) ||
+      m.team2.toLowerCase().includes(searchVal)
+    ));
+  }
+
+  filtered.sort((a,b)=>b.date - a.date);
+
+  // --- SUMMARY CALCULATION ---
+  if (filtered.length > 0) {
+    let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
+    filtered.forEach(m => {
+      pfA += (m.team1 === teamA ? m.score1 : m.score2);
+      pfB += (m.team1 === teamB ? m.score1 : m.score2);
+
+      if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
+      else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
+
+      if (teamB !== "ALL_TEAMS") {
+        if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
+        else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
+      }
+    });
+
+    document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
+    document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
+    document.getElementById("cardTeam1PF").textContent = pfA;
+
+    if (teamB === "ALL_TEAMS") {
+      document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
+      document.getElementById("cardTeam2Record").textContent = `N/A`;
+      document.getElementById("cardTeam2PF").textContent = `N/A`;
+    } else {
+      document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
+      document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
+      document.getElementById("cardTeam2PF").textContent = pfB;
+    }
+
+    document.getElementById("summaryArea").style.display = "flex";
+  } else {
+    document.getElementById("summaryArea").style.display = "none";
+  }
+
+  const tbody = document.querySelector("#matchTable tbody");
+  tbody.innerHTML="";
+  filtered.forEach(m=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${formatDateShort(m.date)}</td>
+      <td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
+      <td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
+      <td>${m.score1} - ${m.score2}</td>
+      <td>${m.gameType || ""}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("matchTableWrap").style.display="block";
+  document.getElementById("noMatches").style.display=filtered.length===0?"block":"none";
+  document.getElementById("summaryArea").style.display=filtered.length>0?"flex":"none";
+
+  refreshCollapsibleHeight();
+}
+
+loadCsvAndInit();
+
+// --- Collapsible logic ---
+var coll = document.getElementsByClassName("collapsible");
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+
+// --- helper to fix cutoff issue ---
+function refreshCollapsibleHeight() {
+  document.querySelectorAll(".collapsible.active + .content").forEach(content => {
+    content.style.maxHeight = content.scrollHeight + "px";
+  });
+}
+</script>	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>

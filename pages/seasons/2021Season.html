@@ -1,0 +1,846 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+	
+/* ====== Global Styles ====== */
+body { 
+  font-family: Arial, Helvetica, sans-serif; 
+  color:#222; 
+  padding:20px; 
+  background:#ffffff; 
+}
+
+.wrap { max-width:1100px; margin:0 auto; }
+h1 { text-align:center; color:#001433; margin-bottom:10px; } /* PRIMARY */
+
+/* ====== Controls + Cards ====== */
+.controls { 
+  text-align:center; 
+  margin:15px 0; 
+  display:flex; 
+  flex-wrap:wrap; 
+  justify-content:center; 
+  gap:10px; 
+}
+
+select, input[type="text"] { 
+  padding:8px 10px; 
+  font-size:14px; 
+}
+
+.summary { 
+  display:flex; 
+  justify-content: center; 
+  gap:20px; 
+  margin:15px 0; 
+  flex-wrap:wrap; 
+}
+
+.card { 
+  background:#fff; 
+  padding:12px 16px; 
+  border-radius:8px; 
+  box-shadow:0 2px 6px rgba(0,0,0,0.06); 
+  min-width:180px; 
+  text-align:center; 
+}
+
+.card h3 { 
+  margin:0 0 6px; 
+  font-size:14px; 
+  color:#444; 
+}
+
+.card p { 
+  margin:0; 
+  font-weight:700; 
+  font-size:18px; 
+  color:#001433; /* PRIMARY */
+}
+
+/* ====== Your Original Table Styles ====== */
+table, th, td {
+  table-layout: auto;
+  border: 1px solid #001433; /* PRIMARY */
+  border-collapse: collapse;
+  padding: 5px;
+  color: black; /* Default text color */
+}
+
+th {
+  background-color: #001433; /* PRIMARY */
+  color: #ffffff;
+}
+
+tr:nth-child(odd) { background-color: #ffffff; }
+tr:nth-child(even) { background-color: #E8E8E8; }
+
+tr:hover td, tr:hover th {
+  background-color: #F0AE00; /* SECONDARY */
+  color: #FFFFFF;
+  border: 1px solid #002244; 
+}
+
+.table-container {
+  display: inline-block;
+  margin: 3px;
+  vertical-align: top;
+}
+
+/* ====== Collapsible Styles ====== */
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding-top: 1%;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 24px;
+}
+
+.active, .collapsible:hover {
+  background-color: #001433; /* PRIMARY */
+  color: #ffffff;
+}
+
+.collapsible:before {
+  content: '\02c6';
+  color: #000000;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.active:before {
+  content: "\02c7";
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: max-height 0.2s ease-out;
+  color: black;
+}
+
+.content a { color: #F0AE00; } /* SECONDARY */
+.content a:hover { color: #F0AE00; } /* SECONDARY */
+
+/* ====== Head-to-Head Scoped Table Styles ====== */
+.h2h table {
+  width:100%; 
+  border-collapse:collapse; 
+  margin-top:10px; 
+  background:#fff; 
+  border-radius:8px; 
+  overflow:hidden; 
+  box-shadow:0 2px 8px rgba(0,0,0,0.06); 
+}
+
+.h2h th { 
+  background:#001433; /* PRIMARY */ 
+  color:#fff; 
+  padding:10px; 
+  text-align:left; 
+  font-weight:600; 
+}
+
+.h2h td { 
+  padding:10px; 
+  border-bottom:1px solid #eee; 
+}
+
+/*.h2h tr:nth-child(even) td { 
+  background:#ffffff; 
+}*/
+
+.h2h td.winner { 
+  font-weight:700; 
+  background:#FCC201 !important;
+/*	color: #00674F !important;*/
+}
+
+.no-data, .loading { 
+  text-align:center; 
+  margin-top:14px; 
+  color:#666; 
+}
+
+/* ====== Mobile ====== */
+@media (max-width:640px) {
+  th, td { font-size:13px; padding:8px; }
+  .card { min-width:140px; }
+  .controls { flex-direction: column; gap:8px; }
+}
+
+	
+	
+	.box {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.team_fourth {
+background: #ffffff;
+}
+
+.team_second {
+background: #F0AE00;
+}
+
+.team_third {
+background: #007FC8;
+}
+	
+.team_first {
+background: #001433;
+}
+	
+</style>
+
+<meta charset="UTF-8">
+<title>2021 Big 12 Season</title>
+</head>
+
+<body>
+	
+	
+
+<p>The 2021 season marked the 9th official installment in the storied history of the Big 12. Commencing on Thursday, September 9, 2021, the opening matchup featured a tightly contested battle between division rivals, the Cleveland Gladiators and the Milwaukee Mustangs. Ultimately, the Gladiators emerged victorious, securing a narrow 162-159 win. The season culminated on Monday, January 3, 2022, with the Big 12 Championship showdown between the Brooklyn Bolts and the Los Angeles Wildcats. The Bolts triumphed with a convincing 148-118 victory, clinching their second Big 12 championship in team history.</p>
+	
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2"><center><img src="https://www.dropbox.com/scl/fi/lnq1lhu4dlfd01vksxni4/1-Big-12-Logo.png?rlkey=2jlol6c7y0qx3hxc26ojqgom2&st=16hq5j7p&raw=1" width="253" height="150" alt=""/></center></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong><center>Regular Season</center></strong></td>
+    </tr>
+	  <tr>
+      <td><strong>Duration</strong></td>
+      <td>Sept. 9 2021<br>Dec. 13 2021</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong><center>Playoffs</center></strong></td>
+    </tr>
+	  <tr>
+      <td><strong>Start Date</strong></td>
+      <td>Dec. 16 2021</td>
+    </tr>
+	  <tr>
+      <td><strong>Conf. Champions</strong></td>
+      <td>Brooklyn (3)<br>Los Angeles (2)</td>
+    </tr>
+	   <tr>
+      <td colspan="2"><strong><center>Big 12 Championship IX</center></strong></td>
+    </tr>
+	  <tr>
+      <td><strong>Date</strong></td>
+      <td>Jan. 3 2022</td>
+    </tr>
+     <tr>
+      <td><strong>Champions</strong></td>
+      <td>Brooklyn Bolts (2)</td>
+    </tr>
+  </tbody>
+</table>
+	<p> </p>
+	
+	
+						<button class="collapsible"> Personnel Movement<hr></button>
+<div class="content">
+	
+	<p>The personnel movement for the 2021 season saw several notable changes in leadership across Big 12 teams. Richard Head opted to depart from Miami after a championship-winning season. In his place, the team secured a successful one-year deal with their former GM Cody Coppersmith.</p>
+	
+	<p>Los Angeles managed to convince Liz Bautch to come out of retirement, appointing her to lead the Wildcats. The timing of her hiring generated some controversy, as rumors had begun circulated before the departure of DeMario Suggs. Nevertheless, Liz Bautch took charge just in time for the commencement of the 2021 season.</p>
+	
+	<p>Dan Uribe did not return for his fourth season as the GM for Green Bay, and the team appointed Mason Bautch to the role. Mason made history as the youngest General Manager in the Big 12, bringing a fresh perspective to the team.</p>
+	
+	</div>	
+	
+	
+	
+	
+	<button class="collapsible"> Draft<hr></button>
+<div class="content">
+	
+<p>The 2021 Big 12 draft marked the 9th annual gathering of General Managers to strategically select eligible football players. Departing from traditional in-person drafts, the event took place online on Sunday, September 5, 2021, at 7:00 pm CST. The Vegas Knight Hawks were granted the honor of the first overall pick, and they chose Davante Adams from Green Bay, making him the top selection in this year's draft.</p>
+	
+	
+	<h3>Complete First Round Selections</h3>
+	
+	<table>
+  <tbody>
+    <tr>
+      <th>Pick</th>
+      <th>Big 12 Team</th>
+      <th>Player</th>
+      <th>POS</th>
+      <th>NFL Team</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Vegas</td>
+      <td>Davante Adam</td>
+      <td>WR</td>
+      <td>GB</td>		
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Phiadelphia</td>
+      <td>Christian McCaffrey</td>
+      <td>RB</td>
+      <td>LAR</td>		
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Northern Arizona</td>
+      <td>Patrick Mahomes</td>
+      <td>QB</td>
+      <td>KC</td>		
+    </tr>
+     <tr>
+      <td>4</td>
+      <td>Cedar Rapids</td>
+      <td>Alvin Kamara</td>
+      <td>RB</td>
+      <td>NO</td>		
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Boston</td>
+      <td>Dalvin Cook</td>
+      <td>RB</td>
+      <td>MIN</td>		
+    </tr>
+     <tr>
+      <td>6</td>
+      <td>Miami</td>
+      <td>Derrick Henry</td>
+      <td>RB</td>
+      <td>TEN</td>		
+    </tr>
+      <tr>
+      <td>7</td>
+      <td>Chicago</td>
+      <td>DK Metcalf</td>
+      <td>WR</td>
+      <td>SEA</td>
+    </tr>
+      <tr>
+      <td>8</td>
+      <td>Los Angeles</td>
+      <td>Travis Kelce</td>
+      <td>TE</td>
+      <td>KC</td>		
+    </tr>
+       <tr>
+      <td>9</td>
+      <td>Cleveland</td>
+      <td>Aaron Jones</td>
+      <td>RB</td>
+      <td>GB</td>		
+    </tr>
+      <tr>
+      <td>10</td>
+      <td>Brooklyn</td>
+      <td>Ezekiel Elliott</td>
+      <td>RB</td>
+      <td>DAL</td>		
+	  </tr>
+	        <tr>
+      <td>11</td>
+      <td>Green Bay</td>
+      <td>Tyreek Hill</td>
+      <td>WR</td>
+      <td>KC</td>		
+	  </tr>
+	        <tr>
+      <td>12</td>
+      <td>Milwaukee</td>
+      <td>Nick Chubb</td>
+      <td>RB</td>
+      <td>CLE</td>		
+	  </tr>
+	</tbody>
+</table>
+	
+	<p> </p>
+	</div>
+
+	
+	
+
+		<button class="collapsible"> Regular Season<hr></button>
+<div class="content">
+<p>The 2021 Big 12 regular season underwent notable changes, aligning with adjustments in the NFL schedule. The expanded schedule now spanned 14 weeks, featuring a total of 168 games that kicked off on the Thursday night following Labor Day. Each Big 12 team engaged in one game per week, and a novel addition to the season included a 3-point home field advantage applied to all home teams.</p>
+	
+<p>Remarkably, the Los Angeles Wildcats and Brooklyn Bolts dominated the league, both securing impressive 10-4 records and claiming the top two spots in the playoffs as well as their respective divisional crowns. In contrast, Chicago experienced its most challenging season, finishing at 2-12 and landing at the bottom of the league standings.</p>
+	
+<p>Adding a dynamic element, the league introduced flex scheduling during the final week of the regular season. This innovative approach empowered the league to make strategic adjustments to the schedule, regardless of divisional status. Multiple game changes occurred in this critical week, shaping the landscape for divisional championships and influencing playoff seeding.</p>
+		
+		<h3>Standings</h3>
+	
+	<div class="table-container">
+<table>
+    <tr>
+      <th>East</th>
+      <th>W</th>
+      <th>L</th>
+    </tr>
+	  <tr>
+      <td>(1) Brooklyn</td>
+      <td>10</td>
+      <td>4</td>		
+    </tr>
+	  <tr>
+      <td>(3) Phiadelphia</td>
+      <td>9</td>
+      <td>5</td>		
+    </tr>
+	<tr>
+      <td>(7) Miami</td>
+      <td>7</td>
+      <td>7</td>		
+    </tr>
+    <tr>
+      <td>Boston</td>
+      <td>6</td>
+      <td>8</td>		
+    </tr>
+</table>
+	</div>	
+
+		<div class="table-container">
+<table>
+<tr>
+      <th>Central</th>
+      <th>W</th>
+      <th>L</th>
+    </tr>
+    <tr>
+      <td>(4) Milwaukee</td>
+      <td>9</td>
+      <td>5</td>		
+    </tr>
+	<tr>
+      <td>(5) Cleveland</td>
+      <td>8</td>
+      <td>6</td>		
+    </tr>
+	  <tr>
+      <td>Cedar Rapids</td>
+      <td>4</td>
+      <td>10</td>		
+    </tr>
+     <tr>
+      <td>Chicago</td>
+      <td>2</td>
+      <td>12</td>		
+    </tr>
+</table>
+	</div>
+	
+	
+	<div class="table-container">
+<table>
+    <tr>
+      <th>West</th>
+      <th>W</th>
+      <th>L</th>
+	</tr>
+	    <tr>
+      <td>(2) Los Angeles</td>
+      <td>10</td>
+      <td>4</td>		
+    </tr>
+	  <tr>
+      <td>(6) Green Bay</td>
+      <td>7</td>
+      <td>7</td>		
+    </tr>
+	<tr>
+	<td>Vegas</td>
+      <td>7</td>
+      <td>7</td>		
+    </tr>
+    <tr>
+      <td>Northern Arizona</td>
+      <td>5</td>
+      <td>9</td>		
+    </tr>
+</table>
+	</div>	
+	
+	
+	<p> </p>
+	</div>
+	
+	
+	
+	
+	
+	<button class="collapsible"> Game Schedule<hr></button>
+<div class="content">
+  <div class="wrap h2h">
+
+
+<div class="controls">
+  <label for="team1">Team 1:</label>
+  <select id="team1">
+    <option value="">— Select team —</option>
+  </select>
+
+  <label for="team2">Team 2:</label>
+  <select id="team2">
+    <option value="">— Select team —</option>
+    <option value="ALL_TEAMS">All Teams</option>
+  </select>
+
+  <label for="yearFilter">Year:</label>
+  <select id="yearFilter">
+    <option value="ALL_YEARS">— All Years —</option>
+  </select>
+
+  <label for="gameTypeFilter">Game Type:</label>
+  <select id="gameTypeFilter">
+    <option value="ALL_TYPES">— All Types —</option>
+  </select>
+
+  <input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
+</div>
+
+  <div class="summary" id="summaryArea" style="display:none;">
+    <div class="card" id="cardTeam1">
+      <h3 id="cardTeam1Name">Team 1</h3>
+      <p id="cardTeam1Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam1PF">0</span></div>
+    </div>
+
+    <div class="card" id="cardTie">
+      <h3 style="color:#666">Head-to-Head</h3>
+      <p id="head2headSummary">0 games</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Most recent: <span id="mostRecent">N/A</span></div>
+    </div>
+
+    <div class="card" id="cardTeam2">
+      <h3 id="cardTeam2Name">Team 2</h3>
+      <p id="cardTeam2Record">0 - 0</p>
+      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
+    </div>
+  </div>
+
+  <div class="loading" id="loadingMsg">Loading match data...</div>
+
+  <div id="matchTableWrap" style="display:none;">
+<table id="matchTable">
+  <thead>
+    <tr>
+      <th style="width:120px">Date</th>
+      <th>Team 1</th>
+      <th>Team 2</th>
+      <th style="width:120px">Score</th>
+      <th>Game Type</th> <!-- ✅ new column -->
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+    <div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+	  <br>
+      </div>
+    </div>
+  </div>
+	
+	
+	
+	<button class="collapsible"> Postseason<hr></button>
+<div class="content">
+	
+	
+<br>
+	
+
+<p>The playoffs for the 2021 season commenced on December 16, 2021, reaching their pinnacle with the Big 12 Championship on January 3, 2022. The league expanded the number of playoff teams to seven, with each division winner securing a playoff spot and the remaining four spots going to the four best non-division-winning teams. This expansion meant that only the #1 seed would receive a bye on opening weekend. Carrying over from the regular season, the league implemented home field advantage throughout the playoffs, with the home team receiving a 5-point bonus in each playoff game.</p>
+	
+<h3>Round 1</h3>
+	
+<p>The first round unfolded on December 16, 2021, with the top-seeded Brooklyn Bolts enjoying a bye and eagerly anticipating the winners of Round 1. In this round, two pairs of divisional matchups took place. The Cleveland Gladiators faced the Milwaukee Mustangs in a clash between the #4 and #5 seeded teams. Despite it being the third encounter between these divisional rivals, the Mustangs dominated from the start, securing a convincing 178-90 victory. Notable performances from TE Hunter Henry (26 fantasy points) and QB Matthew Stafford (21 fantasy points) propelled the Mustangs to success, while WR Amon-Ra St. Brown's impressive 24 fantasy points couldn't save the Gladiators from a first-round exit.</p>
+	
+<p>In another contest, the #2 seed Los Angeles Wildcats went head-to-head with the #7 seed Miami Inferno. Thanks to flex scheduling, this marked the fourth meeting between the two teams in the season. Los Angeles emerged victorious in two out of three previous encounters, including wins in Week 13 and 14. However, none of those matchups resembled this game, as Los Angeles sailed to an effortless 185-54 win. Stellar performances from TE Travis Kelce (41 fantasy points) and QB Justin Herbert (28 fantasy points) highlighted Los Angeles's dominance, while TE Foster Moreau led the scoring for Miami with 14 fantasy points.</p>
+	
+	<p>In the final game of the weekend, the Phiadelphia Soul hosted the Green Bay Blizzard, featuring the 3rd and 6th seeds. Despite being the first game in these playoffs where both teams scored over 100 points, the outcome was another decisive victory, with the Soul defending their home field with a 189-110 triumph over the Blizzard. WR Tyreek Hill's impressive 33 fantasy points for Green Bay weren't sufficient to overcome Cooper Kupp and Mark Andrews, who combined for 70 fantasy points, securing the Soul's win.</p>
+	
+	
+		<h3>Round 2</h3>
+	
+<p>Round 2 commenced on December 23, 2021. The East division champion Brooklyn Bolts faced the Central division champion Milwaukee Mustangs after the Mustangs handled Cleveland in the first round. The matchup between the #4 seed and the #1 seed was a closely contested battle, highlighted by WR Tee Higgins' career-high 43 fantasy points for the Mustangs. However, it wasn't enough as the Mustangs fell to the Bolts 140-132, who were led by Aaron Rodgers and Deebo Samuel, each contributing 28 fantasy points. The victory propelled Brooklyn to the Big 12 Championship for the third time in their history and their second consecutive appearance.</p>
+	
+<p>Following a weekend full of blowouts in Round 1, the second game in Round 2 was a nail-biter between the #3 Phiadelphia Soul and #2 Los Angeles Wildcats. After multiple lead changes, the Wildcats, led by RB Chase Edmonds (27 fantasy points), narrowly secured the win with a score of 144-142. Despite three Soul players accumulating 20+ fantasy points, it wasn't enough as Los Angeles punched their ticket to their second Big 12 Championship appearance in team history.</p>
+	
+	
+<h3>Big 12 Championship</h3>
+	
+<center><img src="https://www.dropbox.com/scl/fi/edwr4kvv9b8s1t9llyzrv/2021-Championship.png?rlkey=3odnmdzbbniszzxfhpq23clrn&st=64gwxsv2&raw=1" width="221" height="200" alt=""/></center>
+
+<p>The 2021 Big 12 Championship played in Inglewood, California concluded on January 3, 2022. It featured the top two seeds in the league, Brooklyn and Los Angeles. Los Angeles came into the matchup as a 24-point favorite over the #1 seed, but that didn't matter to Brooklyn as they rolled to a commanding 148-118 victory to win their second Big 12 Championship.</p>
+	
+<p>The loss capped off an impressive return season for GM Liz Bautch, coming out of retirement and making it back to the championship game in her first season back with Los Angeles. However, it ended with disappointment as the team fell short, putting up less than 75% of their projected points for the game.</p>
+	
+<p>With the win, the Bolts took home their second Big 12 championship, rebounding from their loss in the final game last year against Miami. They matched Miami and Milwaukee for the most appearances in the Big 12 Championship, with three visits each.</p>
+	
+	</div>	
+	
+	
+				<button class="collapsible"> Awards<hr></button>
+<div class="content">
+	
+	<p>In the dynamic landscape of the 2021 Big 12 season, Milwaukee and Brooklyn emerged victorious, securing their fourth division titles, while Los Angeles celebrated their third triumph.</p>
+	
+	<p>Third round wide receiver Cooper Kupp stood in the spotlight, clinching the prestigious 2021 league MVP. Leading the league with a remarkable 440 fantasy points, Kupp propelled the 9-5 Phiadelphia Soul, steering them to the second round of the playoffs and coming tantalizingly close—within 2 points—of securing their second Big 12 Championship appearance.</p>
+	
+	<p>The title of GM of the Year was bestowed upon Cory Colvin of the Brooklyn Bolts. His adept management skills guided the team to an outstanding 10-4 record, marking his second time claiming this honor, the first being in 2013.</p>
+	
+	<p>Brooklyn, under Colvin's leadership, not only clinched their third conference title but also secured their second league championship. Meanwhile, Los Angeles celebrated their second conference championship, adding another glorious chapter to their Big 12 legacy.</p>
+	
+	
+	</div>	
+	
+	
+	
+	
+<script>
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+let allMatches = [];
+let teams = [];
+
+function parseCsvToObjects(csvText) {
+  const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
+  const headers = lines.shift().split(",").map(h => h.trim());
+  return lines.map(line => {
+    const cols = line.split(",").map(c => c.trim());
+    const obj = {};
+    headers.forEach((h,i)=> obj[h]=cols[i]??"");
+    return obj;
+  });
+}
+
+function parseDate_mmddyy(s) {
+  if (!s) return null;
+  const parts = s.split("/").map(p=>parseInt(p,10));
+  if (parts.length!==3 || parts.some(isNaN)) return null;
+  let [m,d,y]=parts;
+  if (y<100) y+=2000;
+  return new Date(y,m-1,d);
+}
+
+function formatDateShort(dateObj) {
+  if (!dateObj) return "N/A";
+  const m=String(dateObj.getMonth()+1).padStart(2,"0");
+  const d=String(dateObj.getDate()).padStart(2,"0");
+  const yy=String(dateObj.getFullYear()).slice(-2);
+  return `${m}/${d}/${yy}`;
+}
+
+async function loadCsvAndInit() {
+  try {
+    const res = await fetch(csvUrl);
+    if(!res.ok) throw new Error("Network error "+res.status);
+    const text = await res.text();
+    const rows = parseCsvToObjects(text);
+
+    allMatches = rows.map(r=>{
+      const d=parseDate_mmddyy(r["Date"]);
+      return {
+        rawDate: r["Date"]||"",
+        date: d,
+        team1: (r["Team 1"]||"").trim(),
+        team2: (r["Team 2"]||"").trim(),
+        score1: parseInt(r["Team 1 Score"]||"0",10),
+        score2: parseInt(r["Team 2 Score"]||"0",10),
+        gameType: (r["Game Type"]||"").trim() // ✅ new field
+      };
+    }).filter(m=>m.team1 && m.team2);
+
+    const teamSet=new Set();
+    allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
+    teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
+
+    populateDropdowns();
+    document.getElementById("loadingMsg").style.display="none";
+  } catch(err) {
+    document.getElementById("loadingMsg").textContent="Error loading match data.";
+    console.error(err);
+  }
+}
+
+function populateDropdowns() {
+  const t1=document.getElementById("team1");
+  const t2=document.getElementById("team2");
+
+  teams.forEach(team=>{
+    const o1=document.createElement("option"); o1.value=team; o1.textContent=team; t1.appendChild(o1);
+    const o2=document.createElement("option"); o2.value=team; o2.textContent=team; t2.appendChild(o2);
+  });
+
+  t1.addEventListener("change", updateDisplay);
+  t2.addEventListener("change", updateDisplay);
+  document.getElementById("matchFilter").addEventListener("input", updateDisplay);
+  document.getElementById("yearFilter").addEventListener("change", updateDisplay);
+  document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay); // ✅ new
+
+  t2.value = "ALL_TEAMS";  // Set default for Team 2
+
+  updateDisplay();
+}
+
+function populateYearDropdown(){
+  const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
+  const yearDropdown=document.getElementById("yearFilter");
+  Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
+    const opt=document.createElement("option");
+    opt.value=y;
+    opt.textContent=y;
+    yearDropdown.appendChild(opt);
+  });
+}
+
+function populateGameTypeDropdown() {
+  const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
+  const typeDropdown = document.getElementById("gameTypeFilter");
+
+  Array.from(typeSet).sort().forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    typeDropdown.appendChild(opt);
+  });
+
+  typeDropdown.value = "ALL_TYPES";
+}
+
+function getWinnerClass(m){
+  if(m.score1>m.score2) return "winner";
+  if(m.score2>m.score1) return "winner";
+  return "";
+}
+
+function updateDisplay(){
+  const teamA = document.getElementById("team1").value;
+  const teamB = document.getElementById("team2").value;
+  const yearVal = "2021";
+  const gameTypeVal = "Season"; // ✅
+  const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
+
+  let filtered = allMatches.filter(m=>
+    (m.team1===teamA && (teamB==="ALL_TEAMS" || m.team2===teamB)) ||
+    (m.team2===teamA && (teamB==="ALL_TEAMS" || m.team1===teamB))
+  );
+
+  if(yearVal!=="ALL_YEARS"){
+    filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
+  }
+
+  if(gameTypeVal !== "ALL_TYPES") { // ✅ filter Game Type
+    filtered = filtered.filter(m => m.gameType === gameTypeVal);
+  }
+
+  if(searchVal!==""){
+    filtered = filtered.filter(m=>(
+      m.team1.toLowerCase().includes(searchVal) ||
+      m.team2.toLowerCase().includes(searchVal)
+    ));
+  }
+
+  filtered.sort((a,b)=>b.date - a.date);
+
+  // --- SUMMARY CALCULATION ---
+  if (filtered.length > 0) {
+    let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
+    filtered.forEach(m => {
+      pfA += (m.team1 === teamA ? m.score1 : m.score2);
+      pfB += (m.team1 === teamB ? m.score1 : m.score2);
+
+      if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
+      else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
+
+      if (teamB !== "ALL_TEAMS") {
+        if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
+        else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
+      }
+    });
+
+    document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
+    document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
+    document.getElementById("cardTeam1PF").textContent = pfA;
+
+    if (teamB === "ALL_TEAMS") {
+      document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
+      document.getElementById("cardTeam2Record").textContent = `N/A`;
+      document.getElementById("cardTeam2PF").textContent = `N/A`;
+    } else {
+      document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
+      document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
+      document.getElementById("cardTeam2PF").textContent = pfB;
+    }
+
+    document.getElementById("summaryArea").style.display = "flex";
+  } else {
+    document.getElementById("summaryArea").style.display = "none";
+  }
+
+  const tbody = document.querySelector("#matchTable tbody");
+  tbody.innerHTML="";
+  filtered.forEach(m=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${formatDateShort(m.date)}</td>
+      <td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
+      <td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
+      <td>${m.score1} - ${m.score2}</td>
+      <td>${m.gameType || ""}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("matchTableWrap").style.display="block";
+  document.getElementById("noMatches").style.display=filtered.length===0?"block":"none";
+  document.getElementById("summaryArea").style.display=filtered.length>0?"flex":"none";
+
+  refreshCollapsibleHeight();
+}
+
+loadCsvAndInit();
+
+// --- Collapsible logic ---
+var coll = document.getElementsByClassName("collapsible");
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+
+// --- helper to fix cutoff issue ---
+function refreshCollapsibleHeight() {
+  document.querySelectorAll(".collapsible.active + .content").forEach(content => {
+    content.style.maxHeight = content.scrollHeight + "px";
+  });
+}
+</script>	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>
