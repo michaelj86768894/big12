@@ -115,7 +115,7 @@ opacity: 0;
 display: none;
 font-size: 28px;
 cursor: pointer;
-color: var(--bright-white); /* Hamburger Lines Color */
+color: var(--cream-city-brick); /* Hamburger Lines Color */
 z-index: 1001;
 }
 
@@ -177,7 +177,7 @@ display: block !important;
 position: absolute;
 top: 10px;
 right: 20px;
-background: var(--lake-blue); /* Square Background Color Set to Lake Blue */
+background: var(--lake-blue); /* Hamburger Background Color */
 padding: 5px 10px;
 font-size: 28px;
 cursor: pointer;
@@ -193,7 +193,7 @@ background-color: var(--navy); /* Navy Blue Color */
 position: absolute;
 top: 60px; /* below logo */
 left: 0;
-border-top: 1px solid var(--lake-blue); /* Lake Blue Color for Line Above Nav on Mobile */
+border-top: 1px solid var(--cream-city-brick); /* Color for Line Above Nav on Mobile */
 z-index: 9999;
 }
 
