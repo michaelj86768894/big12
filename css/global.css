@@ -13,47 +13,47 @@
 
 /* ========================================================================================== GLOBAL STYLES ================== */
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: var(--bg-color);
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: var(--bg-color);
 }
 
 /* ========================================================================================== TEAM LOGO BAR ================== */
 .team-logo-bar {
-background-color: var(--bg-color);
-border-bottom: none;
-overflow-x: auto;
-white-space: nowrap;
-padding: 10px 0;
+	background-color: var(--bg-color);
+	border-bottom: none;
+	overflow-x: auto;
+	white-space: nowrap;
+	padding: 10px 0;
 }
 
 /* Scrollbar remains for desktop if content exceeds width */
 .team-logo-bar::-webkit-scrollbar {
-height: 6px;
+	height: 6px;
 }
 
 .team-logo-bar::-webkit-scrollbar-thumb {
-background: var(--industrial-gray);
-border-radius: 3px;
+	background: var(--industrial-gray);
+	border-radius: 3px;
 }
 
 /* Desktop Layout */
 .team-logo-container {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-padding: 0 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 0 10px;
 }
 
 .team-logo-container img {
-height: 50px;
-width: auto;
-transition: transform 0.3s;
+	height: 50px;
+	width: auto;
+	transition: transform 0.3s;
 }
 
 .team-logo-container img:hover {
-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 /* MOBILE RESPONSIVE FIX */
@@ -61,22 +61,22 @@ transform: scale(1.1);
 
 /* Switch to grid */
 .team-logo-bar {
-overflow-x: visible;
-white-space: normal;
+	overflow-x: visible;
+	white-space: normal;
 }
 
 .team-logo-container {
-display: grid;
-grid-template-columns: repeat(4, 1fr); /* 4 team logos per row */
-gap: 15px 10px;
-padding: 10px;
-justify-items: center;
-}
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* 4 team logos per row */
+	gap: 15px 10px;
+	padding: 10px;
+	justify-items: center;
+	}
 
 .team-logo-container img {
-height: 45px;
-width: auto;
-}
+	height: 45px;
+	width: auto;
+	}
 }
 
 /* ========================================================================================== MAIN NAV ================== */

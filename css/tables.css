@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================================================================================== COLOR VARIABLES ================== */
+:root {
+    --navy: #002855;
+    --lake-blue: #4DA9E9;
+    --industrial-gray: #8c8c8c;
+    --cream-city-brick: #F5E6C8;
+    --bright-white: #FFFFFF;
+	--bg-color: #F8F8F8;
+}
+
+/* ========================================================================================== TABLE FORMATTING ================== */
+.standard-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-size: 15px;
+	background: #ffffff;
+	border: 1px solid var(--industrial-gray);
+	table-layout: fixed; /* makes all columns equal width */
+}
+
+.standard-table th,
+.standard-table td {
+	border: 1px solid var(--industrial-gray); /* cell border */
+	padding: 12px 10px;
+	text-align: center; /* center text in all cells */
+	vertical-align: middle; /* center text vertically */
+	word-wrap: break-word; /* allows wrapping so columns stay even */
+}
+
+.standard-table th {
+	background: var(--industrial-gray);
+	font-weight: bold;
+}
