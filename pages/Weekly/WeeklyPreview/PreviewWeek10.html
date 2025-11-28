@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Big 12 Week 10 Preview</title>
+	<style>
+
+/* ========================================================================================== GLOBAL STYLES ================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* ========================================================================================== TEAM LOGO BAR ================== */
+.team-logo-bar {
+  background-color: #f8f8f8;
+  border-bottom: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+/* Scrollbar remains for desktop if content exceeds width */
+.team-logo-bar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.team-logo-bar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+/* Desktop Layout */
+.team-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.team-logo-container img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s;
+}
+
+.team-logo-container img:hover {
+  transform: scale(1.1);
+}
+
+/* MOBILE RESPONSIVE FIX */
+@media (max-width: 700px) {
+
+/* Switch to grid */
+  .team-logo-bar {
+    overflow-x: visible;
+    white-space: normal;
+  }
+
+  .team-logo-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 team logos per row */
+    gap: 15px 10px;
+    padding: 10px;
+    justify-items: center;
+  }
+
+  .team-logo-container img {
+    height: 45px;  /* slightly smaller to fit nicely */
+    width: auto;
+  }
+}
+
+/* ========================================================================================== MAIN NAV ================== */
+.main-nav {
+  background-color: #001433;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* Logo */
+.nav-container .logo img {
+  height: 50px;
+}
+
+/* Hamburger toggle */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1001; /* clickable above nav links */
+}
+
+/* Desktop nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  z-index: 999;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Desktop dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #007FC8;
+  min-width: 180px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  top: 100%;
+  left: 0;
+  z-index: 999;
+}
+
+.dropdown-content li a {
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 768px) {
+
+/* Hamburger button */
+  .hamburger {
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: #F0AE00; /* Square background color */
+    padding: 5px 10px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+/* Mobile nav hidden by default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #001433;
+    position: absolute;
+    top: 60px; /* below logo */
+    left: 0;
+    border-top: 1px solid #003d7a;
+    z-index: 9999;
+  }
+
+/* Show nav when checkbox is checked */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    padding: 12px 20px;
+  }
+
+/* Mobile dropdowns */
+  .dropdown-content {
+    position: static;
+    display: none;
+    background-color: #007FC8;
+    box-shadow: none;
+  }
+
+  .dropdown .dropdown-content li a {
+    padding-left: 40px;
+  }
+
+  .dropdown > a::after {
+    content: " ▼";
+    font-size: 12px;
+  }
+
+/* Toggle dropdown on click via JS */
+  .dropdown-content.dropdown-active {
+    display: block !important;
+  }
+}
+		
+/* ========================================================================================== WEEKLY PREVIEW GRID ================== */
+.weekly-preview-container {
+  max-width: 1200px;       /* controls the width so content isn't too wide */
+  margin: 40px auto;       /* centers the container with 40px top/bottom margin */
+  padding: 0 15px;         /* adds some space on the sides for mobile */
+  display: flex;
+  flex-direction: column;
+}
+		
+/* ========================================================================================== MATCHUP GRID ============================= */
+.schedule-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 wide on desktop */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .schedule-table {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
+
+/* ========================================================================================== MATCHUP BOX ============================= */
+.schedule-box {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px;
+  position: relative;
+/*  overflow: visible; /* Keep box visible; table handles scrolling */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Highlighted matchup of the week */
+.matchup-banner.best-matchup {
+  background: #0a7a34;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+	
+/* ========================================================================================== TEAM HEADER ============================= */
+.team-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.team-header img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%
+}
+
+.team-name {
+  font-weight: bold;
+  font-size: 16px;
+  white-space: normal;
+}
+
+/* STREAK COLOR */
+.streak-green {
+  color: #0a7a34;
+  font-weight: bold;
+}
+
+/* TABLE */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;              /* horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  margin-top: 12px;
+}
+
+.table-wrapper table {
+  border-collapse: collapse;
+  min-width: 600px;              /* ensures table doesn’t squish */
+  width: 100%;
+}
+
+.table-wrapper thead,
+.table-wrapper tbody {
+  display: table-header-group; /* default behavior */
+  width: auto;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table-wrapper th {
+  background: #f3f3f3;
+  font-weight: bold;
+}
+
+/* Highlight cell wins */
+td[bgcolor="#F0AE00"] {
+  background: #F0AE00 !important;
+}
+
+/* SECTION HEADER */
+.schedule-header {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+		
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .schedule-table {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  .team-header {
+    flex-wrap: wrap;  /* logos + names wrap nicely */
+    justify-content: flex-start;
+  }
+
+  .table-wrapper table {
+    min-width: 500px; /* smaller on mobile but still scrollable */
+  }
+}
+	
+	</style>
+	</head>
+
+	<body>
+
+<!-- ========================================================================================== LOGO BAR ================== -->
+	<div class="team-logo-bar">
+  <div class="team-logo-container">
+    <a href="../teams/boston.html"><img src="../../images/Boston.png" alt="Boston" /></a>
+    <a href="../teams/brooklyn.html"><img src="../../images/Brooklyn.png" alt="Brooklyn" /></a>
+    <a href="../teams/cedarRapids.html"><img src="../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+    <a href="../teams/chicago.html"><img src="../../images/Chicago.png" alt="Chicago" /></a>
+    <a href="../teams/cleveland.html"><img src="../../images/Cleveland.png" alt="Cleveland" /></a>
+    <a href="../teams/losAngeles.html"><img src="../../images/LosAngeles.png" alt="Los Angeles" /></a>
+    <a href="../teams/miami.html"><img src="../../images/Miami.png" alt="Miami" /></a>
+    <a href="../teams/milwaukee.html"><img src="../../images/Milwaukee.png" alt="Milwaukee" /></a>
+    <a href="../teams/northernArizona.html"><img src="../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+    <a href="../teams/philadelphia.html"><img src="../../images/Philadelphia.png" alt="Philadelphia" /></a>
+    <a href="../teams/tucson.html"><img src="../../images/Tucson.png" alt="Tucson" /></a>
+    <a href="../teams/vegas.html"><img src="../../images/Vegas.png" alt="Vegas" /></a>
+  </div>
+</div>
+
+<!-- ========================================================================================== MAIN NAV ================== -->
+<nav class="main-nav">
+  <div class="nav-container">
+	  
+    <a href="../../index.html" class="logo">
+      <img src="../../images/Logo.png" alt="League Logo" />
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="#">About</a>
+        <ul class="dropdown-content">
+          <li><a href="../WhoWeAre.html">Who We Are</a></li>
+          <li><a href="../Bylaws.html">Bylaws</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../News.html">News</a></li>
+
+      <li class="dropdown">
+        <a href="#">History</a>
+        <ul class="dropdown-content">
+          <li><a href="../HistoryoftheBig12.html">History of the Big 12</a></li>
+          <li><a href="../Big12Seasons.html">Big 12 Seasons</a></li>
+          <li><a href="../Big12Champions.html">Big 12 Champions</a></li>
+          <li><a href="../IndividualAwards.html">Individual Award Winners</a></li>
+          <li><a href="../RecordBook.html">Record Book</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Schedule &amp; Standings</a>
+        <ul class="dropdown-content">
+          <li><a href="../Standings.html">Standings</a></li>
+          <li><a href="../WeeklySchedule.html">Weekly Schedule</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../Teams.html">Teams</a></li>
+      <li><a href="../Draft.html">Draft</a></li>
+    </ul>
+  </div>
+</nav>		
+		
+		<div class="weekly-preview-container">
+
+		<h3>Week 10 Preview</h3>
+			
+		<p>There is a crisis of confidence in fantasy football. It seems like everywhere you turn, there's someone complaining about their horrible luck -- whether it be injury, matchup, or some third thing. We must return to being a community of trash talkers. I don't want to see two mopers face off against one another...fantasy football is a fundamentally unserious endeavor. It ought to be treated much like wrasslin. Adopt a persona if you must...but no more of this "poor lil ol' me" stuff. If your team is bad, simply pretend that it isn't and tell your opponent how bad you're gonna whoop their ass.</p>
+			
+		<p>I gotta tell y'all, it is a great feeling actually looking forward to watching my team play every week. I'm not talking about my fantasy team -- even though i do enjoy beating everyone's ass recently! No, no...I am speaking of the Dallas Cowboys. Even though I know we're going to most likely lose, I still watch and talk shit about how good they are (they're not).</p>
+			
+		<p>That's the kind of energy we need from this league. If you're sitting at a 1% chance to make the playoffs, you need to believe that you are going to get it done, here's looking at you Dave.</p>
+
+		<p>Alright let's get into the only matchups anyone actually cares about this week.</p>
+		
+		<div class="schedule-container">
+		  <div class="scroll-wrapper">
+		<div class="schedule-header">Week 10 Matchups</div>
+		    <div class="schedule-table">
+				
+<!-- ======================================================= matchup NUMBER 1 ================================================== -->
+				
+		<div class="schedule-box">
+		<!-- Best Matchup of the Week -->
+		<div class="matchup-banner best-matchup">
+		&#x1F525; <strong>MATCHUP OF THE WEEK</strong>
+		</div>
+
+		<div class="team-header">
+				<img src="../../images/Boston.png" alt="BOS BRAWLERS">
+		        <div class="team-name">Boston (5-4) vs.</div>
+					
+				<img src="../../images/Philadelphia.png" alt="PHI SOUL">
+				<div class="team-name">Philadelphia (5-4)</div>
+		</div>
+			
+		<div class="schedule-type">Current Streak: <span class="streak-green">Boston W6</span></div>
+		<div class="schedule-type">All-Time: <b>Boston 10-7</b></div><br>
+			
+		<div class="schedule-type">Hypothetical Win Scenarios:</div>
+		<div class="schedule-description">If these teams played every week of the season, who would have won?<br><br><strong>Interesting factoid: Brian as a GM has more wins (74) than the entire Boston franchise (69).</strong><br>
+				  		  
+		<div class="table-wrapper">
+		<table>
+		<tr>
+			<th>Team</th>
+			<th>Wk 1</th> 
+			<th>Wk 2</th>
+			<th>Wk 3</th>
+			<th>Wk 4</th>
+			<th>Wk 5</th>
+			<th>Wk 6</th>
+			<th>Wk 7</th>
+			<th>Wk 8</th>
+			<th>Wk 9</th>
+			<th>Wins</th>
+		 </tr>
+			
+		<tr>
+			<td><div class="team-header">Boston</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">194.30</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">162.95</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">201.60</div></td>
+			<td><div class="team-header">190.65</div></td>
+			<td><div class="team-header">168.20</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">193.50</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">175.95</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">213.85</div></td>
+			<td><div class="team-header">192.60</div></td>
+			<td><div class="team-header">6</div></td>
+		</tr>	
+		
+		<tr>
+			<td><div class="team-header">Philadelphia</div></td>
+			<td><div class="team-header">173.10</div></td>
+			<td><div class="team-header">153.10</div></td>
+			<td><div class="team-header">200.15</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">201.40</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">222.10</div></td>
+			<td><div class="team-header">175.40</div></td>
+			<td><div class="team-header">165.10</div></td>
+			<td><div class="team-header">110.75</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">217.25</div></td>
+			<td><div class="team-header">3</div></td>  
+		</tr>
+		
+		</table>
+		</div> 	
+		<br>Boston would have won 6 out of 9 matchups this season.
+		</div>
+		</div>
+			
+<!-- =================================================================== matchup NUMBER 2 ============================================ -->
+		
+		<div class="schedule-box">
+		<div class="team-header">
+		
+		<img src="../../images/Milwaukee.png" alt="MKE MUSTANGS">
+		<div class="team-name">Milwaukee (5-4) vs.</div>
+		
+		<img src="../../images/NorthernArizona.png" alt="NAR WRANGLERS">
+		<div class="team-name">Northern Arizona (4-5)</div>
+			
+		</div>
+			
+		<div class="schedule-type">Current Streak: <span class="streak-green">Milwaukee W3</span></div>
+		<div class="schedule-type">All-Time: <b>Milwaukee 12-4</b></div><br>
+		
+		<div class="schedule-type">Hypothetical Win Scenarios:</div>
+		<div class="schedule-description">If these teams played every week of the season, who would have won?<br><br><strong>Interesting factoid: With a loss, NAR will become the fourth franchise with 100+ total losses (CHI, PHI &amp; CR).</strong><br>
+				  		  
+		<div class="table-wrapper">
+		<table>
+		<tr>
+			<th>Team</th>
+			<th>Wk 1</th> 
+			<th>Wk 2</th>
+			<th>Wk 3</th>
+			<th>Wk 4</th>
+			<th>Wk 5</th>
+			<th>Wk 6</th>
+			<th>Wk 7</th>
+			<th>Wk 8</th>
+			<th>Wk 9</th>
+			<th>Wins</th>
+		 </tr>
+			
+		<tr>
+		<td><div class="team-header">Milwaukee</div></td>
+			<td><div class="team-header">176.45</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">161.60</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">174.80</div></td>
+			<td><div class="team-header">140.05</div></td>
+			<td><div class="team-header">193.70</div></td>
+			<td><div class="team-header">153.30</div></td>
+			<td><div class="team-header">198.75</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">222.45</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">192.55</div></td>
+			<td><div class="team-header">4</div></td>  
+		</tr>
+		
+		<tr>
+			<td><div class="team-header">Northern Arizona</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">201.10</div></td>
+			<td><div class="team-header">158.65</div></td>
+			<td><div class="team-header">155.70</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">173.15</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">199.80</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">218.65</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">202.15</div></td>
+			<td><div class="team-header">169.05</div></td>
+			<td><div class="team-header">184.60</div></td>
+			<td><div class="team-header">5</div></td>
+		</tr>	 
+		</table>
+		
+		</div> 	
+		<br>Northern Arizona would have won 5 out of 9 matchups this season.
+		</div>
+		</div>
+				
+<!-- =================================================================== matchup NUMBER 3 ============================================ -->
+				
+		<div class="schedule-box">
+		<div class="team-header">
+			<img src="../../images/LosAngeles.png" alt="LA WILDCATS">
+			<div class="team-name">Los Angeles (7-2) vs.</div>
+		
+				<img src="../../images/Chicago.png" alt="CHI SLAUGHTER">
+				<div class="team-name">Chicago (3-6)</div>
+		</div>
+			
+		<div class="schedule-type">Current Streak: <span class="streak-green">Chicago W2</span></div>
+		<div class="schedule-type">All-Time: <b>Los Angeles 16-3</b></div><br>
+			
+		<div class="schedule-type">Hypothetical Win Scenarios:</div>
+		<div class="schedule-description">If these teams played every week of the season, who would have won?<br>
+				  		  
+		<div class="table-wrapper">
+		<table>
+		<tr>
+			<th>Team</th>
+			<th>Wk 1</th> 
+			<th>Wk 2</th>
+			<th>Wk 3</th>
+			<th>Wk 4</th>
+			<th>Wk 5</th>
+			<th>Wk 6</th>
+			<th>Wk 7</th>
+			<th>Wk 8</th>
+			<th>Wk 9</th>
+			<th>Wins</th>
+		 </tr>
+			
+		<tr>
+			<td><div class="team-header">Los Angeles</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">213.10</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">203.85</div></td>
+			<td><div class="team-header">158.05</div></td>
+			<td><div class="team-header">196.35</div></td>
+			<td><div class="team-header">192.40</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">185.85</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">241.15</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">177.60</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">188.25</div></td>
+			<td><div class="team-header">6</div></td>  
+		</tr>
+			
+		<tr>
+		   	<td><div class="team-header">Chicago</div></td>
+		    <td><div class="team-header">150.15</div></td>
+		   	<td><div class="team-header">142.10</div></td>
+		    <td bgcolor="#F0AE00"><div class="team-header">172.00</div></td>
+		    <td bgcolor="#F0AE00"><div class="team-header">201.35</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">195.20</div></td>
+		    <td><div class="team-header">180.35</div></td>
+			<td><div class="team-header">134.90</div></td>
+			<td><div class="team-header">159.10</div></td>
+			<td><div class="team-header">159.70</div></td>
+		    <td><div class="team-header">3</div></td>  
+		</tr>
+		
+		</table>
+		</div> 	
+		<br>Los Angeles would have won 6 out of 9 matchups this season.
+		</div>
+		</div>
+
+<!-- =================================================================== matchup NUMBER 4 ============================================ -->
+				
+		<div class="schedule-box">
+		<div class="team-header">
+			
+			<img src="../../images/Tucson.png" alt="TUC SUGAR SKULLS">
+			<div class="team-name">Tucson (8-1) vs.</div>
+		
+			<img src="../../images/Brooklyn.png" alt="BKN BOLTS">
+			<div class="team-name">Brooklyn (3-6)</div>
+		
+		</div>
+			
+		<div class="schedule-type">Current Streak: <span class="streak-green">Brooklyn W1</span></div>
+		<div class="schedule-type">All-Time: <b>Brooklyn 10-9</b></div><br>
+			
+		<div class="schedule-type">Hypothetical Win Scenarios:</div>
+		<div class="schedule-description">If these teams played every week of the season, who would have won?<br>
+				  		  
+		<div class="table-wrapper">
+		<table>
+		<tr>
+			<th>Team</th>
+			<th>Wk 1</th> 
+			<th>Wk 2</th>
+			<th>Wk 3</th>
+			<th>Wk 4</th>
+			<th>Wk 5</th>
+			<th>Wk 6</th>
+			<th>Wk 7</th>
+			<th>Wk 8</th>
+			<th>Wk 9</th>
+			<th>Wins</th>
+		 </tr>
+			
+		<tr>
+			<td><div class="team-header">Tucson</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">192.25</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">172.20</div></td>
+			<td><div class="team-header">145.30</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">196.35</div></td>
+			<td><div class="team-header">169.80</div></td>
+			<td><div class="team-header">167.90</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">216.20</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">180.75</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">1194.95</div></td>
+			<td><div class="team-header">6</div></td>  
+		</tr>
+		
+		<tr>
+			<td><div class="team-header">Brooklyn</div></td>
+			<td><div class="team-header">118.90</div></td>
+			<td><div class="team-header">126.90</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">187.40</div></td>
+			<td><div class="team-header">159.85</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">242.30</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">183.75</div></td>
+			<td><div class="team-header">151.50</div></td>
+			<td><div class="team-header">113.80</div></td>
+			<td><div class="team-header">176.85</div></td>
+			<td><div class="team-header">3</div></td>  
+		</tr>	
+				
+		</table>
+		</div> 	
+		<br>Tucson would have won 6 out of 9 matchups this season.
+		</div>
+		</div>
+				
+<!-- =================================================================== matchup NUMBER 5 ============================================ -->	
+				
+		<div class="schedule-box">
+		<div class="team-header">
+				<img src="../../images/CedarRapids.png" alt="CR TITANS">
+				<div class="team-name">Cedar Rapids (5-4) vs.</div>
+		
+				<img src="../../images/Miami.png" alt="MIA INFERNO">
+				<div class="team-name">Miami (3-6)</div>
+		</div>
+			
+		<div class="schedule-type">Current Streak: <span class="streak-green">Miami W6</span></div>
+		<div class="schedule-type">All-Time: <b>Miami 13-2</b></div><br>
+			
+		<div class="schedule-type">Hypothetical Win Scenarios:</div>
+		<div class="schedule-description">If these teams played every week of the season, who would have won?<br>
+				  		  
+		<div class="table-wrapper">
+		<table>
+		<tr>
+			<th>Team</th>
+			<th>Wk 1</th> 
+			<th>Wk 2</th>
+			<th>Wk 3</th>
+			<th>Wk 4</th>
+			<th>Wk 5</th>
+			<th>Wk 6</th>
+			<th>Wk 7</th>
+			<th>Wk 8</th>
+			<th>Wk 9</th>
+			<th>Wins</th>
+		 </tr>
+			
+		<tr>
+			<td><div class="team-header">Cedar Rapids</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">162.50</div></td>
+			<td><div class="team-header">155.95</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">205.60</div></td>
+			<td><div class="team-header">142.85</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">186.40</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">156.80</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">206.35</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">214.75</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">196.95</div></td>
+			<td><div class="team-header">7</div></td>  
+		</tr>
+		
+		<tr>
+			<td><div class="team-header">Miami</div></td>
+			<td><div class="team-header">157.40</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">171.10</div></td>
+			<td><div class="team-header">169.10</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">186.95</div></td>
+			<td><div class="team-header">176.75</div></td>
+			<td><div class="team-header">152.40</div></td>
+			<td><div class="team-header">156.95</div></td>
+			<td><div class="team-header">142.45</div></td>
+			<td><div class="team-header">170.85</div></td>
+			<td><div class="team-header">2</div></td>  
+		</tr>
+				
+		</table>
+		</div> 	
+		<br>Cedar Rapids would have won 7 out of 9 matchups this season.
+		</div>
+		</div>
+				
+<!-- =================================================================== matchup NUMBER 6 ============================================ -->	
+		
+		<div class="schedule-box">
+		<div class="team-header">
+				<img src="../../images/Cleveland.png" alt="CLE GLADIATORS">
+				<div class="team-name">Cleveland (3-6) vs.</div>
+				
+				<img src="../../images/Vegas.png" alt="LV KNIGHT HAWKS">
+				<div class="team-name">Vegas (3-6)</div>
+		</div>
+			
+		<div class="schedule-type">Current Streak: <span class="streak-green">Cleveland W1</span></div>
+		<div class="schedule-type">All-Time: <b>Cleveland 7-5</b></div><br>
+			
+		<div class="schedule-type">Hypothetical Win Scenarios:</div>
+		<div class="schedule-description">If these teams played every week of the season, who would have won?<br><br><strong>Interesting factoid: Despite playing one less season Josh has just one fewer win than Dave.</strong><br>
+				  		  
+		<div class="table-wrapper">
+		<table>
+		<tr>
+			<th>Team</th>
+			<th>Wk 1</th> 
+			<th>Wk 2</th>
+			<th>Wk 3</th>
+			<th>Wk 4</th>
+			<th>Wk 5</th>
+			<th>Wk 6</th>
+			<th>Wk 7</th>
+			<th>Wk 8</th>
+			<th>Wk 9</th>
+			<th>Wins</th>
+		 </tr>
+			
+		<tr>
+			<td><div class="team-header">Cleveland</div></td>
+			<td><div class="team-header">132.20</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">238.60</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">176.80</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">248.65</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">175.60</div></td>
+			<td><div class="team-header">158.35</div></td>
+			<td><div class="team-header">149.45</div></td>
+			<td><div class="team-header">180.15</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">167.80</div></td>
+			<td><div class="team-header">5</div></td>  
+		</tr>
+
+		<tr>
+			<td><div class="team-header">Vegas</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">159.80</div></td>
+			<td><div class="team-header">235.15</div></td>
+			<td><div class="team-header">116.20</div></td>
+			<td><div class="team-header">125.90</div></td>
+			<td><div class="team-header">158.10</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">164.20</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">223.15</div></td>
+			<td bgcolor="#F0AE00"><div class="team-header">189.40</div></td>
+			<td><div class="team-header">162.10</div></td>
+			<td><div class="team-header">4</div></td>  
+		</tr>
+			
+				
+		</table>
+		</div><br>Cleveland would have won 5 out of 9 matchups this season.
+		</div>
+		</div>
+		
+		<!--End of groupings-->
+				
+		</div>
+			</div>
+		</div>
+			
+		</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+// ========================================================================================== MOBILE NAVIGATION ==================
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+  // Toggle mobile nav menu
+  hamburger.addEventListener("click", function(e) {
+    e.stopPropagation(); // Prevent click from bubbling
+    navLinks.classList.toggle("nav-active");
+  });
+
+  // Toggle dropdowns on mobile
+  dropdownLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault(); // Prevent link navigation
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle("dropdown-active");
+      }
+    });
+  });
+
+  // Close mobile menu if clicking outside
+  document.addEventListener("click", function(e) {
+    if (window.innerWidth <= 768) {
+      const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+      if (!isClickInsideNav) {
+        navLinks.classList.remove("nav-active");
+        document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+      }
+    }
+  });
+
+});
+</script>	
+
+		</body>
+</html>
