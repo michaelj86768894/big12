@@ -3,236 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>History of the Big 12</title>
+<title>History of the GLFL</title>
+<!-- ========================================================================================== LINKED STYLESHEETS ================== -->
+<link rel="stylesheet" href="../css/global.css">
+
 <style>
-
-/* ========================================================================================== GLOBAL STYLES ================== */
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f8f8f8;
-}
-
-/* ========================================================================================== TEAM LOGO BAR ================== */
-.team-logo-bar {
-background-color: #f8f8f8;
-border-bottom: none;
-overflow-x: auto;
-white-space: nowrap;
-padding: 10px 0;
-}
-
-/* Scrollbar remains for desktop if content exceeds width */
-.team-logo-bar::-webkit-scrollbar {
-height: 6px;
-}
-
-.team-logo-bar::-webkit-scrollbar-thumb {
-background: #888;
-border-radius: 3px;
-}
-
-/* Desktop Layout */
-.team-logo-container {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-padding: 0 10px;
-}
-
-.team-logo-container img {
-height: 50px;
-width: auto;
-transition: transform 0.3s;
-}
-
-.team-logo-container img:hover {
-transform: scale(1.1);
-}
-
-/* MOBILE RESPONSIVE FIX */
-@media (max-width: 700px) {
-
-/* Switch to grid */
-.team-logo-bar {
-overflow-x: visible;
-white-space: normal;
-}
-
-.team-logo-container {
-display: grid;
-grid-template-columns: repeat(4, 1fr); /* 4 team logos per row */
-gap: 15px 10px;
-padding: 10px;
-justify-items: center;
-}
-
-.team-logo-container img {
-height: 45px;  /* slightly smaller to fit nicely */
-width: auto;
-}
-}
-
-/* ========================================================================================== MAIN NAV ================== */
-.main-nav {
-background-color: #001433;
-color: #fff;
-position: sticky;
-top: 0;
-z-index: 9999;
-}
-
-.nav-container {
-display: flex;
-align-items: center;
-gap: 20px;
-max-width: 1200px;
-margin: 0 auto;
-padding: 10px 20px;
-position: relative;
-}
-
-/* Logo */
-.nav-container .logo img {
-height: 50px;
-}
-
-/* Hamburger toggle */
-.menu-toggle {
-display: none;
-position: absolute;
-opacity: 0;
-}
-
-.hamburger {
-display: none;
-font-size: 28px;
-cursor: pointer;
-color: #fff;
-z-index: 1001; /* clickable above nav links */
-}
-
-/* Desktop nav links */
-.nav-links {
-display: flex;
-list-style: none;
-gap: 20px;
-margin: 0;
-padding: 0;
-align-items: center;
-z-index: 999;
-}
-
-.nav-links li {
-position: relative;
-}
-
-.nav-links a {
-color: #fff;
-text-decoration: none;
-padding: 10px;
-display: block;
-font-weight: bold;
-transition: background 0.3s;
-}
-
-.nav-links a:hover {
-background-color: rgba(255, 255, 255, 0.1);
-border-radius: 4px;
-}
-
-/* Desktop dropdown */
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #007FC8;
-min-width: 180px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-top: 100%;
-left: 0;
-z-index: 999;
-}
-
-.dropdown-content li a {
-padding: 10px;
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-/* MOBILE RESPONSIVE */
-@media screen and (max-width: 768px) {
-
-/* Hamburger button */
-.hamburger {
-display: block !important;
-position: absolute;
-top: 10px;
-right: 20px;
-background: #F0AE00; /* Square background color */
-padding: 5px 10px;
-font-size: 28px;
-cursor: pointer;
-z-index: 9999;
-}
-
-/* Mobile nav hidden by default */
-.nav-links {
-display: none;
-flex-direction: column;
-width: 100%;
-background-color: #001433;
-position: absolute;
-top: 60px; /* below logo */
-left: 0;
-border-top: 1px solid #003d7a;
-z-index: 9999;
-}
-
-/* Show nav when checkbox is checked */
-.menu-toggle:checked + .hamburger + .nav-links {
-display: flex !important;
-}
-
-.nav-links li {
-width: 100%;
-}
-
-.nav-links li a {
-padding: 12px 20px;
-}
-
-/* Mobile dropdowns */
-.dropdown-content {
-position: static;
-display: none;
-background-color: #007FC8;
-box-shadow: none;
-}
-
-.dropdown .dropdown-content li a {
-padding-left: 40px;
-}
-
-.dropdown > a::after {
-content: " ▼";
-font-size: 12px;
-}
-
-/* Toggle dropdown on click via JS */
-.dropdown-content.dropdown-active {
-display: block !important;
-}
-}
-
-/* ========================================================================================== Text GRID ================== */
-.text-container {
-max-width: 1200px;       /* controls the width so content isn't too wide */
-margin: 40px auto;       /* centers the container with 40px top/bottom margin */
-padding: 0 15px;         /* adds some space on the sides for mobile */
-}
 
 /* ========================================================================================== FLOATING LOGO ================== */
 .logo-block {
@@ -277,29 +52,29 @@ margin: 0 0 12px 16px; /* space on the left */
 
 <!-- ========================================================================================== LOGO BAR ================== -->
 <div class="team-logo-bar">
-<div class="team-logo-container">
-<a href="teams/boston.html"><img src="../images/Boston.png" alt="Boston" /></a>
-<a href="teams/brooklyn.html"><img src="../images/Brooklyn.png" alt="Brooklyn" /></a>
-<a href="teams/cedarRapids.html"><img src="../images/CedarRapids.png" alt="Cedar Rapids" /></a>
-<a href="teams/chicago.html"><img src="../images/Chicago.png" alt="Chicago" /></a>
-<a href="teams/cleveland.html"><img src="../images/Cleveland.png" alt="Cleveland" /></a>
-<a href="teams/losAngeles.html"><img src="../images/LosAngeles.png" alt="Los Angeles" /></a>
-<a href="teams/miami.html"><img src="../images/Miami.png" alt="Miami" /></a>
-<a href="teams/milwaukee.html"><img src="../images/Milwaukee.png" alt="Milwaukee" /></a>
-<a href="teams/northernArizona.html"><img src="../images/NorthernArizona.png" alt="Northern Arizona" /></a>
-<a href="teams/philadelphia.html"><img src="../images/Philadelphia.png" alt="Philadelphia" /></a>
-<a href="teams/tucson.html"><img src="../images/Tucson.png" alt="Tucson" /></a>
-<a href="teams/vegas.html"><img src="../images/Vegas.png" alt="Vegas" /></a>
-</div>
+	<div class="team-logo-container">
+	<a href="Teams/Boston.html"><img src="../images/Boston.png" alt="Boston" /></a>
+	<a href="Teams/Brooklyn.html"><img src="../images/Brooklyn.png" alt="Brooklyn" /></a>
+	<a href="Teams/CedarRapids.html"><img src="../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+	<a href="Teams/Chicago.html"><img src="../images/Chicago.png" alt="Chicago" /></a>
+	<a href="Teams/Cleveland.html"><img src="../images/Cleveland.png" alt="Cleveland" /></a>
+	<a href="Teams/LosAngeles.html"><img src="../images/LosAngeles.png" alt="Los Angeles" /></a>
+	<a href="Teams/Miami.html"><img src="../images/Miami.png" alt="Miami" /></a>
+	<a href="Teams/Milwaukee.html"><img src="../images/Milwaukee.png" alt="Milwaukee" /></a>
+	<a href="Teams/NorthernArizona.html"><img src="../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+	<a href="Teams/Philadelphia.html"><img src="../images/Philadelphia.png" alt="Philadelphia" /></a>
+	<a href="Teams/Tucson.html"><img src="../images/Tucson.png" alt="Tucson" /></a>
+	<a href="Teams/Vegas.html"><img src="../images/Vegas.png" alt="Vegas" /></a>
+	</div>
 </div>
 
 <!-- ========================================================================================== MAIN NAV ================== -->
 <nav class="main-nav">
 <div class="nav-container">
 
-<a href="../index.html" class="logo">
-<img src="../images/Logo.png" alt="League Logo" />
-</a>
+	<a href="../index.html" class="logo">
+	<img src="../images/Logo.png" alt="League Logo" />
+	</a>
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
 <label for="menu-toggle" class="hamburger">&#9776;</label>
@@ -307,36 +82,36 @@ margin: 0 0 12px 16px; /* space on the left */
 <!-- Nav Links -->
 <ul class="nav-links">
 <li class="dropdown">
-<a href="#">About</a>
-<ul class="dropdown-content">
-<li><a href="WhoWeAre.html">Who We Are</a></li>
-<li><a href="Bylaws.html">Bylaws</a></li>
-</ul>
+	<a href="#">About</a>
+	<ul class="dropdown-content">
+		<li><a href="About.html">Who We Are</a></li>
+		<li><a href="Bylaws.html">Bylaws</a></li>
+	</ul>
 </li>
 
 <li><a href="News.html">News</a></li>
 
 <li class="dropdown">
-<a href="#">History</a>
-<ul class="dropdown-content">
-<li><a href="HistoryoftheBig12.html">History of the Big 12</a></li>
-<li><a href="Big12Seasons.html">Big 12 Seasons</a></li>
-<li><a href="Big12Champions.html">Big 12 Champions</a></li>
-<li><a href="IndividualAwards.html">Individual Award Winners</a></li>
-<li><a href="RecordBook.html">Record Book</a></li>
-</ul>
+	<a href="#">History</a>
+	<ul class="dropdown-content">
+		<li><a href="History.html">History of the GLFL</a></li>
+		<li><a href="Seasons.html">GLFL Seasons</a></li>
+		<li><a href="Champions.html">GLFL Champions</a></li>
+		<li><a href="Awards.html">Individual Award Winners</a></li>
+		<li><a href="RecordBook.html">Record Book</a></li>
+	</ul>
 </li>
 
 <li class="dropdown">
-<a href="#">Schedule &amp; Standings</a>
-<ul class="dropdown-content">
-<li><a href="Standings.html">Standings</a></li>
-<li><a href="WeeklySchedule.html">Weekly Schedule</a></li>
-</ul>
+	<a href="#">Schedule &amp; Standings</a>
+	<ul class="dropdown-content">
+		<li><a href="Standings.html">Standings</a></li>
+		<li><a href="WeeklySchedule.html">Weekly Schedule</a></li>
+	</ul>
 </li>
 
-<li><a href="Teams.html">Teams</a></li>
-<li><a href="Draft.html">Draft</a></li>
+	<li><a href="Teams.html">Teams</a></li>
+	<li><a href="Draft.html">Draft</a></li>
 </ul>
 </div>
 </nav>
@@ -346,15 +121,15 @@ margin: 0 0 12px 16px; /* space on the left */
 <h3>Inaugural (2012)</h3>
 
 <figure class="logo-block logo-right">
-<img src="../images/2012Logo.PNG" alt="2012 Logo">
+<img src="../images/Logo2012.PNG" alt="2012 Logo">
 <figcaption>2012 Logo</figcaption>
 </figure>
 
-<p>The origins of what would later become the Big 12 Fantasy League date back to the spring of 2012, when founder Michael Bautch created the Bragging Rights Fantasy League — a community-driven platform designed to bring fantasy football enthusiasts together. Serving as the league’s first and only commissioner, Bautch laid the groundwork for what would evolve into a long-standing and competitive fantasy football tradition.</p>
+<p>The origins of what would later become the Great Lakes Football League date back to the spring of 2012, when founder Michael Bautch created the Bragging Rights Fantasy League — a community-driven platform designed to bring fantasy football enthusiasts together. Serving as the league’s first and only commissioner, Bautch laid the groundwork for what would evolve into a long-standing and competitive fantasy football tradition.</p>
 
 <p>The inaugural season kicked off on Wednesday, September 5, 2012, with 12 teams competing under a free-to-play format. To encourage rivalries and balanced competition, the league was organized into three divisions: East, Central, and West.</p>
 
-<p>That first season concluded with a thrilling championship matchup, where the Los Angeles Wildcats claimed the league’s first-ever title, defeating the Green Bay Blizzard to cement their place in the early history of the Bragging Rights Fantasy League.</p>
+<p>That first season concluded with a thrilling championship matchup, where the Los Angeles Wildcats claimed the league’s first-ever championship, defeating the Green Bay Blizzard to cement their place in the early history of the Bragging Rights Fantasy League.</p>
 
 <p>This debut campaign not only marked the beginning of spirited on-field battles but also established the camaraderie, competition, and commitment that would define the league for years to come.</p>
 
@@ -367,7 +142,7 @@ margin: 0 0 12px 16px; /* space on the left */
 <p>In 2015, Michael Arroyo took over the Cedar Rapids Titans, succeeding Amanda Strutz after two seasons, continuing the trend of evolving team leadership and roster building.</p>
 
 <figure class="logo-block logo-left">
-<img src="../images/2016Logo.png" alt="2016 Logo">
+<img src="../images/Logo2016.png" alt="2016 Logo">
 <figcaption>2016 Logo</figcaption>
 </figure>
 
@@ -375,9 +150,7 @@ margin: 0 0 12px 16px; /* space on the left */
 
 <p>By 2017, another round of leadership transitions took place as Ashley Coppersmith (Vegas) and Liz Bautch (Los Angeles) both stepped down. Their franchises quickly reloaded, with Matt Winkels taking over the Vegas Knight Hawks and Pete Jerving assuming control of the Los Angeles Wildcats. Around the same time, Green Bay also underwent a front-office change, as Dan Uribe succeeded original GM Paris Reed, looking to stabilize the team after several up-and-down seasons.</p>
 
-<p>Across this five-year stretch, the Bragging Rights Fantasy League saw the rise of several powerhouse franchises. The Milwaukee organization, under the leadership of Michael Bautch, became a model of consistency, producing four winning seasons, one division title, three conference titles, and one championship. Meanwhile, Cody Coppersmith’s Miami franchise established itself as a dynasty in the making — earning four winning seasons, two division titles, two conference titles, and two championships during this same span.</p>
-
-<p>Together, these years of evolution — on and off the field — built the foundation for the modern era of the league, setting the stage for the eventual transformation into the Big 12 Fantasy League.</p>
+<p>Across this five-year stretch, the Bragging Rights Fantasy League saw the rise of several powerhouse franchises. The Milwaukee Mustangs, under the leadership of Michael Bautch, became a model of consistency, producing four winning seasons, one division title, three conference titles, and one league championship. Meanwhile, Cody Coppersmith’s Miami franchise established itself as a dynasty in the making — earning four winning seasons, two division titles, two conference titles, and two Lakefron Bowl championships during this same span.</p>
 
 <h3>A Season of Resilience and Transition (2018)</h3>
 
@@ -387,13 +160,13 @@ margin: 0 0 12px 16px; /* space on the left */
 
 <p>Amidst the turbulence, familiar faces returned to restore stability. Ashley Coppersmith came out of retirement to resume leadership of the Vegas Knight Hawks, while Dan Shilts stepped in as the new General Manager of Northern Arizona, ushering in a fresh start for the franchise.</p>
 
-<p>Despite the league’s reduced size, the competition remained fierce. In a dramatic finale, Ashley Coppersmith and the Vegas Knight Hawks captured the 2018 Bragging Rights Championship, defeating Michaela Arroyo and the Cedar Rapids Titans. The win marked Ashley’s second career championship, tying the all-time record and symbolizing the league’s enduring spirit of competition, adaptability, and community — even in a season of transition.</p>
+<p>Despite the league’s reduced size, the competition remained fierce. In a dramatic finale, Ashley Coppersmith and the Vegas Knight Hawks captured the 2018 championship, defeating Michaela Arroyo and the Cedar Rapids Titans. The win marked Ashley’s second career championship, tying the all-time record and symbolizing the league’s enduring spirit of competition, adaptability, and community — even in a season of transition.</p>
 
 <h3>Challenges &#38; Controversies (2019-2020)</h3>
 
-<p>The 2019 season marked a period of transformation for the Bragging Rights Fantasy League. Brooklyn rejoined the league after a one-year hiatus, now led by General Manager Cory Colvin, signaling a new era of leadership and competition. For the first time, the league expanded beyond Wisconsin’s borders, introducing non-resident General Managers to restore the roster to 12 teams. Among the newcomers were Travis Gebel (Boston Brawlers), DeMario Suggs (Los Angeles), and Richard Head (Miami), bringing fresh energy — and, soon enough, drama — to the league.</p>
+<p>The 2019 season marked a period of transformation for the Bragging Rights Fantasy League. Brooklyn rejoined the league after a one-year hiatus, now led by General Manager Cory Colvin, signaling a new era of leadership and competition. For the first time, the league expanded beyond Wisconsin’s borders, introducing non-resident General Managers to restore the roster to 12 teams. Among the newcomers were Travis Gebel (Boston), DeMario Suggs (Los Angeles), and Richard Head (Miami), bringing fresh energy — and, soon enough, drama — to the league.</p>
 
-<p>On the field, the Inferno rose once again, capturing their third Bragging Rights Fantasy League Championship. But the season was not without turmoil. In one of the most infamous early-season scandals, Boston GM Travis Gebel was dismissed after just four weeks following a lineup controversy that shook the league’s integrity. Commissioner Bautch temporarily assumed control of the team before appointing Chris Cholka as the new General Manager to guide Boston through the remainder of the season. In a decisive move to preserve competitive fairness, all team stats and records were reassigned to Cholka, effectively erasing Gebel from Bragging Rights Fantasy League history.</p>
+<p>On the field, the Inferno rose once again, capturing their third championship. But the season was not without turmoil. In one of the most infamous early-season scandals, Boston GM Travis Gebel was dismissed after just four weeks following a lineup controversy that shook the league’s integrity. Commissioner Bautch temporarily assumed control of the team before appointing Chris Cholka as the new General Manager to guide Boston through the remainder of the season. In a decisive move to preserve competitive fairness, all team stats and records were reassigned to Cholka, effectively erasing Gebel from Bragging Rights Fantasy League history.</p>
 
 <p>Then came 2020 — a year that tested every institution, including the Bragging Rights Fantasy League. As the COVID-19 pandemic disrupted sports worldwide, the league faced difficult questions about health, scheduling, and fairness. In a somber late-August press conference, Commissioner Bautch announced the unthinkable: the cancellation of the 2020 season. It was a heartbreaking but necessary decision, prioritizing safety over tradition. The pause sparked rumors and uncertainty about the league’s future, with some questioning whether the Bragging Rights Fantasy League would ever return.</p>
 
@@ -402,11 +175,11 @@ margin: 0 0 12px 16px; /* space on the left */
 <h3>Resilience, Renewal, and Evolution (2021-2023)</h3>
 
 <figure class="logo-block">
-<img src="../images/Logo.png" alt="League Logo">
-<figcaption>Current Logo</figcaption>
+<img src="../images/Logo2021.png" alt="Big 12 Logo">
+<figcaption>Big 12 Logo</figcaption>
 </figure>
 
-<p>After a one-year hiatus caused by the COVID-19 pandemic, the league — now officially branded as the Big 12 — triumphantly returned in 2021. Nine of the twelve General Managers from 2019 rejoined, while defending champion Richard Head (Miami), DeMario Suggs (Los Angeles), and Dan Uribe (Green Bay) did not return.</p>
+<p>After a one-year hiatus caused by the COVID-19 pandemic, the league — now branded as the Big 12 — triumphantly returned in 2021. Nine of the twelve General Managers from 2019 rejoined, while defending champion Richard Head (Miami), DeMario Suggs (Los Angeles), and Dan Uribe (Green Bay) did not return.</p>
 
 <p>Los Angeles welcomed back a familiar face, as Liz Bautch came out of a four-year retirement to reclaim her post. In Miami, Adam Levetzow took over for Richard Head, bringing fresh energy to the franchise, while Mason Bautch made history in Green Bay as the youngest General Manager in Big 12 history.</p>
 
@@ -429,6 +202,11 @@ margin: 0 0 12px 16px; /* space on the left */
 <p>The 2025 campaign carried a sense of both excitement and finality. It would mark the final season under the traditional redraft format, with a transition to a multi-year keeper system featuring salary caps planned for 2026. Competition was fierce, as teams not only chased a championship but also looked to position themselves strategically for the next era of league play.</p>
 
 <p>When the dust settled, the 2025 CHAMPION claimed the final title of the redraft era — closing a memorable chapter in league history. In many ways, 2025 served as both a farewell to the league’s roots and a bridge to its future, blending the nostalgia of familiar rivalries with anticipation for a bold new era of year-round planning, auction strategy, and long-term roster construction.</p>
+
+<figure class="logo-block logo-right">
+<img src="../images/Logo.png" alt="Current Logo">
+<figcaption>Current Logo</figcaption>
+</figure>
 
 <h3>The Dynasty Era &amp; Great Lakes Rebrand (2026)</h3>
 

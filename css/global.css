@@ -238,6 +238,6 @@ display: block !important;
 	max-width: 1200px;       /* controls the width so content isn't too wide */
 	margin: 40px auto;       /* centers the container with 40px top/bottom margin */
 	padding: 0 15px;         /* adds some space on the sides for mobile */
-	display: flex;
-	flex-direction: column;
+/*	display: flex;
+	flex-direction: column; */
 }
