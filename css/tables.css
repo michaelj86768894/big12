@@ -9,6 +9,7 @@
     --cream-city-brick: #F5E6C8;
     --bright-white: #FFFFFF;
 	--bg-color: #F8F8F8;
+	--table-zebra-color: #F3F3F3;
 }
 
 /* ========================================================================================== TABLE FORMATTING ================== */
@@ -34,4 +35,9 @@
 .standard-table th {
 	background: var(--industrial-gray);
 	font-weight: bold;
+}
+
+/* Zebra striping for readability */
+.standard-table tbody tr:nth-child(even) {
+background-color: var(--table-zebra-color);
 }
