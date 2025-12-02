@@ -11,49 +11,49 @@
 <style>
 
 /* ========================================================================================== PLAYOFF ODDS TABLE ================== */
-.playoff-odds-table {
+.scrolling-table {
 width: 100%;
 border-collapse: collapse;
 margin: 20px 0;
 font-size: 15px;
 background: #fff;
-border: 1px solid #ddd; /* same subtle border */
+border: 1px solid #8c8c8c;
 table-layout: fixed;
 }
 
-.playoff-odds-table th,
-.playoff-odds-table td {
-border: 1px solid #ddd;
+.scrolling-table th,
+.scrolling-table td {
+border: 1px solid #8c8c8c;
 padding: 12px 10px;
 text-align: center;
 vertical-align: middle;
 word-wrap: break-word;
 }
 
-.playoff-odds-table th {
-background: #e9e9e9; /* slightly darker than standings header */
+.scrolling-table th {
+background: #8c8c8c;
 font-weight: bold;
 }
 
 /* Zebra striping for readability */
-.playoff-odds-table tbody tr:nth-child(even) {
+.scrolling-table tbody tr:nth-child(even) {
 background-color: #f3f3f3;
 }
 
-.playoff-odds-table td:nth-child(n+2):nth-child(-n+8),
-.playoff-odds-table th:nth-child(n+2):nth-child(-n+8) {
-background-color: #F5E6C8; /* light golden color (cornsilk) */
+.scrolling-table td:nth-child(n+2):nth-child(-n+8),
+.scrolling-table th:nth-child(n+2):nth-child(-n+8) {
+background-color: #F5E6C8;
 }
 
 /* Scroll wrapper */
-.playoff-odds-scroll {
+.scrolling-table-scroll {
 width: 100%;
 overflow-x: auto;
 -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
 /* Optional: shadow hint for scroll */
-.playoff-odds-scroll::after {
+.scrolling-table-scroll::after {
 content: '';
 display: block;
 height: 2px;
@@ -62,7 +62,7 @@ margin-top: -2px;
 }
 
 /* Table inside scroll container */
-.playoff-odds-table {
+.scrolling-table {
 width: max-content;   /* allow table to expand naturally beyond container */
 min-width: 100%;      /* ensure it’s at least full container width */
 border-collapse: collapse;
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     // Build table
     const table = document.createElement("table");
-    table.className = "standard-table";
+    table.className = "scrolling-table";
 
     const thead = document.createElement("thead");
     thead.innerHTML = `<tr>${headers.map(h => `<th>${h}</th>`).join("")}</tr>`;
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     // ===== WRAP TABLE IN SCROLL CONTAINER =====
     const scrollWrapper = document.createElement("div");
-    scrollWrapper.className = "playoff-odds-scroll"; // <-- wrapper for horizontal scrolling
+    scrollWrapper.className = "scrolling-table-scroll"; // <-- wrapper for horizontal scrolling
     scrollWrapper.appendChild(table);
     oddsContainer.innerHTML = "";
     oddsContainer.appendChild(scrollWrapper);
