@@ -4,293 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2021 GLFL Draft</title>
-<style>
+<!-- ========================================================================================== LINKED STYLESHEETS ================== -->
+<link rel="stylesheet" href="../../css/global.css">
+<link rel="stylesheet" href="../../css/tables.css">
 
-/* ========================================================================================== GLOBAL STYLES ================== */
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f8f8f8;
-}
-
-/* ========================================================================================== TEAM LOGO BAR ================== */
-.team-logo-bar {
-background-color: #f8f8f8;
-border-bottom: none;
-overflow-x: auto;
-white-space: nowrap;
-padding: 10px 0;
-}
-
-/* Scrollbar remains for desktop if content exceeds width */
-.team-logo-bar::-webkit-scrollbar {
-height: 6px;
-}
-
-.team-logo-bar::-webkit-scrollbar-thumb {
-background: #888;
-border-radius: 3px;
-}
-
-/* Desktop Layout */
-.team-logo-container {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-padding: 0 10px;
-}
-
-.team-logo-container img {
-height: 50px;
-width: auto;
-transition: transform 0.3s;
-}
-
-.team-logo-container img:hover {
-transform: scale(1.1);
-}
-
-/* MOBILE RESPONSIVE FIX */
-@media (max-width: 700px) {
-
-/* Switch to grid */
-.team-logo-bar {
-overflow-x: visible;
-white-space: normal;
-}
-
-.team-logo-container {
-display: grid;
-grid-template-columns: repeat(4, 1fr); /* 4 team logos per row */
-gap: 15px 10px;
-padding: 10px;
-justify-items: center;
-}
-
-.team-logo-container img {
-height: 45px;  /* slightly smaller to fit nicely */
-width: auto;
-}
-}
-
-/* ========================================================================================== MAIN NAV ================== */
-.main-nav {
-background-color: #001433;
-color: #fff;
-position: sticky;
-top: 0;
-z-index: 9999;
-}
-
-.nav-container {
-display: flex;
-align-items: center;
-gap: 20px;
-max-width: 1200px;
-margin: 0 auto;
-padding: 10px 20px;
-position: relative;
-}
-
-/* Logo */
-.nav-container .logo img {
-height: 50px;
-}
-
-/* Hamburger toggle */
-.menu-toggle {
-display: none;
-position: absolute;
-opacity: 0;
-}
-
-.hamburger {
-display: none;
-font-size: 28px;
-cursor: pointer;
-color: #fff;
-z-index: 1001; /* clickable above nav links */
-}
-
-/* Desktop nav links */
-.nav-links {
-display: flex;
-list-style: none;
-gap: 20px;
-margin: 0;
-padding: 0;
-align-items: center;
-z-index: 999;
-}
-
-.nav-links li {
-position: relative;
-}
-
-.nav-links a {
-color: #fff;
-text-decoration: none;
-padding: 10px;
-display: block;
-font-weight: bold;
-transition: background 0.3s;
-}
-
-.nav-links a:hover {
-background-color: rgba(255, 255, 255, 0.1);
-border-radius: 4px;
-}
-
-/* Desktop dropdown */
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #007FC8;
-min-width: 180px;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-top: 100%;
-left: 0;
-z-index: 999;
-}
-
-.dropdown-content li a {
-padding: 10px;
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-/* MOBILE RESPONSIVE */
-@media screen and (max-width: 768px) {
-
-/* Hamburger button */
-.hamburger {
-display: block !important;
-position: absolute;
-top: 10px;
-right: 20px;
-background: #F0AE00; /* Square background color */
-padding: 5px 10px;
-font-size: 28px;
-cursor: pointer;
-z-index: 9999;
-}
-
-/* Mobile nav hidden by default */
-.nav-links {
-display: none;
-flex-direction: column;
-width: 100%;
-background-color: #001433;
-position: absolute;
-top: 60px; /* below logo */
-left: 0;
-border-top: 1px solid #003d7a;
-z-index: 9999;
-}
-
-/* Show nav when checkbox is checked */
-.menu-toggle:checked + .hamburger + .nav-links {
-display: flex !important;
-}
-
-.nav-links li {
-width: 100%;
-}
-
-.nav-links li a {
-padding: 12px 20px;
-}
-
-/* Mobile dropdowns */
-.dropdown-content {
-position: static;
-display: none;
-background-color: #007FC8;
-box-shadow: none;
-}
-
-.dropdown .dropdown-content li a {
-padding-left: 40px;
-}
-
-.dropdown > a::after {
-content: " ▼";
-font-size: 12px;
-}
-
-/* Toggle dropdown on click via JS */
-.dropdown-content.dropdown-active {
-display: block !important;
-}
-}
-
-/* ========================================================================================== DRAFT GRID ================== */
-.draft-container {
-max-width: 1200px;       /* controls the width so content isn't too wide */
-margin: 40px auto;       /* centers the container with 40px top/bottom margin */
-padding: 0 15px;         /* adds some space on the sides for mobile */
-display: flex;
-flex-direction: column;
-}
-
-/* ========================================================================================== TABLE FORMATTING ================== */
-.draftresults-table {
-width: 100%;
-border-collapse: collapse;
-margin: 20px 0;
-font-size: 15px;
-background: #fff;
-border: 1px solid #ddd; /* border around entire table */
-table-layout: fixed; /* makes all columns equal width */
-}
-
-.draftresults-table th,
-.draftresults-table td {
-border: 1px solid #ddd; /* border around each cell */
-padding: 12px 10px;
-text-align: center; /* center text in all cells */
-vertical-align: middle; /* center text vertically */
-word-wrap: break-word; /* allows wrapping so columns stay even */
-}
-
-.draftresults-table th {
-background: #f3f3f3; /* light grey header */
-font-weight: bold;
-}
-	
-</style>
 </head>
 
 <body>
 
 <!-- ========================================================================================== LOGO BAR ================== -->
 <div class="team-logo-bar">
-<div class="team-logo-container">
-<a href="../teams/boston.html"><img src="../../images/Boston.png" alt="Boston" /></a>
-<a href="../teams/brooklyn.html"><img src="../../images/Brooklyn.png" alt="Brooklyn" /></a>
-<a href="../teams/cedarRapids.html"><img src="../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
-<a href="../teams/chicago.html"><img src="../../images/Chicago.png" alt="Chicago" /></a>
-<a href="../teams/cleveland.html"><img src="../../images/Cleveland.png" alt="Cleveland" /></a>
-<a href="../teams/losAngeles.html"><img src="../../images/LosAngeles.png" alt="Los Angeles" /></a>
-<a href="../teams/miami.html"><img src="../../images/Miami.png" alt="Miami" /></a>
-<a href="../teams/milwaukee.html"><img src="../../images/Milwaukee.png" alt="Milwaukee" /></a>
-<a href="../teams/northernArizona.html"><img src="../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
-<a href="../teams/philadelphia.html"><img src="../../images/Philadelphia.png" alt="Philadelphia" /></a>
-<a href="../teams/tucson.html"><img src="../../images/Tucson.png" alt="Tucson" /></a>
-<a href="../teams/vegas.html"><img src="../../images/Vegas.png" alt="Vegas" /></a>
-</div>
+	<div class="team-logo-container">
+	<a href="../Teams/Boston.html"><img src="../../images/Boston.png" alt="Boston" /></a>
+	<a href="../Teams/Brooklyn.html"><img src="../../images/Brooklyn.png" alt="Brooklyn" /></a>
+	<a href="../Teams/CedarRapids.html"><img src="../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+	<a href="../Teams/Chicago.html"><img src="../../images/Chicago.png" alt="Chicago" /></a>
+	<a href="../Teams/Cleveland.html"><img src="../../images/Cleveland.png" alt="Cleveland" /></a>
+	<a href="../Teams/LosAngeles.html"><img src="../../images/LosAngeles.png" alt="Los Angeles" /></a>
+	<a href="../Teams/Miami.html"><img src="../../images/Miami.png" alt="Miami" /></a>
+	<a href="../Teams/Milwaukee.html"><img src="../../images/Milwaukee.png" alt="Milwaukee" /></a>
+	<a href="../Teams/NorthernArizona.html"><img src="../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+	<a href="../Teams/Philadelphia.html"><img src="../../images/Philadelphia.png" alt="Philadelphia" /></a>
+	<a href="../Teams/Tucson.html"><img src="../../images/Tucson.png" alt="Tucson" /></a>
+	<a href="../Teams/Vegas.html"><img src="../../images/Vegas.png" alt="Vegas" /></a>
+	</div>
 </div>
 
 <!-- ========================================================================================== MAIN NAV ================== -->
 <nav class="main-nav">
 <div class="nav-container">
 
-<a href="../../index.html" class="logo">
-<img src="../../images/Logo.png" alt="League Logo" />
-</a>
+	<a href="../../index.html" class="logo">
+	<img src="../../images/Logo.png" alt="League Logo" />
+	</a>
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
 <label for="menu-toggle" class="hamburger">&#9776;</label>
@@ -298,46 +44,46 @@ font-weight: bold;
 <!-- Nav Links -->
 <ul class="nav-links">
 <li class="dropdown">
-<a href="#">About</a>
-<ul class="dropdown-content">
-<li><a href="../WhoWeAre.html">Who We Are</a></li>
-<li><a href="../Bylaws.html">Bylaws</a></li>
-</ul>
+	<a href="#">About</a>
+	<ul class="dropdown-content">
+		<li><a href="../About.html">Who We Are</a></li>
+		<li><a href="../Bylaws.html">Bylaws</a></li>
+	</ul>
 </li>
 
 <li><a href="../News.html">News</a></li>
 
 <li class="dropdown">
-<a href="#">History</a>
-<ul class="dropdown-content">
-<li><a href="../HistoryoftheBig12.html">History of the GLFL</a></li>
-<li><a href="../Big12Seasons.html">GLFL Seasons</a></li>
-<li><a href="../Big12Champions.html">GLFL Champions</a></li>
-<li><a href="../IndividualAwards.html">Individual Award Winners</a></li>
-<li><a href="../RecordBook.html">Record Book</a></li>
-</ul>
+	<a href="#">History</a>
+	<ul class="dropdown-content">
+		<li><a href="../History.html">History of the GLFL</a></li>
+		<li><a href="../Seasons.html">GLFL Seasons</a></li>
+		<li><a href="../Champions.html">GLFL Champions</a></li>
+		<li><a href="../Awards.html">Individual Award Winners</a></li>
+		<li><a href="../RecordBook.html">Record Book</a></li>
+	</ul>
 </li>
 
 <li class="dropdown">
-<a href="#">Schedule &amp; Standings</a>
-<ul class="dropdown-content">
-<li><a href="../Standings.html">Standings</a></li>
-<li><a href="../WeeklySchedule.html">Weekly Schedule</a></li>
-</ul>
+	<a href="#">Schedule &amp; Standings</a>
+	<ul class="dropdown-content">
+		<li><a href="../Standings.html">Standings</a></li>
+		<li><a href="../WeeklySchedule.html">Weekly Schedule</a></li>
+	</ul>
 </li>
 
-<li><a href="../Teams.html">Teams</a></li>
-<li><a href="../Draft.html">Draft</a></li>
+	<li><a href="../Teams.html">Teams</a></li>
+	<li><a href="../Draft.html">Draft</a></li>
 </ul>
 </div>
-</nav>	
+</nav>
 
-<div class="draft-container">
+<div class="text-container">
 
-	<p>The 2021 GLFL draft marked the 9th annual gathering of General Managers to strategically select eligible football players. Departing from traditional in-person drafts, the event took place online on Sunday, September 5, 2021, at 7:00 pm CST. The Vegas Knight Hawks were granted the honor of the first overall pick, and they chose Davante Adams from the Packers, making him the top selection in this year's draft.</p>
+<p>The 2021 GLFL draft marked the 9th annual gathering of General Managers to strategically select eligible football players. Departing from traditional in-person drafts, the event took place online on Sunday, September 5, 2021, at 7:00 pm CST. The Vegas Knight Hawks were granted the honor of the first overall pick, and they chose Davante Adams from the Packers, making him the top selection in this year's draft.</p>
 
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 1</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>Davante Adams</td><td>WR</td><td>GB</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Christian McCaffrey</td><td>RB</td><td>CAR</td></tr>
@@ -353,7 +99,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Nick Chubb</td><td>RB</td><td>CLE</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 2</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Saquon Barkley</td><td>RB</td><td>NYG</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Stefon Diggs</td><td>WR</td><td>BUF</td></tr>
@@ -369,10 +115,10 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>A.J. Brown</td><td>WR</td><td>TEN</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 3</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>James Robinson</td><td>RB</td><td>JAX</td></tr>
-<tr><td>2</td><td>Philadelphia</td><td>Cooper Kupp*</td><td>WR</td><td>LAR</td></tr>
+<tr class="highlight-row"><td>2</td><td>Philadelphia</td><td>Cooper Kupp*</td><td>WR</td><td>LAR</td></tr>
 <tr><td>3</td><td>Northern Arizona</td><td>Josh Jacob</td><td>RB</td><td>SLV</td></tr>
 <tr><td>4</td><td>Cedar Rapids</td><td>George Kittle</td><td>TE</td><td>SF</td></tr>
 <tr><td>5</td><td>Boston</td><td>Mike Evans</td><td>WR</td><td>TB</td></tr>
@@ -383,10 +129,10 @@ font-weight: bold;
 <tr><td>10</td><td>Brooklyn</td><td>CeeDee Lamb</td><td>WR</td><td>DAL</td></tr>
 <tr><td>11</td><td>Green Bay</td><td>Kenyan Drak</td><td>RB</td><td>ELV</td></tr>
 <tr><td>12</td><td>Milwaukee</td><td>Robert Woods</td><td>WR</td><td>LAR</td></tr>
-<tr><td colspan="5">*MVP</td></tr>
-	</table>
+<tr class="highlight-row"><td colspan="5">*MVP</td></tr>
+</table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 4</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Chris Godwin</td><td>WR</td><td>TB</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Kyle Pitts</td><td>TE</td><td>ATL</td></tr>
@@ -402,7 +148,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>Diontae Johnson</td><td>WR</td><td>PIT</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 5</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>T.J. Hockenson</td><td>TE</td><td>DET</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Lamar Jackson</td><td>QB</td><td>BAL</td></tr>
@@ -418,7 +164,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Tee Higgins</td><td>WR</td><td>CIN</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 6</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Jerry Jeudy</td><td>WR</td><td>DEN</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Courtland Sutton</td><td>WR</td><td>DEN</td></tr>
@@ -434,7 +180,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>Javonte Williams</td><td>RB</td><td>DEN</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 7</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>Tyler Boyd</td><td>WR</td><td>CIN</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Corey Davis</td><td>WR</td><td>NYJ</td></tr>
@@ -450,7 +196,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Tyler Higbee</td><td>TE</td><td>LAR</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 8</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Matthew Stafford</td><td>QB</td><td>LAR</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Tom Brady</td><td>QB</td><td>TB</td></tr>
@@ -466,7 +212,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>Jalen Hurts</td><td>QB</td><td>PHI</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 9</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>William Fuller V</td><td>WR</td><td>MIA</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Mike Gesicki</td><td>TE</td><td>MIA</td></tr>
@@ -482,7 +228,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Darrell Henderson Jr.</td><td>RB</td><td>LAR</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 10</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Hunter Henry</td><td>TE</td><td>NE</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Jared Cook</td><td>TE</td><td>LAC</td></tr>
@@ -498,7 +244,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>Henry Ruggs III</td><td>WR</td><td>FA</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 11</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>Marquez Callaway</td><td>WR</td><td>NO</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Zack Moss</td><td>RB</td><td>BUF</td></tr>
@@ -514,7 +260,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Ronald Jones II</td><td>RB</td><td>TB</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 12</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>49ers D/ST</td><td>D/ST</td><td>SF</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Commanders D/ST</td><td>D/ST</td><td>WSH</td></tr>
@@ -530,7 +276,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>Bills D/ST</td><td>D/ST</td><td>BUF</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 13</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>Graham Gano</td><td>K</td><td>NYG</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Broncos D/ST</td><td>D/ST</td><td>DEN</td></tr>
@@ -546,7 +292,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Carlos Hyde</td><td>RB</td><td>JAX</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 14</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Tyrell Williams</td><td>WR</td><td>FA</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Emmanuel Sanders</td><td>WR</td><td>BUF</td></tr>
@@ -562,7 +308,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>J.D. McKissic</td><td>RB</td><td>WSH</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 15</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>Nico Collins</td><td>WR</td><td>HOU</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Eric Ebron</td><td>TE</td><td>PIT</td></tr>
@@ -578,7 +324,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Trevor Lawrence</td><td>QB</td><td>JAX</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 16</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Greg Zuerlein</td><td>K</td><td>DAL</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Justin Fields</td><td>QB</td><td>CHI</td></tr>
@@ -594,7 +340,7 @@ font-weight: bold;
 <tr><td>12</td><td>Vegas</td><td>Tony Pollard</td><td>RB</td><td>DAL</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 17</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Vegas</td><td>Alexander Mattison</td><td>RB</td><td>MIN</td></tr>
 <tr><td>2</td><td>Philadelphia</td><td>Bears D/ST</td><td>D/ST</td><td>CHI</td></tr>
@@ -610,7 +356,7 @@ font-weight: bold;
 <tr><td>12</td><td>Milwaukee</td><td>Dolphins D/ST</td><td>D/ST</td><td>MIA</td></tr>
 </table>
 
-<h3>Round NUMBER</h3><table class="standard-table">
+<h3>Round 18</h3><table class="standard-table">
 <tr><th>Pick</th><th>GLFL Team</th><th>Player</th><th>POS</th><th>NFL Team</th></tr>
 <tr><td>1</td><td>Milwaukee</td><td>Damien Williams</td><td>RB</td><td>CHI</td></tr>
 <tr><td>2</td><td>Green Bay</td><td>Ty'Son Williams</td><td>RB</td><td>BAL</td></tr>
@@ -625,15 +371,7 @@ font-weight: bold;
 <tr><td>11</td><td>Philadelphia</td><td>Robbie Gould</td><td>K</td><td>SF</td></tr>
 <tr><td>12</td><td>Vegas</td><td>Carson Wentz</td><td>QB</td><td>IND</td></tr>
 </table>	
-		
-</div>
 
-
-	
-	
-	
-	
-	
 </div>
 
 <script>
