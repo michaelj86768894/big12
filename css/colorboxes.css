@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================================================================================== COLOR VARIABLES ================== */
+:root {
+    --navy: #002855;
+    --lake-blue: #4DA9E9;
+    --industrial-gray: #8c8c8c;
+    --cream-city-brick: #F5E6C8;
+    --bright-white: #FFFFFF;
+	--bg-color: #F8F8F8;
+	--table-zebra-color: #F3F3F3;
+}
+
+/* ========================================================================================== Color Boxes  ================== */
+.box {
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 1px solid rgba(0, 0, 0, .2);
+}
+
+/* ========================== Boston ========================== */
+div.box.Boston { background: #002244; }
+div.box.Boston2 { background: #C60C30; }
+div.box.Boston3 { background: #B0B7BC; }
+
+/* ========================== Brooklyn ========================== */
+div.box.Brooklyn { background: #125740; }
+div.box.Brooklyn2 { background: #000000; }
+div.box.Brooklyn3 { background: #FFFFFF; }
+
+/* ========================== Cedar Rapids ========================== */
+div.box.CedarRapids { background: #0C2340 }
+div.box.CedarRapids2 { background: #4B92DB; }
+div.box.CedarRapids3 { background: #A7A6A6; }
+
+/* ========================== Chicago ========================== */
+div.box.Chicago { background: #0B162A; }
+div.box.Chicago2 { background: #C83803; }
+div.box.Chicago3 { background: #FFFFFF; }
+
+/* ========================== Cleveland ========================== */
+div.box.Cleveland { background: #311D00; }
+div.box.Cleveland2 { background: #FF3C00; }
+div.box.Cleveland3 { background: #B0B7BC; }
+
+/* ========================== Los Angeles ========================== */
+div.box.LosAngeles { background: #003594; }
+div.box.LosAngeles2 { background: #FFA300; }
+div.box.LosAngeles3 { background: #FFFFFF; }
+
+/* ========================== Miami ========================== */
+div.box.Miami { background: #005778; }
+div.box.Miami2 { background: #FC4C02; }
+div.box.Miami3 { background: #008E97; }
+
+/* ========================== Milwaukee ========================== */
+div.box.Milwaukee { background: #646466; }
+div.box.Milwaukee2 { background: #F47A34; }
+div.box.Milwaukee3 { background: #241E24; }
+
+/* ========================== Northern Arizona ========================== */
+div.box.NorthernArizona { background: #3E3C49; }
+div.box.NorthernArizona2 { background: #186EA8; }
+div.box.NorthernArizona3 { background: #E82430; }
+
+/* ========================== Philadelphia ========================== */
+div.box.Philadelphia { background: #004C54; }
+div.box.Philadelphia2 { background: #A5ACAF; }
+div.box.Philadelphia3 { background: #000000; }
+
+/* ========================== Tucson ========================== */
+div.box.Tucson { background: #000000; }
+div.box.Tucson2 { background: #EDB11E; }
+div.box.Tucson3 { background: #BD202E; }
+
+/* ========================== Vegas ========================== */
+div.box.Vegas { background: #000000; }
+div.box.Vegas2 { background: #A5ACAF; }
+div.box.Vegas3 { background: #FFFFFF; }
