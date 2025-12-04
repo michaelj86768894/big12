@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ========================================================================================== COLOR VARIABLES ================== */
+:root {
+    --navy: #002855;
+    --lake-blue: #4DA9E9;
+    --industrial-gray: #8c8c8c;
+    --cream-city-brick: #F5E6C8;
+    --bright-white: #FFFFFF;
+	--bg-color: #F8F8F8;
+	--table-zebra-color: #F3F3F3;
+}
+
+/* ========================================================================================== TEAM CELL LAYOUT (Logo + Team Name) */
+.team-cell {
+display: flex;
+justify-content: center;             /* center logo+name as a group */
+align-items: center;
+gap: 8px;                             /* spacing between logo and text */
+}
+
+/* Team Logo size */
+.team-logo {
+width: 24px;                          /* common clean size */
+height: 24px;
+object-fit: contain;                  /* prevents distortion */
+border-radius: 4px;                   /* remove if using round logos */
+}
