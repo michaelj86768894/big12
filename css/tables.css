@@ -107,6 +107,6 @@ table-layout: auto;   /* auto so columns fit content */
 }
 
 /* ========================================================================================== HIGHLIGHTED TABLE ROW ================== */
-.highlight-row {
-  background-color: var(--cream-city-brick); /* soft gold highlight */
+.standard-table tbody tr.highlight-row td {
+  background-color: var(--cream-city-brick) !important;
 }
