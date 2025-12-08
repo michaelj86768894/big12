@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLFL Week 1 Players of the Week</title>
+<!-- ========================================================================================== LINKED STYLESHEETS ================== -->
+<link rel="stylesheet" href="../../../css/global.css">
+
+<style>
+
+/* ========================================================================================== PLAYERS OF THE WEEK GRID ================== */
+.playersoftheweek-container {
+max-width: 1200px;       /* controls the width so content isn't too wide */
+margin: 40px auto;       /* centers the container with 40px top/bottom margin */
+padding: 0 15px;         /* adds some space on the sides for mobile */
+display: flex;
+flex-direction: column;
+}
+
+/* =============================== POTW Card Container =============================== */
+.potw-container {
+display: flex;
+flex-direction: column;
+gap: 0; /* no gap since bottom border separates */
+margin: 20px 0;
+}
+
+.potw-header {
+font-size: 22px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Individual player card - bottom border only */
+.potw-card {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 0;
+border-bottom: 1px solid #ddd; /* only bottom border */
+flex-wrap: nowrap;
+}
+
+/* Left side: player image + name/position */
+.potw-player {
+display: flex;
+align-items: center;
+gap: 10px;
+min-width: 0;
+}
+
+.potw-player img {
+width: 60px;
+height: 60px;
+object-fit: cover;
+border-radius: 6px;
+flex-shrink: 0;
+}
+
+/* Player info text */
+.potw-player-info {
+display: flex;
+flex-direction: column;
+white-space: nowrap;
+}
+
+.potw-player-info .name {
+font-weight: bold;
+}
+
+.potw-player-info .position-team {
+font-size: 13px;
+color: #888;
+}
+
+/* Right side: team logo */
+.potw-team-logo {
+margin-left: 10px; /* brings it closer */
+flex-shrink: 0;
+}
+
+.potw-team-logo img {
+width: 100px;
+height: 60px;
+object-fit: fill;
+border-radius: 6px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+.potw-card {
+flex-wrap: nowrap; /* force same line */
+justify-content: flex-start;
+gap: 8px;
+}
+
+.potw-team-logo {
+margin-left: auto; /* pushes logo to right edge */
+}
+
+.potw-player-info .name {
+font-size: 14px;
+}
+
+.potw-player-info .position-team {
+font-size: 12px;
+}
+
+.potw-player img {
+width: 50px;
+height: 50px;
+}
+
+.potw-team-logo img {
+width: 40px;
+height: 40px;
+}
+}
+
+/* ========================================================================================== Highlight Video Container ================== */
+.highlight-video-container {
+position: relative;
+width: 100%;
+max-width: 700px;
+aspect-ratio: 16 / 9;
+margin: 20px auto;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.highlight-video-container iframe {
+width: 100%;
+height: 100%;
+border: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ========================================================================================== LOGO BAR ================== -->
+<div class="team-logo-bar">
+	<div class="team-logo-container">
+	<a href="../../Teams/Boston.html"><img src="../../../images/Boston.png" alt="Boston" /></a>
+	<a href="../../Teams/Brooklyn.html"><img src="../../../images/Brooklyn.png" alt="Brooklyn" /></a>
+	<a href="../../Teams/CedarRapids.html"><img src="../../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+	<a href="../../Teams/Chicago.html"><img src="../../../images/Chicago.png" alt="Chicago" /></a>
+	<a href="../../Teams/Cleveland.html"><img src="../../../images/Cleveland.png" alt="Cleveland" /></a>
+	<a href="../../Teams/LosAngeles.html"><img src="../../../images/LosAngeles.png" alt="Los Angeles" /></a>
+	<a href="../../Teams/Miami.html"><img src="../../../images/Miami.png" alt="Miami" /></a>
+	<a href="../../Teams/Milwaukee.html"><img src="../../../images/Milwaukee.png" alt="Milwaukee" /></a>
+	<a href="../../Teams/NorthernArizona.html"><img src="../../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+	<a href="../../Teams/Philadelphia.html"><img src="../../../images/Philadelphia.png" alt="Philadelphia" /></a>
+	<a href="../../Teams/Tucson.html"><img src="../../../images/Tucson.png" alt="Tucson" /></a>
+	<a href="../../Teams/Vegas.html"><img src="../../../images/Vegas.png" alt="Vegas" /></a>
+	<a href="../../Teams/Vegas.html"><img src="../../../images/Vegas.png" alt="Vegas" /></a>
+	</div>
+</div>
+
+<!-- ========================================================================================== MAIN NAV ================== -->
+<nav class="main-nav">
+<div class="nav-container">
+
+	<a href="../../../index.html" class="logo">
+	<img src="../../../images/Logo.png" alt="League Logo" />
+	</a>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
+<label for="menu-toggle" class="hamburger">&#9776;</label>
+
+<!-- Nav Links -->
+<ul class="nav-links">
+<li class="dropdown">
+	<a href="#">About</a>
+	<ul class="dropdown-content">
+		<li><a href="../../About.html">Who We Are</a></li>
+		<li><a href="../../Bylaws.html">Bylaws</a></li>
+	</ul>
+</li>
+
+<li><a href="../News.html">News</a></li>
+
+<li class="dropdown">
+	<a href="#">History</a>
+	<ul class="dropdown-content">
+		<li><a href="../../History.html">History of the GLFL</a></li>
+		<li><a href="../../Seasons.html">GLFL Seasons</a></li>
+		<li><a href="../../Champions.html">GLFL Champions</a></li>
+		<li><a href="../../Awards.html">Individual Award Winners</a></li>
+		<li><a href="../../RecordBook.html">Record Book</a></li>
+	</ul>
+</li>
+
+<li class="dropdown">
+	<a href="#">Schedule &amp; Standings</a>
+	<ul class="dropdown-content">
+		<li><a href="../../Standings.html">Standings</a></li>
+		<li><a href="../../WeeklySchedule.html">Weekly Schedule</a></li>
+	</ul>
+</li>
+
+	<li><a href="../../Teams.html">Teams</a></li>
+	<li><a href="../../Draft.html">Draft</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="text-container">
+
+<div class="playersoftheweek-container">
+
+<h3>Gladiators RB De'Von Achane, Sugar Skulls RB Jahmyr Gibbs highlight Players of the Week</h3>
+
+<div class="potw-container">
+<div class="potw-header">Week 1 Players of the Week</div>
+
+<!-- ============================================================ OPOW NUMBER 1 -->
+<div class="highlight-video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qAv_ZIk3EXs?si=6PD4_8x7-PAz9lZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div class="potw-card">
+<div class="potw-player">
+<img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4429795.png&w=350&h=254" alt="OPOW #1">
+<div class="potw-player-info">
+<div class="name">Jahmyr Gibbs</div>
+<div class="position-team">RB - Tucson Sugar Skulls</div>
+</div>
+</div>
+<div class="potw-team-logo">
+<img src="../../images/Tucson.png" alt="Team Logo 1">
+</div>
+</div>
+<p>In an offensive extravaganza Sunday in which the Lions throttled the Washington Commanders, Gibbs was a dynamo, stacking up three total touchdowns and 172 scrimmage yards in the 44-22 win. Gibbs had a 14-yard touchdown catch to begin the game's scoring -- one of his three catches for 30 yards. He added a 13-yard rushing score and a highlight-reel 43-yard TD as part of a 142-yard rushing effort on just 15 carries -- good for a whopping 9.5 yards per carry. This performance propelled the Tucson Sugar Skulls to victory over the Brooklyn Bolts.</p>
+
+<!-- ============================================================ DPOW NUMBER 1 -->
+<div class="potw-card">
+<div class="potw-player">
+<img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3919512.png&w=350&h=254" alt="DPOW #1">
+<div class="potw-player-info">
+<div class="name">Jessie Bates III</div>
+<div class="position-team">S - Milwaukee Mustangs</div>
+</div>
+</div>
+<div class="potw-team-logo">
+<img src="../../images/Milwaukee.png" alt="Team Logo 3">
+</div>
+</div>
+<p>Bates was all over the field during the game against the Indianapolis Colts, which the Falcons lost in overtime 31-25. In addition to his interception in the second quarter, he also stripped the quarterback in the first quarter, though the Colts recovered the loose ball. His nine tackles were the second-highest on the team for the week. This performance tallied 23.25 fantasy points for the Milwaukee Mustangs.</p>
+
+<!-- ============================================================ OPOW NUMBER 2 -->
+<div class="highlight-video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CT2tt9VWuGo?si=Q7AV2QFOXfgdKQd7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div class="potw-card">
+<div class="potw-player">
+<img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4429160.png&w=350&h=254" alt="OPOW #2">
+<div class="potw-player-info">
+<div class="name">De'Von Achane</div>
+<div class="position-team">RB - Cleveland Gladiators</div>
+</div>
+</div>
+<div class="potw-team-logo">
+<img src="../../images/Cleveland.png" alt="Team Logo 2">
+</div>
+</div>
+<p>Fantasy owners were shocked by the De'Von Achane game against Buffalo. Achane was a one man wrecking crew as he ended up with 225 yards from scrimmage and two scores in the 30-13 upset of the Bills. Achane is Miami's best offensive player by far and away as he rose above the 40 fantasy point plateau pushing the Cleveland Gladiators passed </p>
+
+<!-- ============================================================ DPOW NUMBER 2 -->
+<div class="potw-card">
+<div class="potw-player">
+<img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3124005.png&w=350&h=254" alt="DPOW #2">
+<div class="potw-player-info">
+<div class="name">Zaire Franklin</div>
+<div class="position-team">LB - Philadelphia Soul</div>
+</div>
+</div>
+<div class="potw-team-logo">
+<img src="../../images/Philadelphia.png" alt="Team Logo 4">
+</div>
+</div>
+<p>Franklin tallied 10 tackles (six solo), including 1.0 sacks, during the Colts' 31-25 overtime win over the Falcons on Sunday. Franklin saved his biggest play of Sunday's game for last after sacking Michael Penix for a 12-yard loss in overtime, which forced the Falcons to punt on the next play. Sunday marked just the first time this season that the veteran linebacker tallied double-digit tackles leading to a solid 16 fantasy points for the Philadelphia Soul.</p>
+
+</div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+// ========================================================================================== MOBILE NAVIGATION ==================
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+// Toggle mobile nav menu
+hamburger.addEventListener("click", function(e) {
+e.stopPropagation(); // Prevent click from bubbling
+navLinks.classList.toggle("nav-active");
+});
+
+// Toggle dropdowns on mobile
+dropdownLinks.forEach(link => {
+link.addEventListener("click", function(e) {
+if (window.innerWidth <= 768) {
+e.preventDefault(); // Prevent link navigation
+const submenu = this.nextElementSibling;
+submenu.classList.toggle("dropdown-active");
+}
+});
+});
+
+// Close mobile menu if clicking outside
+document.addEventListener("click", function(e) {
+if (window.innerWidth <= 768) {
+const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+if (!isClickInsideNav) {
+navLinks.classList.remove("nav-active");
+document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+}
+}
+});
+
+});
+</script>	
+</body>
+</html>
