@@ -1,0 +1,916 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+	
+	    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      padding: 30px;
+    }
+	
+.team_fourth {
+background: #ffffff;
+}
+
+.team_second {
+background: #F0AE00;
+}
+
+.team_third {
+background: #007FC8;
+}
+	
+.team_first {
+background: #001433;
+}
+	
+	
+	
+ .awards-container {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 1200px;
+      margin: auto;
+    }
+
+	.eliminated {
+    background-color: #f8d7da; /* light red */
+    color: #721c24;           /* dark red text */
+    font-weight: bold;
+  }
+	
+	.awards-header {
+      background: #001433; /* Change this color if you want */
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .awards-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .award-box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    .team-header {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .team-header img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%; /* makes icons circular if they're square */
+      object-fit: cover;
+    }
+
+    .team-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .award-type {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .award-description {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .points {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    /* Color coding */
+    .good-award {
+      color: green;
+    }
+
+    .bad-award {
+      color: red;
+    }
+
+    .neutral-award {
+      color: gray;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .awards-table {
+        grid-template-columns: 1fr;
+      }
+    }
+
+	
+	
+ /* table wrapper: full-width inside the grid (span both columns) */
+  .table-wrapper {
+    width: 100%;
+    grid-column: 1 / -1;        /* SPAN both columns of the parent grid */
+    border: 1px solid #000;     /* outside border */
+    border-radius: 10px;
+    overflow: hidden;           /* clip table so corners stay rounded */
+    background: white;
+    /* display:block is fine (default for div), keeps wrapper full width */
+  }
+
+  /* table styling */
+  .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse; /* ensures cells behave as single table */
+    margin: 0;
+  }
+
+  .table-wrapper th,
+  .table-wrapper td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: middle;
+    border: none;              /* no cell borders (we'll add horizontal only) */
+  }
+
+  /* header row */
+  .table-wrapper th {
+    background: #f0f0f0;       /* header background color */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* horizontal dividers only:
+     put a top-border on every row AFTER the first row (so header/data/rows all separated) */
+  .table-wrapper tr + tr td {
+    border-top: 1px solid #ddd;
+  }
+
+  /* small responsive tweak: on very small screens, put the grid into 1 column */
+  @media (max-width: 768px) {
+    .awards-table {
+      grid-template-columns: 1fr;
+    }
+    /* table wrapper still spans 1 / -1 but now that's the single column */
+  }
+	
+
+	
+.scoreboard-container {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: auto;
+}
+
+.score-header {
+  background: #001433;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.score-box {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.matchup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* each team row */
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.team-info img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* winner vs loser colors */
+.winner .score {
+  color: green;
+}
+
+.loser .score {
+  color: #aaa;
+}
+	
+	
+</style>
+
+<meta charset="UTF-8">
+<title>Big 12</title>
+</head>
+
+<body>
+	
+<h1>Week 6 Recap</h1>
+	
+	
+	<p>Fantasy football is not just about the thrill of victory. It’s about the petty glee of dunking on your biggest haters, who also happen to be some of your oldest and closest friends in the world. Basically, fantasy football is about the exact feeling Rico Dowdle got to experience this week. Before we kick things off, a congratulations to Darrien Clay, with the win over Mitch and the Titans this week he's passed Bruce Coppersmith for 4th all-time in regular season wins by a GM.</p>
+	
+	
+
+	
+<div class="scoreboard-container">
+  <div class="score-header">Week 6 Scoreboard</div>
+
+  <div class="scoreboard">
+    <!-- Matchup 1 -->
+    <div class="score-box">
+      <div class="matchup">
+        <div class="team-row winner">
+          <div class="team-info">
+          <img src="https://www.dropbox.com/scl/fi/24sd3zipiy5585glfnokj/Milwaukee.png?rlkey=0w1nzdsqklifrz5kms2y2j6rw&st=qluw4v4m&raw=1" alt="MKE MUSTANGS">
+			  <span>Milwaukee Mustangs</span>
+          </div>
+          <div class="score">153.30</div>
+        </div>
+        <div class="team-row loser">
+          <div class="team-info">
+			<img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="MIA INFERNO">
+			  <span>Miami Inferno</span>
+          </div>
+          <div class="score">152.40</div>
+        </div>
+      </div>
+    </div>
+	  
+
+    <!-- Matchup 2 -->
+    <div class="score-box">
+      <div class="matchup">
+        <div class="team-row winner">
+          <div class="team-info">
+          <img src="https://www.dropbox.com/scl/fi/9d1f2fbjieykcfd45qxsr/Chicago.png?rlkey=5c2uz0kw824tirrv5zqpmk9h7&st=rjzoqadf&raw=1" alt="CHI SLAUGHTER">
+			  <span>Chicago Slaughter</span>
+			</div>
+          <div class="score">180.35</div>
+        </div>
+        <div class="team-row loser">
+          <div class="team-info">
+<img src="https://www.dropbox.com/scl/fi/n1lmat9jtdpe1r45c08zu/Cedar-Rapids.png?rlkey=do8otuuc0dim1sku4a1c3b2g0&st=4456qylv&raw=1" alt="CR TITANS">
+			  <span>Cedar Rapids Titans</span>
+          </div>
+          <div class="score">156.80</div>
+        </div>
+      </div>
+    </div>
+
+	  
+
+	  
+    <!-- Matchup 3 -->
+    <div class="score-box">
+      <div class="matchup">
+        <div class="team-row winner">
+          <div class="team-info">
+			<img src="https://www.dropbox.com/scl/fi/bweoj2a4kfaohvtjgys63/Los-Angeles.png?rlkey=35ayqtx454kp44jbudcl98q0s&st=k47chslj&raw=1" alt="LA WILDCATS">
+			  <span>Los Angeles Wilcats</span>
+          </div>
+          <div class="score">185.85</div>
+        </div>
+        <div class="team-row loser">
+          <div class="team-info">
+         <img src="https://www.dropbox.com/scl/fi/mlz8vma22rf5hx09uni8q/Philadelphia.png?rlkey=qd0pelmrbl2nsew8rxa8ysqzm&st=zltsn2tb&raw=1" alt="PHI SOUL">
+			  <span>Philadelphia Soulß</span>
+          </div>
+          <div class="score">175.40</div>
+        </div>
+      </div>
+    </div>
+
+	  
+    <!-- Matchup 4 -->
+    <div class="score-box">
+      <div class="matchup">
+        <div class="team-row loser">
+          <div class="team-info">
+          <img src="https://www.dropbox.com/scl/fi/xh09tsi8pxtej5p0iwlol/Vegas.png?rlkey=zj8n9kd3aj229zg60kg9jvz9t&st=nryr5550&raw=1" alt="LV KNIGHT HAWKS">
+			  <span>Las Vegas Knight Hawks</span>
+          </div>
+          <div class="score">164.20</div>
+        </div>
+        <div class="team-row winner">
+          <div class="team-info">
+          <img src="https://www.dropbox.com/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=fgxkvuel&raw=1" alt="TUC SUGAR SKULLS">
+			  <span>Tucson Sugar Skulls</span>
+          </div>
+          <div class="score">167.90</div>
+        </div>
+      </div>
+    </div>
+	  
+	  
+	  
+	      <!-- Matchup 5 -->
+    <div class="score-box">
+      <div class="matchup">
+        <div class="team-row winner">
+          <div class="team-info">
+          <img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="BOS BRAWLERS">
+			  <span>Boston Brawlers</span>
+          </div>
+          <div class="score">193.50</div>
+        </div>
+        <div class="team-row loser">
+          <div class="team-info">
+           <img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS">
+			  <span>Brooklyn Bolts</span>
+			</div>
+          <div class="score">183.75</div>
+        </div>
+      </div>
+    </div>
+
+		
+	  
+    <!-- Matchup 6 -->
+    <div class="score-box">
+      <div class="matchup">
+        <div class="team-row winner">
+          <div class="team-info">
+<img src="https://www.dropbox.com/scl/fi/c5iw9fpa7t4nrvlvkkgxf/N-Arizona.png?rlkey=coweke2gywtyeqv03z09jdsw5&st=4wvk4wrh&raw=1" alt="NAR WRANGLERS">
+			  <span>Northern Arizona Wranglers</span>
+          </div>
+          <div class="score">218.65</div>
+        </div>
+        <div class="team-row loser">
+          <div class="team-info">
+<img src="https://www.dropbox.com/scl/fi/1s0rugs1yscisislopl6w/Cleveland.png?rlkey=pprnzvdyv2jurhtp7dlc9qnzc&st=2qucmcu9&raw=1" alt="CLE GLADIATORS">
+			  <span>Cleveland Gladiators</span>
+          </div>
+          <div class="score">158.35</div>
+        </div>
+      </div>
+    </div>
+	  
+	  
+  </div>
+</div>
+	
+	
+	<p>Did you draft Rico Dowdle this year? Of course you didn’t. (Don’t lie to me! We got the receipts.) But that’s okay! Neither did most fantasy football players, since Dowdle was expected to be Chuba Hubbard’s backup for the lowly Panthers. And neither did any NFL teams, as Dowdle was an undrafted free agent back in 2020. He spent four years climbing up the Cowboys’ depth chart...only for them to let him walk in free agency this offseason, as part of their franchise strategy of saving up money to not pay Micah Parsons.</p>
+	
+	<p>In Weeks 5 and 6, Dowdle has come out of nowhere and emerged as a fantasy god. Last week Dowdle had a career-high 207 yards against the Dolphins, and issued a warning ahead of this week’s matchup against the Cowboys: “Buckle up.”</p>
+	
+	<p>But, uh, Jerry Jones traded away the seatbelts. Dowdle went for 239 scrimmage yards and two touchdowns, leading the entire NFL in fantasy scoring. Not just running backs — all players! Rico Freakin’ Dowdle? The front-runner for Fantasy MVP!</p>
+	
+
+<div class="awards-container">
+    <div class="awards-header">Week 6 - MVP &amp; LVP</div>
+    <div class="awards-table">
+		
+      <div class="award-box">
+        <div class="team-header">
+		  <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4038815.png&w=350&h=254" alt="MVP Player">
+          <div class="team-name">MVP</div>
+<img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS">
+		</div>
+        <div class="award-type">Rico Dowdle</div>
+        <div class="award-description">Brooklyn Bolts</div>
+        <div class="points good-award">46.9 points scored</div>
+      </div>
+
+
+		      <div class="award-box">
+        <div class="team-header">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4241479.png&w=350&h=254" alt="LVP Player">
+          <div class="team-name">LVP</div>
+<img src="https://www.dropbox.com/scl/fi/xh09tsi8pxtej5p0iwlol/Vegas.png?rlkey=zj8n9kd3aj229zg60kg9jvz9t&st=nryr5550&raw=1" alt="LV KNIGHT HAWKS">
+		</div>
+        <div class="award-type">Tua Tagovailoa</div>
+        <div class="award-description">Vegas Knight Hawks</div>
+         <div class="points bad-award">17.65 points scored</div>
+      </div>
+    </div>
+  </div>
+	
+	
+	<p>Dowdle has been the best fantasy performance in back-to-back weeks, and now has the two best rushing performances of the entire season so far. Again: Rico Dowdle, who any team in the NFL and any team in your league could’ve had for basically nothing. Meanwhile, the Cowboys’ running back, Javonte Williams, had 13 carries for 29 yards.</p>
+	
+	<p>It’s a story that reminds me of the Boston Brawlers, who had the biggest week-over-week improvement in the league. After last week’s performance, they were disrespected, unwanted, and unloved. You didn’t hear this from me, but there were even rumors that some of the other members of Big 12 were talking about replacing GM Chris Cholka with a more competent member from GM Cory Colvin’s other league. Especially if Colvin and the Bolts defeated them this week. But look at them now, getting a big writeup in the newsletter.</p>
+	
+	
+	<p id="power-rankings">Well, Philly's rein as the #1 team didn't last long, they laid an egg against last week's #2 team LA and because of that we have a new #1 this week. Biggest risers this week Brooklyn and Chicago rising three spots each, meanwhile the biggest faller, milwaukee dropping three spots from 7th to 10th.</p>
+	
+	
+		<div class="awards-container">
+    <div class="awards-header">Week 6 - Power Rankings</div>
+    <div class="awards-table">
+		
+<div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Rank</th>
+    <th>Team</th> 
+    <th>Power Record</th>
+  </tr>
+  <tr>
+    <td>1 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">1)</td>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/bweoj2a4kfaohvtjgys63/Los-Angeles.png?rlkey=35ayqtx454kp44jbudcl98q0s&st=k47chslj&raw=1" alt="LA WILDCATSn">Los Angeles Wildcats</div></td>
+    <td>45-20-1</td>
+  </tr>
+		
+		
+  <tr>
+    <td>2 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
+<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/mlz8vma22rf5hx09uni8q/Philadelphia.png?rlkey=qd0pelmrbl2nsew8rxa8ysqzm&st=zltsn2tb&raw=1" alt="PHI SOUL">Philadelphia Soul</div></td>
+    <td>43-23</td>
+		</tr>
+		
+		
+  <tr>
+    <td>3 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">1)</td>
+<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="BOS BRAWLERS">Boston Brawlers</div></td>
+    <td>42-24</td>
+		</tr>
+				
+		
+  <tr>
+    <td>4 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">1)</td>
+	  <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/c5iw9fpa7t4nrvlvkkgxf/N-Arizona.png?rlkey=coweke2gywtyeqv03z09jdsw5&st=4wvk4wrh&raw=1" alt="NAR WRANGLERS">Northern Arizona Wranglers</div></td>
+    <td>29-26</td>
+		</tr>
+				
+		
+<tr>
+<td>5 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">2)</td>
+<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/1s0rugs1yscisislopl6w/Cleveland.png?rlkey=pprnzvdyv2jurhtp7dlc9qnzc&st=2qucmcu9&raw=1" alt="CLE GLADIATORS">Cleveland Guardians</div></td>
+    <td>36-30</td>
+	</tr>
+				
+		
+  <tr>
+    <td>6 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">3)</td>
+<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/9d1f2fbjieykcfd45qxsr/Chicago.png?rlkey=5c2uz0kw824tirrv5zqpmk9h7&st=rjzoqadf&raw=1" alt="CHI SLAUGHTER">Chicago Slaughter</div></td>
+    <td>32-34</td>
+  </tr>
+				
+		
+  <tr>
+    <td>7 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=fgxkvuel&raw=1" alt="TUC SUGAR SKULLS">Tucson Sugar Skulls</div></td>
+    <td>31-34-1</td>
+</tr>
+				
+		
+  <tr>
+    <td>8 (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElp1vhwKERKMR5rOxaD3E5Ooy-TQNk4VSMQ&s" width="10" height="10">3)</td>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS">Brooklyn Bolts</div></td>
+    <td>30-36</td>
+  </tr>
+				
+		
+  <tr>
+    <td>9 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
+	  <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/n1lmat9jtdpe1r45c08zu/Cedar-Rapids.png?rlkey=do8otuuc0dim1sku4a1c3b2g0&st=4456qylv&raw=1" alt="CR TITANS">Cedar Rapids Titans</div></td>
+    <td>28-38</td>
+  </tr>
+				
+		
+  <tr>
+    <td>10 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">3)</td>
+	  <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/24sd3zipiy5585glfnokj/Milwaukee.png?rlkey=0w1nzdsqklifrz5kms2y2j6rw&st=qluw4v4m&raw=1" alt="MKE MUSTANGS">Milwaukee Mustangs</div></td>
+    <td>27-39</td>
+		</tr>
+				
+
+  <tr>
+    <td>11 (<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Red_triangle.svg" width="10" height="10">1)</td>
+<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="MIA INFERNO">Miami Inferno</div></td>
+    <td>23-43</td>
+		</tr>
+				
+		
+  <tr>
+    <td>12</td>
+<td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xh09tsi8pxtej5p0iwlol/Vegas.png?rlkey=zj8n9kd3aj229zg60kg9jvz9t&st=zuf7587p&raw=1" alt="Team A Icon">Vegas Knight Hawks</div></td>
+    <td>18-48</td>
+  </tr>
+		
+		
+</table>
+</div>
+		
+</div>
+</div>
+
+<p>In some ways, it’s totally unnecessary to provide further context on the New York Jets. They are 0-6. After several hours of hacking into ESPN's fanciest algorithms and advanced analytics databases, I have determined that is not only the fewest wins of any NFL team this season, but of any NFL team ever.</p>
+	
+<p>But it actually does get worse. Justin Fields completed nine passes for 45 yards yesterday, but lost 55 yards on nine sacks. That left the Jets with -10 passing yards on Sunday, the fewest in an NFL game since 1998. To be clear: That’s not “ten passing yards,” that’s “negative ten passing yards.” That little sign in front is a minus, a fact I learned in 9th grade math at Tech.</p>	
+	
+<p>Here’s an incomplete list of people who had more passing yards than the New York Jets on Sunday:
+
+<ul>
+<li>me, the person writing this newletter</li>
+
+<li>you, the person reading this newsletter</li>
+
+<li>Vegas GM, Dave Nguyen, even though their fantasy team absolutely sucks this year</li>
+
+<li>Celine Dion</li>
+
+<li>Most babies</li>
+
+<li>Longtime MLB utility infielder Mark Grudzielanek</li>
+
+<li>Petey Pablo</li>
+
+<li>Lisa, Felicia, Monique, and all the other women mentioned in Petey Pablo’s 2003 classic “Freek-a-Leek”</li>
+
+<li>Brandon Weeden</li>
+	
+	</ul>
+	
+	</p>
+
+	
+	<p>The Jets’ performance reminded me of the Miami Inferno and their 152.40-point performance. Are they good at drafting? No. Are they good at finding useful players over the course of the season? Also no. Are they putting the players on their roster in the best position to succeed? Gonna be honest: No. Do they have any hope this season? I’m leaning no. Should the person in charge of this team be publicly shamed until they relinquish control of this moribund franchise? I’ll let you make the call. Between them and Vegas, I don't know who's worse.</p>
+	
+	
+
+<div class="awards-container">
+    <div class="awards-header">Week 6 - Weekly Awards</div>
+    <div class="awards-table">
+		
+		
+
+      <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/c5iw9fpa7t4nrvlvkkgxf/N-Arizona.png?rlkey=coweke2gywtyeqv03z09jdsw5&st=4wvk4wrh&raw=1" alt="NAR WRANGLERS">
+          <div class="team-name">Northern Arizona Wranglers</div>
+        </div>
+        <div class="award-type">Highest Octane</div>
+        <div class="award-description">Highest point total of the week.</div>
+        <div class="points good-award">218.65 points scored</div>
+      </div>
+
+
+		      <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="MIA INFERNO">
+          <div class="team-name">Miami Inferno</div>
+        </div>
+        <div class="award-type">Low Blow</div>
+        <div class="award-description">Lowest point total of the week.</div>
+         <div class="points bad-award">152.40 points scored</div>
+      </div>
+		
+		
+		
+		<div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS">
+          <div class="team-name">Brooklyn Bolts</div>
+        </div>
+        <div class="award-type">Best Loser</div>
+        <div class="award-description">Highest scoring losing team.</div>
+        <div class="points good-award">183.75 points scored</div>
+      </div>
+		
+		
+				<div class="award-box">
+        <div class="team-header">
+<img src="https://www.dropbox.com/scl/fi/24sd3zipiy5585glfnokj/Milwaukee.png?rlkey=0w1nzdsqklifrz5kms2y2j6rw&st=qluw4v4m&raw=1" alt="MKE MUSTANGS">
+          <div class="team-name">Milwaukee Mustangs</div>
+        </div>
+        <div class="award-type">Worst Winner</div>
+        <div class="award-description">Lowest scoring winning team.</div>
+        <div class="points bad-award">153.30 points scored</div>
+      </div>
+		
+		
+		
+
+      <div class="award-box">
+        <div class="team-header">
+<img src="https://www.dropbox.com/scl/fi/1s0rugs1yscisislopl6w/Cleveland.png?rlkey=pprnzvdyv2jurhtp7dlc9qnzc&st=2qucmcu9&raw=1" alt="CLE GLADIATORS">
+          <div class="team-name">Cleveland Gladiators</div>
+        </div>
+        <div class="award-type">Comeback Kid</div>
+        <div class="award-description">Largest point differential from last week.</div>
+        <div class="points good-award">+25.30 point differential</div>
+      </div>
+
+
+      <div class="award-box">
+        <div class="team-header">
+          <img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS">
+          <div class="team-name">Brooklyn Bolts</div>
+        </div>
+        <div class="award-type">Biggest Drop</div>
+        <div class="award-description">Largest drop in points from last week.</div>
+        <div class="points bad-award">-58.55 point differential</div>
+      </div>
+    </div>
+  </div>
+	
+<p>Another league favorite right now is Giants running back Cam Skattebo. Most NFL running backs correctly believe their job is to run past defenders; Skattebo is one of the beautiful, demented few who voluntarily runs into them, like he’s trying to achieve the high score in a CTE-themed video game. On his second of three touchdowns against the Eagles, Skattebo actively passed up the opportunity to run into the end zone untouched and made sure he hit a Philadelphia defender.</p>
+	
+	
+<p>Skattebo’s teammate, Gunner Olszewski, described Skattebo as “genuinely an idiot.”</p>
+	
+<img src="https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:srnkqtcpptdtesojmwbgoek2/bafkreihslw5fsoozcz7pgi34s3rqe2xlz6wspdnkmemqfggpffn7kvu4ni@jpeg" width="500" height="500">
+		 
+	
+	<div class="awards-container" id="weekly-awards">
+    <div class="awards-header">Week 6 - Players of the Week</div>
+    <div class="awards-table">
+		
+		
+<div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th>Player</th> 
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="MIA INFERNO"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4431452.png&w=350&h=254" alt="QB">Drake Maye - QB</div></td>
+    <td>50.85</td>
+  </tr>
+
+		
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4038815.png&w=350&h=254" alt="RB">Rico Dowdle - RB</div></td>
+    <td>46.90</td>
+  </tr>
+		
+		
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/mlz8vma22rf5hx09uni8q/Philadelphia.png?rlkey=qd0pelmrbl2nsew8rxa8ysqzm&st=zltsn2tb&raw=1" alt="PHI SOUL"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4426502.png&w=350&h=254" alt="WR">Drake London - WR</div></td>
+    <td>38.80</td>
+  </tr>
+				
+		
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="BOS BRAWLERS"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3121023.png&w=350&h=254" alt="TE">Dallas Goedert - TE</div></td>
+    <td>32.00</td>
+  </tr>
+				
+		
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4043130.png&w=350&h=254" alt="IDP 1">Nate Landman - LB</div></td>
+    <td>18.75</td>
+  </tr>
+				
+		
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=fgxkvuel&raw=1" alt="TUC SUGAR SKULLS"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4249128.png&w=350&h=254" alt="IDP 2">Quentin Lake - DB</div></td>
+    <td>15.75</td>
+  </tr>
+				
+		
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="BOS BRAWLERS"></div></td>
+    <td><div class="team-header"><img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4035631.png&w=350&h=254" alt="IDP 3">Brian Burns - DL</div></td>
+    <td>15.50</td>
+  </tr>
+				
+		
+</table>
+</div> 	     
+    </div>
+  </div>
+	
+		
+	<p>Finally, to wrap up the week — the Survivor Simulator. Just like every week before it, another one bites the dust. This time, it’s a team you might not have expected based on their record, but the Survivor Simulator doesn’t care about no stinkin’ record. Richard and the Miami Inferno are sent packing — and honestly, I’m not sure how you survived this long. Half the league has now been eliminated.</p>
+	
+	
+			<div class="awards-container">
+    <div class="awards-header">Week 6 - Survivor Simulator</div>
+    <div class="awards-table">
+		
+		
+<div class="table-wrapper">
+	<table>
+  <tr>
+    <th>Team</th>
+    <th><center>Week 1</center></th> 
+    <th><center>Week 2</center></th>
+    <th><center>Week 3</center></th>
+    <th><center>Week 5</center></th>
+    <th><center>Week 6</center></th>
+    <th><center>Week 7</center></th>
+		</tr>
+		
+		<!--1-->
+<tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/c5iw9fpa7t4nrvlvkkgxf/N-Arizona.png?rlkey=coweke2gywtyeqv03z09jdsw5&st=4wvk4wrh&raw=1" alt="NAR WRANGLERS"></div></td>
+    <td><center>201.1</center></td>
+    <td><center>158.7</center></td>
+    <td><center>155.7</center></td>
+    <td><center>173.2</center></td>
+    <td><center>199.8</center></td>
+    <td><center>218.7</center></td>
+</tr>
+
+				<!--2-->
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/bweoj2a4kfaohvtjgys63/Los-Angeles.png?rlkey=35ayqtx454kp44jbudcl98q0s&st=k47chslj&raw=1" alt="LA WILDCATS"></div></td>
+    <td><center>213.1</center></td>
+    <td><center>203.8</center></td>
+    <td><center>158.1</center></td>
+    <td><center>196.3</center></td>
+    <td><center>192.4</center></td>
+    <td><center>185.8</center></td>
+		</tr>	
+		
+		
+				<!--3-->
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/mlz8vma22rf5hx09uni8q/Philadelphia.png?rlkey=qd0pelmrbl2nsew8rxa8ysqzm&st=zltsn2tb&raw=1" alt="PHI SOUL"></div></td>
+    <td><center>173.1</center></td>
+    <td><center>153.1</center></td>
+    <td><center>200.2</center></td>
+    <td><center>201.4</center></td>
+    <td><center>222.1</center></td>
+    <td><center>175.4</center></td>
+</tr>
+		
+		
+				<!--4-->
+		<tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=fgxkvuel&raw=1" alt="TUC SUGAR SKULLS"></div></td>
+    <td><center>192.3</center></td>
+    <td><center>172.2</center></td>
+    <td><center>145.3</center></td>
+    <td><center>196.3</center></td>
+    <td><center>169.8</center></td>
+    <td><center>167.9</center></td>
+</tr>
+			
+		
+				<!--5-->
+<tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/1s0rugs1yscisislopl6w/Cleveland.png?rlkey=pprnzvdyv2jurhtp7dlc9qnzc&st=2qucmcu9&raw=1" alt="CLE GLADIATORS"></div></td>
+    <td><center>132.2</center></td>
+    <td><center>238.6</center></td>
+    <td><center>176.8</center></td>
+    <td><center>248.7</center></td>
+    <td><center>175.6</center></td>
+    <td><center>158.3</center></td>
+</tr>
+		
+		
+		
+				<!--6-->
+<tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/n1lmat9jtdpe1r45c08zu/Cedar-Rapids.png?rlkey=do8otuuc0dim1sku4a1c3b2g0&st=4456qylv&raw=1" alt="CR TITANS"></div></td>
+    <td><center>162.5</center></td>
+    <td><center>155.9</center></td>
+    <td><center>205.6</center></td>
+    <td><center>142.8</center></td>
+    <td><center>186.4</center></td>
+    <td><center>156.8</center></td>
+</tr>
+		
+		
+				<!--7-->
+		  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/olu0roqnmdmg5c1f37ann/Miami.png?rlkey=4qzbqaheon2h407v0d3tz611m&st=nbw2i1fb&raw=1" alt="MIA INFERNO"></div></td>
+    <td><center>157.4</center></td>
+    <td><center>171.1</center></td>
+    <td><center>169.1</center></td>
+    <td><center>186.9</center></td>
+    <td><center>176.8</center></td>
+    <td><div class="eliminated"><center>152.4</center></div></td>
+</tr>		
+		
+				<!--8-->
+  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xdnt9748pcmqgvwv9jsb9/Boston.png?rlkey=77pz928wn6tlvz3sz6r7yu2ot&st=j0nqicv0&raw=1" alt="BOS BRAWLERS"></div></td>
+    <td><center>194.3</center></td>
+    <td><center>162.9</center></td>
+    <td><center>201.6</center></td>
+    <td><center>190.7</center></td>
+    <td><div class="eliminated"><center>168.2</center></div></td>
+    <td><center></center></td>
+</tr>
+
+		
+		
+				<!--9-->
+		  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/24sd3zipiy5585glfnokj/Milwaukee.png?rlkey=0w1nzdsqklifrz5kms2y2j6rw&st=qluw4v4m&raw=1" alt="MKE MUSTANGS"></div></td>
+    <td><center>176.4</center></td>
+    <td><center>161.6</center></td>
+    <td><center>174.8</center></td>
+    <td><div class="eliminated"><center>140.1</center></div></td>
+    <td><center></center></td>
+    <td><center></center></td>
+		</tr>
+		
+		
+				<!--10-->
+		  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/xh09tsi8pxtej5p0iwlol/Vegas.png?rlkey=zj8n9kd3aj229zg60kg9jvz9t&st=nryr5550&raw=1" alt="LV KNIGHT HAWKS"></div></td>
+    <td><center>159.8</center></td>
+    <td><center>235.2</center></td>
+    <td><div class="eliminated"><center>116.2</center></div></td>
+    <td><center></center></td>
+    <td><center></center></td>
+    <td><center></center></td>
+		</tr>
+		
+		
+		
+				<!--11-->
+		  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/9d1f2fbjieykcfd45qxsr/Chicago.png?rlkey=5c2uz0kw824tirrv5zqpmk9h7&st=rjzoqadf&raw=1" alt="CHI SLAUGHTER"></div></td>
+    <td><center>150.2</center></td>
+  <td><div class="eliminated"><center>142.1</center></div></td>
+    <td><center></center></td>
+    <td><center></center></td>
+    <td><center></center></td>
+    <td><center></center></td>
+		</tr>
+		
+		
+				<!--12-->
+		  <tr>
+    <td><div class="team-header"><img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=rao59m4b&raw=1" alt="BKN BOLTS"></div></td>
+    <td><div class="eliminated"><center>118.9</center></div></td>
+				<td></td>
+				<td></td>
+				<td></td>
+    <td><center></center></td>
+    <td><center></center></td>
+		</tr>
+				
+		
+		
+</table>
+</div> 	     
+    </div>
+  </div>
+	
+	
+	<p>Thanks for reading this week!</p>
+	
+	
+</body>
+</html>
