@@ -190,17 +190,11 @@ min-width: 600px;
 <option value="">— Select team —</option>
 </select>
 
-<label for="yearFilter">Year:</label>
-<select id="yearFilter">
-<option value="ALL_YEARS">— All Years —</option>
-</select>
-
 <label for="gameTypeFilter">Game Type:</label>
 <select id="gameTypeFilter">
 <option value="ALL_TYPES">— All Types —</option>
 </select>
 
-<input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
 </div>
 
 
@@ -263,246 +257,178 @@ document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remo
 }
 });
 
-// ========================================================================================== HEAD-TO-HEAD MATCHES ==========================
-const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+ // ========================================================================================== CONFIG
+  const DEFAULT_SEASON_YEAR = 2025; // <--------------------------------------------------------------------------- CHANGE THIS PER SEASON PAGE
 
-const team1Select = document.getElementById("team1");
-const team2Select = document.getElementById("team2");
-const yearSelect = document.getElementById("yearFilter");
-const gameTypeSelect = document.getElementById("gameTypeFilter");
-const matchFilterInput = document.getElementById("matchFilter");
+  const csvUrl =
+    "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" +
+    new Date().getTime();
 
-const matchTableWrap = document.getElementById("matchTableWrap");
-const matchTableBody = document.querySelector("#matchTable tbody");
-//const summaryArea = document.getElementById("summaryArea");
-const loadingMsg = document.getElementById("loadingMsg");
-const noMatchesMsg = document.getElementById("noMatches");
+  // ========================================================================================== ELEMENTS
+  const team1Select = document.getElementById("team1");
+  const team2Select = document.getElementById("team2");
+  const gameTypeSelect = document.getElementById("gameTypeFilter");
 
-//const cardTeam1Name = document.getElementById("cardTeam1Name");
-//const cardTeam1Record = document.getElementById("cardTeam1Record");
-//const cardTeam1PF = document.getElementById("cardTeam1PF");
+  const matchTableWrap = document.getElementById("matchTableWrap");
+  const matchTableBody = document.querySelector("#matchTable tbody");
+  const loadingMsg = document.getElementById("loadingMsg");
+  const noMatchesMsg = document.getElementById("noMatches");
 
-//const cardTeam2Name = document.getElementById("cardTeam2Name");
-//const cardTeam2Record = document.getElementById("cardTeam2Record");
-//const cardTeam2PF = document.getElementById("cardTeam2PF");
+  let allMatches = [];
+  let teams = [];
 
-//const head2headSummary = document.getElementById("head2headSummary");
-//const mostRecentEl = document.getElementById("mostRecent");
+  // ========================================================================================== UTILITIES
+  function parseCsvToObjects(csvText) {
+    const lines = csvText.trim().split(/\r?\n/);
+    const headers = lines.shift().split(",").map(h => h.trim());
 
-let allMatches = [];
-let teams = [];
+    return lines.map(line => {
+      const cols = line.split(",").map(c => c.trim());
+      const obj = {};
+      headers.forEach((h, i) => (obj[h] = cols[i] || ""));
+      return obj;
+    });
+  }
 
-// ========================== UTILITIES ==========================
-function parseCsvToObjects(csvText) {
-const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
-const headers = lines.shift().split(",").map(h => h.trim());
-return lines.map(line => {
-const cols = line.split(",").map(c => c.trim());
-const obj = {};
-headers.forEach((h,i)=> obj[h]=cols[i]??"");
-return obj;
-});
-}
+  function parseDate_mmddyy(s) {
+    if (!s) return null;
+    const [m, d, y] = s.split("/").map(n => parseInt(n, 10));
+    if (!m || !d || !y) return null;
+    return new Date(y < 100 ? y + 2000 : y, m - 1, d);
+  }
 
-function parseDate_mmddyy(s) {
-if (!s) return null;
-const parts = s.split("/").map(p=>parseInt(p,10));
-if (parts.length!==3 || parts.some(isNaN)) return null;
-let [m,d,y]=parts;
-if (y<100) y+=2000;
-return new Date(y,m-1,d);
-}
+  function esc(s) {
+    return String(s || "");
+  }
 
-function formatDateShort(dateObj) {
-if (!dateObj) return "N/A";
-const m=String(dateObj.getMonth()+1).padStart(2,"0");
-const d=String(dateObj.getDate()).padStart(2,"0");
-const yy=String(dateObj.getFullYear()).slice(-2);
-return `${m}/${d}/${yy}`;
-}
+  // ========================================================================================== DROPDOWNS
 
-function esc(s){ return String(s||""); }
+  function populateTeamDropdowns() {
+    [team1Select, team2Select].forEach(select => {
+      select.innerHTML = "";
+      const allOpt = new Option("All Teams", "ALL_TEAMS");
+      select.appendChild(allOpt);
 
-// ========================== POPULATE DROPDOWNS ==========================
-function populateTeamDropdowns() {
-[team1Select, team2Select].forEach(drop => {
-drop.innerHTML = "";
-const allOpt = document.createElement("option");
-allOpt.value = "ALL_TEAMS";
-allOpt.textContent = "All Teams";
-drop.appendChild(allOpt);
+      teams.forEach(team => select.appendChild(new Option(team, team)));
 
-teams.forEach(team => {
-const opt = document.createElement("option");
-opt.value = team;
-opt.textContent = team;
-drop.appendChild(opt);
-});
+      select.value = "ALL_TEAMS";
+      select.addEventListener("change", updateDisplay);
+    });
+  }
 
-drop.value = "ALL_TEAMS";
-drop.addEventListener("change", updateDisplay);
-});
+  function populateGameTypeDropdown() {
+    const typeSet = new Set(allMatches.map(m => m.gameType).filter(Boolean));
+    gameTypeSelect.innerHTML = `<option value="ALL_TYPES">— All Types —</option>`;
 
-matchFilterInput.addEventListener("input", updateDisplay);
-}
+    Array.from(typeSet)
+      .sort()
+      .forEach(type => gameTypeSelect.appendChild(new Option(type, type)));
 
-function populateYearDropdown() {
-const yearSet = new Set(allMatches.map(m => m.date ? m.date.getFullYear() : null).filter(y => y));
-yearSelect.innerHTML = `<option value="ALL_YEARS">— All Years —</option>`;
-Array.from(yearSet).sort((a,b)=>b-a).forEach(y => {
-const opt = document.createElement("option");
-opt.value = y;
-opt.textContent = y;
-yearSelect.appendChild(opt);
-});
-yearSelect.addEventListener("change", updateDisplay);
-yearSelect.value = new Date().getFullYear();
-}
+    gameTypeSelect.value = "ALL_TYPES";
+    gameTypeSelect.addEventListener("change", updateDisplay);
+  }
 
-function populateGameTypeDropdown() {
-const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
-gameTypeSelect.innerHTML = `<option value="ALL_TYPES">— All Types —</option>`;
-Array.from(typeSet).sort().forEach(t => {
-const opt = document.createElement("option");
-opt.value = t;
-opt.textContent = t;
-gameTypeSelect.appendChild(opt);
-});
-gameTypeSelect.addEventListener("change", updateDisplay);
-gameTypeSelect.value = "ALL_TYPES";
-}
+  // ========================================================================================== LOAD CSV
 
-// ========================== LOAD CSV ==========================
-async function loadCsvAndInit() {
-try {
-const res = await fetch(csvUrl);
-if(!res.ok) throw new Error("Network error "+res.status);
-const text = await res.text();
-const rows = parseCsvToObjects(text);
+  async function loadCsvAndInit() {
+    try {
+      const res = await fetch(csvUrl);
+      const text = await res.text();
+      const rows = parseCsvToObjects(text);
 
-allMatches = rows.map(r=>{
-const d = parseDate_mmddyy(r["Date"]);
-return {
-rawDate: r["Date"]||"",
-date: d,
-week: (r["Week"]||"").trim(),                // <-- ADDED
-team1: (r["Team 1"]||"").trim(),
-team2: (r["Team 2"]||"").trim(),
-score1: parseFloat(r["Team 1 Score"]||"0") || 0,
-score2: parseFloat(r["Team 2 Score"]||"0") || 0,
-gameType: (r["Game Type"]||"").trim()
-};
-}).filter(m=>m.team1 && m.team2 && m.date);
+      allMatches = rows
+        .map(r => {
+          const date = parseDate_mmddyy(r["Date"]);
+          return {
+            date,
+            week: (r["Week"] || "").trim(),
+            team1: (r["Team 1"] || "").trim(),
+            team2: (r["Team 2"] || "").trim(),
+            score1: Number(r["Team 1 Score"] || 0),
+            score2: Number(r["Team 2 Score"] || 0),
+            gameType: (r["Game Type"] || "").trim()
+          };
+        })
+        .filter(
+          m =>
+            m.date &&
+            m.date.getFullYear() === DEFAULT_SEASON_YEAR &&
+            m.team1 &&
+            m.team2
+        );
 
-const teamSet = new Set();
-allMatches.forEach(m=>{teamSet.add(m.team1); teamSet.add(m.team2);});
-teams = Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
+      const teamSet = new Set();
+      allMatches.forEach(m => {
+        teamSet.add(m.team1);
+        teamSet.add(m.team2);
+      });
+      teams = Array.from(teamSet).sort();
 
-populateTeamDropdowns();
-populateYearDropdown();
-populateGameTypeDropdown();
+      populateTeamDropdowns();
+      populateGameTypeDropdown();
 
-loadingMsg.style.display = "none";
+      loadingMsg.style.display = "none";
+      updateDisplay();
+    } catch (err) {
+      console.error(err);
+      loadingMsg.textContent = "Error loading match data.";
+    }
+  }
 
-// Initial render
-updateDisplay();
-} catch(err) {
-loadingMsg.textContent = "Error loading match data.";
-console.error(err);
-}
-}
+  // ========================================================================================== FILTER + RENDER (WITH WEEK STRIPING)
 
-// ========================== FILTER & RENDER ==========================
-function updateDisplay() {
-const teamA = team1Select.value;
-const teamB = team2Select.value;
-const yearVal = yearSelect.value;
-const gameTypeVal = gameTypeSelect.value;
-const searchVal = matchFilterInput.value.trim().toLowerCase();
+  function updateDisplay() {
+    const teamA = team1Select.value;
+    const teamB = team2Select.value;
+    const gameTypeVal = gameTypeSelect.value;
 
-let filtered = allMatches.filter(m => {
-const matchTeam1 = (teamA === "ALL_TEAMS" || m.team1 === teamA || m.team2 === teamA);
-const matchTeam2 = (teamB === "ALL_TEAMS" || m.team1 === teamB || m.team2 === teamB);
-return matchTeam1 && matchTeam2;
-});
+    let filtered = allMatches.filter(m => {
+      const aOk =
+        teamA === "ALL_TEAMS" || m.team1 === teamA || m.team2 === teamA;
+      const bOk =
+        teamB === "ALL_TEAMS" || m.team1 === teamB || m.team2 === teamB;
+      const typeOk =
+        gameTypeVal === "ALL_TYPES" || m.gameType === gameTypeVal;
+      return aOk && bOk && typeOk;
+    });
 
-if(yearVal !== "ALL_YEARS"){
-filtered = filtered.filter(m => m.date && m.date.getFullYear().toString() === yearVal);
-}
+    filtered.sort((a, b) => a.date - b.date);
 
-if(gameTypeVal !== "ALL_TYPES"){
-filtered = filtered.filter(m => m.gameType === gameTypeVal);
-}
+    matchTableBody.innerHTML = "";
 
-if(searchVal !== ""){
-filtered = filtered.filter(m=>m.team1.toLowerCase().includes(searchVal) || m.team2.toLowerCase().includes(searchVal));
-}
+    let toggle = false;
+    let lastWeek = null;
 
-filtered.sort((a,b)=>b.date - a.date);
+    filtered.forEach(m => {
+      if (m.week !== lastWeek) {
+        toggle = !toggle;
+        lastWeek = m.week;
+      }
 
-// --- SUMMARY CARDS ---
-/*if(filtered.length > 0){
-let winsA=0, winsB=0, pfA=0, pfB=0;
-filtered.forEach(m=>{
-if(teamA!=="ALL_TEAMS"){
-pfA += (m.team1===teamA?m.score1:m.score2);
-if((m.score1>m.score2 && m.team1===teamA) || (m.score2>m.score1 && m.team2===teamA)) winsA++;
-}
-if(teamB!=="ALL_TEAMS"){
-pfB += (m.team1===teamB?m.score1:m.score2);
-if((m.score1>m.score2 && m.team1===teamB) || (m.score2>m.score1 && m.team2===teamB)) winsB++;
-}
-});
+      const tr = document.createElement("tr");
+      tr.style.backgroundColor = toggle ? "#f3f3f3" : "#ffffff";
 
-cardTeam1Name.textContent = teamA!=="ALL_TEAMS"?teamA:"Team 1";
-cardTeam1Record.textContent = teamB!=="ALL_TEAMS"?`${winsA} - ${winsB}`:`${winsA} Wins`;
-cardTeam1PF.textContent = pfA;
+      tr.innerHTML = `
+        <td>${esc(m.week)}</td>
+        <td class="${m.score1 > m.score2 ? "winner" : ""}">${esc(m.team1)}</td>
+        <td class="${m.score2 > m.score1 ? "winner" : ""}">${esc(m.team2)}</td>
+        <td>${m.score1} - ${m.score2}</td>
+        <td>${esc(m.gameType)}</td>
+      `;
 
-cardTeam2Name.textContent = teamB!=="ALL_TEAMS"?teamB:"Team 2";
-cardTeam2Record.textContent = teamB!=="ALL_TEAMS"?`${winsB} - ${winsA}`:`N/A`;
-cardTeam2PF.textContent = teamB!=="ALL_TEAMS"?pfB:"N/A";
+      matchTableBody.appendChild(tr);
+    });
 
-head2headSummary.textContent = `${filtered.length} games`;
-mostRecentEl.textContent = filtered[0].date ? formatDateShort(filtered[0].date) : "N/A";
+    matchTableWrap.style.display = "block";
+    noMatchesMsg.style.display = filtered.length ? "none" : "block";
+  }
 
-summaryArea.style.display = "flex";
-} else {
-summaryArea.style.display = "none";
-}*/
+  // ========================================================================================== START
 
-// --- TABLE RENDER ---
-matchTableBody.innerHTML = "";
-let toggle = false;
-let lastKey = null;
-
-filtered.forEach(m => {
-// Use the week column from the CSV (fall back to formatted date if missing)
-const weekKey = esc(m.week) || (m.date ? formatDateShort(m.date) : "N/A");
-
-// flip toggle when week/date changes — keeps alternating row bg grouped by week
-if (weekKey !== lastKey) {
-toggle = !toggle;
-lastKey = weekKey;
-}
-
-const tr = document.createElement("tr");
-tr.style.backgroundColor = toggle ? "#f3f3f3" : "#ffffff";
-tr.innerHTML = `
-<td>${weekKey}</td>
-<td class="${m.score1 > m.score2 ? 'winner' : ''}">${esc(m.team1)}</td>
-<td class="${m.score2 > m.score1 ? 'winner' : ''}">${esc(m.team2)}</td>
-<td>${m.score1} - ${m.score2}</td>
-<td>${esc(m.gameType)}</td>
-`;
-matchTableBody.appendChild(tr);
-});
-
-matchTableWrap.style.display="block";
-noMatchesMsg.style.display = filtered.length===0 ? "block":"none";
-}
-
-// ========================== START ==========================
-loadCsvAndInit();
+  loadCsvAndInit();
+	
+	
+	
 });
 </script>
 
