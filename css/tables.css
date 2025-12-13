@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/* CSS Document */
-
 /* ========================================================================================== COLOR VARIABLES ================== */
 :root {
     --navy: #002855;
@@ -8,105 +6,93 @@
     --industrial-gray: #8c8c8c;
     --cream-city-brick: #F5E6C8;
     --bright-white: #FFFFFF;
-	--bg-color: #F8F8F8;
-	--table-zebra-color: #F3F3F3;
+    --bg-color: #F8F8F8;
+    --table-zebra-color: #F3F3F3;
 }
 
-/* ========================================================================================== TABLE FORMATTING ================== */
-.standard-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin: 20px 0;
-	font-size: 15px;
-	background: var(--bright-white);
-	border: 1px solid var(--industrial-gray);
-	table-layout: fixed; /* makes all columns equal width */
+/* ========================================================================================== BASE TABLE STYLES ================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    background: var(--bright-white);
+    border: 1px solid var(--industrial-gray);
+    table-layout: auto; /* default to fit content */
 }
 
-.standard-table th,
-.standard-table td {
-	border: 1px solid var(--industrial-gray); /* cell border */
-	padding: 12px 10px;
-	text-align: center; /* center text in all cells */
-	vertical-align: middle; /* center text vertically */
-	word-wrap: break-word; /* allows wrapping so columns stay even */
+th, td {
+    border: 1px solid var(--industrial-gray);
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
 }
 
-.standard-table th {
-	background: var(--industrial-gray);
-	font-weight: bold;
-}
-
-/* Zebra striping for readability */
-.standard-table tbody tr:nth-child(even) {
-background-color: var(--table-zebra-color);
-}
-
-
-/* ========================================================================================== SCROLLING TABLE ================== */
-.scrolling-table {
-width: 100%;
-border-collapse: collapse;
-margin: 20px 0;
-font-size: 15px;
-background: var(--bright-white);
-border: 1px solid var(--industrial-gray);
-table-layout: fixed;
-}
-
-.scrolling-table th,
-.scrolling-table td {
-border: 1px solid var(--industrial-gray);
-padding: 12px 10px;
-text-align: center;
-vertical-align: middle;
-word-wrap: break-word;
-}
-
-.scrolling-table th {
-background: var(--industrial-gray);
-font-weight: bold;
+th {
+    background: var(--industrial-gray);
+    font-weight: bold;
 }
 
 /* Zebra striping for readability */
-.scrolling-table tbody tr:nth-child(even) {
-background-color: var(--table-zebra-color);
+tbody tr:nth-child(even) {
+    background-color: var(--table-zebra-color);
 }
 
-/*.scrolling-table td:nth-child(n+2):nth-child(-n+8),
-.scrolling-table th:nth-child(n+2):nth-child(-n+8) {
-background-color: var(--cream-city-brick);
-} */
+/* Highlighted row */
+tbody tr.highlight-row td {
+    background-color: var(--cream-city-brick) !important;
+}
 
-/* Scroll wrapper */
+/* Winner cell styling */
+td.winner {
+    font-weight: 700 !important;
+    background: var(--cream-city-brick) !important;
+    color: var(--navy) !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================================================================== SCROLLING TABLES ================== */
+/* Wrap table in a div with class .scrolling-table-scroll */
 .scrolling-table-scroll {
-width: 100%;
-overflow-x: auto;
--webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+    margin: 20px 0;
+    /* Optional: shadow hint for scroll */
+    position: relative;
 }
 
-/* Optional: shadow hint for scroll */
 .scrolling-table-scroll::after {
-content: '';
-display: block;
-height: 2px;
-background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0));
-margin-top: -2px;
+    content: '';
+    display: block;
+    height: 2px;
+    background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0));
+    margin-top: -2px;
 }
 
-/* Table inside scroll container */
 .scrolling-table {
-width: max-content;   /* allow table to expand naturally beyond container */
-min-width: 100%;      /* ensure it’s at least full container width */
-border-collapse: collapse;
-margin: 20px 0;
-font-size: 15px;
-background: var(--bright-white);
-border: 1px solid var(--industrial-gray);
-table-layout: auto;   /* auto so columns fit content */
+    width: max-content;   /* allow table to expand naturally */
+    min-width: 100%;      /* ensure table is at least container width */
+    border-collapse: collapse;
 }
 
-/* ========================================================================================== HIGHLIGHTED TABLE ROW ================== */
-.standard-table tbody tr.highlight-row td {
-  background-color: var(--cream-city-brick) !important;
+/* ========================================================================================== RESPONSIVE & MOBILE ================== */
+@media (max-width: 640px) {
+    th, td {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+/* ========================================================================================== TABLE TYPES ================== */
+/* Standard table (fits container, no horizontal scroll) */
+.standard-table {
+    table-layout: fixed;
+}
+
+/* Scrolling table (may exceed container width and scroll horizontally) */
+.scrolling-table {
+    table-layout: auto; /* let columns fit content */
 }
