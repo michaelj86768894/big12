@@ -9,20 +9,7 @@
 <link rel="stylesheet" href="../../css/tables.css">
 
 <style>
-
-
-/* ====== Global Styles ====== */
-body { 
-font-family: Arial, Helvetica, sans-serif; 
-color:#222; 
-padding:20px; 
-background:#ffffff; 
-}
-
-.wrap { max-width:1100px; margin:0 auto; }
-h1 { text-align:center; color:#125740; margin-bottom:10px; } /* PRIMARY */
-
-/* ====== Controls + Cards ====== */
+/* ========================================================================================== Controls + Cards ====== */
 .controls { 
 text-align:center; 
 margin:15px 0; 
@@ -45,128 +32,16 @@ margin:15px 0;
 flex-wrap:wrap; 
 }
 
-.card { 
-background:#fff; 
-padding:12px 16px; 
-border-radius:8px; 
-box-shadow:0 2px 6px rgba(0,0,0,0.06); 
-min-width:180px; 
-text-align:center; 
-}
-
-.card h3 { 
-margin:0 0 6px; 
-font-size:14px; 
-color:#444; 
-}
-
-.card p { 
-margin:0; 
-font-weight:700; 
-font-size:18px; 
-color:#125740; /* PRIMARY */
-}
-
-/* ====== Your Original Table Styles ====== */
-table, th, td {
-table-layout: auto;
-border: 1px solid #125740; /* PRIMARY */
-border-collapse: collapse;
-padding: 5px;
-color: black; /* Default text color */
-}
-
-th {
-background-color: #125740; /* PRIMARY */
-color: #ffffff;
-}
-
-/*tr:nth-child(odd) { background-color: #ffffff; }
-tr:nth-child(even) { background-color: #ffffff; }*/
-
-tr:hover td, tr:hover th {
-background-color: #000000; /* SECONDARY */
-color: #FFFFFF;
-border: 1px solid #002244; 
-}
-
-.table-container {
-display: inline-block;
-margin: 3px;
-vertical-align: top;
-}
-
-/* ====== Collapsible Styles ====== */
-.collapsible {
-cursor: pointer;
-width: 100%;
-text-align: left;
-border: none;
-padding-top: 1%;
-background-color: #ffffff;
-color: #000000;
-font-size: 24px;
-}
-
-.active, .collapsible:hover {
-background-color: #125740; /* PRIMARY */
-color: #ffffff;
-}
-
-.collapsible:before {
-content: '\02c6';
-color: #000000;
-font-weight: bold;
-margin-left: 5px;
-}
-
-.active:before {
-content: "\02c7";
-}
-
-.content {
-max-height: 0;
-overflow: hidden;
-background-color: #ffffff;
-transition: max-height 0.2s ease-out;
-color: black;
-}
-
-.content a { color: #000000; } /* SECONDARY */
-.content a:hover { color: #000000; } /* SECONDARY */
-
-/* ====== Head-to-Head Scoped Table Styles ====== */
-.h2h table {
-width:100%; 
-border-collapse:collapse; 
-margin-top:10px; 
-background:#fff; 
-border-radius:8px; 
-overflow:hidden; 
-box-shadow:0 2px 8px rgba(0,0,0,0.06); 
-}
-
-.h2h th { 
-background:#125740; /* PRIMARY */ 
-color:#fff; 
-padding:10px; 
-text-align:left; 
-font-weight:600; 
-}
-
-.h2h td { 
-padding:10px; 
-border-bottom:1px solid #eee; 
-}
-
-/*.h2h tr:nth-child(even) td { 
-background:#ffffff; 
-}*/
-
-.h2h td.winner { 
-font-weight:700; 
-background:#FCC201 !important;
-/*	color: #00674F !important;*/
+/* stronger, general winner highlight (covers .h2h tables + your match table) */
+.h2h td.winner,
+.divisions-table td.winner,
+#matchTable td.winner,
+.table-wrap td.winner {
+font-weight: 700 !important;
+background: #F5E6C8 !important;
+color: #002855 !important;
+position: relative;
+z-index: 2;
 }
 
 .no-data, .loading { 
@@ -175,47 +50,95 @@ margin-top:14px;
 color:#666; 
 }
 
-/* ====== Mobile ====== */
-@media (max-width:640px) {
-th, td { font-size:13px; padding:8px; }
-.card { min-width:140px; }
-.controls { flex-direction: column; gap:8px; }
-}	
-
-.box {
-display: inline-block;
-width: 20px;
-height: 20px;
-border: 1px solid rgba(0, 0, 0, .2);
+.table-wrap {
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
 }
 
-.first {
-background: #125740;
+.table-wrap table {
+width: 100%;
+min-width: 600px;
 }
-
-.second {
-background: #000000;
-}
-
-.third {
-background: #FFFFFF;
-}
-
 </style>
-
-<meta charset="UTF-8">
-<title>Brooklyn Bolts</title>
 </head>
 
 <body>
 
+<!-- ========================================================================================== LOGO BAR ================== -->
+<div class="team-logo-bar">
+<div class="team-logo-container">
+<a href="../Teams/Boston.html"><img src="../../images/Boston.png" alt="Boston" /></a>
+<a href="../Teams/Brooklyn.html"><img src="../../images/Brooklyn.png" alt="Brooklyn" /></a>
+<a href="../Teams/CedarRapids.html"><img src="../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+<a href="../Teams/Chicago.html"><img src="../../images/Chicago.png" alt="Chicago" /></a>
+<a href="../Teams/Cleveland.html"><img src="../../images/Cleveland.png" alt="Cleveland" /></a>
+<a href="../Teams/LosAngeles.html"><img src="../../images/LosAngeles.png" alt="Los Angeles" /></a>
+<a href="../Teams/Miami.html"><img src="../../images/Miami.png" alt="Miami" /></a>
+<a href="../Teams/Milwaukee.html"><img src="../../images/Milwaukee.png" alt="Milwaukee" /></a>
+<a href="../Teams/NorthernArizona.html"><img src="../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+<a href="../Teams/Philadelphia.html"><img src="../../images/Philadelphia.png" alt="Philadelphia" /></a>
+<a href="../Teams/Tucson.html"><img src="../../images/Tucson.png" alt="Tucson" /></a>
+<a href="../Teams/Vegas.html"><img src="../../images/Vegas.png" alt="Vegas" /></a>
+</div>
+</div>
+
+<!-- ========================================================================================== MAIN NAV ================== -->
+<nav class="main-nav">
+<div class="nav-container">
+
+<a href="../../index.html" class="logo">
+<img src="../../images/Logo.png" alt="League Logo" />
+</a>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
+<label for="menu-toggle" class="hamburger">&#9776;</label>
+
+<!-- Nav Links -->
+<ul class="nav-links">
+<li class="dropdown">
+<a href="#">About</a>
+<ul class="dropdown-content">
+<li><a href="../About.html">Who We Are</a></li>
+<li><a href="../Bylaws.html">Bylaws</a></li>
+</ul>
+</li>
+
+<li><a href="../News.html">News</a></li>
+
+<li class="dropdown">
+<a href="#">History</a>
+<ul class="dropdown-content">
+<li><a href="../History.html">History of the GLFL</a></li>
+<li><a href="../Seasons.html">GLFL Seasons</a></li>
+<li><a href="../Champions.html">GLFL Champions</a></li>
+<li><a href="../Awards.html">Individual Award Winners</a></li>
+<li><a href="../RecordBook.html">Record Book</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Schedule &amp; Standings</a>
+<ul class="dropdown-content">
+<li><a href="../Standings.html">Standings</a></li>
+<li><a href="../WeeklySchedule.html">Weekly Schedule</a></li>
+</ul>
+</li>
+
+<li><a href="../Teams.html">Teams</a></li>
+<li><a href="../Draft.html">Draft</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="text-container">
+
 
 <p>The Brooklyn Bolts, a powerhouse in the professional fantasy football realm, proudly represent the GLFL's East division. Anchored in the strategic hub of Oak Creek, Wisconsin, the Bolts have been a formidable force in the GLFL since its inception in 2012. Boasting an illustrious history marked by excellence, the Bolts have soared to the Lakefront Bowl Championship three times—in 2013, 2019, and 2021—emerging victorious twice in their pursuit of fantasy football glory.</p>
 
-<table>
+<table class="standard-table">
 <tbody>
 <tr>
-<td colspan="2"><strong>Brooklyn Bolts</strong><br><img src="https://www.dropbox.com/scl/fi/q2gksbbzm239ib715dzd9/Brooklyn.png?rlkey=evs2jtnlo465fs7b9a3rwixy5&st=viyqhx72&raw=1" width="249" height="200" alt=""/></td>
+<td colspan="2"><strong>Brooklyn Bolts</strong><br><img src="../../images/Brooklyn.png" width="249" height="200" alt=""/></td>
 </tr>
 <tr>
 <td><strong>Established</strong></td>
@@ -278,14 +201,11 @@ background: #FFFFFF;
 <td>2012, 2013, 2015, 2019,<br> 2021, 2023</td>
 </tr>
 <tr>
-<td colspan="2"><img src="https://www.dropbox.com/scl/fi/2su5snyj8yccaxmunig9f/Brooklyn-Helmet.png?rlkey=k40ffw7ei0bixj2i2wmnfuvx5&st=80jjcsga&raw=1" width="187" height="150" alt=""/></td>
+<td colspan="2"><img src="../../images/Helmets/BrooklynHelmet.png" width="187" height="150" alt=""/></td>
 </tr>
 
 </tbody>
 </table>
-
-
-<p> </p>
 
 <h3>Franchise History</h3>
 
@@ -299,13 +219,11 @@ background: #FFFFFF;
 
 <p>Despite recent struggles, the Bolts remain one of the league’s most decorated franchises, boasting five division titles and two Lakefront Bowl Championships over more than a decade of play.</p>
 
-</div>
-
 <h3>List of Brooklyn Seasons</h3>
 
 <p>Embark on a chronological journey through the seasons of the Brooklyn Bolts, a team synonymous with excellence in professional fantasy football. This comprehensive list meticulously chronicles the season-by-season records of the Bolts franchise, spanning from their inaugural campaign in 2012 to the present day. Traverse through the highs of playoff triumphs, the strategic leadership of General Manager Cory Colvin, and the accolades earned in the ever-evolving landscape of the GLFL. Uncover the narrative of a team that has left an indelible mark on the annals of fantasy football history.</p>
 
-<table>
+<table class="standard-table">
 <tbody>
 <tr>
 <td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
@@ -314,10 +232,9 @@ background: #FFFFFF;
 </tr>
 </tbody>
 </table>
-<br>
 
-
-<table>
+<div class="scrolling-table-scroll">
+<table class="scrolling-table">
 <tbody>
 <tr>
 <th>Year</th>
@@ -334,7 +251,7 @@ background: #FFFFFF;
 <td bgcolor="#9BD3DD">East</td>
 <td>11</td>
 <td>3</td>
-<td>Round 1 vs Miami 124-67 W<br>
+<td>Round 1 vs Miami 124-67 W<br><br>
 Round 2 vs Los Angeles 101-135 L</td>
 <td>MVP</td>
 <td rowspan="6">Colvin</td>
@@ -345,7 +262,7 @@ Round 2 vs Los Angeles 101-135 L</td>
 <td bgcolor="#9BD3DD">East</td>
 <td>11</td>
 <td>3</td>
-<td bgcolor="#FFCBA4">Round 2 vs Miami 73-66 W<br>
+<td bgcolor="#FFCBA4">Round 2 vs Miami 73-66 W<br><br>
 Championship vs Milwaukee 102-62 W</td>
 <td>GMoY</td>
 </tr>
@@ -395,8 +312,8 @@ Championship vs Milwaukee 102-62 W</td>
 <td>East</td>
 <td>7</td>
 <td>6</td>
-<td bgcolor="#A2E4B8">Round 1 vs Los Angeles 160-91 W<br>
-Round 2 vs Chicago 129-108 W<br>
+<td bgcolor="#A2E4B8">Round 1 vs Los Angeles 160-91 W<br><br>
+Round 2 vs Chicago 129-108 W<br><br>
 Championship vs Miami 112-129 L</td>
 <td>MVP</td>
 <td>Colvin</td>
@@ -413,10 +330,10 @@ Season Canceled
 <td bgcolor="#9BD3DD">East</td>
 <td>10</td>
 <td>4</td>
-<td bgcolor="#FFCBA4">Round 2 vs Milwaukee 140-132 W<br>
+<td bgcolor="#FFCBA4">Round 2 vs Milwaukee 140-132 W<br><br>
 Championship vs Los Angeles 148-118 W</td>
 <td>GMoY</td>
-<td rowspan="4">Colvin</td>
+<td rowspan="5">Colvin</td>
 </tr>
 
 
@@ -451,13 +368,23 @@ Championship vs Los Angeles 148-118 W</td>
 <td> </td>
 </tr>
 
+	
+<tr>
+<td>2024</td>
+<td>East</td>
+<td>4</td>
+<td>10</td>
+<td> </td>
+<td> </td>
+</tr>
+
 
 
 
 <tr>
 <td colspan="2">Season Record</td>
-<td>82</td>
-<td>67</td>
+<td>86</td>
+<td>77</td>
 </tr>
 
 <tr>
@@ -468,80 +395,58 @@ Championship vs Los Angeles 148-118 W</td>
 
 <tr>
 <td colspan="2">Total Record</td>
-<td>89</td>
-<td>72</td>
+<td>93</td>
+<td>82</td>
 </tr>
 
 </tbody>
 </table>
 
-<p> </p>
-<img src="https://www.dropbox.com/scl/fi/gscr1b7gkjgjm72rqvdww/2013-Champions-Logo.png?rlkey=xc8syxe6kgropjcwnnf69ozpg&st=6mave33v&raw=1" width="207" height="200" alt=""/>
+<img src="../../images/scl/fi/gscr1b7gkjgjm72rqvdww/2013-Champions-Logo.png?rlkey=xc8syxe6kgropjcwnnf69ozpg&st=6mave33v&raw=1" width="207" height="200" alt=""/>
 
-<img src="https://www.dropbox.com/scl/fi/5df6xu0uca3bst99i4xcq/2021-Champions-Logo.png?rlkey=e0h84lv901xn9q5tlh83iht3b&st=mll42elj&raw=1" width="207" height="200" alt=""/>
-
-
+<img src="../../images/scl/fi/5df6xu0uca3bst99i4xcq/2021-Champions-Logo.png?rlkey=e0h84lv901xn9q5tlh83iht3b&st=mll42elj&raw=1" width="207" height="200" alt=""/>
 
 </div>
 
 
 
 <h3>Head to Head Records</h3>
-<div class="wrap h2h">
-
+<div class="standard-table">
 
 <div class="controls">
-<label for="team1">Team 1:</label>
-<select id="team1">
-<option value="">— Select team —</option>
-</select>
+<!-- Hardcoded Team 1 label -->
+<label>Team 1:</label>
+<span>Brooklyn Bolts</span>
 
+<!-- Team 2 dropdown -->
 <label for="team2">Team 2:</label>
 <select id="team2">
-<option value="">— Select team —</option>
-<option value="ALL_TEAMS">All Teams</option>
+<option value="ALL_TEAMS">— All Teams —</option>
 </select>
 
-<label for="yearFilter">Year:</label>
-<select id="yearFilter">
+<!-- Year dropdown -->
+<label for="yearSelect">Year:</label>
+<select id="yearSelect">
 <option value="ALL_YEARS">— All Years —</option>
 </select>
 
+<!-- Game type dropdown -->
 <label for="gameTypeFilter">Game Type:</label>
 <select id="gameTypeFilter">
 <option value="ALL_TYPES">— All Types —</option>
 </select>
-
-<input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
 </div>
 
-<div class="summary" id="summaryArea" style="display:none;">
-<div class="card" id="cardTeam1">
-<h3 id="cardTeam1Name">Team 1</h3>
-<p id="cardTeam1Record">0 - 0</p>
-<div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam1PF">0</span></div>
-</div>
 
-<div class="card" id="cardTie">
-<h3 style="color:#666">Head-to-Head</h3>
-<p id="head2headSummary">0 games</p>
-<div style="font-size:12px;color:#666;margin-top:6px;">Most recent: <span id="mostRecent">N/A</span></div>
-</div>
-
-<div class="card" id="cardTeam2">
-<h3 id="cardTeam2Name">Team 2</h3>
-<p id="cardTeam2Record">0 - 0</p>
-<div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
-</div>
-</div>
 
 <div class="loading" id="loadingMsg">Loading match data...</div>
 
 <div id="matchTableWrap" style="display:none;">
-<table id="matchTable">
+<div class="table-wrap"> <!-- <-- add this wrapper -->
+<table class="standard-table" id="matchTable">
 <thead>
 <tr>
-<th style="width:120px">Date</th>
+<th style="width:120px">Week</th>
 <th>Team 1</th>
 <th>Team 2</th>
 <th style="width:120px">Score</th>
@@ -551,8 +456,8 @@ Championship vs Los Angeles 148-118 W</td>
 <tbody></tbody>
 </table>
 <div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+</div> <!-- /.table-wrap -->
 <br>
-</div>
 </div>
 </div>
 
@@ -564,7 +469,7 @@ Championship vs Los Angeles 148-118 W</td>
 
 
 <div class="table-container">
-<table>
+<table class="standard-table">
 <tr>
 <th colspan="2">Quarterbacks</th>
 </tr>
@@ -581,7 +486,7 @@ Championship vs Los Angeles 148-118 W</td>
 </div>
 
 <div class="table-container">
-<table>
+<table class="standard-table">
 <tr>
 <th colspan="2">Running Backs</th>
 </tr>
@@ -607,7 +512,7 @@ Championship vs Los Angeles 148-118 W</td>
 </div>
 
 <div class="table-container">
-<table>
+<table class="standard-table">
 <tr>
 <th colspan="2">Wide Receivers</th>
 </tr>
@@ -639,7 +544,7 @@ Championship vs Los Angeles 148-118 W</td>
 <br>
 
 <div class="table-container">
-<table>
+<table class="standard-table">
 <tr>
 <th colspan="2">Tight Ends</th>
 </tr>
@@ -657,7 +562,7 @@ Championship vs Los Angeles 148-118 W</td>
 
 
 <div class="table-container">
-<table>
+<table class="standard-table">
 <tr>
 <th colspan="2">Defense</th>
 </tr>
@@ -687,7 +592,7 @@ Championship vs Los Angeles 148-118 W</td>
 
 
 <div class="table-container">
-<table>
+<table class="standard-table">
 <tr>
 <th colspan="2">Kickers</th>
 </tr>
@@ -703,7 +608,8 @@ Championship vs Los Angeles 148-118 W</td>
 <p>The Brooklyn Bolts' journey through the realms of fantasy football has been guided by the unwavering vision of Cory Colvin, the team's first and sole General Manager. As one of the original architects of the franchise since its inception in 2012, Colvin's strategic prowess and commitment have steered the Bolts through soaring triumphs, division championships, and memorable playoff runs. His tenure has not only defined the essence of Brooklyn Bolts but has left an enduring legacy in the tapestry of the GLFL. Join us in celebrating the leadership and strategic acumen that has propelled the Brooklyn Bolts to new heights under the stewardship of General Manager Cory Colvin.</p>
 
 
-<table>
+<div class="scrolling-table-scroll">
+<table class="scrolling-table">
 <tbody>
 <tr>
 <th>General Manager</th>
@@ -722,9 +628,9 @@ Championship vs Los Angeles 148-118 W</td>
 <tr>
 <td>Cory Colvin</td>
 <td>2012-2017, 2019-Present</td>
-<td>89</td>
-<td>72</td>
-<td>0.553</td>
+<td>93</td>
+<td>82</td>
+<td>0.531</td>
 <td>2</td>		
 <td>2</td>
 <td>3</td>
@@ -737,17 +643,13 @@ Championship vs Los Angeles 148-118 W</td>
 </table>
 <br>
 <p>				
-<img src="https://www.dropbox.com/scl/fi/xsqqwg92gkjthtpe1a1ne/Brooklyn-Jersey-CC.png?rlkey=595jjf5ll67s5qqrzvhoyohtu&st=m2x9p5oj&raw=1" width="154" height="150" alt=""/></p>
+<img src="../../images/scl/fi/xsqqwg92gkjthtpe1a1ne/Brooklyn-Jersey-CC.png?rlkey=595jjf5ll67s5qqrzvhoyohtu&st=m2x9p5oj&raw=1" width="154" height="150" alt=""/></p>
 
-</div>
-
-<h3>Awards & Honors</h3>
-
-
+<h3>Awards &amp; Honors</h3>
 
 
 <h3>GLFL MVPs</h3>
-<table>
+<table class="standard-table">
 <tbody>
 <tr>
 <th>Year</th>
@@ -806,245 +708,201 @@ Championship vs Los Angeles 148-118 W</td>
 
 
 
-<img src="https://www.dropbox.com/scl/fi/gscr1b7gkjgjm72rqvdww/2013-Champions-Logo.png?rlkey=xc8syxe6kgropjcwnnf69ozpg&st=6mave33v&raw=1" width="207" height="200" alt=""/>
+<img src="../../images/scl/fi/gscr1b7gkjgjm72rqvdww/2013-Champions-Logo.png?rlkey=xc8syxe6kgropjcwnnf69ozpg&st=6mave33v&raw=1" width="207" height="200" alt=""/>
 
-<img src="https://www.dropbox.com/scl/fi/5df6xu0uca3bst99i4xcq/2021-Champions-Logo.png?rlkey=e0h84lv901xn9q5tlh83iht3b&st=mll42elj&raw=1" width="207" height="200" alt=""/>
+<img src="../../images/scl/fi/5df6xu0uca3bst99i4xcq/2021-Champions-Logo.png?rlkey=e0h84lv901xn9q5tlh83iht3b&st=mll42elj&raw=1" width="207" height="200" alt=""/>
 
 
 
 </div>
 
 
-
-
-
-
-
 <script>
-const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
-let allMatches = [];
-let teams = [];
+document.addEventListener("DOMContentLoaded", async function() {
 
+// ===================== MOBILE NAV =====================
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+hamburger.addEventListener("click", e => {
+e.stopPropagation();
+navLinks.classList.toggle("nav-active");
+});
+
+dropdownLinks.forEach(link => {
+link.addEventListener("click", e => {
+if (window.innerWidth <= 768) {
+e.preventDefault();
+const submenu = link.nextElementSibling;
+submenu.classList.toggle("dropdown-active");
+}
+});
+});
+
+document.addEventListener("click", e => {
+if (window.innerWidth <= 768) {
+const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+if (!isClickInsideNav) {
+navLinks.classList.remove("nav-active");
+document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+}
+}
+});
+
+// ===================== CONFIG =====================
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+const fixedTeam = "Brooklyn Bolts"; // ============================================================================================================================== Hardcoded team for this page
+
+// Elements
+const yearSelect = document.getElementById("yearSelect");
+const team2Select = document.getElementById("team2");
+const gameTypeSelect = document.getElementById("gameTypeFilter");
+const matchTableWrap = document.getElementById("matchTableWrap");
+const matchTableBody = document.querySelector("#matchTable tbody");
+const loadingMsg = document.getElementById("loadingMsg");
+const noMatchesMsg = document.getElementById("noMatches");
+
+let allMatches = [];
+let availableYears = [];
+
+// ===================== UTILITIES =====================
 function parseCsvToObjects(csvText) {
-const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
+const lines = csvText.trim().split(/\r?\n/);
 const headers = lines.shift().split(",").map(h => h.trim());
 return lines.map(line => {
 const cols = line.split(",").map(c => c.trim());
 const obj = {};
-headers.forEach((h,i)=> obj[h]=cols[i]??"");
+headers.forEach((h,i) => obj[h] = cols[i] || "");
 return obj;
 });
 }
 
 function parseDate_mmddyy(s) {
 if (!s) return null;
-const parts = s.split("/").map(p=>parseInt(p,10));
-if (parts.length!==3 || parts.some(isNaN)) return null;
-let [m,d,y]=parts;
-if (y<100) y+=2000;
-return new Date(y,m-1,d);
+const [m,d,y] = s.split("/").map(n => parseInt(n,10));
+if (!m || !d || !y) return null;
+return new Date(y<100 ? y+2000 : y, m-1, d);
 }
 
-function formatDateShort(dateObj) {
-if (!dateObj) return "N/A";
-const m=String(dateObj.getMonth()+1).padStart(2,"0");
-const d=String(dateObj.getDate()).padStart(2,"0");
-const yy=String(dateObj.getFullYear()).slice(-2);
-return `${m}/${d}/${yy}`;
+function esc(s) { return String(s || ""); }
+
+// ===================== DROPDOWNS =====================
+function populateYearDropdown() {
+yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
+Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
+yearSelect.appendChild(new Option(year, year));
+});
+// Default to 2025 if available
+yearSelect.value = availableYears.includes(2025) ? "2025" : availableYears[0];
+yearSelect.addEventListener("change", updateDisplay);
 }
 
-async function loadCsvAndInit() {
-try {
-const res = await fetch(csvUrl);
-if(!res.ok) throw new Error("Network error "+res.status);
-const text = await res.text();
-const rows = parseCsvToObjects(text);
-
-allMatches = rows.map(r=>{
-const d=parseDate_mmddyy(r["Date"]);
-return {
-rawDate: r["Date"]||"",
-date: d,
-team1: (r["Team 1"]||"").trim(),
-team2: (r["Team 2"]||"").trim(),
-score1: parseInt(r["Team 1 Score"]||"0",10),
-score2: parseInt(r["Team 2 Score"]||"0",10),
-gameType: (r["Game Type"]||"").trim() // ✅ new field
-};
-}).filter(m=>m.team1 && m.team2);
-
-const teamSet=new Set();
-allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
-teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
-
-populateDropdowns();
-populateYearDropdown();
-populateGameTypeDropdown(); // ✅ populate Game Type
-document.getElementById("loadingMsg").style.display="none";
-} catch(err) {
-document.getElementById("loadingMsg").textContent="Error loading match data.";
-console.error(err);
-}
-}
-
-function populateDropdowns() {
-const t1=document.getElementById("team1");
-const t2=document.getElementById("team2");
-
-teams.forEach(team=>{
-const o1=document.createElement("option"); o1.value=team; o1.textContent=team; t1.appendChild(o1);
-const o2=document.createElement("option"); o2.value=team; o2.textContent=team; t2.appendChild(o2);
+function populateTeam2Dropdown() {
+const opponents = new Set();
+allMatches.forEach(m => {
+if (m.team1 === fixedTeam) opponents.add(m.team2);
+else if (m.team2 === fixedTeam) opponents.add(m.team1);
 });
 
-t1.value="Brooklyn Bolts"; // default
-t1.addEventListener("change", updateDisplay);
-t2.addEventListener("change", updateDisplay);
-document.getElementById("matchFilter").addEventListener("input", updateDisplay);
-document.getElementById("yearFilter").addEventListener("change", updateDisplay);
-document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay); // ✅ new
-
-updateDisplay();
-}
-
-function populateYearDropdown(){
-const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
-const yearDropdown=document.getElementById("yearFilter");
-Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
-const opt=document.createElement("option");
-opt.value=y;
-opt.textContent=y;
-yearDropdown.appendChild(opt);
+team2Select.innerHTML = "";
+team2Select.appendChild(new Option("— All Teams —", "ALL_TEAMS"));
+Array.from(opponents).sort().forEach(team => {
+team2Select.appendChild(new Option(team, team));
 });
+team2Select.value = "ALL_TEAMS";
+team2Select.addEventListener("change", updateDisplay);
 }
 
 function populateGameTypeDropdown() {
-const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
-const typeDropdown = document.getElementById("gameTypeFilter");
+const typeSet = new Set(allMatches.map(m => m.gameType).filter(Boolean));
+gameTypeSelect.innerHTML = `<option value="ALL_TYPES">— All Types —</option>`;
+Array.from(typeSet).sort().forEach(type => {
+gameTypeSelect.appendChild(new Option(type, type));
+});
+gameTypeSelect.value = "ALL_TYPES";
+gameTypeSelect.addEventListener("change", updateDisplay);
+}
 
-Array.from(typeSet).sort().forEach(t => {
-const opt = document.createElement("option");
-opt.value = t;
-opt.textContent = t;
-typeDropdown.appendChild(opt);
+// ===================== LOAD CSV =====================
+async function loadCsvAndInit() {
+try {
+const res = await fetch(csvUrl);
+const text = await res.text();
+const rows = parseCsvToObjects(text);
+
+allMatches = rows.map(r => {
+const date = parseDate_mmddyy(r["Date"]);
+return {
+date,
+week: (r["Week"] || "").trim(),
+team1: (r["Team 1"] || "").trim(),
+team2: (r["Team 2"] || "").trim(),
+score1: Number(r["Team 1 Score"] || 0),
+score2: Number(r["Team 2 Score"] || 0),
+gameType: (r["Game Type"] || "").trim()
+};
+}).filter(m => m.date && m.team1 && m.team2 && (m.team1 === fixedTeam || m.team2 === fixedTeam));
+
+// Available years for dropdown
+availableYears = allMatches.map(m => m.date.getFullYear());
+
+populateYearDropdown();
+populateTeam2Dropdown();
+populateGameTypeDropdown();
+
+loadingMsg.style.display = "none";
+updateDisplay();
+} catch (err) {
+console.error(err);
+loadingMsg.textContent = "Error loading match data.";
+}
+}
+
+// ===================== FILTER + RENDER =====================
+function updateDisplay() {
+const selectedYear = yearSelect.value;
+const selectedTeam2 = team2Select.value;
+const selectedType = gameTypeSelect.value;
+
+let filtered = allMatches.filter(m => {
+const yearOk = selectedYear === "ALL_YEARS" || m.date.getFullYear().toString() === selectedYear;
+const team2Ok = selectedTeam2 === "ALL_TEAMS" || m.team1 === selectedTeam2 || m.team2 === selectedTeam2;
+const typeOk = selectedType === "ALL_TYPES" || m.gameType === selectedType;
+return team2Ok && typeOk && (m.team1 === fixedTeam || m.team2 === fixedTeam) && yearOk;
 });
 
-typeDropdown.value = "ALL_TYPES";
-}
+filtered.sort((a,b) => a.date - b.date);
 
-function getWinnerClass(m){
-if(m.score1>m.score2) return "winner";
-if(m.score2>m.score1) return "winner";
-return "";
-}
+matchTableBody.innerHTML = "";
+let toggle = false;
+let lastWeek = null;
 
-function updateDisplay(){
-const teamA = document.getElementById("team1").value;
-const teamB = document.getElementById("team2").value;
-const yearVal = document.getElementById("yearFilter").value;
-const gameTypeVal = document.getElementById("gameTypeFilter").value; // ✅
-const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
-
-let filtered = allMatches.filter(m=>
-(m.team1===teamA && (teamB==="ALL_TEAMS" || m.team2===teamB)) ||
-(m.team2===teamA && (teamB==="ALL_TEAMS" || m.team1===teamB))
-);
-
-if(yearVal!=="ALL_YEARS"){
-filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
-}
-
-if(gameTypeVal !== "ALL_TYPES") { // ✅ filter Game Type
-filtered = filtered.filter(m => m.gameType === gameTypeVal);
-}
-
-if(searchVal!==""){
-filtered = filtered.filter(m=>(
-m.team1.toLowerCase().includes(searchVal) ||
-m.team2.toLowerCase().includes(searchVal)
-));
-}
-
-filtered.sort((a,b)=>b.date - a.date);
-
-// --- SUMMARY CALCULATION ---
-if (filtered.length > 0) {
-let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
 filtered.forEach(m => {
-pfA += (m.team1 === teamA ? m.score1 : m.score2);
-pfB += (m.team1 === teamB ? m.score1 : m.score2);
-
-if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
-else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
-
-if (teamB !== "ALL_TEAMS") {
-if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
-else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
+if (m.week !== lastWeek) {
+toggle = !toggle;
+lastWeek = m.week;
 }
-});
-
-document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
-document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
-document.getElementById("cardTeam1PF").textContent = pfA;
-
-if (teamB === "ALL_TEAMS") {
-document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
-document.getElementById("cardTeam2Record").textContent = `N/A`;
-document.getElementById("cardTeam2PF").textContent = `N/A`;
-} else {
-document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
-document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
-document.getElementById("cardTeam2PF").textContent = pfB;
-}
-
-document.getElementById("summaryArea").style.display = "flex";
-} else {
-document.getElementById("summaryArea").style.display = "none";
-}
-
-const tbody = document.querySelector("#matchTable tbody");
-tbody.innerHTML="";
-filtered.forEach(m=>{
 const tr = document.createElement("tr");
+tr.style.backgroundColor = toggle ? "#f3f3f3" : "#ffffff";
 tr.innerHTML = `
-<td>${formatDateShort(m.date)}</td>
-<td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
-<td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
+<td>${esc(m.week)}</td>
+<td class="${m.score1 > m.score2 ? "winner" : ""}">${esc(m.team1)}</td>
+<td class="${m.score2 > m.score1 ? "winner" : ""}">${esc(m.team2)}</td>
 <td>${m.score1} - ${m.score2}</td>
-<td>${m.gameType || ""}</td>`;
-tbody.appendChild(tr);
+<td>${esc(m.gameType)}</td>
+`;
+matchTableBody.appendChild(tr);
 });
 
-document.getElementById("matchTableWrap").style.display="block";
-document.getElementById("noMatches").style.display=filtered.length===0?"block":"none";
-document.getElementById("summaryArea").style.display=filtered.length>0?"flex":"none";
-
-refreshCollapsibleHeight();
+matchTableWrap.style.display = "block";
+noMatchesMsg.style.display = filtered.length ? "none" : "block";
 }
 
+// ===================== START =====================
 loadCsvAndInit();
 
-// --- Collapsible logic ---
-var coll = document.getElementsByClassName("collapsible");
-for (let i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-this.classList.toggle("active");
-var content = this.nextElementSibling;
-if (content.style.maxHeight){
-content.style.maxHeight = null;
-} else {
-content.style.maxHeight = content.scrollHeight + "px";
-} 
 });
-}
-
-// --- helper to fix cutoff issue ---
-function refreshCollapsibleHeight() {
-document.querySelectorAll(".collapsible.active + .content").forEach(content => {
-content.style.maxHeight = content.scrollHeight + "px";
-});
-}
-</script>
-
 </script>
 
 
