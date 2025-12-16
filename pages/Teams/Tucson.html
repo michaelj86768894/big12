@@ -3,324 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boston Brawlers</title>
+<title>Tucson Sugar Skulls</title>
 <!-- ========================================================================================== LINKED STYLESHEETS ================== -->
 <link rel="stylesheet" href="../../css/global.css">
 <link rel="stylesheet" href="../../css/tables.css">
 
 <style>
-	
-/* ====== Global Styles ====== */
-body { 
-  font-family: Arial, Helvetica, sans-serif; 
-  color:#222; 
-  padding:20px; 
-  background:#ffffff; 
-}
-
-.wrap { max-width:1100px; margin:0 auto; }
-h1 { text-align:center; color:#000000; margin-bottom:10px; } /* PRIMARY */
-
-/* ====== Controls + Cards ====== */
+/* ========================================================================================== Controls + Cards ====== */
 .controls { 
-  text-align:center; 
-  margin:15px 0; 
-  display:flex; 
-  flex-wrap:wrap; 
-  justify-content:center; 
-  gap:10px; 
+text-align:center; 
+margin:15px 0; 
+display:flex; 
+flex-wrap:wrap; 
+justify-content:center; 
+gap:10px; 
 }
 
 select, input[type="text"] { 
-  padding:8px 10px; 
-  font-size:14px; 
+padding:8px 10px; 
+font-size:14px; 
 }
 
 .summary { 
-  display:flex; 
-  justify-content: center; 
-  gap:20px; 
-  margin:15px 0; 
-  flex-wrap:wrap; 
+display:flex; 
+justify-content: center; 
+gap:20px; 
+margin:15px 0; 
+flex-wrap:wrap; 
 }
 
-.card { 
-  background:#fff; 
-  padding:12px 16px; 
-  border-radius:8px; 
-  box-shadow:0 2px 6px rgba(0,0,0,0.06); 
-  min-width:180px; 
-  text-align:center; 
-}
-
-.card h3 { 
-  margin:0 0 6px; 
-  font-size:14px; 
-  color:#444; 
-}
-
-.card p { 
-  margin:0; 
-  font-weight:700; 
-  font-size:18px; 
-  color:#000000; /* PRIMARY */
-}
-
-/* ====== Your Original Table Styles ====== */
-table, th, td {
-  table-layout: auto;
-  border: 1px solid #000000; /* PRIMARY */
-  border-collapse: collapse;
-  padding: 5px;
-  color: black; /* Default text color */
-}
-
-th {
-  background-color: #000000; /* PRIMARY */
-  color: #ffffff;
-}
-
-/*tr:nth-child(odd) { background-color: #ffffff; }
-tr:nth-child(even) { background-color: #ffffff; }*/
-
-tr:hover td, tr:hover th {
-  background-color: #edb11e; /* SECONDARY */
-  color: #FFFFFF;
-  border: 1px solid #002244; 
-}
-
-.table-container {
-  display: inline-block;
-  margin: 3px;
-  vertical-align: top;
-}
-
-/* ====== Collapsible Styles ====== */
-.collapsible {
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  border: none;
-  padding-top: 1%;
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 24px;
-}
-
-.active, .collapsible:hover {
-  background-color: #000000; /* PRIMARY */
-  color: #ffffff;
-}
-
-.collapsible:before {
-  content: '\02c6';
-  color: #000000;
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-.active:before {
-  content: "\02c7";
-}
-
-.content {
-  max-height: 0;
-  overflow: hidden;
-  background-color: #ffffff;
-  transition: max-height 0.2s ease-out;
-  color: black;
-}
-
-.content a { color: #edb11e; } /* SECONDARY */
-.content a:hover { color: #edb11e; } /* SECONDARY */
-
-/* ====== Head-to-Head Scoped Table Styles ====== */
-.h2h table {
-  width:100%; 
-  border-collapse:collapse; 
-  margin-top:10px; 
-  background:#fff; 
-  border-radius:8px; 
-  overflow:hidden; 
-  box-shadow:0 2px 8px rgba(0,0,0,0.06); 
-}
-
-.h2h th { 
-  background:#000000; /* PRIMARY */ 
-  color:#fff; 
-  padding:10px; 
-  text-align:left; 
-  font-weight:600; 
-}
-
-.h2h td { 
-  padding:10px; 
-  border-bottom:1px solid #eee; 
-}
-
-/*.h2h tr:nth-child(even) td { 
-  background:#ffffff; 
-}*/
-
-.h2h td.winner { 
-  font-weight:700; 
-  background:#FCC201 !important;
-/*	color: #00674F !important;*/
+/* stronger, general winner highlight (covers .h2h tables + your match table) */
+.h2h td.winner,
+.divisions-table td.winner,
+#matchTable td.winner,
+.table-wrap td.winner {
+font-weight: 700 !important;
+background: #F5E6C8 !important;
+color: #002855 !important;
+position: relative;
+z-index: 2;
 }
 
 .no-data, .loading { 
-  text-align:center; 
-  margin-top:14px; 
-  color:#666; 
+text-align:center; 
+margin-top:14px; 
+color:#666; 
 }
 
-/* ====== Mobile ====== */
-@media (max-width:640px) {
-  th, td { font-size:13px; padding:8px; }
-  .card { min-width:140px; }
-  .controls { flex-direction: column; gap:8px; }
+.table-wrap {
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
 }
 
-.box {
-display: inline-block;
-width: 20px;
-height: 20px;
-border: 1px solid rgba(0, 0, 0, .2);
+.table-wrap table {
+width: 100%;
+min-width: 600px;
 }
-
-.first {
-  background: #000000;
-}
-
-.second {
-  background: #edb11e;
-}
-	
-.third {
-  background: #BD202E;
-}
-
 </style>
-
-<meta charset="UTF-8">
-<title>Tucson Sugar Skulls</title>
 </head>
 
 <body>
-	
-	
 
-<p>The Tucson Sugar Skulls, a formidable contender in professional fantasy football, proudly represents the GLFL's West division. Nestled in the strategic hub of Brookfield, Wisconsin, the Sugar Skulls have been a dynamic force in the GLFL since its formation in 2012. With a history marked by perseverance and triumph, the Sugar Skulls secured their place in the Lakefront Bowl three times—once in the league's inaugural season in 2012, where they faced defeat against the Los Angeles Wildcats, again in 2022, emerging victorious against the Northern Arizona Wranglers for their first league title and once more in 2024 again claiming victory, this time against the Chicago Slaughter. Under the astute guidance of current General Manager Mason Bautch, the Sugar Skulls continue to carve its path through the fantasy gridiron.</p>
-	
-<table class="standard-table">
-  <tbody>
-	  <tr>
-      <td colspan="2"><strong>Tucson Sugar Skulls</strong><br><img src="../../images/scl/fi/xjdv4beghvtk5ig4mwd36/Tucson.png?rlkey=38wjn0ab8u86qkipikuqkv99r&st=r4hknc9e&raw=1" width="302" height="200" alt=""/></td>
-    </tr>
-    <tr>
-      <td><strong>Established</strong></td>
-      <td>2012</td>
-    </tr>
-    <tr>
-      <td><strong>Headquarters</strong></td>
-      <td>Brookfield, WI</td>
-    </tr>
-	  	  	<tr>
-		<td><strong>Team Colors</strong></td>
-		<td><div class="box first"></div>
-		<div class="box second"></div>
-			<div class="box third"></div>
-		</td></tr>
-
-    <tr>
-      <th colspan="2"><strong>Conference Affiliations</strong></th>
-    </tr>
-    <tr>
-      <td><strong>West</strong></td>
-      <td>2012-Present</td>
-    </tr>
-	  <tr>
-      <th colspan="2"><strong>Personnel</strong></th>
-    </tr>  
-    <tr>
-      <td><strong>General Manager</strong></td>
-      <td>Mason Bautch</td>
-    </tr>
-	  <tr>
-      <th colspan="2"><strong>Team History</strong></th>
-    </tr> 
-    	  <tr>
-      <td colspan="2">Green Bay Blizzard (2012-2024)<br>Tucson Sugar Skulls (2025-Present)</td>
-    </tr> 
-  	  <tr>
-      <th colspan="2"><strong>Championships</strong></th>
-    </tr> 
-    <tr>
-      <td><strong>Lakefront Bowl (2)</strong></td>
-      <td>2022 (X), 2024 (XII)</td>
-    </tr>
-    <tr>
-      <td><strong>Conference (3)</strong></td>
-      <td>2012, 2022, 2024</td>
-    </tr>
-	    <tr>
-      <td><strong>Division (3)</strong></td>
-      <td>2013, 2014, 2017</td>
-    </tr>
-		    <tr>
-      <td><strong>Playoffs (7)</strong></td>
-      <td>2012, 2013, 2014, 2017,<br> 2021, 2022, 2024</td>
-    </tr>
-		    <tr>
-      <td><strong>Winning Seasons (7)</strong></td>
-      <td>2012, 2013, 2014, 2017,<br> 2018, 2022, 2024</td>
-    </tr>
-	  <tr>
-      <td colspan="2"><img src="../../images/scl/fi/vmean3ivtulgm8rwb67l1/Tucson-Helmet.png?rlkey=fm9jm2v56qdyaku1tyoddfy69&st=e58ecs8i&raw=1" width="187" height="150" alt=""/></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<p> </p>
-
-	
-	
-<h3>Franchise History</h3>
-<h3>Green bay Blizzard</h3>
-	
-	<p>The Tucson Sugar Skulls, originally known as the Green Bay Blizzard, have been a consistent presence in the league since 2012. From their inception through the 2024 season, the franchise played under the Green Bay Blizzard name, building a reputation for competitive play and a strong fan base in Wisconsin. The franchise has been led by multiple general managers, including Paris Reed, Dan Uribe, and later Mason Bautch, under whom the team captured its first Lakefront Bowls.</p>
-	
-<p>The Blizzard debuted in 2012 with a strong 9-5 record, advancing to the Lakefront Bowl Lakefront Bowl after defeating Northern Arizona and Milwaukee in the playoffs before falling to Los Angeles. The following year, Green Bay claimed its first division title at 10-4, though their postseason ended in a first-round upset to Miami. In 2014, Reed’s squad dominated the regular season with an 11-2 record, again winning the West, but fell short in the playoffs to Milwaukee despite Reed earning GM of the Year honors.</p>
-	
-<p>After a mid-decade slump, which included missing the playoffs from 2015 through 2016 and another underwhelming year in 2019, the team transitioned from Reed to Dan Uribe in 2017. Uribe delivered a 9-4 record and a division crown that season, but the Blizzard were eliminated by Miami in the second round. The struggles resumed in 2018 and 2019 before the 2020 season was canceled due to the COVID-19 pandemic.</p>
-	
-<p>The arrival of Mason Bautch in 2021 revitalized the franchise. After a balanced 7-7 year and a first-round playoff loss, Green Bay roared back in 2022, finishing 8-6 and embarking on a historic postseason run. They defeated Miami, Los Angeles, and Northern Arizona to capture their first Lakefront Bowl in franchise history with a 185-122 victory. Two years later, in 2024, the Blizzard delivered an even more dominant playoff performance, defeating Boston, Milwaukee, and Chicago en route to their second Lakefront Bowl, punctuated by a 233-195 win in the title game.</p>
-	
-	<p>The 2023 season was an anomaly during Bautch’s tenure, as Green Bay posted a 6-8 record and missed the playoffs despite Christian McCaffrey earning league MVP honors. However, the team rebounded in 2024, cementing its status as one of the league’s modern dynasties with back-to-back deep playoff runs and two titles in three seasons.</p>
-	
-	<h3>Move to Tucson</h3>
-	<p>In 2025, the team underwent a major rebrand, adopting the Tucson Sugar Skulls name and relocating to Arizona, marking a new chapter for the organization while maintaining its established identity within the league. The rebrand symbolizes the organization’s commitment to growth and long-term success in a competitive environment.</p>
-	
+<!-- ========================================================================================== LOGO BAR ================== -->
+<div class="team-logo-bar">
+<div class="team-logo-container">
+<a href="../Teams/Boston.html"><img src="../../images/Boston.png" alt="Boston" /></a>
+<a href="../Teams/Brooklyn.html"><img src="../../images/Brooklyn.png" alt="Brooklyn" /></a>
+<a href="../Teams/CedarRapids.html"><img src="../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+<a href="../Teams/Chicago.html"><img src="../../images/Chicago.png" alt="Chicago" /></a>
+<a href="../Teams/Cleveland.html"><img src="../../images/Cleveland.png" alt="Cleveland" /></a>
+<a href="../Teams/LosAngeles.html"><img src="../../images/LosAngeles.png" alt="Los Angeles" /></a>
+<a href="../Teams/Miami.html"><img src="../../images/Miami.png" alt="Miami" /></a>
+<a href="../Teams/Milwaukee.html"><img src="../../images/Milwaukee.png" alt="Milwaukee" /></a>
+<a href="../Teams/NorthernArizona.html"><img src="../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+<a href="../Teams/Philadelphia.html"><img src="../../images/Philadelphia.png" alt="Philadelphia" /></a>
+<a href="../Teams/Tucson.html"><img src="../../images/Tucson.png" alt="Tucson" /></a>
+<a href="../Teams/Vegas.html"><img src="../../images/Vegas.png" alt="Vegas" /></a>
+</div>
 </div>
 
+<!-- ========================================================================================== MAIN NAV ================== -->
+<nav class="main-nav">
+<div class="nav-container">
+
+<a href="../../index.html" class="logo">
+<img src="../../images/Logo.png" alt="League Logo" />
+</a>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
+<label for="menu-toggle" class="hamburger">&#9776;</label>
+
+<!-- Nav Links -->
+<ul class="nav-links">
+<li class="dropdown">
+<a href="#">About</a>
+<ul class="dropdown-content">
+<li><a href="../About.html">Who We Are</a></li>
+<li><a href="../Bylaws.html">Bylaws</a></li>
+</ul>
+</li>
+
+<li><a href="../News.html">News</a></li>
+
+<li class="dropdown">
+<a href="#">History</a>
+<ul class="dropdown-content">
+<li><a href="../History.html">History of the GLFL</a></li>
+<li><a href="../Seasons.html">GLFL Seasons</a></li>
+<li><a href="../Champions.html">GLFL Champions</a></li>
+<li><a href="../Awards.html">Individual Award Winners</a></li>
+<li><a href="../RecordBook.html">Record Book</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Schedule &amp; Standings</a>
+<ul class="dropdown-content">
+<li><a href="../Standings.html">Standings</a></li>
+<li><a href="../WeeklySchedule.html">Weekly Schedule</a></li>
+</ul>
+</li>
+
+<li><a href="../Teams.html">Teams</a></li>
+<li><a href="../Draft.html">Draft</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="text-container">
+
+
+
+<p>The Tucson Sugar Skulls, a formidable contender in professional fantasy football, proudly represents the GLFL's West division. Nestled in the strategic hub of Brookfield, Wisconsin, the Sugar Skulls have been a dynamic force in the GLFL since its formation in 2012. With a history marked by perseverance and triumph, the Sugar Skulls secured their place in the Lakefront Bowl three times—once in the league's inaugural season in 2012, where they faced defeat against the Los Angeles Wildcats, again in 2022, emerging victorious against the Northern Arizona Wranglers for their first league title and once more in 2024 again claiming victory, this time against the Chicago Slaughter. Under the astute guidance of current General Manager Mason Bautch, the Sugar Skulls continue to carve its path through the fantasy gridiron.</p>
+
+<table class="standard-table">
+<tbody>
+<tr>
+<td colspan="2"><strong>Tucson Sugar Skulls</strong><br><img src="../../images/Tucson.png" width="302" height="200" alt=""/></td>
+</tr>
+<tr>
+<td><strong>Established</strong></td>
+<td>2012</td>
+</tr>
+<tr>
+<td><strong>Headquarters</strong></td>
+<td>Brookfield, WI</td>
+</tr>
+<tr>
+<td><strong>Team Colors</strong></td>
+<td><div class="box first"></div>
+<div class="box second"></div>
+<div class="box third"></div>
+</td></tr>
+
+<tr>
+<th colspan="2"><strong>Conference Affiliations</strong></th>
+</tr>
+<tr>
+<td><strong>West</strong></td>
+<td>2012-Present</td>
+</tr>
+<tr>
+<th colspan="2"><strong>Personnel</strong></th>
+</tr>  
+<tr>
+<td><strong>General Manager</strong></td>
+<td>Mason Bautch</td>
+</tr>
+<tr>
+<th colspan="2"><strong>Team History</strong></th>
+</tr> 
+<tr>
+<td colspan="2">Green Bay Blizzard (2012-2024)<br>Tucson Sugar Skulls (2024-Present)</td>
+</tr> 
+<tr>
+<th colspan="2"><strong>Championships</strong></th>
+</tr> 
+<tr>
+<td><strong>Lakefront Bowl (2)</strong></td>
+<td>2022 (X), 2024 (XII)</td>
+</tr>
+<tr>
+<td><strong>Conference (3)</strong></td>
+<td>2012, 2022, 2024</td>
+</tr>
+<tr>
+<td><strong>Division (4)</strong></td>
+<td>2013, 2014, 2017, 2025</td>
+</tr>
+<tr>
+<td><strong>Playoffs (8)</strong></td>
+<td>2012, 2013, 2014, 2017,<br> 2021, 2022, 2024, 2025</td>
+</tr>
+<tr>
+<td><strong>Winning Seasons (8)</strong></td>
+<td>2012, 2013, 2014, 2017,<br> 2018, 2022, 2024, 2025</td>
+</tr>
+<tr>
+<td colspan="2"><img src="../../images/Helmets/TucsonHelmet.png" width="187" height="150" alt=""/></td>
+</tr>
+</tbody>
+</table>
+<h3>Franchise History</h3>
+<h3>Green bay Blizzard</h3>
+
+<p>The Tucson Sugar Skulls, originally known as the Green Bay Blizzard, have been a consistent presence in the league since 2012. From their inception through the 2024 season, the franchise played under the Green Bay Blizzard name, building a reputation for competitive play and a strong fan base in Wisconsin. The franchise has been led by multiple general managers, including Paris Reed, Dan Uribe, and later Mason Bautch, under whom the team captured its first Lakefront Bowls.</p>
+
+<p>The Blizzard debuted in 2012 with a strong 9-5 record, advancing to the Lakefront Bowl Lakefront Bowl after defeating Northern Arizona and Milwaukee in the playoffs before falling to Los Angeles. The following year, Green Bay claimed its first division title at 10-4, though their postseason ended in a first-round upset to Miami. In 2014, Reed’s squad dominated the regular season with an 11-2 record, again winning the West, but fell short in the playoffs to Milwaukee despite Reed earning GM of the Year honors.</p>
+
+<p>After a mid-decade slump, which included missing the playoffs from 2015 through 2016 and another underwhelming year in 2019, the team transitioned from Reed to Dan Uribe in 2017. Uribe delivered a 9-4 record and a division crown that season, but the Blizzard were eliminated by Miami in the second round. The struggles resumed in 2018 and 2019 before the 2020 season was canceled due to the COVID-19 pandemic.</p>
+
+<p>The arrival of Mason Bautch in 2021 revitalized the franchise. After a balanced 7-7 year and a first-round playoff loss, Green Bay roared back in 2022, finishing 8-6 and embarking on a historic postseason run. They defeated Miami, Los Angeles, and Northern Arizona to capture their first Lakefront Bowl in franchise history with a 185-122 victory. Two years later, in 2024, the Blizzard delivered an even more dominant playoff performance, defeating Boston, Milwaukee, and Chicago en route to their second Lakefront Bowl, punctuated by a 233-195 win in the title game.</p>
+
+<p>The 2023 season was an anomaly during Bautch’s tenure, as Green Bay posted a 6-8 record and missed the playoffs despite Christian McCaffrey earning league MVP honors. However, the team rebounded in 2024, cementing its status as one of the league’s modern dynasties with back-to-back deep playoff runs and two titles in three seasons.</p>
+
+<h3>Move to Tucson</h3>
+<p>In 2025, the team underwent a major rebrand, adopting the Tucson Sugar Skulls name and relocating to Arizona, marking a new chapter for the organization while maintaining its established identity within the league. The rebrand symbolizes the organization’s commitment to growth and long-term success in a competitive environment.</p>
+
 <h3>List of Tucson Seasons</h3>
-	
+
 <p>Embark on a chronological journey through the seasons of the Tucson Sugar Skulls, a team etching its name in the annals of fantasy football. This detailed list meticulously documents the season-by-season records of the Sugar Skulls franchise, from their debut campaign in 2012 to the present day. Uncover the highs and lows, playoff triumphs, league awards, and the dynamic leadership of General Managers who have shaped the Sugar Skulls's narrative in the ever-evolving realm of professional fantasy football.</p>
 
-	<table class="standard-table">
-	<tbody>
-		<tr>
-		<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
-		<td bgcolor="#A2E4B8">Conference Champions</td>
-		<td bgcolor="#9BD3DD">Division Champions</td>
-		</tr>
-		</tbody>
-	</table>
-	<br>
+<table class="standard-table">
+<tbody>
+<tr>
+<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
+<td bgcolor="#A2E4B8">Conference Champions</td>
+<td bgcolor="#9BD3DD">Division Champions</td>
+</tr>
+</tbody>
+</table>
 
-	
-	<div class="scrolling-table-scroll">
+<div class="scrolling-table-scroll">
 <table class="scrolling-table">
 <tbody>
 <tr>
@@ -333,251 +247,241 @@ border: 1px solid rgba(0, 0, 0, .2);
 <th>GM</th>
 </tr>
 
-	  
-	      <tr>
-      <td colspan="7" bgcolor="#023c19" style="color: white"><b>Green Bay Blizzard</b></td>
-    </tr>
 
-	  
-	  
-	  <tr>
-    <td>2012</td>
-    <td>West</td>
-    <td>9</td>
-    <td>5</td>
-	<td bgcolor="#A2E4B8">Wild Card vs Northern Arizona 104-62 W<br><br>
+<tr>
+<td colspan="7" bgcolor="#023c19" style="color: white"><b>Green Bay Blizzard</b></td>
+</tr>
+
+
+
+<tr>
+<td>2012</td>
+<td>West</td>
+<td>9</td>
+<td>5</td>
+<td bgcolor="#A2E4B8">Wild Card vs Northern Arizona 104-62 W<br><br>
 Divisonal Playoffs vs Milwaukee 112-104 W<br><br>
 Lakefront Bowl vs Los Angeles 68-85 L</td>
-    <td> </td>
-    <td rowspan="5">Reed</td>
-  </tr>
+<td> </td>
+<td rowspan="5">Reed</td>
+</tr>
 
-	    <tr>
-    <td>2013</td>
-    <td bgcolor="#9BD3DD">West</td>
-    <td>10</td>
-    <td>4</td>
-	<td>Wild Card vs Miami 88-105 L</td>
-    <td> </td>
-    </tr>
-	  
-	    <tr>
-    <td>2014</td>
-    <td bgcolor="#9BD3DD">West</td>
-    <td>11</td>
-    <td>2</td>
-	<td>Wild Card vs Milwaukee 116-154 L</td>
-    <td>GMoY</td>
-    </tr>
-	  
-	    <tr>
-    <td>2015</td>
-    <td>West</td>
-    <td>6</td>
-    <td>7</td>
-	<td> </td>
-    <td> </td>
-    </tr>
-	  
-	    <tr>
-    <td>2016</td>
-    <td>West</td>
-    <td>3</td>
-    <td>10</td>
-	<td> </td>
-    <td> </td>
-    </tr>
-	  
-	    <tr>
-    <td>2017</td>
-    <td bgcolor="#9BD3DD">West</td>
-    <td>9</td>
-    <td>4</td>
-	<td>Divisonal Playoffs vs Miami 91-180 L</td>
-    <td> </td>
-			<td rowspan="3">Uribe</td>
-    </tr>
-	  
-	    <tr>
-    <td>2018</td>
-    <td>West</td>
-    <td>8</td>
-    <td>6</td>
-	<td> </td>
-    <td> </td>
-    </tr>
-	  
-	  
-	    <tr>
-    <td>2019</td>
-    <td>West</td>
-    <td>4</td>
-    <td>9</td>
-	<td> </td>
-    <td> </td>
-  </tr>
-	  
-	    <tr>
-  <td colspan="7">
-  Season Canceled
-  </td>
-  </tr>
-	  
-	  	    <tr>
-    <td>2021</td>
-    <td>West</td>
-    <td>7</td>
-    <td>7</td>
-	<td>Wild Card vs Philadelphia 110-189 L</td>
-    <td> </td>
-    <td rowspan="4">Bautch</td>
-	  </tr>
-	  
-	  
-	  	  	    <tr>
-    <td>2022</td>
-    <td>West</td>
-    <td>8</td>
-    <td>6</td>
-	<td bgcolor="#FFCBA4">Wild Card vs Miami 157-108 W<br><br>
+<tr>
+<td>2013</td>
+<td bgcolor="#9BD3DD">West</td>
+<td>10</td>
+<td>4</td>
+<td>Wild Card vs Miami 88-105 L</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>2014</td>
+<td bgcolor="#9BD3DD">West</td>
+<td>11</td>
+<td>2</td>
+<td>Wild Card vs Milwaukee 116-154 L</td>
+<td>GMoY</td>
+</tr>
+
+<tr>
+<td>2015</td>
+<td>West</td>
+<td>6</td>
+<td>7</td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>2016</td>
+<td>West</td>
+<td>3</td>
+<td>10</td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td>2017</td>
+<td bgcolor="#9BD3DD">West</td>
+<td>9</td>
+<td>4</td>
+<td>Divisonal Playoffs vs Miami 91-180 L</td>
+<td> </td>
+<td rowspan="3">Uribe</td>
+</tr>
+
+<tr>
+<td>2018</td>
+<td>West</td>
+<td>8</td>
+<td>6</td>
+<td> </td>
+<td> </td>
+</tr>
+
+
+<tr>
+<td>2019</td>
+<td>West</td>
+<td>4</td>
+<td>9</td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td colspan="7">
+Season Canceled
+</td>
+</tr>
+
+<tr>
+<td>2021</td>
+<td>West</td>
+<td>7</td>
+<td>7</td>
+<td>Wild Card vs Philadelphia 110-189 L</td>
+<td> </td>
+<td rowspan="4">Bautch</td>
+</tr>
+
+
+<tr>
+<td>2022</td>
+<td>West</td>
+<td>8</td>
+<td>6</td>
+<td bgcolor="#FFCBA4">Wild Card vs Miami 157-108 W<br><br>
 Divisonal Playoffs vs Los Angeles 139-118 W<br><br>
 Lakefront Bowl vs Northern Arizona 185-122 W</td>
-    <td> </td>
-	  </tr>
-	  
-	  
-	  	  	  	    <tr>
-    <td>2023</td>
-    <td>West</td>
-    <td>6</td>
-    <td>8</td>
-	<td> </td>
-    <td>MVP</td>
-	  </tr>
-	  
-	  
-	  
-	  	  	  	  	    <tr>
-    <td>2024</td>
-    <td>West</td>
-    <td>9</td>
-    <td>5</td>
-	<td  bgcolor="#FFCBA4">Wild Card vs Boston 262-225 W<br><br>
+<td> </td>
+</tr>
+
+
+<tr>
+<td>2023</td>
+<td>West</td>
+<td>6</td>
+<td>8</td>
+<td> </td>
+<td>MVP</td>
+</tr>
+
+
+
+<tr>
+<td>2024</td>
+<td>West</td>
+<td>9</td>
+<td>5</td>
+<td  bgcolor="#FFCBA4">Wild Card vs Boston 262-225 W<br><br>
 Divisonal Playoffs vs Milwaukee 207-182 W<br><br>
 Lakefront Bowl vs Chicago 233-195 W<br></td>
-    <td></td>
-	  </tr>
-	  
-	  
-	  
-	  	      <tr>
-      <td colspan="7" bgcolor="#BD202E" style="color: white"><b>Tucson Sugar Skulls</b></td>
-    </tr>
-	  
-	  <tr>
-	  <td colspan="2">Season Record</td>
-	  <td>91</td>
-	  <td>72</td>
-	  </tr>
-	  
-	  	  <tr>
-	  <td colspan="2">Playoff Record</td>
-	  <td>8</td>
-	  <td>5</td>
-	  </tr>
-	  
-	  	  <tr>
-	  <td colspan="2">Total Record</td>
-	  <td>99</td>
-	  <td>72</td>
-	  </tr>
-	  
-  </tbody>
+<td></td>
+</tr>
+
+
+
+<tr>
+<td colspan="7" bgcolor="#BD202E" style="color: white"><b>Tucson Sugar Skulls</b></td>
+</tr>
+
+	
+<tr>
+<td>2025</td>
+<td bgcolor="#9BD3DD">West</td>
+<td>12</td>
+<td>2</td>
+<td>Divisional Playoffs vs Los Angeles</td>
+<td>GMoY</td>
+<td>Bautch</td>
+</tr>
+	
+<tr>
+<td colspan="2">Season Record</td>
+<td>103</td>
+<td>74</td>
+</tr>
+
+<tr>
+<td colspan="2">Playoff Record</td>
+<td>8</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td colspan="2">Total Record</td>
+<td>111</td>
+<td>79</td>
+</tr>
+
+</tbody>
 </table>
-	
-	<p> </p>
-<img src="../../images/scl/fi/u7ijpdkmkoexpexbtvzeb/2022-Champions-Logo.png?rlkey=9965jgdprmavrxacmytf1jpje&st=sbhbga8e&raw=1" width="207" height="200" alt=""/>
-
-	<img src="../../images/scl/fi/f8rljggth845fd79eavne/2024-Champions-Logo.png?rlkey=iq4jgslagxhxni4klp5pgd7j6&st=u1jbewpm&raw=1" width="207" height="200" alt=""/>
-
-	</div>
+</div>
 	
 	
-	<h3>Head to Head Records</h3>
-  <div class="wrap h2h">
+<img src="../../images/Banners/2022Banner.png" width="139" height="250" alt=""/>
 
+<img src="../../images/Banners/2024Banner.png" width="139" height="250" alt=""/>
+
+
+
+<h3>Head to Head Records</h3>
+<div class="standard-table">
 
 <div class="controls">
-  <label for="team1">Team 1:</label>
-  <select id="team1">
-    <option value="">— Select team —</option>
-  </select>
+<!-- Hardcoded Team 1 label -->
+<label>Team 1:</label>
+<span>Tucson Sugar Skulls</span>
 
-  <label for="team2">Team 2:</label>
-  <select id="team2">
-    <option value="">— Select team —</option>
-    <option value="ALL_TEAMS">All Teams</option>
-  </select>
+<!-- Team 2 dropdown -->
+<label for="team2">Team 2:</label>
+<select id="team2">
+<option value="ALL_TEAMS">— All Teams —</option>
+</select>
 
-  <label for="yearFilter">Year:</label>
-  <select id="yearFilter">
-    <option value="ALL_YEARS">— All Years —</option>
-  </select>
+<!-- Year dropdown -->
+<label for="yearSelect">Year:</label>
+<select id="yearSelect">
+<option value="ALL_YEARS">— All Years —</option>
+</select>
 
-  <label for="gameTypeFilter">Game Type:</label>
-  <select id="gameTypeFilter">
-    <option value="ALL_TYPES">— All Types —</option>
-  </select>
-
-  <input type="text" id="matchFilter" placeholder="Filter matches (text search)" style="width:220px;">
+<!-- Game type dropdown -->
+<label for="gameTypeFilter">Game Type:</label>
+<select id="gameTypeFilter">
+<option value="ALL_TYPES">— All Types —</option>
+</select>
 </div>
 
-  <div class="summary" id="summaryArea" style="display:none;">
-    <div class="card" id="cardTeam1">
-      <h3 id="cardTeam1Name">Team 1</h3>
-      <p id="cardTeam1Record">0 - 0</p>
-      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam1PF">0</span></div>
-    </div>
 
-    <div class="card" id="cardTie">
-      <h3 style="color:#666">Head-to-Head</h3>
-      <p id="head2headSummary">0 games</p>
-      <div style="font-size:12px;color:#666;margin-top:6px;">Most recent: <span id="mostRecent">N/A</span></div>
-    </div>
 
-    <div class="card" id="cardTeam2">
-      <h3 id="cardTeam2Name">Team 2</h3>
-      <p id="cardTeam2Record">0 - 0</p>
-      <div style="font-size:12px;color:#666;margin-top:6px;">Points For: <span id="cardTeam2PF">0</span></div>
-    </div>
-  </div>
+<div class="loading" id="loadingMsg">Loading match data...</div>
 
-  <div class="loading" id="loadingMsg">Loading match data...</div>
-
-  <div id="matchTableWrap" style="display:none;">
-<table id="matchTable">
-  <thead>
-    <tr>
-      <th style="width:120px">Date</th>
-      <th>Team 1</th>
-      <th>Team 2</th>
-      <th style="width:120px">Score</th>
-      <th>Game Type</th> <!-- ✅ new column -->
-    </tr>
-  </thead>
-  <tbody></tbody>
+<div id="matchTableWrap" style="display:none;">
+<div class="table-wrap"> <!-- <-- add this wrapper -->
+<table class="standard-table" id="matchTable">
+<thead>
+<tr>
+<th style="width:120px">Week</th>
+<th>Team 1</th>
+<th>Team 2</th>
+<th style="width:120px">Score</th>
+<th>Game Type</th> <!-- ✅ new column -->
+</tr>
+</thead>
+<tbody></tbody>
 </table>
-    <div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
-	  <br>
-      </div>
-    </div>
-  </div>
-	
-	
-	
-		<h3>Players/General Managers of Note</h3>
+<div class="no-data" id="noMatches" style="display:none;">No matches found between the selected teams/year.</div>
+</div> <!-- /.table-wrap -->
+</div>
+</div>
+
+
+<h3>Players/General Managers of Note</h3>
 <!--<h3>Current Roster</h3>
-	
+
 
 <div class="table-container">
 <table class="standard-table">
@@ -650,10 +554,10 @@ Lakefront Bowl vs Chicago 233-195 W<br></td>
 </tr>
 </table>
 </div>
-	
-	
-	<br>
-	
+
+
+<br>
+
 <div class="table-container">
 <table class="standard-table">
 <tr>
@@ -671,7 +575,7 @@ Lakefront Bowl vs Chicago 233-195 W<br></td>
 </table>
 </div>
 
-	
+
 <div class="table-container">
 <table class="standard-table">
 <tr>
@@ -701,7 +605,7 @@ Lakefront Bowl vs Chicago 233-195 W<br></td>
 </table>
 </div>
 
-	
+
 <div class="table-container">
 <table class="standard-table">
 <tr>
@@ -712,14 +616,14 @@ Lakefront Bowl vs Chicago 233-195 W<br></td>
 </tr>
 </table>
 </div>
-	!-->
-	
-	<h3>List of General Managers</h3>
-		
-	<p>Within the tapestry of the Tucson Sugar Skulls fantasy football legacy, notable General Managers have played pivotal roles in steering the franchise toward greatness. From the foundational leadership of Paris Reed, whose tenure included accolades like the GM of the Year award, to the strategic direction provided by Dan Uribe during a playoff resurgence, and the youthful dynamism brought forth by Mason Bautch leading to a historic Lakefront Bowl, this section honors the visionaries behind the Sugar Skulls's ascent. Each GM has left an indelible mark, contributing to the team's narrative and shaping its trajectory in the world of professional fantasy football.</p>
-	
-	
-	<div class="scrolling-table-scroll">
+!-->
+
+<h3>List of General Managers</h3>
+
+<p>Within the tapestry of the Tucson Sugar Skulls fantasy football legacy, notable General Managers have played pivotal roles in steering the franchise toward greatness. From the foundational leadership of Paris Reed, whose tenure included accolades like the GM of the Year award, to the strategic direction provided by Dan Uribe during a playoff resurgence, and the youthful dynamism brought forth by Mason Bautch leading to a historic Lakefront Bowl, this section honors the visionaries behind the Sugar Skulls's ascent. Each GM has left an indelible mark, contributing to the team's narrative and shaping its trajectory in the world of professional fantasy football.</p>
+
+
+<div class="scrolling-table-scroll">
 <table class="scrolling-table">
 <tbody>
 <tr>
@@ -735,383 +639,312 @@ Lakefront Bowl vs Chicago 233-195 W<br></td>
 <th>Playoffs</th>
 <th>Winning Seasons</th>
 </tr>
-	  
-	 <tr>
-      <td>Mason Bautch</td>
-      <td>2021-Present</td>
-      <td>36</td>
-      <td>27</td>
-      <td>0.571</td>
-		 <td>0</td>		
-      <td>2</td>
-      <td>2</td>
-      <td>0</td>
-      <td>3</td>
-		 <td>2</td>
-    </tr>
-	  <tr>
-      <td>Dan Uribe</td>
-      <td>2017-2019</td>
-      <td>21</td>
-      <td>20</td>
-      <td>0.512</td>
-		  <td>0</td>		
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-		 <td>2</td>
-    </tr>
-	  <tr>
-      <td>Paris Reed</td>
-      <td>2012-2016</td>
-      <td>42</td>
-      <td>30</td>
-      <td>0.583</td>
-		  <td>1</td>		
-      <td>0</td>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-		 <td>3</td>
-    </tr>
-	  
-   </tbody>
-</table>
 
-	
-				<br>
-			<p>				
+<tr>
+<td>Mason Bautch</td>
+<td>2021-Present</td>
+<td>48</td>
+<td>29</td>
+<td>0.571</td>
+<td>1</td>		
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Dan Uribe</td>
+<td>2017-2019</td>
+<td>21</td>
+<td>20</td>
+<td>0.512</td>
+<td>0</td>		
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Paris Reed</td>
+<td>2012-2016</td>
+<td>42</td>
+<td>30</td>
+<td>0.583</td>
+<td>1</td>		
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+<p>				
 <img src="../../images/scl/fi/onvv8smny3f1wn7cq1zix/Green-Bay-Jersey-PR.png?rlkey=94h3wqjugsermlqnby2gknnti&st=63fdnh14&raw=1" width="154" height="150" alt=""/>
-				
-				<img src="../../images/scl/fi/ez86n691qu20ixdb44rnx/Green-Bay-Jersey-DU.png?rlkey=wmegftgq0vhyeo3mb8oe4y6jf&st=rd60uyp6&raw=1" width="154" height="150" alt=""/>
-				
-				<img src="../../images/scl/fi/7a9z0ggy3kxdnf3uc6soa/Tucson-Jersey-MB.png?rlkey=xp9j7ycn13n06eo4xr97hopjr&st=2sbl94lm&raw=1" width="154" height="150" alt=""/>
-	
-	</p>
 
-	
-	</div>
-	
-		<h3>Awards & Honors</h3>
-	
-	
-	<h3>GLFL MVPs</h3>
-		<table class="standard-table">
-  <tbody>
-    <tr>
-    <th>Year</th>
-	<th>Player</th>
-	<th>Position</th>
-	<th>Points Scored</th>
-    </tr>
+<img src="../../images/scl/fi/ez86n691qu20ixdb44rnx/Green-Bay-Jersey-DU.png?rlkey=wmegftgq0vhyeo3mb8oe4y6jf&st=rd60uyp6&raw=1" width="154" height="150" alt=""/>
 
-	  <tr>
-      <td>2023</td>
-      <td>Christian McCaffrey</td>
-      <td>RB</td>
-      <td>509</td>
-    </tr>
-	  
-   </tbody>
+<img src="../../images/scl/fi/7a9z0ggy3kxdnf3uc6soa/Tucson-Jersey-MB.png?rlkey=xp9j7ycn13n06eo4xr97hopjr&st=2sbl94lm&raw=1" width="154" height="150" alt=""/>
+
+</p>
+
+
+
+<h3>Awards &amp; Honors</h3>
+
+
+<h3>GLFL MVPs</h3>
+<table class="standard-table">
+<tbody>
+<tr>
+<th>Year</th>
+<th>Player</th>
+<th>Position</th>
+<th>Points Scored</th>
+</tr>
+
+<tr>
+<td>2023</td>
+<td>Christian McCaffrey</td>
+<td>RB</td>
+<td>509</td>
+</tr>
+
+</tbody>
 </table>
 
-		
-			<h3>GM of the Year Award Winners</h3>
-		<table class="standard-table">
-  <tbody>
-    <tr>
-    <th>Year</th>
-	<th>General Manager</th>
-	<th>Record</th>
-    </tr>
 
-	  <tr>
-      <td>2014</td>
-      <td>Paris Reed</td>
-      <td>11-2</td>
-    </tr>
-	  
-   </tbody>
+<h3>GM of the Year Award Winners</h3>
+<table class="standard-table">
+<tbody>
+<tr>
+<th>Year</th>
+<th>General Manager</th>
+<th>Record</th>
+</tr>
+
+<tr>
+<td>2014</td>
+<td>Paris Reed</td>
+<td>11-2</td>
+</tr>
+	
+<tr>
+<td>2025</td>
+<td>Mason Bautch</td>
+<td>12-2</td>
+</tr>
+
+</tbody>
 </table>
 
-		
-		
-		
-		<h3>Lakefront Bowls</h3>
-<img src="../../images/scl/fi/u7ijpdkmkoexpexbtvzeb/2022-Champions-Logo.png?rlkey=9965jgdprmavrxacmytf1jpje&st=sbhbga8e&raw=1" width="207" height="200" alt=""/>
-
-	<img src="../../images/scl/fi/f8rljggth845fd79eavne/2024-Champions-Logo.png?rlkey=iq4jgslagxhxni4klp5pgd7j6&st=u1jbewpm&raw=1" width="207" height="200" alt=""/>
 
 
+<h3>Lakefront Bowls</h3>
+<img src="../../images/Banners/2022Banner.png" width="139" height="250" alt=""/>
 
-	
-	</div>
-	
+<img src="../../images/Banners/2024Banner.png" width="139" height="250" alt=""/>
+
+
+
+
+</div>
+
 
 <script>
-const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
-let allMatches = [];
-let teams = [];
+document.addEventListener("DOMContentLoaded", async function() {
 
+// ===================== MOBILE NAV =====================
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+hamburger.addEventListener("click", e => {
+e.stopPropagation();
+navLinks.classList.toggle("nav-active");
+});
+
+dropdownLinks.forEach(link => {
+link.addEventListener("click", e => {
+if (window.innerWidth <= 768) {
+e.preventDefault();
+const submenu = link.nextElementSibling;
+submenu.classList.toggle("dropdown-active");
+}
+});
+});
+
+document.addEventListener("click", e => {
+if (window.innerWidth <= 768) {
+const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+if (!isClickInsideNav) {
+navLinks.classList.remove("nav-active");
+document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+}
+}
+});
+
+// ===================== CONFIG =====================
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+const fixedTeam = "Tucson Sugar Skulls"; // ============================================================================================================================== Hardcoded team for this page
+
+// Elements
+const yearSelect = document.getElementById("yearSelect");
+const team2Select = document.getElementById("team2");
+const gameTypeSelect = document.getElementById("gameTypeFilter");
+const matchTableWrap = document.getElementById("matchTableWrap");
+const matchTableBody = document.querySelector("#matchTable tbody");
+const loadingMsg = document.getElementById("loadingMsg");
+const noMatchesMsg = document.getElementById("noMatches");
+
+let allMatches = [];
+let availableYears = [];
+
+// ===================== UTILITIES =====================
 function parseCsvToObjects(csvText) {
-  const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
-  const headers = lines.shift().split(",").map(h => h.trim());
-  return lines.map(line => {
-    const cols = line.split(",").map(c => c.trim());
-    const obj = {};
-    headers.forEach((h,i)=> obj[h]=cols[i]??"");
-    return obj;
-  });
+const lines = csvText.trim().split(/\r?\n/);
+const headers = lines.shift().split(",").map(h => h.trim());
+return lines.map(line => {
+const cols = line.split(",").map(c => c.trim());
+const obj = {};
+headers.forEach((h,i) => obj[h] = cols[i] || "");
+return obj;
+});
 }
 
 function parseDate_mmddyy(s) {
-  if (!s) return null;
-  const parts = s.split("/").map(p=>parseInt(p,10));
-  if (parts.length!==3 || parts.some(isNaN)) return null;
-  let [m,d,y]=parts;
-  if (y<100) y+=2000;
-  return new Date(y,m-1,d);
+if (!s) return null;
+const [m,d,y] = s.split("/").map(n => parseInt(n,10));
+if (!m || !d || !y) return null;
+return new Date(y<100 ? y+2000 : y, m-1, d);
 }
 
-function formatDateShort(dateObj) {
-  if (!dateObj) return "N/A";
-  const m=String(dateObj.getMonth()+1).padStart(2,"0");
-  const d=String(dateObj.getDate()).padStart(2,"0");
-  const yy=String(dateObj.getFullYear()).slice(-2);
-  return `${m}/${d}/${yy}`;
+function esc(s) { return String(s || ""); }
+
+// ===================== DROPDOWNS =====================
+function populateYearDropdown() {
+yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
+Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
+yearSelect.appendChild(new Option(year, year));
+});
+// Default to 2025 if available
+yearSelect.value = availableYears.includes(2025) ? "2025" : availableYears[0];
+yearSelect.addEventListener("change", updateDisplay);
 }
 
-async function loadCsvAndInit() {
-  try {
-    const res = await fetch(csvUrl);
-    if(!res.ok) throw new Error("Network error "+res.status);
-    const text = await res.text();
-    const rows = parseCsvToObjects(text);
+function populateTeam2Dropdown() {
+const opponents = new Set();
+allMatches.forEach(m => {
+if (m.team1 === fixedTeam) opponents.add(m.team2);
+else if (m.team2 === fixedTeam) opponents.add(m.team1);
+});
 
-    allMatches = rows.map(r=>{
-      const d=parseDate_mmddyy(r["Date"]);
-      return {
-        rawDate: r["Date"]||"",
-        date: d,
-        team1: (r["Team 1"]||"").trim(),
-        team2: (r["Team 2"]||"").trim(),
-        score1: parseInt(r["Team 1 Score"]||"0",10),
-        score2: parseInt(r["Team 2 Score"]||"0",10),
-        gameType: (r["Game Type"]||"").trim()
-      };
-    }).filter(m=>m.team1 && m.team2);
-
-    const teamSet=new Set();
-    allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
-    teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
-
-    populateDropdowns();
-    populateYearDropdown();
-    populateGameTypeDropdown();
-    document.getElementById("loadingMsg").style.display="none";
-  } catch(err) {
-    document.getElementById("loadingMsg").textContent="Error loading match data.";
-    console.error(err);
-  }
-}
-
-function populateDropdowns() {
-  const t1=document.getElementById("team1");
-  const t2=document.getElementById("team2");
-
-  // Clear any existing options
-  t1.innerHTML = "";
-  t2.innerHTML = "";
-
-  // --- Team 1: Select Team placeholder ---
-  const placeholder1 = document.createElement("option");
-  placeholder1.value = "ALL_TEAMS";
-  placeholder1.textContent = "Select Team";
-  placeholder1.disabled = true;
-  placeholder1.selected = true;
-  t1.appendChild(placeholder1);
-
-  // Limit Team 1 to Tucson + Green Bay
-  ["Tucson Sugar Skulls", "Green Bay Blizzard"].forEach(team => {
-    const o1=document.createElement("option");
-    o1.value=team;
-    o1.textContent=team;
-    t1.appendChild(o1);
-  });
-
-  // --- Team 2: Select Team placeholder ---
-  const placeholder2 = document.createElement("option");
-  placeholder2.value = "ALL_TEAMS";
-  placeholder2.textContent = "Select Team";
-  placeholder2.disabled = true;
-  placeholder2.selected = true;
-  t2.appendChild(placeholder2);
-
-  // Team 2 gets all teams from CSV
-  teams.forEach(team=>{
-    const o2=document.createElement("option");
-    o2.value=team;
-    o2.textContent=team;
-    t2.appendChild(o2);
-  });
-
-  // Event listeners
-  t1.addEventListener("change", updateDisplay);
-  t2.addEventListener("change", updateDisplay);
-  document.getElementById("matchFilter").addEventListener("input", updateDisplay);
-  document.getElementById("yearFilter").addEventListener("change", updateDisplay);
-  document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay);
-
-  updateDisplay();
-}
-
-function populateYearDropdown(){
-  const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
-  const yearDropdown=document.getElementById("yearFilter");
-  Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
-    const opt=document.createElement("option");
-    opt.value=y;
-    opt.textContent=y;
-    yearDropdown.appendChild(opt);
-  });
+team2Select.innerHTML = "";
+team2Select.appendChild(new Option("— All Teams —", "ALL_TEAMS"));
+Array.from(opponents).sort().forEach(team => {
+team2Select.appendChild(new Option(team, team));
+});
+team2Select.value = "ALL_TEAMS";
+team2Select.addEventListener("change", updateDisplay);
 }
 
 function populateGameTypeDropdown() {
-  const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
-  const typeDropdown = document.getElementById("gameTypeFilter");
-
-  Array.from(typeSet).sort().forEach(t => {
-    const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
-    typeDropdown.appendChild(opt);
-  });
-
-  typeDropdown.value = "ALL_TYPES";
+const typeSet = new Set(allMatches.map(m => m.gameType).filter(Boolean));
+gameTypeSelect.innerHTML = `<option value="ALL_TYPES">— All Types —</option>`;
+Array.from(typeSet).sort().forEach(type => {
+gameTypeSelect.appendChild(new Option(type, type));
+});
+gameTypeSelect.value = "ALL_TYPES";
+gameTypeSelect.addEventListener("change", updateDisplay);
 }
 
-function getWinnerClass(m){
-  if(m.score1>m.score2) return "winner";
-  if(m.score2>m.score1) return "winner";
-  return "";
+// ===================== LOAD CSV =====================
+async function loadCsvAndInit() {
+try {
+const res = await fetch(csvUrl);
+const text = await res.text();
+const rows = parseCsvToObjects(text);
+
+allMatches = rows.map(r => {
+const date = parseDate_mmddyy(r["Date"]);
+return {
+date,
+week: (r["Week"] || "").trim(),
+team1: (r["Team 1"] || "").trim(),
+team2: (r["Team 2"] || "").trim(),
+score1: Number(r["Team 1 Score"] || 0),
+score2: Number(r["Team 2 Score"] || 0),
+gameType: (r["Game Type"] || "").trim()
+};
+}).filter(m => m.date && m.team1 && m.team2 && (m.team1 === fixedTeam || m.team2 === fixedTeam));
+
+// Available years for dropdown
+availableYears = allMatches.map(m => m.date.getFullYear());
+
+populateYearDropdown();
+populateTeam2Dropdown();
+populateGameTypeDropdown();
+
+loadingMsg.style.display = "none";
+updateDisplay();
+} catch (err) {
+console.error(err);
+loadingMsg.textContent = "Error loading match data.";
+}
 }
 
-function updateDisplay(){
-  const teamA = document.getElementById("team1").value;
-  const teamB = document.getElementById("team2").value;
-  const yearVal = document.getElementById("yearFilter").value;
-  const gameTypeVal = document.getElementById("gameTypeFilter").value;
-  const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
+// ===================== FILTER + RENDER =====================
+function updateDisplay() {
+const selectedYear = yearSelect.value;
+const selectedTeam2 = team2Select.value;
+const selectedType = gameTypeSelect.value;
 
-  if (teamA === "ALL_TEAMS") {
-    document.getElementById("summaryArea").style.display="none";
-    document.getElementById("matchTableWrap").style.display="none";
-    document.getElementById("noMatches").style.display="none";
-    return;
-  }
+let filtered = allMatches.filter(m => {
+const yearOk = selectedYear === "ALL_YEARS" || m.date.getFullYear().toString() === selectedYear;
+const team2Ok = selectedTeam2 === "ALL_TEAMS" || m.team1 === selectedTeam2 || m.team2 === selectedTeam2;
+const typeOk = selectedType === "ALL_TYPES" || m.gameType === selectedType;
+return team2Ok && typeOk && (m.team1 === fixedTeam || m.team2 === fixedTeam) && yearOk;
+});
 
-  let filtered = allMatches.filter(m=>
-    (m.team1===teamA && (teamB==="ALL_TEAMS" || m.team2===teamB)) ||
-    (m.team2===teamA && (teamB==="ALL_TEAMS" || m.team1===teamB))
-  );
+filtered.sort((a,b) => a.date - b.date);
 
-  if(yearVal!=="ALL_YEARS"){
-    filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
-  }
+matchTableBody.innerHTML = "";
+let toggle = false;
+let lastWeek = null;
 
-  if(gameTypeVal !== "ALL_TYPES") {
-    filtered = filtered.filter(m => m.gameType === gameTypeVal);
-  }
+filtered.forEach(m => {
+if (m.week !== lastWeek) {
+toggle = !toggle;
+lastWeek = m.week;
+}
+const tr = document.createElement("tr");
+tr.style.backgroundColor = toggle ? "#f3f3f3" : "#ffffff";
+tr.innerHTML = `
+<td>${esc(m.week)}</td>
+<td class="${m.score1 > m.score2 ? "winner" : ""}">${esc(m.team1)}</td>
+<td class="${m.score2 > m.score1 ? "winner" : ""}">${esc(m.team2)}</td>
+<td>${m.score1} - ${m.score2}</td>
+<td>${esc(m.gameType)}</td>
+`;
+matchTableBody.appendChild(tr);
+});
 
-  if(searchVal!==""){
-    filtered = filtered.filter(m=>(
-      m.team1.toLowerCase().includes(searchVal) ||
-      m.team2.toLowerCase().includes(searchVal)
-    ));
-  }
-
-  filtered.sort((a,b)=>b.date - a.date);
-
-  // --- SUMMARY CALCULATION ---
-  if (filtered.length > 0) {
-    let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
-    filtered.forEach(m => {
-      pfA += (m.team1 === teamA ? m.score1 : m.score2);
-      pfB += (m.team1 === teamB ? m.score1 : m.score2);
-
-      if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
-      else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
-
-      if (teamB !== "ALL_TEAMS") {
-        if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
-        else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
-      }
-    });
-
-    document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
-    document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
-    document.getElementById("cardTeam1PF").textContent = pfA;
-
-    if (teamB === "ALL_TEAMS") {
-      document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
-      document.getElementById("cardTeam2Record").textContent = `N/A`;
-      document.getElementById("cardTeam2PF").textContent = `N/A`;
-    } else {
-      document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
-      document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
-      document.getElementById("cardTeam2PF").textContent = pfB;
-    }
-
-    document.getElementById("summaryArea").style.display = "flex";
-  } else {
-    document.getElementById("summaryArea").style.display = "none";
-  }
-
-  const tbody = document.querySelector("#matchTable tbody");
-  tbody.innerHTML="";
-  filtered.forEach(m=>{
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${formatDateShort(m.date)}</td>
-      <td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
-      <td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
-      <td>${m.score1} - ${m.score2}</td>
-      <td>${m.gameType || ""}</td>`;
-    tbody.appendChild(tr);
-  });
-
-  document.getElementById("matchTableWrap").style.display="block";
-  document.getElementById("noMatches").style.display=filtered.length===0?"block":"none";
-  document.getElementById("summaryArea").style.display=filtered.length>0?"flex":"none";
-
-  refreshCollapsibleHeight();
+matchTableWrap.style.display = "block";
+noMatchesMsg.style.display = filtered.length ? "none" : "block";
 }
 
+// ===================== START =====================
 loadCsvAndInit();
 
-// --- Collapsible logic ---
-var coll = document.getElementsByClassName("collapsible");
-for (let i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
-
-// --- helper to fix cutoff issue ---
-function refreshCollapsibleHeight() {
-  document.querySelectorAll(".collapsible.active + .content").forEach(content => {
-    content.style.maxHeight = content.scrollHeight + "px";
-  });
-}
+});
 </script>
-	
-	
-	</body>
+
+
+</body>
 </html>
