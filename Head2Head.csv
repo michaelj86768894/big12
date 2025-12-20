@@ -83,13 +83,13 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/09/12,Week 14,Tucson Sugar Skulls,Cleveland Gladiators,85,141,Season
 12/09/12,Week 14,Vegas Knight Hawks,Northern Arizona Wranglers,63,65,Season
 12/09/12,Week 14,Cedar Rapids Titans,Philadelphia Soul,52,130,Season
-12/16/12,Round 1,Philadelphia Soul,Milwaukee Mustangs,103,124,Playoffs
-12/16/12,Round 1,Tucson Sugar Skulls,Northern Arizona Wranglers,104,68,Playoffs
-12/16/12,Round 1,Cleveland Gladiators,Los Angeles Wildcats,91,98,Playoffs
-12/16/12,Round 1,Miami Inferno,Brooklyn Bolts,67,124,Playoffs
-12/23/12,Round 2,Tucson Sugar Skulls,Milwaukee Mustangs,112,104,Playoffs
-12/23/12,Round 2,Los Angeles Wildcats,Brooklyn Bolts,135,101,Playoffs
-12/30/12,Championship,Tucson Sugar Skulls,Los Angeles Wildcats,68,85,Playoffs
+12/16/12,Playoff Week 1,Philadelphia Soul,Milwaukee Mustangs,103,124,Playoffs
+12/16/12,Playoff Week 1,Tucson Sugar Skulls,Northern Arizona Wranglers,104,68,Playoffs
+12/16/12,Playoff Week 1,Cleveland Gladiators,Los Angeles Wildcats,91,98,Playoffs
+12/16/12,Playoff Week 1,Miami Inferno,Brooklyn Bolts,67,124,Playoffs
+12/23/12,Playoff Week 2,Tucson Sugar Skulls,Milwaukee Mustangs,112,104,Playoffs
+12/23/12,Playoff Week 2,Los Angeles Wildcats,Brooklyn Bolts,135,101,Playoffs
+12/30/12,Playoff Week 3,Tucson Sugar Skulls,Los Angeles Wildcats,68,85,Playoffs
 09/08/13,Week 1,Cleveland Gladiators,Milwaukee Mustangs,110,91,Season
 09/08/13,Week 1,Cedar Rapids Titans,Boston Brawlers,101,72,Season
 09/08/13,Week 1,Miami Inferno,Northern Arizona Wranglers,125,100,Season
@@ -174,11 +174,11 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/08/13,Week 14,Vegas Knight Hawks,Philadelphia Soul,92,61,Season
 12/08/13,Week 14,Los Angeles Wildcats,Tucson Sugar Skulls,102,126,Season
 12/08/13,Week 14,Cedar Rapids Titans,Chicago Slaughter,98,87,Season
-12/15/13,Round 1,Los Angeles Wildcats,Cedar Rapids Titans,158,70,Playoffs
-12/15/13,Round 1,Miami Inferno,Tucson Sugar Skulls,105,88,Playoffs
-12/22/13,Championship,Brooklyn Bolts,Milwaukee Mustangs,102,61,Playoffs
-12/22/13,Round 2,Milwaukee Mustangs,Los Angeles Wildcats,125,80,Playoffs
-12/22/13,Round 2,Brooklyn Bolts,Miami Inferno,73,66,Playoffs
+12/15/13,Playoff Week 1,Los Angeles Wildcats,Cedar Rapids Titans,158,70,Playoffs
+12/15/13,Playoff Week 1,Miami Inferno,Tucson Sugar Skulls,105,88,Playoffs
+12/22/13,Playoff Week 2,Milwaukee Mustangs,Los Angeles Wildcats,125,80,Playoffs
+12/22/13,Playoff Week 2,Brooklyn Bolts,Miami Inferno,73,66,Playoffs
+12/22/13,Playoff Week 3,Brooklyn Bolts,Milwaukee Mustangs,102,61,Playoffs
 09/07/14,Week 1,Milwaukee Mustangs,Cleveland Gladiators,119,131,Season
 09/07/14,Week 1,Los Angeles Wildcats,Northern Arizona Wranglers,100,81,Season
 09/07/14,Week 1,Brooklyn Bolts,Miami Inferno,113,150,Season
@@ -257,11 +257,11 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 11/30/14,Week 13,Cedar Rapids Titans,Cleveland Gladiators,90,143,Season
 11/30/14,Week 13,Miami Inferno,Vegas Knight Hawks,147,108,Season
 11/30/14,Week 13,Brooklyn Bolts,Tucson Sugar Skulls,81,176,Season
-12/07/14,Round 1,Milwaukee Mustangs,Miami Inferno,130,122,Playoffs
-12/07/14,Round 1,Philadelphia Soul,Los Angeles Wildcats,78,142,Playoffs
-12/14/14,Round 2,Milwaukee Mustangs,Tucson Sugar Skulls,154,116,Playoffs
-12/14/14,Round 2,Los Angeles Wildcats,Cleveland Gladiators,90,134,Playoffs
-12/21/14,Championship,Milwaukee Mustangs,Cleveland Gladiators,141,118,Playoffs
+12/07/14,Playoff Week 1,Milwaukee Mustangs,Miami Inferno,130,122,Playoffs
+12/07/14,Playoff Week 1,Philadelphia Soul,Los Angeles Wildcats,78,142,Playoffs
+12/14/14,Playoff Week 2,Milwaukee Mustangs,Tucson Sugar Skulls,154,116,Playoffs
+12/14/14,Playoff Week 2,Los Angeles Wildcats,Cleveland Gladiators,90,134,Playoffs
+12/21/14,Playoff Week 3,Milwaukee Mustangs,Cleveland Gladiators,141,118,Playoffs
 09/13/15,Week 1,Philadelphia Soul,Los Angeles Wildcats,152.3,134.6,Season
 09/13/15,Week 1,Vegas Knight Hawks,Boston Brawlers,130.1,120.2,Season
 09/13/15,Week 1,Northern Arizona Wranglers,Tucson Sugar Skulls,97.2,92.3,Season
@@ -340,11 +340,11 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/06/15,Week 13,Brooklyn Bolts,Tucson Sugar Skulls,128,119,Season
 12/06/15,Week 13,Milwaukee Mustangs,Cedar Rapids Titans,128.8,112.1,Season
 12/06/15,Week 13,Cleveland Gladiators,Chicago Slaughter,96.1,106.4,Season
-12/13/15,Round 1,Northern Arizona Wranglers,Chicago Slaughter,112,91.4,Playoffs
-12/13/15,Round 1,Boston Brawlers,Vegas Knight Hawks,76.6,107.8,Playoffs
-12/20/15,Round 2,Northern Arizona Wranglers,Milwaukee Mustangs,143.8,144.7,Playoffs
-12/20/15,Round 2,Vegas Knight Hawks,Brooklyn Bolts,142.6,112.2,Playoffs
-12/27/15,Championship,Vegas Knight Hawks,Milwaukee Mustangs,142.8,100.5,Playoffs
+12/13/15,Playoff Week 1,Northern Arizona Wranglers,Chicago Slaughter,112,91.4,Playoffs
+12/13/15,Playoff Week 1,Boston Brawlers,Vegas Knight Hawks,76.6,107.8,Playoffs
+12/20/15,Playoff Week 2,Northern Arizona Wranglers,Milwaukee Mustangs,143.8,144.7,Playoffs
+12/20/15,Playoff Week 2,Vegas Knight Hawks,Brooklyn Bolts,142.6,112.2,Playoffs
+12/27/15,Playoff Week 3,Vegas Knight Hawks,Milwaukee Mustangs,142.8,100.5,Playoffs
 09/11/16,Week 1,Cedar Rapids Titans,Philadelphia Soul,109.1,119.4,Season
 09/11/16,Week 1,Los Angeles Wildcats,Brooklyn Bolts,146.5,94,Season
 09/11/16,Week 1,Tucson Sugar Skulls,Cleveland Gladiators,120.3,149.9,Season
@@ -423,11 +423,11 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/04/16,Week 13,Cedar Rapids Titans,Milwaukee Mustangs,130.8,142.3,Season
 12/04/16,Week 13,Northern Arizona Wranglers,Miami Inferno,82.8,105.7,Season
 12/04/16,Week 13,Tucson Sugar Skulls,Brooklyn Bolts,69.3,123.2,Season
-12/11/16,Round 1,Milwaukee Mustangs,Chicago Slaughter,94.6,87.3,Playoffs
-12/11/16,Round 1,Cedar Rapids Titans,Boston Brawlers,127.2,84.2,Playoffs
-12/18/16,Round 2,Cedar Rapids Titans,Miami Inferno,98.3,178.5,Playoffs
-12/18/16,Round 2,Milwaukee Mustangs,Cleveland Gladiators,98.3,117.5,Playoffs
-12/25/16,Championship,Cleveland Gladiators,Miami Inferno,109.7,155.2,Playoffs
+12/11/16,Playoff Week 1,Milwaukee Mustangs,Chicago Slaughter,94.6,87.3,Playoffs
+12/11/16,Playoff Week 1,Cedar Rapids Titans,Boston Brawlers,127.2,84.2,Playoffs
+12/18/16,Playoff Week 2,Cedar Rapids Titans,Miami Inferno,98.3,178.5,Playoffs
+12/18/16,Playoff Week 2,Milwaukee Mustangs,Cleveland Gladiators,98.3,117.5,Playoffs
+12/25/16,Playoff Week 3,Cleveland Gladiators,Miami Inferno,109.7,155.2,Playoffs
 09/10/17,Week 1,Cedar Rapids Titans,Philadelphia Soul,87.1,139.9,Season
 09/10/17,Week 1,Los Angeles Wildcats,Brooklyn Bolts,90.3,119.4,Season
 09/10/17,Week 1,Vegas Knight Hawks,Cleveland Gladiators,90.7,117.8,Season
@@ -506,11 +506,11 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/03/17,Week 13,Cedar Rapids Titans,Milwaukee Mustangs,78.2,131.9,Season
 12/03/17,Week 13,Northern Arizona Wranglers,Miami Inferno,97.5,133.7,Season
 12/03/17,Week 13,Vegas Knight Hawks,Brooklyn Bolts,91.9,124.1,Season
-12/10/17,Round 1,Boston Brawlers,Philadelphia Soul,123.7,138.9,Playoffs
-12/10/17,Round 1,Brooklyn Bolts,Miami Inferno,121.7,140.9,Playoffs
-12/17/17,Championship,Philadelphia Soul,Miami Inferno,94.5,148.5,Playoffs
-12/17/17,Round 2,Philadelphia Soul,Cleveland Gladiators,137.6,104.8,Playoffs
-12/17/17,Round 2,Miami Inferno,Tucson Sugar Skulls,180.1,90.9,Playoffs
+12/10/17,Playoff Week 1,Boston Brawlers,Philadelphia Soul,123.7,138.9,Playoffs
+12/10/17,Playoff Week 1,Brooklyn Bolts,Miami Inferno,121.7,140.9,Playoffs
+12/17/17,Playoff Week 2,Philadelphia Soul,Cleveland Gladiators,137.6,104.8,Playoffs
+12/17/17,Playoff Week 2,Miami Inferno,Tucson Sugar Skulls,180.1,90.9,Playoffs
+12/17/17,Playoff Week 3,Philadelphia Soul,Miami Inferno,94.5,148.5,Playoffs
 09/09/18,Week 1,Chicago Slaughter,Milwaukee Mustangs,160.8,181.1,Season
 09/09/18,Week 1,Philadelphia Soul,Miami Inferno,153.2,155.7,Season
 09/09/18,Week 1,Tucson Sugar Skulls,Cleveland Gladiators,131.8,133.4,Season
@@ -581,9 +581,9 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/09/18,Week 14,Northern Arizona Wranglers,Milwaukee Mustangs,172.1,119.9,Season
 12/09/18,Week 14,Miami Inferno,Los Angeles Wildcats,149.3,113.6,Season
 12/09/18,Week 14,Vegas Knight Hawks,Cleveland Gladiators,129.4,174.8,Season
-12/16/18,Round 2,Milwaukee Mustangs,Cedar Rapids Titans,116.9,127.6,Playoffs
-12/16/18,Round 2,Vegas Knight Hawks,Chicago Slaughter,169.2,123,Playoffs
-12/23/18,Championship,Vegas Knight Hawks,Cedar Rapids Titans,213.2,156.2,Playoffs
+12/16/18,Playoff Week 1,Milwaukee Mustangs,Cedar Rapids Titans,116.9,127.6,Playoffs
+12/16/18,Playoff Week 1,Vegas Knight Hawks,Chicago Slaughter,169.2,123,Playoffs
+12/23/18,Playoff Week 2,Vegas Knight Hawks,Cedar Rapids Titans,213.2,156.2,Playoffs
 09/08/19,Week 1,Milwaukee Mustangs,Vegas Knight Hawks,89.3,131.4,Season
 09/08/19,Week 1,Cedar Rapids Titans,Northern Arizona Wranglers,107.7,110.7,Season
 09/08/19,Week 1,Tucson Sugar Skulls,Cleveland Gladiators,92.7,152.5,Season
@@ -662,11 +662,11 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/01/19,Week 13,Cleveland Gladiators,Miami Inferno,112.3,101.6,Season
 12/01/19,Week 13,Northern Arizona Wranglers,Los Angeles Wildcats,93.8,108.3,Season
 12/01/19,Week 13,Tucson Sugar Skulls,Philadelphia Soul,114.5,92.8,Season
-12/08/19,Round 1,Boston Brawlers,Vegas Knight Hawks,116.4,106.3,Playoffs
-12/08/19,Round 1,Brooklyn Bolts,Los Angeles Wildcats,159.7,91.4,Playoffs
-12/15/19,Round 2,Miami Inferno,Boston Brawlers,116,115,Playoffs
-12/15/19,Round 2,Chicago Slaughter,Brooklyn Bolts,107.7,128.9,Playoffs
-12/22/19,Championship,Brooklyn Bolts,Miami Inferno,111.9,129.1,Playoffs
+12/08/19,Playoff Week 1,Boston Brawlers,Vegas Knight Hawks,116.4,106.3,Playoffs
+12/08/19,Playoff Week 1,Brooklyn Bolts,Los Angeles Wildcats,159.7,91.4,Playoffs
+12/15/19,Playoff Week 2,Miami Inferno,Boston Brawlers,116,115,Playoffs
+12/15/19,Playoff Week 2,Chicago Slaughter,Brooklyn Bolts,107.7,128.9,Playoffs
+12/22/19,Playoff Week 3,Brooklyn Bolts,Miami Inferno,111.9,129.1,Playoffs
 09/12/21,Week 1,Philadelphia Soul,Vegas Knight Hawks,176.85,133.2,Season
 09/12/21,Week 1,Boston Brawlers,Miami Inferno,144.2,145.9,Season
 09/12/21,Week 1,Tucson Sugar Skulls,Brooklyn Bolts,147.35,154.95,Season
@@ -751,12 +751,12 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/12/21,Week 14,Milwaukee Mustangs,Brooklyn Bolts,142.15,150.45,Season
 12/12/21,Week 14,Cedar Rapids Titans,Northern Arizona Wranglers,164.5,125.3,Season
 12/12/21,Week 14,Tucson Sugar Skulls,Cleveland Gladiators,156.85,188.35,Season
-12/19/21,Round 1,Cleveland Gladiators,Milwaukee Mustangs,89.85,127.5,Playoffs
-12/19/21,Round 1,Tucson Sugar Skulls,Philadelphia Soul,109.6,189,Playoffs
-12/19/21,Round 1,Miami Inferno,Los Angeles Wildcats,54,185,Playoffs
-12/26/21,Round 2,Milwaukee Mustangs,Brooklyn Bolts,132.05,140.1,Playoffs
-12/26/21,Round 2,Philadelphia Soul,Los Angeles Wildcats,142.05,144.3,Playoffs
-12/31/21,Championship,Los Angeles Wildcats,Brooklyn Bolts,117.85,148.2,Playoffs
+12/19/21,Playoff Week 1,Cleveland Gladiators,Milwaukee Mustangs,89.85,127.5,Playoffs
+12/19/21,Playoff Week 1,Tucson Sugar Skulls,Philadelphia Soul,109.6,189,Playoffs
+12/19/21,Playoff Week 1,Miami Inferno,Los Angeles Wildcats,54,185,Playoffs
+12/26/21,Playoff Week 2,Milwaukee Mustangs,Brooklyn Bolts,132.05,140.1,Playoffs
+12/26/21,Playoff Week 2,Philadelphia Soul,Los Angeles Wildcats,142.05,144.3,Playoffs
+12/31/21,Playoff Week 3,Los Angeles Wildcats,Brooklyn Bolts,117.85,148.2,Playoffs
 09/11/22,Week 1,Philadelphia Soul,Vegas Knight Hawks,113.6,169.05,Season
 09/11/22,Week 1,Miami Inferno,Boston Brawlers,96.75,152.9,Season
 09/11/22,Week 1,Tucson Sugar Skulls,Brooklyn Bolts,136.15,134.4,Season
@@ -841,12 +841,12 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/11/22,Week 14,Milwaukee Mustangs,Brooklyn Bolts,120.7,125.25,Season
 12/11/22,Week 14,Cedar Rapids Titans,Philadelphia Soul,119.25,67.05,Season
 12/11/22,Week 14,Tucson Sugar Skulls,Cleveland Gladiators,112.45,141.4,Season
-12/18/22,Round 1,Miami Inferno,Tucson Sugar Skulls,107.6,156.45,Playoffs
-12/18/22,Round 1,Cedar Rapids Titans,Cleveland Gladiators,102.75,143.2,Playoffs
-12/18/22,Round 1,Northern Arizona Wranglers,Vegas Knight Hawks,160.9,151.95,Playoffs
-12/25/22,Round 2,Tucson Sugar Skulls,Los Angeles Wildcats,139.4,116.7,Playoffs
-12/25/22,Round 2,Northern Arizona Wranglers,Cleveland Gladiators,162.15,112.35,Playoffs
-12/31/22,Championship,Northern Arizona Wranglers,Tucson Sugar Skulls,121.7,185.25,Playoffs
+12/18/22,Playoff Week 1,Miami Inferno,Tucson Sugar Skulls,107.6,156.45,Playoffs
+12/18/22,Playoff Week 1,Cedar Rapids Titans,Cleveland Gladiators,102.75,143.2,Playoffs
+12/18/22,Playoff Week 1,Northern Arizona Wranglers,Vegas Knight Hawks,160.9,151.95,Playoffs
+12/25/22,Playoff Week 2,Tucson Sugar Skulls,Los Angeles Wildcats,139.4,116.7,Playoffs
+12/25/22,Playoff Week 2,Northern Arizona Wranglers,Cleveland Gladiators,162.15,112.35,Playoffs
+12/31/22,Playoff Week 3,Northern Arizona Wranglers,Tucson Sugar Skulls,121.7,185.25,Playoffs
 09/10/23,Week 1,Philadelphia Soul,Vegas Knight Hawks,134.1,74.3,Season
 09/10/23,Week 1,Miami Inferno,Boston Brawlers,163.4,133.95,Season
 09/10/23,Week 1,Brooklyn Bolts,Tucson Sugar Skulls,160.25,146.15,Season
@@ -931,12 +931,12 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/10/23,Week 14,Milwaukee Mustangs,Brooklyn Bolts,156.6,147.6,Season
 12/10/23,Week 14,Cedar Rapids Titans,Philadelphia Soul,128.75,135.75,Season
 12/10/23,Week 14,Tucson Sugar Skulls,Cleveland Gladiators,167.7,178.25,Season
-12/17/23,Round 1,Brooklyn Bolts,Philadelphia Soul,131.4,136.95,Playoffs
-12/17/23,Round 1,Chicago Slaughter,Milwaukee Mustangs,118.2,187.25,Playoffs
-12/17/23,Round 1,Cleveland Gladiators,Los Angeles Wildcats,146.8,174.55,Playoffs
-12/24/23,Round 2,Philadelphia Soul,Northern Arizona Wranglers,183.05,221.6,Playoffs
-12/24/23,Round 2,Los Angeles Wildcats,Milwaukee Mustangs,151.25,169.1,Playoffs
-12/31/23,Championship,Milwaukee Mustangs,Northern Arizona Wranglers,181.75,136.75,Playoffs
+12/17/23,Playoff Week 1,Brooklyn Bolts,Philadelphia Soul,131.4,136.95,Playoffs
+12/17/23,Playoff Week 1,Chicago Slaughter,Milwaukee Mustangs,118.2,187.25,Playoffs
+12/17/23,Playoff Week 1,Cleveland Gladiators,Los Angeles Wildcats,146.8,174.55,Playoffs
+12/24/23,Playoff Week 2,Philadelphia Soul,Northern Arizona Wranglers,183.05,221.6,Playoffs
+12/24/23,Playoff Week 2,Los Angeles Wildcats,Milwaukee Mustangs,151.25,169.1,Playoffs
+12/31/23,Playoff Week 3,Milwaukee Mustangs,Northern Arizona Wranglers,181.75,136.75,Playoffs
 09/08/24,Week 1,Philadelphia Soul,Northern Arizona Wranglers,176.6,183.4,Season
 09/08/24,Week 1,Cedar Rapids Titans,Vegas Knight Hawks,147.6,179.6,Season
 09/08/24,Week 1,Boston Brawlers,Chicago Slaughter,158,174.55,Season
@@ -1021,12 +1021,12 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/08/24,Week 14,Brooklyn Bolts,Boston Brawlers,171.15,207.6,Season
 12/08/24,Week 14,Northern Arizona Wranglers,Chicago Slaughter,132.25,177.35,Season
 12/08/24,Week 14,Cedar Rapids Titans,Miami Inferno,171.85,201.05,Season
-12/15/24,Round 1,Boston Brawlers,Tucson Sugar Skulls,224.9,260.3,Playoffs
-12/15/24,Round 1,Chicago Slaughter,Vegas Knight Hawks,208,169.6,Playoffs
-12/15/24,Round 1,Cleveland Gladiators,Los Angeles Wildcats,148.3,226.2,Playoffs
-12/22/24,Round 2,Tucson Sugar Skulls,Milwaukee Mustangs,207.4,182,Playoffs
-12/22/24,Round 2,Chicago Slaughter,Los Angeles Wildcats,232.95,132.9,Playoffs
-12/29/24,Championship,Tucson Sugar Skulls,Chicago Slaughter,232.65,194.8,Playoffs
+12/15/24,Playoff Week 1,Boston Brawlers,Tucson Sugar Skulls,224.9,260.3,Playoffs
+12/15/24,Playoff Week 1,Chicago Slaughter,Vegas Knight Hawks,208,169.6,Playoffs
+12/15/24,Playoff Week 1,Cleveland Gladiators,Los Angeles Wildcats,148.3,226.2,Playoffs
+12/22/24,Playoff Week 2,Tucson Sugar Skulls,Milwaukee Mustangs,207.4,182,Playoffs
+12/22/24,Playoff Week 2,Chicago Slaughter,Los Angeles Wildcats,232.95,132.9,Playoffs
+12/29/24,Playoff Week 3,Tucson Sugar Skulls,Chicago Slaughter,232.65,194.8,Playoffs
 09/07/25,Week 1,Cedar Rapids Titans,Milwaukee Mustangs,162.5,176.45,Season
 09/07/25,Week 1,Chicago Slaughter,Cleveland Gladiators,150.15,132.2,Season
 09/07/25,Week 1,Brooklyn Bolts,Philadelphia Soul,118.9,173.1,Season
@@ -1052,7 +1052,7 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 09/28/25,Week 4,Cedar Rapids Titans,Los Angeles Wildcats,142.85,196.35,Season
 09/28/25,Week 4,Milwaukee Mustangs,Chicago Slaughter,140.05,201.35,Season
 10/05/25,Week 5,Vegas Knight Hawks,Los Angeles Wildcats,158.1,192.4,Season
-10/05/25,Week 5,Milwaukee Mustangs,Philadelphia Soul,193.7,222.1,Season
+10/05/25,Week 5,Milwaukee Mustangs,Philadelphia Soul,195.2,222.1,Season
 10/05/25,Week 5,Northern Arizona Wranglers,Miami Inferno,199.8,176.75,Season
 10/05/25,Week 5,Chicago Slaughter,Brooklyn Bolts,195.2,242.3,Season
 10/05/25,Week 5,Tucson Sugar Skulls,Boston Brawlers,169.8,168.2,Season
@@ -1099,3 +1099,18 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 11/23/25,Week 12,Miami Inferno,Boston Brawlers,163.05,167.35,Season
 11/23/25,Week 12,Brooklyn Bolts,Los Angeles Wildcats,148,193.65,Season
 11/23/25,Week 12,Philadelphia Soul,Tucson Sugar Skulls,152.15,255.7,Season
+11/30/25,Week 13,Los Angeles Wildcats,Milwaukee Mustangs,187.65,196.95,Season
+11/30/25,Week 13,Brooklyn Bolts,Vegas Knight Hawks,145.65,205.55,Season
+11/30/25,Week 13,Miami Inferno,Cleveland Gladiators,160.55,184.4,Season
+11/30/25,Week 13,Tucson Sugar Skulls,Chicago Slaughter,199.65,178.25,Season
+11/30/25,Week 13,Cedar Rapids Titans,Philadelphia Soul,165,168.7,Season
+11/30/25,Week 13,Northern Arizona Wranglers,Boston Brawlers,188,184.9,Season
+12/07/25,Week 14,Vegas Knight Hawks,Milwaukee Mustangs,115.45,219.65,Season
+12/07/25,Week 14,Boston Brawlers,Los Angeles Wildcats,201.3,162.35,Season
+12/07/25,Week 14,Chicago Slaughter,Miami Inferno,174.1,161.1,Season
+12/07/25,Week 14,Cleveland Gladiators,Tucson Sugar Skulls,169.8,168.7,Season
+12/07/25,Week 14,Northern Arizona Wranglers,Philadelphia Soul,151.95,133.35,Season
+12/07/25,Week 14,Cedar Rapids Titans,Brooklyn Bolts,201.8,180.9,Season
+12/14/25,Playoff Week 1,Cedar Rapids Titans,Los Angeles Wildcats,199.75,263,Playoffs
+12/14/25,Playoff Week 1,Northern Arizona Wranglers,Boston Brawlers,208.4,249.7,Playoffs
+12/14/25,Playoff Week 1,Philadelphia Soul,Milwaukee Mustangs,207.4,232.9,Playoffs
