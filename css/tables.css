@@ -96,3 +96,17 @@ td.winner {
 .scrolling-table {
     table-layout: auto; /* let columns fit content */
 }
+
+
+/* ========================================================================================== Lucky / Unlucky cell highlights */
+.standard-table td.lucky {
+    background-color: #d4f4dd; /* soft green */
+    color: #1e6b3a;
+    font-weight: 600;
+}
+
+.standard-table td.unlucky {
+    background-color: #f9d6d5; /* soft red */
+    color: #8b1e1e;
+    font-weight: 600;
+}
