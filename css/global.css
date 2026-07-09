@@ -168,6 +168,10 @@ padding: 10px;
 display: block;
 }
 
+.bylaws-section {
+    scroll-margin-top: 100px;
+}
+
 /* MOBILE RESPONSIVE */
 @media screen and (max-width: 768px) {
 
@@ -209,7 +213,7 @@ width: 100%;
 .nav-links li a {
 padding: 12px 20px;
 }
-
+	
 /* Mobile dropdowns */
 .dropdown-content {
 position: static;
