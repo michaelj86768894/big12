@@ -6,7 +6,7 @@
 <title>GLFL.com | Official Site of the Great Lakes Football League</title>
 <!-- ========================================================================================== LINKED STYLESHEETS ================== -->
 <link rel="stylesheet" href="css/global.css">
-	  
+     
 <style>
 
 /* ========================================================================================== CHAMPION BANNER ================== */
@@ -54,131 +54,178 @@
 }
 
 /* MOBILE RESPONSIVE */
-	@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	.banner {
-	height: 100;
+		height: 100px; /* Fixed: Added px unit */
+	}
+
+	.scroll-content img {
+		height: 80px; /* Fixed: Added px unit */
+		gap: 20px;
+	}
 }
 
-.scroll-content img {
-	height: 80;
-	gap: 20px;
-}
-}
-
-/* ========================================================================================== NEWS SLIDESHOW ================== */
-.news-slideshow-container {
-	position: relative;
-	max-width: 1200px;
-	margin: 40px auto;
-	overflow: hidden;
-	border: 2px solid #8C8C8C; /* Industrial Gray */
-	border-radius: 6px;
-	background-color: #ffffff;
-	isolation: isolate;
+/* ========================================================================================== LEAGUE FEED STYLES ================== */
+.league-feed-container {
+  max-width: 1200px; /* Matches the width of your news-grid */
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--bright-white);
+  border: 1px solid #ddd; /* Thin border around the entire news section */
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-.news-slide-wrapper {
-	position: relative;
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	overflow: hidden;
-	pointer-events: none;
+.feed-title {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--navy);
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.news-slide-link {
-	display: block;
-	position: relative;
-	z-index: 5;
+/* Flexbox Grid Layout */
+.feed-layout {
+  display: flex;
+  gap: 20px;
 }
 
-.news-slide {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	pointer-events: auto;
+/* Links Reset */
+.feed-layout a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-.news-slide img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
-	border-bottom: none;
+/* Featured Left Post */
+.featured-post {
+  flex: 1.5;
+  background-color: var(--bright-white);
+  border: 1px solid #ddd; /* Thin border matching your news page cards */
+  border-radius: 6px;
+  overflow: hidden;
+  transition: background 0.2s, transform 0.2s;
 }
 
-.news-caption {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background: rgba(0,0,0,0.6);
-	color: #ffffff;
-	padding: 10px 15px;
-	box-sizing: border-box;
+.featured-post:hover {
+  background: #f9f9f9; /* Soft grey hover background from your news page */
+  transform: translateY(-2px); /* Card pop effect from your news page */
 }
 
-.news-caption h3 {
-	margin: 0;
-	font-size: 16px;
+.featured-post .image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-.fade {
-	animation-name: fade;
-	animation-duration: 1s;
+.post-meta-main {
+  padding: 20px;
 }
 
-.news-dots {
-	text-align: center;
-	position: absolute;
-	bottom: 10px;
-	width: 100%;
-	z-index: 10;
-	opacity: 1;
-	transition: none;
-	pointer-events: auto;
+.author-tag {
+  background-color: var(--lake-blue);
+  color: var(--bright-white);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
-.news-dots .dot {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	margin: 0 5px;
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 50%;
-	cursor: pointer;
-	transition: background-color 0.3s;
+.featured-post h3 {
+  margin: 15px 0 5px 0;
+  font-size: 1.4rem;
+  color: var(--navy);
 }
 
-.news-dots .dot.active {
-	background-color: rgba(255, 255, 255, 1);
+.author-info {
+  font-size: 0.85rem;
+  color: var(--industrial-gray);
+  margin: 0;
 }
 
-/* MOBILE RESPONSIVE */
-	@media screen and (max-width: 768px) {
-	.news-caption h3 {
-	font-size: 14px;
+/* Sidebar Right Stack */
+.sidebar-feed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 520px; /* Adjust to align vertically with your main post height */
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
-.news-dots {
-	position: absolute;
-	bottom: 10px;
-	width: 100%;
-	text-align: center;
-	z-index: 20;
-	pointer-events: auto;
+/* Custom Scrollbar */
+.sidebar-feed::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-feed::-webkit-scrollbar-thumb {
+  background: var(--industrial-gray);
+  border-radius: 3px;
 }
 
-.news-dots .dot {
-	width: 14px;
-	height: 14px;
-	margin: 0 6px;
-}
+/* Sidebar Items */
+.sidebar-item {
+  display: flex !important;
+  flex-direction: row !important; 
+  align-items: center;
+  gap: 15px;
+  background-color: var(--bright-white);
+  padding: 12px;
+  border: 1px solid #ddd; /* Thin border matching your news page cards */
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.2s;
 }
 
+.sidebar-item:hover {
+  background: #f9f9f9; /* Soft grey hover background from your news page */
+  transform: translateY(-2px); /* Card pop effect from your news page */
+}
+
+.sidebar-item .thumb {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  flex-shrink: 0;
+}
+
+/* Container for text on the right */
+.item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--navy);
+}
+
+.item-content p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--industrial-gray);
+}
+
+/* Responsive collapse for mobile screens */
+@media (max-width: 768px) {
+  .feed-layout {
+    flex-direction: column;
+  }
+  .sidebar-feed {
+    max-height: none;
+  }
+}
+	
 </style>
 </head>
 
@@ -294,51 +341,66 @@
 </div>
 </div>
 
-<!-- ========================================================================================== NEWS SLIDESHOW ================== -->
-<div class="news-slideshow-container">
+<!-- ========================================================================================== NEW NEWSFEED ================== -->
+<div class="league-feed-container">
+  <h4 class="feed-title">NEWS FEED</h4>
+  
+  <div class="feed-layout">
+    <!-- Featured Main Post -->
+    <a href="pages/Weekly/WeeklyPreview/PreviewWeek17.html" class="featured-post">
+      <div class="image-wrapper">
+        <img src="images/WeeklyImages/WeeklyPreview/PreviewWeek17.png" alt="Lakefront Bowl Preview">
+      </div>
+      <div class="post-meta-main">
+        <span class="author-tag">PREVIEW</span>
+        <h3>Lakefront Bowl Preview</h3>
+      </div>
+    </a>
 
-<div class="news-slide-wrapper">
+    <!-- Sidebar Feed Stack -->
+    <div class="sidebar-feed">
+      
+      <a href="pages/Weekly/WeeklyRecap/RecapWeek12.html" class="sidebar-item">
+        <img src="images/WeeklyImages/WeeklyRecap/RecapWeek12.png" alt="Recap thumbnail" class="thumb">
+        <div class="item-content">
+          <h4>Week 12 Recap</h4>
+        </div>
+      </a>
 
-<!-- Slide -->
-<div class="news-slide fade">
-	<a href="pages/Weekly/WeeklyPreview/PreviewWeek17.html" class="news-slide-link">
-	<img src="images/WeeklyImages/WeeklyPreview/PreviewWeek17.png" alt="News Image 5">
-	</a>
-</div>
-	
-<!-- Slide -->
-<div class="news-slide fade">
-	<a href="pages/Weekly/WeeklyRecap/RecapWeek12.html" class="news-slide-link">
-	<img src="images/WeeklyImages/WeeklyRecap/RecapWeek12.png" alt="News Image 3">
-	</a>
-</div>
-	
-<!-- Slide -->
-<div class="news-slide fade">
-	<a href="index.html" class="news-slide-link">
-	<img src="images/WeeklyImages/GameoftheWeek/GOTWWeek12.png" alt="News Image 4">
-	</a>
-</div>
-	
-<!-- Slide -->
-<div class="news-slide fade">
-	<a href="pages/Weekly/PowerRankings/PowerRankingsWeek12.html" class="news-slide-link">
-	<img src="images/WeeklyImages/PowerRankings/PowerRankingsWeek12.png" alt="News Image 1">
-	</a>
-</div>
+      <a href="pages/Weekly/PowerRankings/PowerRankingsWeek12.html" class="sidebar-item">
+        <img src="images/WeeklyImages/PowerRankings/PowerRankingsWeek12.png" alt="Recap thumbnail" class="thumb">
+        <div class="item-content">
+          <h4>Week 12 Power Rankings</h4>
+        </div>
+      </a>
 
-<!-- Slide -->
-<div class="news-slide fade">
-	<a href="pages/Weekly/PlayersoftheWeek/POTWWeek11.html" class="news-slide-link">
-	<img src="images/WeeklyImages/PlayersoftheWeek.png" alt="News Image 2">
-	</a>
-</div>
+      <a href="pages/Weekly/PlayersoftheWeek/POTWWeek11.html" class="sidebar-item">
+        <img src="images/WeeklyImages/PlayersoftheWeek.png" alt="Recap thumbnail" class="thumb">
+        <div class="item-content">
+          <h4>Week 11 Players of the Week</h4>
+        </div>
+      </a>
 
-</div>
+      <a href="Weekly/WeeklyPreview/PreviewWeek11.html" class="sidebar-item">
+        <img src="images/WeeklyImages/WeeklyPreview/PreviewWeek11.png" alt="Recap thumbnail" class="thumb">
+        <div class="item-content">
+          <h4>Week 11 Preview</h4>
+        </div>
+      </a>
 
-<div class="news-dots"></div>
-</div>
+		
+      <a href="Weekly/WeeklyRecap/RecapWeek10.html" class="sidebar-item">
+        <img src="images/WeeklyImages/WeeklyRecap/RecapWeek10.png" alt="Recap thumbnail" class="thumb">
+        <div class="item-content">
+          <h4>Week 10 Recap</h4>
+        </div>
+      </a>
 
+		
+		
+    </div>
+  </div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
