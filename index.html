@@ -65,15 +65,21 @@
 	}
 }
 
-/* ========================================================================================== LEAGUE FEED STYLES ================== */
+/* ========================================================================================== LEAGUE FEED & STANDINGS ================== */
 .league-feed-container {
-  max-width: 1200px; /* Matches the width of your news-grid */
+  max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
   background-color: var(--bright-white);
-  border: 1px solid #ddd; /* Thin border around the entire news section */
+  border: 1px solid #ddd;
   border-radius: 6px;
   box-sizing: border-box;
+  display: flex;
+  gap: 25px;
+}
+
+.news-section {
+  flex: 2.2; /* Takes up main space */
 }
 
 .feed-title {
@@ -81,18 +87,17 @@
   letter-spacing: 1px;
   color: var(--navy);
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-/* Flexbox Grid Layout */
+/* Flexbox Layout for Main + Sidebar */
 .feed-layout {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
-/* Links Reset */
 .feed-layout a {
   text-decoration: none;
   color: inherit;
@@ -101,17 +106,16 @@
 
 /* Featured Left Post */
 .featured-post {
-  flex: 1.5;
+  flex: 1.2;
   background-color: var(--bright-white);
-  border: 1px solid #ddd; /* Thin border matching your news page cards */
+  border: 1px solid #ddd;
   border-radius: 6px;
   overflow: hidden;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s;
 }
 
 .featured-post:hover {
-  background: #e9ecef; /* Soft grey hover background from your news page */
-  transform: translateY(-2px); /* Card pop effect from your news page */
+  background-color: #f0f0f0 !important;
 }
 
 .featured-post .image-wrapper img {
@@ -122,7 +126,7 @@
 }
 
 .post-meta-main {
-  padding: 20px;
+  padding: 15px;
 }
 
 .author-tag {
@@ -136,93 +140,143 @@
 }
 
 .featured-post h3 {
-  margin: 15px 0 5px 0;
-  font-size: 1.4rem;
+  margin: 10px 0 5px 0;
+  font-size: 1.2rem;
   color: var(--navy);
 }
 
 .author-info {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--industrial-gray);
   margin: 0;
 }
 
-/* Sidebar Right Stack */
+/* Sidebar Middle Stack */
 .sidebar-feed {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-height: 520px; /* Adjust to align vertically with your main post height */
+  gap: 10px;
+  max-height: 480px;
   overflow-y: auto;
   padding-right: 5px;
 }
 
-/* Custom Scrollbar */
-.sidebar-feed::-webkit-scrollbar {
-  width: 6px;
+.sidebar-feed::-webkit-scrollbar,
+.standings-scroll::-webkit-scrollbar {
+  width: 5px;
 }
-.sidebar-feed::-webkit-scrollbar-thumb {
+
+.sidebar-feed::-webkit-scrollbar-thumb,
+.standings-scroll::-webkit-scrollbar-thumb {
   background: var(--industrial-gray);
   border-radius: 3px;
 }
 
-/* Sidebar Items */
 .sidebar-item {
   display: flex !important;
   flex-direction: row !important; 
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   background-color: var(--bright-white);
-  padding: 12px;
-  border: 1px solid #ddd; /* Thin border matching your news page cards */
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s;
 }
 
-.sidebar-item:hover {
-  background: #e9ecef; /* Soft grey hover background from your news page */
-  transform: translateY(-2px); /* Card pop effect from your news page */
+.sidebar-feed .sidebar-item:hover,
+a.sidebar-item:hover {
+  background-color: #f0f0f0 !important;
 }
 
 .sidebar-item .thumb {
-  width: 80px;
-  height: 60px;
+  width: 65px;
+  height: 50px;
   object-fit: cover;
   border-radius: 4px;
-  background-color: #e0e0e0;
   flex-shrink: 0;
 }
 
-/* Container for text on the right */
 .item-content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .item-content h4 {
-  margin: 0 0 4px 0;
-  font-size: 0.95rem;
+  margin: 0 0 3px 0;
+  font-size: 0.85rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
   color: var(--navy);
 }
 
 .item-content p {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--industrial-gray);
 }
 
-/* Responsive collapse for mobile screens */
-@media (max-width: 768px) {
-  .feed-layout {
+/* ========================================================================================== STANDINGS WIDGET ================== */
+.standings-widget {
+  flex: 1;
+  border-left: 1px solid #eee;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.standings-scroll {
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.standings-widget h5 {
+  margin: 12px 0 6px 0;
+  font-size: 0.85rem;
+  color: var(--navy);
+  border-bottom: 2px solid var(--lake-blue);
+  padding-bottom: 2px;
+}
+
+.standings-widget h5:first-child {
+  margin-top: 0;
+}
+
+/* Compact Table Formatting */
+.mini-table {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+  border-collapse: collapse;
+}
+
+.mini-table th, .mini-table td {
+  padding: 4px 6px;
+  text-align: left;
+}
+
+.mini-table th:nth-child(3), .mini-table th:nth-child(4),
+.mini-table td:nth-child(3), .mini-table td:nth-child(4) {
+  text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .league-feed-container {
     flex-direction: column;
   }
-  .sidebar-feed {
-    max-height: none;
+  .standings-widget {
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .feed-layout {
+    flex-direction: column;
   }
 }
 	
@@ -341,65 +395,119 @@
 </div>
 </div>
 
-<!-- ========================================================================================== NEW NEWSFEED ================== -->
+	<!-- ========================================================================================== LEAGUE FEED & STANDINGS ================== -->
 <div class="league-feed-container">
-  <h4 class="feed-title">NEWS FEED</h4>
   
-  <div class="feed-layout">
-    <!-- Featured Main Post -->
-    <a href="pages/Weekly/WeeklyPreview/PreviewWeek17.html" class="featured-post">
-      <div class="image-wrapper">
-        <img src="images/WeeklyImages/WeeklyPreview/PreviewWeek17.png" alt="Lakefront Bowl Preview">
-      </div>
-      <div class="post-meta-main">
-        <span class="author-tag">PREVIEW</span>
-        <h3>Lakefront Bowl Preview</h3>
-      </div>
-    </a>
-
-    <!-- Sidebar Feed Stack -->
-    <div class="sidebar-feed">
+  <!-- Left Side: Main News Feed -->
+  <div class="news-section">
+    <div class="feed-title">News Feed</div>
+    <div class="feed-layout">
       
-      <a href="pages/Weekly/WeeklyRecap/RecapWeek12.html" class="sidebar-item">
-        <img src="images/WeeklyImages/WeeklyRecap/RecapWeek12.png" alt="Recap thumbnail" class="thumb">
-        <div class="item-content">
-          <h4>Week 12 Recap</h4>
+      <!-- Featured Post -->
+      <a href="pages/Weekly/WeeklyPreview/PreviewWeek12.html" class="featured-post">
+        <div class="image-wrapper">
+          <img src="images/WeeklyImages/WeeklyPreview/PreviewWeek12.png" alt="Lakefront Bowl Preview">
+        </div>
+        <div class="post-meta-main">
+          <span class="author-tag">Preview</span>
+          <h3>Lakefront Bowl Preview</h3>
+          <p class="author-info">Mike · Nov 20, 2025</p>
         </div>
       </a>
 
-      <a href="pages/Weekly/PowerRankings/PowerRankingsWeek12.html" class="sidebar-item">
-        <img src="images/WeeklyImages/PowerRankings/PowerRankingsWeek12.png" alt="Recap thumbnail" class="thumb">
-        <div class="item-content">
-          <h4>Week 12 Power Rankings</h4>
-        </div>
-      </a>
+      <!-- Sidebar Feed -->
+      <div class="sidebar-feed">
+        <a href="pages/Weekly/WeeklyRecap/RecapWeek12.html" class="sidebar-item">
+          <img src="images/WeeklyImages/WeeklyRecap/RecapWeek12.png" alt="Week 12 Recap" class="thumb">
+          <div class="item-content">
+            <h4>Week 12 Recap</h4>
+            <p>Mike · Nov 25, 2025</p>
+          </div>
+        </a>
 
-      <a href="pages/Weekly/PlayersoftheWeek/POTWWeek11.html" class="sidebar-item">
-        <img src="images/WeeklyImages/PlayersoftheWeek.png" alt="Recap thumbnail" class="thumb">
-        <div class="item-content">
-          <h4>Week 11 Players of the Week</h4>
-        </div>
-      </a>
+        <a href="pages/Weekly/PowerRankings/PowerRankingsWeek12.html" class="sidebar-item">
+          <img src="images/WeeklyImages/PowerRankings/PowerRankingsWeek12.png" alt="Week 12 Power Rankings" class="thumb">
+          <div class="item-content">
+            <h4>Week 12 Power Rankings</h4>
+            <p>Mike · Nov 18, 2025</p>
+          </div>
+        </a>
 
-      <a href="Weekly/WeeklyPreview/PreviewWeek11.html" class="sidebar-item">
-        <img src="images/WeeklyImages/WeeklyPreview/PreviewWeek11.png" alt="Recap thumbnail" class="thumb">
-        <div class="item-content">
-          <h4>Week 11 Preview</h4>
-        </div>
-      </a>
+        <a href="pages/Weekly/PlayersoftheWeek/POTWWeek11.html" class="sidebar-item">
+          <img src="images/WeeklyImages/PlayersoftheWeek.png" alt="Week 11 Players of the Week" class="thumb">
+          <div class="item-content">
+            <h4>Week 11 Players of the Week</h4>
+            <p>Mike · Nov 18, 2025</p>
+          </div>
+        </a>
 
-		
-      <a href="Weekly/WeeklyRecap/RecapWeek10.html" class="sidebar-item">
-        <img src="images/WeeklyImages/WeeklyRecap/RecapWeek10.png" alt="Recap thumbnail" class="thumb">
-        <div class="item-content">
-          <h4>Week 10 Recap</h4>
-        </div>
-      </a>
+        <a href="pages/Weekly/WeeklyPreview/PreviewWeek11.html" class="sidebar-item">
+          <img src="images/WeeklyImages/WeeklyPreview/PreviewWeek11.png" alt="Week 11 Preview" class="thumb">
+          <div class="item-content">
+            <h4>Week 11 Preview</h4>
+            <p>Mike · Nov 13, 2025</p>
+          </div>
+        </a>
 
-		
-		
+        <a href="pages/Weekly/WeeklyRecap/RecapWeek10.html" class="sidebar-item">
+          <img src="images/WeeklyImages/WeeklyRecap/RecapWeek12.png" alt="Week 10 Recap" class="thumb">
+          <div class="item-content">
+            <h4>Week 10 Recap</h4>
+            <p>Mike · Nov 11, 2025</p>
+          </div>
+        </a>
+      </div>
+
     </div>
   </div>
+
+  <!-- Right Side: Mini Standings Widget -->
+  <div class="standings-widget">
+    <div class="feed-title">Standings</div>
+    <div class="standings-scroll">
+      
+      <h5>Lake Michigan</h5>
+      <table class="standard-table mini-table">
+        <thead>
+          <tr><th>#</th><th>Team</th><th>W</th><th>L</th></tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row"><td>1</td><td>Boston Brawlers</td><td>8</td><td>6</td></tr>
+          <tr class="highlight-row"><td>2</td><td>Philadelphia Soul</td><td>7</td><td>7</td></tr>
+          <tr><td>3</td><td>Brooklyn Bolts</td><td>4</td><td>10</td></tr>
+          <tr><td>4</td><td>Miami Inferno</td><td>3</td><td>11</td></tr>
+        </tbody>
+      </table>
+
+      <h5>Lake Erie</h5>
+      <table class="standard-table mini-table">
+        <thead>
+          <tr><th>#</th><th>Team</th><th>W</th><th>L</th></tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row"><td>1</td><td>Milwaukee Mustangs</td><td>9</td><td>5</td></tr>
+          <tr class="highlight-row"><td>2</td><td>Cedar Rapids Titans</td><td>8</td><td>6</td></tr>
+          <tr><td>3</td><td>Chicago Slaughter</td><td>7</td><td>7</td></tr>
+          <tr><td>4</td><td>Cleveland Gladiators</td><td>6</td><td>8</td></tr>
+        </tbody>
+      </table>
+
+      <h5>Lake Superior</h5>
+      <table class="standard-table mini-table">
+        <thead>
+          <tr><th>#</th><th>Team</th><th>W</th><th>L</th></tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row"><td>1</td><td>Tucson Sugar Skulls</td><td>12</td><td>2</td></tr>
+          <tr class="highlight-row"><td>2</td><td>Los Angeles Wildcats</td><td>9</td><td>5</td></tr>
+          <tr class="highlight-row"><td>3</td><td>Northern Arizona Wranglers</td><td>7</td><td>7</td></tr>
+          <tr><td>4</td><td>Vegas Knight Hawks</td><td>4</td><td>10</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
 </div>
 
 <script>
