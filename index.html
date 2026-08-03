@@ -280,7 +280,262 @@ a.sidebar-item:hover {
   }
 }
 	
-</style>
+/* ========================================================================================== SCOREBOARD BAR ================== */
+.scoreboard-container {
+  max-width: 1200px;
+  margin: 20px auto 0 auto;
+  background-color: var(--bright-white);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.scoreboard-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.scoreboard-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  background-color: var(--soft-gray);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Horizontal Scrolling Container for 6 games */
+.scoreboard-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.scoreboard-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.scoreboard-scroll::-webkit-scrollbar-thumb {
+  background: var(--industrial-gray);
+  border-radius: 3px;
+}
+
+/* Individual Matchup Card */
+.matchup-card {
+  flex: 0 0 175px; /* Fixed width so all cards scale uniformly */
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--industrial-gray);
+  font-weight: 500;
+}
+
+/* Highlight Winning Team in Navy & Bold */
+.team-row.winner {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.team-circle-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 6px;
+  border: 1px solid #ddd;
+}
+
+.team-abbr {
+  flex-grow: 1;
+}
+
+.score {
+  font-variant-numeric: tabular-nums;
+  margin-right: 4px;
+}
+
+/* Winner Arrow Indicator */
+.win-indicator {
+  font-size: 0.65rem;
+  color: #22c55e; /* Bright green arrow */
+  width: 8px;
+  text-align: right;
+}
+	
+/* ========================================================================================== AWARDS STRIP ================== */
+.awards-container {
+  max-width: 1200px;
+  margin: 15px auto 0 auto;
+  background-color: var(--bright-white);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.awards-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.awards-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  background-color: var(--soft-gray);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Horizontal Scroll Row */
+.awards-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.awards-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.awards-scroll::-webkit-scrollbar-thumb {
+  background: var(--industrial-gray);
+  border-radius: 3px;
+}
+
+/* Compact Horizontal Card */
+.award-card {
+  flex: 0 0 210px; /* Fixed width per award card */
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.good-award {
+  border-left: 3px solid #22c55e;
+}
+
+.bad-award {
+  border-left: 3px solid #ef4444;
+}
+
+.award-badge {
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #dcfce7;
+  color: #15803d;
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.award-badge.bad {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.award-team-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.award-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.team-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--navy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-highlight {
+  font-size: 0.72rem;
+  font-weight: bold;
+}
+
+.stat-highlight.positive {
+  color: #16a34a;
+}
+
+.stat-highlight.negative {
+  color: #dc2626;
+}
+
+/* ========================================================================================== QUICK LINKS BAR ================== */
+.quick-links-container {
+  max-width: 1200px;
+  margin: 20px auto 30px auto;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.quick-link-btn {
+  flex: 1;
+  min-width: 180px;
+  background-color: var(--navy);
+  color: var(--bright-white) !important;
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.quick-link-btn:hover {
+  background-color: var(--lake-blue);
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+	
+	
+	</style>
 </head>
 
 <body>
@@ -395,12 +650,187 @@ a.sidebar-item:hover {
 </div>
 </div>
 
+<!-- ========================================================================================== HORIZONTAL SCOREBOARD ================== -->
+<div class="scoreboard-container">
+  <div class="scoreboard-header">
+    <span class="scoreboard-title">Week 17 Scores</span>
+  </div>
+  <div class="scoreboard-scroll">
+    
+    <!-- Matchup 1 -->
+    <div class="matchup-card">
+      <div class="team-row winner">
+        <img src="images/Boston.png" alt="Boston" class="team-circle-logo">
+        <span class="team-abbr">BOS</span>
+        <span class="score">134.85</span>
+        <span class="win-indicator">◀</span>
+      </div>
+      <div class="team-row">
+        <img src="images/Brooklyn.png" alt="Brooklyn" class="team-circle-logo">
+        <span class="team-abbr">BRK</span>
+        <span class="score">131.90</span>
+        <span class="win-indicator"></span>
+      </div>
+    </div>
+
+    <!-- Matchup 2 -->
+    <div class="matchup-card">
+      <div class="team-row winner">
+        <img src="images/CedarRapids.png" alt="Cedar Rapids" class="team-circle-logo">
+        <span class="team-abbr">CDR</span>
+        <span class="score">147.45</span>
+        <span class="win-indicator">◀</span>
+      </div>
+      <div class="team-row">
+        <img src="images/Chicago.png" alt="Chicago" class="team-circle-logo">
+        <span class="team-abbr">CHI</span>
+        <span class="score">137.00</span>
+        <span class="win-indicator"></span>
+      </div>
+    </div>
+
+    <!-- Matchup 3 -->
+    <div class="matchup-card">
+      <div class="team-row winner">
+        <img src="images/Cleveland.png" alt="Cleveland" class="team-circle-logo">
+        <span class="team-abbr">CLE</span>
+        <span class="score">178.20</span>
+        <span class="win-indicator">◀</span>
+      </div>
+      <div class="team-row">
+        <img src="images/LosAngeles.png" alt="Los Angeles" class="team-circle-logo">
+        <span class="team-abbr">LAC</span>
+        <span class="score">140.60</span>
+        <span class="win-indicator"></span>
+      </div>
+    </div>
+
+    <!-- Matchup 4 -->
+    <div class="matchup-card">
+      <div class="team-row winner">
+        <img src="images/Miami.png" alt="Miami" class="team-circle-logo">
+        <span class="team-abbr">MIA</span>
+        <span class="score">200.65</span>
+        <span class="win-indicator">◀</span>
+      </div>
+      <div class="team-row">
+        <img src="images/Milwaukee.png" alt="Milwaukee" class="team-circle-logo">
+        <span class="team-abbr">MIL</span>
+        <span class="score">151.45</span>
+        <span class="win-indicator"></span>
+      </div>
+    </div>
+
+    <!-- Matchup 5 -->
+    <div class="matchup-card">
+      <div class="team-row winner">
+        <img src="images/Philadelphia.png" alt="Philadelphia" class="team-circle-logo">
+        <span class="team-abbr">PHI</span>
+        <span class="score">201.50</span>
+        <span class="win-indicator">◀</span>
+      </div>
+      <div class="team-row">
+        <img src="images/Tucson.png" alt="Tucson" class="team-circle-logo">
+        <span class="team-abbr">TUC</span>
+        <span class="score">175.60</span>
+        <span class="win-indicator"></span>
+      </div>
+    </div>
+
+    <!-- Matchup 6 -->
+    <div class="matchup-card">
+      <div class="team-row winner">
+        <img src="images/NorthernArizona.png" alt="Northern Arizona" class="team-circle-logo">
+        <span class="team-abbr">NAZ</span>
+        <span class="score">162.10</span>
+        <span class="win-indicator">◀</span>
+      </div>
+      <div class="team-row">
+        <img src="images/Vegas.png" alt="Vegas" class="team-circle-logo">
+        <span class="team-abbr">VEG</span>
+        <span class="score">145.30</span>
+        <span class="win-indicator"></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+	
+	
+<!-- ========================================================================================== AWARDS STRIP (OPTION B) ================== -->
+<div class="awards-container">
+  <div class="awards-header">
+    <span class="awards-title">Week 12 League Awards</span>
+  </div>
+  
+  <div class="awards-scroll">
+    
+    <!-- Good Awards -->
+    <div class="award-card good-award">
+      <span class="award-badge">High Octane</span>
+      <img src="images/Tucson.png" alt="Tucson" class="award-team-logo">
+      <div class="award-info">
+        <span class="team-name">Tucson</span>
+        <span class="stat-highlight positive">255.70 pts</span>
+      </div>
+    </div>
+
+    <div class="award-card good-award">
+      <span class="award-badge">Best Loser</span>
+      <img src="images/NorthernArizona.png" alt="Northern Arizona" class="award-team-logo">
+      <div class="award-info">
+        <span class="team-name">Northern Arizona</span>
+        <span class="stat-highlight positive">168.70 pts</span>
+      </div>
+    </div>
+
+    <div class="award-card good-award">
+      <span class="award-badge">Comeback Kid</span>
+      <img src="images/Tucson.png" alt="Tucson" class="award-team-logo">
+      <div class="award-info">
+        <span class="team-name">Tucson</span>
+        <span class="stat-highlight positive">+75.70 diff</span>
+      </div>
+    </div>
+
+    <!-- Not So Good Awards -->
+    <div class="award-card bad-award">
+      <span class="award-badge bad">Low Blow</span>
+      <img src="images/Vegas.png" alt="Vegas" class="award-team-logo">
+      <div class="award-info">
+        <span class="team-name">Vegas</span>
+        <span class="stat-highlight negative">133.45 pts</span>
+      </div>
+    </div>
+
+    <div class="award-card bad-award">
+      <span class="award-badge bad">Worst Winner</span>
+      <img src="images/Boston.png" alt="Boston" class="award-team-logo">
+      <div class="award-info">
+        <span class="team-name">Boston</span>
+        <span class="stat-highlight negative">167.35 pts</span>
+      </div>
+    </div>
+
+    <div class="award-card bad-award">
+      <span class="award-badge bad">Biggest Drop</span>
+      <img src="images/Milwaukee.png" alt="Milwaukee" class="award-team-logo">
+      <div class="award-info">
+        <span class="team-name">Milwaukee</span>
+        <span class="stat-highlight negative">-38.15 diff</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	
 	<!-- ========================================================================================== LEAGUE FEED & STANDINGS ================== -->
 <div class="league-feed-container">
   
   <!-- Left Side: Main News Feed -->
   <div class="news-section">
-    <div class="feed-title">News Feed</div>
+    <div class="feed-title">League Feed</div>
     <div class="feed-layout">
       
       <!-- Featured Post -->
@@ -508,6 +938,24 @@ a.sidebar-item:hover {
     </div>
   </div>
 
+</div>
+	
+	
+	
+	<!-- ========================================================================================== QUICK LINKS BAR ================== -->
+<div class="quick-links-container">
+  <a href="https://sleeper.com" target="_blank" class="quick-link-btn">
+    <span class="icon">📱</span> Open Sleeper App
+  </a>
+  <a href="pages/Bylaws.html" class="quick-link-btn">
+    <span class="icon">📜</span> League Bylaws
+  </a>
+  <a href="pages/RecordBook.html" class="quick-link-btn">
+    <span class="icon">🏆</span> Record Book
+  </a>
+  <a href="pages/WeeklySchedule.html" class="quick-link-btn">
+    <span class="icon">📅</span> Full Schedule
+  </a>
 </div>
 
 <script>
