@@ -94,14 +94,15 @@ align-items: center;
 gap: 20px;
 max-width: 1200px;
 margin: 0 auto;
-padding: 10px 20px;
+padding: 4px 20px; /* Reduced top/bottom padding from 10px to 4px */
 position: relative;
 }
 
 /* Logo */
 .nav-container .logo img {
-height: 60px;
+height: 42px; /* Reduced from 60px to 42px to make the bar slimmer */
 width: auto;
+display: block;
 }
 
 /* Hamburger toggle */
@@ -135,9 +136,9 @@ position: relative;
 }
 
 .nav-links a {
-color: var(--bright-white); /* Navigation Link Color */
+color: var(--bright-white);
 text-decoration: none;
-padding: 10px;
+padding: 6px 12px; /* Reduced vertical padding from 10px to 6px */
 display: block;
 font-weight: bold;
 transition: background 0.3s;
@@ -195,7 +196,7 @@ flex-direction: column;
 width: 100%;
 background-color: var(--navy); /* Navy Blue Color */
 position: absolute;
-top: 60px; /* below logo */
+top: 50px; /* Adjusted below slimmer logo/nav */
 left: 0;
 border-top: 1px solid var(--cream-city-brick); /* Color for Line Above Nav on Mobile */
 z-index: 9999;
