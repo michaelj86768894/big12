@@ -8,112 +8,31 @@
 <link rel="stylesheet" href="../css/global.css">
 
 <style>
-	/* ========================================================================================== PAGE HERO BANNER ================== */
+/* ========================================================================================== PAGE HERO BANNER ================== */
 .page-hero-banner {
-  position: relative;
   width: 100%;
   max-width: 1200px;
-  height: 320px;
   margin: 15px auto 30px auto;
   border-radius: 8px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Dark textured stadium background */
-  background: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  line-height: 0; /* Prevents tiny whitespace gap under the image */
 }
 
-/* Dark gradient overlay for text readability */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-image {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg, 
-    rgba(0, 40, 85, 0.90) 0%, 
-    rgba(0, 40, 85, 0.70) 50%, 
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: var(--bright-white);
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.hero-logo {
-  height: 90px;
-  width: auto;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-  transition: transform 0.3s ease;
-}
-
-.hero-logo:hover {
-  transform: scale(1.05);
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-  color: var(--bright-white);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.hero-subtitle {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  color: var(--lake-blue);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Accent Line under Title */
-.hero-content::after {
-  content: '';
-  width: 80px;
-  height: 4px;
-  background-color: var(--lake-blue);
-  border-radius: 2px;
-  margin-top: 5px;
+  height: auto; /* Corrected from 50% so height scales proportionally with width */
+  display: block;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .page-hero-banner {
-    height: 240px;
     margin-top: 10px;
-  }
-  
-  .hero-logo {
-    height: 65px;
-  }
-  
-  .hero-title {
-    font-size: 1.8rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.85rem;
+    margin-bottom: 20px;
   }
 }
-	
-	</style>
+</style>
 
 	</head>
 
@@ -190,15 +109,12 @@
 <h3>Who We Are</h3>
 	
 	<!-- ========================================================================================== HERO BANNER ================== -->
-<div class="page-hero-banner">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <img src="../images/league-logo.png" alt="GLFL Logo" class="hero-logo">
-    <h1 class="hero-title">Who We Are</h1>
-    <p class="hero-subtitle">The Premier Fantasy Football Community of Wisconsin</p>
-  </div>
-</div>
-
+	
+	<div class="page-hero-banner">
+		<!-- Updated class from hero-logo to hero-image -->
+		<img src="../images/WhoWeAreBanner.png" alt="GLFL Logo" class="hero-image">
+	</div>
+	
 	<!-- ========================================================================================== WHO WE ARE ================== -->
 	
 	<p>The Great Lakes Football League (GLFL) is a Wisconsin-based fantasy football community founded on April 28, 2012, by Michael Bautch, who continues to serve as Commissioner today. Originally known as the Bragging Rights Football League (BRFL), then the Big 12, it began as a casual redraft league among friends and has since evolved into one of the most competitive and engaging leagues in the region.</p>
