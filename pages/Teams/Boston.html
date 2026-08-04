@@ -60,7 +60,270 @@ overflow-x: auto;
 width: 100%;
 min-width: 600px;
 }
-</style>
+
+	/* Add to global.css or page <style> block */
+.team-hero-card {
+  max-width: 1200px;
+  margin: 20px auto 30px auto;
+  background: var(--bright-white);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px 25px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.team-hero-logo {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.team-hero-details {
+  flex: 1;
+}
+
+.team-hero-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.team-title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.division-badge {
+  background-color: var(--soft-gray, #e2e8f0);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.team-meta {
+  margin: 0 0 15px 0;
+  font-size: 0.88rem;
+  color: var(--industrial-gray);
+}
+
+.team-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #edf2f7;
+}
+
+.hero-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-box .stat-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--industrial-gray);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.hero-stat-box .stat-value {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .team-hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .team-hero-header {
+    justify-content: center;
+  }
+}
+	
+/* ========================================================================================== TEAM INFOBOX STYLES ================== */
+.team-infobox-container {
+  max-width: 320px;
+  margin: 0 0 20px 20px;
+  float: right; /* Keeps it wrapped neatly alongside the history text on desktop */
+}
+
+.team-infobox {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bright-white);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+}
+
+/* Main Table Header */
+.team-infobox .infobox-header {
+  background-color: var(--navy);
+  color: var(--bright-white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Sub-section Headers */
+.team-infobox .infobox-section-title th {
+  background-color: #f1f5f9;
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 10px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Cell Formatting */
+.team-infobox td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.team-infobox tr:last-child td {
+  border-bottom: none;
+}
+
+.infobox-label {
+  font-weight: 600;
+  color: var(--navy);
+  width: 45%;
+}
+
+.infobox-value {
+  color: #334155;
+}
+
+/* Color Swatches Row */
+.color-swatches {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+	justify-content: center;
+}
+
+.color-swatches .box {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .team-infobox-container {
+    max-width: 100%;
+    float: none;
+    margin: 0 0 20px 0;
+  }
+}
+	
+/* ========================================================================================== TROPHY CASE STYLES ================== */
+.trophy-case-container {
+  max-width: 1200px;
+  margin: 0 auto 25px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.trophy-card {
+  background: var(--bright-white);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trophy-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Gold border glow for the main championship */
+.trophy-card.championship {
+  border-left: 4px solid #eab308;
+  background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+}
+
+.trophy-card.conference {
+  border-left: 4px solid var(--lake-blue);
+}
+
+.trophy-card.division {
+  border-left: 4px solid var(--navy);
+}
+
+.trophy-card.playoffs {
+  border-left: 4px solid #64748b;
+}
+
+.trophy-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.trophy-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.trophy-count {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.trophy-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #334155;
+  letter-spacing: 0.4px;
+}
+
+.trophy-years {
+  font-size: 0.72rem;
+  color: var(--industrial-gray);
+  margin-top: 2px;
+}
+	
+	</style>
 </head>
 
 <body>
@@ -225,7 +488,141 @@ min-width: 600px;
 </table>
 
 
-<h3>Franchise History</h3>
+<!-- ========================================================================================== HERO CARD ================== -->
+	
+<div class="team-hero-card">
+  <img src="../../images/Boston.png" alt="Boston Brawlers Logo" class="team-hero-logo">
+  <div class="team-hero-details">
+    <div class="team-hero-header">
+      <h1 class="team-title">Boston Brawlers</h1>
+      <span class="division-badge">East Division</span>
+    </div>
+    <p class="team-meta">Established 2012 • Brookfield, WI</p>
+    
+    <div class="team-hero-stats">
+      <div class="hero-stat-box">
+        <span class="stat-label">General Manager</span>
+        <span class="stat-value">Chris Cholka</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Championships</span>
+        <span class="stat-value">1 (2025)</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">All-Time Record</span>
+        <span class="stat-value">74-96</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Playoff Apps</span>
+        <span class="stat-value">6 Seasons</span>
+      </div>
+    </div>
+  </div>
+</div>
+	
+		<!-- ========================================================================================== TROPHY CASE ================== -->
+<div class="trophy-case-container">
+  <div class="trophy-card championship">
+    <div class="trophy-icon">🏆</div>
+    <div class="trophy-details">
+      <span class="trophy-count">1x</span>
+      <span class="trophy-title">Lakefront Bowl Champions</span>
+      <span class="trophy-years">2025</span>
+    </div>
+  </div>
+
+  <div class="trophy-card conference">
+    <div class="trophy-icon">🥇</div>
+    <div class="trophy-details">
+      <span class="trophy-count">1x</span>
+      <span class="trophy-title">Conference Champions</span>
+      <span class="trophy-years">2025</span>
+    </div>
+  </div>
+
+  <div class="trophy-card division">
+    <div class="trophy-icon">🎖️</div>
+    <div class="trophy-details">
+      <span class="trophy-count">2x</span>
+      <span class="trophy-title">Division Champions</span>
+      <span class="trophy-years">2024, 2025</span>
+    </div>
+  </div>
+
+  <div class="trophy-card playoffs">
+    <div class="trophy-icon">🏈</div>
+    <div class="trophy-details">
+      <span class="trophy-count">6x</span>
+      <span class="trophy-title">Playoff Appearances</span>
+      <span class="trophy-years">2015, 2016, 2017, 2019, 2024, 2025</span>
+    </div>
+  </div>
+</div>
+	
+	
+	
+	<!-- ========================================================================================== TEAM INFOBOX ================== -->
+<div class="team-infobox-container">
+  <table class="team-infobox">
+    <thead>
+      <tr>
+        <th colspan="2" class="infobox-header">Boston Brawlers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="infobox-label">Established</td>
+        <td class="infobox-value">2012</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Headquarters</td>
+        <td class="infobox-value">Brookfield, WI</td>
+      </tr>
+		
+		<tr>
+		  <td class="infobox-label">Team Colors</td>
+		  <td class="infobox-value">
+			<div class="color-swatches">
+			  <div class="box Boston"></div>
+			  <div class="box Boston2"></div>
+			  <div class="box Boston3"></div>
+			</div>
+		  </td>
+		</tr>
+		
+      <tr class="infobox-section-title">
+        <th colspan="2">Division Affiliations</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">TBD</td>
+        <td class="infobox-value">2026–Present</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">East Division</td>
+        <td class="infobox-value">2012–2025</td>
+      </tr>
+
+      <tr class="infobox-section-title">
+        <th colspan="2">Franchise Personnel</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">General Manager</td>
+        <td class="infobox-value">Chris Cholka</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Past GMs</td>
+        <td class="infobox-value">Antoine Lee-Thomas,<br>John Udvare,<br> Travis Gebel</td>
+      </tr>
+	<tr>
+		<td colspan="2"><img src="../../images/Helmets/BostonHelmet.png" width="187" height="150" alt=""/></td>
+	</tr>
+
+    </tbody>
+  </table>
+</div>
+	
+	
+	<h3>Franchise History</h3>
 
 <p>The Boston Brawlers are one of the original franchises in the GLFL, debuting in 2012 under GM Antoine Lee-Thomas. The early years were marked by significant struggles, with the team finishing 4–10 in its inaugural season and posting a record settings 0–14 record in 2013. A change in leadership came in 2014, when John Udvare took over as GM, sparking a gradual turnaround.</p>
 
