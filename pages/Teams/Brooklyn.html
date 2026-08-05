@@ -60,6 +60,269 @@ overflow-x: auto;
 width: 100%;
 min-width: 600px;
 }
+	
+	/* ========================================================================================== HERO CARD */
+.team-hero-card {
+  max-width: 1200px;
+  margin: 20px auto 30px auto;
+  background: var(--bright-white);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px 25px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.team-hero-logo {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.team-hero-details {
+  flex: 1;
+}
+
+.team-hero-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.team-title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--Brooklyn);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.division-badge {
+  background-color: var(--Brooklyn2);
+  color: var(--Brooklyn3);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.team-meta {
+  margin: 0 0 15px 0;
+  font-size: 0.88rem;
+  color: var(--Brooklyn2);
+}
+
+.team-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #edf2f7;
+}
+
+.hero-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-box .stat-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--Brooklyn2);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.hero-stat-box .stat-value {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--Brooklyn);
+}
+
+@media (max-width: 768px) {
+  .team-hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .team-hero-header {
+    justify-content: center;
+  }
+}
+	
+/* ========================================================================================== TEAM INFOBOX STYLES ================== */
+.team-infobox-container {
+  max-width: 320px;
+  margin: 0 0 20px 20px;
+  float: right; /* Keeps it wrapped neatly alongside the history text on desktop */
+}
+
+.team-infobox {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bright-white);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+}
+
+/* Main Table Header */
+.team-infobox .infobox-header {
+  background-color: var(--Brooklyn);
+  color: var(--bright-white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Sub-section Headers */
+.team-infobox .infobox-section-title th {
+  background-color: #f1f5f9;
+  color: var(--Brooklyn);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 10px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Cell Formatting */
+.team-infobox td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.team-infobox tr:last-child td {
+  border-bottom: none;
+}
+
+.infobox-label {
+  font-weight: 600;
+  color: var(--Brooklyn);
+  width: 45%;
+}
+
+.infobox-value {
+  color: var(--Brooklyn);
+}
+
+/* Color Swatches Row */
+.color-swatches {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+	justify-content: center;
+}
+
+.color-swatches .box {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .team-infobox-container {
+    max-width: 100%;
+    float: none;
+    margin: 0 0 20px 0;
+  }
+}
+	
+/* ========================================================================================== TROPHY CASE STYLES ================== */
+.trophy-case-container {
+  max-width: 1200px;
+  margin: 0 auto 25px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.trophy-card {
+  background: var(--bright-white);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trophy-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Gold border glow for the main championship */
+.trophy-card.championship {
+  border-left: 4px solid #eab308;
+  background: linear-gradient(135deg, #ffffff 0%, #fefce8 100%);
+}
+
+.trophy-card.conference {
+  border-left: 4px solid var(--Brooklyn);
+}
+
+.trophy-card.division {
+  border-left: 4px solid var(--Brooklyn2);
+}
+
+.trophy-card.playoffs {
+  border-left: 4px solid var(--Brooklyn3);
+}
+
+.trophy-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.trophy-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.trophy-count {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--Brooklyn);
+  line-height: 1.1;
+}
+
+.trophy-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--Brooklyn);
+  letter-spacing: 0.4px;
+}
+
+.trophy-years {
+  font-size: 0.72rem;
+  color: var(--Brooklyn2);
+  margin-top: 2px;3
+	
+	
 </style>
 </head>
 
@@ -134,77 +397,139 @@ min-width: 600px;
 <div class="text-container">
 
 
-<p>The Brooklyn Bolts, a powerhouse in the professional fantasy football realm, proudly represent the GLFL's East division. Anchored in the strategic hub of Oak Creek, Wisconsin, the Bolts have been a formidable force in the GLFL since its inception in 2012. Boasting an illustrious history marked by excellence, the Bolts have soared to the Lakefront Bowl three times—in 2013, 2019, and 2021—emerging victorious twice in their pursuit of fantasy football glory.</p>
+<!-- ========================================================================================== HERO CARD ================== -->
+	
+<div class="team-hero-card">
+  <img src="../../images/Brooklyn.png" alt="Brooklyn Logo" class="team-hero-logo">
+  <div class="team-hero-details">
+    <div class="team-hero-header">
+      <h1 class="team-title">brooklyn Bolts</h1>
+      <span class="division-badge">TBD Division</span>
+    </div>
+    <p class="team-meta">Established 2012 • Oak Creek, WI</p>
+    
+    <div class="team-hero-stats">
+      <div class="hero-stat-box">
+        <span class="stat-label">General Manager</span>
+        <span class="stat-value">Cory Colvin</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Championships</span>
+        <span class="stat-value">2</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">All-Time Record</span>
+        <span class="stat-value">93-82</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Playoff Apps</span>
+        <span class="stat-value">7</span>
+      </div>
+		      <div class="hero-stat-box">
+        <span class="stat-label">Winning Seasons</span>
+        <span class="stat-value">6</span>
+      </div>
 
-<table class="standard-table">
-<tbody>
-<tr>
-<td colspan="2"><strong>Brooklyn Bolts</strong><br><img src="../../images/Brooklyn.png" width="249" height="200" alt=""/></td>
-</tr>
-<tr>
-<td><strong>Established</strong></td>
-<td>2012</td>
-</tr>
-<tr>
-<td><strong>Headquarters</strong></td>
-<td>Oak Creek, WI</td>
-</tr>
-<tr>
-<td><strong>Team Colors</strong></td>
-<td><div class="box Brooklyn"></div> <div class="box Brooklyn2"></div> <div class="box Brooklyn3"></div></td>
-</tr>
+    </div>
+  </div>
+</div>
+	
+		<!-- ========================================================================================== TROPHY CASE 🏆 ================== -->
+<div class="trophy-case-container">
+  <div class="trophy-card championship">
+    <div class="trophy-icon">🥇</div>
+    <div class="trophy-details">
+      <span class="trophy-count">2x</span>
+      <span class="trophy-title">Lakefront Bowl Champions</span>
+      <span class="trophy-years">2013, 2021</span>
+    </div>
+  </div>
 
-<tr>
-<th colspan="2"><strong>Division Affiliations</strong></th>
-</tr>
-<tr>
-<td><strong>East</strong></td>
-<td>2012-Present*</td>
-</tr>
+  <div class="trophy-card conference">
+    <div class="trophy-icon">🥈</div>
+    <div class="trophy-details">
+      <span class="trophy-count">3x</span>
+      <span class="trophy-title">Conference Champions</span>
+      <span class="trophy-years">2013, 2019, 2021</span>
+    </div>
+  </div>
 
-<tr>
-<th colspan="2"><strong>Personnel</strong></th>
-</tr>  
-<tr>
-<td><strong>General Manager</strong></td>
-<td>Cory Colvin</td>
-</tr>
-<tr>
-<th colspan="2"><strong>Team History</strong></th>
-</tr> 
-<tr>
-<td colspan="2">Brooklyn Bolts (2012-2017, 2019-Present)<br>
-*Suspended operations (2018)</td>
-</tr> 
-<tr>
-<th colspan="2"><strong>Championships</strong></th>
-</tr> 
-<tr>
-<td><strong>Lakefront Bowl (2)</strong></td>
-<td>2013 (II), 2021 (IX)</td>
-</tr>
-<tr>
-<td><strong>Conference (3)</strong></td>
-<td>2013, 2019, 2021</td>
-</tr>
-<tr>
-<td><strong>Division (4)</strong></td>
-<td>2012, 2013, 2015, 2021</td>
-</tr>
-<tr>
-<td><strong>Playoffs (7)</strong></td>
-<td>2012, 2013, 2015, 2017,<br> 2019, 2021, 2023</td>
-</tr>
-<tr>
-<td><strong>Winning Seasons (6)</strong></td>
-<td>2012, 2013, 2015, 2019,<br> 2021, 2023</td>
-</tr>
-<tr>
-<td colspan="2"><img src="../../images/Helmets/BrooklynHelmet.png" width="187" height="150" alt=""/></td>
-</tr>
+  <div class="trophy-card division">
+    <div class="trophy-icon">🎖️</div>
+    <div class="trophy-details">
+      <span class="trophy-count">4x</span>
+      <span class="trophy-title">Division Champions</span>
+      <span class="trophy-years">2012, 2013, 2015, 2021</span>
+    </div>
+  </div>
 
-</tbody>
-</table>
+  <div class="trophy-card playoffs">
+    <div class="trophy-icon">🏈</div>
+    <div class="trophy-details">
+      <span class="trophy-count">7x</span>
+      <span class="trophy-title">Playoff Appearances</span>
+      <span class="trophy-years">2012, 2013, 2015, 2017, 2019, 2021, 2023</span>
+    </div>
+  </div>
+</div>
+	
+	
+	
+	<!-- ========================================================================================== TEAM INFOBOX ================== -->
+<div class="team-infobox-container">
+  <table class="team-infobox">
+    <thead>
+      <tr>
+        <th colspan="2" class="infobox-header">Brooklyn Bolts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="infobox-label">Established</td>
+        <td class="infobox-value">2012</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Headquarters</td>
+        <td class="infobox-value">Oak Creek, WI</td>
+      </tr>
+		
+		<tr>
+		  <td class="infobox-label">Team Colors</td>
+		  <td class="infobox-value">
+			<div class="color-swatches">
+			  <div class="box Brooklyn"></div>
+			  <div class="box Brooklyn2"></div>
+			  <div class="box Brooklyn3"></div>
+			</div>
+		  </td>
+		</tr>
+		
+      <tr class="infobox-section-title">
+        <th colspan="2">Division Affiliations</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">TBD</td>
+        <td class="infobox-value">2026-Present</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">East Division</td>
+        <td class="infobox-value">2012–2025</td>
+      </tr>
+
+      <tr class="infobox-section-title">
+        <th colspan="2">Franchise Personnel</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">General Manager</td>
+        <td class="infobox-value">Cory Colvin</td>
+      </tr>
+	<tr>
+		<td colspan="2"><img src="../../images/Helmets/BrooklynHelmet.png" width="187" height="150" alt=""/></td>
+	</tr>
+
+    </tbody>
+  </table>
+</div>
 
 <h3>Franchise History</h3>
 
