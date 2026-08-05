@@ -110,3 +110,42 @@ td.winner {
     color: #8b1e1e;
     font-weight: 600;
 }
+
+
+/* ========================================================================================== ENHANCED TABLE UTILITIES ================== */
+
+/* Clean HTML5 Semantic Headings (Optional fallback override) */
+.scrolling-table thead th {
+    background: var(--navy);
+    color: var(--bright-white);
+}
+
+/* Legend & Accomplishment Cell Highlights */
+td.champ-cell {
+    background-color: #FFCBA4 !important;
+    font-weight: 600;
+}
+
+td.conf-cell {
+    background-color: #A2E4B8 !important;
+    font-weight: 600;
+}
+
+td.div-cell {
+    background-color: #9BD3DD !important;
+    font-weight: 600;
+}
+
+/* Special Status Rows (Suspended / Canceled) */
+tr.status-row td {
+    background-color: #f1f5f9 !important;
+    color: var(--industrial-gray);
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Record Summary Footer Rows */
+tr.summary-row td {
+    background-color: #f8fafc;
+    font-weight: bold;
+}

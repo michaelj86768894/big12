@@ -98,14 +98,14 @@ min-width: 600px;
   margin: 0;
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--Boston);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .division-badge {
-  background-color: var(--soft-gray, #e2e8f0);
-  color: var(--navy);
+  background-color: var(--Boston3);
+  color: var(--Boston2);
   font-size: 0.75rem;
   font-weight: bold;
   padding: 4px 8px;
@@ -116,7 +116,7 @@ min-width: 600px;
 .team-meta {
   margin: 0 0 15px 0;
   font-size: 0.88rem;
-  color: var(--industrial-gray);
+  color: var(--Boston2);
 }
 
 .team-hero-stats {
@@ -137,7 +137,7 @@ min-width: 600px;
 .hero-stat-box .stat-label {
   font-size: 0.68rem;
   text-transform: uppercase;
-  color: var(--industrial-gray);
+  color: var(--Boston2);
   font-weight: bold;
   letter-spacing: 0.5px;
 }
@@ -145,7 +145,7 @@ min-width: 600px;
 .hero-stat-box .stat-value {
   font-size: 1.05rem;
   font-weight: bold;
-  color: var(--navy);
+  color: var(--Boston);
 }
 
 @media (max-width: 768px) {
@@ -179,7 +179,7 @@ min-width: 600px;
 
 /* Main Table Header */
 .team-infobox .infobox-header {
-  background-color: var(--navy);
+  background-color: var(--Boston);
   color: var(--bright-white);
   font-size: 1.1rem;
   font-weight: 800;
@@ -192,7 +192,7 @@ min-width: 600px;
 /* Sub-section Headers */
 .team-infobox .infobox-section-title th {
   background-color: #f1f5f9;
-  color: var(--navy);
+  color: var(--Boston);
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -215,12 +215,12 @@ min-width: 600px;
 
 .infobox-label {
   font-weight: 600;
-  color: var(--navy);
+  color: var(--Boston);
   width: 45%;
 }
 
 .infobox-value {
-  color: #334155;
+  color: var(--Boston);
 }
 
 /* Color Swatches Row */
@@ -282,15 +282,15 @@ min-width: 600px;
 }
 
 .trophy-card.conference {
-  border-left: 4px solid var(--lake-blue);
+  border-left: 4px solid var(--Boston);
 }
 
 .trophy-card.division {
-  border-left: 4px solid var(--navy);
+  border-left: 4px solid var(--Boston2);
 }
 
 .trophy-card.playoffs {
-  border-left: 4px solid #64748b;
+  border-left: 4px solid var(--Boston3);
 }
 
 .trophy-icon {
@@ -306,7 +306,7 @@ min-width: 600px;
 .trophy-count {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--Boston);
   line-height: 1.1;
 }
 
@@ -314,16 +314,14 @@ min-width: 600px;
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #334155;
+  color: var(--Boston);
   letter-spacing: 0.4px;
 }
 
 .trophy-years {
   font-size: 0.72rem;
-  color: var(--industrial-gray);
-  margin-top: 2px;
-}
-	
+  color: var(--Boston2);
+  margin-top: 2px;3
 	</style>
 </head>
 
@@ -434,10 +432,10 @@ min-width: 600px;
   </div>
 </div>
 	
-		<!-- ========================================================================================== TROPHY CASE ================== -->
+		<!-- ========================================================================================== TROPHY CASE 🏆 ================== -->
 <div class="trophy-case-container">
   <div class="trophy-card championship">
-    <div class="trophy-icon">🏆</div>
+    <div class="trophy-icon">🥇</div>
     <div class="trophy-details">
       <span class="trophy-count">1x</span>
       <span class="trophy-title">Lakefront Bowl Champions</span>
@@ -446,7 +444,7 @@ min-width: 600px;
   </div>
 
   <div class="trophy-card conference">
-    <div class="trophy-icon">🥇</div>
+    <div class="trophy-icon">🥈</div>
     <div class="trophy-details">
       <span class="trophy-count">1x</span>
       <span class="trophy-title">Conference Champions</span>
@@ -550,29 +548,33 @@ min-width: 600px;
 
 <p>Embark on a chronological expedition through the seasons of the Boston Brawlers, an enigmatic force in the realm of professional fantasy football. This exhaustive list meticulously details the season-by-season records of the Brawlers franchise, spanning from their inaugural year in 2012 to the present day. Delve into the peaks of playoff triumphs, the transitions in leadership under various General Managers, and the recognition garnered through league awards. Unearth the captivating story of a team that has confronted adversity and embraced triumphs in the dynamic landscape of the GLFL.</p>
 
+	
 <table class="standard-table">
 <tbody>
 	<tr>
-		<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
-		<td bgcolor="#A2E4B8">Conference Champions</td>
-		<td bgcolor="#9BD3DD">Division Champions</td>
+		<td class="champ-cell">Lakefront Bowl Champions</td>
+		<td class="conf-cell">Conference Champions</td>
+		<td class="div-cell">Division Champions</td>
 	</tr>
 </tbody>
 </table>
 
 <div class="scrolling-table-scroll">
 <table class="scrolling-table">
-<tbody>
-	<tr>
-		<th>Year</th>
-		<th>Div</th>
-		<th>W</th>
-		<th>L</th>
-		<th>Postseason</th>
-		<th>Awards</th>
-		<th>GM</th>
-	</tr>
-
+	
+<thead>
+      <tr>
+        <th>Year</th>
+        <th>Div</th>
+        <th>W</th>
+        <th>L</th>
+        <th>Postseason</th>
+        <th>Awards</th>
+        <th>GM</th>
+      </tr>
+    </thead>
+	
+	<tbody>
 	<tr>
 		<td>2012</td>
 		<td>East</td>
@@ -629,7 +631,7 @@ min-width: 600px;
 		<td> </td>
 	</tr>
 
-	<tr>
+	<tr class="status-row">
 		<td colspan="7">Suspended Operations</td>
 	</tr>
 
@@ -645,7 +647,7 @@ min-width: 600px;
 		<td>Cholka</td>
 	</tr>
 
-	<tr>
+	<tr class="status-row">
 		<td colspan="7">Season Canceled</td>
 	</tr>
 
@@ -679,7 +681,7 @@ min-width: 600px;
 
 	<tr>
 		<td>2024</td>
-		<td bgcolor="#9BD3DD">East</td>
+		<td class="div-cell">East</td>
 		<td>9</td>
 		<td>5</td>
 		<td>Wild Card vs Tucson 225-260 L</td>
@@ -688,31 +690,35 @@ min-width: 600px;
 
 	<tr>
 		<td>2025</td>
-		<td bgcolor="#9BD3DD">East</td>
+		<td class="div-cell">East</td>
 		<td>8</td>
 		<td>6</td>
-		<td>Wild Card vs Northern Arizona 250-208 W<br><br>
-			Divisional Playoffs vs Milwaukee</td>
+		<td class="champ-cell">Wild Card vs Northern Arizona 250-208 W<br><br>
+			Divisional Playoffs vs Milwaukee 204-197 W<br>
+		Lakefront Bowl vs Tucson 135-130 W</td>
 		<td> </td>
 	</tr>
 
-	<tr>
-		<td colspan="2">Season Record</td>
-		<td>72</td>
-		<td>91</td>
-	</tr>
+<tr class="summary-row">
+        <td colspan="2">Season Record</td>
+        <td>72</td>
+        <td>91</td>
+        <td colspan="3"></td>
+      </tr>
 
-	<tr>
-		<td colspan="2">Playoff Record</td>
-		<td>2</td>
-		<td>5</td>
-	</tr>
+      <tr class="summary-row">
+        <td colspan="2">Playoff Record</td>
+        <td>2</td>
+        <td>5</td>
+        <td colspan="3"></td>
+      </tr>
 
-	<tr>
-		<td colspan="2">Total Record</td>
-		<td>74</td>
-		<td>96</td>
-	</tr>
+      <tr class="summary-row">
+        <td colspan="2">Total Record</td>
+        <td>74</td>
+        <td>96</td>
+        <td colspan="3"></td>
+      </tr>
 </tbody>
 </table>
 </div>
