@@ -149,3 +149,16 @@ tr.summary-row td {
     background-color: #f8fafc;
     font-weight: bold;
 }
+
+.scrolling-table td {
+    vertical-align: middle; /* Keeps single-team cells nicely centered */
+    line-height: 1.8;       /* Increases line spacing so single <br> tags feel like clean paragraphs */
+    padding: 12px 10px;     /* Generous vertical padding for the row cells */
+}
+
+.scrolling-table td.cancelled {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    font-weight: 500;
+}
