@@ -95,6 +95,98 @@ min-width: 600px;
   padding: 12px 0;
 }
 	
+/* =============================================== SUMMARY CARDS */
+.season-summary-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background: #f8f9fa;
+  border-left: 5px solid #001433;
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.summary-stat {
+  text-align: center;
+}
+
+.summary-stat .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 700;
+  display: block;
+}
+
+.summary-stat .value {
+  font-size: 15px;
+  font-weight: bold;
+  color: #001433;
+}
+
+.summary-badge img {
+  height: 60px;
+  width: auto;
+}
+
+
+/* =============================================== STANDINGS GRID */
+.standings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Keeps consistent spacing between the three cards */
+  justify-content: flex-start; /* Aligns them cleanly without pushing the last one far right */
+  margin-top: 15px;
+}
+
+.standings-grid .table-container {
+  flex: 1 1 0px; /* Equal width distribution across all three cards */
+  min-width: 220px; /* Prevents them from getting too skinny on small screens */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+	
+	.standings-grid th {
+  background: #001433 !important;
+  color: #ffffff !important;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+	
+/* ============================================================================================== QUICK NAV BAR */
+.quick-nav-bar {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0 20px 0;
+  flex-wrap: wrap;
+}
+
+.quick-link-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f0f4f8;
+  color: #001433;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.quick-link-btn:hover {
+  background: #007FC8;
+  color: #ffffff;
+  border-color: #007FC8;
+}
+	
 	</style>
 </head>
 
@@ -168,54 +260,43 @@ min-width: 600px;
 
 <div class="text-container">
 
-<p>The 2025 season marks the 13th year of the Big 12 Fantasy League, and it kicked off in style on Thursday, September 4th. Last year’s champions, the Tucson Sugar Skulls, clashed with their division rivals, the Los Angeles Wildcats, in one of the most thrilling opening night games the league has seen. Both teams shattered their projected scores as the win probability swung back and forth until the final horn, with Los Angeles pulling out a 213.1 to 192.25 victory.</p>
-	
-<p>The season will run through Sunday, December 28th, culminating in the Big 12 Championship in Santa Clara, California.</p>
-	
-	
-<table class="standard-table">
-<tbody>
-<tr>
-<td colspan="2"><center><img src="../../images/Logo.png" width="155" height="150" alt=""/></center></td>
-</tr>
-<tr>
-<td colspan="2"><strong><center>Regular Season</center></strong></td>
-</tr>
-<tr>
-      <td><strong>Duration</strong></td>
-      <td>Sept. 4 2025<br>Dec. 7 2025</td>
-    </tr>
-    <tr>
-      <td colspan="2"><strong><center>Playoffs</center></strong></td>
-    </tr>
-	  <tr>
-      <td><strong>Start Date</strong></td>
-      <td>Dec. 14 2025</td>
-    </tr>
-	  <tr>
-      <td><strong>Conf. Champions</strong></td>
-      <td>TBD<br>
-		  TBD</td>
-    </tr>
-	   <tr>
-      <td colspan="2"><strong><center>Big 12 Championship XII</center></strong></td>
-    </tr>
-	  <tr>
-      <td><strong>Date</strong></td>
-      <td>Dec. 28 2025</td>
-    </tr>
-     <tr>
-      <td><strong>Champions</strong></td>
-      <td>TBD</td>
-    </tr>
-	  <tr>
-	  <td colspan="2"><center><img src="../../images/LakefrontBowlImages/2025LakefrontBowl.png" width="232" height="210" alt=""/></center></td></tr>
-  </tbody>
-</table>
-	<p> </p>
-	
-	
+<!-- HTML replacing <table class="standard-table"> -->
+<div class="season-summary-card">
+  <div class="summary-stat">
+    <span class="label">Regular Season</span>
+    <span class="value">Sept 4 – Dec 7, 2025</span>
+  </div>
+  <div class="summary-stat">
+    <span class="label">Playoffs Start</span>
+    <span class="value">Dec 14, 2025</span>
+  </div>
+  <div class="summary-stat">
+    <span class="label">Lakefront Bowl XII</span>
+    <span class="value">Dec 30, 2025</span>
+  </div>
+  <div class="summary-stat">
+    <span class="label">Champions</span>
+    <span class="value">Boston Brawlers</span>
+  </div>
+  <div class="summary-badge">
+    <img src="../../images/LakefrontBowlImages/2025LakefrontBowl.png" alt="Championship Badge">
+  </div>
+</div>
 
+<p>The 2025 season marks the 13th year of the newly re-branded Great Lakes Football League, and it kicked off in style on Thursday, September 4th. Last year’s champions, the Tucson Sugar Skulls, clashed with their division rivals, the Los Angeles Wildcats, in one of the most thrilling opening night games the league has seen. Both teams shattered their projected scores as the win probability swung back and forth until the final horn, with Los Angeles pulling out a 213.1 to 191.5 victory.</p>
+	
+<p>The season’s journey culminated on Sunday, December 30th, in a thrilling Lakefront Bowl showdown between the Tucson Sugar Skulls and the Boston Brawlers. In a shocking outcome, the Brawlers claimed victory 134.85-131.90, capturing their first title in franchise history.</p>
+	
+	
+	
+<!----------------------------------------------------------------------------------- QUICK NAV LINKS -->
+	
+<div class="quick-nav-bar">
+  <a href="#regular-season" class="quick-link-btn">Regular Season</a>
+  <a href="#playoffs" class="quick-link-btn">Playoffs</a>
+  <a href="#awards" class="quick-link-btn">Season Awards</a>
+</div>
+	
 	
 	<button class="season-collapsible"> Personnel Movement</button>
 <div class="season-content">
@@ -225,15 +306,14 @@ min-width: 600px;
 	
 	<p>Some say it’s a bold move to shed a championship identity, others think it’s just an intimidation tactic—because nothing says “we’re coming for you again” like trading snowflakes for skulls. Either way, the Sugar Skulls enter 2025 with a target on their backs and plenty of swagger.</p>
 	
-	<p>League insiders were quick to react:
+	<p>League insiders were quick to react:</p>
 		<ul>
-  <li>“Changing the name after winning it all? That’s like Jordan dropping the Bulls logo for a skull tattoo. Respect.” – Anonymous GM</li>
+  <li>“Changing the name after winning it all? That’s like Jordan going from 23 to 45, just doesn't seem right.” – Anonymous GM</li>
   <li>“They may be called the Sugar Skulls, but there’s nothing sweet about playing them.” – X User @Blizzardfan4lyfe</li>
   <li>“Classic move—win a title, then try to sell more merch.” – League cynic</li>
 </ul>
-	</p>
 	
-	<p> </p>
+
 	</div>
 	
 	
@@ -244,17 +324,16 @@ min-width: 600px;
 <br>
 		<center><img src="../../images/DraftImages/2026Draft.png" width="228" height="200" alt=""/></center>
 	
-<p>The 2025 Big 12 Draft kicked off on Monday, September 1st at 7:30 PM—marking the final draft of the re-draft era before the league transitions to dynasty in 2026. Draft nominations were determined randomly one hour before kickoff, giving Los Angeles the #1 pick and Vegas the final nomination of the evening.</p>
+<p>The 2025 draft kicked off on Monday, September 1st at 7:30 PM. The league shifted as an experiment to an auction-style draft versus the traditional snake format. Nominations were determined randomly one hour before kickoff, giving Los Angeles the #1 pick and Vegas the final nomination of the evening.</p>
 	
 	
-<p>The auction draft delivered everything fans love: bold moves, surprise reaches, and a handful of outright steals. Highlights included:
+<p>The auction draft delivered everything fans love: bold moves, surprise reaches, and a handful of outright steals. Highlights included:</p>
 <ul>
 	<li>First player signed: Ja’Mar Chase, $79, by Vegas</li>
 	<li>Highest paid player: Jammer Gibbs, $83, by Tucson</li>
 	<li>Last player signed: Paulson Adebo, by Vegas</li>
 	</ul>
-	
-	</p>
+
 	
 	
 	<p>League insiders had plenty to say:
@@ -266,18 +345,18 @@ min-width: 600px;
 	
 	</p>
 	
-	<p>For the full auction results and a complete breakdown of every roster move, <a href="https://bigxii.weebly.com/2025-draft.html">click here.</a></p>
-
-<p>It was a fitting finale to over a decade of re-draft tradition, and the stage is officially set for the 2025 season kickoff.</p>
+	<p>For the full auction results and a complete breakdown of every roster move, <a href="../../pages/Drafts/2025Draft.html">click here.</a></p>
 
 	
 	</div>
 
 
 	
+<!----------------------------------------------------------------------------------- REGULAR SEASON COLLAPSIBLE -->
 
-		<button class="season-collapsible"> Regular Season</button>
-<div class="season-content">
+<button class="season-collapsible"> Regular Season</button>
+<div class="season-content" id="regular-season">
+	
 <p>The 2025 season spanned 14 weeks and 168 games, kicking off on the Thursday night following Labor Day—a staple tradition for the league’s opening night. Each team squared off twice against division rivals and once against all other teams, with the final week subject to flex scheduling to keep playoff races and divisional championships competitive.</p>
 	
 <p>For those still nostalgic about the experimental days, the league maintained three individual defensive positions (IDP) in lieu of team defenses—a nod to the innovation introduced back in 2022, though many GMs might barely remember the switch at this point.</p>
@@ -286,8 +365,11 @@ min-width: 600px;
 		
 <h3>Standings</h3>
 	
+	<div class="standings-grid">
+	
 		<div class="table-container">
-<table>
+		
+<table class="standard-table">
     <tr>
       <th>East</th>
       <th>W</th>
@@ -295,99 +377,106 @@ min-width: 600px;
     </tr>
     <tr>
       <td>Boston</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>8</td>
+      <td>6</td>		
+    </tr>
+    <tr>
+      <td>Philadelphia</td>
+      <td>7</td>
+      <td>7</td>		
     </tr>
     <tr>
       <td>Brooklyn</td>
-      <td>0</td>
-      <td>0</td>		
-    </tr>
-    <tr>
-      <td>Miami</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>4</td>
+      <td>10</td>		
     </tr>
 	<tr>
-      <td>Philadelphia</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Miami</td>
+      <td>3</td>
+      <td>11</td>		
     </tr>
 </table>
 	</div>
 	
 	
 		<div class="table-container">
-<table>
+		
+<table class="standard-table">
+
     <tr>
       <th>Central</th>
       <th>W</th>
       <th>L</th>
     </tr>
     <tr>
-      <td>Cedar Rapids</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Milwaukee</td>
+      <td>9</td>
+      <td>5</td>		
     </tr>
 	      <tr>
-      <td>Chicago</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Cedar Rapids</td>
+      <td>8</td>
+      <td>6</td>		
     </tr>
 	  <tr>
-      <td>Cleveland</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Chicago</td>
+      <td>7</td>
+      <td>7</td>		
     </tr>
 	<tr>
-      <td>Milwaukee</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Cleveland</td>
+      <td>6</td>
+      <td>8</td>		
     </tr>
 </table>
 	</div>
 	
 	
 		<div class="table-container">
-<table>
+		
+<table class="standard-table">
     <tr>
       <th>West</th>
       <th>W</th>
       <th>L</th>
     </tr>
     <tr>
-      <td>Los Angeles</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Tucson</td>
+      <td>12</td>
+      <td>2</td>		
     </tr>
 	<tr>
-      <td>Northern Arizona</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Los Angeles</td>
+      <td>9</td>
+      <td>5</td>		
     </tr>
     <tr>
-      <td>Tucson</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>Northern Arizona</td>
+      <td>7</td>
+      <td>7</td>		
     </tr>
 	  <tr>
       <td>Vegas</td>
-      <td>0</td>
-      <td>0</td>		
+      <td>4</td>
+      <td>10</td>		
     </tr>
 </table>
 	</div>	
-	
-	
-	<p> </p>
+		
 	</div>
+	
+	
+</div>
 	
 	
 	
 
 	
-	<button class="season-collapsible"> Game Schedule</button>
-<div class="season-content">
+<!-------------------------------------------------------------------- GAME SCHEDULE COLLAPSIBLE -->
+
+<button class="season-collapsible"> Game Schedule</button>
+<div class="season-content" id="schedule">
+	
   <div class="wrap h2h">
 
 
@@ -457,16 +546,19 @@ min-width: 600px;
     </div>
   </div>
 	
+
+
+
 	
-	
-	<button class="season-collapsible"> Postseason</button>
-<div class="season-content">
+<!----------------------------------------------------------------------------- POSTSEASON COLLAPSIBLE -->
+<button class="season-collapsible"> Postseason</button>
+<div class="season-content" id="playoffs">
 	
 	<br>
 	
 <center><img src="../../images/PlayoffsImages/2026Playoffs.png" width="228" height="200" alt=""/></center>
 	
-<p>The 2025 postseason kicks off on December 14, 2025, culminating in the Big 12 Championship on December 30 in Santa Clara, California. Seven teams earned the right to compete: divisional winners claimed automatic spots, while the remaining four slots went to the best non-division winners.</p>
+<p>The 2025 postseason kicks off on December 14, 2025, culminating in the Lakefront Bowl on December 30 in Santa Clara, California. Seven teams earned the right to compete: divisional winners claimed automatic spots, while the remaining four slots went to the best non-division winners.</p>
 	
 		<p>The playoff structure gives the #1 seed a first-round bye, while matchups for the opening weekend are as follows:
 <ul>
@@ -478,66 +570,62 @@ min-width: 600px;
 
 <p>Home teams enjoy a small advantage with a 5-point bonus to start each week, adding a layer of strategy and excitement to the matchups.</p>
 
-<p>Stay tuned! The 2025 postseason promises high-stakes matchups, buzzer-beater finishes, and plenty of league drama. Check back during the playoffs for full recaps, highlights, and all the inside commentary as the race to the Big 12 Championship unfolds.</p>
-	
+
 <h3>Round 1</h3>
 
-<p>The opening act of the 2025 playoff spectacle unfolded on December 12, 2025. Last year's champion, Milwaukee Mustangs cruised through the second half of the season and thus claimed the top seed, earning a bye and patiently awaited the outcome of Round 1.</p>
+<p>The opening act of the 2025 playoff spectacle unfolded on December 11, 2025. Last year's champion, Tucson cruised through the entire season finishing at 12-2, earning the top seed and the bye that comes a long with it.</p>
 	
-<p><b>Gladiators’ Playoff Hopes Crushed by Dominant Wildcats</b></p>
+<p><b>Philadelphia ledr Soul-less</b></p>
 	
-<p>The Cleveland Gladiators clawed their way into the playoffs as the 7th seed for the second straight year, narrowly edging out Brooklyn to secure the final coveted spot. But their reward was a daunting showdown with the West Division champions, the Los Angeles Wildcats—a team riding high as on of the league’s top-scoring juggernauts.</p>
+<p>The Philadelphia Soul got the luck of the tie-breaker with Chicago and eeked into the playoffs as the 7th seed ending a 1-year drought on playoff appearances. The reward for their performance was a showdown with the Central Division champions, the Milwaukee Mustangs</p>
 
-<p>The matchup promised fireworks between the league’s two highest-scoring offenses, but only the Wildcats delivered. Cleveland stumbled to a playoff-low 148 points, while Los Angeles put on a clinic, storming to a commanding 226-148 victory. The loss marked the Gladiators’ second defeat to the Wildcats this season and extended their losing streak against Los Angeles to seven games, dating back to 2019, including postseason clashes.</p>
+<p>The matchup began close after the Thursday night games however come Sunday night the Mustangs held a 30-point lead and held on to take the win 232.9-207.4. The loss ended Philly’s season early in the playoffs once more.</p>
 
-<p>Josh Allen led the charge for the Wildcats with a monstrous 70-point performance, propelling his team to its seventh consecutive win and solidifying their position as the team to beat in the 2025 playoffs.</p>
+<p>Jared Goff led the charge for the Mustangs with a monstrous 70-point performance, propelling his team to its third consecutive divisional round appearance and solidifying their position as the team to beat in the 2025 playoffs.</p>
 	
-<p><b>Chicago Secures Historic First Playoff Win Over Vegas</b></p>
+<p><b>Los Angeles runs Wild on the Titans</b></p>
 		
-<p>In the second playoff showdown, the #5 seed Vegas Knight Hawks squared off against the #6 seed Chicago Slaughter, who were still chasing their first-ever postseason victory. Chicago entered the season with a bang, setting scoring records en route to a 5-2 start. However, a rough 2-4 finish had them limping toward the postseason. A pivotal Week 14 win over Northern Arizona ultimately punched their ticket, earning them back-to-back playoff appearances.</p>
+<p>In the second playoff showdown, the #5 seed Cedar Rapids Titans squared off against the #4 seed Los Angeles Wildcats. The Titans started off slow during the season however, they finished at a strong 5-2 finish including wins over top playoff teams.</p>
 	
-<p>The Knight Hawks, on the other hand, stumbled into the playoffs, losing three of their final four games and becoming arguably the lowest-scoring playoff team in league history. Their offensive struggles carried into the postseason, with QB Tua Tagovailoa managing just 15 points as the Knight Hawks posted a meager 170 in the first round.</p>
+<p>The Wildcats, on the other hand, were the opposite, starting off a flaming hot 6-1 through the first seventh weeks onlly to cool down considerablly after taking a close loss to the Sugar Skulls in week 8. Finishing out the season 3-4 they fell to the 4th seed looking pretty vulnerable against arguably one of the hottest 2nd half teams in the league.</p>
 	
-<p>Chicago capitalized, putting up 208 points and earning their long-awaited first playoff victory after five previous postseason failures. Lamar Jackson starred with a dazzling 68-point performance, while Jerry Jeudy delivered his best game of the season, adding 28 points to seal the win.</p>
+<p>Though they brok a 2-year playoff drought, Cedar Rapids just couldn't capitalize, as the only playoff team in the Wild Card round to put up fewer than 200 points while LA set the highest mark for the weekend at 263. Thus ending the Titans' season early.</p>
 	
-<p><b>Blizzard Outlast Brawlers in Record-Breaking Shootout</b></p>
+<p><b>Brawlers brawl-out against the Wranglers</b></p>
 	
-<p>The weekend’s finale featured the #4 seed Green Bay Blizzard visiting the #3 seed Boston Brawlers in a clash of evenly matched 9-5 teams. It was the closest talent pairing of the first round, and it delivered an unforgettable showdown.</p>
+<p>The weekend’s finale featured the #6 seed Northern Arizona visiting the #3 seed Boston Brawlers in a clash teams looking to build on recent success.</p>
 	
-<p>For Boston, this season marked a triumphant return to relevance. Making just their second playoff appearance in GM Cholka's tenure—the Brawlers celebrated their best campaign in franchise history, notching a record nine wins and division title. They didn’t hold back, unleashing a monstrous 225 points, breaking Northern Arizona’s playoff scoring record from the prior season. Yet, heartbreak followed as Boston’s historic effort was overshadowed by an even more jaw-dropping performance from Green Bay.</p>
+<p>For Boston, this season marked the first time they've made the playoffs in consecutive seasons since 2016-2017. Claiming their 2nd consecutive division championship, they hosted a Northern Arizona team who was just two years removed from consecutive title game appearances. Falling to the eventual champs last year they would not be denied again cruising to a 249.7-208.4 victory over the Wranglers.</p>
 	
-<p>The Blizzard exploded for 260 points—a new league playoff record—to claim the victory and advance to the next round. The result marked the end of a storybook season for GM Chris Cholka and the Brawlers.</p>
+<p>The Wranglers stumbled out of the gate before eventually putting up a measly 207 points putting an end to the season for GM Richmond and the league MVP Christian McCaffrey.</p>
 
-<p>Boston’s stars showed up, with wide receivers Davante Adams (49 points) and CeeDee Lamb (33 points) leading the charge. Unfortunately, QB Matthew Stafford’s underwhelming performance, producing just half his projected points, left the team short.</p>
-	
-<p>Green Bay, meanwhile, rode the brilliance of Jared Goff, who shattered the individual playoff scoring record with a staggering 84-point outing. Goff’s heroics, combined with Mike Evans’ 42 points, powered the Blizzard’s high-octane offense. After a disappointing 6-8 season last year, Green Bay is back in championship form, with their sights set on the ultimate prize.</p>	
-	
+
 <h3>Round 2</h3>
 
-<p><b>Blizzard Upset Mustangs to Advance to Big 12 Championship</b></p>
+<p><b>Tucson cruises to the Lakefront Bowl</b></p>
 	
-<p>Round 2 on December 19, 2025, brought a thrilling matchup between the top-seeded Milwaukee Mustangs and the #4 seed Green Bay Blizzard. The game marked the first postseason clash between Milwaukee GM Michael Bautch and his son, Green Bay GM Mason Bautch, adding an extra layer of intrigue to an already intense rivalry. Green Bay, riding a wave of recent dominance over Milwaukee with wins in six of their last eight meetings, continued their strong form. Behind standout performances from Jared Goff (50 points) and De’Von Achane (38 points), the Blizzard jumped out to an early lead on Thursday night. Although the Mustangs narrowed the gap late, Green Bay maintained control and sealed a 207-182 victory. The win secured the Blizzard’s third Big 12 Championship appearance—and second in the past three seasons.</p>
+<p>Round 2 on December 18, 2025, brought a divisional matchup between the top-seeded Tucson Sugar Skulls and the #4 seed Los Angeles Wildcats. The game marked the third meeting between these two teams with the teams splitting the regular season matchup 1-1. Behind standout performances from Jahmyr Gibbs (50 points), the Sugar Skulls jumped out to an early lead on Thursday night and they never looked back sealing a 209.9-116.65 victory. The win secured the Sugar Skulls’ fourth visit to the Lakefront Bowl and their third in the last four seasons.</p>
 	
-<p>For the defending champion Mustangs, the loss was a bitter end to their season. Patrick Mahomes led the charge with 43 points, but his supporting cast failed to deliver, collectively falling 30% short of their projections. The reigning champs, who entered the postseason as favorites, stumbled in their only playoff game, leaving their quest for a repeat unfulfilled.</p>
+<p>For the Wildcats, the loss was a bitter end to their season. Josh Allen led the charge with 43 points, but his supporting cast failed to deliver, collectively falling 30% short of their projections.</p>
 	
-<p><b>Slaughter Surge Past Wildcats to Reach First Big 12 Championship</b></p>
+<p><b>Boston punches their ticket to the Big Game</b></p>
 	
-<p>The second playoff matchup of the weekend saw the #6 seed Chicago Slaughter travel to Los Angeles to face the 2nd-seeded Wildcats. Fresh off their first-ever playoff victory, Chicago squared off against Los Angeles for the third time this season, having split the regular-season series 1-1. Historically, Los Angeles has dominated this matchup, boasting a lopsided 15-2 record dating back to the Big 12’s inaugural season in 2012. However, Chicago snapped a nine-game losing streak in Week 5, setting the stage for this high-stakes playoff clash.</p>
+<p>The second playoff matchup of the weekend saw the #3 seed Boston Brawlers travel to Milwaukee to face the 2nd-seeded Mustangs. Fresh off their playoff victory in Wild Card Weekend, Boston squared off against Milwaukee for the first time in the playoffs. Historically, Milwaukee has dominated this matchup, boasting a 8-4 record including five straight victories since 2021, the entire tenue of GM Cholka.</p>
 	
-<p>In a shocking turn of events, Chicago dismantled the Wildcats with a resounding 233-133 victory—the second-largest margin in Big 12 playoff history. The Slaughter’s offensive trio of Lamar Jackson, Justin Jefferson, and Keenan Allen accounted for an astounding 119 points, driving the team to its first-ever Big 12 Championship appearance. For Los Angeles, another stellar season ended in heartbreak. Despite securing a league-best 74% regular-season win rate since GM Bautch’s return, the Wildcats have yet to win a Big 12 title, reaching the championship game only once during her second tenure. Notably, in each of the past four seasons, the team that eliminated Los Angeles has gone on to the Big 12 Championship.</p>
+<p>Not only from a playoff seed but historically, the Brawlers pulled off a huge upset, defeating Milwaukee 204-197. The Brawlers’ offensive trio of Jonathan Taylor, Marvin Harrison, and Trevor Lawrence accounted for an astounding 119 points, driving the team to its first-ever Lakefront Bowl appearance. For Milwaukee, another stellar season ended in heartbreak. Despite securing another divisional crown, the Mustangs exit in the Divisional Playoffs for the second straight season.</p>
 	
 	
-<h3>Big 12 Championship</h3>
+<h3>Lakefront Bowl</h3>
 	
 <center><img src="../../images/LakefrontBowlImages/2025LakefrontBowl.png" width="232" height="210" alt=""/></center>
 
-<p><b>Blizzard Claim 2025 Big 12 Championship in Epic Showdown</b></p>
+<p><b>Brawlers Upset Sugar Skulls to Claim First Lakefront Bowl in Epic Showdown</b></p>
 	
-	<p>New Orleans, Louisiana hosted the 2025 Big 12 Championship which ended on December 30, 2025, featuring the #4 seed Green Bay Blizzard and the #6 seed Chicago Slaughter. Green Bay entered the matchup as slight 6-point favorites, aiming for their second championship under GM Mason Bautch’s leadership, having previously secured the title in 2022. For Chicago, the game capped off a historic season that saw GM Darrien Clay achieve multiple firsts, including the franchise’s inaugural playoff victory and conference championship.</p>
+	<p>Santa Clara, California hosted the 2025 Lakefront Bowl which ended on December 30, 2025, featuring the #1 seed Tucson Sugar Skulls and the #3 seed Boston Brawlers. Tucson entered the matchup as major 18-point favorites, aiming for their third championship under GM Mason Bautch’s leadership, having previously secured the title in 2022 and 2024. For Boston, the game capped off their best two-season run that saw GM Cholka achieve multiple firsts, including the franchise’s first conference championship and Lakefront Bowl appearance.</p>
 	
-	<p>Despite their underdog status, the Slaughter historically thrived against Green Bay, winning four of their previous eight meetings, including three of the last four against Bautch’s Blizzard. True to form, Chicago came out swinging, with Lamar Jackson and Derrick Henry combining for a massive 82 points on Wednesday night, setting the tone for what would become the longest matchup in Big 12 history. The Slaughter held the lead through Sunday afternoon, buoyed by consistent scoring from their roster.</p>
+	<p>In addition to their underdog status, the Brawlers historically struggled against Tucson, losing four of their previous five meetings, including three straight over the last couple seasons and last year's record-setting Wild Card matchup. True to form, Tucson came out swinging, with Jahmyr Gibbs and Jaxon Smith-Njugba combining for a massive 76 points on Thursday night. The Sugar Skulls held the lead through Sunday afternoon, buoyed by consistent scoring from their roster.</p>
 	
-	<p>Green Bay, however, had their own heroes waiting to rise. Tee Higgins erupted for a season-high 48 points, supported by Mike Evans’ 36, cutting the Slaughter’s lead to 36 points heading into Monday night. With Jared Goff left to play, the Blizzard’s hopes rested squarely on their star quarterback. Goff delivered in spectacular fashion, posting 51 points to complete the comeback and secure a 194-233 victory for Green Bay. The win marked the Blizzard’s second Big 12 Championship in three seasons, solidifying their place as a league powerhouse.</p>-->
+	<p>Boston, however, had their own heroes waiting to rise. Jonathan Taylor erupted for a season-high 50 points, supported by Kyren Williams’ 36, cutting Tucson’s lead to 36 points heading into Monday night. With Trevor Lawrence left to play, the Brawlers' hopes rested squarely on their star quarterback. Lawrence delivered in the clutch, posting just enough (39 points) to complete the comeback and secure a 134-131 victory for Boston. The win marked Boston’s first Lakefront Bowl Championship in team history.</p>
 	
 	
 	
@@ -546,13 +634,22 @@ min-width: 600px;
 
 
 
-				<button class="season-collapsible"> Awards</button>
-<div class="season-content">
+<!----------------------------------------------------------------------------- AWARDS COLLAPSIBLE -->
+<button class="season-collapsible"> Awards</button>
+<div class="season-content" id="awards">
 	
-	<p>As the dust settles on another thrilling Big 12 season, the time will come to hand out the league’s most coveted honors. From the League Champion to MVP, GM of the Year and division champions every standout performance will get its moment in the spotlight. Check back at season’s end for the full list of winners.</p>
+	<p>The Milwaukee Mustangs continued their stranglehold on the Central Division, claiming their seventh division title, solidifying their status as perennial powerhouses. Meanwhile, the Tucson Sugar Skulls celebrated their fourth division crown. Over in the East, the Boston Brawlers claimed the throne for second consecutive season.</p>
+
+<p>The spotlight of the 2025 season belonged to running back Christian McCaffrey, who earned the coveted GLFL MVP honor. McCaffrey was nothing short of spectacular, claiming MVP honors for the third time overall and the second in the previous three seasons. His impact on the Wranglers was undeniable, as his stellar play fueled the team into the 6th seed in the playoffs.</p>
+
+<p>High expectations loomed over the defending champions, the Tucson Sugar Skulls, but GM Mason Bautch proved once again he thrives under pressure. Bautch guided the Sugar Skulls to a league-best and record-tying 12-2 record, securing the top seed in the playoffs. His outstanding leadership earned him the GM of the Year award for the first time in his short career.</p>
+
+<p>The Tucson Sugar Skulls clinched their fourth conference title. On the other side, the Boston Brawlers made history by capturing their first-ever conference championship and Lakefront Bowl, finally breaking through after years of postseason heartbreak. Their long-awaited trip to the Lakefront Bowl marks a turning point for a franchise that had been plagued by playoff struggles.</p>
 
 	</div>
 
+
+</div>
 
 
 <script>
@@ -759,7 +856,7 @@ document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remo
   loadCsvAndInit();
 	
 	
-// ========================================================================================== COLLAPSIBLES (RECORD BOOK STYLE)
+// ========================================================================================== COLLAPSIBLES
   const collapsibles = document.querySelectorAll(".season-collapsible");
 
   collapsibles.forEach(button => {
@@ -775,7 +872,6 @@ document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remo
         content.style.maxHeight = null;
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
-        // Allow dynamic content (like the schedule table) to expand fully without getting clipped
         setTimeout(() => {
           if (this.classList.contains("active")) {
             content.style.maxHeight = "none";
@@ -784,9 +880,35 @@ document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remo
       }
     });
   });
-	
-	
-	
+
+// ======================================================================================================================== QUICK LINKS
+const quickLinks = document.querySelectorAll('.quick-link-btn, .quick-nav-bar a');
+
+quickLinks.forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      e.preventDefault();
+      
+      // Find the button right before the target content div
+      const button = targetElement.previousElementSibling;
+      if (button && button.classList.contains('season-collapsible')) {
+        if (!button.classList.contains('active')) {
+          button.click(); // Open collapsible
+        }
+      }
+
+      // Smooth scroll to target
+      setTimeout(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  });
+});
+
 });
 </script>
 
