@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GLFL Week 11 Recap</title>
+<title>GLFL Week 12 Recap</title>
 <style>
 
 /* ========================================================================================== GLOBAL STYLES ================== */
@@ -481,12 +481,12 @@ background: #000; /* clean background for videos with transparent edges */
 
 /* ========================================================================================== SURVIVOR SIMULATOR ===================================== */
 /* Container & Header */
-.survivor-container {
+.parallel-container {
 margin: 20px 0;
 font-family: Arial, sans-serif;
 }
 
-.survivor-header {
+.parallel-header {
 font-size: 22px;
 font-weight: bold;
 text-align: center;
@@ -494,7 +494,7 @@ margin-bottom: 15px;
 }
 
 /* Table wrapper for horizontal scroll on mobile */
-.survivor-table .table-wrapper {
+.parallel-table .table-wrapper {
 width: 100%;
 overflow-x: auto;
 -webkit-overflow-scrolling: touch;
@@ -503,14 +503,14 @@ background: #fff;
 border: 1px solid #ddd;
 }
 
-.survivor-table table {
+.parallel-table table {
 border-collapse: collapse;
 width: 100%;
 min-width: 700px; /* ensures table scrolls on small screens */
 }
 
-.survivor-table th,
-.survivor-table td {
+.parallel-table th,
+.parallel-table td {
 border: 1px solid #ddd;
 padding: 8px 10px;
 text-align: center;
@@ -518,20 +518,20 @@ vertical-align: middle;
 font-size: 14px;
 }
 
-.survivor-table th {
+.parallel-table th {
 background: #f3f3f3;
 font-weight: bold;
 }
 
 /* Team header with logo */
-.survivor-table .team-header {
+.parallel-table .team-header {
 display: flex;
 align-items: center;
 justify-content: center; /* centered */
 gap: 6px;
 }
 
-.survivor-table .team-header img {
+.parallel-table .team-header img {
 width: 30px;
 height: 30px;
 object-fit: cover;
@@ -539,32 +539,32 @@ border-radius: 50%; /* circle logos */
 border: 1px solid #ccc;
 }
 
-/* Eliminated teams */
-.survivor-table .eliminated {
+/* Teams actual standings */
+.parallel-table .actual {
 font-weight: bold;
-color: #a52a2a;
-background: #f9ecec;
+color: #000000;
+background: #DADADA;
 }
 
 /* Highlight winner scores */
-.survivor-table td.winner {
+.parallel-table td.winner {
 color: #0a7a34; /* green for winner */
 font-weight: bold;
 }
 
 /* Responsive for mobile */
 @media (max-width: 768px) {
-.survivor-table table {
+.parallel-table table {
 min-width: 500px;
 }
 
-.survivor-table th,
-.survivor-table td {
+.parallel-table th,
+.parallel-table td {
 font-size: 13px;
 padding: 6px 8px;
 }
 
-.survivor-table .team-header img {
+.parallel-table .team-header img {
 width: 24px;
 height: 24px;
 }
@@ -619,18 +619,18 @@ margin-bottom: 15px;
 <!-- ========================================================================================== LOGO BAR ================== -->
 <div class="team-logo-bar">
 <div class="team-logo-container">
-<a href="../teams/boston.html"><img src="../../images/Boston.png" alt="Boston" /></a>
-<a href="../teams/brooklyn.html"><img src="../../images/Brooklyn.png" alt="Brooklyn" /></a>
-<a href="../teams/cedarRapids.html"><img src="../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
-<a href="../teams/chicago.html"><img src="../../images/Chicago.png" alt="Chicago" /></a>
-<a href="../teams/cleveland.html"><img src="../../images/Cleveland.png" alt="Cleveland" /></a>
-<a href="../teams/losAngeles.html"><img src="../../images/LosAngeles.png" alt="Los Angeles" /></a>
-<a href="../teams/miami.html"><img src="../../images/Miami.png" alt="Miami" /></a>
-<a href="../teams/milwaukee.html"><img src="../../images/Milwaukee.png" alt="Milwaukee" /></a>
-<a href="../teams/northernArizona.html"><img src="../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
-<a href="../teams/philadelphia.html"><img src="../../images/Philadelphia.png" alt="Philadelphia" /></a>
-<a href="../teams/tucson.html"><img src="../../images/Tucson.png" alt="Tucson" /></a>
-<a href="../teams/vegas.html"><img src="../../images/Vegas.png" alt="Vegas" /></a>
+<a href="../teams/boston.html"><img src="../../../images/Boston.png" alt="Boston" /></a>
+<a href="../teams/brooklyn.html"><img src="../../../images/Brooklyn.png" alt="Brooklyn" /></a>
+<a href="../teams/cedarRapids.html"><img src="../../../images/CedarRapids.png" alt="Cedar Rapids" /></a>
+<a href="../teams/chicago.html"><img src="../../../images/Chicago.png" alt="Chicago" /></a>
+<a href="../teams/cleveland.html"><img src="../../../images/Cleveland.png" alt="Cleveland" /></a>
+<a href="../teams/losAngeles.html"><img src="../../../images/LosAngeles.png" alt="Los Angeles" /></a>
+<a href="../teams/miami.html"><img src="../../../images/Miami.png" alt="Miami" /></a>
+<a href="../teams/milwaukee.html"><img src="../../../images/Milwaukee.png" alt="Milwaukee" /></a>
+<a href="../teams/northernArizona.html"><img src="../../../images/NorthernArizona.png" alt="Northern Arizona" /></a>
+<a href="../teams/philadelphia.html"><img src="../../../images/Philadelphia.png" alt="Philadelphia" /></a>
+<a href="../teams/tucson.html"><img src="../../../images/Tucson.png" alt="Tucson" /></a>
+<a href="../teams/vegas.html"><img src="../../../images/Vegas.png" alt="Vegas" /></a>
 </div>
 </div>
 
@@ -639,7 +639,7 @@ margin-bottom: 15px;
 <div class="nav-container">
 
 <a href="../../index.html" class="logo">
-<img src="../../images/Logo.png" alt="League Logo" />
+<img src="../../../images/Logo.png" alt="League Logo" />
 </a>
 
 <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" />
@@ -684,17 +684,25 @@ margin-bottom: 15px;
 
 <div class="weekly-recap-container">
 
-<h3>Week 11 Recap</h3>
+<h3>Week 12 Recap</h3>
 
-<p>It has been a strange NFL season so far. All we have to do is look back at consensus power rankings from the preseason to see how weird everything has gotten. Neither of the second, fourth, or sixth ranked teams (The Chiefs, Ravens, and Commanders, respectively) has a winning record. The Broncos (9-2) were ranked 11th and the Patriots (9-2) were 23rd.</p>
+<p>We have our first official eliminations from playoff contention of the season. Honestly, we knew these teams weren't going to make the playoffs and there are a couple more teams who mathematically are not eliminated but in spirit they are (looking at you Brooklyn &amp; Cleveland). In the spirit of the holidays we're going full grinch mode on behalf of those two teams who I should mention are the Vegas Knight Hawks and the Miami Inferno.</p>
 
-<p>So how should we feel about GM Mason Bautch and the Sugar Skulls right now? Is their success the result of diligent preparation and laser-like execution? Are they outsmarting, outmaneuvering, and outflanking their opponents at every turn? Or are we existing in some kind of football Bizarro World where up is down and down is up? Is the fact that they are doing so well actually proof that they are bad? (Don't get mad at me, Mason, I'm just asking questions...)</p>
+<p>Taylor Swift once said "Don't you worry your pretty little mind, people throw rocks at things that shine". Well buckle up, Tucson -- Dave &amp; Richard are getting ready to hurl proverbial rocks. When you really think about it, it's sort of sad to be number one in the league. Think of all the aggregate time you've spent on fantasy football. Not just this year -- no, being this good is the result of years of film study, spreadsheet tinkering, and game theory analysis. That's time you could have been outside doing any of the following things:</p>
 	
-<p>Sure to agree with the Bizarro World theory is GM Dave Nguyen. Not necessarily because it is correct but because in this alternate universe, he and the Vegas Knight Hawks aren't ass. But just to be very clear... in this universe, they are indeed ass, buns, cheeks, whatever you want to call it.</p>
+<ul>
+<li>looking at a bird</li>
+<li>looking at some grass</li>
+<li>enjoying a picnic with your friend Dave Nguyen who hasn't checked the league all season</li>
+<li>picking up a stick</li>
+<li>looking at a tree</li>
+</ul>
+	
+<p>That all sounds mega boring but probably what Dave &amp; Richard have been doing all season.</p>
 
 <!-- ========================================================================================== SCOREBOARD =============================== -->
 <div class="scoreboard-container">
-<div class="score-header">Week 11 Scoreboard</div>
+<div class="score-header">Week 12 Scoreboard</div>
 
 <div class="scoreboard">
 <!-- ================================================ Matchup 1 -->
@@ -702,18 +710,18 @@ margin-bottom: 15px;
 <div class="matchup">
 <div class="team-row winner">
 <div class="team-info">
-<img src="../../images/Milwaukee.png" alt="MKE">
-<span>Milwaukee</span>
+<img src="../../../images/CedarRapids.png" alt="CR TITANS">
+<span>Cedar Rapids</span>
 </div>
-<div class="score">206.85</div>
+<div class="score">183.85</div>
 </div>
 
 <div class="team-row loser">
 <div class="team-info">
-<img src="../../images/Cleveland.png" alt="CLE">
-<span>Cleveland</span>
+<img src="../../../images/Milwaukee.png" alt="MKE">
+<span>Milwaukee</span>
 </div>
-<div class="score">176.80</div>
+<div class="score">168.70</div>
 </div>
 </div>
 </div>
@@ -721,20 +729,20 @@ margin-bottom: 15px;
 <!-- ================================================ Matchup 2 -->
 <div class="score-box">
 <div class="matchup">
-<div class="team-row loser">
-<div class="team-info">
-<img src="../../images/Miami.png" alt="MIA">
-<span>Miami</span>
-</div>
-<div class="score">162.95</div>
-</div>
-
 <div class="team-row winner">
 <div class="team-info">
-<img src="../../images/LosAngeles.png" alt="LA Wildcats">
-<span>Los Angeles</span>
+<img src="../../../images/Tucson.png" alt="TUC">
+<span>Tucson</span>
 </div>
-<div class="score">201.15</div>
+<div class="score">255.70</div>
+</div>
+
+<div class="team-row loser">
+<div class="team-info">
+<img src="../../../images/Philadelphia.png" alt="PHILLY">
+<span>Philadelphia</span>
+</div>
+<div class="score">152.15</div>
 </div>
 </div>
 </div>
@@ -742,20 +750,20 @@ margin-bottom: 15px;
 <!-- ================================================ Matchup 3 -->
 <div class="score-box">
 <div class="matchup">
-<div class="team-row loser">
-<div class="team-info">
-<img src="../../images/Philadelphia.png" alt="PHILLY">
-<span>Philadelphia</span>
-</div>
-<div class="score">163.50</div>
-</div>
-
 <div class="team-row winner">
 <div class="team-info">
-<img src="../../images/Brooklyn.png" alt="BKN">
-<span>Brooklyn</span>
+<img src="../../../images/Chicago.png" alt="CHICAGO">
+<span>Chicago</span>
 </div>
-<div class="score">185.35</div>
+<div class="score">186.55</div>
+</div>
+
+<div class="team-row loser">
+<div class="team-info">
+<img src="../../../images/Cleveland.png" alt="CLE">
+<span>Cleveland</span>
+</div>
+<div class="score">143.60</div>
 </div>
 </div>
 </div>
@@ -765,18 +773,18 @@ margin-bottom: 15px;
 <div class="matchup">
 <div class="team-row winner">
 <div class="team-info">
-<img src="../../images/Boston.png" alt="BOS">
-<span>Boston</span>
+<img src="../../../images/NorthernArizona.png" alt="NAZ">
+<span>Northern Arizona</span>
 </div>
-<div class="score">158.85</div>
+<div class="score">172.15</div>
 </div>
 
 <div class="team-row loser">
 <div class="team-info">
-<img src="../../images/Vegas.png" alt="LV">
+<img src="../../../images/Vegas.png" alt="LV">
 <span>Vegas</span>
 </div>
-<div class="score">120.25</div>
+<div class="score">133.45</div>
 </div>
 </div>
 </div>
@@ -784,20 +792,20 @@ margin-bottom: 15px;
 <!-- ================================================ Matchup 5 -->
 <div class="score-box">
 <div class="matchup">
-<div class="team-row loser">
-<div class="team-info">
-<img src="../../images/NorthernArizona.png" alt="NAZ">
-<span>Northern Arizona</span>
-</div>
-<div class="score">182.55</div>
-</div>
-
 <div class="team-row winner">
 <div class="team-info">
-<img src="../../images/Chicago.png" alt="CHI">
-<span>Chicago</span>
+<img src="../../../images/Boston.png" alt="BOSTON">
+<span>Boston</span>
 </div>
-<div class="score">185.10</div>
+<div class="score">167.35</div>
+</div>
+
+<div class="team-row loser">
+<div class="team-info">
+<img src="../../../images/Miami.png" alt="MIAMI">
+<span>Miami</span>
+</div>
+<div class="score">163.05</div>
 </div>
 </div>
 </div>
@@ -805,20 +813,20 @@ margin-bottom: 15px;
 <!-- ================================================ Matchup 6 -->
 <div class="score-box">
 <div class="matchup">
-<div class="team-row loser">
-<div class="team-info">
-<img src="../../images/CedarRapids.png" alt="CR">
-<span>Cedar Rapids</span>
-</div>
-<div class="score">143.80</div>
-</div>
-
 <div class="team-row winner">
 <div class="team-info">
-<img src="../../images/Tucson.png" alt="TUC SUGAR SKULLS">
-<span>Tucson</span>
+<img src="../../../images/LosAngeles.png" alt="LA">
+<span>Los Angeles</span>
 </div>
-<div class="score">180.00</div>
+<div class="score">193.65</div>
+</div>
+
+<div class="team-row loser">
+<div class="team-info">
+<img src="../../../images/Brooklyn.png" alt="BROOKLYN">
+<span>Brooklyn</span>
+</div>
+<div class="score">148.00</div>
 </div>
 </div>
 </div>
@@ -826,101 +834,95 @@ margin-bottom: 15px;
 </div>
 </div>
 
-<p>What Boston did to Vegas wasn't merely a win...it was downright disrespectful. But let's be honest, I think we all were expecting to see GM Dave Nguyen & the Knight Hawks be humiliated like this. When you incessantly whine and trash talk in the groupchat, nobody's gonna be upset when you get Wemby'd™. Great bouncebad for Boston this week.</p>
+<p>It wasn't easy to watch Northern Arizona and Vegas this week - but at least it was funny for everyone else. Not unlike the Unc Race below that left only one collective hamstring intact. Reminder to start stretching NOW for any nonsense you might try during Thanksgiving week.</p>
 
+	
 <div class="recap-media-container">
-<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:4vziktoq7p6jd3i5l3wtmfab/app.bsky.feed.post/3m5nflauvms2e" data-bluesky-cid="bafyreig7gv2q3dpehl4bfknvb5ucsf7mvdzt7dsdwyimh7ljnd5aob72ci" data-bluesky-embed-color-mode="system"><p lang="en">HOOOOOOOOOOOLY 💩 VICTOR...
-They called a foul on the floor but Wemby slamming on Draymond on the inbounds is cinema and Wemby let Dray know after the slam<br><br><a href="https://bsky.app/profile/did:plc:4vziktoq7p6jd3i5l3wtmfab/post/3m5nflauvms2e?ref_src=embed">[image or embed]</a></p>&mdash; CJ Fogler (<a href="https://bsky.app/profile/did:plc:4vziktoq7p6jd3i5l3wtmfab?ref_src=embed">@cjzero.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:4vziktoq7p6jd3i5l3wtmfab/post/3m5nflauvms2e?ref_src=embed">November 14, 2025 at 10:52 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+<video controls preload="metadata" class="recap-media">
+<source src="https://mdexccnjsclvstuitpwt.supabase.co/storage/v1/object/public/videos/recap-2025-week-12/1764044738041-fyp-thanksgiving2022.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 </div>
 	
 <!-- ========================================================================================== AWARDS =============================== -->
 <div class="teamawards-container">
-<div class="teamawards-header">Week 11 Weekly Awards</div>
+<div class="teamawards-header">Week 12 Weekly Awards</div>
 <div class="teamawards-table">
 
 <div class="teamaward-box">
 <div class="team-header">
-<img src="../../images/Milwaukee.png" alt="High Octane">
-<div class="team-name">Milwaukee</div>
+<img src="../../../images/Tucson.png" alt="High Octane">
+<div class="team-name">Tucson</div>
 </div>
 <div class="teamaward-type">High Octane</div>
 <div class="teamaward-description">Highest point total of the week.</div>
-<div class="points good-award">206.85 points scored</div>
+<div class="points good-award">255.70 points scored</div>
 </div>
 
 <div class="teamaward-box">
 <div class="team-header">
-<img src="../../images/NorthernArizona.png" alt="Best Loser">
+<img src="../../../images/Milwaukee.png" alt="Best Loser">
 <div class="team-name">Northern Arizona</div>
 </div>
 <div class="teamaward-type">Best Loser</div>
 <div class="teamaward-description">Highest scoring losing team.</div>
-<div class="points good-award">182.55 points scored</div>
+<div class="points good-award">168.70 points scored</div>
 </div>
 
 
 <div class="teamaward-box">
 <div class="team-header">
-<img src="../../images/NorthernArizona.png" alt="Comeback Kid">
-<div class="team-name">Northern Arizona</div>
+<img src="../../../images/Tucson.png" alt="Comeback Kid">
+<div class="team-name">Tucson</div>
 </div>
 <div class="teamaward-type">Comeback Kid</div>
 <div class="teamaward-description">Largest point differential from last week.</div>
-<div class="points good-award">+59.35 point differential</div>
+<div class="points good-award">+75.70 point differential</div>
 </div>
 
 <div class="teamaward-box">
 <div class="team-header">
-<img src="../../images/Vegas.png" alt="Low Blow">
+<img src="../../../images/Vegas.png" alt="Low Blow">
 <div class="team-name">Vegas</div>
 </div>
 <div class="teamaward-type">Low Blow</div>
 <div class="teamaward-description">Lowest point total of the week.</div>
-<div class="points bad-award">120.25 points scored</div>
+<div class="points bad-award">133.45 points scored</div>
 </div>
 
 <div class="teamaward-box">
 <div class="team-header">
-<img src="../../images/Boston.png" alt="Worst Winner">
+<img src="../../../images/Boston.png" alt="Worst Winner">
 <div class="team-name">Boston</div>
 </div>
 <div class="teamaward-type">Worst Winner</div>
 <div class="teamaward-description">Lowest scoring winning team.</div>
-<div class="points bad-award">158.85 points scored</div>
+<div class="points bad-award">167.35 points scored</div>
 </div>
 
 <div class="teamaward-box">
 <div class="team-header">
-<img src="../../images/CedarRapids.png" alt="Biggest Drop">
-<div class="team-name">Cedar Rapids</div>
+<img src="../../../images/Milwaukee.png" alt="Biggest Drop">
+<div class="team-name">Milwaukee</div>
 </div>
 <div class="teamaward-type">Biggest Drop</div>
 <div class="teamaward-description">Largest drop in points from last week.</div>
-<div class="points bad-award">-42.95 point differential</div>
+<div class="points bad-award">-38.15 point differential</div>
 </div>
 </div>
 </div>
 
-<p>What happened to the Titans this week? Gotta get this thing turned around and going in the right direction. I was able to obtain exclusive footage of their current trajectory this season:</p>
+<p>Enough negativity in this newsletter. I would like to commend the Tucson Sugar Skulls for improving their fantasy performance and thus, themselves, the most from last week. Not to mention the 255.70 points they hung on the Philadelphia Soul is now the record for most points scored in a game in GLFL history and the 103.55-point win is good for 7th largest margin of victory. You and Alijah Clark have a lot in common. You might get knocked on your butt three times. But guess what? You got up three* times too. And then made a damn play on the ball. Admirable effort and determination. GM Mason Bautch is gonna go far in life with this attitude.</p>
 	
 <div class="recap-media-container">
 <video controls preload="metadata" class="recap-media">
-<source src="https://mdexccnjsclvstuitpwt.supabase.co/storage/v1/object/public/videos/recap-2025-week-11/1763440757476-insane-police-chase-at-concert.mp4" type="video/mp4">
+<source src="https://video.bsky.app/watch/did%3Aplc%3Ahlvr2omhnmvdmfnvmcuhyevz/bafkreidbetptwrhp2x3u4dwqxg7mqcvzpaozc6qozkzihuepygo55o7t4e/playlist.m3u8" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 </div>
 
-<p>To the Miami Inferno and their incompetent GM -- if I may, a word of advice: the only way to be at peace with your current predicament is to embrace the Dabo Delusion. Don't let anyone talk about your team. Accept your team and all its faults. Love your team unconditionally. Love yourself unconditionally. You are enough. Your team is enough. I mean, not enough to have a snowball's chance in hell of making the playoffs, but you get the sentiment.</p>
+<p><em>*You know those inspirational Instagram posts where they're like "When life knocks you down two times, get up three". That makes no sense. How are you getting up more times than you're knocked down? Unless you're starting to count the "get ups" from before the times that you were getting knocked down. Or get-ups from that weren't the result of a knock-down. Which doesn't really seem like the spirit of what they're talking about. I suppose I did get up probably 20 times yesterday but was knocked down zero.</em></p>
 	
-<blockquote>"That's the freakin' heart of a champion right there. The record don't define you. How you respond is what defines you. Our record ain't what we want it to be but we got a hell of a great group of young people right there."</blockquote>
-
-<div class="recap-media-container">
-<video controls preload="metadata" class="recap-media">
-<source src="https://mdexccnjsclvstuitpwt.supabase.co/storage/v1/object/public/videos/recap-2025-week-11/1763438102355-yeah-dabo-.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
-
 <!-- ========================================================================================== STANDINGS =============================== -->
 <div class="score-header">League Standings</div>
 <div id="standings-container">
@@ -941,13 +943,17 @@ Your browser does not support the video tag.
 </table>
 </div>
 
-<p>It is now the second week of my Mario Party Algorithm predictions. For those of you that are new to the newsletter, I like to predict who will win the league every week as the playoffs draw nearer. Is it based on anything scientific? Sort of. I use the same algorithm that Toad uses in Mario Party to predict their winner. And will I continue to pick winners as the season goes on? Of course. That increases my chances of correctly predicting the winner..</p>
+<h3>Mario Party Prediction</h3>
+	
+<p>We have entered the fifth week of my Mario Party Algorithm predictions. For those of you that are new to the newsletter, I like to predict who will win the league every week as the playoffs draw nearer. Is it based on anything scientific? Sort of. I use the same algorithm that Toad uses in Mario Party to predict their winner. And will I continue to pick winners as the season goes on? Of course. That increases my chances of correctly predicting the winner. Do I factor in whether you're still mathematically in the playoffs? No, I don't!</p>
 
 <div class="recap-media-container">
-<img src="https://i.redd.it/53n6jwq3nmw71.jpg" alt="Mariota Hurdle" class="recap-media">
+<img src="https://www.outcyders.net/images/screenshots/763/mario_party_2_2.jpg" alt="Mariota Hurdle" class="recap-media">
 </div>
 	
-<h3>Toad is wrong! It's not anyone's game! I am one hundred percent confident that the winner of GLFL will be Michael Bautch!</h3>
+<p>The winner of the GLFL will be...</p>
+	
+<h3>The Milwaukee Mustangs!</h3>
 	
 <p>Each week we track Lucky and Unlucky outcomes — because nothing brings a league together like complaining. A lucky win means you scored in the bottom half of the league but still walked away smiling. An unlucky loss means you scored in the top half and still got punched in the mouth by the schedule. In short: if you’re calling yourself “unlucky” but didn’t make this list… relax, you’re not special.</p>
 
@@ -957,242 +963,244 @@ Your browser does not support the video tag.
 <div class="loading">Loading lucky duck data...</div>
 </div>
 	
-<p>The Survivor Simulator has officially come to an end, and we have our champion — the Tucson Sugar Skulls! In a perfect bit of cosmic timing, they also took down the other finalist, the Cedar Rapids Titans, in their real matchup this week. Congrats to Tucson for outlasting the entire league and surviving the season (there’s still no money… with ya broke ass).</p>
-
-<p>Now that Survivor is wrapped, stay tuned for next week’s brand-new feature: a schedule comparison breakdown showing what every team’s record would be if they had each other’s schedule. It's another tool that you can use to throw it in peoples faces on how good or bad you are, it’s about to get spicy..</p>
+<p>With the Survivor Simulator officially wrapped up, it’s time to debut a brand-new weekly feature: Parallel Universe Standings. Ever wondered how your season would look if you had someone else’s schedule? This grid lays it all out — every team, every alternate timeline, every “what if” scenario. And best of all, it’s finally your chance to talk your shit. If your rival padded their record against a cupcake slate while you ran the gauntlet, this tool will expose it instantly. Check it out and see who’s truly elite...and who’s living a lie.</p>
 
 <!-- ========================================================================================== SURVIVOR =============================== -->
-<div class="survivor-container">
-<div class="survivor-header">Week 11 Survivor Simulator</div>
-<div class="survivor-table">
+<div class="parallel-container">
+<div class="parallel-header">Parallel Universe Standings</div>
+<div class="parallel-table">
 
 <div class="table-wrapper">
 <table>
 <tr>
 <th>Team</th>
-<th>Week 1</th> 
-<th>Week 2</th>
-<th>Week 3</th>
-<th>Week 4</th>
-<th>Week 5</th>
-<th>Week 6</th>
-<th>Week 7</th>
-<th>Week 8</th>
-<th>Week 9</th>
-<th>Week 10</th>
-<th>Week 11</th>
+<th>MKE</th> 
+<th>PHI</th>
+<th>CHI</th>
+<th>LV</th>
+<th>BOS</th>
+<th>NAZ</th>
+<th>CLE</th>
+<th>CR</th>
+<th>BKN</th>
+<th>TUC</th>
+<th>LA</th>
+<th>MIA</th>
 </tr>
 
 <!--1-->
 <tr>
-<td><div class="team-header"><img src="../../images/Tucson.png" alt="TUC SUGAR SKULLS"></div></td>
-<td>192.3</td>
-<td>172.2</td>
-<td>145.3</td>
-<td>196.3</td>
-<td>169.8</td>
-<td>167.9</td>
-<td>216.2</td>
-<td>180.8</td>
-<td>194.9</td>
-<td>205.6</td>
-<td>180.0</td>
+<td><div class="team-header"><img src="../../../images/Milwaukee.png" alt="MILWAUKEE"></div></td>
+<td><div class="actual">7-5</div></td>
+<td>6-6</td>
+<td>7-5</td>
+<td>5-7</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>6-6</td>
+<td>6-5-1</td>
+<td>7-5</td>
+<td>6-6</td>
+<td>7-5</td>
 </tr>
 
 <!--2-->
 <tr>
-<td><div class="team-header"><img src="../../images/CedarRapids.png" alt="CR TITANS"></div></td>
-<td>162.5</td>
-<td>155.9</td>
-<td>205.6</td>
-<td>142.8</td>
-<td>186.4</td>
-<td>156.8</td>
-<td>206.3</td>
-<td>214.8</td>
-<td>197.7</td>
-<td>186.8</td>
-<td><div class="eliminated">143.8</div></td>
+<td><div class="team-header"><img src="../../../images/Philadelphia.png" alt="PHILLY"></div></td>
+<td>7-5</td>
+<td><div class="actual">6-6</div></td>
+<td>7-5</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>8-4</td>
+<td>6-6</td>
+<td>6-6</td>
+<td>6-6</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>7-5</td>
 </tr>
 
 <!--3-->
 <tr>
-<td><div class="team-header"><img src="../../images/LosAngeles.png" alt="LA WILDCATS"></div></td>
-<td>213.1</td>
-<td>203.8</td>
-<td>158.1</td>
-<td>196.3</td>
-<td>192.4</td>
-<td>185.8</td>
-<td>241.2</td>
-<td>177.6</td>
-<td>188.3</td>
-<td><div class="eliminated">173.2</div></td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Chicago.png" alt="CHICAGO"></div></td>
+<td>5-7</td>
+<td>2-9-1</td>
+<td><div class="actual">6-6</div></td>
+<td>6-6</td>
+<td>4-8</td>
+<td>7-5</td>
+<td>6-6</td>
+<td>6-6</td>
+<td>4-8</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>5-7</td>
 </tr>
 
 <!--4-->
 <tr>
-<td><div class="team-header"><img src="../../images/NorthernArizona.png" alt="NAR WRANGLERS"></div></td>
-<td>201.1</td>
-<td>158.7</td>
-<td>155.7</td>
-<td>173.2</td>
-<td>199.8</td>
-<td>218.7</td>
-<td>202.2</td>
-<td>169.1</td>
-<td><div class="eliminated">184.6</div></td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Vegas.png" alt="VEGAS"></div></td>
+<td>3-9</td>
+<td>5-7</td>
+<td>5-7</td>
+<td><div class="actual">3-9</div></td>
+<td>3-9</td>
+<td>2-10</td>
+<td>4-8</td>
+<td>3-9</td>
+<td>3-9</td>
+<td>3-9</td>
+<td>3-9</td>
+<td>4-8</td>
 </tr>
 	
 <!--5-->
 <tr>
-<td><div class="team-header"><img src="../../images/Philadelphia.png" alt="PHI SOUL"></div></td>
-<td>173.1</td>
-<td>153.1</td>
-<td>200.2</td>
-<td>201.4</td>
-<td>222.1</td>
-<td>175.4</td>
-<td>165.1</td>
-<td><div class="eliminated">110.8</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Boston.png" alt="BOSTON"></div></td>
+<td>5-7</td>
+<td>7-5</td>
+<td>9-3</td>
+<td>6-6</td>
+<td><div class="actual">7-5</div></td>
+<td>6-6</td>
+<td>6-6</td>
+<td>6-6</td>
+<td>8-4</td>
+<td>9-3</td>
+<td>9-3</td>
+<td>9-3</td>
 </tr>
 	
 <!--6-->
 <tr>
-<td><div class="team-header"><img src="../../images/Cleveland.png" alt="CLE GLADIATORS"></div></td>
-<td>132.2</td>
-<td>238.6</td>
-<td>176.8</td>
-<td>248.7</td>
-<td>175.6</td>
-<td>158.3</td>
-<td><div class="eliminated">149.4</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/NorthernArizona.png" alt="NAZ"></div></td>
+<td>4-8</td>
+<td>6-6</td>
+<td>6-6</td>
+<td>8-4</td>
+<td>7-5</td>
+<td><div class="actual">5-7</div></td>
+<td>5-7</td>
+<td>6-6</td>
+<td>7-5</td>
+<td>6-6</td>
+<td>7-5</td>
+<td>8-4</td>
 </tr>
 
 <!--7-->
 <tr>
-<td><div class="team-header"><img src="../../images/Miami.png" alt="MIA INFERNO"></div></td>
-<td>157.4</td>
-<td>171.1</td>
-<td>169.1</td>
-<td>186.9</td>
-<td>176.8</td>
-<td><div class="eliminated">152.4</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Cleveland.png" alt="CLEVELAND"></div></td>
+<td>5-7</td>
+<td>5-7</td>
+<td>5-7</td>
+<td>6-6</td>
+<td>5-7</td>
+<td>5-7</td>
+<td><div class="actual">4-8</div></td>
+<td>4-8</td>
+<td>5-7</td>
+<td>6-6</td>
+<td>5-7</td>
+<td>5-7</td>
 </tr>		
 
 <!--8-->
 <tr>
-<td><div class="team-header"><img src="../../images/Boston.png" alt="BOS BRAWLERS"></div></td>
-<td>194.3</td>
-<td>162.9</td>
-<td>201.6</td>
-<td>190.7</td>
-<td><div class="eliminated">168.2</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/CedarRapids.png" alt="CR TITANS"></div></td>
+<td>6-6</td>
+<td>6-6</td>
+<td>8-4</td>
+<td>5-7</td>
+<td>8-4</td>
+<td>7-5</td>
+<td>7-5</td>
+<td><div class="actual">7-5</div></td>
+<td>4-8</td>
+<td>7-5</td>
+<td>6-6</td>
+<td>8-4</td>
 </tr>
 
 
 
 <!--9-->
 <tr>
-<td><div class="team-header"><img src="../../images/Milwaukee.png" alt="MKE MUSTANGS"></div></td>
-<td>176.4</td>
-<td>161.6</td>
-<td>174.8</td>
-<td><div class="eliminated">140.1</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Brooklyn.png" alt="BROOKLYN"></div></td>
+<td>5-7</td>
+<td>4-8</td>
+<td>7-5</td>
+<td>6-6</td>
+<td>3-9</td>
+<td>6-6</td>
+<td>4-8</td>
+<td>5-7</td>
+<td><div class="actual">4-8</div></td>
+<td>4-8</td>
+<td>6-6</td>
+<td>4-8</td>
 </tr>
 
 
 <!--10-->
 <tr>
-<td><div class="team-header"><img src="../../images/Vegas.png" alt="LV KNIGHT HAWKS"></div></td>
-<td>159.8</td>
-<td>235.2</td>
-<td><div class="eliminated">116.2</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Tucson.png" alt="TUCSON"></div></td>
+<td>7-5</td>
+<td>8-4</td>
+<td>7-5</td>
+<td>8-4</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>8-4</td>
+<td>7-4-1</td>
+<td>9-3</td>
+<td><div class="actual">11-1</div></td>
+<td>8-4</td>
+<td>8-4</td>
 </tr>
 
 <!--11-->
 <tr>
-<td><div class="team-header"><img src="../../images/Chicago.png" alt="CHI SLAUGHTER"></div></td>
-<td>150.2</td>
-<td><div class="eliminated">142.1</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/LosAngeles.png" alt="LA"></div></td>
+<td>7-5</td>
+<td>7-5</td>
+<td>7-5</td>
+<td>9-3</td>
+<td>7-5</td>
+<td>10-2</td>
+<td>9-3</td>
+<td>10-2</td>
+<td>7-5</td>
+<td>10-2</td>
+<td><div class="actual">9-3</div></td>
+<td>8-3-1</td>
 </tr>
 
 <!--12-->
 <tr>
-<td><div class="team-header"><img src="../../images/Brooklyn.png" alt="BKN BOLTS"></div></td>
-<td><div class="eliminated">118.9</div></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td><div class="team-header"><img src="../../../images/Miami.png" alt="MIAMI"></div></td>
+<td>1-11</td>
+<td>4-8</td>
+<td>4-8</td>
+<td>3-6</td>
+<td>4-8</td>
+<td>3-9</td>
+<td>5-7</td>
+<td>2-10</td>
+<td>4-8</td>
+<td>5-7</td>
+<td>5-7</td>
+	<td><div class="actual">3-9</div></td>
 </tr>
 
 </table>
 </div> 	     
 </div>
 </div>
-
-
-<p>Finally, I will leave you with this clip of Cam Skattebo on Monday Night Raw. I am shocked that Cam would be so reckless just a few weeks after his devastating ankle injury. I thought that he would have a quiet recovery -- get into gardening, do some jigsaw puzzles, and finally get around to reading some Tolstoy.</p>
-
-<div class="recap-media-container">
-<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:zx6554ufmfnpuw6o7wwuirmq/app.bsky.feed.post/3m5uqqao6y22g" data-bluesky-cid="bafyreifwf7iiawax2ztx6xi7fzggux6d2ahsudohk55wgxfbcewrjqjh3q" data-bluesky-embed-color-mode="system"><p lang="en">Cam Skattebo getting physical with the Judgment Day three weeks after surgery on his dislocated ankle
-
-I&#x27;m sure the Giants are thrilled<br><br><a href="https://bsky.app/profile/did:plc:zx6554ufmfnpuw6o7wwuirmq/post/3m5uqqao6y22g?ref_src=embed">[image or embed]</a></p>&mdash; Nick Piccone (<a href="https://bsky.app/profile/did:plc:zx6554ufmfnpuw6o7wwuirmq?ref_src=embed">@piccone.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:zx6554ufmfnpuw6o7wwuirmq/post/3m5uqqao6y22g?ref_src=embed">November 17, 2025 at 9:01 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
-</div>
-
-<p>Thanks for reading this week!</p>
+	
+<p>I hope everyone enjoyed the week 12 recap! I hope you have a lovely Thanksgiving. It's a great opportunity to get together with the people that mean the most to you in life and remind them that Caleb Williams can throw absolute missiles. Please get in touch with Dave &amp; Richard if you'd like to join the Fantasy Football Losers That Only Lost Because They Are Actually Secret Intellectuals Book Club.</p>
 
 
 </div>
