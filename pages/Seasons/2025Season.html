@@ -61,7 +61,41 @@ width: 100%;
 min-width: 600px;
 }
 
-</style>
+/* =============================================== SEASON COLLAPSIBLES */
+.season-collapsible {
+  background: #001433;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+  box-sizing: border-box;
+}
+
+.season-collapsible:hover {
+  background: #007FC8;
+}
+
+.season-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.season-content.active {
+  padding: 12px 0;
+}
+	
+	</style>
 </head>
 
 <body>
@@ -183,8 +217,8 @@ min-width: 600px;
 	
 
 	
-	<button class="collapsible"> Personnel Movement<hr></button>
-<div class="content">
+	<button class="season-collapsible"> Personnel Movement</button>
+<div class="season-content">
 	
 
 <p>No front office drama to report this year—every GM is back at the helm, ready to run it back for another wild ride. The only shake-up came from the reigning champs, the Green Bay Blizzard, who stunned the league with a full rebrand to the Tucson Sugar Skulls.</p>
@@ -204,8 +238,8 @@ min-width: 600px;
 	
 	
 		 
-	<button class="collapsible"> Draft<hr></button>
-<div class="content">
+	<button class="season-collapsible"> Draft</button>
+<div class="season-content">
 	
 <br>
 		<center><img src="../../images/DraftImages/2026Draft.png" width="228" height="200" alt=""/></center>
@@ -242,8 +276,8 @@ min-width: 600px;
 
 	
 
-		<button class="collapsible"> Regular Season<hr></button>
-<div class="content">
+		<button class="season-collapsible"> Regular Season</button>
+<div class="season-content">
 <p>The 2025 season spanned 14 weeks and 168 games, kicking off on the Thursday night following Labor Day—a staple tradition for the league’s opening night. Each team squared off twice against division rivals and once against all other teams, with the final week subject to flex scheduling to keep playoff races and divisional championships competitive.</p>
 	
 <p>For those still nostalgic about the experimental days, the league maintained three individual defensive positions (IDP) in lieu of team defenses—a nod to the innovation introduced back in 2022, though many GMs might barely remember the switch at this point.</p>
@@ -352,8 +386,8 @@ min-width: 600px;
 	
 
 	
-	<button class="collapsible"> Game Schedule<hr></button>
-<div class="content">
+	<button class="season-collapsible"> Game Schedule</button>
+<div class="season-content">
   <div class="wrap h2h">
 
 
@@ -425,8 +459,8 @@ min-width: 600px;
 	
 	
 	
-	<button class="collapsible"> Postseason<hr></button>
-<div class="content">
+	<button class="season-collapsible"> Postseason</button>
+<div class="season-content">
 	
 	<br>
 	
@@ -512,8 +546,8 @@ min-width: 600px;
 
 
 
-				<button class="collapsible"> Awards<hr></button>
-<div class="content">
+				<button class="season-collapsible"> Awards</button>
+<div class="season-content">
 	
 	<p>As the dust settles on another thrilling Big 12 season, the time will come to hand out the league’s most coveted honors. From the League Champion to MVP, GM of the Year and division champions every standout performance will get its moment in the spotlight. Check back at season’s end for the full list of winners.</p>
 
@@ -723,6 +757,33 @@ document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remo
   // ========================================================================================== START
 
   loadCsvAndInit();
+	
+	
+// ========================================================================================== COLLAPSIBLES (RECORD BOOK STYLE)
+  const collapsibles = document.querySelectorAll(".season-collapsible");
+
+  collapsibles.forEach(button => {
+    const content = button.nextElementSibling;
+    content.style.maxHeight = null; // collapsed by default
+    content.classList.remove("active");
+
+    button.addEventListener("click", function() {
+      this.classList.toggle("active");
+      content.classList.toggle("active");
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        // Allow dynamic content (like the schedule table) to expand fully without getting clipped
+        setTimeout(() => {
+          if (this.classList.contains("active")) {
+            content.style.maxHeight = "none";
+          }
+        }, 300);
+      }
+    });
+  });
 	
 	
 	
