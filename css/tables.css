@@ -162,3 +162,19 @@ tr.summary-row td {
     color: #666;
     font-weight: 500;
 }
+
+
+/* Inline team link with logo formatting */
+.table-team-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-team-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
