@@ -144,18 +144,28 @@ td.cancelled {
 
 
 /* ========================================================================================== TABLE TEAM LINKS */
+.team-cell,
 .table-team-link {
-  text-decoration: none;
-  color: inherit;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
+.team-cell {
+    justify-content: center;
+}
+
+.table-team-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.team-logo,
 .table-team-link img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
 }
 
 /* ========================================================================================== TEAM TABLES */
