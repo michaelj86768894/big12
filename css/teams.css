@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+/* ========================================================================================== TEAM COLOR VARIABLES */
+
+.team-page {
+    --team-primary: var(--navy);
+    --team-secondary: var(--industrial-gray);
+    --team-accent: var(--bg-color);
+    --team-header-text: var(--bright-white);
+}
+
+
+/* ========================================================================================== BOSTON */
+
+.team-page.boston {
+    --team-primary: #002244;
+    --team-secondary: #C60C30;
+    --team-accent: #B0B7BC;
+}
+
+
+/* ========================================================================================== BROOKLYN */
+
+.team-page.brooklyn {
+    --team-primary: #125740;
+    --team-secondary: #000000;
+    --team-accent: #FFFFFF;
+}
+
+
+/* ========================================================================================== CEDAR RAPIDS */
+
+.team-page.cedar-rapids {
+    --team-primary: #0C2340;
+    --team-secondary: #4B92DB;
+    --team-accent: #A7A6A6;
+}
+
+
+/* ========================================================================================== CHICAGO */
+
+.team-page.chicago {
+    --team-primary: #0B162A;
+    --team-secondary: #C83803;
+    --team-accent: #FFFFFF;
+}
+
+
+/* ========================================================================================== CLEVELAND */
+
+.team-page.cleveland {
+    --team-primary: #311D00;
+    --team-secondary: #FF3C00;
+    --team-accent: #B0B7BC;
+}
+
+
+/* ========================================================================================== LOS ANGELES */
+
+.team-page.los-angeles {
+    --team-primary: #003594;
+    --team-secondary: #FFA300;
+    --team-accent: #FFFFFF;
+}
+
+
+/* ========================================================================================== MIAMI */
+
+.team-page.miami {
+    --team-primary: #005778;
+    --team-secondary: #FC4C02;
+    --team-accent: #008E97;
+}
+
+
+/* ========================================================================================== MILWAUKEE */
+
+.team-page.milwaukee {
+    --team-primary: #646466;
+    --team-secondary: #F47A34;
+    --team-accent: #241E24;
+}
+
+
+/* ========================================================================================== NORTHERN ARIZONA */
+
+.team-page.northern-arizona {
+    --team-primary: #3E3C49;
+    --team-secondary: #186EA8;
+    --team-accent: #E82430;
+}
+
+
+/* ========================================================================================== PHILADELPHIA */
+
+.team-page.philadelphia {
+    --team-primary: #004C54;
+    --team-secondary: #A5ACAF;
+    --team-accent: #000000;
+}
+
+
+/* ========================================================================================== TUCSON */
+
+.team-page.tucson {
+    --team-primary: #000000;
+    --team-secondary: #EDB11E;
+    --team-accent: #BD202E;
+}
+
+
+/* ========================================================================================== VEGAS */
+
+.team-page.vegas {
+    --team-primary: #000000;
+    --team-secondary: #A5ACAF;
+    --team-accent: #FFFFFF;
+}
