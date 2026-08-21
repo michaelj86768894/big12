@@ -116,3 +116,26 @@
     --team-secondary: #A5ACAF;
     --team-accent: #FFFFFF;
 }
+
+/* ========================================================================================== TEAM COLOR BOXES */
+
+.team-color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.2);
+    margin: 0 3px;
+}
+
+.team-color-box.primary {
+    background-color: var(--team-primary);
+}
+
+.team-color-box.secondary {
+    background-color: var(--team-secondary);
+}
+
+.team-color-box.accent {
+    background-color: var(--team-accent);
+}
