@@ -786,12 +786,12 @@
 <div class="figure-card">
 
     <div class="figure-photo">
-                    <img src="../../images/Jerseys/BostonJersey-Udvare.png" alt="Johns Udvare">
+                    <img src="../../images/Jerseys/BostonJersey-Udvare.png" alt="John Udvare">
     </div>
 
     <div class="figure-info">
 
-        <h4>Udvare</h4>
+        <h4>John Udvare</h4>
 
         <span class="figure-role">
             General Manager
@@ -939,7 +939,7 @@ document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remo
 
 // ===================== CONFIG =====================
 const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
-const fixedTeam = "Boston Brawlers"; // Hardcoded team for this page
+const fixedTeam = "Boston Brawlers"; // ==================================================================================================================== Hardcoded team for this page
 
 // Elements
 const yearSelect = document.getElementById("yearSelect");
@@ -980,7 +980,7 @@ yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
 Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
 yearSelect.appendChild(new Option(year, year));
 });
-// ================================================================== Default to 2026 if available
+// ==================================================================================================================================== Default to 2026 if available
 yearSelect.value = availableYears.includes(2026) ? "2026" : availableYears[0];
 yearSelect.addEventListener("change", updateDisplay);
 }

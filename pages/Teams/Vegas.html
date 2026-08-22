@@ -7,60 +7,19 @@
 <!-- ========================================================================================== LINKED STYLESHEETS ================== -->
 <link rel="stylesheet" href="../../css/global.css">
 <link rel="stylesheet" href="../../css/tables.css">
-<link rel="stylesheet" href="../../css/colorboxes.css">
+<link rel="stylesheet" href="../../css/teams.css">
 
-<style>
-/* ========================================================================================== Controls + Cards ====== */
-.controls { 
-text-align:center; 
-margin:15px 0; 
-display:flex; 
-flex-wrap:wrap; 
-justify-content:center; 
-gap:10px; 
+	<style>
+		
+/* ========================================================================================== TEAM COLOR VARIABLES ====== */
+		
+	:root {
+	--team-primary:#000000;
+	--team-secondary:#A5ACAF;
+	--team-accent:#FFFFFF;
 }
 
-select, input[type="text"] { 
-padding:8px 10px; 
-font-size:14px; 
-}
-
-.summary { 
-display:flex; 
-justify-content: center; 
-gap:20px; 
-margin:15px 0; 
-flex-wrap:wrap; 
-}
-
-/* stronger, general winner highlight (covers .h2h tables + your match table) */
-.h2h td.winner,
-.divisions-table td.winner,
-#matchTable td.winner,
-.table-wrap td.winner {
-font-weight: 700 !important;
-background: #F5E6C8 !important;
-color: #002855 !important;
-position: relative;
-z-index: 2;
-}
-
-.no-data, .loading { 
-text-align:center; 
-margin-top:14px; 
-color:#666; 
-}
-
-.table-wrap {
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-}
-
-.table-wrap table {
-width: 100%;
-min-width: 600px;
-}
-</style>
+	</style>
 </head>
 
 <body>
@@ -132,95 +91,198 @@ min-width: 600px;
 </nav>
 
 <div class="text-container">
+	
+	<!-- ========================================================================================== HERO CARD ================== -->
+	
+<div class="team-hero-card">
+  <img src="../../images/Vegas.png" alt="Vegas Logo" class="team-hero-logo">
+  <div class="team-hero-details">
+    <div class="team-hero-header">
+      <h1 class="team-title">Vegas Knight Hawks</h1>
+      <span class="division-badge">Superior Division</span>
+    </div>
+    <p class="team-meta">Established 2012 • Greenfield, WI</p>
+    
+    <div class="team-hero-stats">
+      <div class="hero-stat-box">
+        <span class="stat-label">General Manager</span>
+        <span class="stat-value">David Nguyen</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Championships</span>
+        <span class="stat-value">2</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">All-Time Record</span>
+        <span class="stat-value">84-101</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Playoff Apps</span>
+        <span class="stat-value">5</span>
+      </div>
+		      <div class="hero-stat-box">
+        <span class="stat-label">Winning Seasons</span>
+        <span class="stat-value">4</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+	
+		<!-- ========================================================================================== TROPHY CASE 🏆 ================== -->
+<div class="trophy-case-container">
+  <div class="trophy-card championship">
+    <div class="trophy-icon">🏆</div>
+    <div class="trophy-details">
+      <span class="trophy-count">2x</span>
+      <span class="trophy-title">Lakefront Bowl Champions</span>
+      <span class="trophy-years">2015, 2018</span>
+    </div>
+  </div>
+
+  <div class="trophy-card conference">
+    <div class="trophy-icon">🥈</div>
+    <div class="trophy-details">
+      <span class="trophy-count">2x</span>
+      <span class="trophy-title">Conference Champions</span>
+      <span class="trophy-years">2018, 2018</span>
+    </div>
+  </div>
+
+  <div class="trophy-card division">
+    <div class="trophy-icon">🏅</div>
+    <div class="trophy-details">
+      <span class="trophy-count">1x</span>
+      <span class="trophy-title">Division Champions</span>
+      <span class="trophy-years">2015</span>
+    </div>
+  </div>
+
+  <div class="trophy-card playoffs">
+    <div class="trophy-icon">🎟️</div>
+    <div class="trophy-details">
+      <span class="trophy-count">5x</span>
+      <span class="trophy-title">Playoff Appearances</span>
+      <span class="trophy-years">2015, 2018, 2019, 2022, 2024</span>
+    </div>
+  </div>
+</div>
+	
+	
+	
+<!-- ========================================================================================== TEAM SECTION NAVIGATION -->
+
+<nav class="team-page-nav">
+
+    <span class="team-page-nav-title">
+        Vegas Knight Hawks
+    </span>
+
+    <a href="#history">History</a>
+	<a href="#seasons">Seasons</a>
+    <a href="#schedule">H2H Schedule</a>
+    <a href="#notable-figures">Notable Figures</a>
+    <a href="#awards">Awards &amp; Honors</a>
+
+</nav>
+	
+	
+	<!-- ========================================================================================== TEAM INFOBOX ================== -->
+<div class="team-infobox-container">
+  <table class="team-infobox">
+    <thead>
+      <tr>
+        <th colspan="2" class="infobox-header">Vegas Knight Hawks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="infobox-label">Established</td>
+        <td class="infobox-value">2012</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Headquarters</td>
+        <td class="infobox-value">Greenfield, WI</td>
+      </tr>
+		
+		<tr>
+		  <td class="infobox-label">Team Colors</td>
+		  <td class="infobox-value">
+			<div class="color-swatches">
+			  <div class="team-color-box primary"></div>
+			  <div class="team-color-box secondary"></div>
+			  <div class="team-color-box accent"></div>
+			</div>
+		  </td>
+		</tr>
+		
+      <tr class="infobox-section-title">
+        <th colspan="2">Division Affiliations</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">Superior</td>
+        <td class="infobox-value">2026–Present</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">West Division</td>
+        <td class="infobox-value">2012–2025</td>
+      </tr>
+
+      <tr class="infobox-section-title">
+        <th colspan="2">Franchise Personnel</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">General Manager</td>
+        <td class="infobox-value">David Nguyen</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Past GMs</td>
+        <td class="infobox-value">Ashley Coppersmith,<br>Matt Winkels</td>
+      </tr>
+	<tr>
+		<td colspan="2"><img src="../../images/Helmets/VegasHelmet.png" width="187" height="150" alt=""/></td>
+	</tr>
+
+    </tbody>
+  </table>
+</div>
 
 
 <p>In the realm of fantasy football, the Vegas Knight Hawks have emerged as a formidable force within the GLFL. Anchored in Greenfield, Wisconsin, the Knight Hawks have been a dynamic presence in the league since its inception in 2012. Boasting a rich history, the team has etched its name in glory, earning two coveted Lakefront Bowls in 2015 and 2018. Currently, under the astute leadership of General Manager David Nguyen, the Knight Hawks continue their pursuit of greatness, adding chapters to their saga of success within the West division of the GLFL.</p>
 
-<table class="standard-table">
-<tbody>
-<tr>
-<td colspan="2"><strong>Vegas Knight Hawks</strong><br><img src="../../images/Vegas.png" width="295" height="200" alt=""/></td>
-</tr>
-<tr>
-<td><strong>Established</strong></td>
-<td>2012</td>
-</tr>
-<tr>
-<td><strong>Headquarters</strong></td>
-<td>Greenfield, WI</td>
-</tr>
-<tr>
-<td><strong>Team Colors</strong></td>
-<td><div class="box Vegas"></div> <div class="box Vegas2"></div> <div class="box Vegas3"></div></td></tr>
 
-<tr>
-<th colspan="2"><strong>Conference Affiliations</strong></th>
-</tr>
-<tr>
-<td><strong>West</strong></td>
-<td>2012-Present</td>
-</tr>
-<tr>
-<th colspan="2"><strong>Personnel</strong></th>
-</tr>  
-<tr>
-<td><strong>General Manager</strong></td>
-<td>David Nguyen</td>
-</tr>
-<tr>
-<th colspan="2"><strong>Team History</strong></th>
-</tr> 
-<tr>
-<td colspan="2">Vegas Knight Hawks (2012-Present)</td>
-</tr> 
-<tr>
-<th colspan="2"><strong>Championships</strong></th>
-</tr> 
-<tr>
-<td><strong>Lakefront Bowl (2)</strong></td>
-<td>2015 (IV), 2018 (VII)</td>
-</tr>
-<tr>
-<td><strong>Conference (2)</strong></td>
-<td>2015, 2018</td>
-</tr>
-<tr>
-<td><strong>Division (1)</strong></td>
-<td>2015</td>
-</tr>
-<tr>
-<td><strong>Playoffs (5)</strong></td>
-<td>2015, 2018, 2019, 2022,<br> 2024</td>
-</tr>
-<tr>
-<td><strong>Winning Seasons (4)</strong></td>
-<td>2015, 2018, 2019, 2022</td>
-</tr>
-<tr>
-<td colspan="2"><img src="../../images/Helmets/VegasHelmet.png" width="187" height="150" alt=""/></td>
-</tr>
-</tbody>
-</table>
-<h3>Franchise History</h3>
+
+	
+<!-- =========================================================================================================== Franchise History -->
+<section class="team-section" id="history">
+	
+<h2 class="section-title">Franchise History</h2>
 
 <p>The Vegas Knight Hawks began their journey under GM David Nguyen in 2012, finishing their inaugural season with a 1–13 record and missing the playoffs. The following year, Ashley Coppersmith took over and led the team to a more respectable 7–7 record, though the postseason still eluded them. Coppersmith remained in charge through 2016, navigating a mix of highs and lows, most notably the 2015 season when the Knight Hawks captured the West Division title, defeated Boston and Brooklyn in the first two playoff rounds, and claimed the Championship over Milwaukee.</p>
 
 <p>After a brief stint under Matt Winkels in 2017, during which the team finished 4–9 without a playoff appearance, Coppersmith returned in 2018. That year, the Knight Hawks posted a 9–5 record, defeated Chicago in the second playoff round, and won the Championship against Cedar Rapids, re-establishing their dominance in the West Division. Coppersmith continued managing through 2023, experiencing a range of outcomes, including an 8–5 record in 2019 with a first-round loss to Brooklyn and an 11–3 campaign in 2022 that ended with a playoff defeat to Cedar Rapids.</p>
 
 <p>David Nguyen returned as GM in 2024, guiding the Knight Hawks to a 7–7 record and a first-round playoff loss to Chicago. Despite the managerial changes and fluctuating season results, the Knight Hawks have maintained a competitive presence in the West Division, highlighted by their two Championship victories in 2015 and 2018.</p>
+	
+	</section>
+	
+	
 
 
-<h3>List of Vegas Seasons</h3>
+<!-- =========================================================================================================== List of Boston Seasons -->
+<section class="team-section">
+	
+<h2 class="section-title" id="seasons">List of Vegas Seasons</h2>
 
 <p>Dive into the compelling story of the Vegas Knight Hawks through a chronological exploration of their season-by-season records. From the inaugural season in 2012 under David Nguyen's guidance and subsequent re-hiring after 12 years to the triumphant years led by Ashley Coppersmith, each season encapsulates the team's journey, post-season endeavors, notable league awards, and the visionary minds that steered the franchise. The Knight Hawks' narrative unfolds, revealing the nuances of their victories, challenges, and the collective efforts that have defined their presence in the GLFL landscape.</p>
 
 <table class="standard-table">
 <tbody>
-<tr>
-<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
-<td bgcolor="#A2E4B8">Conference Champions</td>
-<td bgcolor="#9BD3DD">Division Champions</td>
-</tr>
+	<tr>
+		<td class="champ-cell">Lakefront Bowl Champions</td>
+		<td class="conf-cell">Conference Champions</td>
+		<td class="div-cell">Division Champions</td>
+	</tr>
 </tbody>
 </table>
 
@@ -269,10 +331,10 @@ min-width: 600px;
 
 <tr>
 <td>2015</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>8</td>
 <td>5</td>
-<td bgcolor="FFCBA4">Wild Card vs Boston 108-77 W<br><br>
+<td class="champ-cell">Wild Card vs Boston 108-77 W<br><br>
 Divisonal Playoffs vs Brooklyn 143-112 W<br><br>
 Lakefront Bowl vs Milwaukee 143-103 W</td>
 <td> </td>
@@ -302,7 +364,7 @@ Lakefront Bowl vs Milwaukee 143-103 W</td>
 <td>West</td>
 <td>9</td>
 <td>5</td>
-<td bgcolor="FFCBA4">Divisonal Playoffs vs Chicago 169-123 W<br><br>
+<td class="champ-cell">Divisonal Playoffs vs Chicago 169-123 W<br><br>
 Lakefront Bowl vs Cedar Rapids 213-156 W</td>
 <td> </td>
 <td rowspan="2">Coppersmith</td>
@@ -318,11 +380,9 @@ Lakefront Bowl vs Cedar Rapids 213-156 W</td>
 <td> </td>
 </tr>
 
-<tr>
-<td colspan="7">
-Season Canceled
-</td>
-</tr>
+	<tr class="status-row">
+		<td colspan="7">Season Canceled</td>
+	</tr>
 
 <tr>
 <td>2021</td>
@@ -364,7 +424,7 @@ Season Canceled
 <td>7</td>
 <td>Wild Card vs. Chicago 170-208 L</td>
 <td></td>
-<td rowspan="2">Nguyen</td>
+<td rowspan="3">Nguyen</td>
 </tr>
 	
 	
@@ -376,25 +436,38 @@ Season Canceled
 <td></td>
 <td></td>
 </tr>
+	
+	
+	<tr>
+<td>2026</td>
+<td>Superior</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
 
 
 
-<tr>
+<tr class="summary-row">
 <td colspan="2">Season Record</td>
 <td>79</td>
 <td>98</td>
+	        <td colspan="3"></td>
 </tr>
 
-<tr>
+<tr class="summary-row">
 <td colspan="2">Playoff Record</td>
 <td>5</td>
 <td>3</td>
+	        <td colspan="3"></td>
 </tr>
 
-<tr>
+<tr class="summary-row">
 <td colspan="2">Total Record</td>
 <td>84</td>
 <td>101</td>
+	        <td colspan="3"></td>
 </tr>
 
 </tbody>
@@ -405,16 +478,23 @@ Season Canceled
 <img src="../../images/Banners/2015Banner.png" width="139" height="250" alt=""/>
 
 <img src="../../images/Banners/2018Banner.png" width="139" height="250" alt=""/>
+	
+		</section>
 
 
 
-<h3>Head to Head Records</h3>
+<!-- =========================================================================================================== Head to Head -->
+<section class="team-section">
+	
+<h2 class="section-title" id="schedule">Head to Head Records</h2>
+	
+	
 <div class="standard-table">
 
 <div class="controls">
 <!-- Hardcoded Team 1 label -->
 <label>Team 1:</label>
-<span>Tucson Sugar Skulls</span>
+<span>Vegas Knight Hawks</span>
 
 <!-- Team 2 dropdown -->
 <label for="team2">Team 2:</label>
@@ -457,241 +537,336 @@ Season Canceled
 </div> <!-- /.table-wrap -->
 </div>
 </div>
+	</section>
 
 
 
 
-
-<h3>Players/General Managers of Note</h3>
-<!--<h3>Current Roster</h3>
-
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Quarterbacks</th>
-</tr>
-<tr>
-<td>#4</td><td>Derek Carr</td>
-</tr>
-<tr>
-<td>#7</td><td>Geno Smith</td>
-</tr>
-<tr>
-<td>#10</td><td>Jordan Love</td>
-</tr>
-</table>
-</div>
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Running Backs</th>
-</tr>
-<tr>
-<td>#4</td><td>Gus Edwards</td>
-</tr>
-<tr>
-<td>#26</td><td>Devin Singletary</td>
-</tr>
-<tr>
-<td>#28</td><td>Joe Mixon</td>
-</tr>
-<tr>
-<td>#29</td><td>Kareem Hunt</td>
-</tr>
-<tr>
-<td>#30</td><td>Austin Ekeler</td>
-</tr>
-<tr>
-<td>#41</td><td>Alvin Kamara</td>
-</tr>
-</table>
-</div>
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Wide Receivers</th>
-</tr>
-<tr>
-<td>#0</td><td>Gabe Davis</td>
-</tr>
-<tr>
-<td>#1</td><td>Stefon Diggs</td>
-</tr>
-<tr>
-<td>#5</td><td>Garrett Wilson</td>
-</tr>
-<tr>
-<td>#11</td><td>Jayden Reed</td>
-</tr>
-<tr>
-<td>#15</td><td>Ladd McConkey</td>
-</tr>
-<tr>
-<td>#17</td><td>Puka Nacua</td>
-</tr>
-<tr>
-<td>#17</td><td>Xavier Legette</td>
-</tr>
-</table>
-</div>
-
-
-<br>
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Tight Ends</th>
-</tr>
-<tr>
-<td>#85</td><td>George Kittle</td>
-</tr>
-<tr>
-<td>#85</td><td>Tucker Kraft</td>
-</tr>
-<tr>
-<td>#86</td><td>Dalton Shultz</td>
-</tr>
-</table>
-</div>
-
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Defense</th>
-</tr>
-<tr>
-<td>#3</td><td>Budda Baker (S)</td>
-</tr>
-<tr>
-<td>#7</td><td>Kyzir White (LB)</td>
-</tr>
-<tr>
-<td>#7</td><td>Quay Walker (LB)</td>
-</tr>
-<tr>
-<td>#23</td><td>Foyesade Oluokun (LB)</td>
-</tr>
-<tr>
-<td>#32</td><td>Reed Blankenship (32)</td>
-</tr>
-<tr>
-<td>#43</td><td>Terrel Bernard (LB)</td>
-</tr>
-<tr>
-<td>#55</td><td>Cody Barton (LB)</td>
-</tr>
-</table>
-</div>
-
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Kickers</th>
-</tr>
-<tr>
-<td>#8</td><td>Cairo Santos</td>
-</tr>
-</table>
-</div>
-!-->
-
-<h3>List of General Managers</h3>
-
-<p>Though recently retired, Ashley Coppersmith remains a perennial figure in the Vegas Knight Hawks’ history. Serving as the General Manager for the majority of the Knight Hawks’ existence, Coppersmith’s leadership was synonymous with success, bringing home two Lakefront Bowls in 2015 and 2018. Her resilience, commitment, and strategic acumen have left an indelible mark on the franchise. While brief managerial transitions, including David Nguyen’s initial tenure in 2012, have occurred, it is Coppersmith’s enduring impact that resonates. Now, with Nguyen reappointed as GM, the Knight Hawks are looking to recapture their former glory, but it is Coppersmith who solidified her status as a luminary figure in the Knight Hawks’ journey through the annals of the GLFL.</p>
-
-
-<div class="scrolling-table-scroll">
-<table class="scrolling-table">
-<tbody>
-<tr>
-<th>General Manager</th>
-<th>Year</th>
-<th>W</th>
-<th>L</th>
-<th>W%</th>
-<th>GMoY</th>
-<th>Lakefront Bowl Champs</th>
-<th>Conf. Champs</th>
-<th>Div. Champs</th>
-<th>Playoffs</th>
-<th>Winning Seasons</th>
-</tr>
-
-<tr>
-<td>David Nguyen</td>
-<td>2012, 2024-Present</td>
-<td>12</td>
-<td>31</td>
-<td>0.276</td>
-<td>0</td>		
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-
-
-
-<tr>
-<td>Ashley Coppersmith</td>
-<td>2013-2016, 2018-2023</td>
-<td>68</td>
-<td>61</td>
-<td>0.527</td>
-<td>0</td>		
-<td>2</td>
-<td>2</td>
-<td>1</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr>
-<td>Matt Winkels</td>
-<td>2017</td>
-<td>4</td>
-<td>9</td>
-<td>0.308</td>
-<td>0</td>		
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-
-
-</tbody>
-</table>
-</div>
-
+<!-- =========================================================================================================== NOTABLE FIGURES -->
 	
-<p>				
-<img src="../../images/Jerseys/VegasJersey-Nguyen2.png" width="125" height="150" alt=""/>
+<!-- 🏆 Lakefront Bowl / 🥈 Conference Champ / 🏅 Division Champ / 👑 MVP / 🎖️ GM of the Year / 🎟️ Playoff App -->
 
-<img src="../../images/Jerseys/VegasJersey-Coppersmith2.png" width="125" height="150" alt=""/>
+<section class="team-section notable-figures" id="notable-figures">
 
-<img src="../../images/Jerseys/VegasJersey-Winkels.png" width="125" height="150" alt=""/>
-
-<img src="../../images/Jerseys/VegasJersey-Coppersmith1.png" width="125" height="150" alt=""/>
-
-<img src="../../images/Jerseys/VegasJersey-Nguyen1.png" width="125" height="150" alt=""/>
-
-</p>
+    <h2 class="section-title">
+        Notable Figures
+    </h2>
 
 
+    <!-------------------------------------------------------------------------------- CURRENT STARS -->
+    <div class="figure-category">
 
-<h3>Awards &amp; Honors</h3>
+        <h3>Current Stars</h3>
+
+        <div class="figure-grid">
+
+
+            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3917792.png&w=350&h=254" alt="Daniel Jones">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Daniel Jones</h4>
+
+                    <span class="figure-role">
+                        Quarterback
+                    </span>
+
+                    <div class="figure-badges">
+                        🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3043078.png&w=350&h=254" alt="Derrick Henry">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Derrick Henry</h4>
+
+                    <span class="figure-role">
+                        Running Back
+                    </span>
+
+                    <div class="figure-badges">
+                        🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4362628.png&w=350&h=254" alt="Ja'Marr Chase">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Ja'Marr Chase</h4>
+
+                    <span class="figure-role">
+                        Wide Receiver
+                    </span>
+
+                    <div class="figure-badges">
+                        🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-------------------------------------------------------------------------------- FRANCHISE LEGENDS -->
+    <div class="figure-category">
+
+        <h3>Franchise Legends</h3>
+
+        <div class="figure-grid">
+
+
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14880.png&w=350&h=254" alt="Kirk Cousins">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Kirk Cousins</h4>
+
+                    <span class="figure-role">
+                        Quarterback
+                    </span>
+
+                    <div class="figure-badges">
+                        🏆🏅 🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/16733.png&w=350&h=254" alt="Odell Beckham Jr.">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Odell Beckham Jr.</h4>
+
+                    <span class="figure-role">
+                        Wide Receiver
+                    </span>
+
+                    <div class="figure-badges">
+                        🏆🏅 🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3918298.png&w=350&h=254" alt="Josh Allen">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Josh Allen</h4>
+
+                    <span class="figure-role">
+                        Quarterback
+                    </span>
+
+                    <div class="figure-badges">
+                        🏆 🎟️ 🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3117251.png&w=350&h=254" alt="Christian McCaffrey">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Christian McCaffrey</h4>
+
+                    <span class="figure-role">
+                        Running Back
+                    </span>
+
+                    <div class="figure-badges">
+                        🏆 🎟️ 🎟️
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-------------------------------------------------------------------------------- FRONT OFFICE -->
+    <div class="figure-category">
+
+        <h3>Front Office</h3>
+
+
+        <div class="figure-grid">
+
+
+<div class="figure-card">
+
+    <div class="figure-photo">
+        <img src="../../images/Jerseys/VegasJersey-Nguyen2.png" alt="David Nguyen">
+    </div>
+
+    <div class="figure-info">
+
+        <h4>David Nguyen</h4>
+
+        <span class="figure-role">
+            General Manager
+        </span>
+
+        <div class="figure-badges">
+            🎟️
+        </div>
+
+
+        <div class="figure-stats">
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Record
+                </span>
+                <span class="figure-stat-value">
+                    12-31 (.276)
+                </span>
+            </div>
+
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Tenure
+                </span>
+                <span class="figure-stat-value">
+                    2012,<br>2024-Present
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+			
+
+<div class="figure-card">
+
+    <div class="figure-photo">
+                    <img src="../../images/Jerseys/VegasJersey-Coppersmith2.png" alt="Ashley Coppersmith">
+    </div>
+
+    <div class="figure-info">
+
+        <h4>Ashley Coppersmith</h4>
+
+        <span class="figure-role">
+            General Manager
+        </span>
+
+        <div class="figure-badges">
+            🏆 🏆🏅 🎟️ 🎟️ 🎟️ 🎟️
+        </div>
+
+
+        <div class="figure-stats">
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Record
+                </span>
+                <span class="figure-stat-value">
+                    68-61 (.527)
+                </span>
+            </div>
+
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Tenure
+                </span>
+                <span class="figure-stat-value">
+                    2013-2016,<br>2018-2023
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+			
+
+
+        </div>
+
+    </div>
+
+
+</section>
 
 
 
 
+
+<!-- =========================================================================================================== Awards & Honors -->
+<section class="team-section">
+	
+<h2 class="section-title" id="awards">Awards &amp; Honors</h2>
+
+	<div class="figure-category">
 <h3>GLFL MVPs</h3>
 <table class="standard-table">
 <tbody>
@@ -702,21 +877,20 @@ Season Canceled
 <th>Points Scored</th>
 </tr>
 
-<tr>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
+<tr class="status-row">
+  <td colspan="4">
+    No franchise award winners to date.
+  </td>
 </tr>
-
+	
 </tbody>
 </table>
-
-
-
+		</div>
+	
+	<div class="figure-category">
 
 <h3>GM of the Year Award Winners</h3>
-<table>
+<table class="standard-table">
 <tbody>
 <tr>
 <th>Year</th>
@@ -724,255 +898,222 @@ Season Canceled
 <th>Record</th>
 </tr>
 
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<tr class="status-row">
+  <td colspan="3">
+    No franchise award winners to date.
+  </td>
 </tr>
 
 
 </tbody>
 </table>
+		</div>
+	
+	
+	<div class="figure-category">
 
-<h3>Lakefront Bowls</h3>
+<h3>Lakefront Bowl Championships</h3>
 
-<img src="../../images/Banners/2015Banner.png" width="139" height="250" alt=""/>
-
-<img src="../../images/Banners/2018Banner.png" width="139" height="250" alt=""/>
-
+		<img src="../../images/Banners/2015Banner.png" width="139" height="250" alt=""/>
+		
+				<img src="../../images/Banners/2018Banner.png" width="139" height="250" alt=""/>
+		</div>
+	
+	
+</section>
+	
+	
+	
 </div>
 
 
 
-
-
-
-
-
-
 <script>
-const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
-let allMatches = [];
-let teams = [];
+document.addEventListener("DOMContentLoaded", async function() {
 
+// ===================== MOBILE NAV =====================
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+hamburger.addEventListener("click", e => {
+e.stopPropagation();
+navLinks.classList.toggle("nav-active");
+});
+
+dropdownLinks.forEach(link => {
+link.addEventListener("click", e => {
+if (window.innerWidth <= 768) {
+e.preventDefault();
+const submenu = link.nextElementSibling;
+submenu.classList.toggle("dropdown-active");
+}
+});
+});
+
+document.addEventListener("click", e => {
+if (window.innerWidth <= 768) {
+const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+if (!isClickInsideNav) {
+navLinks.classList.remove("nav-active");
+document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
+}
+}
+});
+
+// ===================== CONFIG =====================
+const csvUrl = "https://raw.githubusercontent.com/michaelj86768894/big12/main/Head2Head.csv?cb=" + new Date().getTime();
+const fixedTeam = "Vegas Knight Hawks"; // ==================================================================================================================== Hardcoded team for this page
+
+// Elements
+const yearSelect = document.getElementById("yearSelect");
+const team2Select = document.getElementById("team2");
+const gameTypeSelect = document.getElementById("gameTypeFilter");
+const matchTableWrap = document.getElementById("matchTableWrap");
+const matchTableBody = document.querySelector("#matchTable tbody");
+const loadingMsg = document.getElementById("loadingMsg");
+const noMatchesMsg = document.getElementById("noMatches");
+
+let allMatches = [];
+let availableYears = [];
+
+// ===================== UTILITIES =====================
 function parseCsvToObjects(csvText) {
-const lines = csvText.trim().split(/\r?\n/).filter(l => l.trim() !== "");
+const lines = csvText.trim().split(/\r?\n/);
 const headers = lines.shift().split(",").map(h => h.trim());
 return lines.map(line => {
 const cols = line.split(",").map(c => c.trim());
 const obj = {};
-headers.forEach((h,i)=> obj[h]=cols[i]??"");
+headers.forEach((h,i) => obj[h] = cols[i] || "");
 return obj;
 });
 }
 
 function parseDate_mmddyy(s) {
 if (!s) return null;
-const parts = s.split("/").map(p=>parseInt(p,10));
-if (parts.length!==3 || parts.some(isNaN)) return null;
-let [m,d,y]=parts;
-if (y<100) y+=2000;
-return new Date(y,m-1,d);
+const [m,d,y] = s.split("/").map(n => parseInt(n,10));
+if (!m || !d || !y) return null;
+return new Date(y<100 ? y+2000 : y, m-1, d);
 }
 
-function formatDateShort(dateObj) {
-if (!dateObj) return "N/A";
-const m=String(dateObj.getMonth()+1).padStart(2,"0");
-const d=String(dateObj.getDate()).padStart(2,"0");
-const yy=String(dateObj.getFullYear()).slice(-2);
-return `${m}/${d}/${yy}`;
+function esc(s) { return String(s || ""); }
+
+// ===================== DROPDOWNS =====================
+function populateYearDropdown() {
+yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
+Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
+yearSelect.appendChild(new Option(year, year));
+});
+// ==================================================================================================================================== Default to 2026 if available
+yearSelect.value = availableYears.includes(2026) ? "2026" : availableYears[0];
+yearSelect.addEventListener("change", updateDisplay);
 }
 
-async function loadCsvAndInit() {
-try {
-const res = await fetch(csvUrl);
-if(!res.ok) throw new Error("Network error "+res.status);
-const text = await res.text();
-const rows = parseCsvToObjects(text);
-
-allMatches = rows.map(r=>{
-const d=parseDate_mmddyy(r["Date"]);
-return {
-rawDate: r["Date"]||"",
-date: d,
-team1: (r["Team 1"]||"").trim(),
-team2: (r["Team 2"]||"").trim(),
-score1: parseInt(r["Team 1 Score"]||"0",10),
-score2: parseInt(r["Team 2 Score"]||"0",10),
-gameType: (r["Game Type"]||"").trim() // ✅ new field
-};
-}).filter(m=>m.team1 && m.team2);
-
-const teamSet=new Set();
-allMatches.forEach(m=>{teamSet.add(m.team1);teamSet.add(m.team2);});
-teams=Array.from(teamSet).sort((a,b)=>a.localeCompare(b));
-
-populateDropdowns();
-populateYearDropdown();
-populateGameTypeDropdown(); // ✅ populate Game Type
-document.getElementById("loadingMsg").style.display="none";
-} catch(err) {
-document.getElementById("loadingMsg").textContent="Error loading match data.";
-console.error(err);
-}
-}
-
-function populateDropdowns() {
-const t1=document.getElementById("team1");
-const t2=document.getElementById("team2");
-
-teams.forEach(team=>{
-const o1=document.createElement("option"); o1.value=team; o1.textContent=team; t1.appendChild(o1);
-const o2=document.createElement("option"); o2.value=team; o2.textContent=team; t2.appendChild(o2);
+function populateTeam2Dropdown() {
+const opponents = new Set();
+allMatches.forEach(m => {
+if (m.team1 === fixedTeam) opponents.add(m.team2);
+else if (m.team2 === fixedTeam) opponents.add(m.team1);
 });
 
-t1.value="Vegas Knight Hawks"; // default
-t1.addEventListener("change", updateDisplay);
-t2.addEventListener("change", updateDisplay);
-document.getElementById("matchFilter").addEventListener("input", updateDisplay);
-document.getElementById("yearFilter").addEventListener("change", updateDisplay);
-document.getElementById("gameTypeFilter").addEventListener("change", updateDisplay); // ✅ new
-
-updateDisplay();
-}
-
-function populateYearDropdown(){
-const yearSet = new Set(allMatches.map(m=>m.date?m.date.getFullYear():null).filter(y=>y));
-const yearDropdown=document.getElementById("yearFilter");
-Array.from(yearSet).sort((a,b)=>b-a).forEach(y=>{
-const opt=document.createElement("option");
-opt.value=y;
-opt.textContent=y;
-yearDropdown.appendChild(opt);
+team2Select.innerHTML = "";
+team2Select.appendChild(new Option("— All Teams —", "ALL_TEAMS"));
+Array.from(opponents).sort().forEach(team => {
+team2Select.appendChild(new Option(team, team));
 });
+team2Select.value = "ALL_TEAMS";
+team2Select.addEventListener("change", updateDisplay);
 }
 
 function populateGameTypeDropdown() {
-const typeSet = new Set(allMatches.map(m => m.gameType).filter(t => t));
-const typeDropdown = document.getElementById("gameTypeFilter");
+const typeSet = new Set(allMatches.map(m => m.gameType).filter(Boolean));
+gameTypeSelect.innerHTML = `<option value="ALL_TYPES">— All Types —</option>`;
+Array.from(typeSet).sort().forEach(type => {
+gameTypeSelect.appendChild(new Option(type, type));
+});
+gameTypeSelect.value = "ALL_TYPES";
+gameTypeSelect.addEventListener("change", updateDisplay);
+}
 
-Array.from(typeSet).sort().forEach(t => {
-const opt = document.createElement("option");
-opt.value = t;
-opt.textContent = t;
-typeDropdown.appendChild(opt);
+// ===================== LOAD CSV =====================
+async function loadCsvAndInit() {
+try {
+const res = await fetch(csvUrl);
+const text = await res.text();
+const rows = parseCsvToObjects(text);
+
+allMatches = rows.map(r => {
+const date = parseDate_mmddyy(r["Date"]);
+return {
+date,
+week: (r["Week"] || "").trim(),
+team1: (r["Team 1"] || "").trim(),
+team2: (r["Team 2"] || "").trim(),
+score1: Number(r["Team 1 Score"] || 0),
+score2: Number(r["Team 2 Score"] || 0),
+gameType: (r["Game Type"] || "").trim()
+};
+}).filter(m => m.date && m.team1 && m.team2 && (m.team1 === fixedTeam || m.team2 === fixedTeam));
+
+// Available years for dropdown
+availableYears = allMatches.map(m => m.date.getFullYear());
+
+populateYearDropdown();
+populateTeam2Dropdown();
+populateGameTypeDropdown();
+
+loadingMsg.style.display = "none";
+updateDisplay();
+} catch (err) {
+console.error(err);
+loadingMsg.textContent = "Error loading match data.";
+}
+}
+
+// ===================== FILTER + RENDER =====================
+function updateDisplay() {
+const selectedYear = yearSelect.value;
+const selectedTeam2 = team2Select.value;
+const selectedType = gameTypeSelect.value;
+
+let filtered = allMatches.filter(m => {
+const yearOk = selectedYear === "ALL_YEARS" || m.date.getFullYear().toString() === selectedYear;
+const team2Ok = selectedTeam2 === "ALL_TEAMS" || m.team1 === selectedTeam2 || m.team2 === selectedTeam2;
+const typeOk = selectedType === "ALL_TYPES" || m.gameType === selectedType;
+return team2Ok && typeOk && (m.team1 === fixedTeam || m.team2 === fixedTeam) && yearOk;
 });
 
-typeDropdown.value = "ALL_TYPES";
-}
+filtered.sort((a,b) => a.date - b.date);
 
-function getWinnerClass(m){
-if(m.score1>m.score2) return "winner";
-if(m.score2>m.score1) return "winner";
-return "";
-}
+matchTableBody.innerHTML = "";
+let toggle = false;
+let lastWeek = null;
 
-function updateDisplay(){
-const teamA = document.getElementById("team1").value;
-const teamB = document.getElementById("team2").value;
-const yearVal = document.getElementById("yearFilter").value;
-const gameTypeVal = document.getElementById("gameTypeFilter").value; // ✅
-const searchVal = document.getElementById("matchFilter").value.trim().toLowerCase();
-
-let filtered = allMatches.filter(m=>
-(m.team1===teamA && (teamB==="ALL_TEAMS" || m.team2===teamB)) ||
-(m.team2===teamA && (teamB==="ALL_TEAMS" || m.team1===teamB))
-);
-
-if(yearVal!=="ALL_YEARS"){
-filtered = filtered.filter(m=>m.date && m.date.getFullYear()===parseInt(yearVal,10));
-}
-
-if(gameTypeVal !== "ALL_TYPES") { // ✅ filter Game Type
-filtered = filtered.filter(m => m.gameType === gameTypeVal);
-}
-
-if(searchVal!==""){
-filtered = filtered.filter(m=>(
-m.team1.toLowerCase().includes(searchVal) ||
-m.team2.toLowerCase().includes(searchVal)
-));
-}
-
-filtered.sort((a,b)=>b.date - a.date);
-
-// --- SUMMARY CALCULATION ---
-if (filtered.length > 0) {
-let winsA = 0, winsB = 0, pfA = 0, pfB = 0;
 filtered.forEach(m => {
-pfA += (m.team1 === teamA ? m.score1 : m.score2);
-pfB += (m.team1 === teamB ? m.score1 : m.score2);
-
-if (m.score1 > m.score2 && m.team1 === teamA) winsA++;
-else if (m.score2 > m.score1 && m.team2 === teamA) winsA++;
-
-if (teamB !== "ALL_TEAMS") {
-if (m.score1 > m.score2 && m.team1 === teamB) winsB++;
-else if (m.score2 > m.score1 && m.team2 === teamB) winsB++;
+if (m.week !== lastWeek) {
+toggle = !toggle;
+lastWeek = m.week;
 }
-});
-
-document.getElementById("head2headSummary").textContent = `${filtered.length} games`;
-document.getElementById("mostRecent").textContent = formatDateShort(filtered[0].date);
-document.getElementById("cardTeam1PF").textContent = pfA;
-
-if (teamB === "ALL_TEAMS") {
-document.getElementById("cardTeam1Record").textContent = `${winsA} Wins`;
-document.getElementById("cardTeam2Record").textContent = `N/A`;
-document.getElementById("cardTeam2PF").textContent = `N/A`;
-} else {
-document.getElementById("cardTeam1Record").textContent = `${winsA} - ${winsB}`;
-document.getElementById("cardTeam2Record").textContent = `${winsB} - ${winsA}`;
-document.getElementById("cardTeam2PF").textContent = pfB;
-}
-
-document.getElementById("summaryArea").style.display = "flex";
-} else {
-document.getElementById("summaryArea").style.display = "none";
-}
-
-const tbody = document.querySelector("#matchTable tbody");
-tbody.innerHTML="";
-filtered.forEach(m=>{
 const tr = document.createElement("tr");
+tr.style.backgroundColor = toggle ? "#f3f3f3" : "#ffffff";
 tr.innerHTML = `
-<td>${formatDateShort(m.date)}</td>
-<td class="${Number(m.score1) > Number(m.score2) ? 'winner' : ''}">${m.team1}</td>
-<td class="${Number(m.score2) > Number(m.score1) ? 'winner' : ''}">${m.team2}</td>
+<td>${esc(m.week)}</td>
+<td class="${m.score1 > m.score2 ? "winner" : ""}">${esc(m.team1)}</td>
+<td class="${m.score2 > m.score1 ? "winner" : ""}">${esc(m.team2)}</td>
 <td>${m.score1} - ${m.score2}</td>
-<td>${m.gameType || ""}</td>`;
-tbody.appendChild(tr);
+<td>${esc(m.gameType)}</td>
+`;
+matchTableBody.appendChild(tr);
 });
 
-document.getElementById("matchTableWrap").style.display="block";
-document.getElementById("noMatches").style.display=filtered.length===0?"block":"none";
-document.getElementById("summaryArea").style.display=filtered.length>0?"flex":"none";
-
-refreshCollapsibleHeight();
+matchTableWrap.style.display = "block";
+noMatchesMsg.style.display = filtered.length ? "none" : "block";
 }
 
+// ===================== START =====================
 loadCsvAndInit();
 
-// --- Collapsible logic ---
-var coll = document.getElementsByClassName("collapsible");
-for (let i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-this.classList.toggle("active");
-var content = this.nextElementSibling;
-if (content.style.maxHeight){
-content.style.maxHeight = null;
-} else {
-content.style.maxHeight = content.scrollHeight + "px";
-} 
 });
-}
-
-// --- helper to fix cutoff issue ---
-function refreshCollapsibleHeight() {
-document.querySelectorAll(".collapsible.active + .content").forEach(content => {
-content.style.maxHeight = content.scrollHeight + "px";
-});
-}
 </script>
 
 
