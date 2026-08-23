@@ -226,9 +226,9 @@ min-width: 600px;
 <table class="standard-table">
 <tbody>
 <tr>
-<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
-<td bgcolor="#A2E4B8">Conference Champions</td>
-<td bgcolor="#9BD3DD">Division Champions</td>
+<td class="champ-cell">Lakefront Bowl Champions</td>
+<td class="conf-cell">Conference Champions</td>
+<td class="div-cell">Division Champions</td>
 </tr>
 </tbody>
 </table>
@@ -306,10 +306,10 @@ Divisonal Playoffs vs Miami 98-179 L</td>
 
 <tr>
 <td>2018</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>10</td>
 <td>4</td>
-<td bgcolor="#A2E4B8">Divisonal Playoffs vs Milwaukee 128-117 W<br>
+<td class="conf-cell">Divisonal Playoffs vs Milwaukee 128-117 W<br>
 Lakefront Bowl vs Vegas 156-213 L</td>
 <td>GMoY</td>
 </tr>
@@ -324,11 +324,9 @@ Lakefront Bowl vs Vegas 156-213 L</td>
 <td> </td>
 </tr>
 
-<tr>
-<td colspan="7">
-Season Canceled
-</td>
-</tr>
+	<tr class="status-row">
+		<td colspan="7">Suspended Operations</td>
+	</tr>
 
 <tr>
 <td>2021</td>
@@ -386,20 +384,20 @@ Season Canceled
 
 
 
-<tr>
-<td colspan="2">Season Record</td>
+<tr class="summary-row">
+        <td colspan="2">Season Record</td>
 <td>75</td>
 <td>102</td>
 </tr>
 
-<tr>
-<td colspan="2">Playoff Record</td>
+      <tr class="summary-row">
+        <td colspan="2">Playoff Record</td>
 <td>2</td>
 <td>5</td>
 </tr>
 
-<tr>
-<td colspan="2">Total Record</td>
+      <tr class="summary-row">
+        <td colspan="2">Total Record</td>
 <td>77</td>
 <td>107</td>
 </tr>
@@ -821,8 +819,8 @@ yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
 Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
 yearSelect.appendChild(new Option(year, year));
 });
-// Default to 2025 if available
-yearSelect.value = availableYears.includes(2025) ? "2025" : availableYears[0];
+// ======================================================================================== Default to 2025 if available
+yearSelect.value = availableYears.includes(2026) ? "2026" : availableYears[0];
 yearSelect.addEventListener("change", updateDisplay);
 }
 

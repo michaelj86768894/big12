@@ -219,9 +219,9 @@ min-width: 600px;
 <table class="standard-table">
 <tbody>
 <tr>
-<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
-<td bgcolor="#A2E4B8">Conference Champions</td>
-<td bgcolor="#9BD3DD">Division Champions</td>
+<td class="champ-cell">Lakefront Bowl Champions</td>
+<td class="conf-cell">Conference Champions</td>
+<td class="div-cell">Division Champions</td>
 </tr>
 </tbody>
 </table>
@@ -241,10 +241,10 @@ min-width: 600px;
 
 <tr>
 <td>2012</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>10</td>
 <td>4</td>
-<td bgcolor="#FFCBA4">Wild Card vs Cleveland 98-91 W<br>
+<td class="champ-cell">Wild Card vs Cleveland 98-91 W<br>
 Divisonal Playoffs vs Brooklyn 135-101 W<br>
 Lakefront Bowl vs Tucson 85-68 W</td>
 <td> </td>
@@ -311,7 +311,7 @@ Divisonal Playoffs vs Cleveland 90-134 L</td>
 
 <tr>
 <td>2019</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>9</td>
 <td>4</td>
 <td>Wild Card vs Brooklyn 160-91 L</td>
@@ -319,18 +319,16 @@ Divisonal Playoffs vs Cleveland 90-134 L</td>
 <td>Suggs</td>
 </tr>
 
-<tr>
-<td colspan="7">
-Season Canceled
-</td>
-</tr>
+	<tr class="status-row">
+		<td colspan="7">Suspended Operations</td>
+	</tr>
 
 <tr>
 <td>2021</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>10</td>
 <td>4</td>
-<td bgcolor="#A2E4B8">Wild Card vs Miami 185-54 W<br>
+<td class="conf-cell">Wild Card vs Miami 185-54 W<br>
 Divisonal Playoffs vs Philadelphia 144-142 W<br>
 Lakefront Bowl vs Brooklyn 118-148 L</td>
 <td> </td>
@@ -341,7 +339,7 @@ Lakefront Bowl vs Brooklyn 118-148 L</td>
 
 <tr>
 <td>2022</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>12</td>
 <td>2</td>
 <td>Divisonal Playoffs vs Tucson 118-139 L</td>
@@ -364,7 +362,7 @@ Divisonal Playoffs vs Milwaukee 151-169 L</td>
 
 <tr>
 <td>2024</td>
-<td bgcolor="#9BD3DD">West</td>
+<td class="div-cell">West</td>
 <td>10</td>
 <td>4</td>
 <td>Wild Card vs Cleveland 230.2-148.3 W<br>
@@ -385,20 +383,20 @@ Divisonal Playoffs vs Tucson</td>
 	
 	
 
-<tr>
-<td colspan="2">Season Record</td>
+<tr class="summary-row">
+        <td colspan="2">Season Record</td>
 <td>107</td>
 <td>70</td>
 </tr>
 
-<tr>
-<td colspan="2">Playoff Record</td>
+      <tr class="summary-row">
+        <td colspan="2">Playoff Record</td>
 <td>11</td>
 <td>7</td>
 </tr>
 
-<tr>
-<td colspan="2">Total Record</td>
+      <tr class="summary-row">
+        <td colspan="2">Total Record</td>
 <td>118</td>
 <td>77</td>
 </tr>
@@ -818,8 +816,8 @@ yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
 Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
 yearSelect.appendChild(new Option(year, year));
 });
-// Default to 2025 if available
-yearSelect.value = availableYears.includes(2025) ? "2025" : availableYears[0];
+// ======================================================================================== Default to 2025 if available
+yearSelect.value = availableYears.includes(2026) ? "2026" : availableYears[0];
 yearSelect.addEventListener("change", updateDisplay);
 }
 

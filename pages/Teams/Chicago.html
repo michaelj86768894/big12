@@ -226,9 +226,9 @@ min-width: 600px;
 <table class="standard-table">
 <tbody>
 <tr>
-<td bgcolor="#FFCBA4">Lakefront Bowl Champions</td>
-<td bgcolor="#A2E4B8">Conference Champions</td>
-<td bgcolor="#9BD3DD">Division Champions</td>
+<td class="champ-cell">Lakefront Bowl Champions</td>
+<td class="conf-cell">Conference Champions</td>
+<td class="div-cell">Division Champions</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +303,7 @@ min-width: 600px;
 
 <tr>
 <td>2018</td>
-<td bgcolor="#9BD3DD">East</td>
+<td class="div-cell">East</td>
 <td>8</td>
 <td>6</td>
 <td>Divisonal Playoffs Vegas 123-169 L</td>
@@ -313,18 +313,16 @@ min-width: 600px;
 
 <tr>
 <td>2019</td>
-<td bgcolor="#9BD3DD">Central</td>
+<td class="div-cell">Central</td>
 <td>9</td>
 <td>4</td>
 <td>Divisonal Playoffs vs Brooklyn 108-129 L</td>
 <td> </td>
 </tr>
 
-<tr>
-<td colspan="7">
-Season Canceled
-</td>
-</tr>
+	<tr class="status-row">
+		<td colspan="7">Suspended Operations</td>
+	</tr>
 
 <tr>
 <td>2021</td>
@@ -364,7 +362,7 @@ Season Canceled
 <td>Central</td>
 <td>8</td>
 <td>6</td>
-<td bgcolor="#A2E4B8">Wild Card vs Vegas 208-170 W<br>
+<td class="conf-cell">Wild Card vs Vegas 208-170 W<br>
 Divisonal Playoffs vs Los Angeles 233-133 W<br>
 Lakefront Bowl vs Tucson 195-233 L</td>
 <td> </td>
@@ -381,20 +379,20 @@ Lakefront Bowl vs Tucson 195-233 L</td>
 </tr>
 
 
-<tr>
-<td colspan="2">Season Record</td>
+<tr class="summary-row">
+        <td colspan="2">Season Record</td>
 <td>82</td>
 <td>95</td>
 </tr>
 
-<tr>
-<td colspan="2">Playoff Record</td>
+      <tr class="summary-row">
+        <td colspan="2">Playoff Record</td>
 <td>2</td>
 <td>6</td>
 </tr>
 
-<tr>
-<td colspan="2">Total Record</td>
+      <tr class="summary-row">
+        <td colspan="2">Total Record</td>
 <td>84</td>
 <td>101</td>
 </tr>
@@ -769,8 +767,8 @@ yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
 Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
 yearSelect.appendChild(new Option(year, year));
 });
-// Default to 2025 if available
-yearSelect.value = availableYears.includes(2025) ? "2025" : availableYears[0];
+// ======================================================================================== Default to 2025 if available
+yearSelect.value = availableYears.includes(2026) ? "2026" : availableYears[0];
 yearSelect.addEventListener("change", updateDisplay);
 }
 
