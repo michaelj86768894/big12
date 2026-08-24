@@ -7,60 +7,19 @@
 <!-- ========================================================================================== LINKED STYLESHEETS ================== -->
 <link rel="stylesheet" href="../../css/global.css">
 <link rel="stylesheet" href="../../css/tables.css">
-<link rel="stylesheet" href="../../css/colorboxes.css">
+<link rel="stylesheet" href="../../css/teams.css">
 
-<style>
-/* ========================================================================================== Controls + Cards ====== */
-.controls { 
-text-align:center; 
-margin:15px 0; 
-display:flex; 
-flex-wrap:wrap; 
-justify-content:center; 
-gap:10px; 
+	<style>
+		
+/* ========================================================================================== TEAM COLOR VARIABLES ====== */
+		
+	:root {
+	--team-primary:#0C2340;
+	--team-secondary:#4B92DB;
+	--team-accent:#A7A6A6;
 }
 
-select, input[type="text"] { 
-padding:8px 10px; 
-font-size:14px; 
-}
-
-.summary { 
-display:flex; 
-justify-content: center; 
-gap:20px; 
-margin:15px 0; 
-flex-wrap:wrap; 
-}
-
-/* stronger, general winner highlight (covers .h2h tables + your match table) */
-.h2h td.winner,
-.divisions-table td.winner,
-#matchTable td.winner,
-.table-wrap td.winner {
-font-weight: 700 !important;
-background: #F5E6C8 !important;
-color: #002855 !important;
-position: relative;
-z-index: 2;
-}
-
-.no-data, .loading { 
-text-align:center; 
-margin-top:14px; 
-color:#666; 
-}
-
-.table-wrap {
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-}
-
-.table-wrap table {
-width: 100%;
-min-width: 600px;
-}
-</style>
+	</style>
 </head>
 
 <body>
@@ -133,79 +92,174 @@ min-width: 600px;
 
 <div class="text-container">
 
-<p>The Cedar Rapids Titans, a prominent contender in the realm of professional fantasy football, grace the GLFL stage as a formidable member of the Central division. Anchored in Waukesha, Wisconsin, the Titans have been a beacon of competition since the inception of the league in 2012. With a notable appearance in the 2018 Lakefront Bowl, where they faced off against the Vegas Knight Hawks, the Titans have etched their presence in the annals of fantasy football lore.</p>
+<!-- ========================================================================================== HERO CARD ================== -->
+	
+<div class="team-hero-card">
+  <img src="../../images/CedarRapids.png" alt="Cedar Rapids Logo" class="team-hero-logo">
+  <div class="team-hero-details">
+    <div class="team-hero-header">
+      <h1 class="team-title">Cedar Rapids Titans</h1>
+      <span class="division-badge">Erie Division</span>
+    </div>
+    <p class="team-meta">Established 2012 • Waukesha, WI</p>
+    
+    <div class="team-hero-stats">
+      <div class="hero-stat-box">
+        <span class="stat-label">General Manager</span>
+        <span class="stat-value">Mitch Smith</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Championships</span>
+        <span class="stat-value">0</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">All-Time Record</span>
+        <span class="stat-value">77-107</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="stat-label">Playoff Apps</span>
+        <span class="stat-value">4</span>
+      </div>
+		      <div class="hero-stat-box">
+        <span class="stat-label">Winning Seasons</span>
+        <span class="stat-value">3</span>
+      </div>
 
-<table class="standard-table">
-<tbody>
-<tr>
-<td colspan="2"><strong>Cedar Rapids Titans</strong><br><img src="../../images/CedarRapids.png" width="179" height="200" alt=""/></td>
-</tr>
-<tr>
-<td><strong>Established</strong></td>
-<td>2012</td>
-</tr>
-<tr>
-<td><strong>Headquarters</strong></td>
-<td>Waukesha, WI</td>
-</tr>
-<tr>
-<td><strong>Team Colors</strong></td>
-<td><div class="box CedarRapids"></div> <div class="box CedarRapids2"></div> <div class="box CedarRapids3"></div></td></tr>
+    </div>
+  </div>
+</div>
+	
+		<!-- ========================================================================================== TROPHY CASE 🏆 ================== -->
+<div class="trophy-case-container">
+  <div class="trophy-card championship">
+    <div class="trophy-icon">🏆</div>
+    <div class="trophy-details">
+      <span class="trophy-count">0x</span>
+      <span class="trophy-title">Lakefront Bowl Champions</span>
+      <span class="trophy-years"></span>
+    </div>
+  </div>
 
-<tr>
-<th colspan="2"><strong>Division Affiliations</strong></th>
-</tr>
-<tr>
-<td><strong>Central</strong></td>
-<td>2012-2017, 2019-Present</td>
-</tr>
-<tr>
-<td><strong>West</strong></td>
-<td>2018</td>
-</tr>
+  <div class="trophy-card conference">
+    <div class="trophy-icon">🥈</div>
+    <div class="trophy-details">
+      <span class="trophy-count">1x</span>
+      <span class="trophy-title">Conference Champions</span>
+      <span class="trophy-years">2018</span>
+    </div>
+  </div>
 
-<tr>
-<th colspan="2"><strong>Personnel</strong></th>
-</tr>  
-<tr>
-<td><strong>General Manager</strong></td>
-<td>Mitch Smith</td>
-</tr>
-<tr>
-<th colspan="2"><strong>Team History</strong></th>
-</tr> 
-<tr>
-<td colspan="2">Cedar Rapids Titans (2012-Present)</td>
-</tr> 
-<tr>
-<th colspan="2"><strong>Championships</strong></th>
-</tr> 
-<tr>
-<td><strong>Lakefront Bowl (0)</strong></td>
-<td> </td>
-</tr>
-<tr>
-<td><strong>Conference (1)</strong></td>
-<td>2018</td>
-</tr>
-<tr>
-<td><strong>Division (1)</strong></td>
-<td>2018</td>
-</tr>
-<tr>
-<td><strong>Playoffs (4)</strong></td>
-<td>2013, 2016, 2018, 2022,<br>2025</td>
-</tr>
-<tr>
-<td><strong>Winning Seasons (3)</strong></td>
-<td>2013, 2016, 2018, 2025</td>
-</tr>
-<tr>
-<td colspan="2"><img src="../../images/Helmets/CedarRapidsHelmet.png" width="187" height="150" alt=""/></td>
-</tr>
-</tbody>
-</table>
-<h3>Franchise History</h3>
+  <div class="trophy-card division">
+    <div class="trophy-icon">🏅</div>
+    <div class="trophy-details">
+      <span class="trophy-count">1x</span>
+      <span class="trophy-title">Division Champions</span>
+      <span class="trophy-years">2018</span>
+    </div>
+  </div>
+
+  <div class="trophy-card playoffs">
+    <div class="trophy-icon">🎟️</div>
+    <div class="trophy-details">
+      <span class="trophy-count">4x</span>
+      <span class="trophy-title">Playoff Appearances</span>
+      <span class="trophy-years">2013, 2016, 2018, 2025</span>
+    </div>
+  </div>
+</div>
+	
+	
+	
+<!-- ========================================================================================== TEAM SECTION NAVIGATION -->
+
+<nav class="team-page-nav">
+
+    <span class="team-page-nav-title">
+        Cedar Rapids Titans
+    </span>
+
+    <a href="#history">History</a>
+	<a href="#seasons">Seasons</a>
+    <a href="#schedule">H2H Schedule</a>
+    <a href="#notable-figures">Notable Figures</a>
+    <a href="#awards">Awards &amp; Honors</a>
+
+</nav>
+	
+	
+	<!-- ========================================================================================== TEAM INFOBOX ================== -->
+<div class="team-infobox-container">
+  <table class="team-infobox">
+    <thead>
+      <tr>
+        <th colspan="2" class="infobox-header">Cedar Rapids Titans</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="infobox-label">Established</td>
+        <td class="infobox-value">2012</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Headquarters</td>
+        <td class="infobox-value">Waukesha, WI</td>
+      </tr>
+		
+		<tr>
+		  <td class="infobox-label">Team Colors</td>
+		  <td class="infobox-value">
+			<div class="color-swatches">
+			  <div class="team-color-box primary"></div>
+			  <div class="team-color-box secondary"></div>
+			  <div class="team-color-box accent"></div>
+			</div>
+		  </td>
+		</tr>
+		
+      <tr class="infobox-section-title">
+        <th colspan="2">Division Affiliations</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">Erie</td>
+        <td class="infobox-value">2026–Present</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Central Division</td>
+        <td class="infobox-value">2012–2017,<br>2019-2025</td>
+      </tr>
+		      <tr>
+        <td class="infobox-label">Wesr Division</td>
+        <td class="infobox-value">2018</td>
+      </tr>
+
+      <tr class="infobox-section-title">
+        <th colspan="2">Franchise Personnel</th>
+      </tr>
+      <tr>
+        <td class="infobox-label">General Manager</td>
+        <td class="infobox-value">Mitch Smith</td>
+      </tr>
+      <tr>
+        <td class="infobox-label">Past GMs</td>
+        <td class="infobox-value">Michael Arroyo,<br>Amanda Strutz</td>
+      </tr>
+	<tr>
+		<td colspan="2"><img src="../../images/Helmets/CedarRapidsHelmet.png" width="187" height="150" alt=""/></td>
+	</tr>
+
+    </tbody>
+  </table>
+</div>
+	
+	
+<!-- =========================================================================================================== Franchise History -->
+<section class="team-section" id="history">
+	
+<h2 class="section-title">Franchise History</h2>
+	
+	
+	
+
 
 <p>The Cedar Rapids Titans have had a turbulent history in the GLFL, marked by early struggles, frequent leadership changes, and a single near-championship run in 2018. Despite flashes of success, consistency has largely eluded the franchise over its tenure.</p>
 
@@ -219,7 +273,15 @@ min-width: 600px;
 
 
 
-<h3>List of Cedar Rapids Seasons</h3>
+	</section>
+	
+	
+	
+<!-- =========================================================================================================== List of Cedar Rapids Seasons -->
+<section class="team-section">
+	
+<h2 class="section-title" id="seasons">List of Cedar Rapids Seasons</h2>
+
 
 <p>Embark on a celestial journey through the seasons of the Cedar Rapids Titans, a luminous entity in the vast universe of fantasy football. This comprehensive list meticulously chronicles the season-by-season records of the Titans franchise, spanning from their inception in 2012 to the present day. Dive into the cosmic tapestry of playoff battles, the glow of league awards, and the varying constellations of leadership under different General Managers. Explore the history of a team that has added its unique radiance to the ever-evolving narrative of the GLFL.</p>
 
@@ -325,7 +387,7 @@ Lakefront Bowl vs Vegas 156-213 L</td>
 </tr>
 
 	<tr class="status-row">
-		<td colspan="7">Suspended Operations</td>
+		<td colspan="7">Season Cancelled</td>
 	</tr>
 
 <tr>
@@ -388,29 +450,36 @@ Lakefront Bowl vs Vegas 156-213 L</td>
         <td colspan="2">Season Record</td>
 <td>75</td>
 <td>102</td>
-</tr>
+        <td colspan="3"></td>
+      </tr>
 
       <tr class="summary-row">
         <td colspan="2">Playoff Record</td>
 <td>2</td>
 <td>5</td>
-</tr>
+        <td colspan="3"></td>
+      </tr>
 
       <tr class="summary-row">
         <td colspan="2">Total Record</td>
 <td>77</td>
 <td>107</td>
-</tr>
-
+        <td colspan="3"></td>
+      </tr>
+	
+	
 </tbody>
 </table>
 </div>
+	
+	</section>
 
+	
 
-
-
-
-<h3>Head to Head Records</h3>
+<!-- =========================================================================================================== Head to Head -->
+<section class="team-section">
+	
+<h2 class="section-title" id="schedule">Head to Head Records</h2>
 <div class="standard-table">
 
 <div class="controls">
@@ -463,234 +532,263 @@ Lakefront Bowl vs Vegas 156-213 L</td>
 
 
 
-<h3>Players/General Managers of Note</h3>
-<!--<h3>Current Roster</h3>
+	</section>
 
 
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Quarterbacks</th>
-</tr>
-<tr>
-<td>#4</td><td>Derek Carr</td>
-</tr>
-<tr>
-<td>#7</td><td>Geno Smith</td>
-</tr>
-<tr>
-<td>#10</td><td>Jordan Love</td>
-</tr>
-</table>
-</div>
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Running Backs</th>
-</tr>
-<tr>
-<td>#4</td><td>Gus Edwards</td>
-</tr>
-<tr>
-<td>#26</td><td>Devin Singletary</td>
-</tr>
-<tr>
-<td>#28</td><td>Joe Mixon</td>
-</tr>
-<tr>
-<td>#29</td><td>Kareem Hunt</td>
-</tr>
-<tr>
-<td>#30</td><td>Austin Ekeler</td>
-</tr>
-<tr>
-<td>#41</td><td>Alvin Kamara</td>
-</tr>
-</table>
-</div>
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Wide Receivers</th>
-</tr>
-<tr>
-<td>#0</td><td>Gabe Davis</td>
-</tr>
-<tr>
-<td>#1</td><td>Stefon Diggs</td>
-</tr>
-<tr>
-<td>#5</td><td>Garrett Wilson</td>
-</tr>
-<tr>
-<td>#11</td><td>Jayden Reed</td>
-</tr>
-<tr>
-<td>#15</td><td>Ladd McConkey</td>
-</tr>
-<tr>
-<td>#17</td><td>Puka Nacua</td>
-</tr>
-<tr>
-<td>#17</td><td>Xavier Legette</td>
-</tr>
-</table>
-</div>
-
-
-<br>
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Tight Ends</th>
-</tr>
-<tr>
-<td>#85</td><td>George Kittle</td>
-</tr>
-<tr>
-<td>#85</td><td>Tucker Kraft</td>
-</tr>
-<tr>
-<td>#86</td><td>Dalton Shultz</td>
-</tr>
-</table>
-</div>
-
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Defense</th>
-</tr>
-<tr>
-<td>#3</td><td>Budda Baker (S)</td>
-</tr>
-<tr>
-<td>#7</td><td>Kyzir White (LB)</td>
-</tr>
-<tr>
-<td>#7</td><td>Quay Walker (LB)</td>
-</tr>
-<tr>
-<td>#23</td><td>Foyesade Oluokun (LB)</td>
-</tr>
-<tr>
-<td>#32</td><td>Reed Blankenship (32)</td>
-</tr>
-<tr>
-<td>#43</td><td>Terrel Bernard (LB)</td>
-</tr>
-<tr>
-<td>#55</td><td>Cody Barton (LB)</td>
-</tr>
-</table>
-</div>
-
-
-<div class="table-container">
-<table class="standard-table">
-<tr>
-<th colspan="2">Kickers</th>
-</tr>
-<tr>
-<td>#8</td><td>Cairo Santos</td>
-</tr>
-</table>
-</div>
-!-->
-
-<h3>List of General Managers</h3>
-
-<p>Throughout the storied history of the Cedar Rapids Titans, several notable individuals have graced the position of General Manager, each leaving an indelible mark on the celestial journey of the team. Mitch Smith, the team’s inaugural GM, set the course, laying the foundation for what was to come. Amanda Strutz followed, steering the Titans into the postseason during her tenure. Michael Arroyo, who led the team through multiple playoff appearances and a memorable quest for the Lakefront Bowl in 2018, continued to build on that legacy. Now, in a full-circle moment, Mitch Smith has returned after 12 years, once again taking the helm with hopes of reigniting the Titans’ championship aspirations. Together, these GMs have woven the narrative of the Titans, contributing to the luminosity that defines the team’s legacy in the GLFL universe.</p>
-
-
-<div class="scrolling-table-scroll">
-<table class="scrolling-table">
-<tbody>
-<tr>
-<th>General Manager</th>
-<th>Year</th>
-<th>W</th>
-<th>L</th>
-<th>W%</th>
-<th>GMoY</th>
-<th>Lakefront Bowl Champs</th>
-<th>Conf. Champs</th>
-<th>Div. Champs</th>
-<th>Playoffs</th>
-<th>Winning Seasons</th>
-</tr>
-
-
-<tr>
-<td>Mitch Smith</td>
-<td>2012, 2024-Present</td>
-<td>14</td>
-<td>29</td>
-<td>0.326</td>
-<td>0</td>		
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-
-
-
-<tr>
-<td>Michael Arroyo</td>
-<td>2015-2023</td>
-<td>48</td>
-<td>60</td>
-<td>0.444</td>
-<td>1</td>		
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
-<td>2</td>
-</tr>
-
+<!-- =========================================================================================================== NOTABLE FIGURES -->
 	
-<tr>
-<td>Amanda Strutz</td>
-<td>2013-2014</td>
-<td>13</td>
-<td>15</td>
-<td>0.464</td>
-<td>0</td>		
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
+<!-- 🏆 Lakefront Bowl / 🥈 Conference Champ / 🏅 Division Champ / 👑 MVP / 🎖️ GM of the Year / 🎟️ Playoff App -->
+
+<section class="team-section notable-figures" id="notable-figures">
+
+    <h2 class="section-title">
+        Notable Figures
+    </h2>
 
 
-</tbody>
-</table>
-	</div>
+    <!-------------------------------------------------------------------------------- CURRENT STARS -->
+    <div class="figure-category">
+
+        <h3>Current Stars</h3>
+
+        <div class="figure-grid">
+
+
+            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4040715.png&w=350&h=254" alt="Jalen Hurts">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Jalen Hurts</h4>
+
+                    <span class="figure-role">
+                        Quarterback
+                    </span>
+
+                    <div class="figure-badges">
+                        🎟️
+                    </div>
+
+                </div>
+
+            </div>
+
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4241478.png&w=350&h=254" alt="DeVonta Smith">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>DeVonta Smith</h4>
+
+                    <span class="figure-role">
+                        Wide Receiver
+                    </span>
+
+                    <div class="figure-badges">
+                        🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+			
+			
+			            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4612826.png&w=350&h=254" alt="Ladd McConkey">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Ladd McConkey</h4>
+
+                    <span class="figure-role">
+                        Wide Receiver
+                    </span>
+
+                    <div class="figure-badges">
+                        🎟️
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            
+        </div>
+
+    </div>
+
+
+
+    <!-------------------------------------------------------------------------------- FRANCHISE LEGENDS -->
+    <div class="figure-category">
+
+        <h3>Franchise Legends</h3>
+
+        <div class="figure-grid">
+
+
+            <div class="figure-card">
+
+                <div class="figure-photo">
+                    <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14874.png&w=350&h=254" alt="Andrew Luck">
+                </div>
+
+                <div class="figure-info">
+
+                    <h4>Andrew Luck</h4>
+
+                    <span class="figure-role">
+                        Quarterback
+                    </span>
+
+                    <div class="figure-badges">
+                        🥈🏅🎟️
+                    </div>
+
+                </div>
+
+            </div>
+			
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-------------------------------------------------------------------------------- FRONT OFFICE -->
+    <div class="figure-category">
+
+        <h3>Front Office</h3>
+
+
+        <div class="figure-grid">
+
+
+<div class="figure-card">
+
+    <div class="figure-photo">
+        <img src="../../images/Jerseys/CedarRapidsJersey-Smith2.png" alt="Mitch Smith">
+    </div>
+
+    <div class="figure-info">
+
+        <h4>Mitch Smith</h4>
+
+        <span class="figure-role">
+            General Manager
+        </span>
+
+        <div class="figure-badges">
+            🎟️
+        </div>
+
+
+        <div class="figure-stats">
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Record
+                </span>
+                <span class="figure-stat-value">
+                    14-29 (.326)
+                </span>
+            </div>
+
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Tenure
+                </span>
+                <span class="figure-stat-value">
+                    2012,<br>2024-Present
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+			
+
+<div class="figure-card">
+
+    <div class="figure-photo">
+                    <img src="../../images/Jerseys/CedarRapidsJersey-Arroyo.png" alt="Michael Arroyo">
+    </div>
+
+    <div class="figure-info">
+
+        <h4>Michael Arroyo</h4>
+
+        <span class="figure-role">
+            General Manager
+        </span>
+
+        <div class="figure-badges">
+            🥈 🎖️ 🏅 🎟️ 🎟️ 🎟️
+        </div>
+
+
+        <div class="figure-stats">
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Record
+                </span>
+                <span class="figure-stat-value">
+                    48-60 (.444)
+                </span>
+            </div>
+
+
+            <div class="figure-stat">
+                <span class="figure-stat-label">
+                    Tenure
+                </span>
+                <span class="figure-stat-value">
+                    2015-2023
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+			
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- =========================================================================================================== Awards & Honors -->
+<section class="team-section">
 	
-<p>		
+<h2 class="section-title" id="awards">Awards &amp; Honors</h2>
 
-<img src="../../images/Jerseys/CedarRapidsJersey-Smith2.png" width="125" height="150" alt=""/>
-
-<img src="../../images/Jerseys/CedarRapidsJersey-Arroyo.png" width="125" height="150" alt=""/>
-
-<img src="../../images/Jerseys/CedarRapidsJersey-Strutz.png" width="125" height="150" alt=""/>
-
-<img src="../../images/Jerseys/CedarRapidsJersey-Smith.png" width="125" height="150" alt=""/>
-
-
-<h3>Awards &amp; Honors</h3>
-
-
-
-
+	<div class="figure-category">
 <h3>GLFL MVPs</h3>
 <table class="standard-table">
 <tbody>
@@ -701,18 +799,17 @@ Lakefront Bowl vs Vegas 156-213 L</td>
 <th>Points Scored</th>
 </tr>
 
-<tr>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
+<tr class="status-row">
+  <td colspan="4">
+    No franchise award winners to date.
+  </td>
 </tr>
-
+	
 </tbody>
 </table>
-
-
-
+		</div>
+	
+	<div class="figure-category">
 
 <h3>GM of the Year Award Winners</h3>
 <table class="standard-table">
@@ -724,17 +821,23 @@ Lakefront Bowl vs Vegas 156-213 L</td>
 </tr>
 
 <tr>
-<td>2018</td>
+  <td>2018</td>
 <td>Michael Arroyo</td>
-<td>10-4</td>
+	<td>10-4</td>
 </tr>
 
 
 </tbody>
 </table>
-
-
-
+		</div>
+	
+	
+	
+	
+</section>
+	
+	
+	
 </div>
 
 
