@@ -816,7 +816,7 @@ yearSelect.innerHTML = `<option value="ALL_YEARS">All Years</option>`;
 Array.from(new Set(availableYears)).sort((a,b) => b-a).forEach(year => {
 yearSelect.appendChild(new Option(year, year));
 });
-// ======================================================================================== Default to 2025 if available
+// ======================================================================================== Default to 2026 if available
 yearSelect.value = availableYears.includes(2026) ? "2026" : availableYears[0];
 yearSelect.addEventListener("change", updateDisplay);
 }
