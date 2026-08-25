@@ -5,7 +5,7 @@
 .banner {
 position: relative;
 	max-width: 1200px; /* Constrains width to match scoreboard, feed, and quick links */
-	margin: 20px auto 0 auto; /* Centers the banner on the page with spacing above */
+	margin: 20px auto 15px auto;
 	height: 100px;
 	background-image: url("https://media.istockphoto.com/id/1429959735/vector/yellow-gold-glitter-confetti-with-glow-lights-on-black-background-vector.jpg?s=612x612&w=0&k=20&c=aDtgwRyO_SO7jBCTV-EN8pPpXJy5xsVypTq2kgx0jig="); /* banner background */
 	background-size: contain;
@@ -13,7 +13,6 @@ position: relative;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	margin-bottom: 15px;
 }
 
 .scroll-container {
@@ -47,22 +46,10 @@ position: relative;
 	}
 }
 
-/* MOBILE RESPONSIVE */
-@media screen and (max-width: 768px) {
-	.banner {
-		height: 100px; /* Fixed: Added px unit */
-	}
-
-	.scroll-content img {
-		height: 80px; /* Fixed: Added px unit */
-		gap: 20px;
-	}
-}
-
 /* ========================================================================================== LEAGUE FEED & STANDINGS ================== */
 .league-feed-container {
   max-width: 1200px;
-  margin: 15px auto; /* Changed top margin from 40px to 15px */
+  margin: 15px auto;
   padding: 20px;
   background-color: var(--bright-white);
   border: 1px solid #ddd;
@@ -70,7 +57,6 @@ position: relative;
   box-sizing: border-box;
   display: flex;
   gap: 25px;
-  margin-bottom: 15px;
 }
 
 .news-section {
@@ -134,7 +120,7 @@ position: relative;
   text-transform: uppercase;
 }
 
-.featured-post h3 {
+.featured-post h2 {
   margin: 10px 0 5px 0;
   font-size: 1.2rem;
   color: var(--navy);
@@ -155,6 +141,7 @@ position: relative;
   max-height: 480px;
   overflow-y: auto;
   padding-right: 5px;
+  scrollbar-width: thin;
 }
 
 .sidebar-feed::-webkit-scrollbar,
@@ -221,13 +208,13 @@ a.sidebar-item:hover {
 }
 
 .standings-scroll {
-  max-height: 480px;
+  max-height: 580px;
   overflow-y: auto;
   padding-right: 5px;
 }
 
 .standings-widget h5 {
-  margin: 12px 0 6px 0;
+  margin: 2px 0 6px;
   font-size: 0.85rem;
   color: var(--navy);
   border-bottom: 2px solid var(--lake-blue);
@@ -242,12 +229,12 @@ a.sidebar-item:hover {
 .mini-table {
   width: 100%;
   font-size: 0.8rem;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   border-collapse: collapse;
 }
 
 .mini-table th, .mini-table td {
-  padding: 4px 6px;
+  padding: 2px 2px;
   text-align: left;
 }
 
@@ -256,35 +243,15 @@ a.sidebar-item:hover {
   text-align: center;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .league-feed-container {
-    flex-direction: column;
-  }
-  .standings-widget {
-    border-left: none;
-    border-top: 1px solid #eee;
-    padding-left: 0;
-    padding-top: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .feed-layout {
-    flex-direction: column;
-  }
-}
-	
 /* ========================================================================================== SCOREBOARD BAR ================== */
 .scoreboard-container {
   max-width: 1200px;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 15px auto;
   background-color: var(--bright-white);
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 10px 15px;
   box-sizing: border-box;
-  margin-bottom: 15px;
 }
 
 .scoreboard-header {
@@ -323,7 +290,7 @@ a.sidebar-item:hover {
 
 /* Individual Matchup Card */
 .matchup-card {
-  flex: 0 0 175px; /* Fixed width so all cards scale uniformly */
+  flex: 0 0 162px;
   background: #f8f9fa;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
@@ -377,7 +344,7 @@ a.sidebar-item:hover {
 /* ========================================================================================== AWARDS STRIP ================== */
 .awards-container {
   max-width: 1200px;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 0;
   background-color: var(--bright-white);
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -402,12 +369,10 @@ a.sidebar-item:hover {
   border-radius: 4px;
 }
 
-/* Horizontal Scroll Row */
 .awards-scroll {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 4px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
 }
 
 .awards-scroll::-webkit-scrollbar {
@@ -421,15 +386,14 @@ a.sidebar-item:hover {
 
 /* Compact Horizontal Card */
 .award-card {
-  flex: 0 0 230px; /* Fixed width per award card */
-  background: #f8f9fa;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 6px 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-sizing: border-box;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-sizing: border-box;
 }
 
 .good-award {
@@ -463,6 +427,12 @@ a.sidebar-item:hover {
   flex-shrink: 0;
 }
 
+.award-team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .award-info {
   display: flex;
   flex-direction: column;
@@ -491,6 +461,7 @@ a.sidebar-item:hover {
   color: #dc2626;
 }
 
+
 /* ========================================================================================== QUICK LINKS BAR ================== */
 .quick-links-container {
   max-width: 1200px;
@@ -498,7 +469,6 @@ a.sidebar-item:hover {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 50px;
 }
 
 .quick-link-btn {
@@ -522,5 +492,49 @@ a.sidebar-item:hover {
 .quick-link-btn:hover {
   background-color: var(--lake-blue);
   transform: translateY(-2px);
+}
+
+
+
+/* ========================================================================================== RESPONSIVE */
+
+@media (max-width: 992px) {
+    .league-feed-container {
+        flex-direction: column;
+    }
+
+    .standings-widget {
+        border-left: none;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+
+    .awards-scroll {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 100px;
+    }
+
+    .scroll-content {
+        gap: 20px;
+    }
+
+    .scroll-content img {
+        height: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .feed-layout {
+        flex-direction: column;
+    }
+
+    .awards-scroll {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
