@@ -172,9 +172,6 @@ display: block;
 }
 
 /* ============================================================================================================ Bylaws */
-.bylaws-section {
-    scroll-margin-top: 100px;
-}
 
 /* MOBILE RESPONSIVE */
 @media screen and (max-width: 768px) {
@@ -262,4 +259,115 @@ display: block !important;
 .awards-description-list li {
   margin-bottom: 0.75rem;
   line-height: 1.6;
+}
+
+/* ============================================================================================================ Hero Banner */
+.page-hero-banner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px auto 30px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    line-height: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .page-hero-banner {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ============================================================================================================ SECTION NAVIGATION */
+
+.section-nav {
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    margin: 20px 0 30px 0;
+    padding: 12px 15px;
+    background-color: #ffffff;
+    border-top: 3px solid #002855;
+    border-bottom: 3px solid #002855;
+    text-align: center;
+    line-height: 1.8;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section-nav a {
+    color: #002855;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.section-nav a:hover {
+    color: #4DA9E9;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .section-nav {
+        padding: 10px;
+        line-height: 1.7;
+    }
+}
+
+
+
+
+/* ========================================================================================== FLOATING LOGO ================== */
+.logo-block {
+float: right;              /* or left, depending on placement */
+width: 140px;
+margin: 0 0 12px 16px;     /* space between logo and text */
+text-align: center;
+border: 1px solid #ccc;
+border-radius: 6px;
+background: #fafafa;
+}
+
+.logo-block img {
+width: 100%;
+height: auto;
+display: block;
+padding: 8px;
+border-bottom: 1px solid #ddd;
+box-sizing: border-box;
+}
+
+.logo-block figcaption {
+font-size: 12px;
+color: #555;
+padding: 6px 0;
+}
+
+.logo-left {
+float: left;
+margin: 0 16px 12px 0; /* space on the right */
+}
+
+.logo-right {
+float: right;
+margin: 0 0 12px 16px; /* space on the left */
+}
+
+
+/* ========================================================================================== Scrolling Effects ================== */
+html {
+  scroll-behavior: smooth;
+}
+	
+/* ========================================================================================== Apply offset to sections or headings */
+h2[id],
+h3[id] {
+    scroll-margin-top: 140px;
 }
