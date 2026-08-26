@@ -16,7 +16,7 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     background: var(--bright-white);
-    border: 1px solid var(--industrial-g ay);
+    border: 1px solid var(--industrial-gray);
 }
 
 th,
@@ -135,13 +135,6 @@ tr.summary-row td {
     font-weight: bold;
 }
 
-td.cancelled {
-    text-align: center;
-    font-style: italic;
-    color: var(--industrial-gray);
-    font-weight: 500;
-}
-
 
 /* ========================================================================================== TABLE TEAM LINKS */
 .team-cell,
@@ -180,4 +173,35 @@ td.cancelled {
 
 .team-table a {
     color: var(--team-primary);
+}
+
+
+/* ============================================================================================================ Record Book */
+.recordbook-collapsible {
+background: var(--navy);
+color: var(--bright-white);
+cursor: pointer;
+padding: 12px 16px;
+width: 100%;
+border: none;
+text-align: left;
+font-weight: bold;
+margin-top: 12px;
+border-radius: 4px;
+transition: background 0.3s;
+}
+
+.recordbook-collapsible:hover {
+background: var(--lake-blue);
+}
+
+.recordbook-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+padding: 0;
+}
+
+.recordbook-content.active {
+padding: 20px 0;
 }
