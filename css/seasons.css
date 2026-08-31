@@ -1,0 +1,385 @@
+@charset "UTF-8";
+
+/* ========================================================================================== COLOR VARIABLES */
+
+:root {
+    --navy: #002855;
+    --lake-blue: #4DA9E9;
+    --industrial-gray: #8C8C8C;
+    --cream-city-brick: #F5E6C8;
+    --bright-white: #FFFFFF;
+    --bg-color: #F8F8F8;
+    --table-zebra-color: #F3F3F3;
+
+    --border-color: #DDE3E8;
+    --light-border-color: #EDF2F7;
+    --championship-gold: #F2B500;
+    --championship-bg: #FFFEF4;
+}
+
+
+/* ========================================================================================== SEASON SUMMARY CARD */
+
+.season-summary-card {
+    max-width: 1200px;
+    margin: 20px auto 25px auto;
+    padding: 20px 25px;
+    background: var(--bright-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.season-summary-main {
+    flex: 1;
+}
+
+.summary-title {
+    margin: 0 0 15px 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.season-summary-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.summary-stat {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    background: var(--bg-color);
+    border: 1px solid var(--light-border-color);
+    border-radius: 6px;
+}
+
+.summary-stat .label {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--industrial-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-stat .value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.summary-badge {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-badge img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ========================================================================================== SEASON TROPHY ROOM */
+
+.season-trophy-room {
+    width: 100%;
+    margin: 25px 0 30px;
+}
+
+.season-trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+
+/* ========================================================================================== TROPHY CARDS */
+
+.season-trophy-card {
+    display: flex;
+    align-items: center;
+    min-height: 115px;
+    padding: 18px 22px;
+    background: var(--bright-white);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--navy);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Lakefront Bowl  */
+
+.season-trophy-card.championship {
+    background: var(--championship-bg);
+    border-left-color: var(--championship-gold);
+}
+
+
+/* Conference  */
+
+.season-trophy-card.conference {
+    border-left-color: var(--navy);
+}
+
+
+/* Division  */
+
+.season-trophy-card.division {
+    border-left-color: var(--lake-blue);
+}
+
+
+/* ========================================================================================== TROPHY ICON */
+
+.season-trophy-icon {
+    flex: 0 0 38px;
+    width: 38px;
+    margin-right: 14px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1;
+}
+
+
+/* ========================================================================================== TROPHY DETAILS */
+
+.season-trophy-details {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ========================================================================================== TEAM NAME */
+
+.season-trophy-team {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+}
+
+
+/* Multiple-team cards  */
+
+.season-trophy-team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+/* ========================================================================================== AWARD NAME */
+
+.season-trophy-award {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+    color: var(--navy);
+}
+
+
+/* ========================================================================================== STANDINGS GRID */
+
+.standings-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.standings-grid .table-container {
+    flex: 1 1 0;
+    min-width: 220px;
+    padding: 12px;
+    background: var(--bright-white);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.standings-grid th {
+    padding: 8px 12px;
+    background: var(--navy) !important;
+    color: var(--bright-white) !important;
+    font-size: 14px;
+}
+
+
+/* ========================================================================================== QUICK NAVIGATION */
+
+.quick-nav-bar {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0 20px 0;
+    flex-wrap: wrap;
+}
+
+.quick-link-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--bg-color);
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.quick-link-btn:hover {
+    background: var(--lake-blue);
+    color: var(--bright-white);
+    border-color: var(--lake-blue);
+}
+
+
+/* ========================================================================================== SEASON PAGE CONTROLS */
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.controls select,
+.controls input[type="text"] {
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+
+/* ========================================================================================== SEASON MATCH TABLE */
+
+.table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+    width: 100%;
+    min-width: 600px;
+}
+
+
+/* ========================================================================================== MATCH TABLE WINNER HIGHLIGHT */
+
+.h2h td.winner,
+.divisions-table td.winner,
+#matchTable td.winner,
+.table-wrap td.winner {
+    position: relative;
+    z-index: 2;
+    background: var(--cream-city-brick) !important;
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+}
+
+
+/* ========================================================================================== LOADING / NO DATA */
+
+.no-data,
+.loading {
+    margin-top: 14px;
+    color: var(--industrial-gray);
+    text-align: center;
+}
+
+
+/* ========================================================================================== MOBILE SEASON PAGE */
+
+@media (max-width: 768px) {
+
+    .season-trophy-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .season-trophy-card {
+        min-height: 95px;
+        padding: 16px 18px;
+    }
+
+    .season-trophy-team {
+        font-size: 18px;
+    }
+
+    .season-trophy-award {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================================================================== SMALL MOBILE */
+
+@media (max-width: 640px) {
+
+    .season-summary-card {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .summary-title {
+        margin-bottom: 12px;
+        font-size: 1.8rem;
+    }
+
+    .season-summary-stats {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .summary-stat {
+        padding: 8px 10px;
+    }
+
+    .summary-badge img {
+        width: 110px;
+    }
+
+    .season-trophy-grid {
+        gap: 10px;
+    }
+
+    .season-trophy-card {
+        padding: 12px 14px;
+    }
+
+    .season-trophy-team {
+        font-size: 1.05rem;
+    }
+}

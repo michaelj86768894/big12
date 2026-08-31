@@ -176,8 +176,9 @@ tr.summary-row td {
 }
 
 
-/* ============================================================================================================ Record Book */
-.recordbook-collapsible {
+/* ========================================================================================== COLLAPSIBLE SECTIONS */
+
+.collapsible {
 background: var(--navy);
 color: var(--bright-white);
 cursor: pointer;
@@ -189,19 +190,21 @@ font-weight: bold;
 margin-top: 12px;
 border-radius: 4px;
 transition: background 0.3s;
+box-sizing: border-box;
 }
 
-.recordbook-collapsible:hover {
+.collapsible:hover {
 background: var(--lake-blue);
 }
 
-.recordbook-content {
+.collapsible-content {
 max-height: 0;
 overflow: hidden;
 transition: max-height 0.3s ease;
 padding: 0;
+box-sizing: border-box;
 }
 
-.recordbook-content.active {
+.collapsible-content.active {
 padding: 20px 0;
 }
