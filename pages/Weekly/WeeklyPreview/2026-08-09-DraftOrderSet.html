@@ -7,105 +7,7 @@
 <!-- ========================================================================================== LINKED STYLESHEETS ================== -->
 <link rel="stylesheet" href="../../../css/global.css">
 <link rel="stylesheet" href="../../../css/tables.css">
-
-	<style>
-	
-	.weekly-recap-container {
-  max-width: 960px;
-  margin: 30px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-		
-		.weekly-recap-container table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 24px 0;
-}
-
-.weekly-recap-container th,
-.weekly-recap-container td {
-  padding: 10px 12px;
-  text-align: left;
-}
-
-/* Center Pick # and prevent team names from wrapping */
-.weekly-recap-container th:first-child,
-.weekly-recap-container td:first-child {
-  text-align: center;
-  width: 60px;
-}
-
-.weekly-recap-container td:nth-child(2),
-.weekly-recap-container td:nth-child(3) {
-  white-space: nowrap;
-}
-		
-		/* Lead Paragraph / Executive Summary */
-.weekly-recap-container p:nth-of-type(2) {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #1a202c;
-  font-weight: 500;
-}
-
-/* Author Byline */
-.article-byline {
-  font-size: 0.9rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-/* Key Dates Callout Card */
-.key-dates-card {
-  background-color: #f8fafc;
-  border-left: 4px solid #0b1f3a;
-  padding: 18px 24px;
-  border-radius: 0 8px 8px 0;
-  margin: 24px 0;
-}
-
-.key-dates-card ul {
-  margin-bottom: 0;
-}
-
-/* Draft Table Polish & Zebra Striping */
-.weekly-recap-container table tbody tr:nth-child(even) {
-  background-color: #f8fafc;
-}
-
-.weekly-recap-container table tbody tr:hover {
-  background-color: #f1f5f9;
-}
-	
-
-	
-		/* ======================================================= Hero Image Styling */
-.article-hero-image {
-  margin: 20px 0 24px 0;
-  width: 100%;
-}
-
-.article-hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-}
-
-.article-hero-image figcaption {
-  font-size: 0.85rem;
-  color: #64748b;
-  margin-top: 8px;
-  line-height: 1.4;
-}
-	
-	
-	</style>
+<link rel="stylesheet" href="../../../css/news.css">
 
 </head>
 
@@ -177,55 +79,59 @@
 </div>
 </nav>		
 
-<div class="weekly-recap-container">
+<div class="news-article">
 
-<h3>Lock In Your Keepers: The 2026 GLFL Draft Order is Set</h3>
+    <h1>Lock In Your Keepers: The 2026 GLFL Draft Order is Set</h1>
 
-<div class="article-byline">
-  By <strong>Marcus Vance</strong> | Senior GLFL Analyst &bull; August 9, 2026
-</div>
+    <div class="article-byline">
+        By <strong>Marcus Vance</strong> | Senior GLFL Analyst &bull; August 9, 2026
+    </div>
 
+<!-- =============================================================================================================== HERO IMAGE -->
 	
-	
-	
-	<!-- Featured Hero Image -->
-<figure class="article-hero-image">
+	<figure class="article-hero-image">
   <img src="https://sportshub.cbsistatic.com/i/2026/04/23/86ef3ca8-42f0-4b84-b0ee-8a0720e4e70d/nfl-draft-2026.jpg" alt="GLFL Draft" />
-  <figcaption>Draft date and order has been set, August 30th</figcaption>
-</figure>
-	
-	
-	
-	
-	
-<p>The summer heat is peaking, which can only mean one thing across the Great Lakes Football League: draft season has officially arrived.</p>
+        <figcaption>Draft date and order has been set, August 30th</figcaption>
+    </figure>
+
+    <p>
+        The summer heat is peaking, which can only mean one thing across the Great Lakes Football League: draft season has officially arrived.
+    </p>
+
+    <p class="article-lead">
 
 <p>With the 2026 campaign looming, the league office has formally locked in the calendar for the most critical weeks of the offseason...</p>
 
-<!-- Key Dates Card -->
+<!-- =============================================================================================================== Key Dates Card -->
 <div class="key-dates-card">
-  <p style="margin-top:0;"><strong>Key Offseason Dates &amp; Deadlines</strong></p>
-  <ul>
-    <li>
-      <strong>Keeper Lock Deadline:</strong> Sunday, August 23rd @ 7:00 PM CST
-      <br><em>All 12 GMs must submit official keepers to the league office. No extensions.</em>
-    </li>
-    <li style="margin-top: 10px;">
-      <strong>2026 GLFL Official Draft:</strong> Sunday, August 30th @ 7:00 PM CST
-      <br><em>Virtual war rooms open at 6:00 PM CST. Draft clock starts promptly at 7:00 PM CST.</em>
-    </li>
-  </ul>
+    <p><strong>Key Offseason Dates &amp; Deadlines</strong></p>
+
+    <ul>
+        <li>
+            <strong>Keeper Lock Deadline:</strong> Sunday, August 23rd @ 7:00 PM CST
+            <br>
+            <em>All 12 GMs must submit official keepers to the league office. No extensions.</em>
+        </li>
+
+        <li>
+            <strong>2026 GLFL Official Draft:</strong> Sunday, August 30th @ 7:00 PM CST
+            <br>
+            <em>Virtual war rooms open at 6:00 PM CST. Draft clock starts promptly at 7:00 PM CST.</em>
+        </li>
+    </ul>
 </div>
 
 		<p>The board is set. Miami holds the keys to the kingdom at Pick 1 after a grueling offseason, while defending champion Boston will sit back and watch the carnage unfold before making their opening selection at the turn.</p>
 	
 	
-	<table>
+<div class="scrolling-table-scroll">
+
+    <table class="scrolling-table draft-order-table">
     <thead>
         <tr>
             <th>Pick</th>
-            <th>Franchise</th>
-            <th>Front Office Leader</th>
+            <th>Team</th>
+            <th>GM</th>
             <th>Notes / Storyline</th>
         </tr>
     </thead>
@@ -303,7 +209,9 @@
             <td>Defending Champions: Carrying the trophy and picking at the turn.</td>
         </tr>
     </tbody>
-</table>
+    </table>
+
+</div>
 	
 	<p><strong>Around the League: What to Watch Heading into August 23rd</strong></p>
 	

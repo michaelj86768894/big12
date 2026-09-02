@@ -26,12 +26,13 @@ NEWS CARD
     background: var(--bright-white);
     text-decoration: none;
     color: inherit;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .news-card:hover {
-    background: var(--bg-color);
+    background: #EAF5FC;
     transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 .news-card img {
@@ -53,15 +54,143 @@ NEWS CONTENT
 }
 
 .news-content .headline {
-    font-size: 16px;
+    color: var(--navy);
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     line-height: 1.3;
 }
 
 .news-content .date {
     font-size: 14px;
     color: var(--industrial-gray);
+    margin-top: 2px;
+}
+
+/* ==========================================================================================
+NEWS ARTICLE
+========================================================================================== */
+
+.news-article {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.news-article h1 {
+    color: var(--navy);
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+}
+
+.news-article p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 18px 0;
+}
+
+/* ==========================================================================================
+ARTICLE BYLINE
+========================================================================================== */
+
+.article-byline {
+    font-size: 0.9rem;
+    color: var(--industrial-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.article-byline strong {
+    color: var(--navy);
+}
+
+/* ==========================================================================================
+ARTICLE LEAD / EXECUTIVE SUMMARY
+========================================================================================== */
+
+.article-lead {
+    font-size: 1.15rem !important;
+    line-height: 1.6 !important;
+    color: #1a202c;
+    font-weight: 500;
+}
+
+/* ==========================================================================================
+ARTICLE HERO IMAGE
+========================================================================================== */
+
+.article-hero-image {
+    margin: 20px 0 24px 0;
+    width: 100%;
+}
+
+.article-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.article-hero-image figcaption {
+    font-size: 0.85rem;
+    color: var(--industrial-gray);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* ==========================================================================================
+KEY DATES CALLOUT
+========================================================================================== */
+
+.key-dates-card {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--navy);
+    padding: 18px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+}
+
+.key-dates-card p {
+    margin-top: 0;
+}
+
+.key-dates-card ul {
+    margin-bottom: 0;
+}
+
+.key-dates-card > ul > li + li {
+    margin-top: 10px;
+}
+
+.key-dates-card ul ul {
+    margin-top: 4px;
+}
+
+/* ==========================================================================================
+ARTICLE TABLE-SPECIFIC STYLING
+========================================================================================== */
+
+/* Draft-order table: keep Pick column compact */
+.draft-order-table th:first-child,
+.draft-order-table td:first-child {
+    text-align: center;
+    width: 60px;
+}
+
+/* Keep team and GM names together */
+.draft-order-table td:nth-child(2),
+.draft-order-table td:nth-child(3) {
+    white-space: nowrap;
+}
+
+/* Subtle row hover for tables used inside News articles */
+.news-article table tbody tr:hover {
+    background-color: #f1f5f9;
 }
 
 /* ==========================================================================================
@@ -70,6 +199,7 @@ MOBILE
 
 @media screen and (max-width: 768px) {
 
+    /* News listing cards */
     .news-card {
         flex-direction: column;
         align-items: center;
@@ -84,4 +214,25 @@ MOBILE
         font-size: 15px;
     }
 
+    /* News articles */
+    .news-article {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .news-article h1 {
+        font-size: 1.6rem;
+    }
+
+    .article-lead {
+        font-size: 1.05rem !important;
+    }
+
+    .article-hero-image {
+        margin: 15px 0 20px 0;
+    }
+
+    .key-dates-card {
+        padding: 16px 18px;
+    }
 }
