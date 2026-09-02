@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* ==========================================================================================
+NEWS GRID
+========================================================================================== */
+
+.news-grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================================================================================
+NEWS CARD
+========================================================================================== */
+
+.news-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: var(--bright-white);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.news-card:hover {
+    background: var(--bg-color);
+    transform: translateY(-2px);
+}
+
+.news-card img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================================
+NEWS CONTENT
+========================================================================================== */
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.news-content .headline {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.news-content .date {
+    font-size: 14px;
+    color: var(--industrial-gray);
+}
+
+/* ==========================================================================================
+MOBILE
+========================================================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .news-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .news-card img {
+        width: 100%;
+    }
+
+    .news-content .headline {
+        font-size: 15px;
+    }
+
+}
