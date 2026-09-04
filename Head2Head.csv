@@ -1117,3 +1117,93 @@ Date,Week,Team 1,Team 2,Team 1 Score,Team 2 Score,Game Type
 12/21/25,Playoff Week 2,Boston Brawlers,Milwaukee Mustangs,204,197.3,Playoffs
 12/21/25,Playoff Week 2,Los Angeles Wildcats,Tucson Sugar Skulls,116.65,203.9,Playoffs
 12/28/25,Playoff Week 3,Boston Brawlers,Tucson Sugar Skulls,134.85,130.4,Playoffs
+9/13/26,Week 1,Cedar Rapids Titans,Milwaukee Mustangs,0,0,Season
+9/13/26,Week 1,Chicago Slaughter,Cleveland Gladiators,0,0,Season
+9/13/26,Week 1,Brooklyn Bolts,Philadelphia Soul,0,0,Season
+9/13/26,Week 1,Boston Brawlers,Miami Inferno,0,0,Season
+9/13/26,Week 1,Vegas Knight Hawks,Northern Arizona Wranglers,0,0,Season
+9/13/26,Week 1,Los Angeles Wildcats,Tucson Sugar Skulls,0,0,Season
+9/20/26,Week 2,Cleveland Gladiators,Milwaukee Mustangs,0,0,Season
+9/20/26,Week 2,Brooklyn Bolts,Boston Brawlers,0,0,Season
+9/20/26,Week 2,Los Angeles Wildcats,Vegas Knight Hawks,0,0,Season
+9/20/26,Week 2,Philadelphia Soul,Miami Inferno,0,0,Season
+9/20/26,Week 2,Tucson Sugar Skulls,Northern Arizona Wranglers,0,0,Season
+9/20/26,Week 2,Chicago Slaughter,Cedar Rapids Titans,0,0,Season
+9/27/26,Week 3,Cleveland Gladiators,Cedar Rapids Titans,0,0,Season
+9/27/26,Week 3,Brooklyn Bolts,Miami Inferno,0,0,Season
+9/27/26,Week 3,Philadelphia Soul,Boston Brawlers,0,0,Season
+9/27/26,Week 3,Tucson Sugar Skulls,Vegas Knight Hawks,0,0,Season
+9/27/26,Week 3,Los Angeles Wildcats,Northern Arizona Wranglers,0,0,Season
+9/27/26,Week 3,Chicago Slaughter,Milwaukee Mustangs,0,0,Season
+10/4/26,Week 4,Boston Brawlers,Cleveland Gladiators,0,0,Season
+10/4/26,Week 4,Miami Inferno,Tucson Sugar Skulls,0,0,Season
+10/4/26,Week 4,Brooklyn Bolts,Northern Arizona Wranglers,0,0,Season
+10/4/26,Week 4,Vegas Knight Hawks,Philadelphia Soul,0,0,Season
+10/4/26,Week 4,Cedar Rapids Titans,Los Angeles Wildcats,0,0,Season
+10/4/26,Week 4,Milwaukee Mustangs,Chicago Slaughter,0,0,Season
+10/11/26,Week 5,Vegas Knight Hawks,Los Angeles Wildcats,0,0,Season
+10/11/26,Week 5,Milwaukee Mustangs,Philadelphia Soul,0,0,Season
+10/11/26,Week 5,Northern Arizona Wranglers,Miami Inferno,0,0,Season
+10/11/26,Week 5,Chicago Slaughter,Brooklyn Bolts,0,0,Season
+10/11/26,Week 5,Tucson Sugar Skulls,Boston Brawlers,0,0,Season
+10/11/26,Week 5,Cleveland Gladiators,Cedar Rapids Titans,0,0,Season
+10/18/26,Week 6,Chicago Slaughter,Cedar Rapids Titans,0,0,Season
+10/18/26,Week 6,Philadelphia Soul,Los Angeles Wildcats,0,0,Season
+10/18/26,Week 6,Tucson Sugar Skulls,Vegas Knight Hawks,0,0,Season
+10/18/26,Week 6,Milwaukee Mustangs,Miami Inferno,0,0,Season
+10/18/26,Week 6,Boston Brawlers,Brooklyn Bolts,0,0,Season
+10/18/26,Week 6,Northern Arizona Wranglers,Cleveland Gladiators,0,0,Season
+10/25/26,Week 7,Tucson Sugar Skulls,Milwaukee Mustangs,0,0,Season
+10/25/26,Week 7,Philadelphia Soul,Miami Inferno,0,0,Season
+10/25/26,Week 7,Cleveland Gladiators,Brooklyn Bolts,0,0,Season
+10/25/26,Week 7,Los Angeles Wildcats,Northern Arizona Wranglers,0,0,Season
+10/25/26,Week 7,Boston Brawlers,Chicago Slaughter,0,0,Season
+10/25/26,Week 7,Cedar Rapids Titans,Vegas Knight Hawks,0,0,Season
+11/1/26,Week 8,Los Angeles Wildcats,Tucson Sugar Skulls,0,0,Season
+11/1/26,Week 8,Vegas Knight Hawks,Chicago Slaughter,0,0,Season
+11/1/26,Week 8,Miami Inferno,Brooklyn Bolts,0,0,Season
+11/1/26,Week 8,Milwaukee Mustangs,Boston Brawlers,0,0,Season
+11/1/26,Week 8,Northern Arizona Wranglers,Cedar Rapids Titans,0,0,Season
+11/1/26,Week 8,Cleveland Gladiators,Philadelphia Soul,0,0,Season
+11/8/26,Week 9,Milwaukee Mustangs,Brooklyn Bolts,0,0,Season
+11/8/26,Week 9,Cleveland Gladiators,Los Angeles Wildcats,0,0,Season
+11/8/26,Week 9,Cedar Rapids Titans,Boston Brawlers,0,0,Season
+11/8/26,Week 9,Philadelphia Soul,Chicago Slaughter,0,0,Season
+11/8/26,Week 9,Tucson Sugar Skulls,Northern Arizona Wranglers,0,0,Season
+11/8/26,Week 9,Miami Inferno,Vegas Knight Hawks,0,0,Season
+11/15/26,Week 10,Northern Arizona Wranglers,Milwaukee Mustangs,0,0,Season
+11/15/26,Week 10,Vegas Knight Hawks,Cleveland Gladiators,0,0,Season
+11/15/26,Week 10,Boston Brawlers,Philadelphia Soul,0,0,Season
+11/15/26,Week 10,Los Angeles Wildcats,Chicago Slaughter,0,0,Season
+11/15/26,Week 10,Miami Inferno,Cedar Rapids Titans,0,0,Season
+11/15/26,Week 10,Brooklyn Bolts,Tucson Sugar Skulls,0,0,Season
+11/22/26,Week 11,Milwaukee Mustangs,Cleveland Gladiators,0,0,Season
+11/22/26,Week 11,Miami Inferno,Los Angeles Wildcats,0,0,Season
+11/22/26,Week 11,Philadelphia Soul,Brooklyn Bolts,0,0,Season
+11/22/26,Week 11,Boston Brawlers,Vegas Knight Hawks,0,0,Season
+11/22/26,Week 11,Northern Arizona Wranglers,Chicago Slaughter,0,0,Season
+11/22/26,Week 11,Cedar Rapids Titans,Tucson Sugar Skulls,0,0,Season
+11/29/26,Week 12,Milwaukee Mustangs,Cedar Rapids Titans,0,0,Season
+11/29/26,Week 12,Vegas Knight Hawks,Northern Arizona Wranglers,0,0,Season
+11/29/26,Week 12,Chicago Slaughter,Cleveland Gladiators,0,0,Season
+11/29/26,Week 12,Miami Inferno,Boston Brawlers,0,0,Season
+11/29/26,Week 12,Brooklyn Bolts,Los Angeles Wildcats,0,0,Season
+11/29/26,Week 12,Philadelphia Soul,Tucson Sugar Skulls,0,0,Season
+12/6/26,Week 13,Los Angeles Wildcats,Milwaukee Mustangs,0,0,Season
+12/6/26,Week 13,Brooklyn Bolts,Vegas Knight Hawks,0,0,Season
+12/6/26,Week 13,Miami Inferno,Cleveland Gladiators,0,0,Season
+12/6/26,Week 13,Tucson Sugar Skulls,Chicago Slaughter,0,0,Season
+12/6/26,Week 13,Cedar Rapids Titans,Philadelphia Soul,0,0,Season
+12/6/26,Week 13,Northern Arizona Wranglers,Boston Brawlers,0,0,Season
+12/13/26,Week 14,Vegas Knight Hawks,Milwaukee Mustangs,0,0,Season
+12/13/26,Week 14,Boston Brawlers,Los Angeles Wildcats,0,0,Season
+12/13/26,Week 14,Chicago Slaughter,Miami Inferno,0,0,Season
+12/13/26,Week 14,Cleveland Gladiators,Tucson Sugar Skulls,0,0,Season
+12/13/26,Week 14,Northern Arizona Wranglers,Philadelphia Soul,0,0,Season
+12/13/26,Week 14,Cedar Rapids Titans,Brooklyn Bolts,0,0,Season
+12/20/26,Playoff Week 1,0,0,0,0,Playoffs
+12/20/26,Playoff Week 1,0,0,0,0,Playoffs
+12/20/26,Playoff Week 1,0,0,0,0,Playoffs
+12/27/26,Playoff Week 2,0,0,0,0,Playoffs
+12/27/26,Playoff Week 2,0,0,0,0,Playoffs
+1/3/27,Playoff Week 3,0,0,0,0,Playoffs
