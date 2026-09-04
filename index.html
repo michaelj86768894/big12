@@ -307,6 +307,23 @@
 
   </div>
 </div>
+	
+	
+	<!-- ========================================================================================== SOCIAL FEED ================== -->	
+	<section class="social-widget">
+    <div class="social-header">
+        <h2>🐦 GLFN SOCIAL</h2>
+        <span>League Chatter</span>
+    </div>
+
+    <div id="glfn-social-feed"></div>
+
+    <a href="social.html" class="social-more">
+        → View More GLFN Social
+    </a>
+</section>
+	
+	
 
 	
 	<!-- ========================================================================================== LEAGUE FEED & STANDINGS ================== -->
@@ -452,107 +469,233 @@
   </a>
 </div>
 
+
+<script src="data/social-feed.js"></script>
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+// ==========================================================================================
+// GLFN SOCIAL FEED
+// ==========================================================================================
 
-// ========================================================================================== MOBILE NAVIGATION ==================
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+document.addEventListener("DOMContentLoaded", function () {
 
-// Toggle mobile nav menu
-hamburger.addEventListener("click", function(e) {
-e.stopPropagation(); // Prevent click from bubbling
-navLinks.classList.toggle("nav-active");
+    const feed = document.getElementById("glfn-social-feed");
+
+    if (feed && typeof glfnSocialFeed !== "undefined") {
+
+        feed.innerHTML = glfnSocialFeed
+            .slice(0, 6)
+            .map(post => `
+                <article class="social-post">
+                    <div class="social-post-header">
+                        <strong>${post.reporter}</strong>
+                        <span>${post.bureau} Bureau</span>
+                    </div>
+
+                    <div class="social-type">${post.type}</div>
+
+                    <p>${post.text}</p>
+
+                    <div class="social-time">${post.time}</div>
+                </article>
+            `)
+            .join("");
+
+    }
+
+
+// ==========================================================================================
+// MOBILE NAVIGATION
+// ==========================================================================================
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const dropdownLinks = document.querySelectorAll(".nav-links .dropdown > a");
+
+    // Toggle mobile nav menu
+    if (hamburger && navLinks) {
+
+        hamburger.addEventListener("click", function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle("nav-active");
+        });
+
+    }
+
+    // Toggle dropdowns on mobile
+    dropdownLinks.forEach(link => {
+
+        link.addEventListener("click", function(e) {
+
+            if (window.innerWidth <= 768) {
+
+                e.preventDefault();
+
+                const submenu = this.nextElementSibling;
+
+                if (submenu) {
+                    submenu.classList.toggle("dropdown-active");
+                }
+
+            }
+
+        });
+
+    });
+
+    // Close mobile menu if clicking outside
+    document.addEventListener("click", function(e) {
+
+        if (window.innerWidth <= 768 && navLinks && hamburger) {
+
+            const isClickInsideNav =
+                navLinks.contains(e.target) ||
+                hamburger.contains(e.target);
+
+            if (!isClickInsideNav) {
+
+                navLinks.classList.remove("nav-active");
+
+                document
+                    .querySelectorAll(".dropdown-content")
+                    .forEach(sub => sub.classList.remove("dropdown-active"));
+
+            }
+
+        }
+
+    });
+
+
+// ==========================================================================================
+// NEWS SLIDESHOW
+// ==========================================================================================
+
+    let newsSlideIndex = 0;
+
+    const newsSlides = document.querySelectorAll(".news-slide");
+    const dotsContainer = document.querySelector(".news-dots");
+
+    // Only initialize slideshow if slides actually exist
+    if (newsSlides.length > 0) {
+
+        // Stack slides and fade out
+        newsSlides.forEach(slide => {
+
+            slide.style.opacity = "0";
+            slide.style.position = "absolute";
+            slide.style.top = "0";
+            slide.style.left = "0";
+            slide.style.width = "100%";
+            slide.style.transition = "opacity 0.6s ease";
+
+        });
+
+        // Show first slide
+        newsSlides[newsSlideIndex].style.opacity = "1";
+
+
+        // Create dots dynamically
+        if (dotsContainer) {
+
+            newsSlides.forEach((_, index) => {
+
+                const dot = document.createElement("span");
+
+                dot.classList.add("dot");
+
+                dot.addEventListener("click", () => {
+                    showNewsSlide(index);
+                });
+
+                dotsContainer.appendChild(dot);
+
+            });
+
+        }
+
+
+        // Function to show slide
+        function showNewsSlide(n) {
+
+            newsSlideIndex =
+                (n + newsSlides.length) % newsSlides.length;
+
+            newsSlides.forEach(slide => {
+                slide.style.opacity = "0";
+            });
+
+            newsSlides[newsSlideIndex].style.opacity = "1";
+
+            updateDots();
+
+        }
+
+
+        // Function to update dots
+        function updateDots() {
+
+            if (!dotsContainer) return;
+
+            const dots =
+                document.querySelectorAll(".news-dots .dot");
+
+            dots.forEach(dot => {
+                dot.classList.remove("active");
+            });
+
+            if (dots[newsSlideIndex]) {
+                dots[newsSlideIndex].classList.add("active");
+            }
+
+        }
+
+
+        // Initialize dots
+        updateDots();
+
+
+        // Auto-rotate
+        setInterval(() => {
+            showNewsSlide(newsSlideIndex + 1);
+        }, 5000);
+
+
+        // ==================================================================================
+        // SWIPE SUPPORT
+        // ==================================================================================
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const wrapper =
+            document.querySelector(".news-slide-wrapper");
+
+        if (wrapper) {
+
+            wrapper.addEventListener("touchstart", (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            wrapper.addEventListener("touchend", (e) => {
+
+                touchEndX = e.changedTouches[0].screenX;
+
+                if (touchEndX < touchStartX - 50) {
+                    showNewsSlide(newsSlideIndex + 1);
+                }
+
+                if (touchEndX > touchStartX + 50) {
+                    showNewsSlide(newsSlideIndex - 1);
+                }
+
+            });
+
+        }
+
+    }
+
 });
-
-// Toggle dropdowns on mobile
-dropdownLinks.forEach(link => {
-link.addEventListener("click", function(e) {
-if (window.innerWidth <= 768) {
-e.preventDefault(); // Prevent link navigation
-const submenu = this.nextElementSibling;
-submenu.classList.toggle("dropdown-active");
-}
-});
-});
-
-// Close mobile menu if clicking outside
-document.addEventListener("click", function(e) {
-if (window.innerWidth <= 768) {
-const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
-if (!isClickInsideNav) {
-navLinks.classList.remove("nav-active");
-document.querySelectorAll(".dropdown-content").forEach(sub => sub.classList.remove("dropdown-active"));
-}
-}
-});
-
-// ========================================================================================== NEWS SLIDESHOW ==================
-let newsSlideIndex = 0;
-const newsSlides = document.querySelectorAll(".news-slide");
-const dotsContainer = document.querySelector(".news-dots");
-
-// Stack slides and fade out
-newsSlides.forEach(slide => {
-slide.style.opacity = "0";
-slide.style.position = "absolute";
-slide.style.top = "0";
-slide.style.left = "0";
-slide.style.width = "100%";
-slide.style.transition = "opacity 0.6s ease";
-});
-
-// Show first slide
-newsSlides[newsSlideIndex].style.opacity = "1";
-
-// Create dots dynamically
-newsSlides.forEach((_, index) => {
-const dot = document.createElement("span");
-dot.classList.add("dot");
-dot.addEventListener("click", () => showNewsSlide(index));
-dotsContainer.appendChild(dot);
-});
-
-// Function to show slide
-function showNewsSlide(n) {
-newsSlideIndex = (n + newsSlides.length) % newsSlides.length;
-newsSlides.forEach(slide => slide.style.opacity = "0");
-newsSlides[newsSlideIndex].style.opacity = "1";
-updateDots();
-}
-
-// Function to update dots
-function updateDots() {
-const dots = document.querySelectorAll(".news-dots .dot");
-dots.forEach(dot => dot.classList.remove("active"));
-if(dots[newsSlideIndex]) dots[newsSlideIndex].classList.add("active");
-}
-
-// Initialize dots
-updateDots();
-
-// Auto-rotate
-setInterval(() => showNewsSlide(newsSlideIndex + 1), 5000);
-
-// ========== SWIPE SUPPORT ==========
-let touchStartX = 0;
-let touchEndX = 0;
-
-const wrapper = document.querySelector(".news-slide-wrapper");
-
-wrapper.addEventListener("touchstart", (e) => {
-touchStartX = e.changedTouches[0].screenX;
-});
-
-wrapper.addEventListener("touchend", (e) => {
-touchEndX = e.changedTouches[0].screenX;
-
-if (touchEndX < touchStartX - 50) showNewsSlide(newsSlideIndex + 1); // swipe left
-if (touchEndX > touchStartX + 50) showNewsSlide(newsSlideIndex - 1); // swipe right
-});
-
-});
-</script>	
+</script>
 </body>
 </html>
