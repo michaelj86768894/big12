@@ -1,19 +1,19 @@
 const glfnSocialFeed = [
 
     {
-        reporter: "Marcus Reed",
-        bureau: "Chicago",
-        type: "🟢 SOURCES SAY",
-        time: "Sep 4, 1:08 PM",
-        text: "Hearing Darrien Clay has reached out to Milwaukee regarding Kenneth Walker III. The Slaughter appear to be looking for running back help, but a deal may require more than a straight player swap."
-    },
-
-    {
         reporter: "Tommy Gallagher",
         bureau: "Milwaukee",
         type: "👀 LEAGUE CHATTER",
         time: "Sep 4, 4:08 PM",
         text: "Spoke with GM Bautch on the interest in Kenneth Walker III from other teams. They aren't moving him just to make a trade. If he gets moved, the price is going to matter."
+    },
+
+	{
+        reporter: "Marcus Reed",
+        bureau: "Chicago",
+        type: "🟢 SOURCES SAY",
+        time: "Sep 4, 1:08 PM",
+        text: "Hearing Darrien Clay has reached out to Milwaukee regarding Kenneth Walker III. The Slaughter appear to be looking for running back help, but a deal may require more than a straight player swap."
     },
 
 	{
