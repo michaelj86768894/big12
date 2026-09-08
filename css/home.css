@@ -6,8 +6,6 @@
 ========================================================================================== */
 
 .social-widget {
-    max-width: 1200px;
-    margin: 15px auto 0;
     background-color: var(--bright-white);
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -232,6 +230,33 @@ position: relative;
 	100% {
 	transform: translateX(-50%);
 	}
+}
+
+/* ==========================================================================================
+HOMEPAGE CONTENT LAYOUT
+========================================================================================== */
+
+.homepage-content-layout {
+    max-width: 1200px;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+/* Main league content sits inside the grid */
+.homepage-content-layout .league-feed-container {
+    max-width: none;
+    margin: 0;
+}
+
+/* Social feed becomes the right-hand sidebar */
+.homepage-content-layout .social-widget {
+    max-width: none;
+    margin: 0;
+    position: sticky;
+    top: 15px;
 }
 
 /* ========================================================================================== LEAGUE FEED & STANDINGS ================== */
@@ -684,9 +709,12 @@ a.sidebar-item:hover {
 
 
 
-/* ========================================================================================== RESPONSIVE */
+/* ==========================================================================================
+RESPONSIVE
+========================================================================================== */
 
 @media (max-width: 992px) {
+
     .league-feed-container {
         flex-direction: column;
     }
@@ -700,9 +728,25 @@ a.sidebar-item:hover {
     .awards-scroll {
         grid-template-columns: repeat(3, 1fr);
     }
+
 }
 
+
 @media (max-width: 768px) {
+
+    /* Homepage main content + social sidebar stack vertically */
+
+    .homepage-content-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 15px auto;
+    }
+
+    .homepage-content-layout .social-widget {
+        position: static;
+        margin: 0;
+    }
+
     .banner {
         height: 100px;
     }
@@ -714,9 +758,49 @@ a.sidebar-item:hover {
     .scroll-content img {
         height: 80px;
     }
+
+    .social-header {
+        margin-bottom: 8px;
+    }
+
+    .social-header h2 {
+        font-size: 0.72rem;
+    }
+
+    .social-header span {
+        font-size: 0.65rem;
+    }
+
+    #glfn-social-feed {
+        max-height: 300px;
+    }
+
+    .social-post {
+        padding: 11px 8px;
+    }
+
+    .social-post-header strong {
+        font-size: 0.78rem;
+    }
+
+    .social-post-header span {
+        font-size: 0.64rem;
+    }
+
+    .social-post p {
+        font-size: 0.75rem;
+    }
+
+    .social-more {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
 }
 
+
 @media (max-width: 600px) {
+
     .feed-layout {
         flex-direction: column;
     }
@@ -724,5 +808,6 @@ a.sidebar-item:hover {
     .awards-scroll {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
