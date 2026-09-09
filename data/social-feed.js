@@ -1,5 +1,33 @@
 const glfnSocialFeed = [
 	
+	{
+		reporter: "Frank Russo",
+		handle: "@RussoRemembers",
+		bureau: "Miami",
+		type: "\u{1F440} LEAGUE CHATTER",
+		time: "Sep 9, 3:45 PM",
+		text: "Miami GM has sent a message around the league: Miami is looking for a WR. The Inferno apparently have running backs available in return. Let the trade calls begin."
+	},
+
+	{
+		reporter: "Tony DeLuca",
+		handle: "@TonyTakes",
+		bureau: "Brooklyn",
+		type: "\u{1F6A8} ROSTER MOVE",
+		time: "Sep 9, 3:32 PM",
+		text: "Brooklyn releases veteran QB Joe Flacco and signs RB Kaelon Black for $1. Cory Colvin is making moves before Week 1."
+	},
+
+	{
+		reporter: "Marcus Reed",
+		handle: "@MarcusReed",
+		bureau: "Chicago",
+		type: "\u{1F6A8} ROSTER MOVE",
+		time: "Sep 9, 3:18 PM",
+		text: "Chicago signs TE Greg Dulcich. Darrien Clay continues to work the roster after an extremely active week on the transaction wire."
+	},
+	
+	
     {
         reporter: "Tommy Gallagher",
         handle: "@TommyOnTheMustangs",
