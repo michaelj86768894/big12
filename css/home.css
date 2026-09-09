@@ -245,13 +245,19 @@ HOMEPAGE CONTENT LAYOUT
     align-items: start;
 }
 
-/* Main league content sits inside the grid */
-.homepage-content-layout .league-feed-container {
+.homepage-main-column {
+    min-width: 0;
+}
+
+.homepage-main-column .league-feed-container {
     max-width: none;
     margin: 0;
 }
 
-/* Social feed becomes the right-hand sidebar */
+.homepage-main-column .standings-widget {
+    margin-top: 15px;
+}
+
 .homepage-content-layout .social-widget {
     max-width: none;
     margin: 0;
@@ -268,8 +274,6 @@ HOMEPAGE CONTENT LAYOUT
   border: 1px solid #ddd;
   border-radius: 6px;
   box-sizing: border-box;
-  display: flex;
-  gap: 25px;
 }
 
 .news-section {
