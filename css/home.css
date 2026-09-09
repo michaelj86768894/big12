@@ -44,7 +44,7 @@
 /* SCROLLING FEED WINDOW */
 
 #glfn-social-feed {
-    max-height: 340px;
+    max-height: 875px;
     overflow-y: auto;
     padding-right: 5px;
     scrollbar-width: thin;
@@ -261,7 +261,6 @@ HOMEPAGE CONTENT LAYOUT
 .homepage-content-layout .social-widget {
     max-width: none;
     margin: 0;
-    position: sticky;
     top: 15px;
 }
 
@@ -444,20 +443,35 @@ a.sidebar-item:hover {
 
 /* Compact Table Formatting */
 .mini-table {
-  width: 100%;
-  font-size: 0.8rem;
-  margin-bottom: 5px;
-  border-collapse: collapse;
+    width: 100%;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
-.mini-table th, .mini-table td {
-  padding: 2px 2px;
-  text-align: left;
+.mini-table th,
+.mini-table td {
+    padding: 2px 2px;
+    text-align: left;
 }
 
-.mini-table th:nth-child(3), .mini-table th:nth-child(4),
-.mini-table td:nth-child(3), .mini-table td:nth-child(4) {
-  text-align: center;
+.mini-table th:first-child,
+.mini-table td:first-child {
+    width: 35px;
+}
+
+.mini-table th:nth-child(2),
+.mini-table td:nth-child(2) {
+    width: auto;
+}
+
+.mini-table th:nth-child(3),
+.mini-table td:nth-child(3),
+.mini-table th:nth-child(4),
+.mini-table td:nth-child(4) {
+    width: 40px;
+    text-align: left;
 }
 
 /* ========================================================================================== SCOREBOARD BAR ================== */
