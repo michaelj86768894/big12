@@ -449,7 +449,7 @@
         <h2>🐦 GLFL NETWORK SOCIAL</h2>
     </div>
 
-    <div id="glfn-social-feed"></div>
+    <div id="glfl-social-feed"></div>
 
     <a href="pages/Social.html" class="social-more">
         → View More GLFL Social
@@ -482,16 +482,16 @@
 
 <script>
 // ==========================================================================================
-// GLFN SOCIAL FEED
+// GLFL SOCIAL FEED
 // ==========================================================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const feed = document.getElementById("glfn-social-feed");
+    const feed = document.getElementById("glfl-social-feed");
 
-    if (feed && typeof glfnSocialFeed !== "undefined") {
+    if (feed && typeof glflSocialFeed !== "undefined") {
 
-        feed.innerHTML = glfnSocialFeed
+        feed.innerHTML = glflSocialFeed
             .slice(0, 12)
             .map(post => `
                 <article class="social-post">
@@ -499,6 +499,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <strong>${post.reporter}</strong>
                         <span>${post.handle}</span>
                     </div>
+
+                    <div class="social-bureau">${post.bureau}</div>
 
                     <div class="social-type">${post.type}</div>
 

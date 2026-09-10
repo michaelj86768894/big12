@@ -1,4 +1,4 @@
-const glfnSocialFeed = [
+const glflSocialFeed = [
 	
 		{
 		reporter: "Cedar Rapids Titans",

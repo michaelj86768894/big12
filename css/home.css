@@ -2,7 +2,7 @@
 /* CSS Document */
 
 /* ==========================================================================================
-   GLFN SOCIAL WIDGET
+   GLFL SOCIAL WIDGET
 ========================================================================================== */
 
 .social-widget {
@@ -43,7 +43,7 @@
 
 /* SCROLLING FEED WINDOW */
 
-#glfn-social-feed {
+#glfl-social-feed {
     max-height: 875px;
     overflow-y: auto;
     padding-right: 5px;
@@ -52,16 +52,16 @@
 
 /* Match the existing site scrollbars */
 
-#glfn-social-feed::-webkit-scrollbar {
+#glfl-social-feed::-webkit-scrollbar {
     width: 5px;
 }
 
-#glfn-social-feed::-webkit-scrollbar-thumb {
+#glfl-social-feed::-webkit-scrollbar-thumb {
     background: var(--industrial-gray);
     border-radius: 3px;
 }
 
-#glfn-social-feed::-webkit-scrollbar-track {
+#glfl-social-feed::-webkit-scrollbar-track {
     background: transparent;
 }
 
@@ -96,6 +96,12 @@
     font-size: 0.68rem;
     color: var(--industrial-gray);
     white-space: nowrap;
+}
+
+.social-bureau {
+    margin-top: 1px;
+    font-size: 0.62rem;
+    color: var(--industrial-gray);
 }
 
 .social-type {
@@ -138,7 +144,7 @@
 }
 
 /* ==========================================================================================
-   GLFN SOCIAL - MOBILE
+   GLFL SOCIAL - MOBILE
 ========================================================================================== */
 
 @media (max-width: 768px) {
@@ -160,7 +166,7 @@
         font-size: 0.65rem;
     }
 
-    #glfn-social-feed {
+    #glfl-social-feed {
         max-height: 300px;
     }
 
@@ -789,7 +795,7 @@ RESPONSIVE
         font-size: 0.65rem;
     }
 
-    #glfn-social-feed {
+    #glfl-social-feed {
         max-height: 300px;
     }
 
@@ -828,4 +834,3 @@ RESPONSIVE
     }
 
 }
-
