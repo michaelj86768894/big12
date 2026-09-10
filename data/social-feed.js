@@ -1,5 +1,57 @@
 const glfnSocialFeed = [
 	
+		{
+		reporter: "Cedar Rapids Titans",
+		handle: "@CRTitans",
+		bureau: "Cedar Rapids",
+		type: "\u{1F6A8} TRADE",
+		time: "Sep 10, 1:10 PM",
+		text: "BREAKING: The Titans have acquired RB Bucky Irving from Miami in exchange for WR Luther Burden III. Welcome to Cedar Rapids, Bucky."
+		},
+	
+
+		{
+		reporter: "Marcus Reed",
+		handle: "@MarcusReed",
+		bureau: "Chicago",
+		type: "\u{1F440} LEAGUE CHATTER",
+		time: "Sep 10, 1:02 PM",
+		text: "Chicago was looking for a running back. Miami was looking for a WR. Somehow, those calls never turned into a deal. Bucky Irving is headed to Cedar Rapids instead."
+		
+		},
+	
+	
+		{
+		reporter: "Evan Mercer",
+		handle: "@EvanMercer",
+		bureau: "Cedar Rapids",
+		type: "\u{1F7E2} CEDAR RAPIDS",
+		time: "Sep 10, 12:55 PM",
+		text: "The Titans needed another weapon, and they got one. Cedar Rapids sends WR Luther Burden III to Miami and brings RB Bucky Irving to the Titans."
+	},
+	
+	
+	{
+		reporter: "Frank Russo",
+		handle: "@RussoRemembers",
+		bureau: "Miami",
+		type: "\u{1F525} MIAMI",
+		time: "Sep 10, 12:52 PM",
+		text: "Richard Head said Miami needed a WR. He wasn't kidding. The Inferno turn Bucky Irving into Luther Burden III and make their first major move of the season."
+	},
+
+	
+	
+	{
+		reporter: "GLFL",
+		handle: "@GLFL",
+		bureau: "League Office",
+		type: "\u{1F6A8} TRADE",
+		time: "Sep 10, 12:49 PM",
+		text: "TRADE: Miami Inferno send RB Bucky Irving to the Cedar Rapids Titans in exchange for WR Luther Burden III. The first trade of the 2026 GLFL season is official."
+	},
+
+	
 	{
 		reporter: "GLFL",
 		handle: "@GLFL",
