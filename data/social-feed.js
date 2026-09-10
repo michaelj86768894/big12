@@ -1,6 +1,15 @@
 const glfnSocialFeed = [
 	
 	{
+		reporter: "GLFL",
+		handle: "@GLFL",
+		bureau: "League Office",
+		type: "\u{1F3C8} KICKOFF",
+		time: "Sep 9, 7:15 PM",
+		text: "The wait is over. GLFL football is back, and the 2026 season officially starts tonight. Week 1 is here!"
+	},
+	
+	{
 		reporter: "Frank Russo",
 		handle: "@RussoRemembers",
 		bureau: "Miami",
