@@ -20,6 +20,37 @@ const glflSocialFeed = [
 	
 	
 	{
+        id: "2026-09-11-mack-wilson",
+        likes: 1,
+        reposts: 4,
+		profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb4F7OFEbcvaFd7JpcmJZt1TV9JqdEdWiD1s4LfNDCEObqHlGHj7BUvHai&s=10",
+        reporter: "Jack Callahan",
+		handle: "@JC_BeanTown",
+		bureau: "Boston",
+		category: "roster",
+		type: "\u{1F6A8} ROSTER MOVE",
+		time: "Sep 11, 7:32 AM",
+		text: "Brawlers pickup Mack Wilson Sr. waiving WR Joshua Palmer to make room."
+	},
+
+	
+	{
+        id: "2026-09-10-mercer-irving-trade",
+        likes: 96,
+        reposts: 24,
+        quotePost: "2026-09-10-titans-irving-trade",
+        profile: "https://res.cloudinary.com/dp5nzokay/image/fetch/q_95,c_fill,g_face,w_810,h_656,f_auto/https://cdn.tymbrel.com/site/2856/images/directory/6UGN/employees/dr-evan-mercer.jpg",
+        reporter: "Evan Mercer",
+		handle: "@EvanMercer",
+		bureau: "Cedar Rapids",
+		category: "trade",
+		type: "\u{1F7E2} CEDAR RAPIDS",
+		time: "Sep 10, 12:55 PM",
+		text: "The Titans needed another weapon, and they got one. Cedar Rapids sends WR Luther Burden III to Miami and brings RB Bucky Irving to the Titans. In addition the Titans sign LB Barrett Carter"
+	},
+	
+	
+	{
         id: "2026-09-10-titans-irving-trade",
         likes: 186,
         reposts: 42,
@@ -39,7 +70,8 @@ const glflSocialFeed = [
         id: "2026-09-10-reed-trade-chatter",
         likes: 73,
         reposts: 11,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
 		handle: "@MarcusReed",
 		bureau: "Chicago",
 		category: "rumor",
@@ -50,50 +82,20 @@ const glflSocialFeed = [
 		},
 	
 	
-		{
-        id: "2026-09-10-mercer-irving-trade",
-        likes: 96,
-        reposts: 24,
-        quotePost: "2026-09-10-glfl-trade",
-        reporter: "Evan Mercer",
-		handle: "@EvanMercer",
-		bureau: "Cedar Rapids",
-		category: "trade",
-		type: "\u{1F7E2} CEDAR RAPIDS",
-		time: "Sep 10, 12:55 PM",
-		text: "The Titans needed another weapon, and they got one. Cedar Rapids sends WR Luther Burden III to Miami and brings RB Bucky Irving to the Titans."
-	},
-	
-	
 	{
         id: "2026-09-10-russo-burden-trade",
         likes: 82,
         reposts: 17,
-        reporter: "Frank Russo",
+        profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_fH3GzqWsFn3OfIYcxIS0VA8WAgieiZjEO0VMpk8T-u5wakhMS9mfylnS&s=10",
+		reporter: "Frank Russo",
 		handle: "@RussoRemembers",
 		bureau: "Miami",
 		category: "trade",
 		type: "\u{1F525} MIAMI",
 		time: "Sep 10, 12:52 PM",
-		text: "Richard Head said Miami needed a WR. He wasn't kidding. The Inferno turn Bucky Irving into Luther Burden III and make their first major move of the season."
+		text: "Richard Head said Miami needed a WR. He wasn't kidding. The Inferno turn Bucky Irving into Luther Burden III and make their first major move of the season. In addition to signing CB Tyrique Stevenson."
 	},
 
-	
-	
-	{
-        id: "2026-09-10-glfl-trade",
-        likes: 428,
-        reposts: 136,
-        accountType: "league",
-        profile: "images/Logo.png",
-        reporter: "GLFL",
-		handle: "@GLFL",
-		bureau: "League Office",
-		category: "trade",
-		type: "\u{1F6A8} TRADE",
-		time: "Sep 10, 12:49 PM",
-		text: "TRADE: Miami Inferno send RB Bucky Irving to the Cedar Rapids Titans in exchange for WR Luther Burden III. The first trade of the 2026 GLFL season is official."
-	},
 
 	
 	{
@@ -115,7 +117,8 @@ const glflSocialFeed = [
         id: "2026-09-09-russo-wr-search",
         likes: 38,
         reposts: 9,
-        reporter: "Frank Russo",
+        profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_fH3GzqWsFn3OfIYcxIS0VA8WAgieiZjEO0VMpk8T-u5wakhMS9mfylnS&s=10",
+		reporter: "Frank Russo",
 		handle: "@RussoRemembers",
 		bureau: "Miami",
 		type: "\u{1F440} LEAGUE CHATTER",
@@ -128,6 +131,7 @@ const glflSocialFeed = [
         id: "2026-09-09-deluca-black",
         likes: 21,
         reposts: 4,
+		profile: "https://www.retireguide.com/wp-content/uploads/anthony_deluca-scaled.jpg",
         reporter: "Tony DeLuca",
 		handle: "@TonyTakes",
 		bureau: "Brooklyn",
@@ -141,6 +145,7 @@ const glflSocialFeed = [
         id: "2026-09-09-reed-dulcich",
         likes: 3,
         reposts: 0,
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
         reporter: "Marcus Reed",
 		handle: "@MarcusReed",
 		bureau: "Chicago",
@@ -155,6 +160,7 @@ const glflSocialFeed = [
         id: "2026-09-04-gallagher-walker",
         likes: 64,
         reposts: 8,
+		profile: "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fmiamiredhawks.com%2Fimages%2F2023%2F7%2F12%2FD0000OqGhF6sWLls_Gallagher__yQwR2.jpg&width=1600&type=jpeg",
         reporter: "Tommy Gallagher",
         handle: "@TommyOnTheMustangs",
         bureau: "Milwaukee",
@@ -168,7 +174,8 @@ const glflSocialFeed = [
         id: "2026-09-04-reed-walker",
         likes: 47,
         reposts: 12,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
         handle: "@MarcusReed",
         bureau: "Chicago",
 		type: "\u{1F7E2} SOURCES SAY",
@@ -181,6 +188,7 @@ const glflSocialFeed = [
         id: "2026-09-03-calloway-draft-recap",
         likes: 118,
         reposts: 29,
+		profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
         reporter: "Ethan Calloway",
         handle: "@EthanCalloway",
         bureau: "GLFL National",
@@ -194,7 +202,8 @@ const glflSocialFeed = [
         id: "2026-08-31-reed-holani",
         likes: 9,
         reposts: 1,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
         handle: "@MarcusReed",
         bureau: "Chicago",
 		type: "\u{1F6A8} ROSTER MOVE",
@@ -207,6 +216,7 @@ const glflSocialFeed = [
         id: "2026-08-31-thompson-bonitto",
         likes: 16,
         reposts: 2,
+		profile: "https://wp.theringer.com/wp-content/uploads/2024/11/Thompson_Derek.jpg",
         reporter: "Derek Thompson",
         handle: "@DerekSeesIt",
         bureau: "Philadelphia",
@@ -220,7 +230,8 @@ const glflSocialFeed = [
         id: "2026-08-31-reed-fields",
         likes: 6,
         reposts: 0,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
         handle: "@MarcusReed",
         bureau: "Chicago",
 		type: "\u{1F6A8} ROSTER MOVE",
@@ -233,7 +244,8 @@ const glflSocialFeed = [
         id: "2026-08-31-reed-lane",
         likes: 8,
         reposts: 1,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
         handle: "@MarcusReed",
         bureau: "Chicago",
 		type: "\u{1F6A8} ROSTER MOVE",
@@ -246,7 +258,8 @@ const glflSocialFeed = [
         id: "2026-08-31-reed-lance",
         likes: 4,
         reposts: 0,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
         handle: "@MarcusReed",
         bureau: "Chicago",
 		type: "\u{1F6A8} ROSTER MOVE",
@@ -259,7 +272,8 @@ const glflSocialFeed = [
         id: "2026-08-31-reed-henley",
         likes: 12,
         reposts: 2,
-        reporter: "Marcus Reed",
+		profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+		reporter: "Marcus Reed",
         handle: "@MarcusReed",
         bureau: "Chicago",
 		type: "\u{1F6A8} ROSTER MOVE",

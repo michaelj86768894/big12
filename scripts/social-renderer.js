@@ -47,14 +47,14 @@ window.GLFLSocial = (() => {
             if (img.complete && !img.naturalWidth) failed();
         });
     }
-    function matches(post, filter) {
-        if (filter === 'all') return true;
-        const searchable = [post.category, post.type, post.text, post.linkText].filter(Boolean).join(' ').toLowerCase();
-        if (filter === 'breaking') return searchable.includes('breaking') || searchable.includes('trade');
-        if (filter === 'rumor') return /rumor|chatter|sources say/.test(searchable);
-        if (filter === 'article') return searchable.includes('article') || Boolean(post.link);
-        if (filter === 'roster move') return /roster/.test(searchable);
-        return searchable.includes(filter);
+function matches(post, filter) {
+
+    if (filter === "all") {
+        return true;
     }
+
+    return (post.category || "").toLowerCase() === filter.toLowerCase();
+
+}
     return {render, matches};
 })();
