@@ -35,6 +35,8 @@
     color: #e9f5fd;
 }
 
+/* 
+
 .social-filter-bar {
     display: flex;
     flex-wrap: wrap;
@@ -62,6 +64,19 @@
     background: var(--navy);
     color: var(--bright-white);
 }
+*/
+
+/* ========================================================================================== SOCIAL FILTER NAV */
+
+.social-filter-bar {
+    margin-bottom: 20px;
+}
+
+.social-filter.is-active {
+    color: var(--lake-blue);
+    text-decoration: underline;
+}
+
 
 .social-feed-status {
     margin: -8px 0 16px;
