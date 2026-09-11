@@ -35,8 +35,6 @@
     color: #e9f5fd;
 }
 
-/*
-
 .social-filter-bar {
     display: flex;
     flex-wrap: wrap;
@@ -64,20 +62,6 @@
     background: var(--navy);
     color: var(--bright-white);
 }
-*/
-
-
-/* ========================================================================================== SOCIAL FILTER NAV */
-
-.social-filter-bar {
-    margin-bottom: 20px;
-}
-
-.social-filter.is-active {
-    color: var(--lake-blue);
-    text-decoration: underline;
-}
-
 
 .social-feed-status {
     margin: -8px 0 16px;
@@ -215,3 +199,40 @@
     .social-grid { grid-template-columns: 1fr; gap: 14px; }
     .social-grid .social-post { min-height: 0; }
 }
+
+/* Shared social details, including the compact homepage feed. */
+.social-post { min-width: 0; overflow-wrap: anywhere; }
+.social-avatar { position: relative; overflow: hidden; }
+.social-avatar img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; background: var(--bright-white, #fff);
+}
+.is-team > .social-account .social-avatar img,
+.is-official > .social-account .social-avatar img {
+    object-fit: contain; padding: 3px; box-sizing: border-box;
+}
+.social-account-name { flex-wrap: wrap; column-gap: 5px; row-gap: 2px; }
+.social-account-name .social-handle { flex-basis: 100%; }
+.social-account-badge {
+    font-size: 0.55rem; font-weight: 700; text-transform: uppercase;
+    color: var(--navy); background: #e7f3fb; border-radius: 3px; padding: 2px 4px;
+}
+.social-engagement {
+    display: flex; gap: 20px; margin-top: 9px; color: #667680;
+    font-size: 0.72rem; font-variant-numeric: tabular-nums;
+}
+.social-quote {
+    margin: 0 0 14px; padding: 11px; border: 1px solid #d5dfe6;
+    border-radius: 5px; background: #f7fafc;
+}
+.social-quote .social-avatar { width: 28px; height: 28px; flex-basis: 28px; font-size: 0.55rem; }
+.social-quote .social-account-name strong { font-size: 0.76rem; }
+.social-quote .social-handle { font-size: 0.65rem; }
+.social-post .social-quote p { font-size: 0.78rem; margin: 8px 0; line-height: 1.45; }
+.social-widget .social-post.is-official { border-left: 3px solid var(--lake-blue); background: #f3faff; }
+.social-widget .social-post.is-team { border-left: 3px solid var(--navy); }
+.social-widget .social-account-name strong { font-size: 0.8rem; }
+.social-widget .social-avatar { width: 32px; height: 32px; flex-basis: 32px; }
+.social-widget .social-bureau { margin-left: 42px; }
+.social-widget .social-type { margin-top: 10px; }
+.social-widget .social-quote { margin-top: 9px; padding: 9px; }

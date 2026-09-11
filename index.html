@@ -7,6 +7,7 @@
 <!-- ========================================================================================== LINKED STYLESHEETS ================== -->
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/social.css">
      
 </head>
 
@@ -479,6 +480,7 @@
 
 
 <script src="data/social-feed.js"></script>
+<script src="scripts/social-renderer.js"></script>
 
 <script>
 // ==========================================================================================
@@ -491,25 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (feed && typeof glflSocialFeed !== "undefined") {
 
-        feed.innerHTML = glflSocialFeed
-            .slice(0, 12)
-            .map(post => `
-                <article class="social-post">
-                    <div class="social-post-header">
-                        <strong>${post.reporter}</strong>
-                        <span>${post.handle}</span>
-                    </div>
-
-                    <div class="social-bureau">${post.bureau}</div>
-
-                    <div class="social-type">${post.type}</div>
-
-                    <p>${post.text}</p>
-
-                    <div class="social-time">${post.time}</div>
-                </article>
-            `)
-            .join("");
+        GLFLSocial.render(feed, glflSocialFeed.slice(0, 12), glflSocialFeed);
 
     }
 
