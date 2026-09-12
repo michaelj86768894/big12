@@ -38,19 +38,21 @@ const glflSocialFeed = [
 		id: "2026-09-11-bennett-mcbride",
 		likes: 74,
 		reposts: 12,
+		profile: "https://hokiesports.com/imgproxy/7YSS24G0tvfpJ2KDgJ628aQcktjIhgzbMr0oqggwuLo/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3ZpcmdpbmlhdGVjaC1wcm9kLzIwMjUvMTAvMDIvcklMeTJ4Wnh5QjkySlNtbXdhQ1FNeUlyVHYyeHBZNzVZbFh5dEtoZy5wbmc.png",
 		reporter: "Sarah Bennett",
 		handle: "@SBennettStats",
 		bureau: "Los Angeles",
 		category: "rumor",
 		type: "\u{1F6AB} NOT FOR SALE",
 		time: "Sep 10, 8:02 PM",
-		text: "For anyone calling Los Angeles about Trey McBride or anyone for that matter: don't expect an answer. GM Liz Bautch isn't entertaining trade offers right now — and I'm told she isn't even picking up the phone."
+		text: "For teams calling Los Angeles about Trey McBride or anyone else for that matter: don't expect an answer. GM Liz Bautch isn't entertaining trade offers right now — and I'm told she isn't even picking up the phone."
 	},
 	
 	{
 		id: "2026-09-11-ramirez-tucson-stars",
 		likes: 91,
 		reposts: 18,
+		profile: "https://pbs.twimg.com/profile_images/1761056797303922689/IvXxjFT6_400x400.jpg",
 		reporter: "Alex Ramirez",
 		handle: "@RamirezReports",
 		bureau: "Tucson",
