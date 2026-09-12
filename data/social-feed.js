@@ -35,6 +35,32 @@ const glflSocialFeed = [
 
 	
 	{
+		id: "2026-09-11-bennett-mcbride",
+		likes: 74,
+		reposts: 12,
+		reporter: "Sarah Bennett",
+		handle: "@SBennettStats",
+		bureau: "Los Angeles",
+		category: "rumor",
+		type: "\u{1F6AB} NOT FOR SALE",
+		time: "Sep 10, 8:02 PM",
+		text: "For anyone calling Los Angeles about Trey McBride or anyone for that matter: don't expect an answer. GM Liz Bautch isn't entertaining trade offers right now — and I'm told she isn't even picking up the phone."
+	},
+	
+	{
+		id: "2026-09-11-ramirez-tucson-stars",
+		likes: 91,
+		reposts: 18,
+		reporter: "Alex Ramirez",
+		handle: "@RamirezReports",
+		bureau: "Tucson",
+		category: "rumor",
+		type: "\u{1F440} LEAGUE CHATTER",
+		time: "Sep 10, 3:48 PM",
+		text: "Mason Bautch isn't exactly shopping in the bargain aisle. Hearing Tucson has explored deals for Justin Jefferson, Bijan Robinson and Trey McBride. The Sugar Skulls already have one of the league's strongest rosters, but apparently stacked isn't stacked enough."
+	},
+	
+	{
         id: "2026-09-10-mercer-irving-trade",
         likes: 96,
         reposts: 24,
