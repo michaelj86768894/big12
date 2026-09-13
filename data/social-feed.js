@@ -3,6 +3,22 @@
 // profile paths are relative to the repository root on BOTH pages. Omit for initials.
 const glflSocialFeed = [
 	
+{
+	id: "2026-09-13-glfl-week-1-sunday-schedule",
+	likes: 0,
+	reposts: 0,
+	accountType: "league",
+	profile: "images/Logo.png",
+	reporter: "GLFL",
+	handle: "@GLFL",
+	bureau: "League Office",
+	category: "leaguenews",
+	type: "\u{1F3C8} WEEK 1 SUNDAY SCHEDULE",
+	time: "Sep 13, 10:18 AM",
+	text: "Which game are you most excited to see? \u{1F440} Catch all the matchups on ESPN Fantasy.",
+	image: "images/WeeklyImages/WeeklyPreview/Week1SundaySchedule.png"
+},
+	
 	{
 		id: "2026-09-11-remembering-septtember-eleventh",
 		likes: 2852,
