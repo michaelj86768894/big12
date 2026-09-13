@@ -16,7 +16,7 @@ const glflSocialFeed = [
 	type: "\u{1F3C8} WEEK 1 SUNDAY SCHEDULE",
 	time: "Sep 13, 10:18 AM",
 	text: "Which game are you most excited to see? \u{1F440} Catch all the matchups on ESPN Fantasy.",
-	image: "images/WeeklyImages/WeeklyPreview/Week1SundaySchedule.png"
+	image: "images/WeeklyImages/WeeklyPreview/2026-Week1"
 },
 	
 	{

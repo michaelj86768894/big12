@@ -110,6 +110,14 @@
     border-top: 4px solid var(--navy);
 }
 
+.social-post .social-post-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 8px 0 14px;
+}
+
 .social-account {
     display: flex;
     gap: 10px;

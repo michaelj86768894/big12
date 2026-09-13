@@ -34,8 +34,11 @@ window.GLFLSocial = (() => {
         const quoted = post.quotePost && post.quotePost !== post.id ? byId.get(post.quotePost) : null;
         // Render one quote level only so cyclic references cannot recurse.
         const quote = quoted ? '<blockquote class="social-quote ' + accountClass(quoted) + '" aria-label="Quoted post">' + account(quoted) + '<p>' + escape(quoted.text) + '</p><time class="social-time">' + escape(quoted.time) + '</time></blockquote>' : '';
-        const link = safeUrl(post.link, document.baseURI);
-        return '<article class="social-post ' + accountClass(post) + '">' + account(post) + '<div class="social-bureau">' + escape(post.bureau) + '</div><div class="social-type">' + escape(post.type) + '</div><p>' + escape(post.text) + '</p>' + quote + (link ? '<a class="social-article-link" href="' + escape(link) + '">' + escape(post.linkText || 'Read Article') + ' &rarr;</a>' : '') + '<time class="social-time">' + escape(post.time) + '</time>' + engagement(post) + '</article>';
+        const image = safeUrl(post.image, siteRoot);
+		const link = safeUrl(post.link, document.baseURI);
+        return '<article class="social-post ' + accountClass(post) + '">' + account(post) + '<div class="social-bureau">' + escape(post.bureau) + '</div><div class="social-type">' + escape(post.type) + '</div><p>' + escape(post.text) + '</p>' +
+(image ? '<img class="social-post-image" src="' + escape(image) +
+'" alt="' + escape(post.imageAlt || '') + '" loading="lazy">' : '') + quote + (link ? '<a class="social-article-link" href="' + escape(link) + '">' + escape(post.linkText || 'Read Article') + ' &rarr;</a>' : '') + '<time class="social-time">' + escape(post.time) + '</time>' + engagement(post) + '</article>';
     }
     function render(container, visible, all) {
         const byId = new Map();
