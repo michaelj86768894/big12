@@ -14,7 +14,7 @@ const glflSocialFeed = [
 	category: "article",
 	time: "Sep 15, 1:18 PM",
 	text: "Week 1 is in the books. Boston still looks like Boston, Milwaukee left a win on the bench, Dave Nguyen still can't beat Northern Arizona, and we've already killed somebody off in GLFL Survivor. My complete Week 1 Recap is live.",
-	link: "Weekly/WeeklyRecap/2026-09-15-Week1-Recap.html",
+	link: "../pages/Weekly/WeeklyRecap/2026-09-15-Week1-Recap.html",
 	linkText: "Read the Week 1 Recap"
 },
 	
