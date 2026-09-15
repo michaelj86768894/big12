@@ -1039,8 +1039,8 @@ const date = parseDate_mmddyy(r["Date"]);
 return {
 date,
 week: (r["Week"] || "").trim(),
-team1: (r["Team 1"] || "").trim(),
-team2: (r["Team 2"] || "").trim(),
+team1: (r["Away"] || r["Team 1"] || "").trim(),
+team2: (r["Home"] || r["Team 2"] || "").trim(),
 score1: Number(r["Team 1 Score"] || 0),
 score2: Number(r["Team 2 Score"] || 0),
 gameType: (r["Game Type"] || "").trim()
