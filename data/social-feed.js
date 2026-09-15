@@ -4,6 +4,22 @@
 const glflSocialFeed = [
 	
 {
+	id: "2026-09-15-calloway-week1-recap",
+	likes: 94,
+	reposts: 19,
+	reporter: "Ethan Calloway",
+	handle: "@ECallowayGLFL",
+	bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+	category: "article",
+	time: "Sep 15, 1:18 PM",
+	text: "Week 1 is in the books. Boston still looks like Boston, Milwaukee left a win on the bench, Dave Nguyen still can't beat Northern Arizona, and we've already killed somebody off in GLFL Survivor. My complete Week 1 Recap is live.",
+	link: "Weekly/WeeklyRecap/2026-09-15-Week1-Recap.html",
+	linkText: "Read the Week 1 Recap"
+},
+	
+	
+	{
 	id: "2026-09-15-glfl-get-out-the-vote",
 	likes: 700,
 	reposts: 3,
@@ -13,11 +29,68 @@ const glflSocialFeed = [
 	handle: "@GLFL",
 	bureau: "League Office",
 	category: "leaguenews",
-	time: "Sep 13, 10:18 AM",
+	time: "Sep 15, 10:18 AM",
 	text: "It’s National Voter Registration Day! 🗳️ Make sure you’re registered and ready to vote.",
 	image: "images/WeeklyImages/voteinfo.png"
 },
 
+	
+	
+{
+	id: "2026-09-14-ramirez-tucson-222",
+	likes: 166,
+	reposts: 24,
+	reporter: "Alex Ramirez",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+	handle: "@RamirezReports",
+	bureau: "Tucson",
+	category: "leaguenews",
+	time: "Sep 14, 11:14 AM",
+	text: "Tucson scored 222.45 in Week 1, second-highest in the GLFL. Reminder: this is also the team whose GM spent the week checking on Justin Jefferson, Bijan Robinson and Trey McBride. Apparently 222 points wasn't convincing enough."
+},
+	
+	
+	{
+	id: "2026-09-14-gallagher-walker-bench",
+	likes: 207,
+	reposts: 31,
+	reporter: "Tommy Gallagher",
+	handle: "@TommyOnTheMustangs",
+	profile: "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fmiamiredhawks.com%2Fimages%2F2023%2F7%2F12%2FD0000OqGhF6sWLls_Gallagher__yQwR2.jpg&width=1600&type=jpeg",
+	bureau: "Milwaukee",
+	category: "leaguenews",
+	time: "Sep 14, 8:36 PM",
+	text: "GM Bautch doesn't make many lineup mistakes, but this one will sting. Kenneth Walker III put up 44.1 points on Milwaukee's bench in an 18-point loss to Cedar Rapids. Put Walker in the right spot and the Mustangs are probably going to sleep 1-0."
+},
+	
+	
+	{
+	id: "2026-09-13-glfl-boston-week1",
+	likes: 1184,
+	reposts: 146,
+	accountType: "league",
+	profile: "images/Logo.png",
+	reporter: "GLFL",
+	handle: "@GLFL",
+	bureau: "League Office",
+	category: "leaguenews",
+	time: "Sep 13, 9:21 PM",
+	text: "New name. New season. Same champs. Boston opens its Lakefront Bowl title defense with a league-best 224.15 points and a fifth straight win over Miami."
+},
+	
+	
+	{
+	id: "2026-09-13-reed-watson-bench",
+	likes: 143,
+	reposts: 27,
+	reporter: "Marcus Reed",
+	handle: "@MarcusReedCHI",
+	profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+	bureau: "Chicago",
+	category: "leaguenews",
+	time: "Sep 13, 6:47 PM",
+	text: "Christian Watson: 37.7 points. Chicago's bench: 37.7 points richer. Wouldn't have saved the Slaughter from getting embarrassed by Cleveland, but when you lose by 71.95, maybe leaving one of your best performances on the bench isn't helping the case for GM Clay."
+},
 	
 	
 	{
