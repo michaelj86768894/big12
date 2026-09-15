@@ -4,9 +4,26 @@
 const glflSocialFeed = [
 	
 {
+	id: "2026-09-15-glfl-get-out-the-vote",
+	likes: 700,
+	reposts: 3,
+	accountType: "league",
+	profile: "images/Logo.png",
+	reporter: "GLFL",
+	handle: "@GLFL",
+	bureau: "League Office",
+	category: "leaguenews",
+	time: "Sep 13, 10:18 AM",
+	text: "It’s National Voter Registration Day! 🗳️ Make sure you’re registered and ready to vote.",
+	image: "images/WeeklyImages/voteinfo.png"
+},
+
+	
+	
+	{
 	id: "2026-09-13-glfl-week-1-sunday-schedule",
-	likes: 0,
-	reposts: 0,
+	likes: 150,
+	reposts: 40,
 	accountType: "league",
 	profile: "images/Logo.png",
 	reporter: "GLFL",
