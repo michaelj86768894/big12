@@ -4,6 +4,20 @@
 const glflSocialFeed = [
 	
 {
+	id: "2026-09-16-thompson-power-rankings-reaction",
+	likes: 73,
+	reposts: 11,
+	reporter: "Derek Thompson",
+	handle: "@DerekThompsonPHI",
+	bureau: "Philadelphia",
+	profile: "https://pbs.twimg.com/profile_images/2093501497673674753/OrmD5Wp3_400x400.jpg",
+	category: "leaguenews",
+	time: "Sep 16, 12:57 PM",
+	text: "Philadelphia puts up 207.95, Caleb Williams drops 60.95, Bijan adds 40.3 and the Soul open 1-0... good enough for No. 4 apparently. That's fine. Keep the receipts. Something tells me this team won't be staying there long."
+},
+	
+	
+	{
 	id: "2026-09-16-vance-week1-power-rankings",
 	likes: 127,
 	reposts: 31,
