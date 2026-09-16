@@ -4,6 +4,23 @@
 const glflSocialFeed = [
 	
 {
+	id: "2026-09-16-vance-week1-power-rankings",
+	likes: 127,
+	reposts: 31,
+	reporter: "Marcus Vance",
+	handle: "@MVanceGLFL",
+	bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+	category: "article",
+	time: "Sep 16, 10:42 AM",
+	text: "One week. Twelve teams. And absolutely no reason to overreact responsibly. The champs start on top, Tucson is right behind them, and yes - an 0-1 team cracked the top five. Before you yell at me, read the rankings. Then you can yell at me.",
+	link: "../pages/Weekly/PowerRankings/2026-09-16-PowerRankings.html",
+	linkText: "Read the Week 1 Power Rankings"
+},
+	
+	
+	
+	{
 	id: "2026-09-15-calloway-week1-recap",
 	likes: 94,
 	reposts: 19,
