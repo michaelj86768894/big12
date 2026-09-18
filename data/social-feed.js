@@ -4,6 +4,34 @@
 const glflSocialFeed = [
 	
 {
+	id: "2026-09-17-bennett-allen-stbrown",
+	likes: 284,
+	reposts: 39,
+	profile: "https://hokiesports.com/imgproxy/7YSS24G0tvfpJ2KDgJ628aQcktjIhgzbMr0oqggwuLo/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3ZpcmdpbmlhdGVjaC1wcm9kLzIwMjUvMTAvMDIvcklMeTJ4Wnh5QjkySlNtbXdhQ1FNeUlyVHYyeHBZNzVZbFh5dEtoZy5wbmc.png",
+	reporter: "Sarah Bennett",
+	handle: "@SarahBennettLA",
+	bureau: "Los Angeles",
+	category: "leaguenews",
+	time: "Sep 17, 10:06 PM",
+	text: "It's not even Sunday and Los Angeles already has 103 points from two players. Josh Allen: 72. Amon-Ra St. Brown: 31. There's a lot of football left this weekend, but the Wildcats just gave their opponent one hell of a number to start chasing."
+},
+	
+	
+	{
+	id: "2026-09-17-ramirez-gibbs-cook",
+	likes: 197,
+	reposts: 24,
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+	reporter: "Alex Ramirez",
+	handle: "@RamirezReports",
+	bureau: "Tucson",
+	category: "leaguenews",
+	time: "Sep 17, 10:11 PM",
+	text: "Jahmyr Gibbs: 27. James Cook: 27. That's 54 points from two Sugar Skulls before Sunday even arrives. You don't win GLFL matchups on Thursday night, but Tucson just made the rest of the weekend considerably easier."
+},
+	
+	
+	{
 	id: "2026-09-16-thompson-power-rankings-reaction",
 	likes: 73,
 	reposts: 11,
