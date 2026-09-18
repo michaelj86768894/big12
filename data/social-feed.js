@@ -12,7 +12,7 @@ const glflSocialFeed = [
 	handle: "@SarahBennettLA",
 	bureau: "Los Angeles",
 	category: "leaguenews",
-	time: "Sep 17, 10:06 PM",
+	time: "Sep 17, 10:20 PM",
 	text: "It's not even Sunday and Los Angeles already has 103 points from two players. Josh Allen: 72. Amon-Ra St. Brown: 31. There's a lot of football left this weekend, but the Wildcats just gave their opponent one hell of a number to start chasing."
 },
 	
