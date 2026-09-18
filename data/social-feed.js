@@ -3,7 +3,23 @@
 // profile paths are relative to the repository root on BOTH pages. Omit for initials.
 const glflSocialFeed = [
 	
-{
+	{
+        id: "2026-09-17-bennett-allen-stbrown-again",
+        likes: 96,
+        reposts: 24,
+        quotePost: "2026-09-17-bennett-allen-stbrown",
+		profile: "https://hokiesports.com/imgproxy/7YSS24G0tvfpJ2KDgJ628aQcktjIhgzbMr0oqggwuLo/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3ZpcmdpbmlhdGVjaC1wcm9kLzIwMjUvMTAvMDIvcklMeTJ4Wnh5QjkySlNtbXdhQ1FNeUlyVHYyeHBZNzVZbFh5dEtoZy5wbmc.png",
+		reporter: "Sarah Bennett",
+		handle: "@SarahBennettLA",
+		bureau: "Los Angeles",
+		category: "leaguenews",
+		time: "Sep 17, 10:24 PM",
+		text: "St. Brown pulls in another TD so make that 42 for him and 114 for LA, #DubsInTheChatBoys"
+	},
+
+	
+	
+	{
 	id: "2026-09-17-bennett-allen-stbrown",
 	likes: 284,
 	reposts: 39,
