@@ -47,6 +47,22 @@ const glflSocialFeed = [
 },
 	
 	
+{
+	id: "2026-09-17-mercer-week2-preview",
+	likes: 86,
+	reposts: 17,
+	profile: "https://media.licdn.com/dms/image/v2/D4D03AQGxhoA9_zoUNw/profile-displayphoto-shrink_800_800/B4DZUkOV4THkAc-/0/1740069494963?e=1791417600&v=beta&t=iRNlWeLrB-FObhVpAXxg-ZZrCeTlKGkMlgCvKL2f2IA",
+	reporter: "Julian Mercer",
+	handle: "@JMercerGLFL",
+	bureau: "GLFL National",
+	category: "article",
+	time: "Sep 17, 11:42 AM",
+	text: "Week 2: Tucson has won six straight over Northern Arizona. Cleveland is chasing regular-season win No. 100. Brooklyn hasn't beaten Boston in the Cholka era. And somebody is leaving the Superior Division showdown 2-0. My complete Week 2 Preview is live. #GameOn",
+	link: "../pages/Weekly/WeeklyPreview/2026-09-17-Week2-Preview.html",
+	linkText: "Read the Week 2 Preview"
+},
+	
+	
 	{
 	id: "2026-09-16-thompson-power-rankings-reaction",
 	likes: 73,
