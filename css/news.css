@@ -109,6 +109,24 @@ ARTICLE BYLINE
     color: var(--navy);
 }
 
+.article-byline-with-photo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.article-author-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.article-byline-text {
+    line-height: 1.35;
+}
+
 /* ==========================================================================================
 ARTICLE LEAD / EXECUTIVE SUMMARY
 ========================================================================================== */
