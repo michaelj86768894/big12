@@ -4,6 +4,53 @@
 const glflSocialFeed = [
 	
 	{
+    id: "2026-09-22-reed-chicago-shopping",
+    likes: 81,
+    reposts: 13,
+    reporter: "Marcus Reed",
+	handle: "@MarcusReedCHI",
+    bureau: "Chicago Bureau",
+	profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+    category: "teamnews",
+    time: "Sep 22, 12:37 PM",
+    text: "Don't mistake 0-2 for surrender. I'm hearing @ChicagoSlaughter is actively looking for a major roster addition, and two names they've shown interest in are Jaxon Smith-Njigba and Jahmyr Gibbs - both currently in Tucson. Whether the #SugarSkulls have any interest in listening is another question entirely.",
+},
+	
+	
+	
+	{
+    id: "2026-09-22-calloway-week2-recap",
+    likes: 137,
+    reposts: 24,
+    reporter: "Ethan Calloway",
+    handle: "@ECallowayGLFL",
+    bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+    category: "article",
+    time: "Sep 22, 9:14 AM",
+    text: "259.7 points. A new regular-season record. Tucson stays perfect. Boston survives an injury scare. Miami gets on the board. And somehow the Sugar Skulls are already talking about Week 5. Week 2 gave us plenty to discuss. My complete GLFL Week 2 Recap is live. @GLFL",
+    link: "../pages/Weekly/WeeklyRecap/2026-09-22-Week2-Recap.html",
+    linkText: "Read the Week 2 Recap"
+},
+	
+	
+	
+	{
+    id: "2026-09-22-vance-richmond-rankings",
+    likes: 1847,
+    reposts: 326,
+    reporter: "Marcus Vance",
+    handle: "@MVancegGLFL",
+    bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+    category: "powerrankings",
+    time: "Sep 21, 7:48 PM",
+    text: "Last week Jason Richmond saw 1-0 Northern Arizona ranked behind 0-1 Milwaukee and accused the media of being on Michael Bautch's payroll. Since then, Milwaukee scored a league-record 259.7 and Northern Arizona lost by 42. Richmond wanted the rankings investigated. Consider them investigated. New GLFL Power Rankings tomorrow. #DontComeAtMe @NAZWranglers @MKEMustangs",
+},
+	
+	
+	
+	{
         id: "2026-09-17-bennett-allen-stbrown-again",
         likes: 96,
         reposts: 24,
