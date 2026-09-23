@@ -189,6 +189,27 @@ KEY DATES CALLOUT
     margin-top: 4px;
 }
 
+
+/* Power Rankings Movement */
+
+.rank-up {
+	color: #16a34a;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.rank-down {
+	color: #dc2626;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.rank-same {
+	color: var(--industrial-gray);
+	font-weight: 700;
+	white-space: nowrap;
+}
+
 /* ==========================================================================================
 ARTICLE TABLE-SPECIFIC STYLING
 ========================================================================================== */
@@ -253,4 +274,6 @@ MOBILE
     .key-dates-card {
         padding: 16px 18px;
     }
+
+	
 }
