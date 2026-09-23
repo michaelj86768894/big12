@@ -4,6 +4,21 @@
 const glflSocialFeed = [
 	
 	{
+        id: "2026-09-23-dart-injury",
+        likes: 81,
+        reposts: 4,
+        reporter: "Tony DeLuca",
+		handle: "@TonyTakes",
+		bureau: "Brooklyn",
+		profile: "https://www.retireguide.com/wp-content/uploads/anthony_deluca-scaled.jpg",
+		category: "roster",
+		time: "Sep 23, 8:32 AM",
+		text: "#Bolts QB Jaxson Dart suffered a knee injury Monday night that was worse than anticipated, sources told me after the MRI. He is out an extended period of time, possibly the season.",
+		image: "images/WeeklyImages/dart.jpeg"
+	},
+
+	
+	{
     id: "2026-09-22-reed-chicago-shopping",
     likes: 81,
     reposts: 13,
@@ -11,7 +26,7 @@ const glflSocialFeed = [
 	handle: "@MarcusReedCHI",
     bureau: "Chicago Bureau",
 	profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
-    category: "teamnews",
+    category: "rumor",
     time: "Sep 22, 12:37 PM",
     text: "Don't mistake 0-2 for surrender. I'm hearing @ChicagoSlaughter is actively looking for a major roster addition, and two names they've shown interest in are Jaxon Smith-Njigba and Jahmyr Gibbs - both currently in Tucson. Whether the #SugarSkulls have any interest in listening is another question entirely.",
 },
@@ -43,7 +58,7 @@ const glflSocialFeed = [
     handle: "@MVancegGLFL",
     bureau: "GLFL National",
 	profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
-    category: "powerrankings",
+    category: "leaguenews",
     time: "Sep 21, 7:48 PM",
     text: "Last week Jason Richmond saw 1-0 Northern Arizona ranked behind 0-1 Milwaukee and accused the media of being on Michael Bautch's payroll. Since then, Milwaukee scored a league-record 259.7 and Northern Arizona lost by 42. Richmond wanted the rankings investigated. Consider them investigated. New GLFL Power Rankings tomorrow. #DontComeAtMe @NAZWranglers @MKEMustangs",
 },
