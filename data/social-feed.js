@@ -4,6 +4,22 @@
 const glflSocialFeed = [
 	
 	
+{
+	id: "2026-09-24-mercer-week3-preview",
+	likes: 127,
+	reposts: 24,
+	reporter: "Julian Mercer",
+	handle: "@JMercerGLFL",
+	bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/D4D03AQGxhoA9_zoUNw/profile-displayphoto-shrink_800_800/B4DZUkOV4THkAc-/0/1740069494963?e=1791417600&v=beta&t=iRNlWeLrB-FObhVpAXxg-ZZrCeTlKGkMlgCvKL2f2IA",
+	category: "article",
+	time: "Sep 24, 4:07 PM",
+	text: "Week 3 has a little bit of everything. Tucson and Cedar Rapids chasing starts they haven't seen in a decade. Cleveland and Miami hunting win No. 100. Chicago and Brooklyn trying to avoid 0-3. And somehow Vegas losing would put them in familiar territory. The Week 3 Preview is live. #GLFL",
+	link: "../pages/Weekly/WeeklyPreview/2026-09-24-Week3-Preview.html",
+	linkText: "Read the Week 3 Preview"
+},
+	
+	
 	{
         id: "2026-09-23-power-rankings-week2",
 		likes: 1847,
