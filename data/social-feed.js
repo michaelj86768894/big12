@@ -3,6 +3,23 @@
 // profile paths are relative to the repository root on BOTH pages. Omit for initials.
 const glflSocialFeed = [
 	
+	
+	{
+        id: "2026-09-23-power-rankings-week2",
+		likes: 1847,
+		reposts: 326,
+		reporter: "Marcus Vance",
+		handle: "@MVancegGLFL",
+		bureau: "GLFL National",
+		profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+		category: "article",
+		time: "Sep 23, 12:32 AM",
+		text: "Tucson takes over No. 1, Cedar Rapids crashes the top two, Milwaukee rewrites the record book and one GM may already regret questioning the formul",
+		link: "../pages/Weekly/PowerRankings/2026-09-23-PowerRankings.html",
+		linkText: "Read the Week 2 Power Rankings"
+	},
+
+	
 	{
         id: "2026-09-23-dart-injury",
         likes: 81,
