@@ -5,6 +5,34 @@ const glflSocialFeed = [
 	
 	
 {
+	id: "2026-09-24-callahan-love-golden",
+	likes: 61,
+	reposts: 9,
+	reporter: "Jake Callahan",
+	handle: "@JCallahanGLFL",
+	bureau: "Northern Arizona",
+	profile: "https://image.cnbcfm.com/api/v1/image/108077742-1734548168837-CNBC_headshots-2229_v2.jpg?v=1734548826&w=800&h=600&ffmt=webp",
+	category: "team",
+	time: "Sep 24, 10:31 PM",
+	text: "Jordan Love: 39.6. Matthew Golden: 25.0. That's 64.6 points from two starters and suddenly a coin-flip matchup has swung 57% toward @NAZWranglers. LA has owned this series for years. Northern Arizona looks pretty interested in changing the conversation tonight. #WrangleUp"
+},
+	
+	
+	{
+	id: "2026-09-24-thompson-philly-fast-start",
+	likes: 73,
+	reposts: 11,
+	reporter: "Derek Thompson",
+	handle: "@DThompsonGLFL",
+	bureau: "Philadelphia",
+	profile: "https://pbs.twimg.com/profile_images/2093501497673674753/OrmD5Wp3_400x400.jpg",
+	category: "team",
+	time: "Sep 24, 10:09 PM",
+	text: "Bijan Robinson. Drake London. 82.2 points. That's what the @PhillySoul just dropped on the defending champs before the weekend even started. Boston wanted 3-0. They're going to have to earn every bit of it now. #FlySoulFly",
+},
+	
+	
+	{
 	id: "2026-09-24-mercer-week3-preview",
 	likes: 127,
 	reposts: 24,
