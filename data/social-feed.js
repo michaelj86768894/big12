@@ -5,6 +5,21 @@ const glflSocialFeed = [
 	
 	
 {
+	id: "2026-09-27-callahan-boston-wrs-zero",
+    quotePost: "2026-09-24-thompson-philly-fast-start",
+	likes: 68,
+	reposts: 12,
+	reporter: "Jack Callahan",
+	handle: "@JC_BeanTown",
+	bureau: "Boston",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb4F7OFEbcvaFd7JpcmJZt1TV9JqdEdWiD1s4LfNDCEObqHlGHj7BUvHai&s=10",
+	category: "team",
+	time: "Sep 27, 1:32 PM",
+	text: "Two Boston receivers playing. Two halves underway. Zero points between them at halftime. After Philadelphia's 82.2-point head start Thursday night, this is about the last thing the @BostonBrawlersGLFL needed. The champs aren't dead yet, but that 3-0 start is officially in some trouble. #BrawlOn"
+},
+	
+	
+	{
 	id: "2026-09-24-callahan-love-golden",
 	likes: 61,
 	reposts: 9,
