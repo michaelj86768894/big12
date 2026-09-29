@@ -3,6 +3,23 @@
 // profile paths are relative to the repository root on BOTH pages. Omit for initials.
 const glflSocialFeed = [
 	
+
+	{
+    id: "2026-09-29-calloway-week3-recap",
+    likes: 137,
+    reposts: 31,
+    reporter: "Ethan Calloway",
+    handle: "@ECallowayGLFL",
+    bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+    category: "article",
+    time: "Sep 29, 2:47 PM",
+    text: "482.85 points in Tucson-Vegas. A new regular-season record. Philly dropped 227 on the champs. Cedar Rapids is 3-0. Vegas scored 239 and somehow fell to 0-3. And the playoff model already has some teams sweating. Week 3 was ridiculous. Full recap is live. #GLFL",
+    link: "../pages/Weekly/WeeklyRecap/2026-09-29-Week3-Recap.html",
+    linkText: "Read the Week 3 Recap"
+},
+
+	
 	
 {
 	id: "2026-09-27-callahan-boston-wrs-zero",
