@@ -5,6 +5,23 @@ const glflSocialFeed = [
 	
 
 	{
+        id: "2026-09-30-power-rankings-week2",
+		likes: 246,
+		reposts: 58	,
+		reporter: "Marcus Vance",
+		handle: "@MVanceGLFL",
+		bureau: "GLFL National",
+		profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+		category: "article",
+	time: "Sep 30, 5:14 PM",
+	text: "Tucson stays No. 1. Northern Arizona jumps four spots. Boston tumbles four. And yes, I ranked an 0-3 Vegas team SIXTH. Before you yell at me, read the article. Then you can yell at the spreadsheet instead. Week 3 Power Rankings are live. #GLFL",
+	link: "../pages/Weekly/PowerRankings/2026-09-30-Week3-Power-Rankings.html",
+	linkText: "Read the Week 3 Power Rankings"
+	},
+
+	
+	
+	{
     id: "2026-09-29-calloway-week3-recap",
     likes: 137,
     reposts: 31,
@@ -30,7 +47,7 @@ const glflSocialFeed = [
 	handle: "@JC_BeanTown",
 	bureau: "Boston",
 	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb4F7OFEbcvaFd7JpcmJZt1TV9JqdEdWiD1s4LfNDCEObqHlGHj7BUvHai&s=10",
-	category: "team",
+	category: "leaguenews",
 	time: "Sep 27, 1:32 PM",
 	text: "Two Boston receivers playing. Two halves underway. Zero points between them at halftime. After Philadelphia's 82.2-point head start Thursday night, this is about the last thing the @BostonBrawlersGLFL needed. The champs aren't dead yet, but that 3-0 start is officially in some trouble. #BrawlOn"
 },
