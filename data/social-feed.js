@@ -4,6 +4,22 @@
 const glflSocialFeed = [
 	
 
+{
+	id: "2026-10-01-mercer-week4-preview",
+	likes: 118,
+	reposts: 22,
+	reporter: "Julian Mercer",
+	handle: "@JMercerGLFL",
+	bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/D4D03AQGxhoA9_zoUNw/profile-displayphoto-shrink_800_800/B4DZUkOV4THkAc-/0/1740069494963?e=1791417600&v=beta&t=iRNlWeLrB-FObhVpAXxg-ZZrCeTlKGkMlgCvKL2f2IA",
+	category: "article",
+	time: "Oct 1, 4:41 PM",
+	text: "4-0 teams have historically made the playoffs 91.5% of the time. At 0-4? Just 11.7%. Tucson and Cedar Rapids can reach one side this week. Vegas, Chicago and Brooklyn are trying desperately to avoid the other. Plus Boston's bizarre Cleveland problem and yet another shot at Win No. 100. Week 4 Preview is live. #GLFL",
+	link: "../pages/Weekly/WeeklyPreview/2026-10-01-Week4-Preview.html",
+	linkText: "Read the Week 4 Preview"
+},
+	
+	
 	{
         id: "2026-09-30-power-rankings-week2",
 		likes: 246,
