@@ -15,7 +15,7 @@ const glflSocialFeed = [
 	category: "trade",
 	time: "Oct 6, 4:49 PM",
 	text: "TRADE: Northern Arizona is sending Matthew Golden and Kyle Pitts to Cleveland for Rome Odunze and Hunter Henry. Jason Richmond is 3-1 and apparently isn't interested in standing still. Love getting Henry as a solid start-able TE but man losing Golden hurts. @NAZWranglers",
-}
+},
 	
 	
 	{
@@ -29,7 +29,7 @@ const glflSocialFeed = [
 	category: "trade",
 	time: "Oct 6, 4:42 PM",
 	text: "Cleveland isn't waiting around at 1-3. The Gladiators acquire Matthew Golden and Kyle Pitts from Northern Arizona, sending Rome Odunze and Hunter Henry the other way. Still looking for Win No. 100, but Josh Thurmer just made sure the roster trying to get it won't look the same. @GladiatorsGLFL",
-}
+},
 	
 	
 	
