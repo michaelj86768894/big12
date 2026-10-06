@@ -2,6 +2,41 @@
 // Keep IDs stable. quotePost references an ID in this array (including your own posts).
 // profile paths are relative to the repository root on BOTH pages. Omit for initials.
 const glflSocialFeed = [
+
+	
+	{
+	id: "2026-10-06-gallagher-milwaukee-record",
+	likes: 221,
+	reposts: 47,
+	reporter: "Tommy Gallagher",
+	handle: "@TommyOnTheMustangs",
+	bureau: "Milwaukee Bureau",
+	profile: "https://images.sidearmdev.com/resize?url=https%3A%2F%2Fdxbhsrqyrr690.cloudfront.net%2Fsidearm.nextgen.sites%2Fmiamiredhawks.com%2Fimages%2F2023%2F7%2F12%2FD0000OqGhF6sWLls_Gallagher__yQwR2.jpg&width=1600&type=jpeg",
+	category: "leaguenews",
+	time: "Oct 6, 12:03 PM",
+	text: "Milwaukee set the regular-season scoring record in Week 2 with 259.70. Apparently that wasn't good enough. Two weeks later: 278.60. New regular-season record. New ALL-TIME record, playoffs included. At this rate I'm afraid to ask what they're planning for Week 6. @MKEMustangs",
+	link: "../pages/Weekly/WeeklyRecap/2026-10-06-Week4-Recap.html",
+	linkText: "Read the Week 4 Recap"
+},
+	
+	
+
+	
+{
+	id: "2026-10-06-calloway-week4-recap",
+	likes: 184,
+	reposts: 42,
+	reporter: "Ethan Calloway",
+	handle: "@ECallowayGLFL",
+	bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+	category: "article",
+	time: "Oct 6, 11:18 AM",
+	text: "Milwaukee scored 278.60 and broke a record it set TWO WEEKS AGO. Cedar Rapids is somehow the last undefeated team standing. Miami finally beat Tucson. Vegas, Chicago and Brooklyn are 0-4. Cleveland is STILL sitting on 99 wins. And yes, somebody forgot to set their lineup. Week 4 Recap is live. #GLFL",
+	link: "../pages/Weekly/WeeklyRecap/2026-10-06-Week4-Recap.html",
+	linkText: "Read the Week 4 Recap"
+},
+	
 	
 
 {
