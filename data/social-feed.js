@@ -4,6 +4,21 @@
 const glflSocialFeed = [
 
 	
+{
+	id: "2026-10-06-reed-tyreek-hill",
+	likes: 173,
+	reposts: 36,
+	reporter: "Marcus Reed",
+	handle: "@MarcusReed",
+	bureau: "Chicago Bureau",
+	profile: "https://framerusercontent.com/images/pEA9rY2OIaROXKmBnWYoeIk2PRQ.jpg?width=1365&height=2048",
+	category: "roster",
+	time: "Oct 6, 11:47 AM",
+	text: "Chicago is 0-4 and Darrien Clay just spent $5 on a player who doesn't technically have an NFL team. Tyreek Hill is now a member of the Slaughter. That's either desperation or getting ahead of the market. Maybe both. But with Hill reportedly negotiating with teams right now, this could get interesting fast. @ChicagoSlaughter",
+},
+	
+	
+	
 	{
 	id: "2026-10-06-gallagher-milwaukee-record",
 	likes: 221,
@@ -15,8 +30,6 @@ const glflSocialFeed = [
 	category: "leaguenews",
 	time: "Oct 6, 12:03 PM",
 	text: "Milwaukee set the regular-season scoring record in Week 2 with 259.70. Apparently that wasn't good enough. Two weeks later: 278.60. New regular-season record. New ALL-TIME record, playoffs included. At this rate I'm afraid to ask what they're planning for Week 6. @MKEMustangs",
-	link: "../pages/Weekly/WeeklyRecap/2026-10-06-Week4-Recap.html",
-	linkText: "Read the Week 4 Recap"
 },
 	
 	
