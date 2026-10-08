@@ -4,6 +4,49 @@
 const glflSocialFeed = [
 
 
+{
+	id: "2026-10-07-bennett-la-tucson-blockbuster",
+	likes: 264,
+	reposts: 63,
+	reporter: "Sarah Bennett",
+	handle: "@SBennettStats",
+	bureau: "Los Angeles Bureau",
+	profile: "https://hokiesports.com/imgproxy/7YSS24G0tvfpJ2KDgJ628aQcktjIhgzbMr0oqggwuLo/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3ZpcmdpbmlhdGVjaC1wcm9kLzIwMjUvMTAvMDIvcklMeTJ4Wnh5QjkySlNtbXdhQ1FNeUlyVHYyeHBZNzVZbFh5dEtoZy5wbmc.png",
+	category: "trade",
+	time: "Oct 7, 8:19 PM",
+	text: "Los Angeles just traded Amon-Ra St. Brown AND Trey McBride. Read that again. In return, Liz Bautch lands James Cook III, Brock Bowers and Carnell Tate from Tucson. This isn't a rebuild. It's a major redistribution of talent for a 1-3 team that needs results immediately. The question isn't whether LA gave up stars. It's whether the three coming back make the Wildcats better. @LAWildcats @Sugarskulls"
+},
+	
+	
+	{
+	id: "2026-10-07-ramirez-tucson-la-blockbuster",
+	quotePost: "2026-10-06-ramirez-tucson-amon-ra",
+	likes: 312,
+	reposts: 87,
+	reporter: "Alex Ramirez",
+	handle: "@RamirezReports",
+	bureau: "Tucson Bureau",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+	category: "trade",
+	time: "Oct 7, 8:12 PM",
+	text: "BREAKING: Mason Bautch got his guy. Tucson acquires Amon-Ra St. Brown, Trey McBride and Bhayshul Tuten from Los Angeles in exchange for Brock Bowers, James Cook III and Carnell Tate. Less than 24 hours after reports surfaced, the blockbuster is DONE. The Sugar Skulls are 3-1 and apparently that's not good enough for their GM. @Sugarskulls @LAWildcats"
+},
+	
+	
+{
+	id: "2026-10-06-ramirez-tucson-amon-ra",
+	likes: 167,
+	reposts: 34,
+	reporter: "Alex Ramirez",
+	handle: "@RamirezReports",
+	bureau: "Tucson Bureau",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+	category: "rumor",
+	time: "Oct 6, 6:21 PM",
+	text: "SOURCES: Tucson has its sights on Amon-Ra St. Brown. I'm told the Sugar Skulls are exploring what it would take to land the Los Angeles star following their first loss of the season. Nothing is done, but Mason Bautch is once again hunting for a blockbuster. @Sugarskulls @LAWildcats",
+},
+	
+	
 	{
 	id: "2026-10-06-callahan-naz-cleveland-trade",
 	likes: 142,
