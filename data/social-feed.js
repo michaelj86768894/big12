@@ -5,6 +5,37 @@ const glflSocialFeed = [
 
 
 {
+    id: "2026-10-13-calloway-week5-recap",
+    likes: 247,
+    reposts: 68,
+	reporter: "Ethan Calloway",
+	handle: "@ECallowayGLFL",
+	bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+    category: "article",
+    time: "Oct 13, 9:42 AM",
+    text: "Cleveland spent all week trying to trade Puka Nacua. Then he dropped 47.7 on Monday night to deliver Win No. 100 AND end Cedar Rapids' perfect season. Tucson got its championship revenge. Miami scored 243.65. Vegas and Chicago finally won. And Brooklyn's GM is already talking about 2027. Just another normal week in the GLFL. #GLFL",
+    link: "../pages/Weekly/WeeklyRecap/2026-10-13-Week5-Recap.html",
+    linkText: "Read the Week 5 Recap"
+},
+	
+	
+	{
+	id: "2026-10-09-cleveland-shopping",
+	likes: 150,
+	reposts: 28,
+	reporter: "Ryan Whitaker",
+	handle: "@WhitakerWire",
+	bureau: "Cleveland Bureau",
+	profile: "https://media.licdn.com/dms/image/v2/C4E03AQFuCmqq3v_OoA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1660606008418?e=2147483647&v=beta&t=n1xu8Eme0G9ABgJ5SWgvuvtf8T_-QkXNiY1QccLPNyY",
+	category: "trade",
+	time: "Oct 9, 4:42 PM",
+	text: "Hearing that @Cleveland is shopping Puka Nacua...",
+},
+
+	
+	
+	{
 	id: "2026-10-07-bennett-la-tucson-blockbuster",
 	likes: 264,
 	reposts: 63,
