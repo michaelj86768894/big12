@@ -5,6 +5,86 @@ const glflSocialFeed = [
 
 
 {
+    id: "2026-10-15-tuc-lv-trade-breaking",
+    likes: 312,
+    reposts: 94,
+    reporter: "Ethan Calloway",
+    handle: "@ECallowayGLFL",
+    bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+    category: "trade",
+    time: "Oct 15, 8:12 AM",
+    text: "BLOCKBUSTER: No. 1 @Sugarskulls sends Jaxon Smith-Njigba, Trey McBride and Bhayshul Tuten to @KnightHawks for Ja'Marr Chase, Derrick Henry and Juwan Johnson. The twist? Chase is on a bye this week. The BIGGER twist? Tucson and Vegas play EACH OTHER in Week 6. You cannot make this up. 👀"
+},
+{
+    id: "2026-10-15-ramirez-tucson-trade",
+    likes: 228,
+    reposts: 53,
+    reporter: "Alex Ramirez",
+    handle: "@RamirezReports",
+    bureau: "Tucson",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+    category: "trade",
+    time: "Oct 15, 8:26 AM",
+    text: "Mason Bautch has traded Brock Bowers, acquired Trey McBride, and traded McBride again. All while running the GLFL's No. 1 team. Now Juwan Johnson inherits the TE job, Ja'Marr Chase is unavailable this week, and the three players Tucson just shipped out could line up AGAINST them Sunday. I have questions, Mason. A lot of them."
+},
+{
+    id: "2026-10-15-maddox-vegas-trade",
+    likes: 264,
+    reposts: 61,
+    reporter: "Cole Maddox",
+    handle: "@ColeCallsIt",
+    bureau: "Las Vegas",
+    profile: "https://static.wikia.nocookie.net/martintv/images/0/01/Carl_Anthony_Payne_II.png/revision/latest/thumbnail/width/360/height/360?cb=20191124092228",
+    category: "trade",
+    time: "Oct 15, 8:41 AM",
+    text: "Dave Nguyen finally wins a game, trades Derrick Henry and Ja'Marr Chase, and somehow comes away with Jaxon Smith-Njigba and Trey McBride. Oh, and his next opponent is the guy who just traded him those players. If McBride scores 30 against Tucson, I'm personally sending Mason a thank-you card."
+},
+{
+    id: "2026-10-15-tucson-team-trade",
+    likes: 187,
+    reposts: 39,
+    reporter: "Tucson Sugar Skulls",
+    handle: "@Sugarskulls",
+    bureau: "Tucson",
+    profile: "images/Tucson.png",
+    category: "trade",
+    time: "Oct 15, 9:03 AM",
+    text: "New faces. Same mission. Welcome to Tucson, Derrick Henry, Ja'Marr Chase and Juwan Johnson. 🌵💀"
+},
+{
+    id: "2026-10-15-vegas-team-trade",
+    likes: 203,
+    reposts: 48,
+    reporter: "Vegas Knight Hawks",
+    handle: "@KnightHawks",
+    bureau: "Las Vegas",
+    profile: "images/Vegas.png",
+    category: "trade",
+    time: "Oct 15, 9:17 AM",
+    text: "Welcome to Vegas, Jaxon Smith-Njigba, Trey McBride and Bhayshul Tuten. 🏈 First assignment: the team that traded you. See you Sunday, @Sugarskulls. 👀"
+},
+{
+    id: "2026-10-15-vance-trade-analysis",
+    likes: 341,
+    reposts: 82,
+    reporter: "Marcus Vance",
+    handle: "@MVancegGLFL",
+    bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+    category: "trade",
+    time: "Oct 15, 9:34 AM",
+    text: "Tucson is 4-1, averaging over 200 PPG, and just reclaimed No. 1 in my Power Index. Naturally, Mason Bautch decided the roster needed another overhaul. Two blockbuster trades in roughly a week. Three different starting TEs. And now a matchup against the players he just traded away. Being No. 1 apparently isn't stressful enough."
+},
+	
+	
+	
+	
+	
+	
+	
+	
+	{
     id: "2026-10-13-calloway-week5-recap",
     likes: 247,
     reposts: 68,
@@ -172,14 +252,14 @@ const glflSocialFeed = [
 	
 	
 	{
-        id: "2026-09-30-power-rankings-week2",
-		likes: 246,
-		reposts: 58	,
-		reporter: "Marcus Vance",
-		handle: "@MVanceGLFL",
-		bureau: "GLFL National",
-		profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
-		category: "article",
+	id: "2026-09-30-power-rankings-week2",
+	likes: 246,
+	reposts: 58	,
+	reporter: "Marcus Vance",
+	handle: "@MVanceGLFL",
+	bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+	category: "article",
 	time: "Sep 30, 5:14 PM",
 	text: "Tucson stays No. 1. Northern Arizona jumps four spots. Boston tumbles four. And yes, I ranked an 0-3 Vegas team SIXTH. Before you yell at me, read the article. Then you can yell at the spreadsheet instead. Week 3 Power Rankings are live. #GLFL",
 	link: "../pages/Weekly/PowerRankings/2026-09-30-Week3-Power-Rankings.html",
@@ -460,7 +540,7 @@ const glflSocialFeed = [
 	bureau: "League Office",
 	category: "leaguenews",
 	time: "Sep 15, 10:18 AM",
-	text: "It’s National Voter Registration Day! 🗳️ Make sure you’re registered and ready to vote.",
+	text: "Itâ€™s National Voter Registration Day! ðŸ—³ï¸ Make sure youâ€™re registered and ready to vote.",
 	image: "images/WeeklyImages/voteinfo.png"
 },
 
@@ -581,7 +661,7 @@ const glflSocialFeed = [
 		category: "rumor",
 		type: "\u{1F6AB} NOT FOR SALE",
 		time: "Sep 10, 8:02 PM",
-		text: "For teams calling Los Angeles about Trey McBride or anyone else for that matter: don't expect an answer. GM Liz Bautch isn't entertaining trade offers right now — and I'm told she isn't even picking up the phone."
+		text: "For teams calling Los Angeles about Trey McBride or anyone else for that matter: don't expect an answer. GM Liz Bautch isn't entertaining trade offers right now â€” and I'm told she isn't even picking up the phone."
 	},
 	
 	{
