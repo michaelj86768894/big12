@@ -1,6 +1,27 @@
 @charset "UTF-8";
 
 /* ==========================================================================================
+NEWS FILTER NAVIGATION
+========================================================================================== */
+
+.news-filter-bar {
+    max-width: 1200px;
+    width: 100%;
+    margin: 22px auto 20px;
+    box-sizing: border-box;
+}
+
+.news-filter.is-active {
+    color: var(--lake-blue);
+    text-decoration: underline;
+}
+
+/* Hide articles that don't match the selected category */
+.news-card[hidden] {
+    display: none;
+}
+
+/* ==========================================================================================
 NEWS GRID
 ========================================================================================== */
 
