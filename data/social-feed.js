@@ -4,7 +4,25 @@
 const glflSocialFeed = [
 
 
+
 {
+    id: "2026-10-20-calloway-week6-recap",
+    likes: 326,
+    reposts: 91,
+    reporter: "Ethan Calloway",
+    handle: "@ECallowayGLFL",
+    bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+    category: "article",
+    time: "Oct 20, 12:45 PM",
+    text: "Vegas traded for Tucson's players, then used them to embarrass the No. 1 team. Cleveland survived by 0.30 in the 9th-closest game in GLFL history. Chicago and Northern Arizona BOTH hit 100 losses. LA made it 11 straight over Philly. Milwaukee won its 5th straight. And Brooklyn? Still winless. Week 6 was absolute chaos. My full recap is up. #GLFL",
+    link: "../pages/Weekly/WeeklyRecap/2026-10-20-Week6-Recap.html",
+    linkText: "Read the Week 6 Recap"
+},
+
+	
+	
+	{
     id: "2026-10-15-mercer-week6-preview",
     likes: 286,
     reposts: 74,
