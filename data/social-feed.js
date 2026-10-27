@@ -5,7 +5,54 @@ const glflSocialFeed = [
 
 
 
+
 {
+    id: "2026-10-27-tucson-fan-gibbs-trade-request",
+    likes: 4,
+    reposts: 0,
+    reporter: "Blizzard Fan 4 Life",
+    handle: "@BlizzardNumber1Fan",
+	profile: "PROFILE",
+    category: "rumor",
+    time: "Oct 27, 4:22 PM",
+    text: "@RamirezReports is saying that Gibbs asked for a TRADE!! Brooo, @Sugarskulls need to fire Mason as GM, dude is trash!"
+},
+	
+	
+	{
+    id: "2026-10-27-ramirez-gibbs-trade-request",
+    likes: 427,
+    reposts: 138,
+    reporter: "Alex Ramirez",
+    handle: "@RamirezReports",
+    bureau: "Tucson",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+    category: "rumor",
+    time: "Oct 27, 3:22 PM",
+    text: "BREAKING: Sources tell me star RB Jahmyr Gibbs has formally requested a trade out of Tucson. Gibbs reportedly informed GM Mason Bautch that he wants to play for a contender. The Sugar Skulls have lost 3 of their last 4 games, and frustration is mounting inside the organization. One source described Gibbs as 'tired of watching the championship window close.' More to come. #GLFL"
+},
+
+	
+	
+	
+{
+    id: "2026-10-27-calloway-week7-recap",
+    likes: 384,
+    reposts: 112,
+    reporter: "Ethan Calloway",
+    handle: "@ECallowayGLFL",
+    bureau: "GLFL National",
+	profile: "https://wsvn.com/wp-content/uploads/sites/2/2019/01/ETHAN-CALLOWAY_506.png",
+    category: "article",
+    time: "Oct 27, 3:45 PM",
+    text: "WEEK 7 WAS ABSOLUTE CHAOS. Milwaukee FINALLY ends Tucson's 5-game stranglehold and stands alone at 6-1. Vegas drops 204 on Cedar Rapids as JSN and McBride combine for 70.4. Chicago stuns the defending champs on Monday night. And Brooklyn? They took a lead into Sunday night... and STILL fell to 0-7. Six games, six storylines. My full Week 7 recap is LIVE! #GLFL",
+    link: "../pages/Weekly/WeeklyRecap/2026-10-27-Week7-Recap.html",
+    linkText: "Read the Week 7 Recap"
+},
+
+	
+	
+	{
     id: "2026-10-20-calloway-week6-recap",
     likes: 326,
     reposts: 91,
