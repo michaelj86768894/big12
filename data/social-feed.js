@@ -6,7 +6,25 @@ const glflSocialFeed = [
 
 
 
+
 {
+    id: "2026-11-04-vance-week8-rankings",
+    likes: 342,
+    reposts: 91,
+    reporter: "Marcus Vance",
+    handle: "@MVancegGLFL",
+    bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/C5603AQHcjqEpK42xsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650556469168?e=2147483647&v=beta&t=oSFxCv0_BGxoMpGkB8PRyC0l9I00vSdsskJa5nLarno",
+    category: "article",
+    time: "Nov 4, 1:24 PM",
+    text: "NEW POWER RANKINGS: Milwaukee is running away with No. 1. Vegas jumps to No. 4 after starting 0-4. Cleveland has won FOUR straight and still sits eighth. And Tucson? They've lost 4 of 5 and somehow remain No. 2. The numbers don't lie, but they sure have some explaining to do. #GLFL",
+    link: "../pages/Weekly/PowerRankings/2026-11-04-Week8-Power-Rankings.html",
+    linkText: "Read the Week 8 Power Rankings"
+},
+
+	
+	
+	{
     id: "2026-10-27-tucson-fan-gibbs-trade-request",
     likes: 4,
     reposts: 0,
