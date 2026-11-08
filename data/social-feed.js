@@ -12,6 +12,21 @@ const glflSocialFeed = [
 
 	
 	{
+    id: "2026-11-08-milwaukee-fan-gibbs-reaction",
+	quotePost: "2026-11-08-ramirez-gibbs-mason-statement",
+    likes: 193,
+    reposts: 47,
+    reporter: "All Things MKE",
+    handle: "@MustangsFan",
+	profile: "PROFILE",
+    category: "rumor",
+    time: "Nov 8, 6:58 PM",
+    text: "Ayoooooo, if we get Gibbs on this team BUILD THE STATUE OF MIKE NOW!!!! #ChampionshipOnTheWay",
+},
+	
+	
+	
+	{
     id: "2026-11-08-blizzard-fan-gibbs-reaction",
 	quotePost: "2026-11-08-ramirez-gibbs-mason-statement",
     likes: 193,
