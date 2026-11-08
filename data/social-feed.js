@@ -7,7 +7,24 @@ const glflSocialFeed = [
 
 
 
+
 {
+    id: "2026-11-08-ramirez-gibbs-trade-rumors-intensify",
+    likes: 487,
+    reposts: 163,
+    reporter: "Alex Ramirez",
+    handle: "@RamirezReports",
+    bureau: "Tucson",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+    category: "rumor",
+    time: "Nov 8, 5:52 PM",
+    text: "SOURCES: The Jahmyr Gibbs situation in Tucson is reportedly reaching a boiling point. I'm hearing Gibbs' camp is growing increasingly frustrated with the Sugar Skulls' collapse and has reiterated his desire to play for a contender. With Tucson staring at another loss, questions are mounting about whether GM Mason Bautch can keep his superstar RB happy. One league source put it bluntly: 'He didn't sign up for a rebuild.' #GLFL",
+},
+
+	
+	
+	
+	{
     id: "2026-11-04-vance-week8-rankings",
     likes: 342,
     reposts: 91,
