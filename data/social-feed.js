@@ -8,7 +8,40 @@ const glflSocialFeed = [
 
 
 
-{
+
+
+	
+	{
+    id: "2026-11-08-blizzard-fan-gibbs-reaction",
+	quotePost: "2026-11-08-ramirez-gibbs-mason-statement",
+    likes: 193,
+    reposts: 47,
+    reporter: "Blizzard Fan 4 Life",
+    handle: "@BlizzardNumber1Fan",
+	profile: "PROFILE",
+    category: "rumor",
+    time: "Nov 8, 6:22 PM",
+    text: "EXCUSE ME??? ? We start 3-0, trade JSN and McBride to Vegas, watch them win FOUR STRAIGHT while we fall apart, and NOW we're sending JAHMYR GIBBS TO YOUR DAD'S TEAM?! Mason, this is the GLFL, not a family business!!! ? Somebody check if Milwaukee is paying Tucson child support at this point. #SaveTheSugarSkulls",
+},
+
+	
+	{
+    id: "2026-11-08-ramirez-gibbs-mason-statement",
+    likes: 624,
+    reposts: 218,
+    reporter: "Alex Ramirez",
+    handle: "@RamirezReports",
+    bureau: "Tucson",
+	profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ThH3PAkEHFaDfZNXIZEnmO11Wnv51V_Ql96Moino6w&s=10",
+    category: "trade",
+    time: "Nov 8, 6:14 PM",
+    text: "BREAKING: Speaking with Tucson GM Mason Bautch just now. Bautch: 'Gibbs wants to go to Milwaukee, GM Mike Bautch can be expecting a trade offer soon. Gibbs deserves to be happy.' WOW. The Sugar Skulls' GM just confirmed his superstar RB wants to join the 7-1 Mustangs, led by his own FATHER. No trade has been announced, but this story just went from rumor to a full-blown GLFL blockbuster watch. #GLFL",
+},
+
+	
+	
+	
+	{
     id: "2026-11-08-ramirez-gibbs-trade-rumors-intensify",
     likes: 487,
     reposts: 163,
