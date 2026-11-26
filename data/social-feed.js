@@ -4,8 +4,36 @@
 const glflSocialFeed = [
 
 
+	{
+    id: "2026-11-25-week12-preview",
+	quotePost: "2026-11-26-mercer-week12-preview",
+    likes: 14,
+    reposts: 3,
+    reporter: "All Things MKE",
+    handle: "@MustangsFan",
+	profile: "PROFILE",
+    category: "article",
+    time: "Nov 26, 12:58 PM",
+    text: "Buddy went with ESPN projections on every game EXCEPT MILWAUKEE, do you even watch the games? @OldTakesExposed, #bookmark this",
+},
 
-
+	
+	
+	
+{
+    id: "2026-11-26-mercer-week12-preview",
+    likes: 312,
+    reposts: 87,
+    reporter: "Julian Mercer",
+    handle: "@JMercerGLFL",
+    bureau: "GLFL National",
+	profile: "https://media.licdn.com/dms/image/v2/D4D03AQGxhoA9_zoUNw/profile-displayphoto-shrink_200_200/B4DZUkOV4THkAY-/0/1740069494990?e=2147483647&v=beta&t=q_heJ5VNIld-hSOf6N1RkRMznG1v9WfeINPmWUzkKYA",
+    category: "article",
+    time: "Nov 26, 8:00 AM",
+    text: "Happy Thanksgiving, GLFL! Four division matchups. Miami chasing its 100th franchise win AND a division title. Milwaukee and Cedar Rapids separated by 0.8 projected points. Two teams facing elimination. And somehow, Brooklyn is FAVORED. Grab the turkey and set those lineups. Week 12 is served. #GLFL #Thanksgiving",
+    link: "../pages/Weekly/WeeklyPreview/2026-11-26-Week12-Preview.html",
+    linkText: "Read the Week 12 Thanksgiving Preview"
+},
 
 
 
